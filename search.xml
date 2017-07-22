@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[阿里云邮箱设置记录]]></title>
+    <url>%2F2017%2F07%2F21%2Fali_mail_set%2F</url>
+    <content type="text"><![CDATA[正文 在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。 登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统) qiye.aliyun.com/admin/中会显示 邮箱登录地址:http://mail.timchen314.com 访问http://mail.timchen314.com: 温馨提醒：该页面暂时无法访问 尊敬的用户： 您好！ 根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。 所以，必须要备案后才能使用邮箱服务。 ICP备案是：[1] ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系 如果使用了github作为托管主机，是无法备案的。如何选择备案产品类型 如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。 可能有用[2] reference 阿里云个人网站备案过程全记录 ↩ 可能有用：本博客阿里云配置过程（一）服务器及域名备案篇 ↩]]></content>
+      <categories>
+        <category>技术杂烩</category>
+      </categories>
+      <tags>
+        <tag>技术杂烩</tag>
+        <tag>邮箱设置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hdf5简介]]></title>
+    <url>%2F2017%2F07%2F21%2Fhdf5%2F</url>
+    <content type="text"><![CDATA[HDF5 可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。 历史 HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。 特性 自述性 对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。 通用性 许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。 灵活性 HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。 扩展性 HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。 跨平台性 现代性 支持并行I/O，线程和其他一些现代系统和应用要求。 解决我的trajectory程序的问题：自述性、通用性、扩展性 Why HDF? 有专门的维护： hdfgroup.org NASA’s Earth Observing System等等官网介绍 Caffe等机器学习、深度学习框架原生支持 文档 sphinx 它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。 Sphinx介绍：https://zhuanlan.zhihu.com/p/25688826 中文文档：https://zh-sphinx-doc.readthedocs.io/en/latest/index.html# 再通过github部署（专门为生成程序介绍页而设计的功能）：https://segmentfault.com/a/1190000002765287]]></content>
+      <categories>
+        <category>技术杂烩</category>
+      </categories>
+      <tags>
+        <tag>技术杂烩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo]]></title>
+    <url>%2F2017%2F07%2F21%2Fhexo%2F</url>
+    <content type="text"><![CDATA[memo 这个网站可以作为参考www.ezlippi.com npm i(nstall) hexo-generator-json-content --save Fix error to ensure “all article” works normally. hexo-footnote(已不再维护) npm install hexo-footnotes --save 如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件： 12plugins: - hexo-footnotes 安装hexo-renderer-marked以支持更多Markdown特性 123npm un hexo-renderer-marked --savenpm i hexo-renderer-markdown-it --savenpm install markdown-it-emoji --save 设置文章置顶 &amp; Cloudinary在线图片服务[1] top: 3 # 数字越大越靠前，默认为0 除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如Cloudinary提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。 在Cloudinary申请账号，上传图片(注意把upload选项中的unsigned signature选上) Cloundinary的免费存储空间还是非常大的cloudinary价格 我的cloudinary 使用方法： 点击图片 点击url 拷贝链接 hexo个人命令 用hexol/hexod命令一次性完成本地/远程预览 配置.bash_profile 1234export HEXO='/Users/Aether/Documents/hexo_file'export HEXOMD='/Users/Aether/Documents/hexo_file/source/_posts/'alias hexod='cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'alias hexol='cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s' tackle_md.sh自动调整缩进、设置部分显示、修改文章标题大小(for next theme) 12345678#!/bin/shsh indent.shsh read_more.shfor mdfile in $(ls *.md)do awk -f ./title_size.awk $mdfile &gt; /tmp/$mdfile &amp;&amp; mv /tmp/$mdfile $mdfiledone 其中，indent.sh: 12345#!/bin/sh# indent for code blocksed -i 's/^```[a-z]/ &amp;/g' *.md# indent for quotesed -i 's/^&gt;/ &amp;/g' *.md read_more.sh: 12345678910#!/bin/sh# if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.for md_file in $(ls *md)do stat=$(grep "&lt;!-- more --&gt;" $md_file) if [ -z "$stat" ];then sed -i '20a &lt;!-- more --&gt;' $md_file fidone title_size.awk: 1234567891011121314#!/usr/bin/awk -f&#123; if(/^title:/&amp;&amp;!/font/) &#123; for(i=1;i&lt;=NF;++i) &#123; printf $i" "; if(i==1) printf " &lt;font size=6&gt;&lt;b&gt;"; else if(i==NF) printf "&lt;/b&gt;&lt;/font&gt;\n" ; &#125; &#125; else print $0;&#125; yilia theme image file path hexo_file/themes/hexo-theme-yilia/source/img theme-yilia yilia next theme 要想显示标签页，需要手动操作，详见[2] 添加搜索[3] 在os X safari上无法正常使用，原因不明；在os X chrome上和win7 chrome上都可以正常使用 12npm install hexo-generator-search --savenpm install hexo-generator-searchdb --save 如何设置页面文章的篇数？[4] 123npm install --save hexo-generator-indexnpm install --save hexo-generator-archivenpm install --save hexo-generator-tag 设置social_icons next是通过FontAwesome进行图标设计的，FA支持的图标都在主页上。 目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为zhihu: bed 设置文章标题的格式 直接用html就可以 title: &lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt; References: HEXO搭建个人博客 2个小时教你hexo博客添加评论、打赏、RSS等功能 从搭建hexo个人博客过程中理解学习DNS解析 Hexo Configuration ↩ Next-主题配置 ↩ 参考：Hexo博客添加站内搜索 ↩ Next-常见问题 ↩]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>yilia</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[markdown in hexo-render-markdown-it]]></title>
+    <url>%2F2017%2F07%2F21%2Fmarkdown_in_hexo%2F</url>
+    <content type="text"><![CDATA[The implementation of Markdown in different software are always different here or there. To testify the implementation of hexo, syntax page of Mou is pasted in here for comparison. In summary, only inline image is unavailable. PS: spacing can add indent; and code block &amp; quote wouldn’t indent automatically. so indent.sh is used Could add spacing manually by &amp;nbsp; #半角的不断行的空白格 (it works in header, too) &lt;br/&gt; as line break Mou Overview Mou, the missing Markdown editor for web developers. Syntax Strong and Emphasize strong or strong ( Cmd + B ) emphasize or emphasize ( Cmd + I ) Sometimes I want a lot of text to be bold. Like, seriously, a LOT of text Blockquotes Right angle brackets &gt; are used for block quotes. Links and Email An email example@example.com link. Simple inline link http://chenluois.com, another inline link Smaller, one more inline link with title Resize. A reference style link. Input id, then anywhere in the doc, define the link with corresponding id: Titles ( or called tool tips ) in the links are optional. Images An inline image , title is optional. A reference style image. Inline code and Block code Inline code are surround by backtick key. To create a block code: Indent each line by at least 1 tab, or 4 spaces. var Mou = exactlyTheAppIwant; Ordered Lists Ordered lists are created using “1.” + Space: Ordered list item Ordered list item Ordered list item Unordered Lists Unordered list are created using “*” + Space: Unordered list item Unordered list item Unordered list item Or using “-” + Space: Unordered list item Unordered list item Unordered list item Hard Linebreak End a line with two or more spaces will create a hard linebreak, called &lt;br /&gt; in HTML. ( Control + Return ) Above line ended with 2 spaces. Horizontal Rules Three or more asterisks or dashes: Headers Setext-style: This is H1 This is H2 atx-style: This is H1 This is H2 This is H3 This is H4 This is H5 This is H6 Extra Syntax Footnotes Footnotes work mostly like reference-style links. A footnote is made of two things: a marker in the text that will become a superscript number; a footnote definition that will be placed in a list of footnotes at the end of the document. A footnote looks like this: That’s some text with a footnote.[1] Strikethrough Wrap with 2 tilde characters: Strikethrough Fenced Code Blocks Start with a line containing 3 or more backticks, and ends with the first line with the same number of backticks: 123Fenced code blocks are like Stardard Markdown’s regular codeblocks, except that they’re not indented and instead rely ona start and end fence lines to delimit the code block. Tables A simple table looks like this: First Header Second Header Third Header Content Cell Content Cell Content Cell Content Cell Content Cell Content Cell If you wish, you can add a leading and tailing pipe to each line of the table: First Header Second Header Third Header Content Cell Content Cell Content Cell Content Cell Content Cell Content Cell Specify alignment for each column by adding colons to separator lines: First Header Second Header Third Header Left Center Right Left Center Right And that’s the footnote. ↩]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[人工智能简介]]></title>
+    <url>%2F2017%2F07%2F21%2F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B%2F</url>
+    <content type="text"><![CDATA[备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小） Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN 神经网络简介 技术备忘 单层线性、双层非线性[2] 隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。 层数的影响[2] 参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。 BP的缺点[3] 基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。 面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。 历史节点 1943 W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)[3] 1949 D. Olding Hebb: math model 1957 F.Rosenblatt: Perceptron 1969 Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power 1974 Paul Werbos: BP(Back Propagation) 1980 Hinton: MLP(Multi_Layer Perceptron) 1982 John Hopfield: Hopfield Network(pioneer RNN) 1998 LeCun: CNN(Convoluted Neural Network) 2006 Hinton, &lt;&gt; DBN(Deep Belief Networks) 2012[2] 深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点， Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat” 名词概念 Grid Search（网格搜索：用尝试的方法选择中间层的节点数）[2] generalization[2] 提升模型在测试集上的预测效果的主题叫做泛化 regularization[2] 相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。 capcity[2] 更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。 DBN(深度信念网络) activation function[2] 【示意效果】 the curse of dimensionality（维数灾祸）[4] 在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。 技术成熟的条件 Andrew Ng[5] 一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。 另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。 还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。 同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。 深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。 但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】 reference 历史 a brief history of maching learning(机器学习简史) 【已读】 可读 colah blog book: Deep learning(Ian. Goodfellow) [book: Neural networks and deep learning(Michael Nielsen)] (www.deeplearningbook.org/) Yoshua Bengio为什么能跟Hinton、LeCun相提并论？ 包含学术传承与贡献的讨论 ↩ 历史|从神经元到深度学习 【可再读】 ↩ ↩ ↩ ↩ ↩ ↩ ↩ ↩ 深度学习技术发展历史及应用现状如何？ ↩ ↩ 神经网络的历史？ ↩ 【干货|持更】人工智能产业的相关资料及入门指南 【已读】 ↩]]></content>
+      <categories>
+        <category>人工智能</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+      </tags>
+  </entry>
+</search>

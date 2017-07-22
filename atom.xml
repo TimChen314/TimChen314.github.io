@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TimChen</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-07-22T13:14:59.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Tim Chen</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;font size=6&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
+    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-22T13:14:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
+<ol start="0">
+<li>
+<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
+</li>
+<li>
+<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
+</li>
+<li>
+<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
+<blockquote>
+<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
+</blockquote>
+<p>访问http://mail.timchen314.com:</p>
+<blockquote>
+<p>温馨提醒：该页面暂时无法访问<br>
+尊敬的用户：<br>
+您好！<br>
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
+</blockquote>
+<p>所以，必须要备案后才能使用邮箱服务。<br>
+ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
+<blockquote>
+<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
+</blockquote>
+</li>
+</ol>
+<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
+&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
+尊敬的用户：&lt;br&gt;
+您好！&lt;br&gt;
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
+ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=6&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/hdf5/"/>
+    <id>http://yoursite.com/2017/07/21/hdf5/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-22T13:14:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
+<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
+<h3 id="历史">历史</h3>
+<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
+<h3 id="特性">特性</h3>
+<ul>
+<li>自述性<br>
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
+<li>通用性<br>
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+<li>灵活性<br>
+HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
+<li>扩展性<br>
+HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
+<li>跨平台性</li>
+<li>现代性</li>
+</ul>
+<a id="more"></a>
+<p>支持并行I/O，线程和其他一些现代系统和应用要求。</p>
+<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
+<h3 id="why-hdf">Why HDF?</h3>
+<ul>
+<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
+<li>NASA’s Earth Observing System等等官网介绍</li>
+</ul>
+<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
+<h2 id="文档">文档</h2>
+<ul>
+<li>sphinx<br>
+它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
+<ul>
+<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
+<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
+<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
+&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
+&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
+&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
+&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自述性&lt;br&gt;
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
+&lt;li&gt;通用性&lt;br&gt;
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
+&lt;li&gt;灵活性&lt;br&gt;
+HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。&lt;/li&gt;
+&lt;li&gt;扩展性&lt;br&gt;
+HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。&lt;/li&gt;
+&lt;li&gt;跨平台性&lt;/li&gt;
+&lt;li&gt;现代性&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=6&gt;&lt;b&gt;hexo &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/hexo/"/>
+    <id>http://yoursite.com/2017/07/21/hexo/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-22T13:14:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="memo">memo</h1>
+<ul>
+<li>这个网站可以作为参考<a href="http://www.ezlippi.com" target="_blank" rel="external">www.ezlippi.com</a></li>
+<li>npm i(nstall) hexo-generator-json-content --save<br>
+Fix error to ensure “all article” works normally.</li>
+<li><s>hexo-footnote</s>(已不再维护)
+<blockquote>
+<p><code>npm install hexo-footnotes --save</code><br>
+如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件：</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugins:</div><div class="line">  - hexo-footnotes</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>安装hexo-renderer-marked以支持更多Markdown特性 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm un hexo-renderer-marked --save</div><div class="line">npm i hexo-renderer-markdown-it --save</div><div class="line">npm install markdown-it-emoji --save</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="设置文章置顶-cloudinary在线图片服务">设置文章置顶 &amp; Cloudinary在线图片服务<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<blockquote>
+<p>top: 3 # 数字越大越靠前，默认为0<br>
+除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如Cloudinary提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。<br>
+在Cloudinary申请账号，上传图片(注意把upload选项中的unsigned signature选上)</p>
+</blockquote>
+<p>Cloundinary的免费存储空间还是非常大的<a href="http://cloudinary.com/pricing" target="_blank" rel="external">cloudinary价格</a><br>
+<a href="https://cloudinary.com/console/media_library" target="_blank" rel="external">我的cloudinary</a><br>
+使用方法：</p>
+<ol>
+<li>点击图片</li>
+<li>点击url</li>
+<li>拷贝链接</li>
+</ol>
+<h2 id="hexo个人命令">hexo个人命令</h2>
+<ul>
+<li>
+<p>用<code>hexol</code>/<code>hexod</code>命令一次性完成本地/远程预览<br>
+配置<code>.bash_profile</code></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> HEXO=<span class="string">'/Users/Aether/Documents/hexo_file'</span></div><div class="line"><span class="built_in">export</span> HEXOMD=<span class="string">'/Users/Aether/Documents/hexo_file/source/_posts/'</span></div><div class="line"><span class="built_in">alias</span> hexod=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'</span></div><div class="line"><span class="built_in">alias</span> hexol=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>tackle_md.sh</code>自动调整缩进、设置部分显示、修改文章标题大小(for next theme)</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">sh indent.sh</div><div class="line">sh read_more.sh</div><div class="line"><span class="keyword">for</span> mdfile <span class="keyword">in</span> $(ls *.md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    awk -f ./title_size.awk <span class="variable">$mdfile</span> &gt; /tmp/<span class="variable">$mdfile</span> &amp;&amp; mv /tmp/<span class="variable">$mdfile</span>  <span class="variable">$mdfile</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其中，<code>indent.sh</code>:</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># indent for code block</span></div><div class="line">sed -i <span class="string">'s/^```[a-z]/   &amp;/g'</span> *.md</div><div class="line"><span class="comment"># indent for quote</span></div><div class="line">sed -i <span class="string">'s/^&gt;/   &amp;/g'</span> *.md</div></pre></td></tr></table></figure>
+<p><code>read_more.sh</code>:</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.</span></div><div class="line"><span class="keyword">for</span> md_file <span class="keyword">in</span> $(ls *md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">stat</span>=$(grep <span class="string">"&lt;!-- more --&gt;"</span> <span class="variable">$md_file</span>)</div><div class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$stat</span>"</span> ];<span class="keyword">then</span></div><div class="line">        sed -i <span class="string">'20a &lt;!-- more --&gt;'</span> <span class="variable">$md_file</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p><code>title_size.awk</code>:</p>
+   <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="regexp">/^title:/</span>&amp;&amp;!<span class="regexp">/font/</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=NF;++i) &#123;</div><div class="line">            printf <span class="variable">$i</span><span class="string">" "</span>;</div><div class="line">            <span class="keyword">if</span>(i==<span class="number">1</span>)</div><div class="line">                printf <span class="string">" &lt;font size=6&gt;&lt;b&gt;"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==NF)</div><div class="line">                printf <span class="string">"&lt;/b&gt;&lt;/font&gt;\n"</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        print <span class="variable">$0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="yilia-theme">yilia theme</h2>
+<ul>
+<li>image file path<br>
+<code>hexo_file/themes/hexo-theme-yilia/source/img</code></li>
+<li>theme-yilia<br>
+<a href="https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5" target="_blank" rel="external">yilia</a></li>
+</ul>
+<h2 id="next-theme">next theme</h2>
+<ul>
+<li>
+<p>要想显示标签页，需要手动操作，详见<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</li>
+<li>
+<p>添加搜索<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+<strong>在os X safari上无法正常使用，原因不明；在os X chrome上和win7 chrome上都可以正常使用</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-search --save</div><div class="line">npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>如何设置页面文章的篇数？<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-index</div><div class="line">npm install --save hexo-generator-archive</div><div class="line">npm install --save hexo-generator-tag</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>设置social_icons<br>
+<code>next</code>是通过<a href="http://fontawesome.io/cheatsheet/" target="_blank" rel="external">FontAwesome</a>进行图标设计的，FA支持的图标都在主页上。<br>
+目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为<code>zhihu: bed</code></p>
+</li>
+<li>
+<p>设置文章标题的格式<br>
+直接用html就可以<br>
+<code>title: &lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</code></p>
+</li>
+</ul>
+<h1 id="references">References:</h1>
+<p><a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">HEXO搭建个人博客</a><br>
+<a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">2个小时教你hexo博客添加评论、打赏、RSS等功能</a><br>
+<a href="http://coolcao.com/2016/10/19/%E4%BB%8E%E6%90%AD%E5%BB%BAhexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%90%86%E8%A7%A3%E5%AD%A6%E4%B9%A0DNS%E8%A7%A3%E6%9E%90" target="_blank" rel="external">从搭建hexo个人博客过程中理解学习DNS解析</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://jiaxm.me/2017-07-day/Hexo%20Configuration/#more" target="_blank" rel="external">Hexo Configuration</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">Next-主题配置</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="http://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="external">参考：Hexo博客添加站内搜索</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95" target="_blank" rel="external">Next-常见问题</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;memo&quot;&gt;memo&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;这个网站可以作为参考&lt;a href=&quot;http://www.ezlippi.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;www.ezlippi.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;npm i(nstall) hexo-generator-json-content --save&lt;br&gt;
+Fix error to ensure “all article” works normally.&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;hexo-footnote&lt;/s&gt;(已不再维护)
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;npm install hexo-footnotes --save&lt;/code&gt;&lt;br&gt;
+如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件：&lt;/p&gt;
+&lt;/blockquote&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;plugins:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  - hexo-footnotes&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="yilia" scheme="http://yoursite.com/tags/yilia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=6&gt;&lt;b&gt;markdown in hexo-render-markdown-it &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
+    <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-22T13:14:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
+To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
+<strong>In summary, only inline image is unavailable.</strong><br>
+PS:</p>
+<ul>
+<li>spacing can add indent; and code block &amp; quote wouldn’t indent automatically.<br>
+so <code>indent.sh</code> is used</li>
+<li>Could add spacing manually by <code>&amp;nbsp; #半角的不断行的空白格</code> (it works in header, too)</li>
+<li><code>&lt;br/&gt;</code> as line break</li>
+</ul>
+<h1 id="mou">Mou</h1>
+<p><img src="http://25.io/mou/Mou_128.png" alt="Mou icon"></p>
+<h2 id="overview">Overview</h2>
+<a id="more"></a>
+<p><strong>Mou</strong>, the missing Markdown editor for <em>web developers</em>.</p>
+<h3 id="syntax">Syntax</h3>
+<h4 id="strong-and-emphasize">Strong and Emphasize</h4>
+<p><strong>strong</strong> or <strong>strong</strong> ( Cmd + B )</p>
+<p><em>emphasize</em> or <em>emphasize</em> ( Cmd + I )</p>
+<p><strong>Sometimes I want a lot of text to be bold.<br>
+Like, seriously, a <em>LOT</em> of text</strong></p>
+<h4 id="blockquotes">Blockquotes</h4>
+<blockquote>
+<p>Right angle brackets &gt; are used for block quotes.</p>
+</blockquote>
+<h4 id="links-and-email">Links and Email</h4>
+<p>An email <a href="mailto:example@example.com" target="_blank" rel="external">example@example.com</a> link.</p>
+<p>Simple inline link <a href="http://chenluois.com" target="_blank" rel="external">http://chenluois.com</a>, another inline link <a href="http://25.io/smaller/" target="_blank" rel="external">Smaller</a>, one more inline link with title <a href="http://resizesafari.com" title="a Safari extension" target="_blank" rel="external">Resize</a>.</p>
+<p>A <a href="http://25.io/mou/" title="Markdown editor on Mac OS X" target="_blank" rel="external">reference style</a> link. Input id, then anywhere in the doc, define the link with corresponding id:</p>
+<p>Titles ( or called tool tips ) in the links are optional.</p>
+<h4 id="images">Images</h4>
+<p>An inline image <img src="http://25.io/smaller/favicon.ico" alt="Smaller icon" title="Title here">, title is optional.</p>
+<p>A <img src="http://resizesafari.com/favicon.ico" alt="Resize icon" title="Title"> reference style image.</p>
+<h4 id="inline-code-and-block-code">Inline code and Block code</h4>
+<p>Inline code are surround by <code>backtick</code> key. To create a block code:</p>
+<pre><code>Indent each line by at least 1 tab, or 4 spaces.
+var Mou = exactlyTheAppIwant; 
+</code></pre>
+<h4 id="ordered-lists">Ordered Lists</h4>
+<p>Ordered lists are created using “1.” + Space:</p>
+<ol>
+<li>Ordered list item</li>
+<li>Ordered list item</li>
+<li>Ordered list item</li>
+</ol>
+<h4 id="unordered-lists">Unordered Lists</h4>
+<p>Unordered list are created using “*” + Space:</p>
+<ul>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+</ul>
+<p>Or using “-” + Space:</p>
+<ul>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+</ul>
+<h4 id="hard-linebreak">Hard Linebreak</h4>
+<p>End a line with two or more spaces will create a hard linebreak, called <code>&lt;br /&gt;</code> in HTML. ( Control + Return )<br>
+Above line ended with 2 spaces.</p>
+<h4 id="horizontal-rules">Horizontal Rules</h4>
+<p>Three or more asterisks or dashes:</p>
+<hr>
+<hr>
+<hr>
+<h4 id="headers">Headers</h4>
+<p>Setext-style:</p>
+<h1 id="this-is-h1">This is H1</h1>
+<h2 id="this-is-h2">This is H2</h2>
+<p>atx-style:</p>
+<h1 id="this-is-h1-v2">This is H1</h1>
+<h2 id="this-is-h2-v2">This is H2</h2>
+<h3 id="this-is-h3">This is H3</h3>
+<h4 id="this-is-h4">This is H4</h4>
+<h5 id="this-is-h5">This is H5</h5>
+<h6 id="this-is-h6">This is H6</h6>
+<h3 id="extra-syntax">Extra Syntax</h3>
+<h4 id="footnotes">Footnotes</h4>
+<p>Footnotes work mostly like reference-style links. A footnote is made of two things: a marker in the text that will become a superscript number; a footnote definition that will be placed in a list of footnotes at the end of the document. A footnote looks like this:</p>
+<p>That’s some text with a footnote.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h4 id="strikethrough">Strikethrough</h4>
+<p>Wrap with 2 tilde characters:</p>
+<p><s>Strikethrough</s></p>
+<h4 id="fenced-code-blocks">Fenced Code Blocks</h4>
+<p>Start with a line containing 3 or more backticks, and ends with the first line with the same number of backticks:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Fenced code blocks are like Stardard Markdown’s regular code</div><div class="line">blocks, except that they’re not indented and instead rely on</div><div class="line">a start and end fence lines to delimit the code block.</div></pre></td></tr></table></figure>
+<h4 id="tables">Tables</h4>
+<p>A simple table looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+<th>Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p>If you wish, you can add a leading and tailing pipe to each line of the table:</p>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+<th>Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p>Specify alignment for each column by adding colons to separator lines:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">First Header</th>
+<th style="text-align:center">Second Header</th>
+<th style="text-align:right">Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Left</td>
+<td style="text-align:center">Center</td>
+<td style="text-align:right">Right</td>
+</tr>
+<tr>
+<td style="text-align:left">Left</td>
+<td style="text-align:center">Center</td>
+<td style="text-align:right">Right</td>
+</tr>
+</tbody>
+</table>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>And that’s the footnote. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The implementation of Markdown in different software are always different here or there.&lt;br&gt;
+To testify the implementation of hexo, syntax page of &lt;strong&gt;Mou&lt;/strong&gt; is pasted in here for comparison.&lt;br&gt;
+&lt;strong&gt;In summary, only inline image is unavailable.&lt;/strong&gt;&lt;br&gt;
+PS:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;spacing can add indent; and code block &amp;amp; quote wouldn’t indent automatically.&lt;br&gt;
+so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
+&lt;li&gt;Could add spacing manually by &lt;code&gt;&amp;amp;nbsp; #半角的不断行的空白格&lt;/code&gt; (it works in header, too)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;br/&amp;gt;&lt;/code&gt; as line break&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;mou&quot;&gt;Mou&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;http://25.io/mou/Mou_128.png&quot; alt=&quot;Mou icon&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2017/07/21/人工智能简介/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-22T13:14:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
+<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
+<ul>
+<li>Hinton 多伦多大学<br>
+DBN</li>
+<li>LeCun<br>
+CNN</li>
+<li>Bengio<br>
+attention、GAN</li>
+</ul>
+<h2 id="神经网络简介">神经网络简介</h2>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"><br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
+<a id="more"></a>
+<h2 id="技术备忘">技术备忘</h2>
+<ul>
+<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
+<blockquote>
+<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
+</blockquote>
+</li>
+<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
+<blockquote>
+<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
+</blockquote>
+</li>
+<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
+<blockquote>
+<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
+面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="历史节点">历史节点</h2>
+<ul>
+<li>1943<br>
+W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
+<li>1949<br>
+D. Olding Hebb: math model</li>
+<li>1957<br>
+F.Rosenblatt: Perceptron</li>
+<li>1969<br>
+Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
+<li>1974<br>
+Paul Werbos: BP(Back Propagation)</li>
+<li>1980<br>
+Hinton: MLP(Multi_Layer Perceptron)</li>
+<li>1982<br>
+John Hopfield: Hopfield Network(pioneer RNN)</li>
+<li>1998<br>
+LeCun: CNN(Convoluted Neural Network)</li>
+<li>2006<br>
+Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
+<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
+<ul>
+<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
+<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
+</ul>
+</li>
+</ul>
+<h2 id="名词概念">名词概念</h2>
+<ul>
+<li>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup></li>
+<li>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
+提升模型在测试集上的预测效果的主题叫做泛化</li>
+<li>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
+相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</li>
+<li>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
+更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</li>
+<li>DBN(深度信念网络)</li>
+<li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
+【示意效果】<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
+<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<blockquote>
+<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="技术成熟的条件">技术成熟的条件</h1>
+<h2 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></h2>
+<blockquote>
+<ul>
+<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
+</ul>
+</blockquote>
+<ul>
+<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
+<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
+<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
+<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
+<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="历史">历史</h2>
+<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
+<h2 id="可读">可读</h2>
+<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
+<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
+[book: Neural networks and deep learning(Michael Nielsen)]<br>
+(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;备忘&quot;&gt;备忘&lt;/h1&gt;
+&lt;h2 id=&quot;三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小&quot;&gt;三巨头介绍&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Hinton 多伦多大学&lt;br&gt;
+DBN&lt;/li&gt;
+&lt;li&gt;LeCun&lt;br&gt;
+CNN&lt;/li&gt;
+&lt;li&gt;Bengio&lt;br&gt;
+attention、GAN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;神经网络简介&quot;&gt;神经网络简介&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg&quot; alt=&quot;极简分类&quot;&gt;&lt;br&gt;
+&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg&quot; alt=&quot;极简史&quot;&gt;&lt;br&gt;
+&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg&quot; alt=&quot;极简史2&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="人工智能" scheme="http://yoursite.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+      <category term="人工智能" scheme="http://yoursite.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+  </entry>
+  
+</feed>
