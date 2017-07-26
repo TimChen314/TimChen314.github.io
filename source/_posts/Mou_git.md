@@ -1,7 +1,7 @@
 ---
 title:  <font size=7><b>git笔记 </b></font>
 tags: [git]   
-top: 10
+top: 9
 categories: git   
 ---
 
