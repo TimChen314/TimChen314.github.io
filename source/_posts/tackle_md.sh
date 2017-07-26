@@ -1,6 +1,6 @@
 #!/bin/sh
 
-file_list="人工智能简介.md hdf5.md"
+file_list="人工智能简介.md hdf5.md git.md"
 cd /Users/Aether/Documents/md/ && cp $file_list $HEXOMD && cd $HEXOMD
 
 sh indent.sh
