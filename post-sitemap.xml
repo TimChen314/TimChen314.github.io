@@ -8,15 +8,23 @@
 
     <url>
         <loc>http://yoursite.com/2017/07/21/ali_mail_set/</loc>
-        <lastmod>2017-07-22T13:14:59.000Z</lastmod>
+        <lastmod>2017-07-26T07:31:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://yoursite.com/2017/07/21/hdf5/</loc>
-        <lastmod>2017-07-22T13:14:59.000Z</lastmod>
+        <loc>http://yoursite.com/2017/07/26/git/</loc>
+        <lastmod>2017-07-26T07:31:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2017/07/26/hdf5/</loc>
+        <lastmod>2017-07-26T07:31:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +32,7 @@
 
     <url>
         <loc>http://yoursite.com/2017/07/21/hexo/</loc>
-        <lastmod>2017-07-22T13:14:59.000Z</lastmod>
+        <lastmod>2017-07-26T07:31:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -32,15 +40,15 @@
 
     <url>
         <loc>http://yoursite.com/2017/07/21/markdown_in_hexo/</loc>
-        <lastmod>2017-07-22T13:14:59.000Z</lastmod>
+        <lastmod>2017-07-26T07:31:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://yoursite.com/2017/07/21/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/</loc>
-        <lastmod>2017-07-22T13:14:59.000Z</lastmod>
+        <loc>http://yoursite.com/2017/07/26/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/</loc>
+        <lastmod>2017-07-26T07:31:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
