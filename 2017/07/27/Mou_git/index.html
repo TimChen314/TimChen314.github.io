@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="技术杂烩," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -95,17 +95,19 @@
 
 
 
-<meta name="description" content="HDF5 可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。 历史 HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5">
-<meta name="keywords" content="技术杂烩">
+<meta name="description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;font size=6&gt;&lt;b&gt;hdf5简介 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta property="og:url" content="http://yoursite.com/2017/07/26/hdf5/index.html">
+<meta property="og:title" content="&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
+<meta property="og:url" content="http://yoursite.com/2017/07/27/Mou_git/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="HDF5 可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。 历史 HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5">
-<meta property="og:updated_time" content="2017-07-26T07:31:27.000Z">
+<meta property="og:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
+<meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png">
+<meta property="og:updated_time" content="2017-07-26T19:07:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;font size=6&gt;&lt;b&gt;hdf5简介 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta name="twitter:description" content="HDF5 可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。 历史 HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5">
+<meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
+<meta name="twitter:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
+<meta name="twitter:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/26/hdf5/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/27/Mou_git/"/>
 
 
 
 
 
-  <title><font size=6><b>hdf5简介 </b></font> | TimChen</title>
+  <title><font size=7><b>git笔记 </b></font> | TimChen</title>
   
 
 
@@ -312,7 +314,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/26/hdf5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/Mou_git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tim Chen">
@@ -329,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"><font size=6><b>hdf5简介 </b></font></h1>
+          <h1 class="post-title" itemprop="name headline"><font size=7><b>git笔记 </b></font></h1>
         
 
         <div class="post-meta">
@@ -341,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T15:31:27+08:00">
-                2017-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T03:07:12+08:00">
+                2017-07-27
               </time>
             
 
@@ -364,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术杂烩/" itemprop="url" rel="index">
-                    <span itemprop="name">技术杂烩</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -398,45 +400,233 @@
       
 
       
-        <h2 id="hdf5">HDF5</h2>
-<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
-<h3 id="历史">历史</h3>
-<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
-<h3 id="特性">特性</h3>
+        <h1 id="git">git</h1>
+<h2 id="开始">开始</h2>
+<p>非常好的入门:<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png" alt="非常好的入门0"><br>
+非常好的入门1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
+<blockquote>
 <ul>
-<li>自述性<br>
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
-<li>通用性<br>
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+<li>工作区：就是你在电脑里能看到的目录。</li>
+<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
 </ul>
+</blockquote>
 <a id="more"></a>
+<blockquote>
 <ul>
-<li>灵活性<br>
-HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
-<li>扩展性<br>
-HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
-<li>跨平台性</li>
-<li>现代性<br>
-支持并行I/O，线程和其他一些现代系统和应用要求。</li>
+<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
 </ul>
-<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
-<h3 id="why-hdf">Why HDF?</h3>
+</blockquote>
+<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
 <ul>
-<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
-<li>NASA’s Earth Observing System等等官网介绍</li>
+<li>
+<p>git init</p>
+</li>
+<li>
+<p>config</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>git difftool<br>
+没有默认的difftool，如果首次输入命令git difftool，CentOS会自动推荐kompare。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
-<h2 id="文档">文档</h2>
+<p>kompare的效果非常好。</p>
+<h2 id="操作">操作</h2>
 <ul>
-<li>sphinx<br>
-它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
+<li>
+<p>add filename</p>
+</li>
+<li>
+<p>commit</p>
 <ul>
-<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
-<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
-<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
+<li><code>git commit -m &quot;your message&quot;</code></li>
+<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+</ul>
+<blockquote>
+<p><code>git commit --amend</code><br>
+<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
+</blockquote>
+<blockquote>
+<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
+…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
+</blockquote>
+<blockquote>
+<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
+</blockquote>
+</li>
+<li>
+<p>reset<br>
+<code>git reset --hard HEAD^</code><br>
+<code>git reset --hard 3628164</code></p>
+</li>
+<li>
+<p>git reflog 查看历史命令</p>
+</li>
+<li>
+<p>clone<br>
+git clone /path/to/repository<br>
+如果是远端服务器上的仓库，你的命令会是这个样子：<br>
+<code>git clone username@host:/path/to/repository</code><br>
+<code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code></p>
+</li>
+<li>
+<p>git push origin master:master<br>
+origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch</span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>git checkout hexo myfile</code><br>
+从hexo分支得到myfile</p>
+</li>
+<li>
+<p>stash<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<blockquote>
+<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
+</blockquote>
+<p><code>git stash</code> 临时存储当前状态<br>
+<code>git stash list</code><br>
+<code>git stash apply (--index)</code> 找回临时存储的状态<br>
+<code>git stash drop</code> 删除stash</p>
+</li>
+</ul>
+<h2 id="丢弃">丢弃</h2>
+<ul>
+<li>
+<p>git rm (then git commit)</p>
+</li>
+<li>
+<p><code>git checkout -- file</code><br>
+git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+<ul>
+<li>
+<p>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：<br>
+$ <code>git checkout -- test.txt</code></p>
+</li>
+<li>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。<br>
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
 </ul>
 </li>
 </ul>
+<h2 id="显示状态">显示状态</h2>
+<ul>
+<li>
+<p>status</p>
+</li>
+<li>
+<p>log<br>
+<code>git log --oneline --decorate</code> # 加上–decorate 时，我们可以看到我们的标签</p>
+</li>
+<li>
+<p>remote<br>
+看当前配置有哪些远程仓库，可以用命令<br>
+<code>git remote</code><br>
+执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
+</li>
+<li>
+<p><code>git ls-files #ls files in present branch</code><br>
+<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
+</li>
+<li>
+<p>diff</p>
+<ul>
+<li><code>git diff #对比工作区和stage文件的差异</code><br>
+<code>git diff --cached</code> 对比stage和branch之间的差异</li>
+<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="branch">branch</h2>
+<ul>
+<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
+git checkout master</li>
+<li>git merge dev<br>
+合并指定分支到当前分支</li>
+<li>git branch -d dev #删除</li>
+<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
+<code>git branch</code> 查看本地分支</li>
+<li><code>git checkout mybfranch</code> # shift to another branch</li>
+</ul>
+<h2 id="rebase">rebase</h2>
+<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
+<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
+<ul>
+<li>git rebase --skip</li>
+<li>git rebase --continue #use this when you solved conflicts.</li>
+<li>git rebase --abort #放弃当前rebase</li>
+</ul>
+<h2 id="tag">tag</h2>
+<p>git push origin --tags</p>
+<h2 id="其他概念">其他概念</h2>
+<ul>
+<li>
+<p>origin<br>
+顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
+</li>
+<li>
+<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
+Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>local_branch_name:remote_branch_name</code><br>
+远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
+<blockquote>
+<p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
+<ul>
+<li>upstream generally refers to the original repo that you have forked<br>
+(see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="git原理">git原理</h2>
+<ul>
+<li>branch &amp; hash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<blockquote>
+<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="错误">错误</h2>
+<ul>
+<li>prompt to input passphrase time and time again:<br>
+<a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
+Note that you can use ssh-key only if you use ssh to build remote connections.<br>
+<code>git remote -v</code> should looks like:<br>
+<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
+but not:<br>
+<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="待读">待读</h2>
+<p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
+<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 
       
     </div>
@@ -481,7 +671,7 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/07/26/hdf5/" title="<font size=6><b>hdf5简介 </b></font>">http://yoursite.com/2017/07/26/hdf5/</a>
+      <a href="http://yoursite.com/2017/07/27/Mou_git/" title="<font size=7><b>git笔记 </b></font>">http://yoursite.com/2017/07/27/Mou_git/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -497,7 +687,7 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
       
         <div class="post-tags">
           
-            <a href="/tags/技术杂烩/" rel="tag"># 技术杂烩</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -510,8 +700,8 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/26/人工智能简介/" rel="next" title="<font size=6><b>人工智能简介</b></font>">
-                <i class="fa fa-chevron-left"></i> <font size=6><b>人工智能简介</b></font>
+              <a href="/2017/07/27/Mou_hdf5/" rel="next" title="<font size=7><b>hdf5简介 </b></font>">
+                <i class="fa fa-chevron-left"></i> <font size=7><b>hdf5简介 </b></font>
               </a>
             
           </div>
@@ -519,10 +709,6 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/26/git/" rel="prev" title="<font size=6><b>git笔记 </b></font>">
-                <font size=6><b>git笔记 </b></font> <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -697,7 +883,7 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hdf5"><span class="nav-text">HDF5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#why-hdf"><span class="nav-text">Why HDF?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#caffe等机器学习-深度学习框架原生支持"><span class="nav-text">Caffe等机器学习、深度学习框架原生支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档"><span class="nav-text">文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#丢弃"><span class="nav-text">丢弃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示状态"><span class="nav-text">显示状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#branch"><span class="nav-text">branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase"><span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-text">tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他概念"><span class="nav-text">其他概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git原理"><span class="nav-text">git原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-text">错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#待读"><span class="nav-text">待读</span></a></li></ol></li></ol></div>
             
 
           </div>

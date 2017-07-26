@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-26T07:31:27.000Z</updated>
+  <updated>2017-07-26T19:07:12.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>&lt;font size=6&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/git/"/>
-    <id>http://yoursite.com/2017/07/26/git/</id>
-    <published>2017-07-26T07:31:27.000Z</published>
-    <updated>2017-07-26T07:31:27.000Z</updated>
+    <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/27/Mou_git/"/>
+    <id>http://yoursite.com/2017/07/27/Mou_git/</id>
+    <published>2017-07-26T19:07:12.000Z</published>
+    <updated>2017-07-26T19:07:12.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -30,38 +30,58 @@
 <blockquote>
 <ul>
 <li>工作区：就是你在电脑里能看到的目录。</li>
-</ul>
-</blockquote>
-<ul>
 <li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
 </ul>
+</blockquote>
 <a id="more"></a>
+<blockquote>
 <ul>
-<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。<br>
-<a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></li>
+<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
 </ul>
+</blockquote>
+<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
 <ul>
-<li>git init</li>
-<li>git config --global <a href="http://user.name" target="_blank" rel="external">user.name</a> “Tim Chen”</li>
-<li>git config --global user.email <a href="mailto:%22chentao314@163.com" target="_blank" rel="external">&quot;chentao314@163.com</a>&quot;</li>
-<li>git config --global core.editor &quot;vim&quot;<br>
-set vim as editor</li>
-<li>git difftool<br>
-没有默认的difftool，如果首次输入命令git difftool，CentOS会自动推荐kompare。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
+<li>
+<p>git init</p>
+</li>
+<li>
+<p>config</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>git difftool<br>
+没有默认的difftool，如果首次输入命令git difftool，CentOS会自动推荐kompare。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>kompare的效果非常好。</p>
 <h2 id="操作">操作</h2>
 <ul>
 <li>
-<p>git add filename</p>
+<p>add filename</p>
 </li>
 <li>
-<p>git commit -m “”</p>
+<p>commit</p>
+<ul>
+<li><code>git commit -m &quot;your message&quot;</code></li>
+<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+</ul>
+<blockquote>
+<p><code>git commit --amend</code><br>
+<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
+</blockquote>
+<blockquote>
+<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
+…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
+</blockquote>
+<blockquote>
+<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
+</blockquote>
 </li>
 <li>
-<p>git reset --hard HEAD^<br>
-git reset --hard 3628164</p>
+<p>reset<br>
+<code>git reset --hard HEAD^</code><br>
+<code>git reset --hard 3628164</code></p>
 </li>
 <li>
 <p>git reflog 查看历史命令</p>
@@ -81,6 +101,16 @@ origin is the remote server; the branch name before the colon is local branch na
 <li>
 <p><code>git checkout hexo myfile</code><br>
 从hexo分支得到myfile</p>
+</li>
+<li>
+<p>stash<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<blockquote>
+<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
+</blockquote>
+<p><code>git stash</code> 临时存储当前状态<br>
+<code>git stash list</code><br>
+<code>git stash apply (--index)</code> 找回临时存储的状态<br>
+<code>git stash drop</code> 删除stash</p>
 </li>
 </ul>
 <h2 id="丢弃">丢弃</h2>
@@ -107,11 +137,62 @@ $ <code>git checkout -- test.txt</code></p>
 <h2 id="显示状态">显示状态</h2>
 <ul>
 <li>
-<p>git status</p>
+<p>status</p>
 </li>
 <li>
-<p>git log</p>
- <figure class="highlight plain"><figcaption><span>log --oneline --decorate``` # 加上--decorate 时，我们可以看到我们的标签</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">+ remote  </div><div class="line">看当前配置有哪些远程仓库，可以用命令   </div><div class="line">`git remote`   </div><div class="line">执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</div><div class="line"></div><div class="line">+ `git ls-files #ls files in present branch`</div><div class="line">`git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件`</div><div class="line"></div><div class="line">+ `git diff #对比工作区和stage文件的差异 `</div><div class="line">`git diff --cached ` 对比stage和branch之间的差异</div><div class="line"></div><div class="line"></div><div class="line">## branch</div><div class="line">+ `git checkout -b dev` #-b参数表示创建并切换   </div><div class="line">git checkout master</div><div class="line">+ git merge dev</div><div class="line">合并指定分支到当前分支</div><div class="line">+ git branch -d dev #删除</div><div class="line">+ `git branch -r/-a` # 查看远程/所有分支；</div><div class="line">`git branch` 查看本地分支</div><div class="line">+ `git checkout mybfranch` # shift to another branch</div><div class="line"></div><div class="line">## rebase</div><div class="line">[git rebase 用法](http://blog.csdn.net/wangjia55/article/details/8776409)   </div><div class="line">[stackoverflow](https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort)</div><div class="line">+ git rebase --skip   </div><div class="line">+ git rebase --continue #use this when you solved conflicts.</div><div class="line">+ git rebase --abort #放弃当前rebase</div><div class="line"></div><div class="line">## tag</div><div class="line">git push origin --tags</div><div class="line"></div><div class="line">## 其他概念</div><div class="line">+ origin   </div><div class="line">顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</div><div class="line">+ (远程仓库名)/(分支名) 这样的形式表示远程分支</div><div class="line">Note that when `git branch -a` is used, there is &apos;remote&apos; in front of branch name, e.g.:</div><div class="line">   ```bash</div><div class="line">$ git branch -r</div><div class="line">  orgin/master</div><div class="line">$ git branch -a</div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
+<p>log<br>
+<code>git log --oneline --decorate</code> # 加上–decorate 时，我们可以看到我们的标签</p>
+</li>
+<li>
+<p>remote<br>
+看当前配置有哪些远程仓库，可以用命令<br>
+<code>git remote</code><br>
+执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
+</li>
+<li>
+<p><code>git ls-files #ls files in present branch</code><br>
+<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
+</li>
+<li>
+<p>diff</p>
+<ul>
+<li><code>git diff #对比工作区和stage文件的差异</code><br>
+<code>git diff --cached</code> 对比stage和branch之间的差异</li>
+<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="branch">branch</h2>
+<ul>
+<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
+git checkout master</li>
+<li>git merge dev<br>
+合并指定分支到当前分支</li>
+<li>git branch -d dev #删除</li>
+<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
+<code>git branch</code> 查看本地分支</li>
+<li><code>git checkout mybfranch</code> # shift to another branch</li>
+</ul>
+<h2 id="rebase">rebase</h2>
+<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
+<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
+<ul>
+<li>git rebase --skip</li>
+<li>git rebase --continue #use this when you solved conflicts.</li>
+<li>git rebase --abort #放弃当前rebase</li>
+</ul>
+<h2 id="tag">tag</h2>
+<p>git push origin --tags</p>
+<h2 id="其他概念">其他概念</h2>
+<ul>
+<li>
+<p>origin<br>
+顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
+</li>
+<li>
+<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
+Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
 </li>
 <li>
 <p><code>local_branch_name:remote_branch_name</code><br>
@@ -133,13 +214,23 @@ $ <code>git checkout -- test.txt</code></p>
 </blockquote>
 </li>
 </ul>
+<h2 id="git原理">git原理</h2>
+<ul>
+<li>branch &amp; hash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<blockquote>
+<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="错误">错误</h2>
 <ul>
 <li>prompt to input passphrase time and time again:<br>
 <a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
 Note that you can use ssh-key only if you use ssh to build remote connections.<br>
-<code>git remote -v</code> should looks like: <figure class="highlight plain"><figcaption><span>git@github.com:TimChen314/MDTackle.git (fetch)```   </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">but not:   </div><div class="line">   ```origin	https://github.com/TimChen314/MDTackle.git</div></pre></td></tr></table></figure>
-</li>
+<code>git remote -v</code> should looks like:<br>
+<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
+but not:<br>
+<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
 </ul>
 <h1 id="reference">reference</h1>
 <h2 id="待读">待读</h2>
@@ -149,6 +240,12 @@ Note that you can use ssh-key only if you use ssh to build remote connections.<b
 <section class="footnotes">
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -164,11 +261,9 @@ Note that you can use ssh-key only if you use ssh to build remote connections.<b
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;工作区：就是你在电脑里能看到的目录。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
 &lt;li&gt;暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -180,11 +275,11 @@ Note that you can use ssh-key only if you use ssh to build remote connections.<b
   </entry>
   
   <entry>
-    <title>&lt;font size=6&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/hdf5/"/>
-    <id>http://yoursite.com/2017/07/26/hdf5/</id>
-    <published>2017-07-26T07:31:27.000Z</published>
-    <updated>2017-07-26T07:31:27.000Z</updated>
+    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/27/Mou_hdf5/"/>
+    <id>http://yoursite.com/2017/07/27/Mou_hdf5/</id>
+    <published>2017-07-26T19:07:12.000Z</published>
+    <updated>2017-07-26T19:07:12.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -252,10 +347,10 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   
   <entry>
     <title>&lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2017/07/26/人工智能简介/</id>
-    <published>2017-07-26T07:31:27.000Z</published>
-    <updated>2017-07-26T07:31:27.000Z</updated>
+    <link href="http://yoursite.com/2017/07/27/Mou_%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2017/07/27/Mou_人工智能简介/</id>
+    <published>2017-07-26T19:07:12.000Z</published>
+    <updated>2017-07-26T19:07:12.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -405,7 +500,7 @@ attention、GAN&lt;/li&gt;
     <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
     <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-26T07:31:27.000Z</updated>
+    <updated>2017-07-26T19:07:12.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="正文">正文</h1>
 <ol start="0">
@@ -501,7 +596,7 @@ ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&q
     <link href="http://yoursite.com/2017/07/21/hexo/"/>
     <id>http://yoursite.com/2017/07/21/hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-26T07:31:27.000Z</updated>
+    <updated>2017-07-26T19:07:12.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="memo">memo</h1>
 <ul>
@@ -539,20 +634,20 @@ Fix error to ensure “all article” works normally.</li>
 <ul>
 <li>
 <p>用<code>hexol</code>/<code>hexod</code>命令一次性完成本地/远程预览<br>
-配置<code>.bash_profile</code></p>
+配置<code>.bash_profile</code>:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> HEXO=<span class="string">'/Users/Aether/Documents/hexo_file'</span></div><div class="line"><span class="built_in">export</span> HEXOMD=<span class="string">'/Users/Aether/Documents/hexo_file/source/_posts/'</span></div><div class="line"><span class="built_in">alias</span> hexod=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'</span></div><div class="line"><span class="built_in">alias</span> hexol=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'</span></div></pre></td></tr></table></figure>
 </li>
 <li>
 <p><code>tackle_md.sh</code>自动调整缩进、设置部分显示、修改文章标题大小(for next theme)</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">sh indent.sh</div><div class="line">sh read_more.sh</div><div class="line"><span class="keyword">for</span> mdfile <span class="keyword">in</span> $(ls *.md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    awk -f ./title_size.awk <span class="variable">$mdfile</span> &gt; /tmp/<span class="variable">$mdfile</span> &amp;&amp; mv /tmp/<span class="variable">$mdfile</span>  <span class="variable">$mdfile</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>其中，<code>indent.sh</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># indent for code block</span></div><div class="line">sed -i <span class="string">'s/^```[a-z]/   &amp;/g'</span> *.md</div><div class="line"><span class="comment"># indent for quote</span></div><div class="line">sed -i <span class="string">'s/^&gt;/   &amp;/g'</span> *.md</div></pre></td></tr></table></figure>
+<p><code>read_more.sh</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.</span></div><div class="line"><span class="keyword">for</span> md_file <span class="keyword">in</span> $(ls *md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">stat</span>=$(grep <span class="string">"&lt;!-- more --&gt;"</span> <span class="variable">$md_file</span>)</div><div class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$stat</span>"</span> ];<span class="keyword">then</span></div><div class="line">        sed -i <span class="string">'20a &lt;!-- more --&gt;'</span> <span class="variable">$md_file</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p><code>title_size.awk</code>:</p>
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="regexp">/^title:/</span>&amp;&amp;!<span class="regexp">/font/</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=NF;++i) &#123;</div><div class="line">            printf <span class="variable">$i</span><span class="string">" "</span>;</div><div class="line">            <span class="keyword">if</span>(i==<span class="number">1</span>)</div><div class="line">                printf <span class="string">" &lt;font size=6&gt;&lt;b&gt;"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==NF)</div><div class="line">                printf <span class="string">"&lt;/b&gt;&lt;/font&gt;\n"</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        print <span class="variable">$0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>其中，<code>indent.sh</code>:</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># indent for code block</span></div><div class="line">sed -i <span class="string">'s/^```[a-z]/   &amp;/g'</span> *.md</div><div class="line"><span class="comment"># indent for quote</span></div><div class="line">sed -i <span class="string">'s/^&gt;/   &amp;/g'</span> *.md</div></pre></td></tr></table></figure>
-<p><code>read_more.sh</code>:</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.</span></div><div class="line"><span class="keyword">for</span> md_file <span class="keyword">in</span> $(ls *md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">stat</span>=$(grep <span class="string">"&lt;!-- more --&gt;"</span> <span class="variable">$md_file</span>)</div><div class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$stat</span>"</span> ];<span class="keyword">then</span></div><div class="line">        sed -i <span class="string">'20a &lt;!-- more --&gt;'</span> <span class="variable">$md_file</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<p><code>title_size.awk</code>:</p>
-   <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="regexp">/^title:/</span>&amp;&amp;!<span class="regexp">/font/</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=NF;++i) &#123;</div><div class="line">            printf <span class="variable">$i</span><span class="string">" "</span>;</div><div class="line">            <span class="keyword">if</span>(i==<span class="number">1</span>)</div><div class="line">                printf <span class="string">" &lt;font size=6&gt;&lt;b&gt;"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==NF)</div><div class="line">                printf <span class="string">"&lt;/b&gt;&lt;/font&gt;\n"</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        print <span class="variable">$0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="yilia-theme">yilia theme</h2>
 <ul>
 <li>image file path<br>
@@ -636,7 +731,7 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-26T07:31:27.000Z</updated>
+    <updated>2017-07-26T19:07:12.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
