@@ -1,7 +1,7 @@
 ---
-title:  <font size=6><b>git笔记 </b></font>
+title:  <font size=7><b>git笔记 </b></font>
 tags: [git]   
-top: 10
+top: 9
 categories: git   
 ---
 
@@ -12,15 +12,19 @@ categories: git
 ![非常好的入门0](http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png)   
 非常好的入门1[^1]:
    >- 工作区：就是你在电脑里能看到的目录。   
-- 暂存区：英文叫stage, 或index。一般存放在 ".git目录下" 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。   
+   >- 暂存区：英文叫stage, 或index。一般存放在 ".git目录下" 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。   
 <!-- more -->
-- 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。   
+   >- 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。   
+
 [非常好的入门2](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
+
 + git init
-+ git config --global user.name "Tim Chen"
-+ git config --global user.email "chentao314@163.com"
-+ git config --global core.editor "vim"
-set vim as editor
++ config    
+   ```bash
+git config --global user.name "your name"
+git config --global user.email "your email"
+git config --global core.editor "vim #set vim as editor
+```
 + git difftool 
 没有默认的difftool，如果首次输入命令git difftool，CentOS会自动推荐kompare。
    ```language
@@ -30,10 +34,10 @@ Launch 'kompare' [Y/n]: y
 kompare的效果非常好。
 
 ## 操作
-+ git add filename
++ add filename
 + commit 
    - `git commit -m "your message"`   
-   - Amending the most recent commit message
+   - Amending the most recent commit message[^3]
    >`git commit --amend`
 **will open your editor**, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:
    >
@@ -42,8 +46,9 @@ kompare的效果非常好。
    >
    >Make sure you don't have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)
 
-+ git reset --hard HEAD^   
-git reset --hard 3628164
++ reset    
+`git reset --hard HEAD^   `   
+`git reset --hard 3628164`   
 + git reflog 查看历史命令
 + clone   
 git clone /path/to/repository    
@@ -72,9 +77,9 @@ $ `git checkout -- test.txt`
 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
 
 ## 显示状态
-+ git status 
-+ git log
-   ```git log --oneline --decorate``` # 加上--decorate 时，我们可以看到我们的标签
++ status 
++ log
+   `git log --oneline --decorate` # 加上--decorate 时，我们可以看到我们的标签   
 + remote  
 看当前配置有哪些远程仓库，可以用命令   
 `git remote`   
@@ -83,9 +88,10 @@ $ `git checkout -- test.txt`
 + `git ls-files #ls files in present branch`
 `git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件`
 
-+ `git diff #对比工作区和stage文件的差异 `
++ diff
+   - `git diff #对比工作区和stage文件的差异 `   
 `git diff --cached ` 对比stage和branch之间的差异
-+ `git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch`
+   - `git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch`
 
 
 ## branch
@@ -138,13 +144,14 @@ $ git branch -a
 [Git enter long passphrase for every push](https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push)   
 Note that you can use ssh-key only if you use ssh to build remote connections.   
 `git remote -v` should looks like:   
-   ```origin	git@github.com:TimChen314/MDTackle.git (fetch)```   
+   `origin	git@github.com:TimChen314/MDTackle.git (fetch)`   
 but not:   
-   ```origin	https://github.com/TimChen314/MDTackle.git```
+   `origin	https://github.com/TimChen314/MDTackle.git`
 
 # reference
 [^1]: [Git 工作区、暂存区和版本库](http://www.runoob.com/git/git-workspace-index-repo.html)   
 [^2]: [What's the difference between `git reset --hard master` and `git reset --hard origin/master`?](https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or)   
+[^3]: [How to modify existing, unpushed commits?](https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits)   
 
 ## 待读
 [**超好**: git cheatsheet](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)
