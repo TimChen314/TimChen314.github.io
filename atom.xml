@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-26T19:07:12.000Z</updated>
+  <updated>2017-07-27T05:11:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/27/Mou_git/"/>
     <id>http://yoursite.com/2017/07/27/Mou_git/</id>
-    <published>2017-07-26T19:07:12.000Z</published>
-    <updated>2017-07-26T19:07:12.000Z</updated>
+    <published>2017-07-27T05:11:35.000Z</published>
+    <updated>2017-07-27T05:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -278,8 +278,8 @@ but not:<br>
     <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/27/Mou_hdf5/"/>
     <id>http://yoursite.com/2017/07/27/Mou_hdf5/</id>
-    <published>2017-07-26T19:07:12.000Z</published>
-    <updated>2017-07-26T19:07:12.000Z</updated>
+    <published>2017-07-27T05:11:35.000Z</published>
+    <updated>2017-07-27T05:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -349,8 +349,8 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
     <title>&lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/27/Mou_%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
     <id>http://yoursite.com/2017/07/27/Mou_人工智能简介/</id>
-    <published>2017-07-26T19:07:12.000Z</published>
-    <updated>2017-07-26T19:07:12.000Z</updated>
+    <published>2017-07-27T05:11:35.000Z</published>
+    <updated>2017-07-27T05:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -500,7 +500,7 @@ attention、GAN&lt;/li&gt;
     <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
     <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-26T19:07:12.000Z</updated>
+    <updated>2017-07-27T05:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="正文">正文</h1>
 <ol start="0">
@@ -596,7 +596,7 @@ ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&q
     <link href="http://yoursite.com/2017/07/21/hexo/"/>
     <id>http://yoursite.com/2017/07/21/hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-26T19:07:12.000Z</updated>
+    <updated>2017-07-27T05:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="memo">memo</h1>
 <ul>
@@ -731,7 +731,7 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-26T19:07:12.000Z</updated>
+    <updated>2017-07-27T05:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
