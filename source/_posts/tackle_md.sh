@@ -2,7 +2,7 @@
 
 hostname=$(hostname)
 if [ "$hostname" = "TaodeMBP" ];then
-    file_list="Mou_shadowsocks备忘.md Mou_人工智能简介.md Mou_hdf5.md Mou_git.md"
+    file_list="hexo_shadowsocks备忘.md hexo_人工智能简介.md hexo_hdf5.md hexo_git.md"
     cd /Users/Aether/Documents/md/ && cp $file_list $HEXOMD && cd $HEXOMD
 elif [ "$hostname" = "PC-20150409TELT" ];then    
     # PC-20150409TELT is lab computer.
