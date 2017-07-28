@@ -50,13 +50,14 @@ kompare的效果非常好。
 + reset    
 `git reset --hard HEAD^   `   
 `git reset --hard 3628164`   
-+ git reflog 查看历史命令
++ reflog 查看历史命令
 + clone   
 git clone /path/to/repository    
 如果是远端服务器上的仓库，你的命令会是这个样子：   
 `git clone username@host:/path/to/repository   `
 `git clone git@github.com:dunitian/Windows10.git "F:/Work/WP/Windows10" #到指定文件夹`
-+ git push origin master:master 
++ push   
+`git push origin master:master   `
 origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:
    ```bash
 git push origin HEAD:refs/for/branch1 # push HEAD branch to a remote branch
@@ -71,6 +72,19 @@ git push origin :refs/for/branch1  # delete remote branch
    `git stash list` 
    `git stash apply (--index)` 找回临时存储的状态
    `git stash drop` 删除stash
+
++ branch
+   - `git checkout -b dev` #-b参数表示创建并切换   
+git checkout master
+   - git merge dev
+合并指定分支到当前分支
+   - git branch -d dev #删除
+   - `git branch -r/-a` # 查看远程/所有分支；
+`git branch` 查看本地分支
+   - `git checkout mybfranch` # shift to another branch
++ pull
+`git pull origin master`相当于`git fetch`加上`git merge`
+
 
 ## 丢弃
 + git rm (then git commit)
@@ -101,16 +115,6 @@ $ `git checkout -- test.txt`
 `git diff --cached ` 对比stage和branch之间的差异
    - `git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch`
 
-
-## branch
-+ `git checkout -b dev` #-b参数表示创建并切换   
-git checkout master
-+ git merge dev
-合并指定分支到当前分支
-+ git branch -d dev #删除
-+ `git branch -r/-a` # 查看远程/所有分支；
-`git branch` 查看本地分支
-+ `git checkout mybfranch` # shift to another branch
 
 ## rebase
 [git rebase 用法](http://blog.csdn.net/wangjia55/article/details/8776409)   

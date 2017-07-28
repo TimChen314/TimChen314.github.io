@@ -1,5 +1,5 @@
 ---
-title:  <font size=6><b>markdown in hexo-render-markdown-it </b></font>
+title:  <font size=7><b>markdown in hexo-render-markdown-it </b></font>
 tags: hexo
 categories: hexo
 date: 2017-07-21 18:00:00

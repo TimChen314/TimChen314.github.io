@@ -1,5 +1,5 @@
 ---
-title:  <font size=6><b>hexo </b></font>
+title:  <font size=7><b>hexo </b></font>
 tags: [hexo,yilia]
 categories: hexo
 date: 2017-07-21 18:00:00
