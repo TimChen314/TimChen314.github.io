@@ -8,11 +8,6 @@ categories: shadownsocks
 ## 备忘
 + [官网](http://shadowsocks.org/en/index.html)
 + OS X: 用ShadowsocksX
-用下面的方法则不能正常工作
-```bash
-pip install shadowsocks
-slocal -s ip -p 端口 -k "密码" -l 1080 -t 600 -m rc4-md5
-```
 + iOS: Wingy
 + windows: Shadowsocks-Qt，可以用二维码进行设置
 <!-- more -->
