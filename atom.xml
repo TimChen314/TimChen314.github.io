@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-27T13:06:44.000Z</updated>
+  <updated>2017-07-28T19:15:51.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,77 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/29/Story_of_Terminal/"/>
+    <id>http://yoursite.com/2017/07/29/Story_of_Terminal/</id>
+    <published>2017-07-28T19:15:51.000Z</published>
+    <updated>2017-07-28T19:15:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
+<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
+本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
+<ul>
+<li>ctrl+h的编码<br>
+<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
+而ctrl+h的值也为010。<br>
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>F1键<br>
+terminal类型的选择也会影响快捷键。<br>
+Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="问题：">问题：</h2>
+<p>为什么BS无法删除，而是想左移动？<br>
+为什么在执行程序进行输入时，按下BS显示的是^H?</p>
+<h2 id="答案">答案</h2>
+<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
+<p>Terminal</p>
+<ul>
+<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
+<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
+<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
+<blockquote>
+<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
+&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
+本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ctrl+h的编码&lt;br&gt;
+&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
+而ctrl+h的值也为010。&lt;br&gt;
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/27/Mou_hdf5/"/>
-    <id>http://yoursite.com/2017/07/27/Mou_hdf5/</id>
-    <published>2017-07-27T13:06:44.000Z</published>
-    <updated>2017-07-27T13:06:44.000Z</updated>
+    <link href="http://yoursite.com/2017/07/29/hdf5/"/>
+    <id>http://yoursite.com/2017/07/29/hdf5/</id>
+    <published>2017-07-28T18:04:40.000Z</published>
+    <updated>2017-07-28T18:04:40.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -87,11 +153,49 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   </entry>
   
   <entry>
-    <title>&lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/27/Mou_%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2017/07/27/Mou_人工智能简介/</id>
-    <published>2017-07-27T13:06:44.000Z</published>
-    <updated>2017-07-27T13:06:44.000Z</updated>
+    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/29/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/29/shadowsocks备忘/</id>
+    <published>2017-07-28T18:04:40.000Z</published>
+    <updated>2017-07-28T18:04:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<ul>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
+    
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/29/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2017/07/29/人工智能简介/</id>
+    <published>2017-07-28T18:04:40.000Z</published>
+    <updated>2017-07-28T18:04:40.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -237,78 +341,131 @@ attention、GAN&lt;/li&gt;
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/27/Story_of_Terminal/"/>
-    <id>http://yoursite.com/2017/07/27/Story_of_Terminal/</id>
-    <published>2017-07-27T09:00:00.000Z</published>
-    <updated>2017-07-27T13:06:44.000Z</updated>
+    <title>&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
+    <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
+    <published>2017-07-28T10:00:00.000Z</published>
+    <updated>2017-07-28T19:15:51.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
-<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
-本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
+<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
+而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code><br>
+另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">&lt;!-- more --&gt;</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
+<p>然而用python或者IPython，结果为False</p>
+<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
+<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
+<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
+<h2 id="2-with-语句">2. with 语句</h2>
+<p><strong>自动进行对象的生命周期进行管理</strong><br>
+Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
 <ul>
-<li>ctrl+h的编码<br>
-<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
-而ctrl+h的值也为010。<br>
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<a id="more"></a>
+<h2 id="3-list参数传递">3. list参数传递</h2>
+<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
+正确做法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
+<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
+<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
+<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
+ct总结：参数绑定优先级：</p>
+<ol>
+<li>指定参数名</li>
+<li>顺序</li>
+<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
+<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
+<li><strong>限制关键字参数的名字</strong></li>
+</ol>
+<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
+<h2 id="5-generator">5. generator</h2>
+<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
+<p><strong>The implementation of zip is very beautiful：</strong><br>
+来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
 <ul>
-<li>F1键<br>
-terminal类型的选择也会影响快捷键。<br>
-Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h1 id="问与答">问与答</h1>
-<h2 id="问题：">问题：</h2>
-<p>为什么BS无法删除，而是想左移动？<br>
-为什么在执行程序进行输入时，按下BS显示的是^H?</p>
-<h2 id="答案">答案</h2>
-<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。</div><div class="line">过去 0x7f是留给 DELETE键使用的。</div><div class="line">而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。</div><div class="line">SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
-<p>Terminal</p>
+<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
+<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
+凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
+集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
+Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
+for x in [1, 2, 3, 4, 5]:<br>
+pass<br>
+实际上完全等价于：<br>
+首先获得Iterator对象:<br>
+<code>it = iter([1, 2, 3, 4, 5])</code><br>
+循环:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
 <ul>
-<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
-<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
+<li>while my_iterator（参见zip的实现）<br>
+iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
-<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
-<blockquote>
-<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
-</blockquote>
+<h2 id="8-内存">8. 内存</h2>
+<h3 id="8-1-释放内存">8.1. 释放内存</h3>
+<p>先del再gc.collect()</p>
+<h2 id="9-python类">9. Python类</h2>
+<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
+<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
+<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
+<p>Note that user defined attributes shall not end with ‘__’</p>
+<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
+<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
+注意下面的这种错误写法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
+<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
+<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
+<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
+<p>静态语言 vs 动态语言<br>
+对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
+<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
+<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
+<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
+<h2 id="style-guide">Style guide</h2>
+<h3 id="argument">argument</h3>
+<ul>
+<li><code>**kwargs</code> is a bad practice:
+<ol>
+<li>you don’t know how <code>**kwargs</code> affect.</li>
+<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
+<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
+<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
+</ol>
+</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
-&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
-本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ctrl+h的编码&lt;br&gt;
-&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
-而ctrl+h的值也为010。&lt;br&gt;
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
+&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
+而id实际上是内存地址，&lt;code&gt;
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/Mou_git/"/>
-    <id>http://yoursite.com/2017/07/26/Mou_git/</id>
+    <link href="http://yoursite.com/2017/07/26/git/"/>
+    <id>http://yoursite.com/2017/07/26/git/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-27T13:06:44.000Z</updated>
+    <updated>2017-07-28T19:18:49.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -329,20 +486,22 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
 </blockquote>
 <p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
 <ul>
-<li>
-<p>git init</p>
+<li>init</li>
+<li>config <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
 </li>
-<li>
-<p>config</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>git difftool<br>
-没有默认的difftool，如果首次输入命令git difftool，CentOS会自动推荐kompare。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
+</ul>
+<p>列出设置的config<br>
+<code>git config --list</code></p>
+<ul>
+<li>difftool<br>
+没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>kompare的效果非常好。</p>
+<ul>
+<li>help<br>
+<code>git help &lt;verb&gt;</code></li>
+</ul>
 <h2 id="操作">操作</h2>
 <ul>
 <li>
@@ -372,7 +531,7 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
 <code>git reset --hard 3628164</code></p>
 </li>
 <li>
-<p>git reflog 查看历史命令</p>
+<p>reflog 查看历史命令</p>
 </li>
 <li>
 <p>clone<br>
@@ -382,7 +541,8 @@ git clone /path/to/repository<br>
 <code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code></p>
 </li>
 <li>
-<p>git push origin master:master<br>
+<p>push<br>
+<code>git push origin master:master</code><br>
 origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch</span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
 </li>
@@ -399,6 +559,23 @@ origin is the remote server; the branch name before the colon is local branch na
 <code>git stash list</code><br>
 <code>git stash apply (--index)</code> 找回临时存储的状态<br>
 <code>git stash drop</code> 删除stash</p>
+</li>
+<li>
+<p>branch</p>
+<ul>
+<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
+git checkout master</li>
+<li>git merge dev<br>
+合并指定分支到当前分支</li>
+<li>git branch -d dev #删除</li>
+<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
+<code>git branch</code> 查看本地分支</li>
+<li><code>git checkout mybfranch</code> # shift to another branch</li>
+</ul>
+</li>
+<li>
+<p>pull<br>
+<code>git pull origin master</code>相当于<code>git fetch</code>加上<code>git merge</code></p>
 </li>
 </ul>
 <h2 id="丢弃">丢弃</h2>
@@ -450,17 +627,6 @@ $ <code>git checkout -- test.txt</code></p>
 </ul>
 </li>
 </ul>
-<h2 id="branch">branch</h2>
-<ul>
-<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
-git checkout master</li>
-<li>git merge dev<br>
-合并指定分支到当前分支</li>
-<li>git branch -d dev #删除</li>
-<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
-<code>git branch</code> 查看本地分支</li>
-<li><code>git checkout mybfranch</code> # shift to another branch</li>
-</ul>
 <h2 id="rebase">rebase</h2>
 <p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
 <a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
@@ -471,11 +637,11 @@ git checkout master</li>
 </ul>
 <h2 id="tag">tag</h2>
 <p>git push origin --tags</p>
-<h2 id="其他概念">其他概念</h2>
+<h2 id="其他概念与原理">其他概念与原理</h2>
 <ul>
 <li>
 <p>origin<br>
-顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
+It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
 </li>
 <li>
 <p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
@@ -483,7 +649,7 @@ Note that when <code>git branch -a</code> is used, there is ‘remote’ in fron
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
 </li>
 <li>
-<p><code>local_branch_name:remote_branch_name</code><br>
+<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
 远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
 </li>
 <li>
@@ -501,10 +667,8 @@ Note that when <code>git branch -a</code> is used, there is ‘remote’ in fron
 </ul>
 </blockquote>
 </li>
-</ul>
-<h2 id="git原理">git原理</h2>
-<ul>
-<li>branch &amp; hash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<li>
+<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
 <blockquote>
 <p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit</p>
 </blockquote>
@@ -563,11 +727,11 @@ but not:<br>
   </entry>
   
   <entry>
-    <title>&lt;font size=6&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
     <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-27T13:06:44.000Z</updated>
+    <updated>2017-07-28T18:04:40.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="正文">正文</h1>
 <ol start="0">
@@ -659,11 +823,11 @@ ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&q
   </entry>
   
   <entry>
-    <title>&lt;font size=6&gt;&lt;b&gt;hexo &lt;/b&gt;&lt;/font&gt;</title>
+    <title>&lt;font size=7&gt;&lt;b&gt;hexo &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/21/hexo/"/>
     <id>http://yoursite.com/2017/07/21/hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-27T13:06:44.000Z</updated>
+    <updated>2017-07-28T18:04:40.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="memo">memo</h1>
 <ul>
@@ -794,11 +958,11 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
   </entry>
   
   <entry>
-    <title>&lt;font size=6&gt;&lt;b&gt;markdown in hexo-render-markdown-it &lt;/b&gt;&lt;/font&gt;</title>
+    <title>&lt;font size=7&gt;&lt;b&gt;markdown in hexo-render-markdown-it &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-27T13:06:44.000Z</updated>
+    <updated>2017-07-28T18:04:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
