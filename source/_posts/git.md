@@ -73,7 +73,7 @@ git push origin :refs/for/branch1  # delete remote branch
    `git stash apply (--index)` 找回临时存储的状态
    `git stash drop` 删除stash
 
-+ branch
++ branch   	
    - `git checkout -b dev` #-b参数表示创建并切换   
 git checkout master
    - git merge dev
@@ -82,7 +82,7 @@ git checkout master
    - `git branch -r/-a` # 查看远程/所有分支；
 `git branch` 查看本地分支
    - `git checkout mybfranch` # shift to another branch
-+ pull
++ pull   
 `git pull origin master`相当于`git fetch`加上`git merge`
 
 
@@ -100,7 +100,7 @@ $ `git checkout -- test.txt`
 
 ## 显示状态
 + status 
-+ log
++ log   
    `git log --oneline --decorate` # 加上--decorate 时，我们可以看到我们的标签   
 + remote  
 看当前配置有哪些远程仓库，可以用命令   
@@ -137,7 +137,7 @@ $ git branch -r
 $ git branch -a   
   remote/origin/master   
 ```
-+ ` local_branch_name:remote_branch_name`
++ ` local_branch_name:remote_branch_name` # 这是push，pull的时候顺序反过来
 远程分支和本地分支的名字相同，可以省略远程分支的名字
 
 + [upstream vs. origin](https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901)
