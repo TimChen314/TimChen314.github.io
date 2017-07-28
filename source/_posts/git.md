@@ -19,20 +19,24 @@ date: 2017-07-26 18:00:00
 
 [非常好的入门2](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
-+ git init
++ init
 + config    
    ```bash
 git config --global user.name "your name"
 git config --global user.email "your email"
 git config --global core.editor "vim #set vim as editor
 ```
-+ git difftool 
-没有默认的difftool，如果首次输入命令git difftool，CentOS会自动推荐kompare。
+列出设置的config
+`git config --list`
++ difftool 
+没有默认的difftool，如果首次输入命令`git difftool`，CentOS会自动推荐kompare。
    ```language
 Viewing: 'particles/BinReader.cc'
 Launch 'kompare' [Y/n]: y 
 ```
 kompare的效果非常好。
++ help
+`git help <verb>`
 
 ## 操作
 + add filename
@@ -126,9 +130,9 @@ $ `git checkout -- test.txt`
 ## tag
 git push origin --tags
 
-## 其他概念
+## 其他概念与原理
 + origin   
-顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签
+It's a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签
 + (远程仓库名)/(分支名) 这样的形式表示远程分支
 Note that when `git branch -a` is used, there is 'remote' in front of branch name, e.g.:
    ```bash
@@ -146,7 +150,6 @@ $ git branch -a
 (see also "Definition of “downstream” and “upstream”" for more on upstream term)
    >- origin is your fork: your own repo on GitHub, clone of the original repo of GitHub
 
-## git原理
 + branch & hash[^2]
    >you need to understand that branch and tag names are just pointers to hash values, which represent a single commit
 
