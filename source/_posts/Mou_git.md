@@ -1,8 +1,9 @@
 ---
 title:  <font size=7><b>git笔记 </b></font>
 tags: [git]   
-top: 9
+top: 5
 categories: git   
+date: 2017-07-26 18:00:00
 ---
 
 
@@ -63,6 +64,13 @@ git push origin :refs/for/branch1  # delete remote branch
 ```
 + `git checkout hexo myfile`
 从hexo分支得到myfile
++ stash[^4]
+   >储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。
+
+   `git stash` 临时存储当前状态
+   `git stash list` 
+   `git stash apply (--index)` 找回临时存储的状态
+   `git stash drop` 删除stash
 
 ## 丢弃
 + git rm (then git commit)
@@ -152,6 +160,7 @@ but not:
 [^1]: [Git 工作区、暂存区和版本库](http://www.runoob.com/git/git-workspace-index-repo.html)   
 [^2]: [What's the difference between `git reset --hard master` and `git reset --hard origin/master`?](https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or)   
 [^3]: [How to modify existing, unpushed commits?](https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits)   
+[^4]: [6.3 Git 工具 - 儲藏](https://git-scm.com/book/zh/v2/Git-工具-储藏与清理)
 
 ## 待读
 [**超好**: git cheatsheet](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)

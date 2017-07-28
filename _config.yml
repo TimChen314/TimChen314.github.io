@@ -147,6 +147,8 @@ search:
 #RSS订阅
 plugin:
 - hexo-generator-feed
+- hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
 #Feed Atom
 feed:
 type: atom
@@ -157,3 +159,4 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+

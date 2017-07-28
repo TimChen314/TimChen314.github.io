@@ -39,13 +39,14 @@ npm install markdown-it-emoji --save
 
 ## hexo个人命令
 + 用`hexol`/`hexod`命令一次性完成本地/远程预览
-配置`.bash_profile`
+配置`.bash_profile`:   
    ```bash
 export HEXO='/Users/Aether/Documents/hexo_file'
 export HEXOMD='/Users/Aether/Documents/hexo_file/source/_posts/'
 alias hexod='cd $HEXOMD && sh tackle_md.sh && hexo clean && hexo g && hexo deploy'
 alias hexol='cd $HEXOMD && sh tackle_md.sh && hexo clean && hexo g && hexo s'
 ```
+
 + `tackle_md.sh`自动调整缩进、设置部分显示、修改文章标题大小(for next theme)
    ```bash
 #!/bin/sh
@@ -57,7 +58,7 @@ do
     awk -f ./title_size.awk $mdfile > /tmp/$mdfile && mv /tmp/$mdfile  $mdfile
 done
 ```
-其中，`indent.sh`:
+   其中，`indent.sh`:
    ```bash
 #!/bin/sh
 # indent for code block
@@ -65,7 +66,7 @@ sed -i 's/^```[a-z]/   &/g' *.md
 # indent for quote
 sed -i 's/^>/   &/g' *.md
 ```
-`read_more.sh`:
+   `read_more.sh`:
    ```bash
 #!/bin/sh
 
@@ -78,7 +79,7 @@ do
     fi
 done
 ```
-`title_size.awk`:
+   `title_size.awk`:
    ```awk
 #!/usr/bin/awk -f
 {

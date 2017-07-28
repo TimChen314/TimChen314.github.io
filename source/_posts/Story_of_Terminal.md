@@ -18,7 +18,7 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
 terminal类型的选择也会影响快捷键。
 Xshell中，文件--属性--键盘--功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以
 
-
+# 问与答
 ## 问题：
 为什么BS无法删除，而是想左移动？
 为什么在执行程序进行输入时，按下BS显示的是^H?
@@ -26,7 +26,10 @@ Xshell中，文件--属性--键盘--功能键类型 选择xterm R6，则VIM中�
 ## 答案
    [知乎](https://www.zhihu.com/question/23550774/answer/132576876)：
 ``` 
-早在 VT100终端时代，^H（ASCII码 0x08）表示<BS> 而 ^? （ASCII码 0x7f）表示<DEL>。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的<BS>，有些老点版本的终端软件，默认 <BS>还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认<BS>是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。
+早在 VT100终端时代，^H（ASCII码 0x08）表示<BS> 而 ^? （ASCII码 0x7f）表示<DEL>。
+过去 0x7f是留给 DELETE键使用的。
+而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的<BS>，有些老点版本的终端软件，默认 <BS>还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认<BS>是发送^H。
+SecureCRT直到6.x版本还在默认发送 VT100的 ^H。
 ```
 
 
