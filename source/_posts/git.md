@@ -62,9 +62,9 @@ git clone /path/to/repository
 `git clone git@github.com:dunitian/Windows10.git "F:/Work/WP/Windows10" #到指定文件夹`
 + push   
 `git push origin master:master   `
-origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:
+origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:   
    ```bash
-git push origin HEAD:refs/for/branch1 # push HEAD branch to a remote branch
+git push origin HEAD:refs/for/branch1 # push HEAD branch to a remote branch   
 git push origin :refs/for/branch1  # delete remote branch
 ```
 + `git checkout hexo myfile`
@@ -119,6 +119,7 @@ $ `git checkout -- test.txt`
    - `git diff #对比工作区和stage文件的差异 `   
 `git diff --cached ` 对比stage和branch之间的差异
    - `git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch`
+   - `git diff origin/hexo #对比当前working tree和远程branch`
 
 
 ## rebase
