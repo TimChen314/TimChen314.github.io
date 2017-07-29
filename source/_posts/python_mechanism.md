@@ -9,11 +9,11 @@ date: 2017-07-28 18:00:00
 ## 0. is 与 `==`的区别
 python对象有三个要素：id、type、value。is 比较的是id；\=\=比较的是value
 而id实际上是内存地址，`(ob1 is ob2)` 等价于 `(id(ob1) == id(ob2))`
+<!-- more -->
 另外，一些具体的问题，结果不确定，比如用python.py：
 ```
    >>> x = 500
    >>> y = 500
-<!-- more -->
    >>> x is y
 True
    ```language

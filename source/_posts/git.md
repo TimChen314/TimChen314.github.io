@@ -88,7 +88,8 @@ git checkout master
    - `git checkout mybfranch` # shift to another branch
 + pull   
 `git pull origin master`相当于`git fetch`加上`git merge`
-
++ fetch
+`git fetch origin hexo`从remote repo获取名为hexo的branch
 
 ## 丢弃
 + git rm (then git commit)
