@@ -14,7 +14,8 @@ so `indent.sh` is used
 + Could add spacing manually by `&nbsp; #半角的不断行的空白格` (it works in header, too)
 + `<br/>` as line break
 
-
+# Bug
++ 有时候ordered list序号大于等于10，缩进会失效。
 
 # Mou
 

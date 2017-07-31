@@ -1,5 +1,5 @@
 #!/bin/sh
-for mdfile in git.md #$(ls *md)
+for mdfile in $(ls *md)
 do
     # indent for code block
     code_block_state=$(grep "^\`\`\`[a-z]" $mdfile)
