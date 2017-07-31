@@ -282,9 +282,240 @@ cut命令很好用
 `awk '/Beren/ {print $0}' tt1 | cut -b 2-`cut部分的意思是截取第二个到最后一个字符。
 
 
+##    diff命令    
+1.对比两个文件夹的不同
+`diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ > diff_text
+
+## echo命令：
+- `-e` 开启反斜杠转义字符
+- `-E` 关闭反斜杠转义字符
+- `-n` 去掉echo默认输出的换行符
+- 测试
+   ```bash
+$ echo -e "a\tb\tc\n"
+a	b	c
+$ echo -E "a\tb\tc\n"
+a\tb\tc\n
+```
+
+##     gprof：    
+http://blog.csdn.net/linquidx/article/details/5916701
+http://blog.csdn.net/stanjiang2010/article/details/5655143
+1. gprof -b -A -p -q test gmon.out > x
+-b选项的作用是输出程序说明，对比加-b选项和不加的情况就明白了
+
+
+##  grep命令：  
+- `-i`： 忽略大小写
+- `-v`： 不显示匹配的项
+
+##   kill命令：  
+如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）
+kill -STOP 1234 
+如果要恢复到前台，请在当时运行该进程的那个终端用jobs命令查询暂停的进程
+
+
+
+##    ls命令：  
+1.只显示文件
+`ls -l | grep ^- | awk '{print $9}'`
+`ls -1 -F | grep -v [/$]`
+
+2.只显示文件夹
+只显示文件夹： `ls -d */ `
+`-d`的意义:      显示目录本身的信息，而不是列出目录下的文件
+`ls *`：         显示所有文件、文件夹及其中的文件(文件夹)
+`ls -d *`:       显示所有文件、文件夹
+
+###    查看linux进程的执行文件路径
+   >           1、以超级用户登陆
+           2、进入/proc目录
+           3、ps查看所有符合./cmd的进程，找出其对应的PID进程号
+           4、用ll命令： ll 进程号 
+              如下显示一个示例：
+              [root@Cluster1 proc]# ll 22401 (proc文件夹中有对应PID码的文件名,进入即可)
+       total 0
+       -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cmdline
+       -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cpu
+       lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 cwd -> /home/zhouys/sbs/bin
+       -r--------    1 zhouys    zhouys     0 Dec 11 11:10 environ
+       lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 exe -> /home/zhouys/sbs/bin/cbs (deleted)
+       dr-x------    2 zhouys    zhouys     0 Dec 11 11:10 fd
+       -r--------    1 zhouys    zhouys     0 Dec 11 11:10 maps
+       -rw-------    1 zhouys    zhouys     0 Dec 11 11:10 mem
+       -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 mounts
+       lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 root -> /
+       -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 stat
+       -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 statm
+       -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 status
+              /proc文件系统下的 进程号目录 下面的文件镜像了进程的当前运行信息，
+              从中可以看到：
+              cwd符号链接的就是进程22401的运行目录；
+              exe符号连接就是执行程序的绝对路径；
+              cmdline就是程序运行时输入的命令行命令；本例为：./cbs
+              cpu记录了进程可能运行在其上的cpu；显示虚拟的cpu信息
+              environ记录了进程运行时的环境变量
+              fd目录下是进程打开或使用的文件的符号连接
+              ...
+        通过cwd直接进入进程运行目录，通过查看相关信息就可以定位此目录对应那个端口号，以及
+    定位是那个应用才使用此服务程序。       
+           5、`ps -aux` 命令
+           ps也可打印其路径,但不是万能的,有些路径只能使用以上两种方法取得
+
+
+## ln
++ ln source target
++ hard link
+hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。
+
+
+##  mkdir命令：
+在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。
+
+
+## printf命令： 
+1.补零
+`printf "%05d" 123`
+结果是：00123
+参考：http://blog.csdn.net/truelie/article/details/1692942
+
+
+##     ps命令     
+1. linux查看进程启动时间(运行多长时间) 
+`ps -eo pid,lstart,etime | grep your_pid`
+
+
+##   sed命令：  
+[sed命令详解](http://www.cnblogs.com/ctaixw/p/5860221.html)   
+1. 抓取第m 到 第n行：
+`sed -n "m,np" filename`
+`sed -n "$[$fl*($i-1)+1],$[$fl*$i]p" ../../precopy/h-tail-10 > frame$i`
+
+3. 在file1第3行之后插入file2:
+`sed '3 r file2' file1`
+
+4. 将“vel[i].x vel[i].y vel[i].z”替换成“velx[i] vely[i] velz[i]”
+`s/\[i\]\.\([xyz]\)/\1[i]/g`
+
+5. &字符 : 代表其前 pattern 字串
+例：`sed -e 's/test/& my car/' `替换后变为：test my car
+
+6. 在有字符串33的行的行首，添加
+`sed -i '/33/s/^/#&/' t1.plm`
+注意为什么要有^：
+有“^”，“&”代表的是有字符串33存在的整行
+没有“^”，“&”代表的是字符串33
+7. 将原来的所有空行删除并在每一行后面增加一空行
+`sed '/^$/d;G' file3`
+8. 在指定(export)行前面加行
+`sed '/export/i xxx' file`或`sed '/export/i \xxx' file`
+  在指定(export)行前面后行
+`sed '/export/a xxx' file`或`sed '/export/a \xxx' file`
+
+9.单引号的转义
+`'\''`
+`sed 's/'\''//g' `# 将单引号替换为空格
+11. 指定行添加内容
+`sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt`
+
+12. 外部变量
+`sed 's/standard/'"$i"'/' `
+
+13. `sed -i`会使软链接失效
+`--follow-symlinks`可以保持软连接
+
+
+
+## sort命令 ----[back to top](#TOP)
+1. 按第二行排序
+`sort -n -k2 file`
+
+##  ssh
+有的命令`source .bash_profile`
+例如：`sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy"$i" 192.9.207.204 "source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat"`
+
+##  su命令： ----[back to top](#TOP)
+1.关于login
+（1）.直接登录root
+（2）.由其他用户名登录到root:  su -，否则就是没有login 
+（3）`su -c 'command'`
+
+## time命令
+1. `time ./program`
+参数：**-p** 以秒为默认单位来进行输出
+  
+
+##    top命令： ----[back to top](#TOP)
+1.查看内存
+可以直接使用top命令后，查看%MEM的内容
+查看用户ct的进程的内存： `top -u ct`
+查看特定进程的内存：`top -d 1 -p pid [,pid ...] ` //设置为delay 1s，默认是delay 3s；如果想根据内存使用量进行排序，可以shift + m（Sort by memory usage）
+
+
+##    uniq命令 ----[back to top](#TOP)
+1. `uniq -c`
+在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。
+
+
+##  xargs命令 & find命令：  
+1. `awk '{print }' filenames | xargs du -h`
+文件filenames中存储了一些文件名，用这种方式，可以看到每个文件的大小
+2. `find . -name "pa*.xml" | xargs -n 10000 rm -f`   
+find + xargs 是“Argument list too long”问题的标准解决方法，find命令是持续输出的，而xargs再将find的出处分成若干段，再进行下一步处理
+3. `find -name *.dcd | tee -a dcd_name | xargs rm & 
+删除文件，并将删除的文件的路径输入到dcd_name中
+4. 批量转换文件格式
+   ```bash
+ls *.jpg | xargs -I{} -P 8 convert "{}" `echo {} | sed 's/jpg$/png/'` 
+```
+  其中-P代表进程数；
+  -i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给{}，可以用{}代替。”
+  在当前这个命令下，以tmp.jpg为例，实际上执行的是 convert tmp.jpg tmp.png
+
+
+## yum命令
+1. `yum install foo`
+2. `yum remove foo`
+2. `yum list *foo*  #You can rearch the available packages`
+3. `yum localinstall foo.rpm`
+
+
+
+
+##  逻辑表达式与`&&`和`||`：
++ 逻辑表达式
+（1）C语言中写法：
+         `if (a == b && a == c)`
+
+     shell 中的写法：
+         `if ([ $a -eq $b ] && [ $a -eq $c ]); then`
+(2) C 语言中的写法：
+        `if (a == b && a == c && b == c)`
+    shell 中的写法：
+        `if [ $a -eq $b -o $a -eq $c -o $b -eq $c ]; then`
+        `if [ $a -eq $b ] && [ $a -eq $c ] && [ $b -eq $c ]; then`
+注意：“[”或“]”与表达式之间必须要有空格。
++ `[[ ]]` vs. `[ ]` [^1]
+`[ ]`是shell built-in，而`[[ ]]`不属于POSIX；
+`[ ]`会展开`a*`，所以用它的时候需要加双引号：`[ "$var" ]`；`[[ ]]`不需要
+`[ ]`会fork a new process，`[[ ]]`不会
+[^1]: [Is double braket preferable over single braket in Bash? ](https://stackoverflow.com/questions/669452/is-preferable-over-in-bash)
+
++ `&&`和`||`
+`&&`和`||`与逻辑表达式表面相似，实则完全不同，如果混淆了会导致严重的错误。
+`command1 && command2`，如果command1返回值为真（`$?==0`），才会执行command2。一般命令正确执行了，都会返回0。   
+`command1 || command2`则是command1返回值为假（`$? != 0`）才执行command2。
+关于这两个算符，还**有个隐僻但重要的问题**是`command1 && command2`的返回值，如果command1返回值为假，**整个表达式的返回值也为假，表达式所在的脚本的返回值也为假！**。
+有不少人认为`[ ... ] && ...`和`if`语句效果一样但更简洁，这种想法是错误的，因为前一种用法会影响程序返回值，而`if`语句不会。如果在脚本中用前一种方法，会莫名其妙的导致返回值为假又没有任何报错。
 
 
 
 
 
-# reference
+
+
+
+
+
+
+

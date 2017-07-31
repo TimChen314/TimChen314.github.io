@@ -3,6 +3,7 @@ title:  <font size=7><b>Story of Terminal </b></font>
 tags: [linux,编码,Terminal]   
 top: 5
 categories: [linux]   
+date: 2017-07-26 18:00:00
 ---
 
 # 总结
