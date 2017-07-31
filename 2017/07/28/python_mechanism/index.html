@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2)) 另外，一些具体的问题，结果不确定，比如用python.py： 123456   &amp;gt;&amp;gt;&amp;gt; x = 500   &amp;gt;&amp;gt;&amp;gt; y =">
+<meta name="description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
 <meta property="og:url" content="http://yoursite.com/2017/07/28/python_mechanism/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2)) 另外，一些具体的问题，结果不确定，比如用python.py： 123456   &amp;gt;&amp;gt;&amp;gt; x = 500   &amp;gt;&amp;gt;&amp;gt; y =">
-<meta property="og:updated_time" content="2017-07-28T19:15:51.000Z">
+<meta property="og:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
+<meta property="og:updated_time" content="2017-07-28T19:26:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta name="twitter:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2)) 另外，一些具体的问题，结果不确定，比如用python.py： 123456   &amp;gt;&amp;gt;&amp;gt; x = 500   &amp;gt;&amp;gt;&amp;gt; y =">
+<meta name="twitter:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
 
 
 
@@ -412,9 +412,10 @@
         <p>[TOC]</p>
 <h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
 <p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
-而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code><br>
-另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">&lt;!-- more --&gt;</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
+而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
+<a id="more"></a>
+<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
 <p>然而用python或者IPython，结果为False</p>
 <h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
 <p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>

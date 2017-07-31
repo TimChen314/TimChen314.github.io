@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png">
-<meta property="og:updated_time" content="2017-07-28T19:18:49.000Z">
+<meta property="og:updated_time" content="2017-07-29T16:35:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
 <meta name="twitter:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
@@ -488,7 +488,7 @@ git clone /path/to/repository<br>
 <p>push<br>
 <code>git push origin master:master</code><br>
 origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch</span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch   </span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
 </li>
 <li>
 <p><code>git checkout hexo myfile</code><br>
@@ -520,6 +520,10 @@ git checkout master</li>
 <li>
 <p>pull<br>
 <code>git pull origin master</code>相当于<code>git fetch</code>加上<code>git merge</code></p>
+</li>
+<li>
+<p>fetch<br>
+<code>git fetch origin hexo</code>从remote repo获取名为hexo的branch</p>
 </li>
 </ul>
 <h2 id="丢弃">丢弃</h2>
@@ -568,6 +572,7 @@ $ <code>git checkout -- test.txt</code></p>
 <li><code>git diff #对比工作区和stage文件的差异</code><br>
 <code>git diff --cached</code> 对比stage和branch之间的差异</li>
 <li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch</code></li>
+<li><code>git diff origin/hexo #对比当前working tree和远程branch</code></li>
 </ul>
 </li>
 </ul>
