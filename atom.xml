@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-28T19:15:51.000Z</updated>
+  <updated>2017-07-31T13:24:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/29/Story_of_Terminal/"/>
-    <id>http://yoursite.com/2017/07/29/Story_of_Terminal/</id>
-    <published>2017-07-28T19:15:51.000Z</published>
-    <updated>2017-07-28T19:15:51.000Z</updated>
+    <link href="http://yoursite.com/2017/07/31/Story_of_Terminal/"/>
+    <id>http://yoursite.com/2017/07/31/Story_of_Terminal/</id>
+    <published>2017-07-31T13:24:08.000Z</published>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="总结">总结</h1>
 <p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
@@ -83,10 +83,10 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
   
   <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/29/hdf5/"/>
-    <id>http://yoursite.com/2017/07/29/hdf5/</id>
-    <published>2017-07-28T18:04:40.000Z</published>
-    <updated>2017-07-28T18:04:40.000Z</updated>
+    <link href="http://yoursite.com/2017/07/31/hdf5/"/>
+    <id>http://yoursite.com/2017/07/31/hdf5/</id>
+    <published>2017-07-31T13:24:08.000Z</published>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -154,10 +154,10 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   
   <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/29/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/29/shadowsocks备忘/</id>
-    <published>2017-07-28T18:04:40.000Z</published>
-    <updated>2017-07-28T18:04:40.000Z</updated>
+    <link href="http://yoursite.com/2017/07/31/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/31/shadowsocks备忘/</id>
+    <published>2017-07-31T13:24:08.000Z</published>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
 <ul>
@@ -192,10 +192,10 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   
   <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/29/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2017/07/29/人工智能简介/</id>
-    <published>2017-07-28T18:04:40.000Z</published>
-    <updated>2017-07-28T18:04:40.000Z</updated>
+    <link href="http://yoursite.com/2017/07/31/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2017/07/31/人工智能简介/</id>
+    <published>2017-07-31T13:24:08.000Z</published>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -341,11 +341,315 @@ attention、GAN&lt;/li&gt;
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;linux常用命令记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2017/07/31/linux常用命令记录/</id>
+    <published>2017-07-31T10:00:00.000Z</published>
+    <updated>2017-07-31T13:45:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="正则表达式">正则表达式</h2>
+<p>1.&lt; #匹配词头 &gt; #匹配词尾<br>
+2.+<br>
+匹配1或多个<br>
+3.？<br>
+匹配0或1个<br>
+4.x|y<br>
+匹配x或y<br>
+5.x{5,10}<br>
+匹配x出现5到10次</p>
+<h2 id="linux-一句话介绍命令：">linux 一句话介绍命令：</h2>
+<ul>
+<li>
+<p>shell 内置<br>
+<code>--</code>: a double dash (<code>--</code>) is used to signify the end of command options. 例如<code>ls -- -l</code>中会把<code>-l</code>当成文件名<br>
+<code>echo $((a%b))</code>: 余数</p>
+</li>
+<li>
+<p>资源管理<br>
+<code>ulimit</code>: 管理用户占用的资源<br>
+<code>nice &amp; renice 命令</code>: 管理任务优先级<br>
+<code>pkill -kill -t pts/5</code>: 踢掉相应的用户<br>
+<code>sudo sh -c &quot;echo 1 &gt; /proc/sys/vm/drop_caches&quot;</code>: 清理硬盘<br>
+<code>iostat -x sdb1 1 3</code>: 显示sdb1的状态，每1秒显示一次，一共显示3次。</p>
+</li>
+<li>
+<p>键盘<br>
+<code>bind -p</code>:  查看所有的键盘绑定<br>
+<code>stty -a</code>: 查看下默认的键位设置<br>
+<code>toe /usr/share/terminfo/</code>: supported terminal; you can compare two terminal by <code>infocmp vt100 vt220</code></p>
+</li>
+<li>
+<p>其他<br>
+<code>tac</code>: cat倒过来写，是将文件反向输出的命令<br>
+<code>join命令</code>: 横向连接文件，可以合并第一列<br>
+<code>tee</code>: <code>tee file1 file2 -</code>  #将标准输出，输出到file1、file2和标准输出（“-”就是代表标准输出）（<strong>注意</strong> 该命令本身会向标准输出 输出一次，所以tee file1 file2 - 会将标准输出 输出两次）<br>
+<code>basename &amp; dirname</code>: 从路径名得到root部分和文件名部分<br>
+<code>read</code>: <code>read -p &quot;make dir now?[y/n]:&quot; select</code>#直接读入变量值<br>
+<code>df -T</code>: 显示硬盘分区类型<br>
+lsof:  <code>lsof -p 456,123</code> 列出进程456和123所有打开的文件。<code>lsof -i 6</code> 列出所有IPv6协议的网络文件<br>
+<code>ssh -X</code>:   <code>Enables X11 forwarding</code>然后就可以用vmd、gnuplot等软件了。<br>
+<code>env</code>: 输出所有环境变量<br>
+<code>ldd ./exe</code>:  给出链接的库<br>
+<code>systemctl start atd</code>: arch中用at，需要开启<br>
+<code>gimp</code>: 看图<br>
+<code>info &amp; whatis</code>: they tell the information of a command; Note that in OS, info whatis will get “search database …”</p>
+</li>
+</ul>
+<h2 id="linux-command-line">linux Command line</h2>
+<p>Ctrl + a, Ctrl + e, alt + f 前进一个单词、alt + b(通过xshell并不好使):  谁用谁知道<br>
+Ctrl + f, Ctrl + b 前进一个字母/后退一个字母<br>
+Ctrl + 方向键左键    光标移动到前一个单词开头<br>
+Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
+<code>^oldstr^newstr</code>    替换前一次命令中字符串<br>
+同时head&amp;tail: <code>ls | (head;tail)</code> 或者 <code>(head; tail) &lt; file</code></p>
+<h3 id="系列命令"><code>!</code>系列命令</h3>
+<ul>
+<li>
+<p><code>!-n</code>， 重复执行倒数第 n 条命令，n 为正整数；</p>
+</li>
+<li>
+<p><code>!!</code>， 重复执行上一条命令。该命令等价于 !-1；!?str，重复执行最近一条包含字符串 str 的命令；</p>
+</li>
+<li>
+<p><code>!#</code>，引用当前的命令行，例如：<code>cp filename filename.bak</code> 可以写为 <code>cp filename !#:1.bak</code></p>
+</li>
+<li>
+<p><code>!^</code><br>
+重用上一条命令的第一个参数；<br>
+<code>ls /usr/share/doc /usr/share/man; cd !^</code># 即 cd /usr/share/doc</p>
+</li>
+<li>
+<p><code>!*</code><br>
+重用上一条命令的所有参数； <code>touch a.txt b.txt c.txt</code><br>
+<code>vim !*</code>  # 即 vim a.txt b.txt c.txt</p>
+</li>
+<li>
+<p><code>!!:n</code><br>
+重用上一条命令中的第 n 个参数，n 为正整数。<br>
+<code>vim {a..c}.txt</code><br>
+<code>vim !!:2</code>   # 即 vim b.txt</p>
+</li>
+<li>
+<p><code>!str:x-y</code><br>
+重用上一条以 str 开头的命令的第 x 到第 y 个参数；<br>
+<code>touch a.txt b.txt c.txt d.txt</code><br>
+<code>vim !touch:2-3</code>   # 即 vim b.txt c.txt</p>
+</li>
+<li>
+<p><code>!?str:n*</code><br>
+重用上一条包含 str 的命令的从第 n 个到最后一个参数；<br>
+<code>vim foo.h foo.cc bar.h bar.cc</code><br>
+<code>wc !?vim:2*</code># 即 wc <a href="http://foo.cc" target="_blank" rel="external">foo.cc</a> bar.h <a href="http://bar.cc" target="_blank" rel="external">bar.cc</a></p>
+</li>
+</ul>
+<h3 id="参数的子字符串">参数的子字符串</h3>
+<ul>
+<li>
+<p>利用 :h 截取路径开头，相当于 dirname</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls /usr/share/fonts/truetype/dejavu    </div><div class="line"><span class="built_in">cd</span> !$:h  <span class="comment"># 即 cd /usr/share/fonts/truetype</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>利用 :t 截取路径结尾，相当于 basename<br>
+<code>tar zxf !$:t # 相当于 tar zxf nginx-1.4.7.tar.gz</code></p>
+</li>
+<li>
+<p>利用 :r 截取文件名</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gunzip filename.gzip</div><div class="line"><span class="built_in">cd</span> !$:r  <span class="comment"># 即 cd filename</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>利用 :e 截取文件扩展名</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls file.jpg</div><div class="line"><span class="built_in">echo</span> !$:e  <span class="comment"># 即 echo jpg&lt;b&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>简单记忆：<br>
+<code>h|t</code><br>
+<code>r|e</code></p>
+<h3 id="alt">alt</h3>
+<p>如果不是直接在终端上操作，alt键需要进行设置才能使用。**比如Xshell中，在“属性–键盘–将Alt键作为Meta仿真”打钩，才能使用；OS X上，无法用alt键。**PS：win键盘一般alt键当做Meta键；ALt GR：有些老键盘左边是Alt，右边是ALt GR键<br>
+Alt+./Esc+. (!^ !$): 将最近一条命令的参数输出<br>
+Alt+ f/b: 向前/后移动一个词</p>
+<h3 id="其他">其他</h3>
+<ul>
+<li>Brace Expansion<br>
+<code>ls /usr/{,local}/bin</code>，会列出&quot;/usr/bin&quot;和&quot;/usr/local/bin&quot;</li>
+<li>shell特殊变量<br>
+<code>$0</code>     当前shell程序的名字<br>
+<code>$1 ~ $9</code>    命令行上的第一到第九个参数<br>
+<code>$#</code>    命令行上的参数个数<br>
+<code>$*, $@</code>   命令行上的所有参数<br>
+<code>$?</code>    上一条命令的退出状态<br>
+<code>$$</code>    当前进程的进程标识号(PID)<br>
+<code>$!</code>    最后一个后台进程的进程标识号</li>
+</ul>
+<h3 id="外部资源链接">外部资源链接</h3>
+<p>更多牛逼命令：           <a href="http://www.zhihu.com/question/20140085" target="_blank" rel="external">http://www.zhihu.com/question/20140085</a><br>
+<a href="http://www.zhihu.com/question/20273259" target="_blank" rel="external">http://www.zhihu.com/question/20273259</a><br>
+<a href="http://www.zhihu.com/question/25910725/answer/31951050" target="_blank" rel="external">http://www.zhihu.com/question/25910725/answer/31951050</a><br>
+linux shell 快捷键:      <a href="http://blog.chinaunix.net/uid-361890-id-342066.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-361890-id-342066.html</a></p>
+<h3 id="编码-ctrl-h；终端-f1">编码 ctrl+h；终端 F1</h3>
+<ul>
+<li><strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
+而ctrl+h的值也为010。<br>
+<br>
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+<li>terminal类型的选择也会影响快捷键<br>
+Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="alias命令：">alias命令：</h2>
+<p><a href="http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh" target="_blank" rel="external">http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh</a></p>
+<blockquote>
+<p>Quoted from the man page of bash: Aliases are not expanded when the shell is not interactive, unless the expand_aliases shell option is set using shopt …</p>
+</blockquote>
+<h2 id="at命令：">at命令：</h2>
+<p>介绍：定时执行一次命令。如果想周期地执行命令，请使用crontab</p>
+<ol>
+<li><code>at -f work.sh now +3 min</code><br>
+3分钟后执行脚本 <a href="http://work.sh" target="_blank" rel="external">work.sh</a>    -f指的是从文件读入命令<br>
+其他的时间表示法：at 17:30 2/24/99</li>
+<li>atq （等于at -l）<br>
+查看at任务队列</li>
+<li>atrm+任务号</li>
+<li>似乎没有单命令行的用法，一般用法都是“at 时间”然后进入at命令，输入要执行的命令，然后退出</li>
+</ol>
+<h2 id="awk命令：">awk命令：</h2>
+<p><strong>替换操作在awk中不易执行。</strong></p>
+<ol>
+<li>
+<p><code>awk '/pattern/ {print $0 }' filename</code><br>
+e.g.  <code>awk '/abc/ {print $0 }' filename</code>, 则含有 abcde 的行也会被输出。</p>
+</li>
+<li>
+<p><code>awk 'NR==2 {print $0}' aver.tmp</code></p>
+</li>
+<li>
+<p><code>awk '$1!~/match_str/ {print $0 }' filename</code></p>
+</li>
+<li>
+<p>去掉重复的单词</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/awk -f</span></div><div class="line"></div><div class="line">&#123;</div><div class="line">  <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= NF; i++)</div><div class="line">  &#123;</div><div class="line">      ++word[<span class="variable">$i</span>]</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (word[<span class="variable">$i</span>] == <span class="number">1</span>)</div><div class="line">          printf(<span class="string">"%s "</span>, <span class="variable">$i</span>)</div><div class="line">  &#125;</div><div class="line">  printf(<span class="string">"\n"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>awk script</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line"><span class="comment">#是注释符号</span></div><div class="line"><span class="keyword">BEGIN</span> &#123;</div><div class="line">......</div><div class="line">&#125;</div><div class="line">&#123; <span class="comment">#这个中括号不能省略</span></div><div class="line">......</div><div class="line">&#125;</div><div class="line"><span class="keyword">END</span> &#123;</div><div class="line">......</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>引用外部变量的几种方式：<br>
+【来自：<a href="http://club.topsage.com/thread-393615-1-1.html%E3%80%91" target="_blank" rel="external">http://club.topsage.com/thread-393615-1-1.html】</a></p>
+<blockquote>
+<p>（1）<code>&quot;'&quot;var&quot;'&quot; ——错。应该是&quot;'&quot;$var&quot;'&quot;</code><br>
+（2）<code>awk '{print a, b}' a=111 b=222 yourfile</code><br>
+（3）<code>awk –v a=111 –v b=222 ‘{print a,b}’ yourfile</code><br>
+（4）【ct】<code>pid=$(ps -f | awk '/gpu='&quot;$gpu&quot;'/ &amp;&amp; !/awk/ {print $2}')</code>   ——在//之间，引用外部变量的正确方式是’&quot;$v&quot;’</p>
+</blockquote>
+</li>
+<li>
+<p>引用外部命令的两种方式：【<a href="http://hi.baidu.com/gubuntu/blog/item/050398ceb010513fb700c8d0.html%E3%80%91" target="_blank" rel="external">http://hi.baidu.com/gubuntu/blog/item/050398ceb010513fb700c8d0.html】</a><br>
+例:<code>awk '{if(/Beren/) {print $0 | &quot;cut -b 2-&quot; } else print $0}' job.plm</code><br>
+但糟糕的是，上面这条命令的输出顺序与你设想的并不一致</p>
+</li>
+<li>
+<p>求最大值、最小值、求方差等</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">awk <span class="string">'&#123;if (max=="")  &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;if (min=="")  &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;'</span> file1 </div><div class="line">【注意】：中间不能有空行或短行，否则<span class="variable">$3</span>=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>求和</p>
+<ul>
+<li>对六百列分别求和</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>((i=1;i&lt;=600;i++))</div><div class="line"><span class="keyword">do</span></div><div class="line">  awk <span class="string">'&#123;sum+=$'</span><span class="string">"<span class="variable">$i</span>"</span><span class="string">'&#125;END&#123;print sum/"'</span><span class="string">"<span class="variable">$num_exc</span>"</span><span class="string">'"&#125;'</span> ttt1.tmp &gt;&gt; data</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<ul>
+<li>对行求和</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">awk -v FS=<span class="string">","</span> -v OFS=<span class="string">"+"</span> <span class="string">'&#123;$1="";system("echo $["$0"]")&#125;'</span></div><div class="line">awk -F<span class="string">','</span> <span class="string">'&#123;for(i=2;i&lt;=NF;i++)sum[NR]+=$i;print $1","sum[NR]&#125;'</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>【来自】<a href="http://bbs.chinaunix.net/thread-1384345-1-1.html" target="_blank" rel="external">http://bbs.chinaunix.net/thread-1384345-1-1.html</a></p>
+<ol start="10">
+<li>printf用法<br>
+<code>printf &quot;%s %s %s &quot;,$1,$2,$3</code></li>
+<li>求最大值、最小值、求方差等</li>
+</ol>
+   <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">awk <span class="string">'&#123;if (max=="")  &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;if (min=="")  &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;'</span> file1 </div><div class="line">【注意】：中间不能有空行或短行，否则<span class="variable">$3</span>=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题</div></pre></td></tr></table></figure>
+<ol start="12">
+<li>awk中 ‘’ 和 “” 【单引号和双引号】<br>
+&quot;&quot;是直接输出<br>
+’'是转义输出,'C1’就有特殊的含义</li>
+<li><a href="https://stackoverflow.com/questions/16529716/awk-save-modifications-in-place" target="_blank" rel="external">gawk 4.1.0之后才可以原位修改文件</a></li>
+</ol>
+<h2 id="bc命令：">bc命令：</h2>
+<p>1.m的n次方<br>
+<code>echo &quot;m^n&quot;|bc</code><br>
+2.计算π：<br>
+<code>echo &quot;scale=100; a(1)*4&quot; | bc -l</code><br>
+【附一部分man】</p>
+<blockquote>
+<p>MATH LIBRARY<br>
+If bc is invoked with the -l option, a math library is preloaded and the default  scale  is  set  to  20.<br>
+The  math  functions  will  calculate their results to the scale set at the time of their call.  The math<br>
+library defines the following functions:<br>
+s (x)  The sine of x, x is in radians.    正玄函数<br>
+c (x)  The cosine of x, x is in radians.  余玄函数<br>
+a (x)  The arctangent of x, arctangent returns radians. 反正切函数<br>
+l (x)  The natural logarithm of x.  log函数(以2为底)<br>
+e (x)  The exponential function of raising e to the value x.  e的指数函数<br>
+j (n,x)<br>
+The bessel function of integer order n of x.   贝塞尔函数</p>
+</blockquote>
+<p>3.做加减法时（比如<code>a*b+c</code>）bc不会读入scale信息，所以要想设定scale，可以写成<code>(a*b+c）/1</code>,除法是一定会读入scale的。（<code>(a*b+c）*1</code>）没有效果，但<code>a*b</code>有效果）<br>
+【第二次测试，不存在这个问题了】</p>
+<ol start="4">
+<li>bc不能识别形式为科学计数法的输入，如1.2345e+06</li>
+</ol>
+<h2 id="convert命令：">convert命令：</h2>
+<ol>
+<li>
+<p><code>convert ${i%plt}eps -density 100x100 ${i%plt}tif</code></p>
+</li>
+<li>
+<p><code>convert ${i%plt}eps -density 300 ${i%plt}png</code>  #300代表dpi</p>
+</li>
+<li>
+<p>animated gif</p>
+<blockquote>
+<p><code>convert -delay 120 -loop 0 *.png animated.gif</code><br>
+The delay parameter specifies the delay between frames in 0.01s, while the loop parameter determines how many times the animation runs (the 0 value will run the loop infinitely).</p>
+</blockquote>
+<p><a href="http://www.linux-magazine.com/Online/Blogs/Productivity-Sauce/Create-Animated-GIFs-with-ImageMagick" target="_blank" rel="external">source</a></p>
+</li>
+</ol>
+<h2 id="cp命令：">cp命令：</h2>
+<ol>
+<li><a href="http://blog.chinaunix.net/uid-9525959-id-2303690.html" target="_blank" rel="external">cp自动创建层级结构</a><br>
+例子: <code>cp --parents parentdir1/parentdir2/sourcefile destdir/</code></li>
+</ol>
+<h2 id="cut命令：">cut命令：</h2>
+<p>cut命令很好用<br>
+<code>awk '/Beren/ {print $0}' tt1 | cut -b 2-</code>cut部分的意思是截取第二个到最后一个字符。</p>
+<h1 id="reference">reference</h1>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录用过的命令，方便以后查找。不包含太简单的或太难的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
     <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-07-28T19:26:31.000Z</updated>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]</p>
 <h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
@@ -466,7 +770,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
     <link href="http://yoursite.com/2017/07/26/git/"/>
     <id>http://yoursite.com/2017/07/26/git/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-29T16:35:03.000Z</updated>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -737,7 +1041,7 @@ but not:<br>
     <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
     <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-28T18:04:40.000Z</updated>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="正文">正文</h1>
 <ol start="0">
@@ -833,7 +1137,7 @@ ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&q
     <link href="http://yoursite.com/2017/07/21/hexo/"/>
     <id>http://yoursite.com/2017/07/21/hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-28T18:04:40.000Z</updated>
+    <updated>2017-07-31T13:24:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="memo">memo</h1>
 <ul>
@@ -968,7 +1272,7 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-28T18:04:40.000Z</updated>
+    <updated>2017-07-31T13:33:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
@@ -979,6 +1283,10 @@ PS:</p>
 so <code>indent.sh</code> is used</li>
 <li>Could add spacing manually by <code>&amp;nbsp; #半角的不断行的空白格</code> (it works in header, too)</li>
 <li><code>&lt;br/&gt;</code> as line break</li>
+</ul>
+<h1 id="bug">Bug</h1>
+<ul>
+<li>有时候ordered list序号大于等于10，缩进会失效。</li>
 </ul>
 <h1 id="mou">Mou</h1>
 <p><img src="http://25.io/mou/Mou_128.png" alt="Mou icon"></p>
@@ -1144,6 +1452,10 @@ PS:&lt;/p&gt;
 so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
 &lt;li&gt;Could add spacing manually by &lt;code&gt;&amp;amp;nbsp; #半角的不断行的空白格&lt;/code&gt; (it works in header, too)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&amp;lt;br/&amp;gt;&lt;/code&gt; as line break&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;bug&quot;&gt;Bug&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;有时候ordered list序号大于等于10，缩进会失效。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;mou&quot;&gt;Mou&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;http://25.io/mou/Mou_128.png&quot; alt=&quot;Mou icon&quot;&gt;&lt;/p&gt;

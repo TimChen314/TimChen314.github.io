@@ -2,65 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2017/07/26/git/</loc>
+    <loc>http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2017-07-29T16:35:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/07/28/python_mechanism/</loc>
-    
-    <lastmod>2017-07-28T19:26:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/07/29/Story_of_Terminal/</loc>
-    
-    <lastmod>2017-07-28T19:15:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/07/29/shadowsocks%E5%A4%87%E5%BF%98/</loc>
-    
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <lastmod>2017-07-31T13:45:29.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2017/07/21/markdown_in_hexo/</loc>
     
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <lastmod>2017-07-31T13:33:54.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/07/21/ali_mail_set/</loc>
+    <loc>http://yoursite.com/2017/07/26/git/</loc>
     
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/07/29/hdf5/</loc>
-    
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/07/29/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/</loc>
+    <loc>http://yoursite.com/2017/07/31/hdf5/</loc>
     
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2017/07/21/hexo/</loc>
     
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/07/31/Story_of_Terminal/</loc>
+    
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/07/21/ali_mail_set/</loc>
+    
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/07/28/python_mechanism/</loc>
+    
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/07/31/shadowsocks%E5%A4%87%E5%BF%98/</loc>
+    
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/07/31/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/</loc>
+    
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     
   </url>
   

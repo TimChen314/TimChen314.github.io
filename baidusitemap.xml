@@ -4,58 +4,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/07/26/git/</loc>
-    <lastmod>2017-07-29T16:35:03.000Z</lastmod>
+    <loc>http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2017-07-31T13:45:29.000Z</lastmod>
     <data>
         <display>
-        <title><font size=7><b>git笔记 </b></font></title>
-        <pubTime>2017-07-26T10:00:00.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://yoursite.com/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/28/python_mechanism/</loc>
-    <lastmod>2017-07-28T19:26:31.000Z</lastmod>
-    <data>
-        <display>
-        <title><font size=7><b>python mechanism </b></font></title>
-        <pubTime>2017-07-28T10:00:00.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/29/Story_of_Terminal/</loc>
-    <lastmod>2017-07-28T19:15:51.000Z</lastmod>
-    <data>
-        <display>
-        <title><font size=7><b>Story of Terminal </b></font></title>
-        <pubTime>2017-07-28T19:15:51.000Z</pubTime>
+        <title><font size=7><b>linux常用命令记录 </b></font></title>
+        <pubTime>2017-07-31T10:00:00.000Z</pubTime>
         
         <tag>linux</tag>
-         
-        <tag>编码</tag>
-         
-        <tag>Terminal</tag>
          
          
            
@@ -68,28 +24,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/07/29/shadowsocks%E5%A4%87%E5%BF%98/</loc>
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
-    <data>
-        <display>
-        <title><font size=7><b>shadownsocks备忘 </b></font></title>
-        <pubTime>2017-07-28T18:04:40.000Z</pubTime>
-        
-        <tag>shadownsocks</tag>
-         
-         
-           
-             
-              <breadCrumb title="shadownsocks" url="http://yoursite.com/categories/shadownsocks/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/07/21/markdown_in_hexo/</loc>
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <lastmod>2017-07-31T13:33:54.000Z</lastmod>
     <data>
         <display>
         <title><font size=7><b>markdown in hexo-render-markdown-it </b></font></title>
@@ -108,8 +44,94 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/07/26/git/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    <data>
+        <display>
+        <title><font size=7><b>git笔记 </b></font></title>
+        <pubTime>2017-07-26T10:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://yoursite.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/31/hdf5/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    <data>
+        <display>
+        <title><font size=7><b>hdf5简介 </b></font></title>
+        <pubTime>2017-07-31T13:24:08.000Z</pubTime>
+        
+        <tag>技术杂烩</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术杂烩" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/21/hexo/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    <data>
+        <display>
+        <title><font size=7><b>hexo </b></font></title>
+        <pubTime>2017-07-21T10:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>yilia</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://yoursite.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/31/Story_of_Terminal/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    <data>
+        <display>
+        <title><font size=7><b>Story of Terminal </b></font></title>
+        <pubTime>2017-07-31T13:24:08.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>编码</tag>
+         
+        <tag>Terminal</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://yoursite.com/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/07/21/ali_mail_set/</loc>
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     <data>
         <display>
         <title><font size=7><b>阿里云邮箱设置记录 </b></font></title>
@@ -130,19 +152,19 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/07/29/hdf5/</loc>
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <loc>http://yoursite.com/2017/07/28/python_mechanism/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     <data>
         <display>
-        <title><font size=7><b>hdf5简介 </b></font></title>
-        <pubTime>2017-07-28T18:04:40.000Z</pubTime>
+        <title><font size=7><b>python mechanism </b></font></title>
+        <pubTime>2017-07-28T10:00:00.000Z</pubTime>
         
-        <tag>技术杂烩</tag>
+        <tag>python</tag>
          
          
            
              
-              <breadCrumb title="技术杂烩" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
           
         </display>
     </data>
@@ -150,12 +172,32 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/07/29/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
+    <loc>http://yoursite.com/2017/07/31/shadowsocks%E5%A4%87%E5%BF%98/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    <data>
+        <display>
+        <title><font size=7><b>shadownsocks备忘 </b></font></title>
+        <pubTime>2017-07-31T13:24:08.000Z</pubTime>
+        
+        <tag>shadownsocks</tag>
+         
+         
+           
+             
+              <breadCrumb title="shadownsocks" url="http://yoursite.com/categories/shadownsocks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/31/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     <data>
         <display>
         <title><font size=7><b>人工智能简介</b></font></title>
-        <pubTime>2017-07-28T18:04:40.000Z</pubTime>
+        <pubTime>2017-07-31T13:24:08.000Z</pubTime>
         
         <tag>人工智能</tag>
          
@@ -163,28 +205,6 @@
            
              
               <breadCrumb title="人工智能" url="http://yoursite.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/21/hexo/</loc>
-    <lastmod>2017-07-28T18:04:40.000Z</lastmod>
-    <data>
-        <display>
-        <title><font size=7><b>hexo </b></font></title>
-        <pubTime>2017-07-21T10:00:00.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>yilia</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://yoursite.com/categories/hexo/"/>
           
         </display>
     </data>
