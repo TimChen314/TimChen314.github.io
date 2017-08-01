@@ -16,6 +16,7 @@ so `indent.sh` is used
 
 # Bug
 + 有时候ordered list序号大于等于10，缩进会失效。
++ 目录不能正常显示，如vim笔记.md
 
 # Mou
 

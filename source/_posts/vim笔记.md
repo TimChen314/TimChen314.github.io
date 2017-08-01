@@ -10,8 +10,7 @@ date: 2017-08-01 18:00:00
 记录用过的命令，方便以后查找。不包含太简单的或太难的。
 <!-- more -->
 删除线代表已经非常熟练的掌握，不需要再看了。
-#   vim下命令： 
-## 命令
+## vim下命令： 
 
 ~~(3)~~ `:.,$ s/str1/str2/g` 用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1 
 其中`.`代表当前行，`$`代表最后一行，而`.,$`就代表从当前行到最后一行
@@ -143,7 +142,8 @@ alias evince='LD_LIBRARY_PATH="" evince'
 + noremap：绑定键的时候，不迭代绑定
 五中模式代号：nvoic
 
-# reference
+## reference
 [vim tutorial](https://danielmiessler.com/study/vim/#why)
 [超过130个你需要了解的vim命令](http://developer.51cto.com/art/201308/406941.htm) 【好】
 [vim map nmap](http://www.cnblogs.com/lq0729/archive/2011/12/24/2300189.html)【非常好，介绍vimrc的一些基本命令】
+
