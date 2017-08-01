@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-31T13:24:08.000Z</updated>
+  <updated>2017-08-01T06:24:25.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,327 +16,159 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/31/Story_of_Terminal/"/>
-    <id>http://yoursite.com/2017/07/31/Story_of_Terminal/</id>
-    <published>2017-07-31T13:24:08.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
+    <title>&lt;font size=7&gt;&lt;b&gt;vim笔记 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/08/01/vim笔记/</id>
+    <published>2017-08-01T10:00:00.000Z</published>
+    <updated>2017-08-01T06:24:25.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
-<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
-本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
-<ul>
-<li>ctrl+h的编码<br>
-<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
-而ctrl+h的值也为010。<br>
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
-</ul>
+    <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
+<p>删除线代表已经非常熟练的掌握，不需要再看了。</p>
+<h1 id="vim下命令：">vim下命令：</h1>
+<h2 id="命令">命令</h2>
+<p><s>(3)</s> <code>:.,$ s/str1/str2/g</code> 用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1<br>
+其中<code>.</code>代表当前行，<code>$</code>代表最后一行，而<code>.,$</code>就代表从当前行到最后一行<br>
+也可以这样 <code>:.,.+8 s/str1/str2/g</code>， 其中<code>.,.+8</code>代表从当前行到从当前行开始下面第8行。<br>
+例如：如果当前行是第二行，那么<code>:.,.+8 s/str1/str2/g</code>等价于<code>:2,10 s/str1/str2/g</code></p>
+<p><s>(4)</s> <code>s/\(love\)able/\1er/</code> # 会将loveable替换成lover，<code>\1</code>代表第一对小括号内的匹配项<br>
+(6) 读入文件<br>
+<code>:23r input_file</code>，在当前文件23行将<code>input_file</code>的内容插入近来<br>
+(7) <code>&lt;leader&gt;</code> is backlash<br>
+(8) “+y  复制到系统剪贴板<br>
+(11) Vu(VU) # V mode下，大小写转换<br>
+(12) <code>:!pwd</code> # Execute the pwd unix command, then returns to Vi<br>
+(13) <code>!!pwd</code> # Execute the pwd unix command and insert output in file<br>
+(14) vim中的g(global)和%的区别：</p>
 <ul>
-<li>F1键<br>
-terminal类型的选择也会影响快捷键。<br>
-Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
-</ul>
-<h2 id="问题：">问题：</h2>
-<p>为什么BS无法删除，而是想左移动？<br>
-为什么在执行程序进行输入时，按下BS显示的是^H?</p>
-<h2 id="答案">答案</h2>
-<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
-<p>Terminal</p>
-<ul>
-<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
-<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
-<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
-<blockquote>
-<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
-&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
-本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ctrl+h的编码&lt;br&gt;
-&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
-而ctrl+h的值也为010。&lt;br&gt;
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/31/hdf5/"/>
-    <id>http://yoursite.com/2017/07/31/hdf5/</id>
-    <published>2017-07-31T13:24:08.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
-<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
-<h3 id="历史">历史</h3>
-<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
-<h3 id="特性">特性</h3>
-<ul>
-<li>自述性<br>
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
-<li>通用性<br>
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>灵活性<br>
-HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
-<li>扩展性<br>
-HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
-<li>跨平台性</li>
-<li>现代性<br>
-支持并行I/O，线程和其他一些现代系统和应用要求。</li>
-</ul>
-<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
-<h3 id="why-hdf">Why HDF?</h3>
-<ul>
-<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
-<li>NASA’s Earth Observing System等等官网介绍</li>
-</ul>
-<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
-<h2 id="文档">文档</h2>
-<ul>
-<li>sphinx<br>
-它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
-<ul>
-<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
-<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
-<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
-</ul>
+<li>
+<p>g:全局的<br>
+s/pattern/replacement/  : 替换行中出现的每一个pattern<br>
+g/pattern/s/pattern/replacement/g : 开始处的g是全局命令，意味着对所有与地址匹配的行进行改变。结尾处的g是一个标志，意味着改变一行上的每个。<br>
+linux中的grep = g/rep/p</p>
+</li>
+<li>
+<p>%:代表这文件本身每一行</p>
 </li>
 </ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
-&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
-&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
-&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
-&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;自述性&lt;br&gt;
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
-&lt;li&gt;通用性&lt;br&gt;
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/31/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/31/shadowsocks备忘/</id>
-    <published>2017-07-31T13:24:08.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<p>(15) 全部格式化: gg=G<br>
+(16) vi如何关闭打开的多个文件中的一个?<br>
+切换到你想关闭的 文件窗口.<br>
+然后输入 :bd<br>
+即 : buffers delete<br>
+就可以关闭了.<br>
+(17) 两条命令合在一起用<br>
+<code>:%s/abc/def/ | wq</code></p>
+<h3 id="移动">移动</h3>
 <ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+<li>zz 光标所在行居中</li>
+<li>20| 到第20列！【Normal mode】</li>
 </ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/31/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2017/07/31/人工智能简介/</id>
-    <published>2017-07-31T13:24:08.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
-<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
+<h3 id="多个文件同时处理">多个文件同时处理</h3>
 <ul>
-<li>Hinton 多伦多大学<br>
-DBN</li>
-<li>LeCun<br>
-CNN</li>
-<li>Bengio<br>
-attention、GAN</li>
-</ul>
-<h2 id="神经网络简介">神经网络简介</h2>
-<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"></p>
-<a id="more"></a>
-<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
-<h2 id="技术备忘">技术备忘</h2>
-<ul>
-<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
-<blockquote>
-<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
-</blockquote>
+<li>
+<p>文件以tab打开</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:args *.c</div><div class="line">:tab all</div></pre></td></tr></table></figure>
+<p>or <code>vim -p *.h *cc</code></p>
 </li>
-<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
-<blockquote>
-<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
-</blockquote>
-</li>
-<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
-<blockquote>
-<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
-面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
-</blockquote>
+<li>
+<p>Run a command in multiple buffers<br>
+将所有文件进行格式化，并写入所有文件</p>
+   <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">tabdo</span> Autoformat</div><div class="line">:<span class="keyword">wa</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="历史节点">历史节点</h2>
+<h3 id="替换-查找">替换、查找</h3>
 <ul>
-<li>1943<br>
-W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
-<li>1949<br>
-D. Olding Hebb: math model</li>
-<li>1957<br>
-F.Rosenblatt: Perceptron</li>
-<li>1969<br>
-Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
-<li>1974<br>
-Paul Werbos: BP(Back Propagation)</li>
-<li>1980<br>
-Hinton: MLP(Multi_Layer Perceptron)</li>
-<li>1982<br>
-John Hopfield: Hopfield Network(pioneer RNN)</li>
-<li>1998<br>
-LeCun: CNN(Convoluted Neural Network)</li>
-<li>2006<br>
-Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
-<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
-<ul>
-<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
-<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
-</ul>
+<li>
+<p>去掉换行符^M: 输入以下字符串: <code>%s/^M//g</code>  (注意，^M = Ctrl v + Ctrl m，而不是手动输入^M)</p>
+</li>
+<li>
+<p>换行符可以<strong>用\n直接匹配，用\r添加</strong></p>
+</li>
+<li>
+<p>对文件内含有特定字符的行操作。<br>
+g/-/s/^/#/ 是把所有含‘-’的行注释掉</p>
 </li>
 </ul>
-<h2 id="名词概念">名词概念</h2>
 <ul>
-<li>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup></li>
-<li>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
-提升模型在测试集上的预测效果的主题叫做泛化</li>
-<li>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
-相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</li>
-<li>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
-更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</li>
-<li>DBN(深度信念网络)</li>
-<li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
-【示意效果】<br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
-<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
-<blockquote>
-<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
-</blockquote>
+<li>/open\c<br>
+其中 \c表示忽略大小写</li>
+<li>vi（lzy0xa@192.9.207.102）的正则表达式中<code>H[1-9]*</code>并不能match H20 ,因为这里vi认为<code>*</code>是匹陪[1-9]中的数，而不是匹配所有的字符。要想匹配H20、H320、H308之类的字符串就需要用<code>H[0-9]*</code></li>
+</ul>
+<h3 id="代码折叠">代码折叠</h3>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">set foldmethod=indent                                                        </div><div class="line">set foldnestmax=10                                                           </div><div class="line">set nofoldenable &quot; makes sure that when opening, files are &quot;normal&quot;, i.e. not</div><div class="line">folded.                                                                      </div><div class="line">set foldlevel=0</div></pre></td></tr></table></figure>
+<ul>
+<li>zM/zR zm/zr<br>
+大/小写 – 所有/逐层<br>
+m/r – 折叠/打开</li>
+<li>（对当前折叠）zc/zo zC/zO<br>
+大/小写 – 所有/逐层</li>
+<li>zf/zd 创建/删除折叠</li>
+<li>zj/zk</li>
+<li>[z / ]z       到当前打开的折叠的开始/结尾处。</li>
+</ul>
+<h3 id="显示信息">显示信息</h3>
+<ul>
+<li>历史命令<br>
+<code>q:</code>或<code>:hist</code></li>
+<li>是否具有某种特性 <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'python3'</span>) #<span class="number">0</span> <span class="keyword">is</span> false, <span class="number">1</span> means true #判断是否支持<span class="keyword">python3</span></div><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'viminfo'</span>)</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="技术成熟的条件">技术成熟的条件</h1>
-<h2 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></h2>
-<blockquote>
+<h2 id="vimrc">vimrc</h2>
+<h4 id="plugin">Plugin</h4>
 <ul>
-<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
+<li>auto-pairs<br>
+github readme里，有括号包裹单词这个功能，但我尝试多次也没有使用成功。<br>
+<a-e>或<m-e>对应这一功能（A means Alt, M means Meta, in present context Alt and Meta is the same ），但我在Xshell中用的时候，<a-e>并没有激活auto-pairs，激活的是linux自带的快捷键–向右移动到词尾。<br>
+最终我输入单个括号是用：ctrl+v，（</a-e></m-e></a-e></li>
+<li>markdown插件 vim-markdown<br>
+<a href="http://www.jianshu.com/p/24aefcd4ca93" target="_blank" rel="external">http://www.jianshu.com/p/24aefcd4ca93</a><br>
+<a href="https://github.com/plasticboy/vim-markdown" target="_blank" rel="external">https://github.com/plasticboy/vim-markdown</a><br>
+有用的命令：c <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:Toc</div></pre></td></tr></table></figure>
+</li>
 </ul>
-</blockquote>
+<h4 id="youcompleteme">YouCompleteMe</h4>
 <ul>
-<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
-<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
-<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
-<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
-<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
+<li>
+<p>需要进入bundle文件夹进行编译</p>
+</li>
+<li>
+<p>错误<code>YouCompleteMe unavailable: requires Vim compiled with Python (2.6+ or 3.3+) support</code><br>
+明明安装VIM时已经选择支持python3了，为什么还会报错？而且：</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'python3'</span>) #返回值为<span class="number">0</span>，说明在<span class="keyword">vim</span>中不能正常支持<span class="keyword">python</span></div></pre></td></tr></table></figure>
+<p>这很可能是因为：python运行时找不到库。解决方法就是添加python库的路径到LD_LIBRARY_PATH环境变量：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:/opt/anaconda3/lib/</div></pre></td></tr></table></figure>
+<p>然而，这样又会导致其他程序找到的是<code>/opt/anaconda3/lib/</code>里的库，而非系统自带的库，例如：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ evince</div><div class="line">evince: symbol lookup error: /lib64/libgdk-3.so.0: undefined symbol: cairo_surface_set_device_scale</div></pre></td></tr></table></figure>
+<p><strong>最终解决方法，是分别设置环境变量</strong>，例如：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> evince=<span class="string">'LD_LIBRARY_PATH="" evince'</span></div></pre></td></tr></table></figure>
+<p>这样evince启动时，就不会去anaconda的路径里面找库了。</p>
+</li>
+</ul>
+<h4 id="cmd">cmd</h4>
+<ul>
+<li>颜色<br>
+.vim/colors/中放置配置文件<br>
+:colo 查看当前颜色</li>
+<li>noremap：绑定键的时候，不迭代绑定<br>
+五中模式代号：nvoic</li>
 </ul>
 <h1 id="reference">reference</h1>
-<h2 id="历史">历史</h2>
-<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
-<h2 id="可读">可读</h2>
-<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
-<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
-[book: Neural networks and deep learning(Michael Nielsen)]<br>
-(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref5" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
+<p><a href="https://danielmiessler.com/study/vim/#why" target="_blank" rel="external">vim tutorial</a><br>
+<a href="http://developer.51cto.com/art/201308/406941.htm" target="_blank" rel="external">超过130个你需要了解的vim命令</a> 【好】<br>
+<a href="http://www.cnblogs.com/lq0729/archive/2011/12/24/2300189.html" target="_blank" rel="external">vim map nmap</a>【非常好，介绍vimrc的一些基本命令】</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;备忘&quot;&gt;备忘&lt;/h1&gt;
-&lt;h2 id=&quot;三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小&quot;&gt;三巨头介绍&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hinton 多伦多大学&lt;br&gt;
-DBN&lt;/li&gt;
-&lt;li&gt;LeCun&lt;br&gt;
-CNN&lt;/li&gt;
-&lt;li&gt;Bengio&lt;br&gt;
-attention、GAN&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;神经网络简介&quot;&gt;神经网络简介&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg&quot; alt=&quot;极简分类&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;记录用过的命令，方便以后查找。不包含太简单的或太难的。&lt;/p&gt;
     
     </summary>
     
-      <category term="人工智能" scheme="http://yoursite.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+      <category term="vim" scheme="http://yoursite.com/categories/vim/"/>
     
     
-      <category term="人工智能" scheme="http://yoursite.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
     
   </entry>
   
@@ -345,9 +177,10 @@ attention、GAN&lt;/li&gt;
     <link href="http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2017/07/31/linux常用命令记录/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2017-07-31T13:45:29.000Z</updated>
+    <updated>2017-08-01T06:16:08.000Z</updated>
     
-    <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
+    <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
+长度感人。</p>
 <a id="more"></a>
 <p>[TOC]</p>
 <h2 id="正则表达式">正则表达式</h2>
@@ -628,12 +461,281 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 <h2 id="cut命令：">cut命令：</h2>
 <p>cut命令很好用<br>
 <code>awk '/Beren/ {print $0}' tt1 | cut -b 2-</code>cut部分的意思是截取第二个到最后一个字符。</p>
-<h1 id="reference">reference</h1>
+<h2 id="diff命令">diff命令</h2>
+<p>1.对比两个文件夹的不同<br>
+`diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ &gt; diff_text</p>
+<h2 id="echo命令：">echo命令：</h2>
+<ul>
+<li><code>-e</code> 开启反斜杠转义字符</li>
+<li><code>-E</code> 关闭反斜杠转义字符</li>
+<li><code>-n</code> 去掉echo默认输出的换行符</li>
+<li>测试 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> -e <span class="string">"a\tb\tc\n"</span></div><div class="line">a	b	c</div><div class="line">$ <span class="built_in">echo</span> -E <span class="string">"a\tb\tc\n"</span></div><div class="line">a\tb\tc\n</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="gprof：">gprof：</h2>
+<p><a href="http://blog.csdn.net/linquidx/article/details/5916701" target="_blank" rel="external">http://blog.csdn.net/linquidx/article/details/5916701</a><br>
+<a href="http://blog.csdn.net/stanjiang2010/article/details/5655143" target="_blank" rel="external">http://blog.csdn.net/stanjiang2010/article/details/5655143</a></p>
+<ol>
+<li>gprof -b -A -p -q test gmon.out &gt; x<br>
+-b选项的作用是输出程序说明，对比加-b选项和不加的情况就明白了</li>
+</ol>
+<h2 id="grep命令：">grep命令：</h2>
+<ul>
+<li><code>-i</code>： 忽略大小写</li>
+<li><code>-v</code>： 不显示匹配的项</li>
+</ul>
+<h2 id="kill命令：">kill命令：</h2>
+<p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
+kill -STOP 1234<br>
+如果要恢复到前台，请在当时运行该进程的那个终端用jobs命令查询暂停的进程</p>
+<h2 id="ls命令：">ls命令：</h2>
+<p>1.只显示文件<br>
+<code>ls -l | grep ^- | awk '{print $9}'</code><br>
+<code>ls -1 -F | grep -v [/$]</code></p>
+<p>2.只显示文件夹<br>
+只显示文件夹： <code>ls -d */</code><br>
+<code>-d</code>的意义:      显示目录本身的信息，而不是列出目录下的文件<br>
+<code>ls *</code>：         显示所有文件、文件夹及其中的文件(文件夹)<br>
+<code>ls -d *</code>:       显示所有文件、文件夹</p>
+<h3 id="查看linux进程的执行文件路径">查看linux进程的执行文件路径</h3>
+<blockquote>
+<pre><code>      1、以超级用户登陆
+</code></pre>
+</blockquote>
+<pre><code>       2、进入/proc目录
+       3、ps查看所有符合./cmd的进程，找出其对应的PID进程号
+       4、用ll命令： ll 进程号 
+          如下显示一个示例：
+          [root@Cluster1 proc]# ll 22401 (proc文件夹中有对应PID码的文件名,进入即可)
+   total 0
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cmdline
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cpu
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 cwd -&gt; /home/zhouys/sbs/bin
+   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 environ
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 exe -&gt; /home/zhouys/sbs/bin/cbs (deleted)
+   dr-x------    2 zhouys    zhouys     0 Dec 11 11:10 fd
+   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 maps
+   -rw-------    1 zhouys    zhouys     0 Dec 11 11:10 mem
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 mounts
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 root -&gt; /
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 stat
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 statm
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 status
+          /proc文件系统下的 进程号目录 下面的文件镜像了进程的当前运行信息，
+          从中可以看到：
+          cwd符号链接的就是进程22401的运行目录；
+          exe符号连接就是执行程序的绝对路径；
+          cmdline就是程序运行时输入的命令行命令；本例为：./cbs
+          cpu记录了进程可能运行在其上的cpu；显示虚拟的cpu信息
+          environ记录了进程运行时的环境变量
+          fd目录下是进程打开或使用的文件的符号连接
+          ...
+    通过cwd直接进入进程运行目录，通过查看相关信息就可以定位此目录对应那个端口号，以及
+定位是那个应用才使用此服务程序。       
+       5、`ps -aux` 命令
+       ps也可打印其路径,但不是万能的,有些路径只能使用以上两种方法取得
+</code></pre>
+<h2 id="ln">ln</h2>
+<ul>
+<li>ln source target</li>
+<li>hard link<br>
+hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。</li>
+</ul>
+<h2 id="mkdir命令：">mkdir命令：</h2>
+<p>在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。</p>
+<h2 id="printf命令：">printf命令：</h2>
+<p>1.补零<br>
+<code>printf &quot;%05d&quot; 123</code><br>
+结果是：00123<br>
+参考：<a href="http://blog.csdn.net/truelie/article/details/1692942" target="_blank" rel="external">http://blog.csdn.net/truelie/article/details/1692942</a></p>
+<h2 id="ps命令">ps命令</h2>
+<ol>
+<li>linux查看进程启动时间(运行多长时间)<br>
+<code>ps -eo pid,lstart,etime | grep your_pid</code></li>
+</ol>
+<h2 id="sed命令：">sed命令：</h2>
+<p><a href="http://www.cnblogs.com/ctaixw/p/5860221.html" target="_blank" rel="external">sed命令详解</a></p>
+<ol>
+<li>
+<p>抓取第m 到 第n行：<br>
+<code>sed -n &quot;m,np&quot; filename</code><br>
+<code>sed -n &quot;$[$fl*($i-1)+1],$[$fl*$i]p&quot; ../../precopy/h-tail-10 &gt; frame$i</code></p>
+</li>
+<li>
+<p>在file1第3行之后插入file2:<br>
+<code>sed '3 r file2' file1</code></p>
+</li>
+<li>
+<p>将“vel[i].x vel[i].y vel[i].z”替换成“velx[i] vely[i] velz[i]”<br>
+<code>s/\[i\]\.\([xyz]\)/\1[i]/g</code></p>
+</li>
+<li>
+<p>&amp;字符 : 代表其前 pattern 字串<br>
+例：<code>sed -e 's/test/&amp; my car/'</code>替换后变为：test my car</p>
+</li>
+<li>
+<p>在有字符串33的行的行首，添加<br>
+<code>sed -i '/33/s/^/#&amp;/' t1.plm</code><br>
+注意为什么要有^：<br>
+有“^”，“&amp;”代表的是有字符串33存在的整行<br>
+没有“^”，“&amp;”代表的是字符串33</p>
+</li>
+<li>
+<p>将原来的所有空行删除并在每一行后面增加一空行<br>
+<code>sed '/^$/d;G' file3</code></p>
+</li>
+<li>
+<p>在指定(export)行前面加行<br>
+<code>sed '/export/i xxx' file</code>或<code>sed '/export/i \xxx' file</code><br>
+在指定(export)行前面后行<br>
+<code>sed '/export/a xxx' file</code>或<code>sed '/export/a \xxx' file</code></p>
+</li>
+</ol>
+<p>9.单引号的转义<br>
+<code>'\''</code><br>
+<code>sed 's/'\''//g'</code># 将单引号替换为空格</p>
+<ol start="11">
+<li>
+<p>指定行添加内容<br>
+<code>sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt</code></p>
+</li>
+<li>
+<p>外部变量<br>
+<code>sed 's/standard/'&quot;$i&quot;'/'</code></p>
+</li>
+<li>
+<p><code>sed -i</code>会使软链接失效<br>
+<code>--follow-symlinks</code>可以保持软连接</p>
+</li>
+</ol>
+<h2 id="sort命令">sort命令</h2>
+<ol>
+<li>按第二行排序<br>
+<code>sort -n -k2 file</code></li>
+</ol>
+<h2 id="ssh">ssh</h2>
+<p>有的命令<code>source .bash_profile</code><br>
+例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></p>
+<h2 id="su命令：">su命令：</h2>
+<p>1.关于login<br>
+（1）.直接登录root<br>
+（2）.由其他用户名登录到root:  su -，否则就是没有login<br>
+（3）<code>su -c 'command'</code></p>
+<h2 id="time命令">time命令</h2>
+<ol>
+<li><code>time ./program</code><br>
+参数：<strong>-p</strong> 以秒为默认单位来进行输出</li>
+</ol>
+<h2 id="top命令：">top命令：</h2>
+<p>1.查看内存<br>
+可以直接使用top命令后，查看%MEM的内容<br>
+查看用户ct的进程的内存： <code>top -u ct</code><br>
+查看特定进程的内存：<code>top -d 1 -p pid [,pid ...]</code> //设置为delay 1s，默认是delay 3s；如果想根据内存使用量进行排序，可以shift + m（Sort by memory usage）</p>
+<h2 id="uniq命令">uniq命令</h2>
+<ol>
+<li><code>uniq -c</code><br>
+在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。</li>
+</ol>
+<h2 id="xargs命令-find命令：">xargs命令 &amp; find命令：</h2>
+<ol>
+<li><code>awk '{print }' filenames | xargs du -h</code><br>
+文件filenames中存储了一些文件名，用这种方式，可以看到每个文件的大小</li>
+<li><code>find . -name &quot;pa*.xml&quot; | xargs -n 10000 rm -f</code><br>
+find + xargs 是“Argument list too long”问题的标准解决方法，find命令是持续输出的，而xargs再将find的出处分成若干段，再进行下一步处理</li>
+<li>`find -name *.dcd | tee -a dcd_name | xargs rm &amp;<br>
+删除文件，并将删除的文件的路径输入到dcd_name中</li>
+<li>批量转换文件格式<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls *.jpg | xargs -I&#123;&#125; -P 8 convert <span class="string">"&#123;&#125;"</span> `<span class="built_in">echo</span> &#123;&#125; | sed <span class="string">'s/jpg$/png/'</span>`</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中-P代表进程数；<br>
+-i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给{}，可以用{}代替。”<br>
+在当前这个命令下，以tmp.jpg为例，实际上执行的是 convert tmp.jpg tmp.png</p>
+<h2 id="yum命令">yum命令</h2>
+<ol>
+<li><code>yum install foo</code></li>
+<li><code>yum remove foo</code></li>
+<li><code>yum list *foo* #You can rearch the available packages</code></li>
+<li><code>yum localinstall foo.rpm</code></li>
+</ol>
+<h2 id="逻辑表达式与-和-：">逻辑表达式与<code>&amp;&amp;</code>和<code>||</code>：</h2>
+<ul>
+<li>
+<p>逻辑表达式<br>
+（1）C语言中写法：<br>
+<code>if (a == b &amp;&amp; a == c)</code></p>
+<p>shell 中的写法：<br>
+<code>if ([ $a -eq $b ] &amp;&amp; [ $a -eq $c ]); then</code><br>
+(2) C 语言中的写法：<br>
+<code>if (a == b &amp;&amp; a == c &amp;&amp; b == c)</code><br>
+shell 中的写法：<br>
+<code>if [ $a -eq $b -o $a -eq $c -o $b -eq $c ]; then</code><br>
+<code>if [ $a -eq $b ] &amp;&amp; [ $a -eq $c ] &amp;&amp; [ $b -eq $c ]; then</code><br>
+注意：“[”或“]”与表达式之间必须要有空格。</p>
+</li>
+<li>
+<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+<code>[ ]</code>是shell built-in，而<code>[[ ]]</code>不属于POSIX；<br>
+<code>[ ]</code>会展开<code>a*</code>，所以用它的时候需要加双引号：<code>[ &quot;$var&quot; ]</code>；<code>[[ ]]</code>不需要<br>
+<code>[ ]</code>会fork a new process，<code>[[ ]]</code>不会</p>
+</li>
+</ul>
+<ul>
+<li><code>&amp;&amp;</code>和<code>||</code><br>
+<code>&amp;&amp;</code>和<code>||</code>与逻辑表达式表面相似，实则完全不同，如果混淆了会导致严重的错误。<br>
+<code>command1 &amp;&amp; command2</code>，如果command1返回值为真（<code>$?==0</code>），才会执行command2。一般命令正确执行了，都会返回0。<br>
+<code>command1 || command2</code>则是command1返回值为假（<code>$? != 0</code>）才执行command2。<br>
+关于这两个算符，还<strong>有个隐僻但重要的问题</strong>是<code>command1 &amp;&amp; command2</code>的返回值，如果command1返回值为假，<strong>整个表达式的返回值也为假，表达式所在的脚本的返回值也为假！</strong>。<br>
+有不少人认为<code>[ ... ] &amp;&amp; ...</code>和<code>if</code>语句效果一样但更简洁，这种想法是错误的，因为前一种用法会影响程序返回值，而<code>if</code>语句不会。如果在脚本中用前一种方法，会莫名其妙的导致返回值为假又没有任何报错。</li>
+</ul>
+<h2 id="脚本注意事项：">脚本注意事项：</h2>
+<ol>
+<li>
+<p><code>declare -A var # 声明为关联数组</code><br>
+<code>declare -a var # 声明为数组</code><br>
+二者很不同</p>
+</li>
+<li>
+<p>关联数组定义的后面不能加#<br>
+例如：<code>array=([seg]=100)# 这样会出问题</code></p>
+</li>
+<li>
+<p>命令中blank space是不能随便加的<br>
+Because blank space is usually used as the separater of command or agruments.<br>
+<code>&lt;&lt;block #</code>&lt;&lt; 和 block之间不能有空格</p>
+</li>
+</ol>
+<ol start="4">
+<li>脚本的长度<br>
+不要把不同功能写到一个脚本中，尤其是脚本较大的时候。<br>
+即使你可以非常顺利的写出脚本的每一句，也不意味着你的脚本可以正常执行。<br>
+所以要分块编写:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">!/bin/sh</div><div class="line">  part1.sh</div><div class="line">  part2.sh</div><div class="line">  part3.sh</div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>优点：<br>
+这样编写把part1-3的内容写在一个脚本里执行起来是一样的，但是，像这样将脚本分割，有利于调试脚本。由于脚本过于灵活，所以非常容易出错，而出错几率是和大小成指数关系的。所以要把脚本分化，使每一部分都有明确的意义，一来方便检查脚本是否有误，二来增加代码的重复利用率。</li>
+<li>缺点：<br>
+传递参数麻烦。</li>
+</ul>
+<h3 id="常见错误">常见错误</h3>
+<ul>
+<li>循环变量的错误使用<br>
+比如说循环变量i，在其他地方是否被改动了？<br>
+这种错误shell是不会检查出来的</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;记录用过的命令，方便以后查找。不包含太简单的或太难的。&lt;/p&gt;
+      &lt;p&gt;记录用过的命令，方便以后查找。不包含太简单的或太难的。&lt;br&gt;
+长度感人。&lt;/p&gt;
     
     </summary>
     
@@ -641,6 +743,156 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
     
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2017/07/28/人工智能简介/</id>
+    <published>2017-07-28T10:00:00.000Z</published>
+    <updated>2017-07-31T15:42:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
+<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
+<ul>
+<li>Hinton 多伦多大学<br>
+DBN</li>
+<li>LeCun<br>
+CNN</li>
+<li>Bengio<br>
+attention、GAN</li>
+</ul>
+<h2 id="神经网络简介">神经网络简介</h2>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"></p>
+<a id="more"></a>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
+<h2 id="技术备忘">技术备忘</h2>
+<ul>
+<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
+<blockquote>
+<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
+</blockquote>
+</li>
+<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
+<blockquote>
+<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
+</blockquote>
+</li>
+<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
+<blockquote>
+<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
+面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="历史节点">历史节点</h2>
+<ul>
+<li>1943<br>
+W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
+<li>1949<br>
+D. Olding Hebb: math model</li>
+<li>1957<br>
+F.Rosenblatt: Perceptron</li>
+<li>1969<br>
+Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
+<li>1974<br>
+Paul Werbos: BP(Back Propagation)</li>
+<li>1980<br>
+Hinton: MLP(Multi_Layer Perceptron)</li>
+<li>1982<br>
+John Hopfield: Hopfield Network(pioneer RNN)</li>
+<li>1998<br>
+LeCun: CNN(Convoluted Neural Network)</li>
+<li>2006<br>
+Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
+<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
+<ul>
+<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
+<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
+</ul>
+</li>
+</ul>
+<h2 id="名词概念">名词概念</h2>
+<ul>
+<li>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup></li>
+<li>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
+提升模型在测试集上的预测效果的主题叫做泛化</li>
+<li>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
+相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</li>
+<li>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
+更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</li>
+<li>DBN(深度信念网络)</li>
+<li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
+【示意效果】<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
+<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<blockquote>
+<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="技术成熟的条件">技术成熟的条件</h1>
+<h2 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></h2>
+<blockquote>
+<ul>
+<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
+</ul>
+</blockquote>
+<ul>
+<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
+<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
+<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
+<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
+<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="历史">历史</h2>
+<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
+<h2 id="可读">可读</h2>
+<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
+<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
+[book: Neural networks and deep learning(Michael Nielsen)]<br>
+(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;备忘&quot;&gt;备忘&lt;/h1&gt;
+&lt;h2 id=&quot;三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小&quot;&gt;三巨头介绍&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Hinton 多伦多大学&lt;br&gt;
+DBN&lt;/li&gt;
+&lt;li&gt;LeCun&lt;br&gt;
+CNN&lt;/li&gt;
+&lt;li&gt;Bengio&lt;br&gt;
+attention、GAN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;神经网络简介&quot;&gt;神经网络简介&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg&quot; alt=&quot;极简分类&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="人工智能" scheme="http://yoursite.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+      <category term="人工智能" scheme="http://yoursite.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
   </entry>
   
@@ -762,6 +1014,115 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/hdf5/"/>
+    <id>http://yoursite.com/2017/07/26/hdf5/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-07-31T15:44:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
+<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
+<h3 id="历史">历史</h3>
+<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
+<h3 id="特性">特性</h3>
+<ul>
+<li>自述性<br>
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
+<li>通用性<br>
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>灵活性<br>
+HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
+<li>扩展性<br>
+HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
+<li>跨平台性</li>
+<li>现代性<br>
+支持并行I/O，线程和其他一些现代系统和应用要求。</li>
+</ul>
+<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
+<h3 id="why-hdf">Why HDF?</h3>
+<ul>
+<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
+<li>NASA’s Earth Observing System等等官网介绍</li>
+</ul>
+<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
+<h2 id="文档">文档</h2>
+<ul>
+<li>sphinx<br>
+它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
+<ul>
+<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
+<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
+<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
+&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
+&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
+&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
+&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自述性&lt;br&gt;
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
+&lt;li&gt;通用性&lt;br&gt;
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-07-31T15:45:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<ul>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
+    
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
     
   </entry>
   
@@ -1037,98 +1398,68 @@ but not:<br>
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
-    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
-    <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
+    <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
+    <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-07-31T15:44:20.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
-<ol start="0">
-<li>
-<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
-</li>
-<li>
-<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
-</li>
-<li>
-<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
-<blockquote>
-<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
-</blockquote>
-<p>访问http://mail.timchen314.com:</p>
-<blockquote>
-<p>温馨提醒：该页面暂时无法访问<br>
-尊敬的用户：<br>
-您好！<br>
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
-</blockquote>
-<p>所以，必须要备案后才能使用邮箱服务。<br>
-ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<blockquote>
-<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
-</blockquote>
-</li>
-</ol>
+    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
+<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
+本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
+<ul>
+<li>ctrl+h的编码<br>
+<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
+而ctrl+h的值也为010。<br>
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+</ul>
 <a id="more"></a>
-<ol start="3">
-<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
+<ul>
+<li>F1键<br>
+terminal类型的选择也会影响快捷键。<br>
+Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="问题：">问题：</h2>
+<p>为什么BS无法删除，而是想左移动？<br>
+为什么在执行程序进行输入时，按下BS显示的是^H?</p>
+<h2 id="答案">答案</h2>
+<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
+<p>Terminal</p>
+<ul>
+<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
+<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
+<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
 <blockquote>
-<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
+<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
 </blockquote>
-</li>
-</ol>
-<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h1 id="reference">reference</h1>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
-&lt;ol start=&quot;0&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
-尊敬的用户：&lt;br&gt;
-您好！&lt;br&gt;
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
-ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
+&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
+本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ctrl+h的编码&lt;br&gt;
+&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
+而ctrl+h的值也为010。&lt;br&gt;
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
     
     
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
-      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
+      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
     
   </entry>
   
@@ -1264,6 +1595,102 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="yilia" scheme="http://yoursite.com/tags/yilia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
+    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-31T13:24:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
+<ol start="0">
+<li>
+<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
+</li>
+<li>
+<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
+</li>
+<li>
+<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
+<blockquote>
+<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
+</blockquote>
+<p>访问http://mail.timchen314.com:</p>
+<blockquote>
+<p>温馨提醒：该页面暂时无法访问<br>
+尊敬的用户：<br>
+您好！<br>
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
+</blockquote>
+<p>所以，必须要备案后才能使用邮箱服务。<br>
+ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
+<blockquote>
+<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
+</blockquote>
+</li>
+</ol>
+<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
+&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
+尊敬的用户：&lt;br&gt;
+您好！&lt;br&gt;
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
+ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   

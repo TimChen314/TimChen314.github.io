@@ -1,117 +1,1764 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Story of Terminal]]></title>
-    <url>%2F2017%2F07%2F31%2FStory_of_Terminal%2F</url>
-    <content type="text"><![CDATA[总结 从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程： 本地terminal类型和编码 -&gt; linux下terminal类型和编码 ctrl+h的编码 ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways. 而ctrl+h的值也为010。 terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h F1键 terminal类型的选择也会影响快捷键。 Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以 问题： 为什么BS无法删除，而是想左移动？ 为什么在执行程序进行输入时，按下BS显示的是^H? 答案 知乎： 1早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。 Terminal VT100 Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete]. 123456789101112VT100Key KeySymName Console characters -------------------------------------------------- Ctrl+H ---&gt; Control_H ---&gt; ASCII BS (0x08) [&lt;---] ---&gt; Backspace ---&gt; ASCII DEL (0x7F) --------------------------------------------------Xterm&apos;s emulation of VT100Key KeySymName Console characters -------------------------------------------------- Ctrl+H ---&gt; Control_H ---&gt; ASCII BS (0x08) [&lt;---] ---&gt; Backspace ---&gt; ASCII BS (0x08) [Delete] ---&gt; Delete ---&gt; ASCII DEL (0x7F) VT series have their own keyboard: http://www.vt100.net/ wikipedia: A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>编码</tag>
-        <tag>Terminal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hdf5简介]]></title>
-    <url>%2F2017%2F07%2F31%2Fhdf5%2F</url>
-    <content type="text"><![CDATA[HDF5 可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。 历史 HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。 特性 自述性 对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。 通用性 许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。 灵活性 HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。 扩展性 HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。 跨平台性 现代性 支持并行I/O，线程和其他一些现代系统和应用要求。 解决我的trajectory程序的问题：自述性、通用性、扩展性 Why HDF? 有专门的维护： hdfgroup.org NASA’s Earth Observing System等等官网介绍 Caffe等机器学习、深度学习框架原生支持 文档 sphinx 它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。 Sphinx介绍：https://zhuanlan.zhihu.com/p/25688826 中文文档：https://zh-sphinx-doc.readthedocs.io/en/latest/index.html# 再通过github部署（专门为生成程序介绍页而设计的功能）：https://segmentfault.com/a/1190000002765287]]></content>
-      <categories>
-        <category>技术杂烩</category>
-      </categories>
-      <tags>
-        <tag>技术杂烩</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[shadownsocks备忘]]></title>
-    <url>%2F2017%2F07%2F31%2Fshadowsocks%E5%A4%87%E5%BF%98%2F</url>
-    <content type="text"><![CDATA[备忘 官网 OS X: 用ShadowsocksX iOS: Wingy windows: Shadowsocks-Qt，可以用二维码进行设置 reference 各种系统下Shadowsocks客户端的安装与配置]]></content>
-      <categories>
-        <category>shadownsocks</category>
-      </categories>
-      <tags>
-        <tag>shadownsocks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[人工智能简介]]></title>
-    <url>%2F2017%2F07%2F31%2F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B%2F</url>
-    <content type="text"><![CDATA[备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小） Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN 神经网络简介 技术备忘 单层线性、双层非线性[2] 隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。 层数的影响[2] 参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。 BP的缺点[3] 基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。 面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。 历史节点 1943 W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)[3] 1949 D. Olding Hebb: math model 1957 F.Rosenblatt: Perceptron 1969 Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power 1974 Paul Werbos: BP(Back Propagation) 1980 Hinton: MLP(Multi_Layer Perceptron) 1982 John Hopfield: Hopfield Network(pioneer RNN) 1998 LeCun: CNN(Convoluted Neural Network) 2006 Hinton, &lt;&gt; DBN(Deep Belief Networks) 2012[2] 深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点， Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat” 名词概念 Grid Search（网格搜索：用尝试的方法选择中间层的节点数）[2] generalization[2] 提升模型在测试集上的预测效果的主题叫做泛化 regularization[2] 相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。 capcity[2] 更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。 DBN(深度信念网络) activation function[2] 【示意效果】 the curse of dimensionality（维数灾祸）[4] 在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。 技术成熟的条件 Andrew Ng[5] 一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。 另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。 还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。 同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。 深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。 但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】 reference 历史 a brief history of maching learning(机器学习简史) 【已读】 可读 colah blog book: Deep learning(Ian. Goodfellow) [book: Neural networks and deep learning(Michael Nielsen)] (www.deeplearningbook.org/) Yoshua Bengio为什么能跟Hinton、LeCun相提并论？ 包含学术传承与贡献的讨论 ↩ 历史|从神经元到深度学习 【可再读】 ↩ ↩ ↩ ↩ ↩ ↩ ↩ ↩ 深度学习技术发展历史及应用现状如何？ ↩ ↩ 神经网络的历史？ ↩ 【干货|持更】人工智能产业的相关资料及入门指南 【已读】 ↩]]></content>
-      <categories>
-        <category>人工智能</category>
-      </categories>
-      <tags>
-        <tag>人工智能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[linux常用命令记录]]></title>
-    <url>%2F2017%2F07%2F31%2Flinux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[记录用过的命令，方便以后查找。不包含太简单的或太难的。 [TOC] 正则表达式 1.&lt; #匹配词头 &gt; #匹配词尾 2.+ 匹配1或多个 3.？ 匹配0或1个 4.x|y 匹配x或y 5.x{5,10} 匹配x出现5到10次 linux 一句话介绍命令： shell 内置 --: a double dash (--) is used to signify the end of command options. 例如ls -- -l中会把-l当成文件名 echo $((a%b)): 余数 资源管理 ulimit: 管理用户占用的资源 nice &amp; renice 命令: 管理任务优先级 pkill -kill -t pts/5: 踢掉相应的用户 sudo sh -c &quot;echo 1 &gt; /proc/sys/vm/drop_caches&quot;: 清理硬盘 iostat -x sdb1 1 3: 显示sdb1的状态，每1秒显示一次，一共显示3次。 键盘 bind -p: 查看所有的键盘绑定 stty -a: 查看下默认的键位设置 toe /usr/share/terminfo/: supported terminal; you can compare two terminal by infocmp vt100 vt220 其他 tac: cat倒过来写，是将文件反向输出的命令 join命令: 横向连接文件，可以合并第一列 tee: tee file1 file2 - #将标准输出，输出到file1、file2和标准输出（“-”就是代表标准输出）（注意 该命令本身会向标准输出 输出一次，所以tee file1 file2 - 会将标准输出 输出两次） basename &amp; dirname: 从路径名得到root部分和文件名部分 read: read -p &quot;make dir now?[y/n]:&quot; select#直接读入变量值 df -T: 显示硬盘分区类型 lsof: lsof -p 456,123 列出进程456和123所有打开的文件。lsof -i 6 列出所有IPv6协议的网络文件 ssh -X: Enables X11 forwarding然后就可以用vmd、gnuplot等软件了。 env: 输出所有环境变量 ldd ./exe: 给出链接的库 systemctl start atd: arch中用at，需要开启 gimp: 看图 info &amp; whatis: they tell the information of a command; Note that in OS, info whatis will get “search database …” linux Command line Ctrl + a, Ctrl + e, alt + f 前进一个单词、alt + b(通过xshell并不好使): 谁用谁知道 Ctrl + f, Ctrl + b 前进一个字母/后退一个字母 Ctrl + 方向键左键 光标移动到前一个单词开头 Ctrl + 方向键右键 光标移动到后一个单词结尾 ^oldstr^newstr 替换前一次命令中字符串 同时head&amp;tail: ls | (head;tail) 或者 (head; tail) &lt; file !系列命令 !-n， 重复执行倒数第 n 条命令，n 为正整数； !!， 重复执行上一条命令。该命令等价于 !-1；!?str，重复执行最近一条包含字符串 str 的命令； !#，引用当前的命令行，例如：cp filename filename.bak 可以写为 cp filename !#:1.bak !^ 重用上一条命令的第一个参数； ls /usr/share/doc /usr/share/man; cd !^# 即 cd /usr/share/doc !* 重用上一条命令的所有参数； touch a.txt b.txt c.txt vim !* # 即 vim a.txt b.txt c.txt !!:n 重用上一条命令中的第 n 个参数，n 为正整数。 vim {a..c}.txt vim !!:2 # 即 vim b.txt !str:x-y 重用上一条以 str 开头的命令的第 x 到第 y 个参数； touch a.txt b.txt c.txt d.txt vim !touch:2-3 # 即 vim b.txt c.txt !?str:n* 重用上一条包含 str 的命令的从第 n 个到最后一个参数； vim foo.h foo.cc bar.h bar.cc wc !?vim:2*# 即 wc foo.cc bar.h bar.cc 参数的子字符串 利用 :h 截取路径开头，相当于 dirname 12ls /usr/share/fonts/truetype/dejavu cd !$:h # 即 cd /usr/share/fonts/truetype 利用 :t 截取路径结尾，相当于 basename tar zxf !$:t # 相当于 tar zxf nginx-1.4.7.tar.gz 利用 :r 截取文件名 12gunzip filename.gzipcd !$:r # 即 cd filename 利用 :e 截取文件扩展名 12ls file.jpgecho !$:e # 即 echo jpg&lt;b&gt; 简单记忆： h|t r|e alt 如果不是直接在终端上操作，alt键需要进行设置才能使用。**比如Xshell中，在“属性–键盘–将Alt键作为Meta仿真”打钩，才能使用；OS X上，无法用alt键。**PS：win键盘一般alt键当做Meta键；ALt GR：有些老键盘左边是Alt，右边是ALt GR键 Alt+./Esc+. (!^ !$): 将最近一条命令的参数输出 Alt+ f/b: 向前/后移动一个词 其他 Brace Expansion ls /usr/{,local}/bin，会列出&quot;/usr/bin&quot;和&quot;/usr/local/bin&quot; shell特殊变量 $0 当前shell程序的名字 $1 ~ $9 命令行上的第一到第九个参数 $# 命令行上的参数个数 $*, $@ 命令行上的所有参数 $? 上一条命令的退出状态 $$ 当前进程的进程标识号(PID) $! 最后一个后台进程的进程标识号 外部资源链接 更多牛逼命令： http://www.zhihu.com/question/20140085 http://www.zhihu.com/question/20273259 http://www.zhihu.com/question/25910725/answer/31951050 linux shell 快捷键: http://blog.chinaunix.net/uid-361890-id-342066.html 编码 ctrl+h；终端 F1 ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways. 而ctrl+h的值也为010。 terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h terminal类型的选择也会影响快捷键 Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以 alias命令： http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh Quoted from the man page of bash: Aliases are not expanded when the shell is not interactive, unless the expand_aliases shell option is set using shopt … at命令： 介绍：定时执行一次命令。如果想周期地执行命令，请使用crontab at -f work.sh now +3 min 3分钟后执行脚本 work.sh -f指的是从文件读入命令 其他的时间表示法：at 17:30 2/24/99 atq （等于at -l） 查看at任务队列 atrm+任务号 似乎没有单命令行的用法，一般用法都是“at 时间”然后进入at命令，输入要执行的命令，然后退出 awk命令： 替换操作在awk中不易执行。 awk '/pattern/ {print $0 }' filename e.g. awk '/abc/ {print $0 }' filename, 则含有 abcde 的行也会被输出。 awk 'NR==2 {print $0}' aver.tmp awk '$1!~/match_str/ {print $0 }' filename 去掉重复的单词 123456789101112#!/bin/awk -f&#123; for (i = 1; i &lt;= NF; i++) &#123; ++word[$i] if (word[$i] == 1) printf("%s ", $i) &#125; printf("\n")&#125; awk script 1234567891011#!/usr/bin/awk -f#是注释符号BEGIN &#123;......&#125;&#123; #这个中括号不能省略......&#125;END &#123;......&#125; 引用外部变量的几种方式： 【来自：http://club.topsage.com/thread-393615-1-1.html】 （1）&quot;'&quot;var&quot;'&quot; ——错。应该是&quot;'&quot;$var&quot;'&quot; （2）awk '{print a, b}' a=111 b=222 yourfile （3）awk –v a=111 –v b=222 ‘{print a,b}’ yourfile （4）【ct】pid=$(ps -f | awk '/gpu='&quot;$gpu&quot;'/ &amp;&amp; !/awk/ {print $2}') ——在//之间，引用外部变量的正确方式是’&quot;$v&quot;’ 引用外部命令的两种方式：【http://hi.baidu.com/gubuntu/blog/item/050398ceb010513fb700c8d0.html】 例:awk '{if(/Beren/) {print $0 | &quot;cut -b 2-&quot; } else print $0}' job.plm 但糟糕的是，上面这条命令的输出顺序与你设想的并不一致 求最大值、最小值、求方差等 1234awk '&#123;if (max=="") &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;' file1 awk '&#123;if (min=="") &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;' file1 awk '&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;' file1 【注意】：中间不能有空行或短行，否则$3=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题 求和 对六百列分别求和 1234for((i=1;i&lt;=600;i++))do awk '&#123;sum+=$'"$i"'&#125;END&#123;print sum/"'"$num_exc"'"&#125;' ttt1.tmp &gt;&gt; datadone 对行求和 12awk -v FS="," -v OFS="+" '&#123;$1="";system("echo $["$0"]")&#125;'awk -F',' '&#123;for(i=2;i&lt;=NF;i++)sum[NR]+=$i;print $1","sum[NR]&#125;' 【来自】http://bbs.chinaunix.net/thread-1384345-1-1.html printf用法 printf &quot;%s %s %s &quot;,$1,$2,$3 求最大值、最小值、求方差等 1234awk '&#123;if (max=="") &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;' file1 awk '&#123;if (min=="") &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;' file1 awk '&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;' file1 【注意】：中间不能有空行或短行，否则$3=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题 awk中 ‘’ 和 “” 【单引号和双引号】 &quot;&quot;是直接输出 ’'是转义输出,'C1’就有特殊的含义 gawk 4.1.0之后才可以原位修改文件 bc命令： 1.m的n次方 echo &quot;m^n&quot;|bc 2.计算π： echo &quot;scale=100; a(1)*4&quot; | bc -l 【附一部分man】 MATH LIBRARY If bc is invoked with the -l option, a math library is preloaded and the default scale is set to 20. The math functions will calculate their results to the scale set at the time of their call. The math library defines the following functions: s (x) The sine of x, x is in radians. 正玄函数 c (x) The cosine of x, x is in radians. 余玄函数 a (x) The arctangent of x, arctangent returns radians. 反正切函数 l (x) The natural logarithm of x. log函数(以2为底) e (x) The exponential function of raising e to the value x. e的指数函数 j (n,x) The bessel function of integer order n of x. 贝塞尔函数 3.做加减法时（比如a*b+c）bc不会读入scale信息，所以要想设定scale，可以写成(a*b+c）/1,除法是一定会读入scale的。（(a*b+c）*1）没有效果，但a*b有效果） 【第二次测试，不存在这个问题了】 bc不能识别形式为科学计数法的输入，如1.2345e+06 convert命令： convert ${i%plt}eps -density 100x100 ${i%plt}tif convert ${i%plt}eps -density 300 ${i%plt}png #300代表dpi animated gif convert -delay 120 -loop 0 *.png animated.gif The delay parameter specifies the delay between frames in 0.01s, while the loop parameter determines how many times the animation runs (the 0 value will run the loop infinitely). source cp命令： cp自动创建层级结构 例子: cp --parents parentdir1/parentdir2/sourcefile destdir/ cut命令： cut命令很好用 awk '/Beren/ {print $0}' tt1 | cut -b 2-cut部分的意思是截取第二个到最后一个字符。 reference]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[python mechanism]]></title>
-    <url>%2F2017%2F07%2F28%2Fpython_mechanism%2F</url>
-    <content type="text"><![CDATA[[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2)) 另外，一些具体的问题，结果不确定，比如用python.py： 12345 &gt;&gt;&gt; x = 500 &gt;&gt;&gt; y = 500 &gt;&gt;&gt; x is yTrue ```language 然而用python或者IPython，结果为False 1. mutable &amp; immutable 不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple) 可变（mutable）：字典型(dictionary)、列表型(list) 2. with 语句 自动进行对象的生命周期进行管理 Python中的with语句中要求对象实现__enter__和__exit__函数。调用with语句时，会先分析该语句，执行__enter__函数，然后在当前suite退出时，会调用__exit__函数。__exit__函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，__exit__的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给__exit__函数，同时，如果__exit__返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果__exit__返回true，那么此异常就不会被再次抛出了。 同时打开多个文件 12345with open(filename1, 'rb') as fp1, open(filename2, 'rb') as fp2, open(filename3, 'rb') as fp3: for i in fp1: j = fp2.readline() k = fp3.readline() print(i, j, k) 3. list参数传递 python中的默认变量是定义时得到的，类似于static，其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了。 正确做法： 12345def add(element, mylist=None): if mylist is None: mylist = [] mylist.append(element) return mylist 4*. Python中函数的参数传递与可变长参数 【tricky】可变长度参数：*tupleArg,**dictAr 廖雪峰的更详细的介绍 ct总结：参数绑定优先级： 指定参数名 顺序 不符合前两条的可以被可变长度参数捕捉 可变长度参数是通过拷贝传到函数内的！与一般机制不同 限制关键字参数的名字 如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下： 12def person(name, age, *, city, job): print(name, age, city, job) 5. generator 最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。 6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**” The implementation of zip is very beautiful： 来自python doc 123456789101112131415def zip(*iterables): # zip('ABCD', 'xy') --&gt; Ax By sentinel = object() # ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参) # e.g., at first, iterators is the "Iterator" of 'ABCM'; # iterators.next() is the "Iterator" of 'xy'; iterators = [iter(it) for it in iterables] while iterators: result = [] for it in iterators: elem = next(it, sentinel) if elem is sentinel: return result.append(elem) yield tuple(result) 123456789#zip() in conjunction with the * operator can be used to unzip a list: &gt;&gt;&gt; x = [1, 2, 3] &gt;&gt;&gt; y = [4, 5, 6] &gt;&gt;&gt; zipped = zip(x, y) &gt;&gt;&gt; list(zipped)[(1, 4), (2, 5), (3, 6)] &gt;&gt;&gt; x2, y2 = zip(*zip(x, y)) &gt;&gt;&gt; x == list(x2) and y == list(y2)True Unpacking Argument Lists 12345 &gt;&gt;&gt; list(range(3, 6)) # normal call with separate arguments[3, 4, 5] &gt;&gt;&gt; args = [3, 6] &gt;&gt;&gt; list(range(*args)) # call with arguments unpacked from a list[3, 4, 5] 7. Iterable和Iterator 凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法； 凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法； 集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。 Python的for循环本质上就是通过不断调用next()函数实现的，例如： for x in [1, 2, 3, 4, 5]: pass 实际上完全等价于： 首先获得Iterator对象: it = iter([1, 2, 3, 4, 5]) 循环: 123456while True: try: # 获得下一个值: x = next(it) except StopIteration: # 遇到StopIteration就退出循环break while my_iterator（参见zip的实现） iterator最终会返回StopIteration对象，而while可以对其进行判断。 8. 内存 8.1. 释放内存 先del再gc.collect() 9. Python类 9.1. 和静态语言不同，Python允许对实例变量绑定任何数据 也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同： 123456789 &gt;&gt;&gt; bart = Student('Bart Simpson', 59) &gt;&gt;&gt; lisa = Student('Lisa Simpson', 87) &gt;&gt;&gt; bart.age = 8 &gt;&gt;&gt; bart.age8 &gt;&gt;&gt; lisa.ageTraceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AttributeError: 'Student' object has no attribute 'age' 9.2. Python的伪私有属性 Note that user defined attributes shall not end with ‘__’ 9.3. 私有变量的访问方法 不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。 注意下面的这种错误写法： 12345 &gt;&gt;&gt; bart = Student('Bart Simpson', 98) &gt;&gt;&gt; bart.get_name()'Bart Simpson'&gt;&gt;&gt; bart.__name = 'New Name' # 设置__name变量！ &gt;&gt;&gt; bart.__name'New Name' 表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。 9.4. 特殊函数__call__模糊了对象与函数的区别 9.5. 类类型的检查–不检查 静态语言 vs 动态语言 对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。 对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了： 12class Timer(object):def run(self): print('Start...') 这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。 Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。 Style guide argument **kwargs is a bad practice: you don’t know how **kwargs affect. wrong keywrod arguments is no longer reported by the interpreter. TypeError 'x' is an invalid keyword argument for this function reference:The Use and Abuse of Keyword Arguments in Python]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git笔记]]></title>
-    <url>%2F2017%2F07%2F26%2Fgit%2F</url>
-    <content type="text"><![CDATA[git 开始 非常好的入门: 非常好的入门1[1]: 工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。 非常好的入门2 init config 123git config --global user.name "your name"git config --global user.email "your email"git config --global core.editor "vim #set vim as editor 列出设置的config git config --list difftool 没有默认的difftool，如果首次输入命令git difftool，CentOS会自动推荐kompare。 12Viewing: &apos;particles/BinReader.cc&apos;Launch &apos;kompare&apos; [Y/n]: y kompare的效果非常好。 help git help &lt;verb&gt; 操作 add filename commit git commit -m &quot;your message&quot; Amending the most recent commit message[2] git commit --amend will open your editor, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with: git commit --amend -m &quot;New commit message&quot; …however, this can make multi-line commit messages or small corrections more cumbersome to enter. Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.) reset git reset --hard HEAD^ git reset --hard 3628164 reflog 查看历史命令 clone git clone /path/to/repository 如果是远端服务器上的仓库，你的命令会是这个样子： git clone username@host:/path/to/repository git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹 push git push origin master:master origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.: 12git push origin HEAD:refs/for/branch1 # push HEAD branch to a remote branch git push origin :refs/for/branch1 # delete remote branch git checkout hexo myfile 从hexo分支得到myfile stash[3] 储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。 git stash 临时存储当前状态 git stash list git stash apply (--index) 找回临时存储的状态 git stash drop 删除stash branch git checkout -b dev #-b参数表示创建并切换 git checkout master git merge dev 合并指定分支到当前分支 git branch -d dev #删除 git branch -r/-a # 查看远程/所有分支； git branch 查看本地分支 git checkout mybfranch # shift to another branch pull git pull origin master相当于git fetch加上git merge fetch git fetch origin hexo从remote repo获取名为hexo的branch 丢弃 git rm (then git commit) git checkout -- file git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。 删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本： $ git checkout -- test.txt 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。 显示状态 status log git log --oneline --decorate # 加上–decorate 时，我们可以看到我们的标签 remote 看当前配置有哪些远程仓库，可以用命令 git remote 执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。 git ls-files #ls files in present branch git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件 diff git diff #对比工作区和stage文件的差异 git diff --cached 对比stage和branch之间的差异 git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch git diff origin/hexo #对比当前working tree和远程branch rebase git rebase 用法 stackoverflow git rebase --skip git rebase --continue #use this when you solved conflicts. git rebase --abort #放弃当前rebase tag git push origin --tags 其他概念与原理 origin It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签 (远程仓库名)/(分支名) 这样的形式表示远程分支 Note that when git branch -a is used, there is ‘remote’ in front of branch name, e.g.: 1234$ git branch -r orgin/master $ git branch -a remote/origin/master local_branch_name:remote_branch_name # 这是push，pull的时候顺序反过来 远程分支和本地分支的名字相同，可以省略远程分支的名字 upstream vs. origin This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally) upstream generally refers to the original repo that you have forked (see also “Definition of “downstream” and “upstream”” for more on upstream term) origin is your fork: your own repo on GitHub, clone of the original repo of GitHub branch &amp; hash[4] you need to understand that branch and tag names are just pointers to hash values, which represent a single commit 错误 prompt to input passphrase time and time again: Git enter long passphrase for every push Note that you can use ssh-key only if you use ssh to build remote connections. git remote -v should looks like: origin git@github.com:TimChen314/MDTackle.git (fetch) but not: origin https://github.com/TimChen314/MDTackle.git reference 待读 超好: git cheatsheet 常用git Git 工作区、暂存区和版本库 ↩ How to modify existing, unpushed commits? ↩ 6.3 Git 工具 - 儲藏 ↩ What’s the difference between git reset --hard master and git reset --hard origin/master? ↩]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[阿里云邮箱设置记录]]></title>
-    <url>%2F2017%2F07%2F21%2Fali_mail_set%2F</url>
-    <content type="text"><![CDATA[正文 在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。 登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统) qiye.aliyun.com/admin/中会显示 邮箱登录地址:http://mail.timchen314.com 访问http://mail.timchen314.com: 温馨提醒：该页面暂时无法访问 尊敬的用户： 您好！ 根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。 所以，必须要备案后才能使用邮箱服务。 ICP备案是：[1] ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系 如果使用了github作为托管主机，是无法备案的。如何选择备案产品类型 如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。 可能有用[2] reference 阿里云个人网站备案过程全记录 ↩ 可能有用：本博客阿里云配置过程（一）服务器及域名备案篇 ↩]]></content>
-      <categories>
-        <category>技术杂烩</category>
-      </categories>
-      <tags>
-        <tag>技术杂烩</tag>
-        <tag>邮箱设置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hexo]]></title>
-    <url>%2F2017%2F07%2F21%2Fhexo%2F</url>
-    <content type="text"><![CDATA[memo 这个网站可以作为参考www.ezlippi.com npm i(nstall) hexo-generator-json-content --save Fix error to ensure “all article” works normally. hexo-footnote(已不再维护) npm install hexo-footnotes --save 如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件： 12plugins: - hexo-footnotes 安装hexo-renderer-marked以支持更多Markdown特性 123npm un hexo-renderer-marked --savenpm i hexo-renderer-markdown-it --savenpm install markdown-it-emoji --save 设置文章置顶 &amp; Cloudinary在线图片服务[1] top: 3 # 数字越大越靠前，默认为0 除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如Cloudinary提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。 在Cloudinary申请账号，上传图片(注意把upload选项中的unsigned signature选上) Cloundinary的免费存储空间还是非常大的cloudinary价格 我的cloudinary 使用方法： 点击图片 点击url 拷贝链接 hexo个人命令 用hexol/hexod命令一次性完成本地/远程预览 配置.bash_profile: 1234export HEXO='/Users/Aether/Documents/hexo_file'export HEXOMD='/Users/Aether/Documents/hexo_file/source/_posts/'alias hexod='cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'alias hexol='cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s' tackle_md.sh自动调整缩进、设置部分显示、修改文章标题大小(for next theme) 12345678#!/bin/shsh indent.shsh read_more.shfor mdfile in $(ls *.md)do awk -f ./title_size.awk $mdfile &gt; /tmp/$mdfile &amp;&amp; mv /tmp/$mdfile $mdfiledone 其中，indent.sh: 12345#!/bin/sh# indent for code blocksed -i 's/^```[a-z]/ &amp;/g' *.md# indent for quotesed -i 's/^&gt;/ &amp;/g' *.md read_more.sh: 12345678910#!/bin/sh# if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.for md_file in $(ls *md)do stat=$(grep "&lt;!-- more --&gt;" $md_file) if [ -z "$stat" ];then sed -i '20a &lt;!-- more --&gt;' $md_file fidone title_size.awk: 1234567891011121314#!/usr/bin/awk -f&#123; if(/^title:/&amp;&amp;!/font/) &#123; for(i=1;i&lt;=NF;++i) &#123; printf $i" "; if(i==1) printf " &lt;font size=6&gt;&lt;b&gt;"; else if(i==NF) printf "&lt;/b&gt;&lt;/font&gt;\n" ; &#125; &#125; else print $0;&#125; yilia theme image file path hexo_file/themes/hexo-theme-yilia/source/img theme-yilia yilia next theme 要想显示标签页，需要手动操作，详见[2] 添加搜索[3] 在os X safari上无法正常使用，原因不明；在os X chrome上和win7 chrome上都可以正常使用 12npm install hexo-generator-search --savenpm install hexo-generator-searchdb --save 如何设置页面文章的篇数？[4] 123npm install --save hexo-generator-indexnpm install --save hexo-generator-archivenpm install --save hexo-generator-tag 设置social_icons next是通过FontAwesome进行图标设计的，FA支持的图标都在主页上。 目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为zhihu: bed 设置文章标题的格式 直接用html就可以 title: &lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt; References: HEXO搭建个人博客 2个小时教你hexo博客添加评论、打赏、RSS等功能 从搭建hexo个人博客过程中理解学习DNS解析 Hexo Configuration ↩ Next-主题配置 ↩ 参考：Hexo博客添加站内搜索 ↩ Next-常见问题 ↩]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>yilia</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[markdown in hexo-render-markdown-it]]></title>
-    <url>%2F2017%2F07%2F21%2Fmarkdown_in_hexo%2F</url>
-    <content type="text"><![CDATA[The implementation of Markdown in different software are always different here or there. To testify the implementation of hexo, syntax page of Mou is pasted in here for comparison. In summary, only inline image is unavailable. PS: spacing can add indent; and code block &amp; quote wouldn’t indent automatically. so indent.sh is used Could add spacing manually by &amp;nbsp; #半角的不断行的空白格 (it works in header, too) &lt;br/&gt; as line break Bug 有时候ordered list序号大于等于10，缩进会失效。 Mou Overview Mou, the missing Markdown editor for web developers. Syntax Strong and Emphasize strong or strong ( Cmd + B ) emphasize or emphasize ( Cmd + I ) Sometimes I want a lot of text to be bold. Like, seriously, a LOT of text Blockquotes Right angle brackets &gt; are used for block quotes. Links and Email An email example@example.com link. Simple inline link http://chenluois.com, another inline link Smaller, one more inline link with title Resize. A reference style link. Input id, then anywhere in the doc, define the link with corresponding id: Titles ( or called tool tips ) in the links are optional. Images An inline image , title is optional. A reference style image. Inline code and Block code Inline code are surround by backtick key. To create a block code: Indent each line by at least 1 tab, or 4 spaces. var Mou = exactlyTheAppIwant; Ordered Lists Ordered lists are created using “1.” + Space: Ordered list item Ordered list item Ordered list item Unordered Lists Unordered list are created using “*” + Space: Unordered list item Unordered list item Unordered list item Or using “-” + Space: Unordered list item Unordered list item Unordered list item Hard Linebreak End a line with two or more spaces will create a hard linebreak, called &lt;br /&gt; in HTML. ( Control + Return ) Above line ended with 2 spaces. Horizontal Rules Three or more asterisks or dashes: Headers Setext-style: This is H1 This is H2 atx-style: This is H1 This is H2 This is H3 This is H4 This is H5 This is H6 Extra Syntax Footnotes Footnotes work mostly like reference-style links. A footnote is made of two things: a marker in the text that will become a superscript number; a footnote definition that will be placed in a list of footnotes at the end of the document. A footnote looks like this: That’s some text with a footnote.[1] Strikethrough Wrap with 2 tilde characters: Strikethrough Fenced Code Blocks Start with a line containing 3 or more backticks, and ends with the first line with the same number of backticks: 123Fenced code blocks are like Stardard Markdown’s regular codeblocks, except that they’re not indented and instead rely ona start and end fence lines to delimit the code block. Tables A simple table looks like this: First Header Second Header Third Header Content Cell Content Cell Content Cell Content Cell Content Cell Content Cell If you wish, you can add a leading and tailing pipe to each line of the table: First Header Second Header Third Header Content Cell Content Cell Content Cell Content Cell Content Cell Content Cell Specify alignment for each column by adding colons to separator lines: First Header Second Header Third Header Left Center Right Left Center Right And that’s the footnote. ↩]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>vim笔记 </b></font>]]></title>
+      <url>/2017/08/01/vim%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
+<a id="more"></a>
+<p>删除线代表已经非常熟练的掌握，不需要再看了。</p>
+<h1 id="vim下命令：">vim下命令：</h1>
+<h2 id="命令">命令</h2>
+<p><s>(3)</s> <code>:.,$ s/str1/str2/g</code> 用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1<br>
+其中<code>.</code>代表当前行，<code>$</code>代表最后一行，而<code>.,$</code>就代表从当前行到最后一行<br>
+也可以这样 <code>:.,.+8 s/str1/str2/g</code>， 其中<code>.,.+8</code>代表从当前行到从当前行开始下面第8行。<br>
+例如：如果当前行是第二行，那么<code>:.,.+8 s/str1/str2/g</code>等价于<code>:2,10 s/str1/str2/g</code></p>
+<p><s>(4)</s> <code>s/\(love\)able/\1er/</code> # 会将loveable替换成lover，<code>\1</code>代表第一对小括号内的匹配项<br>
+(6) 读入文件<br>
+<code>:23r input_file</code>，在当前文件23行将<code>input_file</code>的内容插入近来<br>
+(7) <code>&lt;leader&gt;</code> is backlash<br>
+(8) “+y  复制到系统剪贴板<br>
+(11) Vu(VU) # V mode下，大小写转换<br>
+(12) <code>:!pwd</code> # Execute the pwd unix command, then returns to Vi<br>
+(13) <code>!!pwd</code> # Execute the pwd unix command and insert output in file<br>
+(14) vim中的g(global)和%的区别：</p>
+<ul>
+<li>
+<p>g:全局的<br>
+s/pattern/replacement/  : 替换行中出现的每一个pattern<br>
+g/pattern/s/pattern/replacement/g : 开始处的g是全局命令，意味着对所有与地址匹配的行进行改变。结尾处的g是一个标志，意味着改变一行上的每个。<br>
+linux中的grep = g/rep/p</p>
+</li>
+<li>
+<p>%:代表这文件本身每一行</p>
+</li>
+</ul>
+<p>(15) 全部格式化: gg=G<br>
+(16) vi如何关闭打开的多个文件中的一个?<br>
+切换到你想关闭的 文件窗口.<br>
+然后输入 :bd<br>
+即 : buffers delete<br>
+就可以关闭了.<br>
+(17) 两条命令合在一起用<br>
+<code>:%s/abc/def/ | wq</code></p>
+<h3 id="移动">移动</h3>
+<ul>
+<li>zz 光标所在行居中</li>
+<li>20| 到第20列！【Normal mode】</li>
+</ul>
+<h3 id="多个文件同时处理">多个文件同时处理</h3>
+<ul>
+<li>
+<p>文件以tab打开</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:args *.c</div><div class="line">:tab all</div></pre></td></tr></table></figure>
+<p>or <code>vim -p *.h *cc</code></p>
+</li>
+<li>
+<p>Run a command in multiple buffers<br>
+将所有文件进行格式化，并写入所有文件</p>
+   <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">tabdo</span> Autoformat</div><div class="line">:<span class="keyword">wa</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="替换-查找">替换、查找</h3>
+<ul>
+<li>
+<p>去掉换行符^M: 输入以下字符串: <code>%s/^M//g</code>  (注意，^M = Ctrl v + Ctrl m，而不是手动输入^M)</p>
+</li>
+<li>
+<p>换行符可以<strong>用\n直接匹配，用\r添加</strong></p>
+</li>
+<li>
+<p>对文件内含有特定字符的行操作。<br>
+g/-/s/^/#/ 是把所有含‘-’的行注释掉</p>
+</li>
+</ul>
+<ul>
+<li>/open\c<br>
+其中 \c表示忽略大小写</li>
+<li>vi（lzy0xa@192.9.207.102）的正则表达式中<code>H[1-9]*</code>并不能match H20 ,因为这里vi认为<code>*</code>是匹陪[1-9]中的数，而不是匹配所有的字符。要想匹配H20、H320、H308之类的字符串就需要用<code>H[0-9]*</code></li>
+</ul>
+<h3 id="代码折叠">代码折叠</h3>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">set foldmethod=indent                                                        </div><div class="line">set foldnestmax=10                                                           </div><div class="line">set nofoldenable &quot; makes sure that when opening, files are &quot;normal&quot;, i.e. not</div><div class="line">folded.                                                                      </div><div class="line">set foldlevel=0</div></pre></td></tr></table></figure>
+<ul>
+<li>zM/zR zm/zr<br>
+大/小写 – 所有/逐层<br>
+m/r – 折叠/打开</li>
+<li>（对当前折叠）zc/zo zC/zO<br>
+大/小写 – 所有/逐层</li>
+<li>zf/zd 创建/删除折叠</li>
+<li>zj/zk</li>
+<li>[z / ]z       到当前打开的折叠的开始/结尾处。</li>
+</ul>
+<h3 id="显示信息">显示信息</h3>
+<ul>
+<li>历史命令<br>
+<code>q:</code>或<code>:hist</code></li>
+<li>是否具有某种特性 <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'python3'</span>) #<span class="number">0</span> <span class="keyword">is</span> false, <span class="number">1</span> means true #判断是否支持<span class="keyword">python3</span></div><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'viminfo'</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="vimrc">vimrc</h2>
+<h4 id="plugin">Plugin</h4>
+<ul>
+<li>auto-pairs<br>
+github readme里，有括号包裹单词这个功能，但我尝试多次也没有使用成功。<br>
+<a-e>或<m-e>对应这一功能（A means Alt, M means Meta, in present context Alt and Meta is the same ），但我在Xshell中用的时候，<a-e>并没有激活auto-pairs，激活的是linux自带的快捷键–向右移动到词尾。<br>
+最终我输入单个括号是用：ctrl+v，（</a-e></m-e></a-e></li>
+<li>markdown插件 vim-markdown<br>
+<a href="http://www.jianshu.com/p/24aefcd4ca93" target="_blank" rel="external">http://www.jianshu.com/p/24aefcd4ca93</a><br>
+<a href="https://github.com/plasticboy/vim-markdown" target="_blank" rel="external">https://github.com/plasticboy/vim-markdown</a><br>
+有用的命令：c <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:Toc</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="youcompleteme">YouCompleteMe</h4>
+<ul>
+<li>
+<p>需要进入bundle文件夹进行编译</p>
+</li>
+<li>
+<p>错误<code>YouCompleteMe unavailable: requires Vim compiled with Python (2.6+ or 3.3+) support</code><br>
+明明安装VIM时已经选择支持python3了，为什么还会报错？而且：</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'python3'</span>) #返回值为<span class="number">0</span>，说明在<span class="keyword">vim</span>中不能正常支持<span class="keyword">python</span></div></pre></td></tr></table></figure>
+<p>这很可能是因为：python运行时找不到库。解决方法就是添加python库的路径到LD_LIBRARY_PATH环境变量：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:/opt/anaconda3/lib/</div></pre></td></tr></table></figure>
+<p>然而，这样又会导致其他程序找到的是<code>/opt/anaconda3/lib/</code>里的库，而非系统自带的库，例如：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ evince</div><div class="line">evince: symbol lookup error: /lib64/libgdk-3.so.0: undefined symbol: cairo_surface_set_device_scale</div></pre></td></tr></table></figure>
+<p><strong>最终解决方法，是分别设置环境变量</strong>，例如：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> evince=<span class="string">'LD_LIBRARY_PATH="" evince'</span></div></pre></td></tr></table></figure>
+<p>这样evince启动时，就不会去anaconda的路径里面找库了。</p>
+</li>
+</ul>
+<h4 id="cmd">cmd</h4>
+<ul>
+<li>颜色<br>
+.vim/colors/中放置配置文件<br>
+:colo 查看当前颜色</li>
+<li>noremap：绑定键的时候，不迭代绑定<br>
+五中模式代号：nvoic</li>
+</ul>
+<h1 id="reference">reference</h1>
+<p><a href="https://danielmiessler.com/study/vim/#why" target="_blank" rel="external">vim tutorial</a><br>
+<a href="http://developer.51cto.com/art/201308/406941.htm" target="_blank" rel="external">超过130个你需要了解的vim命令</a> 【好】<br>
+<a href="http://www.cnblogs.com/lq0729/archive/2011/12/24/2300189.html" target="_blank" rel="external">vim map nmap</a>【非常好，介绍vimrc的一些基本命令】</p>
+]]></content>
+      
+        <categories>
+            
+            <category> vim </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vim </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>linux常用命令记录 </b></font>]]></title>
+      <url>/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
+长度感人。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="正则表达式">正则表达式</h2>
+<p>1.&lt; #匹配词头 &gt; #匹配词尾<br>
+2.+<br>
+匹配1或多个<br>
+3.？<br>
+匹配0或1个<br>
+4.x|y<br>
+匹配x或y<br>
+5.x{5,10}<br>
+匹配x出现5到10次</p>
+<h2 id="linux-一句话介绍命令：">linux 一句话介绍命令：</h2>
+<ul>
+<li>
+<p>shell 内置<br>
+<code>--</code>: a double dash (<code>--</code>) is used to signify the end of command options. 例如<code>ls -- -l</code>中会把<code>-l</code>当成文件名<br>
+<code>echo $((a%b))</code>: 余数</p>
+</li>
+<li>
+<p>资源管理<br>
+<code>ulimit</code>: 管理用户占用的资源<br>
+<code>nice &amp; renice 命令</code>: 管理任务优先级<br>
+<code>pkill -kill -t pts/5</code>: 踢掉相应的用户<br>
+<code>sudo sh -c &quot;echo 1 &gt; /proc/sys/vm/drop_caches&quot;</code>: 清理硬盘<br>
+<code>iostat -x sdb1 1 3</code>: 显示sdb1的状态，每1秒显示一次，一共显示3次。</p>
+</li>
+<li>
+<p>键盘<br>
+<code>bind -p</code>:  查看所有的键盘绑定<br>
+<code>stty -a</code>: 查看下默认的键位设置<br>
+<code>toe /usr/share/terminfo/</code>: supported terminal; you can compare two terminal by <code>infocmp vt100 vt220</code></p>
+</li>
+<li>
+<p>其他<br>
+<code>tac</code>: cat倒过来写，是将文件反向输出的命令<br>
+<code>join命令</code>: 横向连接文件，可以合并第一列<br>
+<code>tee</code>: <code>tee file1 file2 -</code>  #将标准输出，输出到file1、file2和标准输出（“-”就是代表标准输出）（<strong>注意</strong> 该命令本身会向标准输出 输出一次，所以tee file1 file2 - 会将标准输出 输出两次）<br>
+<code>basename &amp; dirname</code>: 从路径名得到root部分和文件名部分<br>
+<code>read</code>: <code>read -p &quot;make dir now?[y/n]:&quot; select</code>#直接读入变量值<br>
+<code>df -T</code>: 显示硬盘分区类型<br>
+lsof:  <code>lsof -p 456,123</code> 列出进程456和123所有打开的文件。<code>lsof -i 6</code> 列出所有IPv6协议的网络文件<br>
+<code>ssh -X</code>:   <code>Enables X11 forwarding</code>然后就可以用vmd、gnuplot等软件了。<br>
+<code>env</code>: 输出所有环境变量<br>
+<code>ldd ./exe</code>:  给出链接的库<br>
+<code>systemctl start atd</code>: arch中用at，需要开启<br>
+<code>gimp</code>: 看图<br>
+<code>info &amp; whatis</code>: they tell the information of a command; Note that in OS, info whatis will get “search database …”</p>
+</li>
+</ul>
+<h2 id="linux-command-line">linux Command line</h2>
+<p>Ctrl + a, Ctrl + e, alt + f 前进一个单词、alt + b(通过xshell并不好使):  谁用谁知道<br>
+Ctrl + f, Ctrl + b 前进一个字母/后退一个字母<br>
+Ctrl + 方向键左键    光标移动到前一个单词开头<br>
+Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
+<code>^oldstr^newstr</code>    替换前一次命令中字符串<br>
+同时head&amp;tail: <code>ls | (head;tail)</code> 或者 <code>(head; tail) &lt; file</code></p>
+<h3 id="系列命令"><code>!</code>系列命令</h3>
+<ul>
+<li>
+<p><code>!-n</code>， 重复执行倒数第 n 条命令，n 为正整数；</p>
+</li>
+<li>
+<p><code>!!</code>， 重复执行上一条命令。该命令等价于 !-1；!?str，重复执行最近一条包含字符串 str 的命令；</p>
+</li>
+<li>
+<p><code>!#</code>，引用当前的命令行，例如：<code>cp filename filename.bak</code> 可以写为 <code>cp filename !#:1.bak</code></p>
+</li>
+<li>
+<p><code>!^</code><br>
+重用上一条命令的第一个参数；<br>
+<code>ls /usr/share/doc /usr/share/man; cd !^</code># 即 cd /usr/share/doc</p>
+</li>
+<li>
+<p><code>!*</code><br>
+重用上一条命令的所有参数； <code>touch a.txt b.txt c.txt</code><br>
+<code>vim !*</code>  # 即 vim a.txt b.txt c.txt</p>
+</li>
+<li>
+<p><code>!!:n</code><br>
+重用上一条命令中的第 n 个参数，n 为正整数。<br>
+<code>vim {a..c}.txt</code><br>
+<code>vim !!:2</code>   # 即 vim b.txt</p>
+</li>
+<li>
+<p><code>!str:x-y</code><br>
+重用上一条以 str 开头的命令的第 x 到第 y 个参数；<br>
+<code>touch a.txt b.txt c.txt d.txt</code><br>
+<code>vim !touch:2-3</code>   # 即 vim b.txt c.txt</p>
+</li>
+<li>
+<p><code>!?str:n*</code><br>
+重用上一条包含 str 的命令的从第 n 个到最后一个参数；<br>
+<code>vim foo.h foo.cc bar.h bar.cc</code><br>
+<code>wc !?vim:2*</code># 即 wc <a href="http://foo.cc" target="_blank" rel="external">foo.cc</a> bar.h <a href="http://bar.cc" target="_blank" rel="external">bar.cc</a></p>
+</li>
+</ul>
+<h3 id="参数的子字符串">参数的子字符串</h3>
+<ul>
+<li>
+<p>利用 :h 截取路径开头，相当于 dirname</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls /usr/share/fonts/truetype/dejavu    </div><div class="line"><span class="built_in">cd</span> !$:h  <span class="comment"># 即 cd /usr/share/fonts/truetype</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>利用 :t 截取路径结尾，相当于 basename<br>
+<code>tar zxf !$:t # 相当于 tar zxf nginx-1.4.7.tar.gz</code></p>
+</li>
+<li>
+<p>利用 :r 截取文件名</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gunzip filename.gzip</div><div class="line"><span class="built_in">cd</span> !$:r  <span class="comment"># 即 cd filename</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>利用 :e 截取文件扩展名</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls file.jpg</div><div class="line"><span class="built_in">echo</span> !$:e  <span class="comment"># 即 echo jpg&lt;b&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>简单记忆：<br>
+<code>h|t</code><br>
+<code>r|e</code></p>
+<h3 id="alt">alt</h3>
+<p>如果不是直接在终端上操作，alt键需要进行设置才能使用。**比如Xshell中，在“属性–键盘–将Alt键作为Meta仿真”打钩，才能使用；OS X上，无法用alt键。**PS：win键盘一般alt键当做Meta键；ALt GR：有些老键盘左边是Alt，右边是ALt GR键<br>
+Alt+./Esc+. (!^ !$): 将最近一条命令的参数输出<br>
+Alt+ f/b: 向前/后移动一个词</p>
+<h3 id="其他">其他</h3>
+<ul>
+<li>Brace Expansion<br>
+<code>ls /usr/{,local}/bin</code>，会列出&quot;/usr/bin&quot;和&quot;/usr/local/bin&quot;</li>
+<li>shell特殊变量<br>
+<code>$0</code>     当前shell程序的名字<br>
+<code>$1 ~ $9</code>    命令行上的第一到第九个参数<br>
+<code>$#</code>    命令行上的参数个数<br>
+<code>$*, $@</code>   命令行上的所有参数<br>
+<code>$?</code>    上一条命令的退出状态<br>
+<code>$$</code>    当前进程的进程标识号(PID)<br>
+<code>$!</code>    最后一个后台进程的进程标识号</li>
+</ul>
+<h3 id="外部资源链接">外部资源链接</h3>
+<p>更多牛逼命令：           <a href="http://www.zhihu.com/question/20140085" target="_blank" rel="external">http://www.zhihu.com/question/20140085</a><br>
+<a href="http://www.zhihu.com/question/20273259" target="_blank" rel="external">http://www.zhihu.com/question/20273259</a><br>
+<a href="http://www.zhihu.com/question/25910725/answer/31951050" target="_blank" rel="external">http://www.zhihu.com/question/25910725/answer/31951050</a><br>
+linux shell 快捷键:      <a href="http://blog.chinaunix.net/uid-361890-id-342066.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-361890-id-342066.html</a></p>
+<h3 id="编码-ctrl-h；终端-f1">编码 ctrl+h；终端 F1</h3>
+<ul>
+<li><strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
+而ctrl+h的值也为010。<br>
+<br>
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+<li>terminal类型的选择也会影响快捷键<br>
+Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="alias命令：">alias命令：</h2>
+<p><a href="http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh" target="_blank" rel="external">http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh</a></p>
+<blockquote>
+<p>Quoted from the man page of bash: Aliases are not expanded when the shell is not interactive, unless the expand_aliases shell option is set using shopt …</p>
+</blockquote>
+<h2 id="at命令：">at命令：</h2>
+<p>介绍：定时执行一次命令。如果想周期地执行命令，请使用crontab</p>
+<ol>
+<li><code>at -f work.sh now +3 min</code><br>
+3分钟后执行脚本 <a href="http://work.sh" target="_blank" rel="external">work.sh</a>    -f指的是从文件读入命令<br>
+其他的时间表示法：at 17:30 2/24/99</li>
+<li>atq （等于at -l）<br>
+查看at任务队列</li>
+<li>atrm+任务号</li>
+<li>似乎没有单命令行的用法，一般用法都是“at 时间”然后进入at命令，输入要执行的命令，然后退出</li>
+</ol>
+<h2 id="awk命令：">awk命令：</h2>
+<p><strong>替换操作在awk中不易执行。</strong></p>
+<ol>
+<li>
+<p><code>awk '/pattern/ {print $0 }' filename</code><br>
+e.g.  <code>awk '/abc/ {print $0 }' filename</code>, 则含有 abcde 的行也会被输出。</p>
+</li>
+<li>
+<p><code>awk 'NR==2 {print $0}' aver.tmp</code></p>
+</li>
+<li>
+<p><code>awk '$1!~/match_str/ {print $0 }' filename</code></p>
+</li>
+<li>
+<p>去掉重复的单词</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/awk -f</span></div><div class="line"></div><div class="line">&#123;</div><div class="line">  <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= NF; i++)</div><div class="line">  &#123;</div><div class="line">      ++word[<span class="variable">$i</span>]</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (word[<span class="variable">$i</span>] == <span class="number">1</span>)</div><div class="line">          printf(<span class="string">"%s "</span>, <span class="variable">$i</span>)</div><div class="line">  &#125;</div><div class="line">  printf(<span class="string">"\n"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>awk script</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line"><span class="comment">#是注释符号</span></div><div class="line"><span class="keyword">BEGIN</span> &#123;</div><div class="line">......</div><div class="line">&#125;</div><div class="line">&#123; <span class="comment">#这个中括号不能省略</span></div><div class="line">......</div><div class="line">&#125;</div><div class="line"><span class="keyword">END</span> &#123;</div><div class="line">......</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>引用外部变量的几种方式：<br>
+【来自：<a href="http://club.topsage.com/thread-393615-1-1.html%E3%80%91" target="_blank" rel="external">http://club.topsage.com/thread-393615-1-1.html】</a></p>
+<blockquote>
+<p>（1）<code>&quot;'&quot;var&quot;'&quot; ——错。应该是&quot;'&quot;$var&quot;'&quot;</code><br>
+（2）<code>awk '{print a, b}' a=111 b=222 yourfile</code><br>
+（3）<code>awk –v a=111 –v b=222 ‘{print a,b}’ yourfile</code><br>
+（4）【ct】<code>pid=$(ps -f | awk '/gpu='&quot;$gpu&quot;'/ &amp;&amp; !/awk/ {print $2}')</code>   ——在//之间，引用外部变量的正确方式是’&quot;$v&quot;’</p>
+</blockquote>
+</li>
+<li>
+<p>引用外部命令的两种方式：【<a href="http://hi.baidu.com/gubuntu/blog/item/050398ceb010513fb700c8d0.html%E3%80%91" target="_blank" rel="external">http://hi.baidu.com/gubuntu/blog/item/050398ceb010513fb700c8d0.html】</a><br>
+例:<code>awk '{if(/Beren/) {print $0 | &quot;cut -b 2-&quot; } else print $0}' job.plm</code><br>
+但糟糕的是，上面这条命令的输出顺序与你设想的并不一致</p>
+</li>
+<li>
+<p>求最大值、最小值、求方差等</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">awk <span class="string">'&#123;if (max=="")  &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;if (min=="")  &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;'</span> file1 </div><div class="line">【注意】：中间不能有空行或短行，否则<span class="variable">$3</span>=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>求和</p>
+<ul>
+<li>对六百列分别求和</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>((i=1;i&lt;=600;i++))</div><div class="line"><span class="keyword">do</span></div><div class="line">  awk <span class="string">'&#123;sum+=$'</span><span class="string">"<span class="variable">$i</span>"</span><span class="string">'&#125;END&#123;print sum/"'</span><span class="string">"<span class="variable">$num_exc</span>"</span><span class="string">'"&#125;'</span> ttt1.tmp &gt;&gt; data</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<ul>
+<li>对行求和</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">awk -v FS=<span class="string">","</span> -v OFS=<span class="string">"+"</span> <span class="string">'&#123;$1="";system("echo $["$0"]")&#125;'</span></div><div class="line">awk -F<span class="string">','</span> <span class="string">'&#123;for(i=2;i&lt;=NF;i++)sum[NR]+=$i;print $1","sum[NR]&#125;'</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>【来自】<a href="http://bbs.chinaunix.net/thread-1384345-1-1.html" target="_blank" rel="external">http://bbs.chinaunix.net/thread-1384345-1-1.html</a></p>
+<ol start="10">
+<li>printf用法<br>
+<code>printf &quot;%s %s %s &quot;,$1,$2,$3</code></li>
+<li>求最大值、最小值、求方差等</li>
+</ol>
+   <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">awk <span class="string">'&#123;if (max=="")  &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;if (min=="")  &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;'</span> file1 </div><div class="line">【注意】：中间不能有空行或短行，否则<span class="variable">$3</span>=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题</div></pre></td></tr></table></figure>
+<ol start="12">
+<li>awk中 ‘’ 和 “” 【单引号和双引号】<br>
+&quot;&quot;是直接输出<br>
+’'是转义输出,'C1’就有特殊的含义</li>
+<li><a href="https://stackoverflow.com/questions/16529716/awk-save-modifications-in-place" target="_blank" rel="external">gawk 4.1.0之后才可以原位修改文件</a></li>
+</ol>
+<h2 id="bc命令：">bc命令：</h2>
+<p>1.m的n次方<br>
+<code>echo &quot;m^n&quot;|bc</code><br>
+2.计算π：<br>
+<code>echo &quot;scale=100; a(1)*4&quot; | bc -l</code><br>
+【附一部分man】</p>
+<blockquote>
+<p>MATH LIBRARY<br>
+If bc is invoked with the -l option, a math library is preloaded and the default  scale  is  set  to  20.<br>
+The  math  functions  will  calculate their results to the scale set at the time of their call.  The math<br>
+library defines the following functions:<br>
+s (x)  The sine of x, x is in radians.    正玄函数<br>
+c (x)  The cosine of x, x is in radians.  余玄函数<br>
+a (x)  The arctangent of x, arctangent returns radians. 反正切函数<br>
+l (x)  The natural logarithm of x.  log函数(以2为底)<br>
+e (x)  The exponential function of raising e to the value x.  e的指数函数<br>
+j (n,x)<br>
+The bessel function of integer order n of x.   贝塞尔函数</p>
+</blockquote>
+<p>3.做加减法时（比如<code>a*b+c</code>）bc不会读入scale信息，所以要想设定scale，可以写成<code>(a*b+c）/1</code>,除法是一定会读入scale的。（<code>(a*b+c）*1</code>）没有效果，但<code>a*b</code>有效果）<br>
+【第二次测试，不存在这个问题了】</p>
+<ol start="4">
+<li>bc不能识别形式为科学计数法的输入，如1.2345e+06</li>
+</ol>
+<h2 id="convert命令：">convert命令：</h2>
+<ol>
+<li>
+<p><code>convert ${i%plt}eps -density 100x100 ${i%plt}tif</code></p>
+</li>
+<li>
+<p><code>convert ${i%plt}eps -density 300 ${i%plt}png</code>  #300代表dpi</p>
+</li>
+<li>
+<p>animated gif</p>
+<blockquote>
+<p><code>convert -delay 120 -loop 0 *.png animated.gif</code><br>
+The delay parameter specifies the delay between frames in 0.01s, while the loop parameter determines how many times the animation runs (the 0 value will run the loop infinitely).</p>
+</blockquote>
+<p><a href="http://www.linux-magazine.com/Online/Blogs/Productivity-Sauce/Create-Animated-GIFs-with-ImageMagick" target="_blank" rel="external">source</a></p>
+</li>
+</ol>
+<h2 id="cp命令：">cp命令：</h2>
+<ol>
+<li><a href="http://blog.chinaunix.net/uid-9525959-id-2303690.html" target="_blank" rel="external">cp自动创建层级结构</a><br>
+例子: <code>cp --parents parentdir1/parentdir2/sourcefile destdir/</code></li>
+</ol>
+<h2 id="cut命令：">cut命令：</h2>
+<p>cut命令很好用<br>
+<code>awk '/Beren/ {print $0}' tt1 | cut -b 2-</code>cut部分的意思是截取第二个到最后一个字符。</p>
+<h2 id="diff命令">diff命令</h2>
+<p>1.对比两个文件夹的不同<br>
+`diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ &gt; diff_text</p>
+<h2 id="echo命令：">echo命令：</h2>
+<ul>
+<li><code>-e</code> 开启反斜杠转义字符</li>
+<li><code>-E</code> 关闭反斜杠转义字符</li>
+<li><code>-n</code> 去掉echo默认输出的换行符</li>
+<li>测试 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> -e <span class="string">"a\tb\tc\n"</span></div><div class="line">a	b	c</div><div class="line">$ <span class="built_in">echo</span> -E <span class="string">"a\tb\tc\n"</span></div><div class="line">a\tb\tc\n</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="gprof：">gprof：</h2>
+<p><a href="http://blog.csdn.net/linquidx/article/details/5916701" target="_blank" rel="external">http://blog.csdn.net/linquidx/article/details/5916701</a><br>
+<a href="http://blog.csdn.net/stanjiang2010/article/details/5655143" target="_blank" rel="external">http://blog.csdn.net/stanjiang2010/article/details/5655143</a></p>
+<ol>
+<li>gprof -b -A -p -q test gmon.out &gt; x<br>
+-b选项的作用是输出程序说明，对比加-b选项和不加的情况就明白了</li>
+</ol>
+<h2 id="grep命令：">grep命令：</h2>
+<ul>
+<li><code>-i</code>： 忽略大小写</li>
+<li><code>-v</code>： 不显示匹配的项</li>
+</ul>
+<h2 id="kill命令：">kill命令：</h2>
+<p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
+kill -STOP 1234<br>
+如果要恢复到前台，请在当时运行该进程的那个终端用jobs命令查询暂停的进程</p>
+<h2 id="ls命令：">ls命令：</h2>
+<p>1.只显示文件<br>
+<code>ls -l | grep ^- | awk '{print $9}'</code><br>
+<code>ls -1 -F | grep -v [/$]</code></p>
+<p>2.只显示文件夹<br>
+只显示文件夹： <code>ls -d */</code><br>
+<code>-d</code>的意义:      显示目录本身的信息，而不是列出目录下的文件<br>
+<code>ls *</code>：         显示所有文件、文件夹及其中的文件(文件夹)<br>
+<code>ls -d *</code>:       显示所有文件、文件夹</p>
+<h3 id="查看linux进程的执行文件路径">查看linux进程的执行文件路径</h3>
+<blockquote>
+<pre><code>      1、以超级用户登陆
+</code></pre>
+</blockquote>
+<pre><code>       2、进入/proc目录
+       3、ps查看所有符合./cmd的进程，找出其对应的PID进程号
+       4、用ll命令： ll 进程号 
+          如下显示一个示例：
+          [root@Cluster1 proc]# ll 22401 (proc文件夹中有对应PID码的文件名,进入即可)
+   total 0
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cmdline
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cpu
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 cwd -&gt; /home/zhouys/sbs/bin
+   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 environ
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 exe -&gt; /home/zhouys/sbs/bin/cbs (deleted)
+   dr-x------    2 zhouys    zhouys     0 Dec 11 11:10 fd
+   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 maps
+   -rw-------    1 zhouys    zhouys     0 Dec 11 11:10 mem
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 mounts
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 root -&gt; /
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 stat
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 statm
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 status
+          /proc文件系统下的 进程号目录 下面的文件镜像了进程的当前运行信息，
+          从中可以看到：
+          cwd符号链接的就是进程22401的运行目录；
+          exe符号连接就是执行程序的绝对路径；
+          cmdline就是程序运行时输入的命令行命令；本例为：./cbs
+          cpu记录了进程可能运行在其上的cpu；显示虚拟的cpu信息
+          environ记录了进程运行时的环境变量
+          fd目录下是进程打开或使用的文件的符号连接
+          ...
+    通过cwd直接进入进程运行目录，通过查看相关信息就可以定位此目录对应那个端口号，以及
+定位是那个应用才使用此服务程序。       
+       5、`ps -aux` 命令
+       ps也可打印其路径,但不是万能的,有些路径只能使用以上两种方法取得
+</code></pre>
+<h2 id="ln">ln</h2>
+<ul>
+<li>ln source target</li>
+<li>hard link<br>
+hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。</li>
+</ul>
+<h2 id="mkdir命令：">mkdir命令：</h2>
+<p>在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。</p>
+<h2 id="printf命令：">printf命令：</h2>
+<p>1.补零<br>
+<code>printf &quot;%05d&quot; 123</code><br>
+结果是：00123<br>
+参考：<a href="http://blog.csdn.net/truelie/article/details/1692942" target="_blank" rel="external">http://blog.csdn.net/truelie/article/details/1692942</a></p>
+<h2 id="ps命令">ps命令</h2>
+<ol>
+<li>linux查看进程启动时间(运行多长时间)<br>
+<code>ps -eo pid,lstart,etime | grep your_pid</code></li>
+</ol>
+<h2 id="sed命令：">sed命令：</h2>
+<p><a href="http://www.cnblogs.com/ctaixw/p/5860221.html" target="_blank" rel="external">sed命令详解</a></p>
+<ol>
+<li>
+<p>抓取第m 到 第n行：<br>
+<code>sed -n &quot;m,np&quot; filename</code><br>
+<code>sed -n &quot;$[$fl*($i-1)+1],$[$fl*$i]p&quot; ../../precopy/h-tail-10 &gt; frame$i</code></p>
+</li>
+<li>
+<p>在file1第3行之后插入file2:<br>
+<code>sed '3 r file2' file1</code></p>
+</li>
+<li>
+<p>将“vel[i].x vel[i].y vel[i].z”替换成“velx[i] vely[i] velz[i]”<br>
+<code>s/\[i\]\.\([xyz]\)/\1[i]/g</code></p>
+</li>
+<li>
+<p>&amp;字符 : 代表其前 pattern 字串<br>
+例：<code>sed -e 's/test/&amp; my car/'</code>替换后变为：test my car</p>
+</li>
+<li>
+<p>在有字符串33的行的行首，添加<br>
+<code>sed -i '/33/s/^/#&amp;/' t1.plm</code><br>
+注意为什么要有^：<br>
+有“^”，“&amp;”代表的是有字符串33存在的整行<br>
+没有“^”，“&amp;”代表的是字符串33</p>
+</li>
+<li>
+<p>将原来的所有空行删除并在每一行后面增加一空行<br>
+<code>sed '/^$/d;G' file3</code></p>
+</li>
+<li>
+<p>在指定(export)行前面加行<br>
+<code>sed '/export/i xxx' file</code>或<code>sed '/export/i \xxx' file</code><br>
+在指定(export)行前面后行<br>
+<code>sed '/export/a xxx' file</code>或<code>sed '/export/a \xxx' file</code></p>
+</li>
+</ol>
+<p>9.单引号的转义<br>
+<code>'\''</code><br>
+<code>sed 's/'\''//g'</code># 将单引号替换为空格</p>
+<ol start="11">
+<li>
+<p>指定行添加内容<br>
+<code>sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt</code></p>
+</li>
+<li>
+<p>外部变量<br>
+<code>sed 's/standard/'&quot;$i&quot;'/'</code></p>
+</li>
+<li>
+<p><code>sed -i</code>会使软链接失效<br>
+<code>--follow-symlinks</code>可以保持软连接</p>
+</li>
+</ol>
+<h2 id="sort命令">sort命令</h2>
+<ol>
+<li>按第二行排序<br>
+<code>sort -n -k2 file</code></li>
+</ol>
+<h2 id="ssh">ssh</h2>
+<p>有的命令<code>source .bash_profile</code><br>
+例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></p>
+<h2 id="su命令：">su命令：</h2>
+<p>1.关于login<br>
+（1）.直接登录root<br>
+（2）.由其他用户名登录到root:  su -，否则就是没有login<br>
+（3）<code>su -c 'command'</code></p>
+<h2 id="time命令">time命令</h2>
+<ol>
+<li><code>time ./program</code><br>
+参数：<strong>-p</strong> 以秒为默认单位来进行输出</li>
+</ol>
+<h2 id="top命令：">top命令：</h2>
+<p>1.查看内存<br>
+可以直接使用top命令后，查看%MEM的内容<br>
+查看用户ct的进程的内存： <code>top -u ct</code><br>
+查看特定进程的内存：<code>top -d 1 -p pid [,pid ...]</code> //设置为delay 1s，默认是delay 3s；如果想根据内存使用量进行排序，可以shift + m（Sort by memory usage）</p>
+<h2 id="uniq命令">uniq命令</h2>
+<ol>
+<li><code>uniq -c</code><br>
+在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。</li>
+</ol>
+<h2 id="xargs命令-find命令：">xargs命令 &amp; find命令：</h2>
+<ol>
+<li><code>awk '{print }' filenames | xargs du -h</code><br>
+文件filenames中存储了一些文件名，用这种方式，可以看到每个文件的大小</li>
+<li><code>find . -name &quot;pa*.xml&quot; | xargs -n 10000 rm -f</code><br>
+find + xargs 是“Argument list too long”问题的标准解决方法，find命令是持续输出的，而xargs再将find的出处分成若干段，再进行下一步处理</li>
+<li>`find -name *.dcd | tee -a dcd_name | xargs rm &amp;<br>
+删除文件，并将删除的文件的路径输入到dcd_name中</li>
+<li>批量转换文件格式<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls *.jpg | xargs -I&#123;&#125; -P 8 convert <span class="string">"&#123;&#125;"</span> `<span class="built_in">echo</span> &#123;&#125; | sed <span class="string">'s/jpg$/png/'</span>`</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中-P代表进程数；<br>
+-i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给{}，可以用{}代替。”<br>
+在当前这个命令下，以tmp.jpg为例，实际上执行的是 convert tmp.jpg tmp.png</p>
+<h2 id="yum命令">yum命令</h2>
+<ol>
+<li><code>yum install foo</code></li>
+<li><code>yum remove foo</code></li>
+<li><code>yum list *foo* #You can rearch the available packages</code></li>
+<li><code>yum localinstall foo.rpm</code></li>
+</ol>
+<h2 id="逻辑表达式与-和-：">逻辑表达式与<code>&amp;&amp;</code>和<code>||</code>：</h2>
+<ul>
+<li>
+<p>逻辑表达式<br>
+（1）C语言中写法：<br>
+<code>if (a == b &amp;&amp; a == c)</code></p>
+<p>shell 中的写法：<br>
+<code>if ([ $a -eq $b ] &amp;&amp; [ $a -eq $c ]); then</code><br>
+(2) C 语言中的写法：<br>
+<code>if (a == b &amp;&amp; a == c &amp;&amp; b == c)</code><br>
+shell 中的写法：<br>
+<code>if [ $a -eq $b -o $a -eq $c -o $b -eq $c ]; then</code><br>
+<code>if [ $a -eq $b ] &amp;&amp; [ $a -eq $c ] &amp;&amp; [ $b -eq $c ]; then</code><br>
+注意：“[”或“]”与表达式之间必须要有空格。</p>
+</li>
+<li>
+<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+<code>[ ]</code>是shell built-in，而<code>[[ ]]</code>不属于POSIX；<br>
+<code>[ ]</code>会展开<code>a*</code>，所以用它的时候需要加双引号：<code>[ &quot;$var&quot; ]</code>；<code>[[ ]]</code>不需要<br>
+<code>[ ]</code>会fork a new process，<code>[[ ]]</code>不会</p>
+</li>
+</ul>
+<ul>
+<li><code>&amp;&amp;</code>和<code>||</code><br>
+<code>&amp;&amp;</code>和<code>||</code>与逻辑表达式表面相似，实则完全不同，如果混淆了会导致严重的错误。<br>
+<code>command1 &amp;&amp; command2</code>，如果command1返回值为真（<code>$?==0</code>），才会执行command2。一般命令正确执行了，都会返回0。<br>
+<code>command1 || command2</code>则是command1返回值为假（<code>$? != 0</code>）才执行command2。<br>
+关于这两个算符，还<strong>有个隐僻但重要的问题</strong>是<code>command1 &amp;&amp; command2</code>的返回值，如果command1返回值为假，<strong>整个表达式的返回值也为假，表达式所在的脚本的返回值也为假！</strong>。<br>
+有不少人认为<code>[ ... ] &amp;&amp; ...</code>和<code>if</code>语句效果一样但更简洁，这种想法是错误的，因为前一种用法会影响程序返回值，而<code>if</code>语句不会。如果在脚本中用前一种方法，会莫名其妙的导致返回值为假又没有任何报错。</li>
+</ul>
+<h2 id="脚本注意事项：">脚本注意事项：</h2>
+<ol>
+<li>
+<p><code>declare -A var # 声明为关联数组</code><br>
+<code>declare -a var # 声明为数组</code><br>
+二者很不同</p>
+</li>
+<li>
+<p>关联数组定义的后面不能加#<br>
+例如：<code>array=([seg]=100)# 这样会出问题</code></p>
+</li>
+<li>
+<p>命令中blank space是不能随便加的<br>
+Because blank space is usually used as the separater of command or agruments.<br>
+<code>&lt;&lt;block #</code>&lt;&lt; 和 block之间不能有空格</p>
+</li>
+</ol>
+<ol start="4">
+<li>脚本的长度<br>
+不要把不同功能写到一个脚本中，尤其是脚本较大的时候。<br>
+即使你可以非常顺利的写出脚本的每一句，也不意味着你的脚本可以正常执行。<br>
+所以要分块编写:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">!/bin/sh</div><div class="line">  part1.sh</div><div class="line">  part2.sh</div><div class="line">  part3.sh</div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>优点：<br>
+这样编写把part1-3的内容写在一个脚本里执行起来是一样的，但是，像这样将脚本分割，有利于调试脚本。由于脚本过于灵活，所以非常容易出错，而出错几率是和大小成指数关系的。所以要把脚本分化，使每一部分都有明确的意义，一来方便检查脚本是否有误，二来增加代码的重复利用率。</li>
+<li>缺点：<br>
+传递参数麻烦。</li>
+</ul>
+<h3 id="常见错误">常见错误</h3>
+<ul>
+<li>循环变量的错误使用<br>
+比如说循环变量i，在其他地方是否被改动了？<br>
+这种错误shell是不会检查出来的</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>人工智能简介</b></font>]]></title>
+      <url>/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/</url>
+      <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
+<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
+<ul>
+<li>Hinton 多伦多大学<br>
+DBN</li>
+<li>LeCun<br>
+CNN</li>
+<li>Bengio<br>
+attention、GAN</li>
+</ul>
+<h2 id="神经网络简介">神经网络简介</h2>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"></p>
+<a id="more"></a>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
+<h2 id="技术备忘">技术备忘</h2>
+<ul>
+<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
+<blockquote>
+<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
+</blockquote>
+</li>
+<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
+<blockquote>
+<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
+</blockquote>
+</li>
+<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
+<blockquote>
+<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
+面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="历史节点">历史节点</h2>
+<ul>
+<li>1943<br>
+W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
+<li>1949<br>
+D. Olding Hebb: math model</li>
+<li>1957<br>
+F.Rosenblatt: Perceptron</li>
+<li>1969<br>
+Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
+<li>1974<br>
+Paul Werbos: BP(Back Propagation)</li>
+<li>1980<br>
+Hinton: MLP(Multi_Layer Perceptron)</li>
+<li>1982<br>
+John Hopfield: Hopfield Network(pioneer RNN)</li>
+<li>1998<br>
+LeCun: CNN(Convoluted Neural Network)</li>
+<li>2006<br>
+Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
+<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
+<ul>
+<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
+<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
+</ul>
+</li>
+</ul>
+<h2 id="名词概念">名词概念</h2>
+<ul>
+<li>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup></li>
+<li>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
+提升模型在测试集上的预测效果的主题叫做泛化</li>
+<li>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
+相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</li>
+<li>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
+更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</li>
+<li>DBN(深度信念网络)</li>
+<li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
+【示意效果】<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
+<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<blockquote>
+<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="技术成熟的条件">技术成熟的条件</h1>
+<h2 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></h2>
+<blockquote>
+<ul>
+<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
+</ul>
+</blockquote>
+<ul>
+<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
+<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
+<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
+<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
+<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="历史">历史</h2>
+<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
+<h2 id="可读">可读</h2>
+<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
+<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
+[book: Neural networks and deep learning(Michael Nielsen)]<br>
+(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      
+        <categories>
+            
+            <category> 人工智能 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 人工智能 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>python mechanism </b></font>]]></title>
+      <url>/2017/07/28/python_mechanism/</url>
+      <content type="html"><![CDATA[<p>[TOC]</p>
+<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
+<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
+而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
+<a id="more"></a>
+<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
+<p>然而用python或者IPython，结果为False</p>
+<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
+<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
+<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
+<h2 id="2-with-语句">2. with 语句</h2>
+<p><strong>自动进行对象的生命周期进行管理</strong><br>
+Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
+<ul>
+<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-list参数传递">3. list参数传递</h2>
+<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
+正确做法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
+<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
+<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
+<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
+ct总结：参数绑定优先级：</p>
+<ol>
+<li>指定参数名</li>
+<li>顺序</li>
+<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
+<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
+<li><strong>限制关键字参数的名字</strong></li>
+</ol>
+<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
+<h2 id="5-generator">5. generator</h2>
+<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
+<p><strong>The implementation of zip is very beautiful：</strong><br>
+来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
+<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
+凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
+集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
+Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
+for x in [1, 2, 3, 4, 5]:<br>
+pass<br>
+实际上完全等价于：<br>
+首先获得Iterator对象:<br>
+<code>it = iter([1, 2, 3, 4, 5])</code><br>
+循环:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
+<ul>
+<li>while my_iterator（参见zip的实现）<br>
+iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
+</ul>
+<h2 id="8-内存">8. 内存</h2>
+<h3 id="8-1-释放内存">8.1. 释放内存</h3>
+<p>先del再gc.collect()</p>
+<h2 id="9-python类">9. Python类</h2>
+<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
+<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
+<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
+<p>Note that user defined attributes shall not end with ‘__’</p>
+<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
+<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
+注意下面的这种错误写法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
+<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
+<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
+<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
+<p>静态语言 vs 动态语言<br>
+对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
+<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
+<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
+<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
+<h2 id="style-guide">Style guide</h2>
+<h3 id="argument">argument</h3>
+<ul>
+<li><code>**kwargs</code> is a bad practice:
+<ol>
+<li>you don’t know how <code>**kwargs</code> affect.</li>
+<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
+<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
+<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
+</ol>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>hdf5简介 </b></font>]]></title>
+      <url>/2017/07/26/hdf5/</url>
+      <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
+<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
+<h3 id="历史">历史</h3>
+<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
+<h3 id="特性">特性</h3>
+<ul>
+<li>自述性<br>
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
+<li>通用性<br>
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>灵活性<br>
+HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
+<li>扩展性<br>
+HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
+<li>跨平台性</li>
+<li>现代性<br>
+支持并行I/O，线程和其他一些现代系统和应用要求。</li>
+</ul>
+<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
+<h3 id="why-hdf">Why HDF?</h3>
+<ul>
+<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
+<li>NASA’s Earth Observing System等等官网介绍</li>
+</ul>
+<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
+<h2 id="文档">文档</h2>
+<ul>
+<li>sphinx<br>
+它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
+<ul>
+<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
+<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
+<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术杂烩 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 技术杂烩 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>shadownsocks备忘 </b></font>]]></title>
+      <url>/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/</url>
+      <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<ul>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> shadownsocks </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> shadownsocks </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>git笔记 </b></font>]]></title>
+      <url>/2017/07/26/git/</url>
+      <content type="html"><![CDATA[<h1 id="git">git</h1>
+<h2 id="开始">开始</h2>
+<p>非常好的入门:<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png" alt="非常好的入门0"><br>
+非常好的入门1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
+<blockquote>
+<ul>
+<li>工作区：就是你在电脑里能看到的目录。</li>
+<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<ul>
+<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+</ul>
+</blockquote>
+<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
+<ul>
+<li>init</li>
+<li>config <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>列出设置的config<br>
+<code>git config --list</code></p>
+<ul>
+<li>difftool<br>
+没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>kompare的效果非常好。</p>
+<ul>
+<li>help<br>
+<code>git help &lt;verb&gt;</code></li>
+</ul>
+<h2 id="操作">操作</h2>
+<ul>
+<li>
+<p>add filename</p>
+</li>
+<li>
+<p>commit</p>
+<ul>
+<li><code>git commit -m &quot;your message&quot;</code></li>
+<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+</ul>
+<blockquote>
+<p><code>git commit --amend</code><br>
+<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
+</blockquote>
+<blockquote>
+<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
+…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
+</blockquote>
+<blockquote>
+<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
+</blockquote>
+</li>
+<li>
+<p>reset<br>
+<code>git reset --hard HEAD^</code><br>
+<code>git reset --hard 3628164</code></p>
+</li>
+<li>
+<p>reflog 查看历史命令</p>
+</li>
+<li>
+<p>clone<br>
+git clone /path/to/repository<br>
+如果是远端服务器上的仓库，你的命令会是这个样子：<br>
+<code>git clone username@host:/path/to/repository</code><br>
+<code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code></p>
+</li>
+<li>
+<p>push<br>
+<code>git push origin master:master</code><br>
+origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch   </span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>git checkout hexo myfile</code><br>
+从hexo分支得到myfile</p>
+</li>
+<li>
+<p>stash<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<blockquote>
+<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
+</blockquote>
+<p><code>git stash</code> 临时存储当前状态<br>
+<code>git stash list</code><br>
+<code>git stash apply (--index)</code> 找回临时存储的状态<br>
+<code>git stash drop</code> 删除stash</p>
+</li>
+<li>
+<p>branch</p>
+<ul>
+<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
+git checkout master</li>
+<li>git merge dev<br>
+合并指定分支到当前分支</li>
+<li>git branch -d dev #删除</li>
+<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
+<code>git branch</code> 查看本地分支</li>
+<li><code>git checkout mybfranch</code> # shift to another branch</li>
+</ul>
+</li>
+<li>
+<p>pull<br>
+<code>git pull origin master</code>相当于<code>git fetch</code>加上<code>git merge</code></p>
+</li>
+<li>
+<p>fetch<br>
+<code>git fetch origin hexo</code>从remote repo获取名为hexo的branch</p>
+</li>
+</ul>
+<h2 id="丢弃">丢弃</h2>
+<ul>
+<li>
+<p>git rm (then git commit)</p>
+</li>
+<li>
+<p><code>git checkout -- file</code><br>
+git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+<ul>
+<li>
+<p>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：<br>
+$ <code>git checkout -- test.txt</code></p>
+</li>
+<li>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。<br>
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="显示状态">显示状态</h2>
+<ul>
+<li>
+<p>status</p>
+</li>
+<li>
+<p>log<br>
+<code>git log --oneline --decorate</code> # 加上–decorate 时，我们可以看到我们的标签</p>
+</li>
+<li>
+<p>remote<br>
+看当前配置有哪些远程仓库，可以用命令<br>
+<code>git remote</code><br>
+执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
+</li>
+<li>
+<p><code>git ls-files #ls files in present branch</code><br>
+<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
+</li>
+<li>
+<p>diff</p>
+<ul>
+<li><code>git diff #对比工作区和stage文件的差异</code><br>
+<code>git diff --cached</code> 对比stage和branch之间的差异</li>
+<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch</code></li>
+<li><code>git diff origin/hexo #对比当前working tree和远程branch</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="rebase">rebase</h2>
+<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
+<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
+<ul>
+<li>git rebase --skip</li>
+<li>git rebase --continue #use this when you solved conflicts.</li>
+<li>git rebase --abort #放弃当前rebase</li>
+</ul>
+<h2 id="tag">tag</h2>
+<p>git push origin --tags</p>
+<h2 id="其他概念与原理">其他概念与原理</h2>
+<ul>
+<li>
+<p>origin<br>
+It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
+</li>
+<li>
+<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
+Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
+远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
+<blockquote>
+<p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
+<ul>
+<li>upstream generally refers to the original repo that you have forked<br>
+(see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+<blockquote>
+<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="错误">错误</h2>
+<ul>
+<li>prompt to input passphrase time and time again:<br>
+<a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
+Note that you can use ssh-key only if you use ssh to build remote connections.<br>
+<code>git remote -v</code> should looks like:<br>
+<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
+but not:<br>
+<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="待读">待读</h2>
+<p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
+<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      
+        <categories>
+            
+            <category> git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>Story of Terminal </b></font>]]></title>
+      <url>/2017/07/26/Story_of_Terminal/</url>
+      <content type="html"><![CDATA[<h1 id="总结">总结</h1>
+<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
+本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
+<ul>
+<li>ctrl+h的编码<br>
+<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
+而ctrl+h的值也为010。<br>
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>F1键<br>
+terminal类型的选择也会影响快捷键。<br>
+Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="问题：">问题：</h2>
+<p>为什么BS无法删除，而是想左移动？<br>
+为什么在执行程序进行输入时，按下BS显示的是^H?</p>
+<h2 id="答案">答案</h2>
+<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
+<p>Terminal</p>
+<ul>
+<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
+<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
+<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
+<blockquote>
+<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> 编码 </tag>
+            
+            <tag> Terminal </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>hexo </b></font>]]></title>
+      <url>/2017/07/21/hexo/</url>
+      <content type="html"><![CDATA[<h1 id="memo">memo</h1>
+<ul>
+<li>这个网站可以作为参考<a href="http://www.ezlippi.com" target="_blank" rel="external">www.ezlippi.com</a></li>
+<li>npm i(nstall) hexo-generator-json-content --save<br>
+Fix error to ensure “all article” works normally.</li>
+<li><s>hexo-footnote</s>(已不再维护)
+<blockquote>
+<p><code>npm install hexo-footnotes --save</code><br>
+如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件：</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugins:</div><div class="line">  - hexo-footnotes</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>安装hexo-renderer-marked以支持更多Markdown特性 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm un hexo-renderer-marked --save</div><div class="line">npm i hexo-renderer-markdown-it --save</div><div class="line">npm install markdown-it-emoji --save</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="设置文章置顶-cloudinary在线图片服务">设置文章置顶 &amp; Cloudinary在线图片服务<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<blockquote>
+<p>top: 3 # 数字越大越靠前，默认为0<br>
+除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如Cloudinary提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。<br>
+在Cloudinary申请账号，上传图片(注意把upload选项中的unsigned signature选上)</p>
+</blockquote>
+<p>Cloundinary的免费存储空间还是非常大的<a href="http://cloudinary.com/pricing" target="_blank" rel="external">cloudinary价格</a><br>
+<a href="https://cloudinary.com/console/media_library" target="_blank" rel="external">我的cloudinary</a><br>
+使用方法：</p>
+<ol>
+<li>点击图片</li>
+<li>点击url</li>
+<li>拷贝链接</li>
+</ol>
+<h2 id="hexo个人命令">hexo个人命令</h2>
+<ul>
+<li>
+<p>用<code>hexol</code>/<code>hexod</code>命令一次性完成本地/远程预览<br>
+配置<code>.bash_profile</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> HEXO=<span class="string">'/Users/Aether/Documents/hexo_file'</span></div><div class="line"><span class="built_in">export</span> HEXOMD=<span class="string">'/Users/Aether/Documents/hexo_file/source/_posts/'</span></div><div class="line"><span class="built_in">alias</span> hexod=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'</span></div><div class="line"><span class="built_in">alias</span> hexol=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>tackle_md.sh</code>自动调整缩进、设置部分显示、修改文章标题大小(for next theme)</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">sh indent.sh</div><div class="line">sh read_more.sh</div><div class="line"><span class="keyword">for</span> mdfile <span class="keyword">in</span> $(ls *.md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    awk -f ./title_size.awk <span class="variable">$mdfile</span> &gt; /tmp/<span class="variable">$mdfile</span> &amp;&amp; mv /tmp/<span class="variable">$mdfile</span>  <span class="variable">$mdfile</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>其中，<code>indent.sh</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># indent for code block</span></div><div class="line">sed -i <span class="string">'s/^```[a-z]/   &amp;/g'</span> *.md</div><div class="line"><span class="comment"># indent for quote</span></div><div class="line">sed -i <span class="string">'s/^&gt;/   &amp;/g'</span> *.md</div></pre></td></tr></table></figure>
+<p><code>read_more.sh</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.</span></div><div class="line"><span class="keyword">for</span> md_file <span class="keyword">in</span> $(ls *md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">stat</span>=$(grep <span class="string">"&lt;!-- more --&gt;"</span> <span class="variable">$md_file</span>)</div><div class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$stat</span>"</span> ];<span class="keyword">then</span></div><div class="line">        sed -i <span class="string">'20a &lt;!-- more --&gt;'</span> <span class="variable">$md_file</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p><code>title_size.awk</code>:</p>
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="regexp">/^title:/</span>&amp;&amp;!<span class="regexp">/font/</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=NF;++i) &#123;</div><div class="line">            printf <span class="variable">$i</span><span class="string">" "</span>;</div><div class="line">            <span class="keyword">if</span>(i==<span class="number">1</span>)</div><div class="line">                printf <span class="string">" &lt;font size=6&gt;&lt;b&gt;"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==NF)</div><div class="line">                printf <span class="string">"&lt;/b&gt;&lt;/font&gt;\n"</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        print <span class="variable">$0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="yilia-theme">yilia theme</h2>
+<ul>
+<li>image file path<br>
+<code>hexo_file/themes/hexo-theme-yilia/source/img</code></li>
+<li>theme-yilia<br>
+<a href="https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5" target="_blank" rel="external">yilia</a></li>
+</ul>
+<h2 id="next-theme">next theme</h2>
+<ul>
+<li>
+<p>要想显示标签页，需要手动操作，详见<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</li>
+<li>
+<p>添加搜索<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+<strong>在os X safari上无法正常使用，原因不明；在os X chrome上和win7 chrome上都可以正常使用</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-search --save</div><div class="line">npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>如何设置页面文章的篇数？<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-index</div><div class="line">npm install --save hexo-generator-archive</div><div class="line">npm install --save hexo-generator-tag</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>设置social_icons<br>
+<code>next</code>是通过<a href="http://fontawesome.io/cheatsheet/" target="_blank" rel="external">FontAwesome</a>进行图标设计的，FA支持的图标都在主页上。<br>
+目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为<code>zhihu: bed</code></p>
+</li>
+<li>
+<p>设置文章标题的格式<br>
+直接用html就可以<br>
+<code>title: &lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</code></p>
+</li>
+</ul>
+<h1 id="references">References:</h1>
+<p><a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">HEXO搭建个人博客</a><br>
+<a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">2个小时教你hexo博客添加评论、打赏、RSS等功能</a><br>
+<a href="http://coolcao.com/2016/10/19/%E4%BB%8E%E6%90%AD%E5%BB%BAhexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%90%86%E8%A7%A3%E5%AD%A6%E4%B9%A0DNS%E8%A7%A3%E6%9E%90" target="_blank" rel="external">从搭建hexo个人博客过程中理解学习DNS解析</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://jiaxm.me/2017-07-day/Hexo%20Configuration/#more" target="_blank" rel="external">Hexo Configuration</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">Next-主题配置</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="http://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="external">参考：Hexo博客添加站内搜索</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95" target="_blank" rel="external">Next-常见问题</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      
+        <categories>
+            
+            <category> hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> yilia </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>阿里云邮箱设置记录 </b></font>]]></title>
+      <url>/2017/07/21/ali_mail_set/</url>
+      <content type="html"><![CDATA[<h1 id="正文">正文</h1>
+<ol start="0">
+<li>
+<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
+</li>
+<li>
+<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
+</li>
+<li>
+<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
+<blockquote>
+<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
+</blockquote>
+<p>访问http://mail.timchen314.com:</p>
+<blockquote>
+<p>温馨提醒：该页面暂时无法访问<br>
+尊敬的用户：<br>
+您好！<br>
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
+</blockquote>
+<p>所以，必须要备案后才能使用邮箱服务。<br>
+ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
+<blockquote>
+<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
+</blockquote>
+</li>
+</ol>
+<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术杂烩 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 技术杂烩 </tag>
+            
+            <tag> 邮箱设置 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[<font size=7><b>markdown in hexo-render-markdown-it </b></font>]]></title>
+      <url>/2017/07/21/markdown_in_hexo/</url>
+      <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
+To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
+<strong>In summary, only inline image is unavailable.</strong><br>
+PS:</p>
+<ul>
+<li>spacing can add indent; and code block &amp; quote wouldn’t indent automatically.<br>
+so <code>indent.sh</code> is used</li>
+<li>Could add spacing manually by <code>&amp;nbsp; #半角的不断行的空白格</code> (it works in header, too)</li>
+<li><code>&lt;br/&gt;</code> as line break</li>
+</ul>
+<h1 id="bug">Bug</h1>
+<ul>
+<li>有时候ordered list序号大于等于10，缩进会失效。</li>
+</ul>
+<h1 id="mou">Mou</h1>
+<p><img src="http://25.io/mou/Mou_128.png" alt="Mou icon"></p>
+<h2 id="overview">Overview</h2>
+<a id="more"></a>
+<p><strong>Mou</strong>, the missing Markdown editor for <em>web developers</em>.</p>
+<h3 id="syntax">Syntax</h3>
+<h4 id="strong-and-emphasize">Strong and Emphasize</h4>
+<p><strong>strong</strong> or <strong>strong</strong> ( Cmd + B )</p>
+<p><em>emphasize</em> or <em>emphasize</em> ( Cmd + I )</p>
+<p><strong>Sometimes I want a lot of text to be bold.<br>
+Like, seriously, a <em>LOT</em> of text</strong></p>
+<h4 id="blockquotes">Blockquotes</h4>
+<blockquote>
+<p>Right angle brackets &gt; are used for block quotes.</p>
+</blockquote>
+<h4 id="links-and-email">Links and Email</h4>
+<p>An email <a href="mailto:example@example.com" target="_blank" rel="external">example@example.com</a> link.</p>
+<p>Simple inline link <a href="http://chenluois.com" target="_blank" rel="external">http://chenluois.com</a>, another inline link <a href="http://25.io/smaller/" target="_blank" rel="external">Smaller</a>, one more inline link with title <a href="http://resizesafari.com" title="a Safari extension" target="_blank" rel="external">Resize</a>.</p>
+<p>A <a href="http://25.io/mou/" title="Markdown editor on Mac OS X" target="_blank" rel="external">reference style</a> link. Input id, then anywhere in the doc, define the link with corresponding id:</p>
+<p>Titles ( or called tool tips ) in the links are optional.</p>
+<h4 id="images">Images</h4>
+<p>An inline image <img src="http://25.io/smaller/favicon.ico" alt="Smaller icon" title="Title here">, title is optional.</p>
+<p>A <img src="http://resizesafari.com/favicon.ico" alt="Resize icon" title="Title"> reference style image.</p>
+<h4 id="inline-code-and-block-code">Inline code and Block code</h4>
+<p>Inline code are surround by <code>backtick</code> key. To create a block code:</p>
+<pre><code>Indent each line by at least 1 tab, or 4 spaces.
+var Mou = exactlyTheAppIwant; 
+</code></pre>
+<h4 id="ordered-lists">Ordered Lists</h4>
+<p>Ordered lists are created using “1.” + Space:</p>
+<ol>
+<li>Ordered list item</li>
+<li>Ordered list item</li>
+<li>Ordered list item</li>
+</ol>
+<h4 id="unordered-lists">Unordered Lists</h4>
+<p>Unordered list are created using “*” + Space:</p>
+<ul>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+</ul>
+<p>Or using “-” + Space:</p>
+<ul>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+<li>Unordered list item</li>
+</ul>
+<h4 id="hard-linebreak">Hard Linebreak</h4>
+<p>End a line with two or more spaces will create a hard linebreak, called <code>&lt;br /&gt;</code> in HTML. ( Control + Return )<br>
+Above line ended with 2 spaces.</p>
+<h4 id="horizontal-rules">Horizontal Rules</h4>
+<p>Three or more asterisks or dashes:</p>
+<hr>
+<hr>
+<hr>
+<h4 id="headers">Headers</h4>
+<p>Setext-style:</p>
+<h1 id="this-is-h1">This is H1</h1>
+<h2 id="this-is-h2">This is H2</h2>
+<p>atx-style:</p>
+<h1 id="this-is-h1-v2">This is H1</h1>
+<h2 id="this-is-h2-v2">This is H2</h2>
+<h3 id="this-is-h3">This is H3</h3>
+<h4 id="this-is-h4">This is H4</h4>
+<h5 id="this-is-h5">This is H5</h5>
+<h6 id="this-is-h6">This is H6</h6>
+<h3 id="extra-syntax">Extra Syntax</h3>
+<h4 id="footnotes">Footnotes</h4>
+<p>Footnotes work mostly like reference-style links. A footnote is made of two things: a marker in the text that will become a superscript number; a footnote definition that will be placed in a list of footnotes at the end of the document. A footnote looks like this:</p>
+<p>That’s some text with a footnote.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<h4 id="strikethrough">Strikethrough</h4>
+<p>Wrap with 2 tilde characters:</p>
+<p><s>Strikethrough</s></p>
+<h4 id="fenced-code-blocks">Fenced Code Blocks</h4>
+<p>Start with a line containing 3 or more backticks, and ends with the first line with the same number of backticks:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Fenced code blocks are like Stardard Markdown’s regular code</div><div class="line">blocks, except that they’re not indented and instead rely on</div><div class="line">a start and end fence lines to delimit the code block.</div></pre></td></tr></table></figure>
+<h4 id="tables">Tables</h4>
+<p>A simple table looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+<th>Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p>If you wish, you can add a leading and tailing pipe to each line of the table:</p>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+<th>Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p>Specify alignment for each column by adding colons to separator lines:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">First Header</th>
+<th style="text-align:center">Second Header</th>
+<th style="text-align:right">Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Left</td>
+<td style="text-align:center">Center</td>
+<td style="text-align:right">Right</td>
+</tr>
+<tr>
+<td style="text-align:left">Left</td>
+<td style="text-align:center">Center</td>
+<td style="text-align:right">Right</td>
+</tr>
+</tbody>
+</table>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>And that’s the footnote. <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      
+        <categories>
+            
+            <category> hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
 </search>

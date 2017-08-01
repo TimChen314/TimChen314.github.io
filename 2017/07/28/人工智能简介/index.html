@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python," />
+  <meta name="keywords" content="人工智能," />
 
 
 
@@ -95,17 +95,22 @@
 
 
 
-<meta name="description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
-<meta name="keywords" content="python">
+<meta name="description" content="备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）  Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN  神经网络简介">
+<meta name="keywords" content="人工智能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta property="og:url" content="http://yoursite.com/2017/07/28/python_mechanism/index.html">
+<meta property="og:title" content="&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
+<meta property="og:url" content="http://yoursite.com/2017/07/28/人工智能简介/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
-<meta property="og:updated_time" content="2017-07-31T13:24:08.000Z">
+<meta property="og:description" content="备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）  Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN  神经网络简介">
+<meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg">
+<meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg">
+<meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg">
+<meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg">
+<meta property="og:updated_time" content="2017-07-31T15:42:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta name="twitter:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
+<meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
+<meta name="twitter:description" content="备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）  Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN  神经网络简介">
+<meta name="twitter:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg">
 
 
 
@@ -133,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/28/python_mechanism/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/28/人工智能简介/"/>
 
 
 
 
 
-  <title><font size=7><b>python mechanism </b></font> | TimChen</title>
+  <title><font size=7><b>人工智能简介</b></font> | TimChen</title>
   
 
 
@@ -312,7 +317,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/python_mechanism/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/人工智能简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tim Chen">
@@ -329,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"><font size=7><b>python mechanism </b></font></h1>
+          <h1 class="post-title" itemprop="name headline"><font size=7><b>人工智能简介</b></font></h1>
         
 
         <div class="post-meta">
@@ -364,8 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/人工智能/" itemprop="url" rel="index">
+                    <span itemprop="name">人工智能</span>
                   </a>
                 </span>
 
@@ -382,9 +387,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/28/python_mechanism/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/28/人工智能简介/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/28/python_mechanism/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/28/人工智能简介/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,102 +414,123 @@
       
 
       
-        <p>[TOC]</p>
-<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
-<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
-而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
+        <h1 id="备忘">备忘</h1>
+<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
+<ul>
+<li>Hinton 多伦多大学<br>
+DBN</li>
+<li>LeCun<br>
+CNN</li>
+<li>Bengio<br>
+attention、GAN</li>
+</ul>
+<h2 id="神经网络简介">神经网络简介</h2>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"></p>
 <a id="more"></a>
-<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
-<p>然而用python或者IPython，结果为False</p>
-<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
-<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
-<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
-<h2 id="2-with-语句">2. with 语句</h2>
-<p><strong>自动进行对象的生命周期进行管理</strong><br>
-Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
+<h2 id="技术备忘">技术备忘</h2>
 <ul>
-<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
+<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
+<blockquote>
+<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
+</blockquote>
+</li>
+<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
+<blockquote>
+<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
+</blockquote>
+</li>
+<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
+<blockquote>
+<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
+面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="3-list参数传递">3. list参数传递</h2>
-<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
-正确做法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
-<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
-<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
-<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
-ct总结：参数绑定优先级：</p>
-<ol>
-<li>指定参数名</li>
-<li>顺序</li>
-<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
-<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
-<li><strong>限制关键字参数的名字</strong></li>
+<h2 id="历史节点">历史节点</h2>
+<ul>
+<li>1943<br>
+W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
+<li>1949<br>
+D. Olding Hebb: math model</li>
+<li>1957<br>
+F.Rosenblatt: Perceptron</li>
+<li>1969<br>
+Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
+<li>1974<br>
+Paul Werbos: BP(Back Propagation)</li>
+<li>1980<br>
+Hinton: MLP(Multi_Layer Perceptron)</li>
+<li>1982<br>
+John Hopfield: Hopfield Network(pioneer RNN)</li>
+<li>1998<br>
+LeCun: CNN(Convoluted Neural Network)</li>
+<li>2006<br>
+Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
+<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
+<ul>
+<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
+<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
+</ul>
+</li>
+</ul>
+<h2 id="名词概念">名词概念</h2>
+<ul>
+<li>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup></li>
+<li>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
+提升模型在测试集上的预测效果的主题叫做泛化</li>
+<li>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
+相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</li>
+<li>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
+更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</li>
+<li>DBN(深度信念网络)</li>
+<li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
+【示意效果】<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
+<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<blockquote>
+<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="技术成熟的条件">技术成熟的条件</h1>
+<h2 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></h2>
+<blockquote>
+<ul>
+<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
+</ul>
+</blockquote>
+<ul>
+<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
+<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
+<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
+<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
+<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="历史">历史</h2>
+<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
+<h2 id="可读">可读</h2>
+<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
+<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
+[book: Neural networks and deep learning(Michael Nielsen)]<br>
+(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
 </ol>
-<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
-<h2 id="5-generator">5. generator</h2>
-<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
-<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
-<p><strong>The implementation of zip is very beautiful：</strong><br>
-来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
-<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
-集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
-Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
-for x in [1, 2, 3, 4, 5]:<br>
-pass<br>
-实际上完全等价于：<br>
-首先获得Iterator对象:<br>
-<code>it = iter([1, 2, 3, 4, 5])</code><br>
-循环:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
-<ul>
-<li>while my_iterator（参见zip的实现）<br>
-iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
-</ul>
-<h2 id="8-内存">8. 内存</h2>
-<h3 id="8-1-释放内存">8.1. 释放内存</h3>
-<p>先del再gc.collect()</p>
-<h2 id="9-python类">9. Python类</h2>
-<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
-<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
-<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
-<p>Note that user defined attributes shall not end with ‘__’</p>
-<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
-<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
-注意下面的这种错误写法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
-<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
-<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
-<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
-<p>静态语言 vs 动态语言<br>
-对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
-<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
-<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
-<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
-<h2 id="style-guide">Style guide</h2>
-<h3 id="argument">argument</h3>
-<ul>
-<li><code>**kwargs</code> is a bad practice:
-<ol>
-<li>you don’t know how <code>**kwargs</code> affect.</li>
-<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
-<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
-<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
-</ol>
-</li>
-</ul>
+</section>
 
       
     </div>
@@ -549,7 +575,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/07/28/python_mechanism/" title="<font size=7><b>python mechanism </b></font>">http://yoursite.com/2017/07/28/python_mechanism/</a>
+      <a href="http://yoursite.com/2017/07/28/人工智能简介/" title="<font size=7><b>人工智能简介</b></font>">http://yoursite.com/2017/07/28/人工智能简介/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -565,7 +591,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/人工智能/" rel="tag"># 人工智能</a>
           
         </div>
       
@@ -578,8 +604,8 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/26/hdf5/" rel="next" title="<font size=7><b>hdf5简介 </b></font>">
-                <i class="fa fa-chevron-left"></i> <font size=7><b>hdf5简介 </b></font>
+              <a href="/2017/07/28/python_mechanism/" rel="next" title="<font size=7><b>python mechanism </b></font>">
+                <i class="fa fa-chevron-left"></i> <font size=7><b>python mechanism </b></font>
               </a>
             
           </div>
@@ -588,8 +614,8 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/28/人工智能简介/" rel="prev" title="<font size=7><b>人工智能简介</b></font>">
-                <font size=7><b>人工智能简介</b></font> <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/31/linux常用命令记录/" rel="prev" title="<font size=7><b>linux常用命令记录 </b></font>">
+                <font size=7><b>linux常用命令记录 </b></font> <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -772,7 +798,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#style-guide"><span class="nav-text">Style guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#argument"><span class="nav-text">argument</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘"><span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小"><span class="nav-text">三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络简介"><span class="nav-text">神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术备忘"><span class="nav-text">技术备忘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史节点"><span class="nav-text">历史节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名词概念"><span class="nav-text">名词概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术成熟的条件"><span class="nav-text">技术成熟的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#andrew-ng"><span class="nav-text">Andrew Ng[5]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读"><span class="nav-text">可读</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -920,9 +946,9 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/28/python_mechanism/';
-          this.page.identifier = '2017/07/28/python_mechanism/';
-          this.page.title = '<font size=7><b>python mechanism </b></font>';
+          this.page.url = 'http://yoursite.com/2017/07/28/人工智能简介/';
+          this.page.identifier = '2017/07/28/人工智能简介/';
+          this.page.title = '<font size=7><b>人工智能简介</b></font>';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://timchen314.disqus.com/embed.js';

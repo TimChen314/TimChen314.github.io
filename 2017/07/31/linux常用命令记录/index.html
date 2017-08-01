@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
+<meta name="description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;font size=7&gt;&lt;b&gt;linux常用命令记录 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
 <meta property="og:url" content="http://yoursite.com/2017/07/31/linux常用命令记录/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
-<meta property="og:updated_time" content="2017-07-31T13:45:29.000Z">
+<meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
+<meta property="og:updated_time" content="2017-08-01T06:16:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;linux常用命令记录 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
+<meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
 
 
 
@@ -409,7 +409,8 @@
       
 
       
-        <p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
+        <p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
+长度感人。</p>
 <a id="more"></a>
 <p>[TOC]</p>
 <h2 id="正则表达式">正则表达式</h2>
@@ -690,7 +691,275 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 <h2 id="cut命令：">cut命令：</h2>
 <p>cut命令很好用<br>
 <code>awk '/Beren/ {print $0}' tt1 | cut -b 2-</code>cut部分的意思是截取第二个到最后一个字符。</p>
-<h1 id="reference">reference</h1>
+<h2 id="diff命令">diff命令</h2>
+<p>1.对比两个文件夹的不同<br>
+`diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ &gt; diff_text</p>
+<h2 id="echo命令：">echo命令：</h2>
+<ul>
+<li><code>-e</code> 开启反斜杠转义字符</li>
+<li><code>-E</code> 关闭反斜杠转义字符</li>
+<li><code>-n</code> 去掉echo默认输出的换行符</li>
+<li>测试 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> -e <span class="string">"a\tb\tc\n"</span></div><div class="line">a	b	c</div><div class="line">$ <span class="built_in">echo</span> -E <span class="string">"a\tb\tc\n"</span></div><div class="line">a\tb\tc\n</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="gprof：">gprof：</h2>
+<p><a href="http://blog.csdn.net/linquidx/article/details/5916701" target="_blank" rel="external">http://blog.csdn.net/linquidx/article/details/5916701</a><br>
+<a href="http://blog.csdn.net/stanjiang2010/article/details/5655143" target="_blank" rel="external">http://blog.csdn.net/stanjiang2010/article/details/5655143</a></p>
+<ol>
+<li>gprof -b -A -p -q test gmon.out &gt; x<br>
+-b选项的作用是输出程序说明，对比加-b选项和不加的情况就明白了</li>
+</ol>
+<h2 id="grep命令：">grep命令：</h2>
+<ul>
+<li><code>-i</code>： 忽略大小写</li>
+<li><code>-v</code>： 不显示匹配的项</li>
+</ul>
+<h2 id="kill命令：">kill命令：</h2>
+<p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
+kill -STOP 1234<br>
+如果要恢复到前台，请在当时运行该进程的那个终端用jobs命令查询暂停的进程</p>
+<h2 id="ls命令：">ls命令：</h2>
+<p>1.只显示文件<br>
+<code>ls -l | grep ^- | awk '{print $9}'</code><br>
+<code>ls -1 -F | grep -v [/$]</code></p>
+<p>2.只显示文件夹<br>
+只显示文件夹： <code>ls -d */</code><br>
+<code>-d</code>的意义:      显示目录本身的信息，而不是列出目录下的文件<br>
+<code>ls *</code>：         显示所有文件、文件夹及其中的文件(文件夹)<br>
+<code>ls -d *</code>:       显示所有文件、文件夹</p>
+<h3 id="查看linux进程的执行文件路径">查看linux进程的执行文件路径</h3>
+<blockquote>
+<pre><code>      1、以超级用户登陆
+</code></pre>
+</blockquote>
+<pre><code>       2、进入/proc目录
+       3、ps查看所有符合./cmd的进程，找出其对应的PID进程号
+       4、用ll命令： ll 进程号 
+          如下显示一个示例：
+          [root@Cluster1 proc]# ll 22401 (proc文件夹中有对应PID码的文件名,进入即可)
+   total 0
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cmdline
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cpu
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 cwd -&gt; /home/zhouys/sbs/bin
+   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 environ
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 exe -&gt; /home/zhouys/sbs/bin/cbs (deleted)
+   dr-x------    2 zhouys    zhouys     0 Dec 11 11:10 fd
+   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 maps
+   -rw-------    1 zhouys    zhouys     0 Dec 11 11:10 mem
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 mounts
+   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 root -&gt; /
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 stat
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 statm
+   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 status
+          /proc文件系统下的 进程号目录 下面的文件镜像了进程的当前运行信息，
+          从中可以看到：
+          cwd符号链接的就是进程22401的运行目录；
+          exe符号连接就是执行程序的绝对路径；
+          cmdline就是程序运行时输入的命令行命令；本例为：./cbs
+          cpu记录了进程可能运行在其上的cpu；显示虚拟的cpu信息
+          environ记录了进程运行时的环境变量
+          fd目录下是进程打开或使用的文件的符号连接
+          ...
+    通过cwd直接进入进程运行目录，通过查看相关信息就可以定位此目录对应那个端口号，以及
+定位是那个应用才使用此服务程序。       
+       5、`ps -aux` 命令
+       ps也可打印其路径,但不是万能的,有些路径只能使用以上两种方法取得
+</code></pre>
+<h2 id="ln">ln</h2>
+<ul>
+<li>ln source target</li>
+<li>hard link<br>
+hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。</li>
+</ul>
+<h2 id="mkdir命令：">mkdir命令：</h2>
+<p>在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。</p>
+<h2 id="printf命令：">printf命令：</h2>
+<p>1.补零<br>
+<code>printf &quot;%05d&quot; 123</code><br>
+结果是：00123<br>
+参考：<a href="http://blog.csdn.net/truelie/article/details/1692942" target="_blank" rel="external">http://blog.csdn.net/truelie/article/details/1692942</a></p>
+<h2 id="ps命令">ps命令</h2>
+<ol>
+<li>linux查看进程启动时间(运行多长时间)<br>
+<code>ps -eo pid,lstart,etime | grep your_pid</code></li>
+</ol>
+<h2 id="sed命令：">sed命令：</h2>
+<p><a href="http://www.cnblogs.com/ctaixw/p/5860221.html" target="_blank" rel="external">sed命令详解</a></p>
+<ol>
+<li>
+<p>抓取第m 到 第n行：<br>
+<code>sed -n &quot;m,np&quot; filename</code><br>
+<code>sed -n &quot;$[$fl*($i-1)+1],$[$fl*$i]p&quot; ../../precopy/h-tail-10 &gt; frame$i</code></p>
+</li>
+<li>
+<p>在file1第3行之后插入file2:<br>
+<code>sed '3 r file2' file1</code></p>
+</li>
+<li>
+<p>将“vel[i].x vel[i].y vel[i].z”替换成“velx[i] vely[i] velz[i]”<br>
+<code>s/\[i\]\.\([xyz]\)/\1[i]/g</code></p>
+</li>
+<li>
+<p>&amp;字符 : 代表其前 pattern 字串<br>
+例：<code>sed -e 's/test/&amp; my car/'</code>替换后变为：test my car</p>
+</li>
+<li>
+<p>在有字符串33的行的行首，添加<br>
+<code>sed -i '/33/s/^/#&amp;/' t1.plm</code><br>
+注意为什么要有^：<br>
+有“^”，“&amp;”代表的是有字符串33存在的整行<br>
+没有“^”，“&amp;”代表的是字符串33</p>
+</li>
+<li>
+<p>将原来的所有空行删除并在每一行后面增加一空行<br>
+<code>sed '/^$/d;G' file3</code></p>
+</li>
+<li>
+<p>在指定(export)行前面加行<br>
+<code>sed '/export/i xxx' file</code>或<code>sed '/export/i \xxx' file</code><br>
+在指定(export)行前面后行<br>
+<code>sed '/export/a xxx' file</code>或<code>sed '/export/a \xxx' file</code></p>
+</li>
+</ol>
+<p>9.单引号的转义<br>
+<code>'\''</code><br>
+<code>sed 's/'\''//g'</code># 将单引号替换为空格</p>
+<ol start="11">
+<li>
+<p>指定行添加内容<br>
+<code>sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt</code></p>
+</li>
+<li>
+<p>外部变量<br>
+<code>sed 's/standard/'&quot;$i&quot;'/'</code></p>
+</li>
+<li>
+<p><code>sed -i</code>会使软链接失效<br>
+<code>--follow-symlinks</code>可以保持软连接</p>
+</li>
+</ol>
+<h2 id="sort命令">sort命令</h2>
+<ol>
+<li>按第二行排序<br>
+<code>sort -n -k2 file</code></li>
+</ol>
+<h2 id="ssh">ssh</h2>
+<p>有的命令<code>source .bash_profile</code><br>
+例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></p>
+<h2 id="su命令：">su命令：</h2>
+<p>1.关于login<br>
+（1）.直接登录root<br>
+（2）.由其他用户名登录到root:  su -，否则就是没有login<br>
+（3）<code>su -c 'command'</code></p>
+<h2 id="time命令">time命令</h2>
+<ol>
+<li><code>time ./program</code><br>
+参数：<strong>-p</strong> 以秒为默认单位来进行输出</li>
+</ol>
+<h2 id="top命令：">top命令：</h2>
+<p>1.查看内存<br>
+可以直接使用top命令后，查看%MEM的内容<br>
+查看用户ct的进程的内存： <code>top -u ct</code><br>
+查看特定进程的内存：<code>top -d 1 -p pid [,pid ...]</code> //设置为delay 1s，默认是delay 3s；如果想根据内存使用量进行排序，可以shift + m（Sort by memory usage）</p>
+<h2 id="uniq命令">uniq命令</h2>
+<ol>
+<li><code>uniq -c</code><br>
+在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。</li>
+</ol>
+<h2 id="xargs命令-find命令：">xargs命令 &amp; find命令：</h2>
+<ol>
+<li><code>awk '{print }' filenames | xargs du -h</code><br>
+文件filenames中存储了一些文件名，用这种方式，可以看到每个文件的大小</li>
+<li><code>find . -name &quot;pa*.xml&quot; | xargs -n 10000 rm -f</code><br>
+find + xargs 是“Argument list too long”问题的标准解决方法，find命令是持续输出的，而xargs再将find的出处分成若干段，再进行下一步处理</li>
+<li>`find -name *.dcd | tee -a dcd_name | xargs rm &amp;<br>
+删除文件，并将删除的文件的路径输入到dcd_name中</li>
+<li>批量转换文件格式<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls *.jpg | xargs -I&#123;&#125; -P 8 convert <span class="string">"&#123;&#125;"</span> `<span class="built_in">echo</span> &#123;&#125; | sed <span class="string">'s/jpg$/png/'</span>`</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中-P代表进程数；<br>
+-i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给{}，可以用{}代替。”<br>
+在当前这个命令下，以tmp.jpg为例，实际上执行的是 convert tmp.jpg tmp.png</p>
+<h2 id="yum命令">yum命令</h2>
+<ol>
+<li><code>yum install foo</code></li>
+<li><code>yum remove foo</code></li>
+<li><code>yum list *foo* #You can rearch the available packages</code></li>
+<li><code>yum localinstall foo.rpm</code></li>
+</ol>
+<h2 id="逻辑表达式与-和-：">逻辑表达式与<code>&amp;&amp;</code>和<code>||</code>：</h2>
+<ul>
+<li>
+<p>逻辑表达式<br>
+（1）C语言中写法：<br>
+<code>if (a == b &amp;&amp; a == c)</code></p>
+<p>shell 中的写法：<br>
+<code>if ([ $a -eq $b ] &amp;&amp; [ $a -eq $c ]); then</code><br>
+(2) C 语言中的写法：<br>
+<code>if (a == b &amp;&amp; a == c &amp;&amp; b == c)</code><br>
+shell 中的写法：<br>
+<code>if [ $a -eq $b -o $a -eq $c -o $b -eq $c ]; then</code><br>
+<code>if [ $a -eq $b ] &amp;&amp; [ $a -eq $c ] &amp;&amp; [ $b -eq $c ]; then</code><br>
+注意：“[”或“]”与表达式之间必须要有空格。</p>
+</li>
+<li>
+<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+<code>[ ]</code>是shell built-in，而<code>[[ ]]</code>不属于POSIX；<br>
+<code>[ ]</code>会展开<code>a*</code>，所以用它的时候需要加双引号：<code>[ &quot;$var&quot; ]</code>；<code>[[ ]]</code>不需要<br>
+<code>[ ]</code>会fork a new process，<code>[[ ]]</code>不会</p>
+</li>
+</ul>
+<ul>
+<li><code>&amp;&amp;</code>和<code>||</code><br>
+<code>&amp;&amp;</code>和<code>||</code>与逻辑表达式表面相似，实则完全不同，如果混淆了会导致严重的错误。<br>
+<code>command1 &amp;&amp; command2</code>，如果command1返回值为真（<code>$?==0</code>），才会执行command2。一般命令正确执行了，都会返回0。<br>
+<code>command1 || command2</code>则是command1返回值为假（<code>$? != 0</code>）才执行command2。<br>
+关于这两个算符，还<strong>有个隐僻但重要的问题</strong>是<code>command1 &amp;&amp; command2</code>的返回值，如果command1返回值为假，<strong>整个表达式的返回值也为假，表达式所在的脚本的返回值也为假！</strong>。<br>
+有不少人认为<code>[ ... ] &amp;&amp; ...</code>和<code>if</code>语句效果一样但更简洁，这种想法是错误的，因为前一种用法会影响程序返回值，而<code>if</code>语句不会。如果在脚本中用前一种方法，会莫名其妙的导致返回值为假又没有任何报错。</li>
+</ul>
+<h2 id="脚本注意事项：">脚本注意事项：</h2>
+<ol>
+<li>
+<p><code>declare -A var # 声明为关联数组</code><br>
+<code>declare -a var # 声明为数组</code><br>
+二者很不同</p>
+</li>
+<li>
+<p>关联数组定义的后面不能加#<br>
+例如：<code>array=([seg]=100)# 这样会出问题</code></p>
+</li>
+<li>
+<p>命令中blank space是不能随便加的<br>
+Because blank space is usually used as the separater of command or agruments.<br>
+<code>&lt;&lt;block #</code>&lt;&lt; 和 block之间不能有空格</p>
+</li>
+</ol>
+<ol start="4">
+<li>脚本的长度<br>
+不要把不同功能写到一个脚本中，尤其是脚本较大的时候。<br>
+即使你可以非常顺利的写出脚本的每一句，也不意味着你的脚本可以正常执行。<br>
+所以要分块编写:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">!/bin/sh</div><div class="line">  part1.sh</div><div class="line">  part2.sh</div><div class="line">  part3.sh</div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>优点：<br>
+这样编写把part1-3的内容写在一个脚本里执行起来是一样的，但是，像这样将脚本分割，有利于调试脚本。由于脚本过于灵活，所以非常容易出错，而出错几率是和大小成指数关系的。所以要把脚本分化，使每一部分都有明确的意义，一来方便检查脚本是否有误，二来增加代码的重复利用率。</li>
+<li>缺点：<br>
+传递参数麻烦。</li>
+</ul>
+<h3 id="常见错误">常见错误</h3>
+<ul>
+<li>循环变量的错误使用<br>
+比如说循环变量i，在其他地方是否被改动了？<br>
+这种错误shell是不会检查出来的</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 
       
     </div>
@@ -764,8 +1033,8 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/python_mechanism/" rel="next" title="<font size=7><b>python mechanism </b></font>">
-                <i class="fa fa-chevron-left"></i> <font size=7><b>python mechanism </b></font>
+              <a href="/2017/07/28/人工智能简介/" rel="next" title="<font size=7><b>人工智能简介</b></font>">
+                <i class="fa fa-chevron-left"></i> <font size=7><b>人工智能简介</b></font>
               </a>
             
           </div>
@@ -774,8 +1043,8 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/31/人工智能简介/" rel="prev" title="<font size=7><b>人工智能简介</b></font>">
-                <font size=7><b>人工智能简介</b></font> <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/01/vim笔记/" rel="prev" title="<font size=7><b>vim笔记 </b></font>">
+                <font size=7><b>vim笔记 </b></font> <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -856,7 +1125,7 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -867,7 +1136,7 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -878,7 +1147,7 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -958,7 +1227,7 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-一句话介绍命令："><span class="nav-text">linux 一句话介绍命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-command-line"><span class="nav-text">linux Command line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系列命令"><span class="nav-text">!系列命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的子字符串"><span class="nav-text">参数的子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alt"><span class="nav-text">alt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部资源链接"><span class="nav-text">外部资源链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码-ctrl-h；终端-f1"><span class="nav-text">编码 ctrl+h；终端 F1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias命令："><span class="nav-text">alias命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at命令："><span class="nav-text">at命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awk命令："><span class="nav-text">awk命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bc命令："><span class="nav-text">bc命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert命令："><span class="nav-text">convert命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp命令："><span class="nav-text">cp命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut命令："><span class="nav-text">cut命令：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-一句话介绍命令："><span class="nav-text">linux 一句话介绍命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-command-line"><span class="nav-text">linux Command line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系列命令"><span class="nav-text">!系列命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的子字符串"><span class="nav-text">参数的子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alt"><span class="nav-text">alt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部资源链接"><span class="nav-text">外部资源链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码-ctrl-h；终端-f1"><span class="nav-text">编码 ctrl+h；终端 F1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias命令："><span class="nav-text">alias命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at命令："><span class="nav-text">at命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awk命令："><span class="nav-text">awk命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bc命令："><span class="nav-text">bc命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert命令："><span class="nav-text">convert命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp命令："><span class="nav-text">cp命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut命令："><span class="nav-text">cut命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diff命令"><span class="nav-text">diff命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo命令："><span class="nav-text">echo命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gprof："><span class="nav-text">gprof：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep命令："><span class="nav-text">grep命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kill命令："><span class="nav-text">kill命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls命令："><span class="nav-text">ls命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看linux进程的执行文件路径"><span class="nav-text">查看linux进程的执行文件路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln"><span class="nav-text">ln</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir命令："><span class="nav-text">mkdir命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf命令："><span class="nav-text">printf命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps命令"><span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sed命令："><span class="nav-text">sed命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort命令"><span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh"><span class="nav-text">ssh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#su命令："><span class="nav-text">su命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time命令"><span class="nav-text">time命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#top命令："><span class="nav-text">top命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq命令"><span class="nav-text">uniq命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xargs命令-find命令："><span class="nav-text">xargs命令 & find命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum命令"><span class="nav-text">yum命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑表达式与-和-："><span class="nav-text">逻辑表达式与&&和||：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本注意事项："><span class="nav-text">脚本注意事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
             
 
           </div>
