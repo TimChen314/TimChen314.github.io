@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-01T06:24:25.000Z</updated>
+  <updated>2017-08-01T08:41:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,13 +20,12 @@
     <link href="http://yoursite.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/08/01/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2017-08-01T06:24:25.000Z</updated>
+    <updated>2017-08-01T08:41:02.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
 <p>删除线代表已经非常熟练的掌握，不需要再看了。</p>
-<h1 id="vim下命令：">vim下命令：</h1>
-<h2 id="命令">命令</h2>
+<h2 id="vim下命令：">vim下命令：</h2>
 <p><s>(3)</s> <code>:.,$ s/str1/str2/g</code> 用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1<br>
 其中<code>.</code>代表当前行，<code>$</code>代表最后一行，而<code>.,$</code>就代表从当前行到最后一行<br>
 也可以这样 <code>:.,.+8 s/str1/str2/g</code>， 其中<code>.,.+8</code>代表从当前行到从当前行开始下面第8行。<br>
@@ -153,7 +152,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 <li>noremap：绑定键的时候，不迭代绑定<br>
 五中模式代号：nvoic</li>
 </ul>
-<h1 id="reference">reference</h1>
+<h2 id="reference">reference</h2>
 <p><a href="https://danielmiessler.com/study/vim/#why" target="_blank" rel="external">vim tutorial</a><br>
 <a href="http://developer.51cto.com/art/201308/406941.htm" target="_blank" rel="external">超过130个你需要了解的vim命令</a> 【好】<br>
 <a href="http://www.cnblogs.com/lq0729/archive/2011/12/24/2300189.html" target="_blank" rel="external">vim map nmap</a>【非常好，介绍vimrc的一些基本命令】</p>
@@ -1360,6 +1359,44 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-07-31T15:45:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<ul>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
+    
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
     <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
@@ -1422,44 +1459,6 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
       <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
       <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-31T15:45:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
     
   </entry>
   
@@ -1599,107 +1598,11 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
-    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
-    <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
-<ol start="0">
-<li>
-<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
-</li>
-<li>
-<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
-</li>
-<li>
-<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
-<blockquote>
-<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
-</blockquote>
-<p>访问http://mail.timchen314.com:</p>
-<blockquote>
-<p>温馨提醒：该页面暂时无法访问<br>
-尊敬的用户：<br>
-您好！<br>
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
-</blockquote>
-<p>所以，必须要备案后才能使用邮箱服务。<br>
-ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<blockquote>
-<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
-</blockquote>
-</li>
-</ol>
-<a id="more"></a>
-<ol start="3">
-<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
-<blockquote>
-<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
-</blockquote>
-</li>
-</ol>
-<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h1 id="reference">reference</h1>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
-&lt;ol start=&quot;0&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
-尊敬的用户：&lt;br&gt;
-您好！&lt;br&gt;
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
-ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;markdown in hexo-render-markdown-it &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-31T13:33:54.000Z</updated>
+    <updated>2017-08-01T08:42:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
@@ -1714,6 +1617,7 @@ so <code>indent.sh</code> is used</li>
 <h1 id="bug">Bug</h1>
 <ul>
 <li>有时候ordered list序号大于等于10，缩进会失效。</li>
+<li>目录不能正常显示，<a href="http://xn--vim-eo8ey59l62u.md" target="_blank" rel="external">如vim笔记.md</a></li>
 </ul>
 <h1 id="mou">Mou</h1>
 <p><img src="http://25.io/mou/Mou_128.png" alt="Mou icon"></p>
@@ -1883,6 +1787,7 @@ so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
 &lt;h1 id=&quot;bug&quot;&gt;Bug&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;有时候ordered list序号大于等于10，缩进会失效。&lt;/li&gt;
+&lt;li&gt;目录不能正常显示，&lt;a href=&quot;http://xn--vim-eo8ey59l62u.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如vim笔记.md&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;mou&quot;&gt;Mou&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;http://25.io/mou/Mou_128.png&quot; alt=&quot;Mou icon&quot;&gt;&lt;/p&gt;
@@ -1894,6 +1799,102 @@ so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
     
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
+    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-31T13:24:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
+<ol start="0">
+<li>
+<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
+</li>
+<li>
+<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
+</li>
+<li>
+<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
+<blockquote>
+<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
+</blockquote>
+<p>访问http://mail.timchen314.com:</p>
+<blockquote>
+<p>温馨提醒：该页面暂时无法访问<br>
+尊敬的用户：<br>
+您好！<br>
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
+</blockquote>
+<p>所以，必须要备案后才能使用邮箱服务。<br>
+ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
+<blockquote>
+<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
+</blockquote>
+</li>
+</ol>
+<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
+&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
+尊敬的用户：&lt;br&gt;
+您好！&lt;br&gt;
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
+ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   

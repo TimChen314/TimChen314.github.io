@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/07/21/markdown_in_hexo/</loc>
+    
+    <lastmod>2017-08-01T08:42:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2017-08-01T06:24:25.000Z</lastmod>
+    <lastmod>2017-08-01T08:41:02.000Z</lastmod>
     
   </url>
   
@@ -44,14 +51,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/07/21/markdown_in_hexo/</loc>
-    
-    <lastmod>2017-07-31T13:33:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/07/21/ali_mail_set/</loc>
+    <loc>http://yoursite.com/2017/07/26/git/</loc>
     
     <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/07/26/git/</loc>
+    <loc>http://yoursite.com/2017/07/21/ali_mail_set/</loc>
     
     <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     
@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2017-07-28T17:58:29.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2017-07-28T17:58:29.000Z</lastmod>
     
