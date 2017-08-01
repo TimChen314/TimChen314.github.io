@@ -7,6 +7,7 @@ date: 2017-07-31 18:00:00
 ---
 
 记录用过的命令，方便以后查找。不包含太简单的或太难的。
+长度感人。
 <!-- more -->
 
 [TOC]
@@ -426,7 +427,7 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 
 
 
-## sort命令 ----[back to top](#TOP)
+## sort命令 
 1. 按第二行排序
 `sort -n -k2 file`
 
@@ -434,7 +435,7 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 有的命令`source .bash_profile`
 例如：`sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy"$i" 192.9.207.204 "source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat"`
 
-##  su命令： ----[back to top](#TOP)
+##  su命令： 
 1.关于login
 （1）.直接登录root
 （2）.由其他用户名登录到root:  su -，否则就是没有login 
@@ -445,14 +446,14 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 参数：**-p** 以秒为默认单位来进行输出
   
 
-##    top命令： ----[back to top](#TOP)
+##    top命令： 
 1.查看内存
 可以直接使用top命令后，查看%MEM的内容
 查看用户ct的进程的内存： `top -u ct`
 查看特定进程的内存：`top -d 1 -p pid [,pid ...] ` //设置为delay 1s，默认是delay 3s；如果想根据内存使用量进行排序，可以shift + m（Sort by memory usage）
 
 
-##    uniq命令 ----[back to top](#TOP)
+##    uniq命令 
 1. `uniq -c`
 在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。
 
@@ -514,6 +515,45 @@ ls *.jpg | xargs -I{} -P 8 convert "{}" `echo {} | sed 's/jpg$/png/'`
 
 
 
+
+
+
+
+
+
+
+## 脚本注意事项：
+1. `declare -A var # 声明为关联数组`
+`declare -a var # 声明为数组`
+二者很不同
+2. 关联数组定义的后面不能加#
+例如：`array=([seg]=100)#  这样会出问题`
+
+3. 命令中blank space是不能随便加的
+  Because blank space is usually used as the separater of command or agruments.
+`<<block  #`<< 和 block之间不能有空格
+
+  
+4. 脚本的长度
+不要把不同功能写到一个脚本中，尤其是脚本较大的时候。
+即使你可以非常顺利的写出脚本的每一句，也不意味着你的脚本可以正常执行。
+所以要分块编写:
+```bash
+!/bin/sh
+  part1.sh
+  part2.sh
+  part3.sh
+exit
+```
++ 优点：
+这样编写把part1-3的内容写在一个脚本里执行起来是一样的，但是，像这样将脚本分割，有利于调试脚本。由于脚本过于灵活，所以非常容易出错，而出错几率是和大小成指数关系的。所以要把脚本分化，使每一部分都有明确的意义，一来方便检查脚本是否有误，二来增加代码的重复利用率。
++ 缺点：
+传递参数麻烦。
+
+###    常见错误    
++ 循环变量的错误使用
+比如说循环变量i，在其他地方是否被改动了？
+这种错误shell是不会检查出来的
 
 
 
