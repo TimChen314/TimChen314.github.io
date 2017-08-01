@@ -1,5 +1,5 @@
 ---
-title: vim笔记
+title:  <font size=7><b>vim笔记 </b></font>
 tags: [vim]   
 top: 11
 categories: vim   
@@ -46,23 +46,23 @@ g/pattern/s/pattern/replacement/g : 开始处的g是全局命令，意味着对�
 + zz 光标所在行居中
 + 20| 到第20列！【Normal mode】
 
-（18） 多个文件同时处理
-   + 文件以tab打开
+### 多个文件同时处理
++ 文件以tab打开
    ```language
 :args *.c
 :tab all
 ```
    or `vim -p *.h *cc `
-   + Run a command in multiple buffers
++ Run a command in multiple buffers
 将所有文件进行格式化，并写入所有文件
-   ```vim
+     ```vim
 :tabdo Autoformat
 :wa 
 ```
 
 ### 替换、查找
 + 去掉换行符^M: 输入以下字符串: `%s/^M//g`  (注意，^M = Ctrl v + Ctrl m，而不是手动输入^M)
-+ 换行符可以**用\n直接匹配**，*用\r添加*
++ 换行符可以**用\n直接匹配，用\r添加**
 
 + 对文件内含有特定字符的行操作。
 g/-/s/^/#/ 是把所有含‘-’的行注释掉
@@ -70,9 +70,10 @@ g/-/s/^/#/ 是把所有含‘-’的行注释掉
 
 + /open\c
     其中 \c表示忽略大小写
-+ vi（lzy0xa@192.9.207.102）的正则表达式中`:H[1-9]*`并不能match H20 ,因为这里vi认为`*`是匹陪[1-9]中的数，而不是匹配所有的字符。要想匹配H20、H320、H308之类的字符串就需要用`H[0-9]*`
++ vi（lzy0xa@192.9.207.102）的正则表达式中`H[1-9]*`并不能match H20 ,因为这里vi认为`*`是匹陪[1-9]中的数，而不是匹配所有的字符。要想匹配H20、H320、H308之类的字符串就需要用`H[0-9]*`
 
 ### 代码折叠
+
    ```vimscript
 set foldmethod=indent                                                        
 set foldnestmax=10                                                           
@@ -109,7 +110,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 http://www.jianshu.com/p/24aefcd4ca93
 https://github.com/plasticboy/vim-markdown
 有用的命令：c
-```
+   ```
 :Toc
 ```
 
@@ -120,20 +121,20 @@ https://github.com/plasticboy/vim-markdown
    ```vim
 :echo has('python3') #返回值为0，说明在vim中不能正常支持python
 ```
-这很可能是因为：python运行时找不到库。解决方法就是添加python库的路径到LD_LIBRARY_PATH环境变量：
+   这很可能是因为：python运行时找不到库。解决方法就是添加python库的路径到LD_LIBRARY_PATH环境变量：
    ```bash
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/anaconda3/lib/
 ```
-然而，这样又会导致其他程序找到的是`/opt/anaconda3/lib/`里的库，而非系统自带的库，例如：
+   然而，这样又会导致其他程序找到的是`/opt/anaconda3/lib/`里的库，而非系统自带的库，例如：
    ```bash
 $ evince
 evince: symbol lookup error: /lib64/libgdk-3.so.0: undefined symbol: cairo_surface_set_device_scale
 ```
-**最终解决方法，是分别设置环境变量**，例如：
+   **最终解决方法，是分别设置环境变量**，例如：
    ```bash
 alias evince='LD_LIBRARY_PATH="" evince'
 ```
-这样evince启动时，就不会去anaconda的路径里面找库了。
+   这样evince启动时，就不会去anaconda的路径里面找库了。
 
 #### cmd
 + 颜色

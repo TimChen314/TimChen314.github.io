@@ -538,7 +538,7 @@ ls *.jpg | xargs -I{} -P 8 convert "{}" `echo {} | sed 's/jpg$/png/'`
 不要把不同功能写到一个脚本中，尤其是脚本较大的时候。
 即使你可以非常顺利的写出脚本的每一句，也不意味着你的脚本可以正常执行。
 所以要分块编写:
-```bash
+   ```bash
 !/bin/sh
   part1.sh
   part2.sh
