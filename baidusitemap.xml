@@ -148,48 +148,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/07/21/hexo/</loc>
-    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
-    <data>
-        <display>
-        <title><font size=7><b>hexo </b></font></title>
-        <pubTime>2017-07-21T10:00:00.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>yilia</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="http://yoursite.com/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/28/python_mechanism/</loc>
-    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
-    <data>
-        <display>
-        <title><font size=7><b>python mechanism </b></font></title>
-        <pubTime>2017-07-28T10:00:00.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/07/21/ali_mail_set/</loc>
     <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     <data>
@@ -212,6 +170,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/07/21/hexo/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    <data>
+        <display>
+        <title><font size=7><b>hexo </b></font></title>
+        <pubTime>2017-07-21T10:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>yilia</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://yoursite.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/07/26/git/</loc>
     <lastmod>2017-07-31T13:24:08.000Z</lastmod>
     <data>
@@ -225,6 +205,26 @@
            
              
               <breadCrumb title="git" url="http://yoursite.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/07/28/python_mechanism/</loc>
+    <lastmod>2017-07-31T13:24:08.000Z</lastmod>
+    <data>
+        <display>
+        <title><font size=7><b>python mechanism </b></font></title>
+        <pubTime>2017-07-28T10:00:00.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
           
         </display>
     </data>

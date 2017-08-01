@@ -1018,115 +1018,6 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/hdf5/"/>
-    <id>http://yoursite.com/2017/07/26/hdf5/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-31T15:44:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
-<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
-<h3 id="历史">历史</h3>
-<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
-<h3 id="特性">特性</h3>
-<ul>
-<li>自述性<br>
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
-<li>通用性<br>
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>灵活性<br>
-HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
-<li>扩展性<br>
-HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
-<li>跨平台性</li>
-<li>现代性<br>
-支持并行I/O，线程和其他一些现代系统和应用要求。</li>
-</ul>
-<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
-<h3 id="why-hdf">Why HDF?</h3>
-<ul>
-<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
-<li>NASA’s Earth Observing System等等官网介绍</li>
-</ul>
-<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
-<h2 id="文档">文档</h2>
-<ul>
-<li>sphinx<br>
-它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
-<ul>
-<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
-<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
-<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
-&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
-&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
-&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
-&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;自述性&lt;br&gt;
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
-&lt;li&gt;通用性&lt;br&gt;
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-31T15:45:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
-    
-  </entry>
-  
-  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/git/"/>
     <id>http://yoursite.com/2017/07/26/git/</id>
@@ -1398,6 +1289,77 @@ but not:<br>
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/hdf5/"/>
+    <id>http://yoursite.com/2017/07/26/hdf5/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-07-31T15:44:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
+<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
+<h3 id="历史">历史</h3>
+<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
+<h3 id="特性">特性</h3>
+<ul>
+<li>自述性<br>
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
+<li>通用性<br>
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>灵活性<br>
+HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
+<li>扩展性<br>
+HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
+<li>跨平台性</li>
+<li>现代性<br>
+支持并行I/O，线程和其他一些现代系统和应用要求。</li>
+</ul>
+<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
+<h3 id="why-hdf">Why HDF?</h3>
+<ul>
+<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
+<li>NASA’s Earth Observing System等等官网介绍</li>
+</ul>
+<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
+<h2 id="文档">文档</h2>
+<ul>
+<li>sphinx<br>
+它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
+<ul>
+<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
+<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
+<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
+&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
+&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
+&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
+&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自述性&lt;br&gt;
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
+&lt;li&gt;通用性&lt;br&gt;
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
     <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
@@ -1460,6 +1422,44 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
       <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
       <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-07-31T15:45:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<ul>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
+    
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
     
   </entry>
   
