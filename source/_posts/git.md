@@ -80,14 +80,26 @@ git push origin :refs/for/branch1  # delete remote branch
 + branch   	
    - `git checkout -b dev` #-b参数表示创建并切换   
 git checkout master
+   - `git checkout --track local_branch origin/remote_branch`
+   create a local branch based on a remote-tracking branch.
+   >(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)][^5]
+   >The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:
+   > + They allow git pull to know what to merge after fetching new remote-tracking branches.
+   > + If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:
+   > ```
+    Your branch and the tracked remote branch 'origin/master'
+    have diverged, and respectively have 3 and 384 different
+    commit(s) each.
+    ```
    - git merge dev
 合并指定分支到当前分支
    - git branch -d dev #删除
    - `git branch -r/-a` # 查看远程/所有分支；
 `git branch` 查看本地分支
    - `git checkout mybfranch` # shift to another branch
+
 + pull   
-`git pull origin master`相当于`git fetch`加上`git merge`
+`git pull origin master`相当于`git fetch origin # fetch to local repo`加上`git merge origin/master # origin master shall be in local repo`
 + fetch
 `git fetch origin hexo`从remote repo获取名为hexo的branch
 
@@ -164,7 +176,9 @@ $ git branch -a
 ```
    - Local branches
    - Remote-tracking branches
-   
+ 
+ + refspec
+ `<source-name>:<destination-name>` is a refspec   
    
 
 ## 错误
