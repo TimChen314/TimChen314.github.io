@@ -285,7 +285,7 @@ cut命令很好用
 
 ##    diff命令    
 1.对比两个文件夹的不同
-`diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ > diff_text
+`diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ > diff_text`
 
 ## echo命令：
 - `-e` 开启反斜杠转义字符

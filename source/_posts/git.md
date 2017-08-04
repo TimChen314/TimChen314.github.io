@@ -133,6 +133,9 @@ $ `git checkout -- test.txt`
 git push origin --tags
 
 ## 其他概念与原理
++ remote   
+remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote[^5]
+>“remotes” are just nicknames for other repositories, synonymous with a URL or **the path of a local directory** – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.
 + origin   
 It's a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签
 + (远程仓库名)/(分支名) 这样的形式表示远程分支
@@ -154,7 +157,15 @@ $ git branch -a
 
 + branch & hash[^2]
    >you need to understand that branch and tag names are just pointers to hash values, which represent a single commit
-
+   only two types of branches, and they are storaged in[^5]:
+   ```bash
+.git/refs/heads/ #[for local branches] **only hash in the file**
+.git/refs/remotes/ #[for tracking branches]
+```
+   - Local branches
+   - Remote-tracking branches
+   
+   
 
 ## 错误
 + prompt to input passphrase time and time again:   
@@ -170,6 +181,7 @@ but not:
 [^2]: [What's the difference between `git reset --hard master` and `git reset --hard origin/master`?](https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or)   
 [^3]: [How to modify existing, unpushed commits?](https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits)   
 [^4]: [6.3 Git 工具 - 儲藏](https://git-scm.com/book/zh/v2/Git-工具-储藏与清理)
+[^5]: [GIT: FETCH AND MERGE, DON’T PULL](https://longair.net/blog/2009/04/16/git-fetch-and-merge/)
 
 ## 待读
 [**超好**: git cheatsheet](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)
