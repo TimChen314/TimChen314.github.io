@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png">
-<meta property="og:updated_time" content="2017-07-31T13:24:08.000Z">
+<meta property="og:updated_time" content="2017-08-04T21:46:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
 <meta name="twitter:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
@@ -509,6 +509,19 @@ origin is the remote server; the branch name before the colon is local branch na
 <ul>
 <li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
 git checkout master</li>
+<li><code>git checkout --track local_branch origin/remote_branch</code><br>
+create a local branch based on a remote-tracking branch.</li>
+</ul>
+<blockquote>
+<p>(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)]<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><br>
+The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:</p>
+<ul>
+<li>They allow git pull to know what to merge after fetching new remote-tracking branches.</li>
+<li>If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Your branch and the tracked remote branch &apos;origin/master&apos;</div><div class="line">have diverged, and respectively have 3 and 384 different</div><div class="line">commit(s) each.</div></pre></td></tr></table></figure>
+</blockquote>
+<ul>
 <li>git merge dev<br>
 合并指定分支到当前分支</li>
 <li>git branch -d dev #删除</li>
@@ -519,7 +532,7 @@ git checkout master</li>
 </li>
 <li>
 <p>pull<br>
-<code>git pull origin master</code>相当于<code>git fetch</code>加上<code>git merge</code></p>
+<code>git pull origin master</code>相当于<code>git fetch origin # fetch to local repo</code>加上<code>git merge origin/master # origin master shall be in local repo</code></p>
 </li>
 <li>
 <p>fetch<br>
@@ -589,6 +602,13 @@ $ <code>git checkout -- test.txt</code></p>
 <h2 id="其他概念与原理">其他概念与原理</h2>
 <ul>
 <li>
+<p>remote<br>
+remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
+<blockquote>
+<p>“remotes” are just nicknames for other repositories, synonymous with a URL or <strong>the path of a local directory</strong> – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.</p>
+</blockquote>
+</li>
+<li>
 <p>origin<br>
 It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
 </li>
@@ -617,10 +637,20 @@ Note that when <code>git branch -a</code> is used, there is ‘remote’ in fron
 </blockquote>
 </li>
 <li>
-<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
 <blockquote>
-<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit</p>
+<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit<br>
+only two types of branches, and they are storaged in<sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4]</a></sup>:</p>
 </blockquote>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.git/refs/heads/ <span class="comment">#[for local branches] **only hash in the file**</span></div><div class="line">.git/refs/remotes/ <span class="comment">#[for tracking branches]</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Local branches</li>
+<li>Remote-tracking branches</li>
+</ul>
+</li>
+<li>
+<p>refspec<br>
+<code>&lt;source-name&gt;:&lt;destination-name&gt;</code> is a refspec</p>
 </li>
 </ul>
 <h2 id="错误">错误</h2>
@@ -646,7 +676,9 @@ but not:<br>
 </li>
 <li id="fn3" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+<li id="fn4" class="footnote-item"><p><a href="https://longair.net/blog/2009/04/16/git-fetch-and-merge/" target="_blank" rel="external">GIT: FETCH AND MERGE, DON’T PULL</a> <a href="#fnref4" class="footnote-backref">↩</a> <a href="#fnref4:1" class="footnote-backref">↩</a> <a href="#fnref4:2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -723,8 +755,8 @@ but not:<br>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/26/hdf5/" rel="next" title="<font size=7><b>hdf5简介 </b></font>">
-                <i class="fa fa-chevron-left"></i> <font size=7><b>hdf5简介 </b></font>
+              <a href="/2017/07/26/Story_of_Terminal/" rel="next" title="<font size=7><b>Story of Terminal </b></font>">
+                <i class="fa fa-chevron-left"></i> <font size=7><b>Story of Terminal </b></font>
               </a>
             
           </div>
@@ -733,8 +765,8 @@ but not:<br>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/28/python_mechanism/" rel="prev" title="<font size=7><b>python mechanism </b></font>">
-                <font size=7><b>python mechanism </b></font> <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/26/shadowsocks备忘/" rel="prev" title="<font size=7><b>shadownsocks备忘 </b></font>">
+                <font size=7><b>shadownsocks备忘 </b></font> <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

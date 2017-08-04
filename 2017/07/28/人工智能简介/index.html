@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg">
-<meta property="og:updated_time" content="2017-07-31T15:42:42.000Z">
+<meta property="og:updated_time" content="2017-08-04T21:46:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
 <meta name="twitter:description" content="备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）  Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN  神经网络简介">
@@ -447,6 +447,11 @@ attention、GAN</li>
 面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
 </blockquote>
 </li>
+<li>LSTM
+<blockquote>
+<p>LSTM只能避免RNN的梯度消失（gradient vanishing）；梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+</blockquote>
+</li>
 </ul>
 <h2 id="历史节点">历史节点</h2>
 <ul>
@@ -488,14 +493,24 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 <li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
 【示意效果】<br>
 <img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
-<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>
 <blockquote>
 <p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
 </blockquote>
 </li>
 </ul>
-<h1 id="技术成熟的条件">技术成熟的条件</h1>
-<h2 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></h2>
+<h1 id="nn">NN</h1>
+<h2 id="rnn">RNN</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/24813287" target="_blank" rel="external">什么是 LSTM RNN</a><br>
+<a href="https://www.zhihu.com/search?type=content&amp;q=lstm" target="_blank" rel="external">更多介绍</a></p>
+<h2 id="dnn">DNN</h2>
+<h2 id="optimization">optimization</h2>
+<p>待读<br>
+<a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="external">link</a><br>
+<a href="http://ycszen.github.io/2016/08/24/SGD%EF%BC%8CAdagrad%EF%BC%8CAdadelta%EF%BC%8CAdam%E7%AD%89%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%E5%92%8C%E6%AF%94%E8%BE%83/" target="_blank" rel="external">link</a></p>
+<h1 id="技术评论">技术评论</h1>
+<h2 id="技术成熟的条件">技术成熟的条件</h2>
+<h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></h3>
 <blockquote>
 <ul>
 <li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
@@ -525,9 +540,11 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 </li>
 <li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/34878706" target="_blank" rel="external">LSTM如何来避免梯度弥散和梯度爆炸？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref5" class="footnote-backref">↩</a></p>
+<li id="fn5" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref6" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -798,7 +815,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘"><span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小"><span class="nav-text">三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络简介"><span class="nav-text">神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术备忘"><span class="nav-text">技术备忘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史节点"><span class="nav-text">历史节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名词概念"><span class="nav-text">名词概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术成熟的条件"><span class="nav-text">技术成熟的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#andrew-ng"><span class="nav-text">Andrew Ng[5]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读"><span class="nav-text">可读</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘"><span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小"><span class="nav-text">三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络简介"><span class="nav-text">神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术备忘"><span class="nav-text">技术备忘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史节点"><span class="nav-text">历史节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名词概念"><span class="nav-text">名词概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nn"><span class="nav-text">NN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn"><span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dnn"><span class="nav-text">DNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization"><span class="nav-text">optimization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术评论"><span class="nav-text">技术评论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术成熟的条件"><span class="nav-text">技术成熟的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#andrew-ng"><span class="nav-text">Andrew Ng[6]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读"><span class="nav-text">可读</span></a></li></ol></li></ol></div>
             
 
           </div>

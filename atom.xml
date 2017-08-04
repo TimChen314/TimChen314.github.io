@@ -176,7 +176,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2017/07/31/linux常用命令记录/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2017-08-01T06:16:08.000Z</updated>
+    <updated>2017-08-01T08:56:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -462,7 +462,7 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 <code>awk '/Beren/ {print $0}' tt1 | cut -b 2-</code>cut部分的意思是截取第二个到最后一个字符。</p>
 <h2 id="diff命令">diff命令</h2>
 <p>1.对比两个文件夹的不同<br>
-`diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ &gt; diff_text</p>
+<code>diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ &gt; diff_text</code></p>
 <h2 id="echo命令：">echo命令：</h2>
 <ul>
 <li><code>-e</code> 开启反斜杠转义字符</li>
@@ -750,7 +750,7 @@ Because blank space is usually used as the separater of command or agruments.<br
     <link href="http://yoursite.com/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
     <id>http://yoursite.com/2017/07/28/人工智能简介/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-07-31T15:42:42.000Z</updated>
+    <updated>2017-08-04T21:46:37.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -783,6 +783,11 @@ attention、GAN</li>
 <blockquote>
 <p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
 面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
+</blockquote>
+</li>
+<li>LSTM
+<blockquote>
+<p>LSTM只能避免RNN的梯度消失（gradient vanishing）；梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
 </blockquote>
 </li>
 </ul>
@@ -826,14 +831,24 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 <li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
 【示意效果】<br>
 <img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
-<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>
+<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>
 <blockquote>
 <p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
 </blockquote>
 </li>
 </ul>
-<h1 id="技术成熟的条件">技术成熟的条件</h1>
-<h2 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></h2>
+<h1 id="nn">NN</h1>
+<h2 id="rnn">RNN</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/24813287" target="_blank" rel="external">什么是 LSTM RNN</a><br>
+<a href="https://www.zhihu.com/search?type=content&amp;q=lstm" target="_blank" rel="external">更多介绍</a></p>
+<h2 id="dnn">DNN</h2>
+<h2 id="optimization">optimization</h2>
+<p>待读<br>
+<a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="external">link</a><br>
+<a href="http://ycszen.github.io/2016/08/24/SGD%EF%BC%8CAdagrad%EF%BC%8CAdadelta%EF%BC%8CAdam%E7%AD%89%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%E5%92%8C%E6%AF%94%E8%BE%83/" target="_blank" rel="external">link</a></p>
+<h1 id="技术评论">技术评论</h1>
+<h2 id="技术成熟的条件">技术成熟的条件</h2>
+<h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></h3>
 <blockquote>
 <ul>
 <li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
@@ -863,9 +878,11 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 </li>
 <li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/34878706" target="_blank" rel="external">LSTM如何来避免梯度弥散和梯度爆炸？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn5" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref5" class="footnote-backref">↩</a></p>
+<li id="fn5" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref6" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -1017,277 +1034,6 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/git/"/>
-    <id>http://yoursite.com/2017/07/26/git/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="git">git</h1>
-<h2 id="开始">开始</h2>
-<p>非常好的入门:<br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png" alt="非常好的入门0"><br>
-非常好的入门1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
-<blockquote>
-<ul>
-<li>工作区：就是你在电脑里能看到的目录。</li>
-<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<ul>
-<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
-</ul>
-</blockquote>
-<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
-<ul>
-<li>init</li>
-<li>config <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>列出设置的config<br>
-<code>git config --list</code></p>
-<ul>
-<li>difftool<br>
-没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>kompare的效果非常好。</p>
-<ul>
-<li>help<br>
-<code>git help &lt;verb&gt;</code></li>
-</ul>
-<h2 id="操作">操作</h2>
-<ul>
-<li>
-<p>add filename</p>
-</li>
-<li>
-<p>commit</p>
-<ul>
-<li><code>git commit -m &quot;your message&quot;</code></li>
-<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
-</ul>
-<blockquote>
-<p><code>git commit --amend</code><br>
-<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
-</blockquote>
-<blockquote>
-<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
-…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
-</blockquote>
-<blockquote>
-<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
-</blockquote>
-</li>
-<li>
-<p>reset<br>
-<code>git reset --hard HEAD^</code><br>
-<code>git reset --hard 3628164</code></p>
-</li>
-<li>
-<p>reflog 查看历史命令</p>
-</li>
-<li>
-<p>clone<br>
-git clone /path/to/repository<br>
-如果是远端服务器上的仓库，你的命令会是这个样子：<br>
-<code>git clone username@host:/path/to/repository</code><br>
-<code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code></p>
-</li>
-<li>
-<p>push<br>
-<code>git push origin master:master</code><br>
-origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch   </span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>git checkout hexo myfile</code><br>
-从hexo分支得到myfile</p>
-</li>
-<li>
-<p>stash<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
-<blockquote>
-<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
-</blockquote>
-<p><code>git stash</code> 临时存储当前状态<br>
-<code>git stash list</code><br>
-<code>git stash apply (--index)</code> 找回临时存储的状态<br>
-<code>git stash drop</code> 删除stash</p>
-</li>
-<li>
-<p>branch</p>
-<ul>
-<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
-git checkout master</li>
-<li>git merge dev<br>
-合并指定分支到当前分支</li>
-<li>git branch -d dev #删除</li>
-<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
-<code>git branch</code> 查看本地分支</li>
-<li><code>git checkout mybfranch</code> # shift to another branch</li>
-</ul>
-</li>
-<li>
-<p>pull<br>
-<code>git pull origin master</code>相当于<code>git fetch</code>加上<code>git merge</code></p>
-</li>
-<li>
-<p>fetch<br>
-<code>git fetch origin hexo</code>从remote repo获取名为hexo的branch</p>
-</li>
-</ul>
-<h2 id="丢弃">丢弃</h2>
-<ul>
-<li>
-<p>git rm (then git commit)</p>
-</li>
-<li>
-<p><code>git checkout -- file</code><br>
-git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
-<ul>
-<li>
-<p>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：<br>
-$ <code>git checkout -- test.txt</code></p>
-</li>
-<li>
-<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
-场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。<br>
-要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="显示状态">显示状态</h2>
-<ul>
-<li>
-<p>status</p>
-</li>
-<li>
-<p>log<br>
-<code>git log --oneline --decorate</code> # 加上–decorate 时，我们可以看到我们的标签</p>
-</li>
-<li>
-<p>remote<br>
-看当前配置有哪些远程仓库，可以用命令<br>
-<code>git remote</code><br>
-执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
-</li>
-<li>
-<p><code>git ls-files #ls files in present branch</code><br>
-<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
-</li>
-<li>
-<p>diff</p>
-<ul>
-<li><code>git diff #对比工作区和stage文件的差异</code><br>
-<code>git diff --cached</code> 对比stage和branch之间的差异</li>
-<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch</code></li>
-<li><code>git diff origin/hexo #对比当前working tree和远程branch</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="rebase">rebase</h2>
-<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
-<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
-<ul>
-<li>git rebase --skip</li>
-<li>git rebase --continue #use this when you solved conflicts.</li>
-<li>git rebase --abort #放弃当前rebase</li>
-</ul>
-<h2 id="tag">tag</h2>
-<p>git push origin --tags</p>
-<h2 id="其他概念与原理">其他概念与原理</h2>
-<ul>
-<li>
-<p>origin<br>
-It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
-</li>
-<li>
-<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
-Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
-远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
-</li>
-<li>
-<p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
-<blockquote>
-<p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
-<ul>
-<li>upstream generally refers to the original repo that you have forked<br>
-(see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
-<blockquote>
-<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="错误">错误</h2>
-<ul>
-<li>prompt to input passphrase time and time again:<br>
-<a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
-Note that you can use ssh-key only if you use ssh to build remote connections.<br>
-<code>git remote -v</code> should looks like:<br>
-<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
-but not:<br>
-<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
-</ul>
-<h1 id="reference">reference</h1>
-<h2 id="待读">待读</h2>
-<p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
-<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;git&quot;&gt;git&lt;/h1&gt;
-&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
-&lt;p&gt;非常好的入门:&lt;br&gt;
-&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png&quot; alt=&quot;非常好的入门0&quot;&gt;&lt;br&gt;
-非常好的入门1&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;工作区：就是你在电脑里能看到的目录。&lt;/li&gt;
-&lt;li&gt;暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://yoursite.com/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/hdf5/"/>
     <id>http://yoursite.com/2017/07/26/hdf5/</id>
@@ -1393,6 +1139,309 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
     
     
       <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/git/"/>
+    <id>http://yoursite.com/2017/07/26/git/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-08-04T21:46:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git">git</h1>
+<h2 id="开始">开始</h2>
+<p>非常好的入门:<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png" alt="非常好的入门0"><br>
+非常好的入门1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
+<blockquote>
+<ul>
+<li>工作区：就是你在电脑里能看到的目录。</li>
+<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<ul>
+<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+</ul>
+</blockquote>
+<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
+<ul>
+<li>init</li>
+<li>config <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>列出设置的config<br>
+<code>git config --list</code></p>
+<ul>
+<li>difftool<br>
+没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>kompare的效果非常好。</p>
+<ul>
+<li>help<br>
+<code>git help &lt;verb&gt;</code></li>
+</ul>
+<h2 id="操作">操作</h2>
+<ul>
+<li>
+<p>add filename</p>
+</li>
+<li>
+<p>commit</p>
+<ul>
+<li><code>git commit -m &quot;your message&quot;</code></li>
+<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></li>
+</ul>
+<blockquote>
+<p><code>git commit --amend</code><br>
+<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
+</blockquote>
+<blockquote>
+<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
+…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
+</blockquote>
+<blockquote>
+<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
+</blockquote>
+</li>
+<li>
+<p>reset<br>
+<code>git reset --hard HEAD^</code><br>
+<code>git reset --hard 3628164</code></p>
+</li>
+<li>
+<p>reflog 查看历史命令</p>
+</li>
+<li>
+<p>clone<br>
+git clone /path/to/repository<br>
+如果是远端服务器上的仓库，你的命令会是这个样子：<br>
+<code>git clone username@host:/path/to/repository</code><br>
+<code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code></p>
+</li>
+<li>
+<p>push<br>
+<code>git push origin master:master</code><br>
+origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch   </span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>git checkout hexo myfile</code><br>
+从hexo分支得到myfile</p>
+</li>
+<li>
+<p>stash<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<blockquote>
+<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
+</blockquote>
+<p><code>git stash</code> 临时存储当前状态<br>
+<code>git stash list</code><br>
+<code>git stash apply (--index)</code> 找回临时存储的状态<br>
+<code>git stash drop</code> 删除stash</p>
+</li>
+<li>
+<p>branch</p>
+<ul>
+<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
+git checkout master</li>
+<li><code>git checkout --track local_branch origin/remote_branch</code><br>
+create a local branch based on a remote-tracking branch.</li>
+</ul>
+<blockquote>
+<p>(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)]<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><br>
+The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:</p>
+<ul>
+<li>They allow git pull to know what to merge after fetching new remote-tracking branches.</li>
+<li>If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Your branch and the tracked remote branch &apos;origin/master&apos;</div><div class="line">have diverged, and respectively have 3 and 384 different</div><div class="line">commit(s) each.</div></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>git merge dev<br>
+合并指定分支到当前分支</li>
+<li>git branch -d dev #删除</li>
+<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
+<code>git branch</code> 查看本地分支</li>
+<li><code>git checkout mybfranch</code> # shift to another branch</li>
+</ul>
+</li>
+<li>
+<p>pull<br>
+<code>git pull origin master</code>相当于<code>git fetch origin # fetch to local repo</code>加上<code>git merge origin/master # origin master shall be in local repo</code></p>
+</li>
+<li>
+<p>fetch<br>
+<code>git fetch origin hexo</code>从remote repo获取名为hexo的branch</p>
+</li>
+</ul>
+<h2 id="丢弃">丢弃</h2>
+<ul>
+<li>
+<p>git rm (then git commit)</p>
+</li>
+<li>
+<p><code>git checkout -- file</code><br>
+git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+<ul>
+<li>
+<p>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：<br>
+$ <code>git checkout -- test.txt</code></p>
+</li>
+<li>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。<br>
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="显示状态">显示状态</h2>
+<ul>
+<li>
+<p>status</p>
+</li>
+<li>
+<p>log<br>
+<code>git log --oneline --decorate</code> # 加上–decorate 时，我们可以看到我们的标签</p>
+</li>
+<li>
+<p>remote<br>
+看当前配置有哪些远程仓库，可以用命令<br>
+<code>git remote</code><br>
+执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
+</li>
+<li>
+<p><code>git ls-files #ls files in present branch</code><br>
+<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
+</li>
+<li>
+<p>diff</p>
+<ul>
+<li><code>git diff #对比工作区和stage文件的差异</code><br>
+<code>git diff --cached</code> 对比stage和branch之间的差异</li>
+<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch</code></li>
+<li><code>git diff origin/hexo #对比当前working tree和远程branch</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="rebase">rebase</h2>
+<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
+<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
+<ul>
+<li>git rebase --skip</li>
+<li>git rebase --continue #use this when you solved conflicts.</li>
+<li>git rebase --abort #放弃当前rebase</li>
+</ul>
+<h2 id="tag">tag</h2>
+<p>git push origin --tags</p>
+<h2 id="其他概念与原理">其他概念与原理</h2>
+<ul>
+<li>
+<p>remote<br>
+remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
+<blockquote>
+<p>“remotes” are just nicknames for other repositories, synonymous with a URL or <strong>the path of a local directory</strong> – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.</p>
+</blockquote>
+</li>
+<li>
+<p>origin<br>
+It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
+</li>
+<li>
+<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
+Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
+远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
+<blockquote>
+<p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
+<ul>
+<li>upstream generally refers to the original repo that you have forked<br>
+(see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+<blockquote>
+<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit<br>
+only two types of branches, and they are storaged in<sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4]</a></sup>:</p>
+</blockquote>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.git/refs/heads/ <span class="comment">#[for local branches] **only hash in the file**</span></div><div class="line">.git/refs/remotes/ <span class="comment">#[for tracking branches]</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Local branches</li>
+<li>Remote-tracking branches</li>
+</ul>
+</li>
+<li>
+<p>refspec<br>
+<code>&lt;source-name&gt;:&lt;destination-name&gt;</code> is a refspec</p>
+</li>
+</ul>
+<h2 id="错误">错误</h2>
+<ul>
+<li>prompt to input passphrase time and time again:<br>
+<a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
+Note that you can use ssh-key only if you use ssh to build remote connections.<br>
+<code>git remote -v</code> should looks like:<br>
+<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
+but not:<br>
+<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="待读">待读</h2>
+<p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
+<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://longair.net/blog/2009/04/16/git-fetch-and-merge/" target="_blank" rel="external">GIT: FETCH AND MERGE, DON’T PULL</a> <a href="#fnref4" class="footnote-backref">↩</a> <a href="#fnref4:1" class="footnote-backref">↩</a> <a href="#fnref4:2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git&quot;&gt;git&lt;/h1&gt;
+&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
+&lt;p&gt;非常好的入门:&lt;br&gt;
+&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png&quot; alt=&quot;非常好的入门0&quot;&gt;&lt;br&gt;
+非常好的入门1&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;工作区：就是你在电脑里能看到的目录。&lt;/li&gt;
+&lt;li&gt;暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
@@ -1598,6 +1647,102 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
+    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-07-31T13:24:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
+<ol start="0">
+<li>
+<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
+</li>
+<li>
+<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
+</li>
+<li>
+<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
+<blockquote>
+<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
+</blockquote>
+<p>访问http://mail.timchen314.com:</p>
+<blockquote>
+<p>温馨提醒：该页面暂时无法访问<br>
+尊敬的用户：<br>
+您好！<br>
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
+</blockquote>
+<p>所以，必须要备案后才能使用邮箱服务。<br>
+ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
+<blockquote>
+<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
+</blockquote>
+</li>
+</ol>
+<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
+&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
+尊敬的用户：&lt;br&gt;
+您好！&lt;br&gt;
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
+ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;markdown in hexo-render-markdown-it &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
@@ -1799,102 +1944,6 @@ so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
     
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
-    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
-    <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
-<ol start="0">
-<li>
-<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
-</li>
-<li>
-<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
-</li>
-<li>
-<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
-<blockquote>
-<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
-</blockquote>
-<p>访问http://mail.timchen314.com:</p>
-<blockquote>
-<p>温馨提醒：该页面暂时无法访问<br>
-尊敬的用户：<br>
-您好！<br>
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
-</blockquote>
-<p>所以，必须要备案后才能使用邮箱服务。<br>
-ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<blockquote>
-<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
-</blockquote>
-</li>
-</ol>
-<a id="more"></a>
-<ol start="3">
-<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
-<blockquote>
-<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
-</blockquote>
-</li>
-</ol>
-<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h1 id="reference">reference</h1>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
-&lt;ol start=&quot;0&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
-尊敬的用户：&lt;br&gt;
-您好！&lt;br&gt;
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
-ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
