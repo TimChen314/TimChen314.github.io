@@ -8,6 +8,8 @@ date: 2017-08-16 20:00:00
 
 [TOC]
 
+介绍gnuplot，包含中高级使用方法，并非入门教程。
+<!-- more -->
 ##  DSL(domain-specific language) in DSL
 有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。
 ### 0. for、字符串数组
@@ -29,8 +31,8 @@ In postscript eps enhanced terminal, use "\\" before an escape charactor to keep
 ### 2.各种字符的表达方式，可以google "Syntax for postscript enhanced option"
   （0）例子：`set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 "TimsRoman,50"`
   （1）PostScript Character Codes的模式是T模式；输入"set encoding"后是E模式
-  （2）希腊字母写法的例子：{/Symbol r}
-  （3）上下标同时出现：t@^{\*}_{p}，多用了一个@字符
+  （2）希腊字母写法的例子：`{/Symbol r}`
+  （3）上下标同时出现：`t@^{\*}_{p}`，多用了一个@字符
 
 ### 3. string
 + 单引号内的字符串不转义，双引号内的字符串转义
@@ -64,13 +66,13 @@ Three binary operators require string operands: the string concatenation operato
 设置label到坐标轴的距离， 0,0 是默认距离 e.g. `set xlabel "123" offset 1,0`
 
 ### 4. `set ticscale n m`    
->Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.
+   >Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.
 
 只改major tics:`set tic scale 2`
   
 ### 5. 字体font:
  (1) gnuplot-5.0.1 manual:
-> All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.  
+   > All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.  
 
 [注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的](https://www.zhihu.com/question/36527847)
  (2) TimesRoman和TimesNewRoman都是一样的
@@ -193,7 +195,7 @@ ps、eps格式不支持transparent，可以用png格式。
 `plot 't1.dat' `
 `p '< cat t1.dat' `
 + 我用过
-```gnuplot
+   ```gnuplot
 p "<awk '{if(NR>13) print}' q.log"
 ```
 
@@ -239,13 +241,13 @@ p  'PS500_26w_1/msd-PS_1.dat'every 10::::90000: w l
 column(-2)是Pseudocolumns，可以在manual中搜索是Pseudocolumns。
 
 ### 3. 保存交互模式下的命令为脚本
-```gnuplot
+   ```gnuplot
 gnuplot> save 'name.plt'
 gnuplot> load 'name.plt'
 ```
 
 ### 4. 函数及设置定义域
-```gnuplot  
+   ```gnuplot  
   g(x)=3*x**2 # 普通函数
   f(x,min,max)=( (x>min && x<max) ? (3*x**2) : 1/0 ) # 定义一个带定义域的函数
   p f(x,1,100) w l # 在[1,100]的定义域内，画出3*x**2
@@ -264,14 +266,14 @@ min，max只是自定义的变量，` ? : `是经典三元表达式，`1/0`在gn
 ### 6. fit  
 + 自变量要设定成x、y等，如`f(x)=exp(-(x/tau)**beta)`，因为gnuplot似乎对变量名敏感
 + fit范围
-```gnuplot
+   ```gnuplot
 f(x)=a*x**b
 fit [0:300] f(x) 'msd.dat'u 1:5 via a,b
 ```
 
 ### 7. 传入参数到脚本
 命令行（CLI）下，
-```shell
+   ```shell
 gnuplot -c script.plt hehestr1 str2 str3
 ```
 "script.plt" 就是ARG0，以此类推"hehestr1"就是ARG1...
@@ -330,7 +332,7 @@ gnuplot> help test
 
 ## 各种plot
 ### multiplot
-```gnuplot
+   ```gnuplot
  set size 3,1.5
  set multiplot
  
