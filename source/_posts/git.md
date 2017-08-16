@@ -147,7 +147,7 @@ git push origin --tags
 ## 其他概念与原理
 + remote   
 remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote[^5]
->“remotes” are just nicknames for other repositories, synonymous with a URL or **the path of a local directory** – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.
+   >“remotes” are just nicknames for other repositories, synonymous with a URL or **the path of a local directory** – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.
 + origin   
 It's a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签
 + (远程仓库名)/(分支名) 这样的形式表示远程分支
