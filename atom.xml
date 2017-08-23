@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-01T08:41:02.000Z</updated>
+  <updated>2017-08-23T05:21:15.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,426 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;gnuplot笔记（上）&lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
+    <id>http://yoursite.com/2017/08/16/gnuplot笔记上/</id>
+    <published>2017-08-16T12:00:00.000Z</published>
+    <updated>2017-08-23T05:21:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="note-about-version-5">Note about Version 5</h2>
+<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
+<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
+例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
+<h3 id="2-size的用法">2. size的用法</h3>
+<ul>
+<li>eps to png<br>
+when eps size is set to 1.0,1.0，png的像素为600,420<br>
+eps：size 1.8,1.8 那么png的像素为1080,755</li>
+<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
+size 2,2 会导致图像超过窗口大小</li>
+</ul>
+<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
+<p><code>plot ... smooth mcsplines</code><br>
+<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
+<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
+<h3 id="4-变量的引用">4. 变量的引用</h3>
+<p>For 4.6:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
+<p>For 5.0:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
+<h2 id="format">format</h2>
+<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
+<p><code>set logscale</code> # x和y轴都设置成logscale</p>
+<h3 id="2-set-format">2. set format</h3>
+<p>设置坐标轴上数字的格式。<br>
+以1000为例：</p>
+<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
+</code></pre>
+<p>显示出来的格式为10^3</p>
+<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
+</code></pre>
+<p>显示为1×10^3</p>
+<p>需要注意的是：</p>
+<ul>
+<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
+<li><code>%t</code>与<code>%T</code><br>
+比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
+</ul>
+<h3 id="3-offset-x-y">3. offset x,y</h3>
+<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
+<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
+<blockquote>
+<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
+</blockquote>
+<p>只改major tics:<code>set tic scale 2</code></p>
+<h3 id="5-字体font">5. 字体font:</h3>
+<p>(1) gnuplot-5.0.1 manual:</p>
+<blockquote>
+<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
+(2) TimesRoman和TimesNewRoman都是一样的<br>
+For other fonts, 尽管程序不会报错，但也显示不出来<br>
+但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
+<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
+<h3 id="7-border">7. border</h3>
+<p><code>set border lw 3</code> 只改变线的宽度</p>
+<h3 id="8-key">8. key</h3>
+<p><strong>set key height #调节key与坐标轴的距离</strong><br>
+set key spacing 1.3 #调节两行之间的距离<br>
+set key maxcols/maxrow<br>
+set key autotitle</p>
+<h3 id="9-label">9. label</h3>
+<ul>
+<li>设定位置时候，是设定的左下角的坐标</li>
+<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
+</ul>
+<h3 id="10-arrow">10. arrow</h3>
+<ul>
+<li>
+<p>控制起始/终止位置<br>
+set arrow from 坐标 to 坐标<br>
+e.g.:<br>
+<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
+<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
+</li>
+<li>
+<p>控制head<br>
+e.g.:<br>
+<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
+其中head filled size 1,30,55 为控制head的格式。<br>
+<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
+length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
+</li>
+</ul>
+<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
+<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
+<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
+<h3 id="1-line-and-point-types">1. line and point types</h3>
+<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
+<h3 id="2-most-useful-point-type">2. most useful point type</h3>
+<table>
+<thead>
+<tr>
+<th>shape</th>
+<th>full id</th>
+<th>empty  id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>square</td>
+<td>5</td>
+<td>64</td>
+</tr>
+<tr>
+<td>sphere</td>
+<td>7</td>
+<td>65</td>
+</tr>
+<tr>
+<td>up-tri</td>
+<td>9</td>
+<td>66</td>
+</tr>
+<tr>
+<td>down-tri</td>
+<td>11</td>
+<td>67</td>
+</tr>
+<tr>
+<td>diamond</td>
+<td>13</td>
+<td>68</td>
+</tr>
+<tr>
+<td>pentagon</td>
+<td>15</td>
+<td>69</td>
+</tr>
+</tbody>
+</table>
+<p>e.g.:<br>
+<code>p sin(x) w p pt 5</code></p>
+<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
+<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
+<h3 id="4-several-color-set">4. several color set</h3>
+<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
+<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
+<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
+<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
+<ul>
+<li>for循环：<br>
+<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
+<li>字符串数组<br>
+`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
+a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
+**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
+<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
+<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
+</ul>
+<h3 id="1-escape-charactor">1. escape charactor</h3>
+<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
+<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
+<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
+（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
+（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
+（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
+<h3 id="3-string">3. string</h3>
+<ul>
+<li>单引号内的字符串不转义，双引号内的字符串转义</li>
+<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
+<li>“.”, “eq” and “ne&quot;<br>
+Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
+<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
+</ul>
+<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="画图" scheme="http://yoursite.com/tags/%E7%94%BB%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;gnuplot笔记（下）&lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
+    <id>http://yoursite.com/2017/08/16/gnuplot笔记下/</id>
+    <published>2017-08-16T12:00:00.000Z</published>
+    <updated>2017-08-23T05:35:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="gnuplot命令">gnuplot命令</h2>
+<h3 id="1-terminal">1. terminal</h3>
+<p>gnuplot可以将画出的结果输出到不同terminal中。所谓terminal，既可以是png、eps等图片格式，也可以是x11、qt等窗口格式。</p>
+<ul>
+<li>
+<p>x11 支持像素大小<br>
+<code>set terminal x11 enhanced lw 3.0 dashlength 5.0 size 1080,755</code> 可以使用interactive脚本<br>
+<code>set terminal x11 font &quot;Helvetica,45&quot;</code> 加上font后，就不能使用了</p>
+</li>
+<li>
+<p>eps 不支持支持像素大小<br>
+eps默认是以inch为单位，默认大小是10,6；我的图因为还要放大1.8倍，所以是18,10.8<br>
+All PostScript printers or viewers should know about the standard set of Adobe fonts <mark>Times-Roman, Helvetica, Courier, and Symbol.</mark></p>
+</li>
+<li>
+<p>eps ps、eps格式不支持transparent，png支持</p>
+</li>
+<li>
+<p>eps不支持transparent<br>
+ps、eps格式不支持transparent，可以用png格式。</p>
+</li>
+</ul>
+<h3 id="2-数据筛选-处理">2. 数据筛选/处理</h3>
+<h4 id="2-1-awk等预处理">2.1. awk等预处理</h4>
+<ul>
+<li>下面两条命令是等价的<br>
+<code>plot 't1.dat'</code><br>
+<code>p '&lt; cat t1.dat'</code></li>
+<li>我用过<br>
+<code>p &quot;&lt;awk '{if(NR&gt;13) print}' q.log&quot;</code></li>
+</ul>
+<h4 id="2-2-pi-pointinterval-for-linespoints-plot">2.2. pi（pointinterval） for linespoints plot</h4>
+<p>只用于linespoints plot。决定点的symbol的稀疏，用法例子：<code>pi 2</code>，“means that point symbols are drawn only for every Nth point”</p>
+<h4 id="2-3-every">2.3. every</h4>
+<p><mark><strong>注意every不能简写成e</strong></mark><br>
+5个冒号，最后一个数字之后的冒号<mark>必须要省略</mark><br>
+正确写法是：<br>
+<code>p 'PS500_26w_1/msd-PS_1.dat'every 10::::90000 w l</code><br>
+而不是：<br>
+<code>p 'PS500_26w_1/msd-PS_1.dat'every 10::::90000: w l</code><br>
+<strong>意思是每10个数据点画一个，一共画到第九万个点</strong><br>
+具体参看gnuplot5.0.1 P85或<code>help every</code></p>
+<h4 id="2-4-index-column-2">2.4. index( column(-2) )</h4>
+<p>用于一个文件中多块数据<a href="http://stackoverflow.com/questions/12818797/gnuplot-plotting-several-datasets-with-titles-from-one-file" target="_blank" rel="external">stackoverflow</a></p>
+<blockquote>
+<p>&quot;p = 0.1&quot;<br>
+1 1<br>
+3 3<br>
+4 1</p>
+<p>&quot;p = 0.2&quot;<br>
+1 3<br>
+2 2<br>
+5 2</p>
+</blockquote>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plot &apos;test.dat&apos; i 0 u 1:2 w lines title columnheader(1),\</div><div class="line">     &apos;test.dat&apos; i 1 u 1:2 w lines title columnheader(1)</div></pre></td></tr></table></figure>
+<p>需要注意的是光用空格来分割两个data block是不够的。<br>
+column(-2)是Pseudocolumns，可以在manual中搜索是Pseudocolumns。</p>
+<h3 id="3-保存交互模式下的命令为脚本">3. 保存交互模式下的命令为脚本</h3>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gnuplot&gt; save &apos;name.plt&apos;</div><div class="line">gnuplot&gt; load &apos;name.plt&apos;</div></pre></td></tr></table></figure>
+<h3 id="4-函数及设置定义域">4. 函数及设置定义域</h3>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">g(x)=3*x**2 # 普通函数</div><div class="line">f(x,min,max)=( (x&gt;min &amp;&amp; x&lt;max) ? (3*x**2) : 1/0 ) # 定义一个带定义域的函数</div><div class="line">p f(x,1,100) w l # 在[1,100]的定义域内，画出3*x**2</div></pre></td></tr></table></figure>
+<p><code>f(x,min,max)=( (x&gt;min &amp;&amp; x&lt;max) ? (3*x**2) : 1/0 )</code>的解释：<br>
+min，max只是自定义的变量，<code>? :</code>是经典三元表达式，<code>1/0</code>在gnuplot中不会被画出。综合起来<code>f(x,min,max)</code>的定义相当于：如果<code>(x&gt;min &amp;&amp; x&lt;max)</code>，就画出<code>3*x**2</code>，否则不画。<br>
+<strong>这里用到的几个技巧很有用，不光可以用来定义域。</strong></p>
+<h3 id="5-自带函数">5. 自带函数</h3>
+<ul>
+<li>log() &amp; log10()</li>
+<li>exp</li>
+<li>sin()等三角函数</li>
+<li>gamma()</li>
+</ul>
+<h3 id="6-fit">6. fit</h3>
+<ul>
+<li>自变量要设定成x、y等，如<code>f(x)=exp(-(x/tau)**beta)</code>，因为gnuplot似乎对变量名敏感</li>
+<li>fit范围 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">f(x)=a*x**b</div><div class="line">fit [0:300] f(x) &apos;msd.dat&apos;u 1:5 via a,b</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-传入参数到脚本">7. 传入参数到脚本</h3>
+<p>命令行（CLI）下，</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gnuplot -c script.plt hehestr1 str2 str3</div></pre></td></tr></table></figure>
+<p>“script.plt” 就是ARG0，以此类推&quot;hehestr1&quot;就是ARG1…</p>
+<h3 id="8-how-to-set-the-config-file">8. how to set the config file?</h3>
+<p>show loadpath will show where the configuration file locate at<br>
+gerenal configuration is in app-defaults dir.</p>
+<h3 id="9-smooth-csplines-可以解决由于点多画不出虚线的问题">9. smooth csplines 可以解决由于点多画不出虚线的问题</h3>
+<h3 id="少用的命令">少用的命令</h3>
+<ul>
+<li>
+<p><a href="http://www.gnuplotting.org/tag/interactive/" target="_blank" rel="external">Interactive label placing</a></p>
+</li>
+<li>
+<p>parametric mode</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">set parametric</div><div class="line">set trange [-pi:pi]</div><div class="line">plot sin(t),cos(t)</div><div class="line">unset parametric</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>MOUSE_BUTTON<br>
+点左键 MOUSE_BUTTON==1；<br>
+中键 ==2；<br>
+右键 ==3;<br>
+光点击的话，其他三个自带变量（MOUSE_SHIFT,MOUSE_ALT,MOUSE_CTRL）==0</p>
+</li>
+</ul>
+<h2 id="显示信息型命令">显示信息型命令</h2>
+<h3 id="1-show">1. show</h3>
+<p>show variables<br>
+show all</p>
+<h3 id="2-history">2. history</h3>
+<p><code>history 5</code>  #显示最近5条命令<br>
+<code>history ?load</code>  #显示所有以load开头的命令<br>
+<code>history ?&quot;set label&quot;</code>  #显示所有以set label开头的命令<br>
+<code>history !&quot;set label&quot;</code>  #执行所有以set label开头的命令</p>
+<h3 id="3-test">3. test</h3>
+<p>test可以展示当前terminal或palette的画图效果<br>
+<code>test (terminal | palette)</code></p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gnuplot&gt; help test</div><div class="line"> This command graphically tests or presents terminal and palette capabilities.</div><div class="line"> ...</div></pre></td></tr></table></figure>
+<ul>
+<li>x11 test<br>
+<code>test x11</code><br>
+<img src="https://img.alicdn.com/imgextra/i1/95029972/TB2Zr_ShXXXXXcTXpXXXXXXXXXX_!!95029972.jpg" alt="x11 test"></li>
+<li>eps test<br>
+<img src="https://img.alicdn.com/imgextra/i1/95029972/TB2uWEAhXXXXXaRXXXXXXXXXXXX_!!95029972.jpg" alt="eps test"></li>
+<li>png test<br>
+<img src="https://img.alicdn.com/imgextra/i4/95029972/TB2k97ihXXXXXalXpXXXXXXXXXX_!!95029972.jpg" alt="png test"></li>
+</ul>
+<h2 id="各种plot">各种plot</h2>
+<h3 id="multiplot">multiplot</h3>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"> set size 3,1.5</div><div class="line"> set multiplot</div><div class="line"> </div><div class="line">#set the parameter of 1st subfigure</div><div class="line"> set origin 0,0</div><div class="line"> set size 1.5,1,5</div><div class="line"> p ......</div><div class="line">#set the parameter of 2nd subfigure</div><div class="line"> set origin 1.5,0</div><div class="line"> set size 1.5,1,5</div><div class="line"> p ......</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>对齐subfig<br>
+用set lmargin 进行对齐</p>
+</li>
+<li>
+<p>调整所有subfig的scale大小<br>
+set tics scale 3</p>
+</li>
+<li>
+<p>取消前面的设置<br>
+因为后面的subfig会继承前面subfig的设置，有时候需要取消前面的设置。<br>
+时常需要取消的有：label, arrow, scale等。<br>
+最常用的取消方式是unset<br>
+<strong>对于key</strong>–set key default<br>
+<strong>对于tics</strong>– set xtics autofreq</p>
+</li>
+</ul>
+<h3 id="3d-plot">3D plot</h3>
+<ul>
+<li>
+<p>view<br>
+view用来设定3d图的观察角度<br>
+<code>set view &lt;rot_x&gt;, &lt;rot_z&gt;</code><br>
+默认值是：<br>
+<code>set view 60, 30</code></p>
+</li>
+<li>
+<p>设置Z轴起点<br>
+<code>set xyplane at 0.6</code></p>
+</li>
+<li>
+<p>设置背景网格<br>
+<code>set grid x y z back</code></p>
+</li>
+<li>
+<p>自定义渐变色<br>
+<code>set palette define (0.6 &quot;#FF0000&quot;,1.1 &quot;blue&quot;)</code></p>
+</li>
+<li>
+<p>External Link<br>
+<a href="http://jswails.wikidot.com/using-gnuplot" target="_blank" rel="external">using gnuplot</a><br>
+<a href="http://www.gnuplotting.org/tag/splot/" target="_blank" rel="external">Plot functions using the special-filenames property</a></p>
+</li>
+</ul>
+<ul>
+<li><strong>colorbox</strong><br>
+<strong>自定义colorbox</strong>： <code>set colorbox vertical user origin 1.1,0.5 size .06,.4</code><br>
+<strong>设定colorbox的tics</strong>： <code>set cbtics 0.1</code><br>
+<strong>set logscale cb</strong><br>
+<strong>set cbrange [0.001:1]</strong></li>
+</ul>
+<h3 id="filled-curve">filled curve</h3>
+<p><img src="http://gnuplot.sourceforge.net/demo_4.6/fillbetween.1.png" alt="示意图"><br>
+<code>plot 'silver.dat' u 1:2:3 w filledcu</code></p>
+<h2 id="error-问题：">Error &amp; 问题：</h2>
+<ul>
+<li>输出文件的大小为0——解决方法：<br>
+The eps file doesn’t get written until a plot command is specified after specifing the output. Possible solutions:</li>
+</ul>
+<ol>
+<li>Move your plot command after your set output command</li>
+<li>add a replot command to the end of your script</li>
+</ol>
+<h2 id="reference">Reference</h2>
+<p>An amazing web: <a href="http://www.gnuplotting.org/tag/palette/" target="_blank" rel="external">gnuplotting.org</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gnuplot笔记下半部分。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="画图" scheme="http://yoursite.com/tags/%E7%94%BB%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;vim笔记 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/08/01/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2017-08-01T08:41:02.000Z</updated>
+    <updated>2017-08-16T13:30:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -176,7 +591,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2017/07/31/linux常用命令记录/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2017-08-01T08:56:45.000Z</updated>
+    <updated>2017-08-16T13:30:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -746,11 +1161,132 @@ Because blank space is usually used as the separater of command or agruments.<br
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
+    <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
+    <published>2017-07-28T10:00:00.000Z</published>
+    <updated>2017-08-19T08:30:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
+<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
+而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
+<a id="more"></a>
+<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
+<p>然而用python或者IPython，结果为False</p>
+<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
+<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
+<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
+<h2 id="2-with-语句">2. with 语句</h2>
+<p><strong>自动进行对象的生命周期进行管理</strong><br>
+Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
+<ul>
+<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-list参数传递">3. list参数传递</h2>
+<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
+正确做法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
+<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
+<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
+<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
+ct总结：参数绑定优先级：</p>
+<ol>
+<li>指定参数名</li>
+<li>顺序</li>
+<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
+<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
+<li><strong>限制关键字参数的名字</strong></li>
+</ol>
+<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
+<h2 id="5-generator">5. generator</h2>
+<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
+<p><strong>The implementation of zip is very beautiful：</strong><br>
+来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
+<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
+凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
+集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
+Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
+for x in [1, 2, 3, 4, 5]:<br>
+pass<br>
+实际上完全等价于：<br>
+首先获得Iterator对象:<br>
+<code>it = iter([1, 2, 3, 4, 5])</code><br>
+循环:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
+<ul>
+<li>while my_iterator（参见zip的实现）<br>
+iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
+</ul>
+<h2 id="8-内存">8. 内存</h2>
+<h3 id="8-1-释放内存">8.1. 释放内存</h3>
+<p>先del再gc.collect()</p>
+<h2 id="9-python类">9. Python类</h2>
+<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
+<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
+<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
+<p>Note that user defined attributes shall not end with ‘__’</p>
+<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
+<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
+注意下面的这种错误写法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
+<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
+<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
+<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
+<p>静态语言 vs 动态语言<br>
+对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
+<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
+<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
+<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
+<h2 id="style-guide">Style guide</h2>
+<h3 id="argument">argument</h3>
+<ul>
+<li><code>**kwargs</code> is a bad practice:
+<ol>
+<li>you don’t know how <code>**kwargs</code> affect.</li>
+<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
+<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
+<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
+</ol>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
+&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
+而id实际上是内存地址，&lt;code&gt;(ob1 is ob2)&lt;/code&gt; 等价于 &lt;code&gt;(id(ob1) == id(ob2))&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
     <id>http://yoursite.com/2017/07/28/人工智能简介/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-08-04T21:46:37.000Z</updated>
+    <updated>2017-08-16T13:30:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -913,241 +1449,11 @@ attention、GAN&lt;/li&gt;
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
-    <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
-    <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
-<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
-而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
-<a id="more"></a>
-<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
-<p>然而用python或者IPython，结果为False</p>
-<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
-<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
-<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
-<h2 id="2-with-语句">2. with 语句</h2>
-<p><strong>自动进行对象的生命周期进行管理</strong><br>
-Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
-<ul>
-<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="3-list参数传递">3. list参数传递</h2>
-<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
-正确做法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
-<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
-<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
-<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
-ct总结：参数绑定优先级：</p>
-<ol>
-<li>指定参数名</li>
-<li>顺序</li>
-<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
-<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
-<li><strong>限制关键字参数的名字</strong></li>
-</ol>
-<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
-<h2 id="5-generator">5. generator</h2>
-<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
-<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
-<p><strong>The implementation of zip is very beautiful：</strong><br>
-来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
-<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
-集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
-Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
-for x in [1, 2, 3, 4, 5]:<br>
-pass<br>
-实际上完全等价于：<br>
-首先获得Iterator对象:<br>
-<code>it = iter([1, 2, 3, 4, 5])</code><br>
-循环:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
-<ul>
-<li>while my_iterator（参见zip的实现）<br>
-iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
-</ul>
-<h2 id="8-内存">8. 内存</h2>
-<h3 id="8-1-释放内存">8.1. 释放内存</h3>
-<p>先del再gc.collect()</p>
-<h2 id="9-python类">9. Python类</h2>
-<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
-<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
-<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
-<p>Note that user defined attributes shall not end with ‘__’</p>
-<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
-<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
-注意下面的这种错误写法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
-<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
-<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
-<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
-<p>静态语言 vs 动态语言<br>
-对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
-<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
-<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
-<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
-<h2 id="style-guide">Style guide</h2>
-<h3 id="argument">argument</h3>
-<ul>
-<li><code>**kwargs</code> is a bad practice:
-<ol>
-<li>you don’t know how <code>**kwargs</code> affect.</li>
-<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
-<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
-<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
-</ol>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
-&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
-而id实际上是内存地址，&lt;code&gt;(ob1 is ob2)&lt;/code&gt; 等价于 &lt;code&gt;(id(ob1) == id(ob2))&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/hdf5/"/>
-    <id>http://yoursite.com/2017/07/26/hdf5/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-31T15:44:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
-<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
-<h3 id="历史">历史</h3>
-<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
-<h3 id="特性">特性</h3>
-<ul>
-<li>自述性<br>
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
-<li>通用性<br>
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>灵活性<br>
-HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
-<li>扩展性<br>
-HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
-<li>跨平台性</li>
-<li>现代性<br>
-支持并行I/O，线程和其他一些现代系统和应用要求。</li>
-</ul>
-<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
-<h3 id="why-hdf">Why HDF?</h3>
-<ul>
-<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
-<li>NASA’s Earth Observing System等等官网介绍</li>
-</ul>
-<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
-<h2 id="文档">文档</h2>
-<ul>
-<li>sphinx<br>
-它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
-<ul>
-<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
-<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
-<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
-&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
-&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
-&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
-&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;自述性&lt;br&gt;
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
-&lt;li&gt;通用性&lt;br&gt;
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-31T15:45:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
-    
-  </entry>
-  
-  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/git/"/>
     <id>http://yoursite.com/2017/07/26/git/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-04T21:46:37.000Z</updated>
+    <updated>2017-08-16T13:30:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -1446,11 +1752,82 @@ but not:<br>
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/hdf5/"/>
+    <id>http://yoursite.com/2017/07/26/hdf5/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-08-16T13:30:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
+<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
+<h3 id="历史">历史</h3>
+<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
+<h3 id="特性">特性</h3>
+<ul>
+<li>自述性<br>
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
+<li>通用性<br>
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>灵活性<br>
+HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
+<li>扩展性<br>
+HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
+<li>跨平台性</li>
+<li>现代性<br>
+支持并行I/O，线程和其他一些现代系统和应用要求。</li>
+</ul>
+<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
+<h3 id="why-hdf">Why HDF?</h3>
+<ul>
+<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
+<li>NASA’s Earth Observing System等等官网介绍</li>
+</ul>
+<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
+<h2 id="文档">文档</h2>
+<ul>
+<li>sphinx<br>
+它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
+<ul>
+<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
+<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
+<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
+&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
+&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
+&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
+&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自述性&lt;br&gt;
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
+&lt;li&gt;通用性&lt;br&gt;
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
     <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-07-31T15:44:20.000Z</updated>
+    <updated>2017-08-16T13:30:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="总结">总结</h1>
 <p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
@@ -1512,137 +1889,40 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;hexo &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/21/hexo/"/>
-    <id>http://yoursite.com/2017/07/21/hexo/</id>
-    <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
+    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-08-16T13:30:41.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="memo">memo</h1>
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
 <ul>
-<li>这个网站可以作为参考<a href="http://www.ezlippi.com" target="_blank" rel="external">www.ezlippi.com</a></li>
-<li>npm i(nstall) hexo-generator-json-content --save<br>
-Fix error to ensure “all article” works normally.</li>
-<li><s>hexo-footnote</s>(已不再维护)
-<blockquote>
-<p><code>npm install hexo-footnotes --save</code><br>
-如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件：</p>
-</blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugins:</div><div class="line">  - hexo-footnotes</div></pre></td></tr></table></figure>
-</li>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
 </ul>
 <a id="more"></a>
-<ul>
-<li>安装hexo-renderer-marked以支持更多Markdown特性 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm un hexo-renderer-marked --save</div><div class="line">npm i hexo-renderer-markdown-it --save</div><div class="line">npm install markdown-it-emoji --save</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="设置文章置顶-cloudinary在线图片服务">设置文章置顶 &amp; Cloudinary在线图片服务<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
-<blockquote>
-<p>top: 3 # 数字越大越靠前，默认为0<br>
-除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如Cloudinary提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。<br>
-在Cloudinary申请账号，上传图片(注意把upload选项中的unsigned signature选上)</p>
-</blockquote>
-<p>Cloundinary的免费存储空间还是非常大的<a href="http://cloudinary.com/pricing" target="_blank" rel="external">cloudinary价格</a><br>
-<a href="https://cloudinary.com/console/media_library" target="_blank" rel="external">我的cloudinary</a><br>
-使用方法：</p>
-<ol>
-<li>点击图片</li>
-<li>点击url</li>
-<li>拷贝链接</li>
-</ol>
-<h2 id="hexo个人命令">hexo个人命令</h2>
-<ul>
-<li>
-<p>用<code>hexol</code>/<code>hexod</code>命令一次性完成本地/远程预览<br>
-配置<code>.bash_profile</code>:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> HEXO=<span class="string">'/Users/Aether/Documents/hexo_file'</span></div><div class="line"><span class="built_in">export</span> HEXOMD=<span class="string">'/Users/Aether/Documents/hexo_file/source/_posts/'</span></div><div class="line"><span class="built_in">alias</span> hexod=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'</span></div><div class="line"><span class="built_in">alias</span> hexol=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>tackle_md.sh</code>自动调整缩进、设置部分显示、修改文章标题大小(for next theme)</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">sh indent.sh</div><div class="line">sh read_more.sh</div><div class="line"><span class="keyword">for</span> mdfile <span class="keyword">in</span> $(ls *.md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    awk -f ./title_size.awk <span class="variable">$mdfile</span> &gt; /tmp/<span class="variable">$mdfile</span> &amp;&amp; mv /tmp/<span class="variable">$mdfile</span>  <span class="variable">$mdfile</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<p>其中，<code>indent.sh</code>:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># indent for code block</span></div><div class="line">sed -i <span class="string">'s/^```[a-z]/   &amp;/g'</span> *.md</div><div class="line"><span class="comment"># indent for quote</span></div><div class="line">sed -i <span class="string">'s/^&gt;/   &amp;/g'</span> *.md</div></pre></td></tr></table></figure>
-<p><code>read_more.sh</code>:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.</span></div><div class="line"><span class="keyword">for</span> md_file <span class="keyword">in</span> $(ls *md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">stat</span>=$(grep <span class="string">"&lt;!-- more --&gt;"</span> <span class="variable">$md_file</span>)</div><div class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$stat</span>"</span> ];<span class="keyword">then</span></div><div class="line">        sed -i <span class="string">'20a &lt;!-- more --&gt;'</span> <span class="variable">$md_file</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<p><code>title_size.awk</code>:</p>
- <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="regexp">/^title:/</span>&amp;&amp;!<span class="regexp">/font/</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=NF;++i) &#123;</div><div class="line">            printf <span class="variable">$i</span><span class="string">" "</span>;</div><div class="line">            <span class="keyword">if</span>(i==<span class="number">1</span>)</div><div class="line">                printf <span class="string">" &lt;font size=6&gt;&lt;b&gt;"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==NF)</div><div class="line">                printf <span class="string">"&lt;/b&gt;&lt;/font&gt;\n"</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        print <span class="variable">$0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="yilia-theme">yilia theme</h2>
-<ul>
-<li>image file path<br>
-<code>hexo_file/themes/hexo-theme-yilia/source/img</code></li>
-<li>theme-yilia<br>
-<a href="https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5" target="_blank" rel="external">yilia</a></li>
-</ul>
-<h2 id="next-theme">next theme</h2>
-<ul>
-<li>
-<p>要想显示标签页，需要手动操作，详见<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-</li>
-<li>
-<p>添加搜索<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
-<strong>在os X safari上无法正常使用，原因不明；在os X chrome上和win7 chrome上都可以正常使用</strong></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-search --save</div><div class="line">npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>如何设置页面文章的篇数？<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-index</div><div class="line">npm install --save hexo-generator-archive</div><div class="line">npm install --save hexo-generator-tag</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>设置social_icons<br>
-<code>next</code>是通过<a href="http://fontawesome.io/cheatsheet/" target="_blank" rel="external">FontAwesome</a>进行图标设计的，FA支持的图标都在主页上。<br>
-目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为<code>zhihu: bed</code></p>
-</li>
-<li>
-<p>设置文章标题的格式<br>
-直接用html就可以<br>
-<code>title: &lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</code></p>
-</li>
-</ul>
-<h1 id="references">References:</h1>
-<p><a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">HEXO搭建个人博客</a><br>
-<a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">2个小时教你hexo博客添加评论、打赏、RSS等功能</a><br>
-<a href="http://coolcao.com/2016/10/19/%E4%BB%8E%E6%90%AD%E5%BB%BAhexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%90%86%E8%A7%A3%E5%AD%A6%E4%B9%A0DNS%E8%A7%A3%E6%9E%90" target="_blank" rel="external">从搭建hexo个人博客过程中理解学习DNS解析</a></p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://jiaxm.me/2017-07-day/Hexo%20Configuration/#more" target="_blank" rel="external">Hexo Configuration</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">Next-主题配置</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="http://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="external">参考：Hexo博客添加站内搜索</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95" target="_blank" rel="external">Next-常见问题</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;memo&quot;&gt;memo&lt;/h1&gt;
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;这个网站可以作为参考&lt;a href=&quot;http://www.ezlippi.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;www.ezlippi.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;npm i(nstall) hexo-generator-json-content --save&lt;br&gt;
-Fix error to ensure “all article” works normally.&lt;/li&gt;
-&lt;li&gt;&lt;s&gt;hexo-footnote&lt;/s&gt;(已不再维护)
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;npm install hexo-footnotes --save&lt;/code&gt;&lt;br&gt;
-如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件：&lt;/p&gt;
-&lt;/blockquote&gt;
- &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;plugins:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  - hexo-footnotes&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="yilia" scheme="http://yoursite.com/tags/yilia/"/>
+      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
     
   </entry>
   
@@ -1651,7 +1931,7 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
     <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
     <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-07-31T13:24:08.000Z</updated>
+    <updated>2017-08-16T13:30:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="正文">正文</h1>
 <ol start="0">
@@ -1747,7 +2027,7 @@ ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&q
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-08-01T08:42:00.000Z</updated>
+    <updated>2017-08-20T13:00:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
@@ -1813,7 +2093,7 @@ var Mou = exactlyTheAppIwant;
 <li>Unordered list item</li>
 </ul>
 <h4 id="hard-linebreak">Hard Linebreak</h4>
-<p>End a line with two or more spaces will create a hard linebreak, called <code>&lt;br /&gt;</code> in HTML. ( Control + Return )<br>
+<p>End a line with two or more spaces will create a hard linebreak, called <code>&lt;br /&gt;</code> in <abbr title="Hyper Text Markup Language">HTML</abbr>. ( Control + Return )<br>
 Above line ended with 2 spaces.</p>
 <h4 id="horizontal-rules">Horizontal Rules</h4>
 <p>Three or more asterisks or dashes:</p>
@@ -1908,6 +2188,27 @@ Above line ended with 2 spaces.</p>
 </tr>
 </tbody>
 </table>
+<h1 id="more-test-for-hexo-renderer-markdown-it">More test for hexo-renderer-markdown-it</h1>
+<ul>
+<li>hexo-renderer-markdown-it uses plugins such as markdown-it-sup to implement superscript.</li>
+<li><a href="https://www.npmjs.com/browse/keyword/markdown-it-plugin" target="_blank" rel="external">all plugins</a></li>
+<li>to use a plugin you need
+<ol>
+<li>npm i plugin-name --save</li>
+<li>add plugin-name into <code>_config.yml</code> in <code>plugins:</code> part of markdown-it config</li>
+</ol>
+</li>
+</ul>
+<h2 id="example">example</h2>
+<ul>
+<li>superscript: <code>29^th^</code> -&gt; 29<sup>th</sup></li>
+<li>subscript: <code>H~2~O</code> -&gt; H<sub>2</sub>O</li>
+<li><code>==highlight==</code> -&gt; <mark>highlight</mark></li>
+<li><code>++inserted++</code> -&gt; <ins>inserted</ins></li>
+<li>abbrevation</li>
+</ul>
+<p>The <abbr title="Hyper Text Markup Language">HTML</abbr> specification<br>
+is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr></p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -1944,6 +2245,156 @@ so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
     
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;hexo &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/hexo/"/>
+    <id>http://yoursite.com/2017/07/21/hexo/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-08-23T04:35:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="memo">memo</h1>
+<ul>
+<li>这个网站可以作为参考<a href="http://www.ezlippi.com" target="_blank" rel="external">www.ezlippi.com</a></li>
+<li>npm i(nstall) hexo-generator-json-content --save<br>
+Fix error to ensure “all article” works normally.</li>
+<li><s>hexo-footnote</s>(已不再维护)
+<blockquote>
+<p><code>npm install hexo-footnotes --save</code><br>
+如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件：</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugins:</div><div class="line">  - hexo-footnotes</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>安装hexo-renderer-marked以支持更多Markdown特性 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm un hexo-renderer-marked --save</div><div class="line">npm i hexo-renderer-markdown-it --save</div><div class="line">npm install markdown-it-emoji --save</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="设置文章置顶-cloudinary在线图片服务">设置文章置顶 &amp; Cloudinary在线图片服务<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<blockquote>
+<p>top: 3 # 数字越大越靠前，默认为0<br>
+除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如Cloudinary提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。<br>
+在Cloudinary申请账号，上传图片(注意把upload选项中的unsigned signature选上)</p>
+</blockquote>
+<p>Cloundinary的免费存储空间还是非常大的<a href="http://cloudinary.com/pricing" target="_blank" rel="external">cloudinary价格</a><br>
+<a href="https://cloudinary.com/console/media_library" target="_blank" rel="external">我的cloudinary</a><br>
+使用方法：</p>
+<ol>
+<li>点击图片</li>
+<li>点击url</li>
+<li>拷贝链接</li>
+</ol>
+<h2 id="hexo个人命令">hexo个人命令</h2>
+<ul>
+<li>
+<p>用<code>hexol</code>/<code>hexod</code>命令一次性完成本地/远程预览<br>
+配置<code>.bash_profile</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> HEXO=<span class="string">'/Users/Aether/Documents/hexo_file'</span></div><div class="line"><span class="built_in">export</span> HEXOMD=<span class="string">'/Users/Aether/Documents/hexo_file/source/_posts/'</span></div><div class="line"><span class="built_in">alias</span> hexod=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'</span></div><div class="line"><span class="built_in">alias</span> hexol=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>tackle_md.sh</code>自动调整缩进、设置部分显示、修改文章标题大小(for next theme)</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">sh indent.sh</div><div class="line">sh read_more.sh</div><div class="line"><span class="keyword">for</span> mdfile <span class="keyword">in</span> $(ls *.md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    awk -f ./title_size.awk <span class="variable">$mdfile</span> &gt; /tmp/<span class="variable">$mdfile</span> &amp;&amp; mv /tmp/<span class="variable">$mdfile</span>  <span class="variable">$mdfile</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>其中，<code>indent.sh</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># indent for code block</span></div><div class="line">sed -i <span class="string">'s/^```[a-z]/   &amp;/g'</span> *.md</div><div class="line"><span class="comment"># indent for quote</span></div><div class="line">sed -i <span class="string">'s/^&gt;/   &amp;/g'</span> *.md</div></pre></td></tr></table></figure>
+<p><code>read_more.sh</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.</span></div><div class="line"><span class="keyword">for</span> md_file <span class="keyword">in</span> $(ls *md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">stat</span>=$(grep <span class="string">"&lt;!-- more --&gt;"</span> <span class="variable">$md_file</span>)</div><div class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$stat</span>"</span> ];<span class="keyword">then</span></div><div class="line">        sed -i <span class="string">'20a &lt;!-- more --&gt;'</span> <span class="variable">$md_file</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p><code>title_size.awk</code>:</p>
+ <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="regexp">/^title:/</span>&amp;&amp;!<span class="regexp">/font/</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=NF;++i) &#123;</div><div class="line">            printf <span class="variable">$i</span><span class="string">" "</span>;</div><div class="line">            <span class="keyword">if</span>(i==<span class="number">1</span>)</div><div class="line">                printf <span class="string">" &lt;font size=6&gt;&lt;b&gt;"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==NF)</div><div class="line">                printf <span class="string">"&lt;/b&gt;&lt;/font&gt;\n"</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        print <span class="variable">$0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="yilia-theme">yilia theme</h2>
+<ul>
+<li>image file path<br>
+<code>hexo_file/themes/hexo-theme-yilia/source/img</code></li>
+<li>theme-yilia<br>
+<a href="https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5" target="_blank" rel="external">yilia</a></li>
+</ul>
+<h2 id="next-theme">next theme</h2>
+<ul>
+<li>
+<p>要想显示标签页，需要手动操作，详见<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</li>
+<li>
+<p>添加搜索<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+<strong>在os X safari上无法正常使用，原因不明；在os X chrome上和win7 chrome上都可以正常使用</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-search --save</div><div class="line">npm install hexo-generator-searchdb --save</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>如何设置页面文章的篇数？<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-generator-index</div><div class="line">npm install --save hexo-generator-archive</div><div class="line">npm install --save hexo-generator-tag</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>设置social_icons<br>
+<code>next</code>是通过<a href="http://fontawesome.io/cheatsheet/" target="_blank" rel="external">FontAwesome</a>进行图标设计的，FA支持的图标都在主页上。<br>
+目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为<code>zhihu: bed</code></p>
+</li>
+<li>
+<p>设置文章标题的格式<br>
+直接用html就可以<br>
+<code>title: &lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</code></p>
+</li>
+</ul>
+<h2 id="hexo-bug">hexo bug</h2>
+<ul>
+<li><code>Error: Cannot find module './build/Release/DTraceProviderBindings'</code> in OS X
+<ol>
+<li><code>npm install hexo --no-optional</code> doesn’t work</li>
+<li><code>npm un hexo-cli &amp;&amp; npm i hexo-cli -g</code> still encounts bugs, and it’s about dtrace-provider.</li>
+<li>Then we try to install dtrace-provider:<br>
+<code>Error: Python executable anaconda3/bin/python is v3.5.2, which is not supported by gyp.</code></li>
+<li>If <code>PYTHON=python2.7 npm install dtrace-provider --save</code> is used then a new bug will be reported:<br>
+<code>xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance</code></li>
+<li>This is an error about Xcode, <a href="https://github.com/nodejs/node-gyp/issues/569#issuecomment-259421050" target="_blank" rel="external">solution link</a></li>
+<li>Finally, this DTrace error is solved.</li>
+</ol>
+</li>
+</ul>
+<h1 id="references">References:</h1>
+<p><a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">HEXO搭建个人博客</a><br>
+<a href="http://www.jianshu.com/p/5973c05d7100" target="_blank" rel="external">2个小时教你hexo博客添加评论、打赏、RSS等功能</a><br>
+<a href="http://coolcao.com/2016/10/19/%E4%BB%8E%E6%90%AD%E5%BB%BAhexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%90%86%E8%A7%A3%E5%AD%A6%E4%B9%A0DNS%E8%A7%A3%E6%9E%90" target="_blank" rel="external">从搭建hexo个人博客过程中理解学习DNS解析</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://jiaxm.me/2017-07-day/Hexo%20Configuration/#more" target="_blank" rel="external">Hexo Configuration</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="external">Next-主题配置</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="http://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="external">参考：Hexo博客添加站内搜索</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95" target="_blank" rel="external">Next-常见问题</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;memo&quot;&gt;memo&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;这个网站可以作为参考&lt;a href=&quot;http://www.ezlippi.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;www.ezlippi.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;npm i(nstall) hexo-generator-json-content --save&lt;br&gt;
+Fix error to ensure “all article” works normally.&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;hexo-footnote&lt;/s&gt;(已不再维护)
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;npm install hexo-footnotes --save&lt;/code&gt;&lt;br&gt;
+如果Hexo不能自动发现插件，则需要手动安装插件5，编辑_config.yml文件：&lt;/p&gt;
+&lt;/blockquote&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;plugins:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  - hexo-footnotes&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="yilia" scheme="http://yoursite.com/tags/yilia/"/>
     
   </entry>
   
