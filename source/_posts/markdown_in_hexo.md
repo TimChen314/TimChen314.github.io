@@ -155,7 +155,6 @@ a start and end fence lines to delimit the code block.
 ```
 
 #### Tables
-
 A simple table looks like this:
 
 First Header | Second Header | Third Header
@@ -178,3 +177,19 @@ Left         | Center        | Right
 Left         | Center        | Right
 
 
+# More test for hexo-renderer-markdown-it
++ hexo-renderer-markdown-it uses plugins such as markdown-it-sup to implement superscript.
++ [all plugins](https://www.npmjs.com/browse/keyword/markdown-it-plugin)
++ to use a plugin you need
+   1. npm i plugin-name --save
+   2. add plugin-name into `_config.yml` in `plugins:` part of markdown-it config
+## example
++ superscript: `29^th^` -> 29^th^
++ subscript: `H~2~O` -> H~2~O
++ `==highlight==` -> ==highlight==
++ `++inserted++` -> ++inserted++
++ abbrevation
+*[HTML]: Hyper Text Markup Language
+*[W3C]:  World Wide Web Consortium
+The HTML specification
+is maintained by the W3C

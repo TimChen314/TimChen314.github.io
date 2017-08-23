@@ -126,6 +126,16 @@ npm install --save hexo-generator-tag
 直接用html就可以
 `title: <font size=6><b>人工智能简介</b></font>`
 
+## hexo bug
++ ``Error: Cannot find module './build/Release/DTraceProviderBindings'`` in OS X 
+   1. `npm install hexo --no-optional` doesn't work
+   2. `npm un hexo-cli && npm i hexo-cli -g` still encounts bugs, and it's about dtrace-provider.
+   3. Then we try to install dtrace-provider:
+      `Error: Python executable anaconda3/bin/python is v3.5.2, which is not supported by gyp.`
+   4. If `PYTHON=python2.7 npm install dtrace-provider --save` is used then a new bug will be reported:
+      `xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance`
+   5. This is an error about Xcode, [solution link](https://github.com/nodejs/node-gyp/issues/569#issuecomment-259421050)
+   6. Finally, this DTrace error is solved.
 
 # References:
 [HEXO搭建个人博客](http://baixin.io/2015/08/HEXO搭建个人博客/)   
