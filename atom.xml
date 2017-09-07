@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-23T05:21:15.000Z</updated>
+  <updated>2017-09-07T09:41:25.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,137 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;专利申请 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/09/07/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
+    <id>http://yoursite.com/2017/09/07/申请专利/</id>
+    <published>2017-09-07T10:00:00.000Z</published>
+    <updated>2017-09-07T09:41:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
+<a id="more"></a>
+<p>在拿到专利申请号之前，相关论文是不能被公开发表的。而我们正好着急发论文，所以特意问了加急申请的费用和拿到专利号的时间。</p>
+<h2 id="申请专利的顺序">申请专利的顺序</h2>
+<ol>
+<li>准备好纸面材料<br>
+一般长度为几页，需要介绍清楚相关的技术，让专利代理明白。</li>
+<li>专利代理进行撰写<br>
+就算你选择加急，也需要至少一周时间。如果时间太短，可能会有写出来的文书的效果不好、专利保护范围不广等问题。</li>
+<li>提交申请<br>
+材料都准备好之后，一到两天就能拿到专利申请号。</li>
+</ol>
+<h2 id="专利方面律师事务所">专利方面律师事务所</h2>
+<p>来源：<a href="https://www.zhihu.com/question/24316847" target="_blank" rel="external">中国在知识产权服务行业有哪些著名的公司？</a><br>
+<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1504681882/%E6%9D%82/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7_2017-09-06_%E4%B8%8B%E5%8D%883.01.30.png" alt="image"></p>
+<hr>
+<h2 id="第一集团">第一集团</h2>
+<ol>
+<li>柳沈律师事务所<br>
+2万包杆（包含全部费用），一个月内，加3000半个月。该律师建议我们可以先投文章，因为文章不可能在一个月之内发表的，另外拿到专利号的时间可以写在合同内。<br>
+联系方式：010-62681616</li>
+<li>中国国际贸易促进委员会专利商标事务所<br>
+正常1.8万包杆，30个工作日，11-15工作日10%加急费，6-10工作日20%加急费。<br>
+联系方式：010-66046763</li>
+<li>中国专利代理（香港）有限公司<br>
+香港公司，没有联系</li>
+</ol>
+<hr>
+<h2 id="第二集团">第二集团</h2>
+<ol>
+<li>中科专利商标代理有限责任公司<br>
+给底稿到拿到申请号，需要一周时间，拿到专利号的时间可以写在合同内。价格为8000-10000(应该不是包杆，只是申请费，不包括官费等)。<br>
+联系方式：010-68619696</li>
+<li>中原信达知识产权代理有限责任公司<br>
+10天，包杆一万八到一万九<br>
+联系方式：010-66576688</li>
+<li>金杜<br>
+只做公司和机构</li>
+<li>中咨<br>
+联系方式：010-66091188<br>
+至少15天。申请费120000，官费900高校优惠到300 另外费用2450高校优惠到700</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="专利" scheme="http://yoursite.com/tags/%E4%B8%93%E5%88%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;All about Digital Currency &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/08/30/digital_currency/"/>
+    <id>http://yoursite.com/2017/08/30/digital_currency/</id>
+    <published>2017-08-30T10:00:00.000Z</published>
+    <updated>2017-09-07T06:47:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>all about block chain</p>
+<h1 id="info-source">Info source</h1>
+<ol>
+<li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
+<li><a href="http://trans.chbtc.com/markets/eth" target="_blank" rel="external">trans.chbtc.com/markets/eth</a> 有长期数据，可以画周线</li>
+</ol>
+<h1 id="其他币">其他币</h1>
+<p>薛蛮子认为：</p>
+<a id="more"></a>
+<blockquote>
+<p>对于ICO的投资标准，薛蛮子表示，首先是人靠谱，此前投资的比原链是国内区块链最大的社区巴比特发起的，墨链是纸贵科技发起的，BEX是美豹金融发起的，这些项目的团队本身已经有了成功的创业案例，且在细分领域处于排头兵的地位。</p>
+</blockquote>
+<blockquote>
+<p>拿比原链来说，薛蛮子表示，“我认为，比原链的创始团队很年轻，富有朝气，大家都很努力，但是比原链的技术挑战挺大，需要天时地利人和，很多条件具备才能做成，不是轻描淡写，一挥而就的。团队最要紧的是不断试错，踏踏实实做事情，不要辜负投资人的信任。我不看好的是，有的小伙子一辈子没赚过大钱，也没花过100万以上的钱，突然通过ICO拿了几个亿，这些人hold不住。”</p>
+</blockquote>
+<h1 id="问题与挑战">问题与挑战</h1>
+<h2 id="1-税收">1. 税收</h2>
+<p>美国国税局（IRS, Internal Revenue Service）在努力调查bitcoin避税，这是bitcoin正式应用所面临的一个问题。</p>
+<blockquote>
+<p>像达世（Dash）、门罗（Monero）和ZCash等币都部署了隐私功能，其交易是很难被追踪到的。</p>
+</blockquote>
+<h1 id="待读-进展">待读&amp;进展</h1>
+<h2 id="待读">待读</h2>
+<p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
+<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a></p>
+<p><a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
+<a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
+<h2 id="进展">进展</h2>
+<p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
+<h1 id="资料-引用">资料&amp;引用</h1>
+<h2 id="资料">资料</h2>
+<p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;all about block chain&lt;/p&gt;
+&lt;h1 id=&quot;info-source&quot;&gt;Info source&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.8btc.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;www.8btc.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://trans.chbtc.com/markets/eth&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;trans.chbtc.com/markets/eth&lt;/a&gt; 有长期数据，可以画周线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;其他币&quot;&gt;其他币&lt;/h1&gt;
+&lt;p&gt;薛蛮子认为：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="block chain" scheme="http://yoursite.com/categories/block-chain/"/>
+    
+    
+      <category term="block chain" scheme="http://yoursite.com/tags/block-chain/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;gnuplot笔记（上）&lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
     <id>http://yoursite.com/2017/08/16/gnuplot笔记上/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2017-08-23T05:21:15.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
 <a id="more"></a>
@@ -215,7 +341,7 @@ Three binary operators require string operands: the string concatenation operato
     <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://yoursite.com/2017/08/16/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2017-08-23T05:35:57.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -435,7 +561,7 @@ The eps file doesn’t get written until a plot command is specified after speci
     <link href="http://yoursite.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/08/01/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -591,7 +717,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2017/07/31/linux常用命令记录/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -1161,132 +1287,11 @@ Because blank space is usually used as the separater of command or agruments.<br
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
-    <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
-    <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-08-19T08:30:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
-<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
-而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
-<a id="more"></a>
-<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
-<p>然而用python或者IPython，结果为False</p>
-<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
-<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
-<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
-<h2 id="2-with-语句">2. with 语句</h2>
-<p><strong>自动进行对象的生命周期进行管理</strong><br>
-Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
-<ul>
-<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="3-list参数传递">3. list参数传递</h2>
-<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
-正确做法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
-<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
-<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
-<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
-ct总结：参数绑定优先级：</p>
-<ol>
-<li>指定参数名</li>
-<li>顺序</li>
-<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
-<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
-<li><strong>限制关键字参数的名字</strong></li>
-</ol>
-<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
-<h2 id="5-generator">5. generator</h2>
-<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
-<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
-<p><strong>The implementation of zip is very beautiful：</strong><br>
-来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
-<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
-集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
-Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
-for x in [1, 2, 3, 4, 5]:<br>
-pass<br>
-实际上完全等价于：<br>
-首先获得Iterator对象:<br>
-<code>it = iter([1, 2, 3, 4, 5])</code><br>
-循环:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
-<ul>
-<li>while my_iterator（参见zip的实现）<br>
-iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
-</ul>
-<h2 id="8-内存">8. 内存</h2>
-<h3 id="8-1-释放内存">8.1. 释放内存</h3>
-<p>先del再gc.collect()</p>
-<h2 id="9-python类">9. Python类</h2>
-<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
-<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
-<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
-<p>Note that user defined attributes shall not end with ‘__’</p>
-<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
-<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
-注意下面的这种错误写法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
-<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
-<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
-<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
-<p>静态语言 vs 动态语言<br>
-对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
-<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
-<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
-<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
-<h2 id="style-guide">Style guide</h2>
-<h3 id="argument">argument</h3>
-<ul>
-<li><code>**kwargs</code> is a bad practice:
-<ol>
-<li>you don’t know how <code>**kwargs</code> affect.</li>
-<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
-<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
-<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
-</ol>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
-&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
-而id实际上是内存地址，&lt;code&gt;(ob1 is ob2)&lt;/code&gt; 等价于 &lt;code&gt;(id(ob1) == id(ob2))&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
     <id>http://yoursite.com/2017/07/28/人工智能简介/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -1449,11 +1454,132 @@ attention、GAN&lt;/li&gt;
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
+    <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
+    <published>2017-07-28T10:00:00.000Z</published>
+    <updated>2017-08-23T08:20:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
+<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
+而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
+<a id="more"></a>
+<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
+<p>然而用python或者IPython，结果为False</p>
+<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
+<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
+<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
+<h2 id="2-with-语句">2. with 语句</h2>
+<p><strong>自动进行对象的生命周期进行管理</strong><br>
+Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
+<ul>
+<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-list参数传递">3. list参数传递</h2>
+<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
+正确做法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
+<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
+<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
+<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
+ct总结：参数绑定优先级：</p>
+<ol>
+<li>指定参数名</li>
+<li>顺序</li>
+<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
+<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
+<li><strong>限制关键字参数的名字</strong></li>
+</ol>
+<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
+<h2 id="5-generator">5. generator</h2>
+<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
+<p><strong>The implementation of zip is very beautiful：</strong><br>
+来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
+<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
+凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
+集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
+Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
+for x in [1, 2, 3, 4, 5]:<br>
+pass<br>
+实际上完全等价于：<br>
+首先获得Iterator对象:<br>
+<code>it = iter([1, 2, 3, 4, 5])</code><br>
+循环:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
+<ul>
+<li>while my_iterator（参见zip的实现）<br>
+iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
+</ul>
+<h2 id="8-内存">8. 内存</h2>
+<h3 id="8-1-释放内存">8.1. 释放内存</h3>
+<p>先del再gc.collect()</p>
+<h2 id="9-python类">9. Python类</h2>
+<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
+<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
+<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
+<p>Note that user defined attributes shall not end with ‘__’</p>
+<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
+<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
+注意下面的这种错误写法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
+<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
+<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
+<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
+<p>静态语言 vs 动态语言<br>
+对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
+<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
+<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
+<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
+<h2 id="style-guide">Style guide</h2>
+<h3 id="argument">argument</h3>
+<ul>
+<li><code>**kwargs</code> is a bad practice:
+<ol>
+<li>you don’t know how <code>**kwargs</code> affect.</li>
+<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
+<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
+<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
+</ol>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
+&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
+而id实际上是内存地址，&lt;code&gt;(ob1 is ob2)&lt;/code&gt; 等价于 &lt;code&gt;(id(ob1) == id(ob2))&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/git/"/>
     <id>http://yoursite.com/2017/07/26/git/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -1756,7 +1882,7 @@ but not:<br>
     <link href="http://yoursite.com/2017/07/26/hdf5/"/>
     <id>http://yoursite.com/2017/07/26/hdf5/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -1823,11 +1949,49 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-08-23T08:20:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<ul>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
+    
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
     <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
+    <updated>2017-09-07T06:23:39.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="总结">总结</h1>
 <p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
@@ -1889,145 +2053,11 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
-    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
-    <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-08-16T13:30:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
-<ol start="0">
-<li>
-<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
-</li>
-<li>
-<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
-</li>
-<li>
-<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
-<blockquote>
-<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
-</blockquote>
-<p>访问http://mail.timchen314.com:</p>
-<blockquote>
-<p>温馨提醒：该页面暂时无法访问<br>
-尊敬的用户：<br>
-您好！<br>
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
-</blockquote>
-<p>所以，必须要备案后才能使用邮箱服务。<br>
-ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<blockquote>
-<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
-</blockquote>
-</li>
-</ol>
-<a id="more"></a>
-<ol start="3">
-<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
-<blockquote>
-<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
-</blockquote>
-</li>
-</ol>
-<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<h1 id="reference">reference</h1>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
-&lt;ol start=&quot;0&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
-尊敬的用户：&lt;br&gt;
-您好！&lt;br&gt;
-根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
-ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-    
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
-    
-      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;markdown in hexo-render-markdown-it &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-08-20T13:00:42.000Z</updated>
+    <updated>2017-09-07T06:32:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
@@ -2249,11 +2279,107 @@ so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
   </entry>
   
   <entry>
+    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
+    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
+    <published>2017-07-21T10:00:00.000Z</published>
+    <updated>2017-08-23T08:20:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正文">正文</h1>
+<ol start="0">
+<li>
+<p>在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。</p>
+</li>
+<li>
+<p>登录阿里云–&gt;控制台–&gt;域名与网站(左侧菜单栏中)–&gt;企业邮箱–&gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)</p>
+</li>
+<li>
+<p><a href="http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA" target="_blank" rel="external">qiye.aliyun.com/admin/中会显示</a></p>
+<blockquote>
+<p>邮箱登录地址:<a href="http://mail.timchen314.com" target="_blank" rel="external">http://mail.timchen314.com</a></p>
+</blockquote>
+<p>访问http://mail.timchen314.com:</p>
+<blockquote>
+<p>温馨提醒：该页面暂时无法访问<br>
+尊敬的用户：<br>
+您好！<br>
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。</p>
+</blockquote>
+<p>所以，必须要备案后才能使用邮箱服务。<br>
+ICP备案是：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>如果使用了github作为托管主机，是无法备案的。<a href="https://help.aliyun.com/knowledge_detail/36940.html" target="_blank" rel="external">如何选择备案产品类型</a>
+<blockquote>
+<p>如您购买的是其他服务商空间，请联系对应的空间提供商备案；如自己架设服务器，需要联系您服务器的网络供应商，即提供您服务器上网服务的运营商，如电信、联通等。</p>
+</blockquote>
+</li>
+</ol>
+<p>可能有用<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://goodbai.com/web/HowToICP.html" target="_blank" rel="external">阿里云个人网站备案过程全记录</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://kinice.top/article/570c82d23e1e9f0f76cfc972" target="_blank" rel="external">可能有用：本博客阿里云配置过程（一）服务器及域名备案篇</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;正文&quot;&gt;正文&lt;/h1&gt;
+&lt;ol start=&quot;0&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;在阿里云买了域名，阿里云正好（2017-07）有免费赠邮箱服务，所以想把这个邮箱服务用起来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录阿里云–&amp;gt;控制台–&amp;gt;域名与网站(左侧菜单栏中)–&amp;gt;企业邮箱–&amp;gt;登录管理员账号(用postmaster@yoursite.com这个账号登录https://qiye.aliyun.com/admin/,这里是负责管理邮箱系统)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://qiye.aliyun.com/admin/%E4%B8%AD%E4%BC%9A%E6%98%BE%E7%A4%BA&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;qiye.aliyun.com/admin/中会显示&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;邮箱登录地址:&lt;a href=&quot;http://mail.timchen314.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mail.timchen314.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;访问http://mail.timchen314.com:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;温馨提醒：该页面暂时无法访问&lt;br&gt;
+尊敬的用户：&lt;br&gt;
+您好！&lt;br&gt;
+根据《非经营性互联网信息服务备案管理办法》第十八条法规，您的域名尚未进行备案，暂时无法访问。请参考工信部相关备案流程进行相关操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以，必须要备案后才能使用邮箱服务。&lt;br&gt;
+ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ICP备案的含义是主机、站长（个人或者法人）、域名和网站经营内容四者的一个绑定认证关系&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&lt;font size=7&gt;&lt;b&gt;hexo &lt;/b&gt;&lt;/font&gt;</title>
     <link href="http://yoursite.com/2017/07/21/hexo/"/>
     <id>http://yoursite.com/2017/07/21/hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-08-23T04:35:32.000Z</updated>
+    <updated>2017-08-23T08:20:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="memo">memo</h1>
 <ul>

@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vim," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -95,18 +95,13 @@
 
 
 
-<meta name="description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
-<meta name="keywords" content="vim">
-<meta property="og:type" content="article">
-<meta property="og:title" content="&lt;font size=7&gt;&lt;b&gt;vim笔记 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta property="og:url" content="http://yoursite.com/2017/08/01/vim笔记/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TimChen">
+<meta property="og:url" content="http://yoursite.com/archives/2017/09/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-23T08:20:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;font size=7&gt;&lt;b&gt;vim笔记 &lt;&#x2F;b&gt;&lt;&#x2F;font&gt;">
-<meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
+<meta name="twitter:title" content="TimChen">
 
 
 
@@ -134,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/01/vim笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2017/09/"/>
 
 
 
 
 
-  <title><font size=7><b>vim笔记 </b></font> | TimChen</title>
+  <title>归档 | TimChen</title>
   
 
 
@@ -165,7 +160,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail ">
+  <div class="container sidebar-position-right  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -303,349 +298,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/vim笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tim Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head_portrait.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TimChen">
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 15 篇日志。 继续努力。
     </span>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline"><font size=7><b>vim笔记 </b></font></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T18:00:00+08:00">
-                2017-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vim/" itemprop="url" rel="index">
-                    <span itemprop="name">vim</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/01/vim笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/01/vim笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
 
       
       
-
       
-        <p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
-<a id="more"></a>
-<p>删除线代表已经非常熟练的掌握，不需要再看了。</p>
-<h2 id="vim下命令：">vim下命令：</h2>
-<p><s>(3)</s> <code>:.,$ s/str1/str2/g</code> 用字符串 str2 替换正文当前行到末尾所有出现的字符串 str1<br>
-其中<code>.</code>代表当前行，<code>$</code>代表最后一行，而<code>.,$</code>就代表从当前行到最后一行<br>
-也可以这样 <code>:.,.+8 s/str1/str2/g</code>， 其中<code>.,.+8</code>代表从当前行到从当前行开始下面第8行。<br>
-例如：如果当前行是第二行，那么<code>:.,.+8 s/str1/str2/g</code>等价于<code>:2,10 s/str1/str2/g</code></p>
-<p><s>(4)</s> <code>s/\(love\)able/\1er/</code> # 会将loveable替换成lover，<code>\1</code>代表第一对小括号内的匹配项<br>
-(6) 读入文件<br>
-<code>:23r input_file</code>，在当前文件23行将<code>input_file</code>的内容插入近来<br>
-(7) <code>&lt;leader&gt;</code> is backlash<br>
-(8) “+y  复制到系统剪贴板<br>
-(11) Vu(VU) # V mode下，大小写转换<br>
-(12) <code>:!pwd</code> # Execute the pwd unix command, then returns to Vi<br>
-(13) <code>!!pwd</code> # Execute the pwd unix command and insert output in file<br>
-(14) vim中的g(global)和%的区别：</p>
-<ul>
-<li>
-<p>g:全局的<br>
-s/pattern/replacement/  : 替换行中出现的每一个pattern<br>
-g/pattern/s/pattern/replacement/g : 开始处的g是全局命令，意味着对所有与地址匹配的行进行改变。结尾处的g是一个标志，意味着改变一行上的每个。<br>
-linux中的grep = g/rep/p</p>
-</li>
-<li>
-<p>%:代表这文件本身每一行</p>
-</li>
-</ul>
-<p>(15) 全部格式化: gg=G<br>
-(16) vi如何关闭打开的多个文件中的一个?<br>
-切换到你想关闭的 文件窗口.<br>
-然后输入 :bd<br>
-即 : buffers delete<br>
-就可以关闭了.<br>
-(17) 两条命令合在一起用<br>
-<code>:%s/abc/def/ | wq</code></p>
-<h3 id="移动">移动</h3>
-<ul>
-<li>zz 光标所在行居中</li>
-<li>20| 到第20列！【Normal mode】</li>
-</ul>
-<h3 id="多个文件同时处理">多个文件同时处理</h3>
-<ul>
-<li>
-<p>文件以tab打开</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:args *.c</div><div class="line">:tab all</div></pre></td></tr></table></figure>
-<p>or <code>vim -p *.h *cc</code></p>
-</li>
-<li>
-<p>Run a command in multiple buffers<br>
-将所有文件进行格式化，并写入所有文件</p>
-   <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">tabdo</span> Autoformat</div><div class="line">:<span class="keyword">wa</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="替换-查找">替换、查找</h3>
-<ul>
-<li>
-<p>去掉换行符^M: 输入以下字符串: <code>%s/^M//g</code>  (注意，^M = Ctrl v + Ctrl m，而不是手动输入^M)</p>
-</li>
-<li>
-<p>换行符可以<strong>用\n直接匹配，用\r添加</strong></p>
-</li>
-<li>
-<p>对文件内含有特定字符的行操作。<br>
-g/-/s/^/#/ 是把所有含‘-’的行注释掉</p>
-</li>
-</ul>
-<ul>
-<li>/open\c<br>
-其中 \c表示忽略大小写</li>
-<li>vi（lzy0xa@192.9.207.102）的正则表达式中<code>H[1-9]*</code>并不能match H20 ,因为这里vi认为<code>*</code>是匹陪[1-9]中的数，而不是匹配所有的字符。要想匹配H20、H320、H308之类的字符串就需要用<code>H[0-9]*</code></li>
-</ul>
-<h3 id="代码折叠">代码折叠</h3>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">set foldmethod=indent                                                        </div><div class="line">set foldnestmax=10                                                           </div><div class="line">set nofoldenable &quot; makes sure that when opening, files are &quot;normal&quot;, i.e. not</div><div class="line">folded.                                                                      </div><div class="line">set foldlevel=0</div></pre></td></tr></table></figure>
-<ul>
-<li>zM/zR zm/zr<br>
-大/小写 – 所有/逐层<br>
-m/r – 折叠/打开</li>
-<li>（对当前折叠）zc/zo zC/zO<br>
-大/小写 – 所有/逐层</li>
-<li>zf/zd 创建/删除折叠</li>
-<li>zj/zk</li>
-<li>[z / ]z       到当前打开的折叠的开始/结尾处。</li>
-</ul>
-<h3 id="显示信息">显示信息</h3>
-<ul>
-<li>历史命令<br>
-<code>q:</code>或<code>:hist</code></li>
-<li>是否具有某种特性 <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'python3'</span>) #<span class="number">0</span> <span class="keyword">is</span> false, <span class="number">1</span> means true #判断是否支持<span class="keyword">python3</span></div><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'viminfo'</span>)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="vimrc">vimrc</h2>
-<h4 id="plugin">Plugin</h4>
-<ul>
-<li>auto-pairs<br>
-github readme里，有括号包裹单词这个功能，但我尝试多次也没有使用成功。<br>
-<a-e>或<m-e>对应这一功能（A means Alt, M means Meta, in present context Alt and Meta is the same ），但我在Xshell中用的时候，<a-e>并没有激活auto-pairs，激活的是linux自带的快捷键–向右移动到词尾。<br>
-最终我输入单个括号是用：ctrl+v，（</a-e></m-e></a-e></li>
-<li>markdown插件 vim-markdown<br>
-<a href="http://www.jianshu.com/p/24aefcd4ca93" target="_blank" rel="external">http://www.jianshu.com/p/24aefcd4ca93</a><br>
-<a href="https://github.com/plasticboy/vim-markdown" target="_blank" rel="external">https://github.com/plasticboy/vim-markdown</a><br>
-有用的命令：c <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:Toc</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="youcompleteme">YouCompleteMe</h4>
-<ul>
-<li>
-<p>需要进入bundle文件夹进行编译</p>
-</li>
-<li>
-<p>错误<code>YouCompleteMe unavailable: requires Vim compiled with Python (2.6+ or 3.3+) support</code><br>
-明明安装VIM时已经选择支持python3了，为什么还会报错？而且：</p>
- <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="built_in">has</span>(<span class="string">'python3'</span>) #返回值为<span class="number">0</span>，说明在<span class="keyword">vim</span>中不能正常支持<span class="keyword">python</span></div></pre></td></tr></table></figure>
-<p>这很可能是因为：python运行时找不到库。解决方法就是添加python库的路径到LD_LIBRARY_PATH环境变量：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:/opt/anaconda3/lib/</div></pre></td></tr></table></figure>
-<p>然而，这样又会导致其他程序找到的是<code>/opt/anaconda3/lib/</code>里的库，而非系统自带的库，例如：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ evince</div><div class="line">evince: symbol lookup error: /lib64/libgdk-3.so.0: undefined symbol: cairo_surface_set_device_scale</div></pre></td></tr></table></figure>
-<p><strong>最终解决方法，是分别设置环境变量</strong>，例如：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> evince=<span class="string">'LD_LIBRARY_PATH="" evince'</span></div></pre></td></tr></table></figure>
-<p>这样evince启动时，就不会去anaconda的路径里面找库了。</p>
-</li>
-</ul>
-<h4 id="cmd">cmd</h4>
-<ul>
-<li>颜色<br>
-.vim/colors/中放置配置文件<br>
-:colo 查看当前颜色</li>
-<li>noremap：绑定键的时候，不迭代绑定<br>
-五中模式代号：nvoic</li>
-</ul>
-<h2 id="reference">reference</h2>
-<p><a href="https://danielmiessler.com/study/vim/#why" target="_blank" rel="external">vim tutorial</a><br>
-<a href="http://developer.51cto.com/art/201308/406941.htm" target="_blank" rel="external">超过130个你需要了解的vim命令</a> 【好】<br>
-<a href="http://www.cnblogs.com/lq0729/archive/2011/12/24/2300189.html" target="_blank" rel="external">vim map nmap</a>【非常好，介绍vimrc的一些基本命令】</p>
 
-      
-    </div>
-
-    <div>
       
         
-
-      
-    </div>
-
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>谢谢~</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="Tim Chen Alipay"/>
-          <p>支付宝打赏</p>
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
         </div>
       
-    </div>
-  </div>
-
+      
 
       
-    </div>
 
-    <div>
-      
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
         
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong>本文作者：</strong>
-      Tim Chen
-    </li>
-    <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/08/01/vim笔记/" title="<font size=7><b>vim笔记 </b></font>">http://yoursite.com/2017/08/01/vim笔记/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong>
-      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
+            <a class="post-title-link" href="/2017/09/07/申请专利/" itemprop="url">
+              
+                <span itemprop="name"><font size=7><b>专利申请 </b></font></span>
+              
+            </a>
+        
+      </h2>
 
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-07T18:00:00+08:00"
+              content="2017-09-07" >
+          09-07
+        </time>
+      </div>
 
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/vim/" rel="tag"># vim</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/31/linux常用命令记录/" rel="next" title="<font size=7><b>linux常用命令记录 </b></font>">
-                <i class="fa fa-chevron-left"></i> <font size=7><b>linux常用命令记录 </b></font>
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/16/gnuplot笔记下/" rel="prev" title="<font size=7><b>gnuplot笔记（下）</b></font>">
-                <font size=7><b>gnuplot笔记（下）</b></font> <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -653,17 +365,6 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -684,17 +385,8 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head_portrait.jpg"
@@ -801,22 +493,6 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vim下命令："><span class="nav-text">vim下命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动"><span class="nav-text">移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个文件同时处理"><span class="nav-text">多个文件同时处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换-查找"><span class="nav-text">替换、查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码折叠"><span class="nav-text">代码折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示信息"><span class="nav-text">显示信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vimrc"><span class="nav-text">vimrc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#plugin"><span class="nav-text">Plugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#youcompleteme"><span class="nav-text">YouCompleteMe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cmd"><span class="nav-text">cmd</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -935,9 +611,11 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
@@ -956,18 +634,6 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
       <script id="dsq-count-scr" src="https://timchen314.disqus.com/count.js" async></script>
     
 
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/08/01/vim笔记/';
-          this.page.identifier = '2017/08/01/vim笔记/';
-          this.page.title = '<font size=7><b>vim笔记 </b></font>';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://timchen314.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
     
 
   
