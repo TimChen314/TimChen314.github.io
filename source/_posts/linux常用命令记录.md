@@ -412,10 +412,12 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 `sed '/export/i xxx' file`或`sed '/export/i \xxx' file`
   在指定(export)行前面后行
 `sed '/export/a xxx' file`或`sed '/export/a \xxx' file`
-
 9.单引号的转义
 `'\''`
 `sed 's/'\''//g' `# 将单引号替换为空格
+10.匹配空行
+正常匹配空行是`^$`；但是对于从windows拷贝过来的文件，要用`^.$`匹配
+而vim（版本8.0）内置的sed，不论文件来自哪种系统，都可以用`^$`匹配
 11. 指定行添加内容
 `sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt`
 
