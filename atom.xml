@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-07T09:41:25.000Z</updated>
+  <updated>2017-09-29T02:22:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,377 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;专利申请 &lt;/b&gt;&lt;/font&gt;</title>
+    <title>vmd笔记</title>
+    <link href="http://yoursite.com/2017/09/29/vmd%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/09/29/vmd笔记/</id>
+    <published>2017-09-29T10:00:00.000Z</published>
+    <updated>2017-09-29T02:22:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>
+<p>什么是VMD？<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<blockquote>
+<p>VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.</p>
+</blockquote>
+</li>
+<li>
+<p><a href="http://www.ks.uiuc.edu/Gallery/Science-New/" target="_blank" rel="external">VMD官网的图片示例展览</a></p>
+</li>
+<li>
+<p><strong>本文定位</strong>：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本，GUI因为比较简单，讨论的较少。</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="显示">显示</h2>
+<ol start="0">
+<li>
+<p><mark>console中，输入命令且不加参数，就会显示帮助信息</mark><br>
+tcl语言作为脚本语言，tcl语法可以参考<a href="https://wenku.baidu.com/view/aaf5d6d449649b6648d74771.html" target="_blank" rel="external">TCL脚本入门教程</a>【当然没必要学完】<br>
+如何进入console：Extension -&gt; Tk Console<br>
+例子：</p>
+<ul>
+<li><code>console% measure</code>结果<a href="https://res.cloudinary.com/do7yb5qw4/image/upload/v1506587376/%E6%9D%82/vmd_measure.jpg" target="_blank" rel="external">见图</a></li>
+<li><code>console% mol</code></li>
+<li><code>pbc</code>…</li>
+</ul>
+</li>
+<li>
+<p>pbc</p>
+<ul>
+<li>pbc是周期性边界条件的缩写（periodic boundary condition）</li>
+<li>pbc wrap -all 【将粒子折回盒子内】</li>
+<li>画盒子<br>
+pbc box -on 【画出盒子】<br>
+pbc box -center origin 【设定盒子中心的位置】<br>
+pbc box -center origin -style tubes -width 1 -color gray</li>
+<li>pbc join res -border 5 【接上由于pbc导致的盒子边界处的断键】</li>
+</ul>
+</li>
+<li>
+<p>display</p>
+<ul>
+<li>display projection orthographic<br>
+【相当于在display选项卡中选择orthographic】</li>
+<li>display distance x<br>
+设置东西与屏幕的距离，越大则分子离屏幕越近，相当于放大。不可太小比如几十，否则有凸镜的效果</li>
+</ul>
+</li>
+<li>
+<p>背景设置为白色<br>
+（Graphics-&gt;Colors-&gt;Categories栏-&gt;选Display-&gt;再在name栏选Background）时，图像会显得比较浅。修正这个问题的方法是：去掉Display-&gt;Depth Cueing</p>
+</li>
+<li>
+<p>graphics<br>
+graphics top list【to show a list of number, standing for the ID of each object】<br>
+graphics top text {40 0 20} “my drawing objects”  # 文字<br>
+graphics top info ID  # The detailed information about each object<br>
+graphics top delete ID<br>
+<mark>box is also considered as graphics in VMD</mark></p>
+<ul>
+<li>draw shapes【画图形】<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
+graphics top color COLORID【先设定颜色后画图形才能设定成功】【colorid for each color can be found in Graphics -&gt; Colors -&gt; menu 】<br>
+graphics top sphere {10 10 10} radius 10 resolution 80<br>
+graphics top line {10 0 0} {0 0 0} width 5 style dashed<br>
+graphics top material transparent<br>
+graphics top delete all/ID【delete shapes】<br>
+<strong>NOTE</strong>: vmd看gromacs文件（*.gro）时，会把单位自动换位埃，比如在.gro文件中，坐标为1，则vmd中坐标为10，画图形时，可能会用到</li>
+</ul>
+</li>
+<li>
+<p>colorinfo colors<br>
+显示有多少种预置颜色，比如red</p>
+</li>
+<li>
+<p>旋转<br>
+rotate x by/to 90</p>
+</li>
+</ol>
+<h2 id="script">Script</h2>
+<h3 id="基本命令">基本命令</h3>
+<ol>
+<li>~/.vmdrc ： 配置文件</li>
+<li>logfile my.log<br>
+在console中输入此命令,可以将你在图形界面中的操作保存成脚本，存储在my.log中    <strong><em>有用又简单的命令</em></strong> !!!</li>
+<li>console中导入脚本<br>
+source yourscript.tcl</li>
+<li>不显示图形界面的执行脚本<br>
+<code>sh$ vmd -dispdev none -e script.tcl</code></li>
+</ol>
+<h3 id="mol">mol</h3>
+<p>mol的用法帮助：如前面第0节所述，在console中输入mol并且不加参数，就会显示mol的用法。<br>
+这里要介绍VMD中两个重要的概念：<strong>molid</strong>（molecular ID）和<strong>repid</strong>（representation ID）。<br>
+<mark>molid</mark>：对单个frame，molid恒等于0<br>
+<mark>repid</mark>：打开一个frame，默认的repid为0<br>
+如果你想添加第二种呈现方式（representation），可以用：<code>mol addrep 0</code>向molid为0的图中，新增一种representation，这一representation的repid等于之前最大的repid+1。<br>
+GUI中，Graphics -&gt; Representations -&gt; Create Rep 就相当于下列命令：</p>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mol addrep <span class="number">0</span></div><div class="line">mol modselect <span class="number">1</span> <span class="number">0</span> <span class="string">"type 1"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><mark>注意：写脚本时，尤其要注意的一点是如果打开一个frame成功，会隐式的执行一次<code>mol addrep 0</code>！</mark><br>
+例如，我们将类型为A的原子显示成蓝色（ColorID 0）、将B类型的原子显示成红色（ColorID 1），脚本这样写：</p>
+ <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># mol addrep 0     # <span class="doctag">NOTE:</span> VMD has execute this statement invisibly. If  </span></div><div class="line"><span class="comment">#                    you add this "mol addrep 0" manually, there will </span></div><div class="line"><span class="comment">#                    be an error. </span></div><div class="line">mol modselect <span class="number">0</span> <span class="number">0</span> <span class="string">"type A"</span></div><div class="line">mol modcolor <span class="number">0</span> <span class="number">0</span> ColorID <span class="number">0</span></div><div class="line">mol addrep <span class="number">0</span></div><div class="line"><span class="comment"># now there are two "rep". The index of second "rep" is 1.</span></div><div class="line">mol modselect <span class="number">1</span> <span class="number">0</span> <span class="string">"type B"</span></div><div class="line">mol modcolor <span class="number">0</span> <span class="number">0</span> ColorID <span class="number">0</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>mol default style {CPK}<br>
+【相当于Graphical选项卡中选择Representations,再在Draw style中Drawing Method下选择CPK】</p>
+</li>
+<li>
+<p>mol default material {Diffuse}<br>
+【相当于Graphical选项卡中选择Representations,再在Draw style中Material下选择Diffuse】</p>
+</li>
+<li>
+<p>mol list<br>
+列出目前所有representation</p>
+</li>
+<li>
+<p>mol delrep 3 0<br>
+与mol addrep 0相对，删除molid=0，repid=3的mol</p>
+</li>
+<li>
+<p>molinfo list/num<br>
+显示全部分子的molid</p>
+</li>
+</ul>
+<h3 id="atomselect">atomselect</h3>
+<p>例子：</p>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span> particle [atomselect <span class="number">0</span> <span class="string">"index&lt;13000"</span>]</div><div class="line">$particle <span class="keyword">set</span> resname CD  #默认是空</div><div class="line">$particle <span class="keyword">set</span> chain X</div><div class="line">$particle <span class="keyword">set</span> resid <span class="number">1</span>     #默认是<span class="number">0</span></div><div class="line">$particle <span class="keyword">set</span> radius <span class="number">0.6</span></div><div class="line">$particle num # 输出particle中原子个数</div><div class="line">$particle delete</div></pre></td></tr></table></figure>
+<ol start="0">
+<li>atomselect有单独的编号<br>
+比如atomselect345，我们可以用编号atomselect345来调用它;它的各种信息都可以输出出来。</li>
+<li>atomselect macro<br>
+macro指的就是那些charged、acidic、amino之类的，比如<code>atomselect charged</code>会选择体系中带电荷的原子。蛋白质体系容易用到，聚合物体系不容易用到。<br>
+atomselect macro 显示所有macro</li>
+<li>atomselect keywords<br>
+<code>atomselect 3 &quot;resid 25&quot; frame last</code> 选择molid为3、最后一帧的resid 25。molid可以是数字或者top，所选内容就是普通的selection，用双引号或者{}括住，帧号可以是数字、first、last、now。<br>
+atomselect list会列出所有的atomselect</li>
+<li>index<br>
+除了上文中<code>set particle [atomselect 0 &quot;index&lt;13000&quot;]</code>的筛选方法，index选择原子时还支持多种筛选方式：
+<ul>
+<li>“(index&gt;100 &amp;&amp; index&lt;200) || index = 66”</li>
+<li>“index 1 3 5”</li>
+<li><code>&quot;index = [ expr 250 * $i ]&quot;</code> # index 支持expr表达式求值，<code>i</code>为自定义变量</li>
+</ul>
+</li>
+</ol>
+<h3 id="script-syntax">Script Syntax<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h3>
+<h4 id="0-注释">0. 注释</h4>
+<blockquote>
+<p>TCL中的注释符是’＃’，’＃’和直到所在行结尾的所有字符都被TCL看作注释，TCL解释器对注释将不作任何处理。不过，要注意的是，’＃’必须出现在TCL解释器期望命令的第一个字符出现的地方，才被当作注释。</p>
+</blockquote>
+<p>例如：<br>
+%＃This is a comment<br>
+%set a 100 # Not a comment<br>
+%set b 101 ; # this is a comment</p>
+<h4 id="1-for语句">1. for语句</h4>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">for</span> &#123;<span class="keyword">set</span> i <span class="number">0</span>&#125; &#123;$i &lt; [<span class="keyword">llength</span> $list]&#125; &#123;<span class="keyword">incr</span> i&#125;</div></pre></td></tr></table></figure>
+<h4 id="2-list">2. list</h4>
+<p><code>set list { Opaque Transparent ... }</code><br>
+<code>[llength $list] # get index</code><br>
+<code>[lindex $list $i] # reference the list</code></p>
+<h4 id="3-measure">3. measure</h4>
+<p>measure的功能非常多，从相对简单的求质心、几何中心、均方回转半径、RDF（vmd中叫gofr）、rmsd和rmsf(RMS fluctuation)，到比较专业的<strong>氢键分析、sasa</strong>（solvent-accessible surface area）等。<br>
+全部功能见图：<a href="https://res.cloudinary.com/do7yb5qw4/image/upload/v1506587376/%E6%9D%82/vmd_measure.jpg" target="_blank" rel="external">https://res.cloudinary.com/do7yb5qw4/image/upload/v1506587376/杂/vmd_measure.jpg</a></p>
+<ul>
+<li>measure center $sel</li>
+<li>measure minmax $sel</li>
+<li><code>measure bond { index_1 index_2}</code>
+<ul>
+<li>GUI下<br>
+Mouse &gt; Label &gt; Bonds， 或是在激活3D 窗口的条件下按2<br>
+鼠标形状会变成+，然后依次点击2个原子即可，<br>
+Graphics &gt; Label 可以进行更多的操作</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-xyz-coordinate-is-storaged-as-list">4. xyz(coordinate) is storaged as list!</h4>
+<p>When you  get multiple atom attributes (in this case, x, y, and z), the result is always returned as a nested list, even if that list contains only one element.<br>
+As somebody may think the code below is very intuitive:</p>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span> sel [atomselect <span class="number">0</span> <span class="string">"index = 250"</span>]</div><div class="line">graphics top text [ $sel get &#123;x y z&#125; ] <span class="string">"words i want to say"</span></div></pre></td></tr></table></figure>
+<p>However, <code>$sel get {x y z} ]</code> is actually a <strong>list</strong>, but there need a vector.<br>
+It’s like you give：</p>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">graphics top text &#123; &#123;<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>&#125; &#125; <span class="string">"words i want to say"</span></div></pre></td></tr></table></figure>
+<p>But actually we need:</p>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">graphics top text &#123;<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>&#125; <span class="string">"words i want to say"</span></div></pre></td></tr></table></figure>
+<p>The solution is ugly:</p>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">foreach</span> coor [ $sel get &#123;x y z&#125; ] &#123;</div><div class="line">  graphics top text $coor <span class="string">"words i want to say"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Beside that, coordiante should be used like below:<br>
+<code>graphics top text [list $x $y $z] &quot;words i want to say&quot;</code><br>
+<a href="http://www.ks.uiuc.edu/Research/vmd/mailing_list/vmd-l/17294.html" target="_blank" rel="external">source: vmd mailing list</a></p>
+<h4 id="5-get-one-coor-of-three-only-one-element-in-pxyz">5. get one coor of three(only one element in pxyz)</h4>
+   <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span> pxyz [atomselect top <span class="string">"index = [ expr 250 * $i ]"</span> ]</div><div class="line"><span class="keyword">set</span> px [$pxyz get x]</div></pre></td></tr></table></figure>
+<h2 id="存高质量图片">存高质量图片<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></h2>
+<ul>
+<li>render TachyonInternal name.tga<br>
+convert name.tga name.png<br>
+这样得到的图片效果有限<br>
+<mark>尝试了各种方法，似乎tga转换png的质量不能控制</mark><br>
+<mark>要想得到高质量的图片，方法如下</mark></li>
+<li>File-&gt;render(这里有三行)
+<ul>
+<li>(第一行选择)Tachyon</li>
+<li>(第三行加上，设置分辨率) -res 1024 1024<br>
+res代表resolution，设为1024*1024时，tga大小为3.1M，png大小为680K</li>
+<li>最后convert vmdscene.tga vmdscene.png（转成jpg格式也可以）</li>
+<li>ambient occlusion（AO,环境光遮蔽）效果会很好</li>
+</ul>
+</li>
+<li>script:<br>
+render Tachyon <mark>vmdscene.dat</mark> “/usr/local/lib/vmd/tachyon_LINUXAMD64” -aasamples 12 %s -format TARGA <mark>-res 1024 1024</mark> -o %s.tga</li>
+<li><strong>culling</strong>
+<blockquote>
+<p>culling actually reduces performance on some hardware renderers<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+</blockquote>
+</li>
+<li><strong>Depth Cueing</strong>
+<blockquote>
+<p>Depth cueing causes distant objects to blend into the background color, in order to aid in 3-D depth perception</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="存动画">存动画</h2>
+<p>（1）进入  Extensions -&gt; Visualization -&gt; Movie Maker<br>
+（2）Render -&gt; Tachyon<br>
+（3）Movie Settings -&gt; Trajectory<br>
+（4）Format -&gt; Animated GIF</p>
+<h2 id="color-scale-颜色梯度">color scale【颜色梯度】</h2>
+<h3 id="trajectory-with-color-gradient">trajectory with color gradient</h3>
+<ol>
+<li>load a trajectory <!-- (e.g. oneNPmovie.tcl)--></li>
+<li>设置颜色随frame变化<br>
+Graphical -&gt; Representations -&gt; Draw style -&gt; Coloring method -&gt; Timestep<br>
+Graphical -&gt; Representations -&gt; Trajectory -&gt; 选择&quot;update color every frame&quot;; 修改&quot;Color Scale Data Range&quot;</li>
+<li>设置Color Scale Bar<br>
+Extensions -&gt; Visuilizition -&gt; Color Scale Bar</li>
+<li>选择颜色<br>
+Graphical -&gt; Colors -&gt; Color Scale -&gt; 这个设置还可以以&quot;RWB(Read Whie Blue) Offset -0.09, Midpoint 0.5 &quot;</li>
+</ol>
+<h3 id="frame-with-color-gradient">frame with color gradient</h3>
+<ol>
+<li>load a frame</li>
+<li>设置颜色随index变化<br>
+Graphical -&gt; Representations -&gt; Draw style -&gt; Coloring method -&gt; index<br>
+Graphical -&gt; Representations -&gt; Trajectory -&gt; “Color Scale Data Range 0 ~ total_monomer_number”</li>
+<li>设置Color Scale Bar和选择颜色与上面&quot;trajectory with color gradient&quot;相同</li>
+</ol>
+<h2 id="其他">其他</h2>
+<ul>
+<li>
+<p><s>compound（<strong>似乎没什么用</strong>）</s><br>
+只用于pbc中<br>
+supported compound types: segment, residue, chain, fragment, connected</p>
+</li>
+<li>
+<p>问题</p>
+<ol>
+<li>pbc join<br>
+pbc join res -border 5 -sel “resname 0&quot;好使，但不明白为什么？<br>
+但是注意，resname一个不存在的名字，比如&quot;resname 1000000”，也不会报错。<br>
+pbc join res -sel尝试了各种办法也没有成功<br>
+最后解决：还是在xml文件中删除多余的bond和angle，就是join的时候很慢，要等很久。</li>
+</ol>
+</li>
+<li>
+<p>vmd有很多功能，如：</p>
+<ol>
+<li>VMD extensions: membrane builder</li>
+<li>Molecular Surface Representations</li>
+</ol>
+</li>
+<li>
+<p>对vmd脚本的感觉<br>
+优点：vmd本身功能非常多，使用者多。<br>
+缺点：以tcl为基础的vmd脚本，坑很多，体现了很多动态弱类型语言的缺点。</p>
+</li>
+</ul>
+<h2 id="reference">reference</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.ks.uiuc.edu/Research/vmd/" target="_blank" rel="external">VMD官网</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/index.html" target="_blank" rel="external">VMD Tutorial</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="http://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/node4.html" target="_blank" rel="external">VMD Tutorial: Scripting in VMD</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://ourphysics.org/wiki/index.php/How_to_make_images_for_publication_using_VMD" target="_blank" rel="external">非常好的效果的vmd作图</a><br>
+<mark>NOTE</mark>：该CBMSG网站还有很多有用的教程和资源（Computational Biophysics and Materials Science Group） <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="http://www.ks.uiuc.edu/Research/vmd/vmd-1.8.7/ug/node43.html" target="_blank" rel="external">manual culling</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是VMD？&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.ks.uiuc.edu/Gallery/Science-New/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VMD官网的图片示例展览&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;本文定位&lt;/strong&gt;：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本，GUI因为比较简单，讨论的较少。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="画图" scheme="http://yoursite.com/tags/%E7%94%BB%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何快速的向Word格式的硕士/博士论文中，添加引用文献？</title>
+    <link href="http://yoursite.com/2017/09/24/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/09/24/Word格式论文中添加引用/</id>
+    <published>2017-09-24T10:00:00.000Z</published>
+    <updated>2017-09-29T02:21:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的<strong>bib文件</strong>，向Word中添加引用文献。该方法有几个好处:</p>
+<ol>
+<li>几乎所有文献引用在.bib文件中都是现成的，不用再重新下载引用</li>
+<li>latex中采用的bibtex key（“@article{paper_name,”中paper_name即为bibtex key）可以直接用到Word中。</li>
+<li>不用跳转到EndNote等其他软件</li>
+</ol>
+<a id="more"></a>
+<p>必要软件bibtex4word的安装请参考：<br>
+<a href="https://wenku.baidu.com/view/4bb336d3b14e852458fb576d.html" target="_blank" rel="external">用Bibtex4Word实现Word写作时参考文献的插入和排版</a><br>
+多数高校一般都要求采用《GB/T 7714-2005 文后参考文献著录规则》作为毕业论文的引文规则，上面连接中给出的下载已经不可用了，戳这里可以找到<a href="http://blog.sina.com.cn/s/blog_7139ed830102vi6y.html" target="_blank" rel="external">下载</a></p>
+<p>至此，软件的准备工作就完成了。我们将我们几篇Paper中用到的.bib文件合并到一起（如果有少量重复的引用，手动删除就可以；重复引用较多的话，可以用bib文件管理软件删除，比如我用的JabRef），就可以愉快的插入文献啦。插入方法很简单，见Bibtex4Word的介绍。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的&lt;strong&gt;bib文件&lt;/strong&gt;，向Word中添加引用文献。该方法有几个好处:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;几乎所有文献引用在.bib文件中都是现成的，不用再重新下载引用&lt;/li&gt;
+&lt;li&gt;latex中采用的bibtex key（“@article{paper_name,”中paper_name即为bibtex key）可以直接用到Word中。&lt;/li&gt;
+&lt;li&gt;不用跳转到EndNote等其他软件&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="word" scheme="http://yoursite.com/tags/word/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专利申请</title>
     <link href="http://yoursite.com/2017/09/07/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
     <id>http://yoursite.com/2017/09/07/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
-    <updated>2017-09-07T09:41:25.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
 <a id="more"></a>
@@ -80,11 +446,11 @@
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;All about Digital Currency &lt;/b&gt;&lt;/font&gt;</title>
+    <title>All about Digital Currency</title>
     <link href="http://yoursite.com/2017/08/30/digital_currency/"/>
     <id>http://yoursite.com/2017/08/30/digital_currency/</id>
     <published>2017-08-30T10:00:00.000Z</published>
-    <updated>2017-09-07T06:47:07.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>all about block chain</p>
 <h1 id="info-source">Info source</h1>
@@ -142,11 +508,11 @@
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;gnuplot笔记（上）&lt;/b&gt;&lt;/font&gt;</title>
+    <title>gnuplot笔记（上）</title>
     <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
     <id>http://yoursite.com/2017/08/16/gnuplot笔记上/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
 <a id="more"></a>
@@ -337,11 +703,11 @@ Three binary operators require string operands: the string concatenation operato
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;gnuplot笔记（下）&lt;/b&gt;&lt;/font&gt;</title>
+    <title>gnuplot笔记（下）</title>
     <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://yoursite.com/2017/08/16/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -557,11 +923,11 @@ The eps file doesn’t get written until a plot command is specified after speci
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;vim笔记 &lt;/b&gt;&lt;/font&gt;</title>
+    <title>vim笔记</title>
     <link href="http://yoursite.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/08/01/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -655,7 +1021,7 @@ m/r – 折叠/打开</li>
 </li>
 </ul>
 <h2 id="vimrc">vimrc</h2>
-<h4 id="plugin">Plugin</h4>
+<h3 id="plugin">Plugin</h3>
 <ul>
 <li>auto-pairs<br>
 github readme里，有括号包裹单词这个功能，但我尝试多次也没有使用成功。<br>
@@ -667,7 +1033,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 有用的命令：c <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:Toc</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="youcompleteme">YouCompleteMe</h4>
+<h3 id="youcompleteme">YouCompleteMe</h3>
 <ul>
 <li>
 <p>需要进入bundle文件夹进行编译</p>
@@ -685,7 +1051,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 <p>这样evince启动时，就不会去anaconda的路径里面找库了。</p>
 </li>
 </ul>
-<h4 id="cmd">cmd</h4>
+<h3 id="cmd">cmd</h3>
 <ul>
 <li>颜色<br>
 .vim/colors/中放置配置文件<br>
@@ -713,11 +1079,11 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;linux常用命令记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <title>linux常用命令记录</title>
     <link href="http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2017/07/31/linux常用命令记录/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:19:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -1130,11 +1496,16 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 在指定(export)行前面后行<br>
 <code>sed '/export/a xxx' file</code>或<code>sed '/export/a \xxx' file</code></p>
 </li>
-</ol>
-<p>9.单引号的转义<br>
+<li>
+<p>单引号的转义<br>
 <code>'\''</code><br>
 <code>sed 's/'\''//g'</code># 将单引号替换为空格</p>
-<ol start="11">
+</li>
+<li>
+<p>匹配空行<br>
+正常匹配空行是<code>^$</code>；但是对于从windows拷贝过来的文件，要用<code>^.$</code>匹配<br>
+而vim（版本8.0）内置的sed，不论文件来自哪种系统，都可以用<code>^$</code>匹配</p>
+</li>
 <li>
 <p>指定行添加内容<br>
 <code>sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt</code></p>
@@ -1146,6 +1517,10 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 <li>
 <p><code>sed -i</code>会使软链接失效<br>
 <code>--follow-symlinks</code>可以保持软连接</p>
+</li>
+<li>
+<p>同时取代多个字符串<br>
+<code>sed -e 's/str1//;s/str2//' filename</code></p>
 </li>
 </ol>
 <h2 id="sort命令">sort命令</h2>
@@ -1287,11 +1662,11 @@ Because blank space is usually used as the separater of command or agruments.<br
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</title>
+    <title>人工智能简介</title>
     <link href="http://yoursite.com/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
     <id>http://yoursite.com/2017/07/28/人工智能简介/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -1454,11 +1829,11 @@ attention、GAN&lt;/li&gt;
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;python mechanism &lt;/b&gt;&lt;/font&gt;</title>
+    <title>python mechanism</title>
     <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
     <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]</p>
 <h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
@@ -1575,11 +1950,115 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;git笔记 &lt;/b&gt;&lt;/font&gt;</title>
+    <title>shadownsocks备忘</title>
+    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-09-29T02:08:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
+<ul>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
+</ul>
+<a id="more"></a>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
+    
+    
+      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Story of Terminal</title>
+    <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
+    <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-09-29T02:08:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
+<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
+本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
+<ul>
+<li>ctrl+h的编码<br>
+<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
+而ctrl+h的值也为010。<br>
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>F1键<br>
+terminal类型的选择也会影响快捷键。<br>
+Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="问题：">问题：</h2>
+<p>为什么BS无法删除，而是想左移动？<br>
+为什么在执行程序进行输入时，按下BS显示的是^H?</p>
+<h2 id="答案">答案</h2>
+<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
+<p>Terminal</p>
+<ul>
+<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
+<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
+<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
+<blockquote>
+<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
+&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
+本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ctrl+h的编码&lt;br&gt;
+&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
+而ctrl+h的值也为010。&lt;br&gt;
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git笔记</title>
     <link href="http://yoursite.com/2017/07/26/git/"/>
     <id>http://yoursite.com/2017/07/26/git/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -1878,11 +2357,11 @@ but not:<br>
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;hdf5简介 &lt;/b&gt;&lt;/font&gt;</title>
+    <title>hdf5简介</title>
     <link href="http://yoursite.com/2017/07/26/hdf5/"/>
     <id>http://yoursite.com/2017/07/26/hdf5/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -1949,115 +2428,11 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;shadownsocks备忘 &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;Story of Terminal &lt;/b&gt;&lt;/font&gt;</title>
-    <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
-    <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-09-07T06:23:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
-<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
-本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
-<ul>
-<li>ctrl+h的编码<br>
-<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
-而ctrl+h的值也为010。<br>
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>F1键<br>
-terminal类型的选择也会影响快捷键。<br>
-Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
-</ul>
-<h2 id="问题：">问题：</h2>
-<p>为什么BS无法删除，而是想左移动？<br>
-为什么在执行程序进行输入时，按下BS显示的是^H?</p>
-<h2 id="答案">答案</h2>
-<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
-<p>Terminal</p>
-<ul>
-<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
-<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
-<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
-<blockquote>
-<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
-&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
-本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ctrl+h的编码&lt;br&gt;
-&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
-而ctrl+h的值也为010。&lt;br&gt;
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;markdown in hexo-render-markdown-it &lt;/b&gt;&lt;/font&gt;</title>
+    <title>markdown in hexo-render-markdown-it</title>
     <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
     <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-09-07T06:32:29.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>The implementation of Markdown in different software are always different here or there.<br>
 To testify the implementation of hexo, syntax page of <strong>Mou</strong> is pasted in here for comparison.<br>
@@ -2279,11 +2654,11 @@ so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;阿里云邮箱设置记录 &lt;/b&gt;&lt;/font&gt;</title>
+    <title>阿里云邮箱设置记录</title>
     <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
     <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:08:31.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="正文">正文</h1>
 <ol start="0">
@@ -2375,11 +2750,11 @@ ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&q
   </entry>
   
   <entry>
-    <title>&lt;font size=7&gt;&lt;b&gt;hexo &lt;/b&gt;&lt;/font&gt;</title>
+    <title>hexo</title>
     <link href="http://yoursite.com/2017/07/21/hexo/"/>
     <id>http://yoursite.com/2017/07/21/hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
-    <updated>2017-08-23T08:20:41.000Z</updated>
+    <updated>2017-09-29T02:17:14.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="memo">memo</h1>
 <ul>
@@ -2421,14 +2796,12 @@ Fix error to ensure “all article” works normally.</li>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> HEXO=<span class="string">'/Users/Aether/Documents/hexo_file'</span></div><div class="line"><span class="built_in">export</span> HEXOMD=<span class="string">'/Users/Aether/Documents/hexo_file/source/_posts/'</span></div><div class="line"><span class="built_in">alias</span> hexod=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo deploy'</span></div><div class="line"><span class="built_in">alias</span> hexol=<span class="string">'cd $HEXOMD &amp;&amp; sh tackle_md.sh &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'</span></div></pre></td></tr></table></figure>
 </li>
 <li>
-<p><code>tackle_md.sh</code>自动调整缩进、设置部分显示、修改文章标题大小(for next theme)</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">sh indent.sh</div><div class="line">sh read_more.sh</div><div class="line"><span class="keyword">for</span> mdfile <span class="keyword">in</span> $(ls *.md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    awk -f ./title_size.awk <span class="variable">$mdfile</span> &gt; /tmp/<span class="variable">$mdfile</span> &amp;&amp; mv /tmp/<span class="variable">$mdfile</span>  <span class="variable">$mdfile</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p><code>tackle_md.sh</code>自动调整缩进、设置部分显示(for next theme)</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line">sh indent.sh</div><div class="line">sh read_more.sh</div></pre></td></tr></table></figure>
 <p>其中，<code>indent.sh</code>:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># indent for code block</span></div><div class="line">sed -i <span class="string">'s/^```[a-z]/   &amp;/g'</span> *.md</div><div class="line"><span class="comment"># indent for quote</span></div><div class="line">sed -i <span class="string">'s/^&gt;/   &amp;/g'</span> *.md</div></pre></td></tr></table></figure>
 <p><code>read_more.sh</code>:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># if no "&lt;!-- more --&gt;" in *.md file, adding it into the file.</span></div><div class="line"><span class="keyword">for</span> md_file <span class="keyword">in</span> $(ls *md)</div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="built_in">stat</span>=$(grep <span class="string">"&lt;!-- more --&gt;"</span> <span class="variable">$md_file</span>)</div><div class="line">    <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$stat</span>"</span> ];<span class="keyword">then</span></div><div class="line">        sed -i <span class="string">'20a &lt;!-- more --&gt;'</span> <span class="variable">$md_file</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<p><code>title_size.awk</code>:</p>
- <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="regexp">/^title:/</span>&amp;&amp;!<span class="regexp">/font/</span>) &#123;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=NF;++i) &#123;</div><div class="line">            printf <span class="variable">$i</span><span class="string">" "</span>;</div><div class="line">            <span class="keyword">if</span>(i==<span class="number">1</span>)</div><div class="line">                printf <span class="string">" &lt;font size=6&gt;&lt;b&gt;"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==NF)</div><div class="line">                printf <span class="string">"&lt;/b&gt;&lt;/font&gt;\n"</span> ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        print <span class="variable">$0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="yilia-theme">yilia theme</h2>
@@ -2458,9 +2831,11 @@ Fix error to ensure “all article” works normally.</li>
 目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为<code>zhihu: bed</code></p>
 </li>
 <li>
-<p>设置文章标题的格式<br>
-直接用html就可以<br>
-<code>title: &lt;font size=6&gt;&lt;b&gt;人工智能简介&lt;/b&gt;&lt;/font&gt;</code></p>
+<p>设置文章标题的格式<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup><br>
+<s>直接用html就可以</s><br>
+<s><code>title: &lt;font size=6&gt;&lt;b&gt;人工智能简介</code></s><br>
+next themes的配置文件在<code>themes/next/source/css/_variables/custom.styl</code></p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$font</span>-size-headings-base  = 28px</div><div class="line"><span class="variable">$font</span>-size-headings-step  = 2px</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="hexo-bug">hexo bug</h2>
@@ -2492,6 +2867,8 @@ Fix error to ensure “all article” works normally.</li>
 <li id="fn3" class="footnote-item"><p><a href="http://www.ezlippi.com/blog/2017/02/hexo-search.html" target="_blank" rel="external">参考：Hexo博客添加站内搜索</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn4" class="footnote-item"><p><a href="http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95" target="_blank" rel="external">Next-常见问题</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="http://prozhuchen.com/2015/10/05/Hexo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%94%B9%E5%AD%97%E4%BD%93/" target="_blank" rel="external">set title size</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
