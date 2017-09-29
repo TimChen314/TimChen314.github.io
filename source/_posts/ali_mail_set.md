@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>阿里云邮箱设置记录 </b></font>
+title:  阿里云邮箱设置记录 
 tags: [技术杂烩,邮箱设置]
 categories: 技术杂烩
 date: 2017-07-21 18:00:00

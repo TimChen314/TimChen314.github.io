@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>vim笔记 </b></font>
+title:  vim笔记 
 tags: [vim]   
 top: 11
 categories: vim   
@@ -99,7 +99,7 @@ m/r -- 折叠/打开
 ```
 
 ## vimrc
-#### Plugin
+### Plugin
 
 + auto-pairs 
 github readme里，有括号包裹单词这个功能，但我尝试多次也没有使用成功。
@@ -113,7 +113,7 @@ https://github.com/plasticboy/vim-markdown
 :Toc
 ```
 
-#### YouCompleteMe 
+### YouCompleteMe 
 + 需要进入bundle文件夹进行编译
 + 错误`YouCompleteMe unavailable: requires Vim compiled with Python (2.6+ or 3.3+) support`
 明明安装VIM时已经选择支持python3了，为什么还会报错？而且：
@@ -135,14 +135,16 @@ alias evince='LD_LIBRARY_PATH="" evince'
 ```
    这样evince启动时，就不会去anaconda的路径里面找库了。
 
-#### cmd
+### cmd
 + 颜色
 .vim/colors/中放置配置文件
 :colo 查看当前颜色
 + noremap：绑定键的时候，不迭代绑定
 五中模式代号：nvoic
 
-## reference
+
+## reference 
+
 [vim tutorial](https://danielmiessler.com/study/vim/#why)
 [超过130个你需要了解的vim命令](http://developer.51cto.com/art/201308/406941.htm) 【好】
 [vim map nmap](http://www.cnblogs.com/lq0729/archive/2011/12/24/2300189.html)【非常好，介绍vimrc的一些基本命令】

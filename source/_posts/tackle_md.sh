@@ -9,13 +9,16 @@
 sh indent.sh
 sh read_more.sh
 
-# change title size
-for mdfile in $(ls *.md)
-do
-    state=$(grep "^title: " $mdfile | grep "font size")
-    # if title size has not been set, then add title size
-    if [ -z "$state" ];then
-        awk -f ./title_size.awk $mdfile > /tmp/$mdfile && mv /tmp/$mdfile  $mdfile
-    fi
-done
+#for mdfile in $(ls *.md)
+#do
+#### change title size. Since I find that title size can be setted at file themes/next/source/css/_variables/custom.styl, this part is abandoned.
+#    state=$(grep "^title: " $mdfile | grep "font size")
+#    # if title size has not been set, then add title size
+#    if [ -z "$state" ];then
+#        awk -f ./title_size.awk $mdfile > /tmp/$mdfile && mv /tmp/$mdfile  $mdfile
+#    fi
+#
+#### remove manual title size setting
+#   sed -ie 's/<font size=7><b>//;s/<\/b><\/font>//' $mdfile
+#done
 

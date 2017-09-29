@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>Story of Terminal </b></font>
+title:  Story of Terminal 
 tags: [linux,编码,Terminal]   
 top: 5
 categories: linux   

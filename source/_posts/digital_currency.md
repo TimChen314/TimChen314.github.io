@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>All about Digital Currency </b></font>
+title:  All about Digital Currency 
 tags: [block chain]
 categories: block chain
 date: 2017-08-30 18:00:00

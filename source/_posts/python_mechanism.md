@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>python mechanism </b></font>
+title:  python mechanism 
 tags: [python]   
 top: 10
 categories: python   

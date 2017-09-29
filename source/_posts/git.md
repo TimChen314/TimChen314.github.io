@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>git笔记 </b></font>
+title:  git笔记 
 tags: [git]   
 top: 5
 categories: git   

@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>hexo </b></font>
+title:  hexo 
 tags: [hexo,yilia]
 categories: hexo
 date: 2017-07-21 18:00:00
@@ -47,16 +47,12 @@ alias hexod='cd $HEXOMD && sh tackle_md.sh && hexo clean && hexo g && hexo deplo
 alias hexol='cd $HEXOMD && sh tackle_md.sh && hexo clean && hexo g && hexo s'
 ```
 
-+ `tackle_md.sh`自动调整缩进、设置部分显示、修改文章标题大小(for next theme)
++ `tackle_md.sh`自动调整缩进、设置部分显示(for next theme)
    ```bash
 #!/bin/sh
 
 sh indent.sh
 sh read_more.sh
-for mdfile in $(ls *.md)
-do
-    awk -f ./title_size.awk $mdfile > /tmp/$mdfile && mv /tmp/$mdfile  $mdfile
-done
 ```
    其中，`indent.sh`:
    ```bash
@@ -79,24 +75,6 @@ do
     fi
 done
 ```
-   `title_size.awk`:
-   ```awk
-#!/usr/bin/awk -f
-{
-    if(/^title:/&&!/font/) {
-        for(i=1;i<=NF;++i) {
-            printf $i" ";
-            if(i==1)
-                printf " <font size=6><b>";
-            else if(i==NF)
-                printf "</b></font>\n" ;
-        }
-    }
-    else
-        print $0;
-}
-```
-
 
 ## yilia theme
 + image file path
@@ -122,9 +100,14 @@ npm install --save hexo-generator-tag
 + 设置social\_icons
 `next`是通过[FontAwesome](http://fontawesome.io/cheatsheet/)进行图标设计的，FA支持的图标都在主页上。
 目前FA不支持知乎，所以随便选了个fa-bed作为icons。设置中写为`  zhihu: bed`
-+ 设置文章标题的格式
-直接用html就可以
-`title: <font size=6><b>人工智能简介</b></font>`
++ 设置文章标题的格式[^5]
+~~直接用html就可以~~
+~~`title: <font size=6><b>人工智能简介`~~
+next themes的配置文件在`themes/next/source/css/_variables/custom.styl`
+   ```sh
+$font-size-headings-base  = 28px
+$font-size-headings-step  = 2px
+```
 
 ## hexo bug
 + ``Error: Cannot find module './build/Release/DTraceProviderBindings'`` in OS X 
@@ -145,3 +128,4 @@ npm install --save hexo-generator-tag
 [^2]: [Next-常见问题](http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95)
 [^3]: [参考：Hexo博客添加站内搜索](http://www.ezlippi.com/blog/2017/02/hexo-search.html)
 [^4]: [Hexo Configuration](http://jiaxm.me/2017-07-day/Hexo%20Configuration/#more)
+[^5]: [set title size](http://prozhuchen.com/2015/10/05/Hexo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%94%B9%E5%AD%97%E4%BD%93/)

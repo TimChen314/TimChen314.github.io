@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>linux常用命令记录 </b></font>
+title:  linux常用命令记录 
 tags: [linux]   
 top: 11
 categories: linux   
@@ -426,6 +426,9 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 
 13. `sed -i`会使软链接失效
 `--follow-symlinks`可以保持软连接
+
+14. 同时取代多个字符串
+`sed -e 's/str1//;s/str2//' filename`
 
 
 

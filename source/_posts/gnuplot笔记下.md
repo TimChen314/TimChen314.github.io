@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>gnuplot笔记（下）</b></font>
+title:  gnuplot笔记（下）
 tags: [画图,linux]   
 top: 11
 categories: linux   

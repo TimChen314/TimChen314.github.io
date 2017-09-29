@@ -1,5 +1,5 @@
 ---
-title:  <font size=7><b>shadownsocks备忘 </b></font>
+title:  shadownsocks备忘 
 tags: [shadownsocks]
 top: 0
 categories: shadownsocks
