@@ -8,8 +8,5 @@ type: "about"
 没有察觉到的事<br/>
 就会变成你的命运<br/>
  ——卡尔•荣格<br/>
-<br/>
-<br/>
-芳华绝代
 </font></center>
 

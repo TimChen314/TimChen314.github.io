@@ -62,7 +62,7 @@ Ctrl + 方向键右键    光标移动到后一个单词结尾
 `^oldstr^newstr`    替换前一次命令中字符串  
 同时head&tail: `ls | (head;tail)` 或者 `(head; tail) < file`
 
-### `!`系列命令
+### !系列命令
 - `!-n`， 重复执行倒数第 n 条命令，n 为正整数；
 - `!!`， 重复执行上一条命令。该命令等价于 !-1；!?str，重复执行最近一条包含字符串 str 的命令；
 - `!#`，引用当前的命令行，例如：`cp filename filename.bak` 可以写为 `cp filename !#:1.bak`
@@ -309,6 +309,8 @@ http://blog.csdn.net/stanjiang2010/article/details/5655143
 ##  grep命令：  
 - `-i`： 忽略大小写
 - `-v`： 不显示匹配的项
+- 同时匹配多个关键字: 
+`grep "str1\|str2"`
 
 ##   kill命令：  
 如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）

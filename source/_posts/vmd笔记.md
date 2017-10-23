@@ -9,7 +9,7 @@ date: 2017-09-29 18:00:00
    >VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting. 
 
 + [VMD官网的图片示例展览](http://www.ks.uiuc.edu/Gallery/Science-New/)
-+ **本文定位**：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本，GUI因为比较简单，讨论的较少。
++ **本文定位**：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本；图形界面(GUI)上的操作因为比较简单，讨论的较少。
 
 
 <!-- more -->
