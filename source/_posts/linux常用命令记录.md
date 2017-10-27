@@ -112,7 +112,7 @@ cd !$:h  # 即 cd /usr/share/fonts/truetype
 
 ### 参数的补全
 #### 引子
-我们用`which cmd`命令时，可能感觉到`which`后面的命令无法补全，很不方便，比如`which python3`就需要手动输入python3。因此我们不禁希望参数也可以用[tab]补全。
+我们用`which "command"`命令时，可能感觉到`which`后面的命令无法补全，很不方便，比如`which python3`就需要手动输入python3。因此我们不禁希望参数也可以用[tab]补全。
 实际上，linux是可以补全参数的。比如zsh就自带补全参数。最主流的bash经过设置，也是可以补全参数的。
 bash 中标准补全功能包含了[^2]：
 - 路径补全
@@ -122,12 +122,13 @@ bash 中标准补全功能包含了[^2]：
 - 主机名补全
 很多人比较熟悉的补全可能只有前两项。此外，我们还可以通过complete命令，自定义补全参数。
 以`which`为例，`$ complete -c which`，就可将所有命令作为`which`的参数进行补全了。
-complete具有强大的补全功能，更多设置可以参考：
-[^2]：[Linux 中 10 个有用的命令行补全例子](http://www.linuxidc.com/Linux/2015-09/123568.htm)
+complete具有强大的补全功能，更多设置可以参考[^2]。
+
+[^2]: [Linux 中 10 个有用的命令行补全例子](http://www.linuxidc.com/Linux/2015-09/123568.htm)
+
 #### complete
 - CentOS 7.3，在`/etc/bash_completion.d/`进行设置。
 - `-F`设定补全函数
-
 
 
 ### alt
