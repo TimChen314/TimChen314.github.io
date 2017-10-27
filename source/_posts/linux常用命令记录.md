@@ -110,6 +110,26 @@ cd !$:h  # 即 cd /usr/share/fonts/truetype
 `r|e`
 
 
+### 参数的补全
+#### 引子
+我们用`which cmd`命令时，可能感觉到`which`后面的命令无法补全，很不方便，比如`which python3`就需要手动输入python3。因此我们不禁希望参数也可以用[tab]补全。
+实际上，linux是可以补全参数的。比如zsh就自带补全参数。最主流的bash经过设置，也是可以补全参数的。
+bash 中标准补全功能包含了[^2]：
+- 路径补全
+- 文件名补全
+- 变量补全
+- 用户名补全
+- 主机名补全
+很多人比较熟悉的补全可能只有前两项。此外，我们还可以通过complete命令，自定义补全参数。
+以`which`为例，`$ complete -c which`，就可将所有命令作为`which`的参数进行补全了。
+complete具有强大的补全功能，更多设置可以参考：
+[^2]：[Linux 中 10 个有用的命令行补全例子](http://www.linuxidc.com/Linux/2015-09/123568.htm)
+#### complete
+- CentOS 7.3，在`/etc/bash_completion.d/`进行设置。
+- `-F`设定补全函数
+
+
+
 ### alt
 如果不是直接在终端上操作，alt键需要进行设置才能使用。**比如Xshell中，在“属性--键盘--将Alt键作为Meta仿真”打钩，才能使用；OS X上，无法用alt键。**PS：win键盘一般alt键当做Meta键；ALt GR：有些老键盘左边是Alt，右边是ALt GR键
 Alt+./Esc+. (!^ !$): 将最近一条命令的参数输出
@@ -370,6 +390,12 @@ kill -STOP 1234
 + ln source target
 + hard link
 hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。
++ **删除文件夹的软链接**
+例如mydir是一个文件夹的软链接，如果想删除软链接，我们一般的操作为，`rm my[tab]`以补全文件名，结果为：
+`rm mydir/`
+然而这样删除会提示：`rm: cannot remove ‘test’: Is a directory`。
+**这时候千万不能加上`-r`，如果加上，会把软链接的源文件删除掉！**
+正确删除文件夹软链接的命令为：`rm mydir`
 
 
 ##  mkdir命令：
@@ -438,7 +464,16 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 1. 按第二行排序
 `sort -n -k2 file`
 
-##  ssh
+## scp命令
+1. `scp`与软链接
+会把软链接的文件都拷贝过去！正确的拷贝方法为：
+```shell
+sudo tar -czvf test.tgz test
+scp ~/test.tgz 
+sudo tar -xzvf test.tgz -C .
+```
+
+##  ssh命令
 有的命令`source .bash_profile`
 例如：`sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy"$i" 192.9.207.204 "source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat"`
 
