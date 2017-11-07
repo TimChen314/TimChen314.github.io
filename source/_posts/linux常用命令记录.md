@@ -468,7 +468,7 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 ## scp命令
 1. `scp`与软链接
 会把软链接的文件都拷贝过去！正确的拷贝方法为：
-```shell
+   ```shell
 sudo tar -czvf test.tgz test
 scp ~/test.tgz 
 sudo tar -xzvf test.tgz -C .
