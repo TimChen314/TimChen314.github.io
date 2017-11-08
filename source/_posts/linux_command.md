@@ -23,7 +23,7 @@ date: 2017-07-31 18:00:00
   匹配x出现5到10次
 
 
-##  linux 一句话介绍命令：
+##  一句话介绍一个命令：
 + shell 内置
 `--`: a double dash (`--`) is used to signify the end of command options. 例如`ls -- -l`中会把`-l`当成文件名   
 `echo $((a%b)) `: 余数   
@@ -51,7 +51,7 @@ lsof:  `lsof -p 456,123` 列出进程456和123所有打开的文件。`lsof -i 6
 `env`: 输出所有环境变量   
 `ldd ./exe `:  给出链接的库   
 `systemctl start atd`: arch中用at，需要开启   
-`gimp`: 看图   
+`gimp`: 看图png,jpg,bmp都能看   
 `info & whatis `: they tell the information of a command; Note that in OS, info whatis will get "search database ......"   
 
 ## linux Command line
@@ -162,6 +162,15 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
 + terminal类型的选择也会影响快捷键
 Xshell中，文件--属性--键盘--功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以
 
+
+
+## 系统信息：
++ cpu information
+`cat /proc/cpuinfo `
++ 列出内核版本、主机名等信息
+`uname -a`
++ 发行版信息
+`cat /etc/redhat-release`
 
 ##  alias命令： 
 http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh

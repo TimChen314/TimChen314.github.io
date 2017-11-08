@@ -55,6 +55,7 @@ kompare的效果非常好。
 `git reset --hard HEAD^   `   
 `git reset --hard 3628164`   
 + reflog 查看历史命令
+与`git log`的区别：显示整个本地仓储的commit, 包括所有branch的commit, 甚至包括已经撤销的commit, 只要HEAD发生了变化, 就会在reflog里面看得到。 git log只包括当前分支的commit.
 + clone   
 git clone /path/to/repository    
 如果是远端服务器上的仓库，你的命令会是这个样子：   
@@ -136,9 +137,10 @@ $ `git checkout -- test.txt`
 
 ## rebase
 [git rebase 用法](http://blog.csdn.net/wangjia55/article/details/8776409)   
-[stackoverflow](https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort)
+[stackoverflow](https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort)   
+
 + git rebase --skip   
-+ git rebase --continue #use this when you solved conflicts.
++ git rebase --continue #use this when you solved conflicts.   
 + git rebase --abort #放弃当前rebase
 
 ## tag
