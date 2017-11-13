@@ -66,6 +66,10 @@ rotate x by/to 90
 source yourscript.tcl
 4. 不显示图形界面的执行脚本
 `sh$ vmd -dispdev none -e script.tcl`
+需要注意到的是，使用`-dispdev none`选项后，用`pbc`命令的脚本回报错：
+`invalid command name "pbc"`
+在脚本中添加下列命令即可解决该错误：
+`package require pbctools`
 
 ### mol   
 mol的用法帮助：如前面第0节所述，在console中输入mol并且不加参数，就会显示mol的用法。
