@@ -99,11 +99,11 @@
 <meta name="keywords" content="画图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vmd笔记">
-<meta property="og:url" content="http://yoursite.com/2017/09/29/vmd笔记/index.html">
+<meta property="og:url" content="http://timchen314.com/2017/09/29/vmd笔记/index.html">
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="什么是VMD？[1]  VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.    VMD官网的图片示例展览   本文定位：本文不适合作为入门教程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-29T02:22:20.000Z">
+<meta property="og:updated_time" content="2017-11-13T06:00:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vmd笔记">
 <meta name="twitter:description" content="什么是VMD？[1]  VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.    VMD官网的图片示例展览   本文定位：本文不适合作为入门教程">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/29/vmd笔记/"/>
+  <link rel="canonical" href="http://timchen314.com/2017/09/29/vmd笔记/"/>
 
 
 
@@ -313,7 +313,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/vmd笔记/">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/2017/09/29/vmd笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tim Chen">
@@ -421,7 +421,7 @@
 <p><a href="http://www.ks.uiuc.edu/Gallery/Science-New/" target="_blank" rel="external">VMD官网的图片示例展览</a></p>
 </li>
 <li>
-<p><strong>本文定位</strong>：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本，GUI因为比较简单，讨论的较少。</p>
+<p><strong>本文定位</strong>：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本；图形界面(GUI)上的操作因为比较简单，讨论的较少。</p>
 </li>
 </ul>
 <a id="more"></a>
@@ -498,7 +498,11 @@ rotate x by/to 90</p>
 <li>console中导入脚本<br>
 source yourscript.tcl</li>
 <li>不显示图形界面的执行脚本<br>
-<code>sh$ vmd -dispdev none -e script.tcl</code></li>
+<code>sh$ vmd -dispdev none -e script.tcl</code><br>
+需要注意到的是，使用<code>-dispdev none</code>选项后，用<code>pbc</code>命令的脚本回报错：<br>
+<code>invalid command name &quot;pbc&quot;</code><br>
+在脚本中添加下列命令即可解决该错误：<br>
+<code>package require pbctools</code></li>
 </ol>
 <h3 id="mol">mol</h3>
 <p>mol的用法帮助：如前面第0节所述，在console中输入mol并且不加参数，就会显示mol的用法。<br>
@@ -747,7 +751,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/09/29/vmd笔记/" title="vmd笔记">http://yoursite.com/2017/09/29/vmd笔记/</a>
+      <a href="http://timchen314.com/2017/09/29/vmd笔记/" title="vmd笔记">http://timchen314.com/2017/09/29/vmd笔记/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -785,6 +789,10 @@ pbc join res -sel尝试了各种办法也没有成功<br>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/02/python_notes/" rel="prev" title="python notes">
+                python notes <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -864,7 +872,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -886,7 +894,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1114,7 +1122,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/09/29/vmd笔记/';
+          this.page.url = 'http://timchen314.com/2017/09/29/vmd笔记/';
           this.page.identifier = '2017/09/29/vmd笔记/';
           this.page.title = 'vmd笔记';
         };

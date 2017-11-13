@@ -99,11 +99,11 @@
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux常用命令记录">
-<meta property="og:url" content="http://yoursite.com/2017/07/31/linux常用命令记录/index.html">
+<meta property="og:url" content="http://timchen314.com/2017/07/31/linux_command/index.html">
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-29T02:19:59.000Z">
+<meta property="og:updated_time" content="2017-11-08T07:08:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令记录">
 <meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/31/linux常用命令记录/"/>
+  <link rel="canonical" href="http://timchen314.com/2017/07/31/linux_command/"/>
 
 
 
@@ -313,7 +313,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/linux常用命令记录/">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/2017/07/31/linux_command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tim Chen">
@@ -383,9 +383,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/31/linux常用命令记录/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/31/linux_command/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/31/linux常用命令记录/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/31/linux_command/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,7 +424,7 @@
 匹配x或y<br>
 5.x{5,10}<br>
 匹配x出现5到10次</p>
-<h2 id="linux-一句话介绍命令：">linux 一句话介绍命令：</h2>
+<h2 id="一句话介绍一个命令：">一句话介绍一个命令：</h2>
 <ul>
 <li>
 <p>shell 内置<br>
@@ -458,7 +458,7 @@ lsof:  <code>lsof -p 456,123</code> 列出进程456和123所有打开的文件�
 <code>env</code>: 输出所有环境变量<br>
 <code>ldd ./exe</code>:  给出链接的库<br>
 <code>systemctl start atd</code>: arch中用at，需要开启<br>
-<code>gimp</code>: 看图<br>
+<code>gimp</code>: 看图png,jpg,bmp都能看<br>
 <code>info &amp; whatis</code>: they tell the information of a command; Note that in OS, info whatis will get “search database …”</p>
 </li>
 </ul>
@@ -469,7 +469,7 @@ Ctrl + 方向键左键    光标移动到前一个单词开头<br>
 Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
 <code>^oldstr^newstr</code>    替换前一次命令中字符串<br>
 同时head&amp;tail: <code>ls | (head;tail)</code> 或者 <code>(head; tail) &lt; file</code></p>
-<h3 id="系列命令"><code>!</code>系列命令</h3>
+<h3 id="系列命令">!系列命令</h3>
 <ul>
 <li>
 <p><code>!-n</code>， 重复执行倒数第 n 条命令，n 为正整数；</p>
@@ -531,6 +531,26 @@ Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
 <p>简单记忆：<br>
 <code>h|t</code><br>
 <code>r|e</code></p>
+<h3 id="参数的补全">参数的补全</h3>
+<h4 id="引子">引子</h4>
+<p>我们用<code>which &quot;command&quot;</code>命令时，可能感觉到<code>which</code>后面的命令无法补全，很不方便，比如<code>which python3</code>就需要手动输入python3。因此我们不禁希望参数也可以用[tab]补全。<br>
+实际上，linux是可以补全参数的。比如zsh就自带补全参数。最主流的bash经过设置，也是可以补全参数的。<br>
+bash 中标准补全功能包含了<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：</p>
+<ul>
+<li>路径补全</li>
+<li>文件名补全</li>
+<li>变量补全</li>
+<li>用户名补全</li>
+<li>主机名补全<br>
+很多人比较熟悉的补全可能只有前两项。此外，我们还可以通过complete命令，自定义补全参数。<br>
+以<code>which</code>为例，<code>$ complete -c which</code>，就可将所有命令作为<code>which</code>的参数进行补全了。<br>
+complete具有强大的补全功能，更多设置可以参考<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1]</a></sup>。</li>
+</ul>
+<h4 id="complete">complete</h4>
+<ul>
+<li>CentOS 7.3，在<code>/etc/bash_completion.d/</code>进行设置。</li>
+<li><code>-F</code>设定补全函数</li>
+</ul>
 <h3 id="alt">alt</h3>
 <p>如果不是直接在终端上操作，alt键需要进行设置才能使用。**比如Xshell中，在“属性–键盘–将Alt键作为Meta仿真”打钩，才能使用；OS X上，无法用alt键。**PS：win键盘一般alt键当做Meta键；ALt GR：有些老键盘左边是Alt，右边是ALt GR键<br>
 Alt+./Esc+. (!^ !$): 将最近一条命令的参数输出<br>
@@ -561,6 +581,15 @@ linux shell 快捷键:      <a href="http://blog.chinaunix.net/uid-361890-id-342
 terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
 <li>terminal类型的选择也会影响快捷键<br>
 Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="系统信息：">系统信息：</h2>
+<ul>
+<li>cpu information<br>
+<code>cat /proc/cpuinfo</code></li>
+<li>列出内核版本、主机名等信息<br>
+<code>uname -a</code></li>
+<li>发行版信息<br>
+<code>cat /etc/redhat-release</code></li>
 </ul>
 <h2 id="alias命令：">alias命令：</h2>
 <p><a href="http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh" target="_blank" rel="external">http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh</a></p>
@@ -714,6 +743,8 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 <ul>
 <li><code>-i</code>： 忽略大小写</li>
 <li><code>-v</code>： 不显示匹配的项</li>
+<li>同时匹配多个关键字:<br>
+<code>grep &quot;str1\|str2&quot;</code></li>
 </ul>
 <h2 id="kill命令：">kill命令：</h2>
 <p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
@@ -771,6 +802,12 @@ kill -STOP 1234<br>
 <li>ln source target</li>
 <li>hard link<br>
 hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。</li>
+<li><strong>删除文件夹的软链接</strong><br>
+例如mydir是一个文件夹的软链接，如果想删除软链接，我们一般的操作为，<code>rm my[tab]</code>以补全文件名，结果为：<br>
+<code>rm mydir/</code><br>
+然而这样删除会提示：<code>rm: cannot remove ‘test’: Is a directory</code>。<br>
+<strong>这时候千万不能加上<code>-r</code>，如果加上，会把软链接的源文件删除掉！</strong><br>
+正确删除文件夹软链接的命令为：<code>rm mydir</code></li>
 </ul>
 <h2 id="mkdir命令：">mkdir命令：</h2>
 <p>在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。</p>
@@ -853,7 +890,13 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 <li>按第二行排序<br>
 <code>sort -n -k2 file</code></li>
 </ol>
-<h2 id="ssh">ssh</h2>
+<h2 id="scp命令">scp命令</h2>
+<ol>
+<li><code>scp</code>与软链接<br>
+会把软链接的文件都拷贝过去！正确的拷贝方法为：<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo tar -czvf test.tgz test</div><div class="line">scp ~/test.tgz </div><div class="line">sudo tar -xzvf test.tgz -C .</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="ssh命令">ssh命令</h2>
 <p>有的命令<code>source .bash_profile</code><br>
 例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></p>
 <h2 id="su命令：">su命令：</h2>
@@ -913,7 +956,7 @@ shell 中的写法：<br>
 注意：“[”或“]”与表达式之间必须要有空格。</p>
 </li>
 <li>
-<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
 <code>[ ]</code>是shell built-in，而<code>[[ ]]</code>不属于POSIX；<br>
 <code>[ ]</code>会展开<code>a*</code>，所以用它的时候需要加双引号：<code>[ &quot;$var&quot; ]</code>；<code>[[ ]]</code>不需要<br>
 <code>[ ]</code>会fork a new process，<code>[[ ]]</code>不会</p>
@@ -966,7 +1009,9 @@ Because blank space is usually used as the separater of command or agruments.<br
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+<li id="fn1" class="footnote-item"><p><a href="http://www.linuxidc.com/Linux/2015-09/123568.htm" target="_blank" rel="external">Linux 中 10 个有用的命令行补全例子</a> <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref2" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -1014,7 +1059,7 @@ Because blank space is usually used as the separater of command or agruments.<br
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/07/31/linux常用命令记录/" title="linux常用命令记录">http://yoursite.com/2017/07/31/linux常用命令记录/</a>
+      <a href="http://timchen314.com/2017/07/31/linux_command/" title="linux常用命令记录">http://timchen314.com/2017/07/31/linux_command/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -1043,8 +1088,8 @@ Because blank space is usually used as the separater of command or agruments.<br
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/人工智能简介/" rel="next" title="人工智能简介">
-                <i class="fa fa-chevron-left"></i> 人工智能简介
+              <a href="/2017/07/28/python_mechanism/" rel="next" title="python mechanism">
+                <i class="fa fa-chevron-left"></i> python mechanism
               </a>
             
           </div>
@@ -1135,7 +1180,7 @@ Because blank space is usually used as the separater of command or agruments.<br
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1157,7 +1202,7 @@ Because blank space is usually used as the separater of command or agruments.<br
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1237,7 +1282,7 @@ Because blank space is usually used as the separater of command or agruments.<br
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-一句话介绍命令："><span class="nav-text">linux 一句话介绍命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-command-line"><span class="nav-text">linux Command line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系列命令"><span class="nav-text">!系列命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的子字符串"><span class="nav-text">参数的子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alt"><span class="nav-text">alt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部资源链接"><span class="nav-text">外部资源链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码-ctrl-h；终端-f1"><span class="nav-text">编码 ctrl+h；终端 F1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias命令："><span class="nav-text">alias命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at命令："><span class="nav-text">at命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awk命令："><span class="nav-text">awk命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bc命令："><span class="nav-text">bc命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert命令："><span class="nav-text">convert命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp命令："><span class="nav-text">cp命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut命令："><span class="nav-text">cut命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diff命令"><span class="nav-text">diff命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo命令："><span class="nav-text">echo命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gprof："><span class="nav-text">gprof：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep命令："><span class="nav-text">grep命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kill命令："><span class="nav-text">kill命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls命令："><span class="nav-text">ls命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看linux进程的执行文件路径"><span class="nav-text">查看linux进程的执行文件路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln"><span class="nav-text">ln</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir命令："><span class="nav-text">mkdir命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf命令："><span class="nav-text">printf命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps命令"><span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sed命令："><span class="nav-text">sed命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort命令"><span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh"><span class="nav-text">ssh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#su命令："><span class="nav-text">su命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time命令"><span class="nav-text">time命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#top命令："><span class="nav-text">top命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq命令"><span class="nav-text">uniq命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xargs命令-find命令："><span class="nav-text">xargs命令 & find命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum命令"><span class="nav-text">yum命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑表达式与-和-："><span class="nav-text">逻辑表达式与&&和||：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本注意事项："><span class="nav-text">脚本注意事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一句话介绍一个命令："><span class="nav-text">一句话介绍一个命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-command-line"><span class="nav-text">linux Command line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系列命令"><span class="nav-text">!系列命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的子字符串"><span class="nav-text">参数的子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的补全"><span class="nav-text">参数的补全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引子"><span class="nav-text">引子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#complete"><span class="nav-text">complete</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alt"><span class="nav-text">alt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部资源链接"><span class="nav-text">外部资源链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码-ctrl-h；终端-f1"><span class="nav-text">编码 ctrl+h；终端 F1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统信息："><span class="nav-text">系统信息：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias命令："><span class="nav-text">alias命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at命令："><span class="nav-text">at命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awk命令："><span class="nav-text">awk命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bc命令："><span class="nav-text">bc命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert命令："><span class="nav-text">convert命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp命令："><span class="nav-text">cp命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut命令："><span class="nav-text">cut命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diff命令"><span class="nav-text">diff命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo命令："><span class="nav-text">echo命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gprof："><span class="nav-text">gprof：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep命令："><span class="nav-text">grep命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kill命令："><span class="nav-text">kill命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls命令："><span class="nav-text">ls命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看linux进程的执行文件路径"><span class="nav-text">查看linux进程的执行文件路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln"><span class="nav-text">ln</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir命令："><span class="nav-text">mkdir命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf命令："><span class="nav-text">printf命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps命令"><span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sed命令："><span class="nav-text">sed命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort命令"><span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scp命令"><span class="nav-text">scp命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh命令"><span class="nav-text">ssh命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#su命令："><span class="nav-text">su命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time命令"><span class="nav-text">time命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#top命令："><span class="nav-text">top命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq命令"><span class="nav-text">uniq命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xargs命令-find命令："><span class="nav-text">xargs命令 & find命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum命令"><span class="nav-text">yum命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑表达式与-和-："><span class="nav-text">逻辑表达式与&&和||：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本注意事项："><span class="nav-text">脚本注意事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1385,8 +1430,8 @@ Because blank space is usually used as the separater of command or agruments.<br
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/31/linux常用命令记录/';
-          this.page.identifier = '2017/07/31/linux常用命令记录/';
+          this.page.url = 'http://timchen314.com/2017/07/31/linux_command/';
+          this.page.identifier = '2017/07/31/linux_command/';
           this.page.title = 'linux常用命令记录';
         };
         var d = document, s = d.createElement('script');

@@ -99,7 +99,7 @@
 <meta name="keywords" content="人工智能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能简介">
-<meta property="og:url" content="http://yoursite.com/2017/07/28/人工智能简介/index.html">
+<meta property="og:url" content="http://timchen314.com/2017/07/28/人工智能简介/index.html">
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）  Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN  神经网络简介">
 <meta property="og:locale" content="zh-Hans">
@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg">
-<meta property="og:updated_time" content="2017-09-29T02:08:31.000Z">
+<meta property="og:updated_time" content="2017-10-28T10:32:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能简介">
 <meta name="twitter:description" content="备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）  Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN  神经网络简介">
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/28/人工智能简介/"/>
+  <link rel="canonical" href="http://timchen314.com/2017/07/28/人工智能简介/"/>
 
 
 
@@ -318,7 +318,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/人工智能简介/">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/2017/07/28/人工智能简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tim Chen">
@@ -430,7 +430,7 @@ attention、GAN</li>
 <a id="more"></a>
 <p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
 <img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
-<h2 id="技术备忘">技术备忘</h2>
+<h2 id="技术特点和技巧的备忘">技术特点和技巧的备忘</h2>
 <ul>
 <li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
 <blockquote>
@@ -483,23 +483,52 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 </ul>
 <h2 id="名词概念">名词概念</h2>
 <ul>
-<li>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup></li>
-<li>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
-提升模型在测试集上的预测效果的主题叫做泛化</li>
-<li>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
-相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</li>
-<li>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
-更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</li>
-<li>DBN(深度信念网络)</li>
-<li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
+<li>
+<p>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup><br>
 【示意效果】<br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
-<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></p>
+</li>
+<li>
+<p>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
+更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</p>
+</li>
+<li>
+<p>curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
 <blockquote>
 <p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
 </blockquote>
 </li>
+<li>
+<p>DBN(深度信念网络)</p>
+</li>
+<li>
+<p>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
+提升模型在测试集上的预测效果的主题叫做泛化</p>
+</li>
+<li>
+<p>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup></p>
+</li>
+<li>
+<p>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
+相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</p>
+</li>
+<li>
+<p>schools of AI(译为学派)<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<ol>
+<li>符号主义(symbolicism)，又称为逻辑主义(logicism)、心理学派(psychologism)或计算机学派(computerism)，其原理主要为物理符号系统(即符号操作系统)假设和有限合理性原理。<strong>认为人工智能源于数理逻辑。</strong></li>
+<li>连接主义(connectionism)，又称为仿生学派(bionicsism)或生理学派(physiologism)，其主要原理为神经网络及神经网络间的连接机制与学习算法。<strong>认为人工智能源于仿生学，特别是对人脑模型的研究。</strong></li>
+<li>行为主义(actionism)，又称为进化主义(evolutionism)或控制论学派(cyberneticsism)，其原理为控制论及感知-动作型控制系统。<strong>认为人工智能源于控制论。(认为人工智能源于仿生学，特别是对人脑模型的研究。)</strong></li>
+</ol>
+</li>
+<li>
+<p>Training Set, Validation Set and Testing Set; Ground Truth</p>
+<blockquote>
+<p>验证数据用于最小化过拟合(overfitting)。<br>
+这数据不调整权重和偏差。在基于训练数据调整权重之后，如果基于训练数据的准确度增加了，而基于验证数据的准确度没有增加或反而下降了，则表明过拟合（overfitting）了，需要立即停止训练。<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
+</blockquote>
+</li>
 </ul>
+<p>Ground Truth: 正确标注的数据是Ground Truth， 错误的标记则不是。（也有人将所有标注数据都叫做Ground Truth）<sup class="footnote-ref"><a href="#fn7" id="fnref7:1">[7]</a></sup></p>
 <h1 id="nn">NN</h1>
 <h2 id="rnn">RNN</h2>
 <p><a href="https://zhuanlan.zhihu.com/p/24813287" target="_blank" rel="external">什么是 LSTM RNN</a><br>
@@ -509,9 +538,16 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 <p>待读<br>
 <a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="external">link</a><br>
 <a href="http://ycszen.github.io/2016/08/24/SGD%EF%BC%8CAdagrad%EF%BC%8CAdadelta%EF%BC%8CAdam%E7%AD%89%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%E5%92%8C%E6%AF%94%E8%BE%83/" target="_blank" rel="external">link</a></p>
+<h1 id="framework-software">framework &amp; software</h1>
+<h2 id="deepchem">Deepchem</h2>
+<p>Developed by Vijia Panda &amp; Schrodinger Company. <a href="https://deepchem.io" target="_blank" rel="external">deepcheem</a></p>
+<ul>
+<li><a href="https://deepchem.io/docs/notebooks/graph_convolutional_networks_for_tox21.html" target="_blank" rel="external">Modeling Small Molecule Toxicity with Graph Convolutions</a> (An Official Example)<br>
+刚看完<code>In [2]:</code>部分。</li>
+</ul>
 <h1 id="技术评论">技术评论</h1>
 <h2 id="技术成熟的条件">技术成熟的条件</h2>
-<h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></h3>
+<h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></h3>
 <blockquote>
 <ul>
 <li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
@@ -545,7 +581,11 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 </li>
 <li id="fn5" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref6" class="footnote-backref">↩</a></p>
+<li id="fn6" class="footnote-item"><p><a href="http://blog.csdn.net/u011531010/article/details/52935348" target="_blank" rel="external">人工智能学派简介</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a href="http://blog.csdn.net/myarrow/article/details/51504328" target="_blank" rel="external">Training Set, Validation Set 和Testing Set之间的差别及关系</a> <a href="#fnref7" class="footnote-backref">↩</a> <a href="#fnref7:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref8" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -593,7 +633,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/07/28/人工智能简介/" title="人工智能简介">http://yoursite.com/2017/07/28/人工智能简介/</a>
+      <a href="http://timchen314.com/2017/07/28/人工智能简介/" title="人工智能简介">http://timchen314.com/2017/07/28/人工智能简介/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -622,8 +662,8 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/python_mechanism/" rel="next" title="python mechanism">
-                <i class="fa fa-chevron-left"></i> python mechanism
+              <a href="/2017/07/26/hdf5/" rel="next" title="hdf5简介">
+                <i class="fa fa-chevron-left"></i> hdf5简介
               </a>
             
           </div>
@@ -632,8 +672,8 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/31/linux常用命令记录/" rel="prev" title="linux常用命令记录">
-                linux常用命令记录 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/28/python_mechanism/" rel="prev" title="python mechanism">
+                python mechanism <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -714,7 +754,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -736,7 +776,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -816,7 +856,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘"><span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小"><span class="nav-text">三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络简介"><span class="nav-text">神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术备忘"><span class="nav-text">技术备忘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史节点"><span class="nav-text">历史节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名词概念"><span class="nav-text">名词概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nn"><span class="nav-text">NN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn"><span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dnn"><span class="nav-text">DNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization"><span class="nav-text">optimization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术评论"><span class="nav-text">技术评论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术成熟的条件"><span class="nav-text">技术成熟的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#andrew-ng"><span class="nav-text">Andrew Ng[6]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读"><span class="nav-text">可读</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘"><span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小"><span class="nav-text">三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络简介"><span class="nav-text">神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术特点和技巧的备忘"><span class="nav-text">技术特点和技巧的备忘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史节点"><span class="nav-text">历史节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名词概念"><span class="nav-text">名词概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nn"><span class="nav-text">NN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn"><span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dnn"><span class="nav-text">DNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization"><span class="nav-text">optimization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#framework-software"><span class="nav-text">framework & software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deepchem"><span class="nav-text">Deepchem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术评论"><span class="nav-text">技术评论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术成熟的条件"><span class="nav-text">技术成熟的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#andrew-ng"><span class="nav-text">Andrew Ng[8]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读"><span class="nav-text">可读</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -964,7 +1004,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/07/28/人工智能简介/';
+          this.page.url = 'http://timchen314.com/2017/07/28/人工智能简介/';
           this.page.identifier = '2017/07/28/人工智能简介/';
           this.page.title = '人工智能简介';
         };

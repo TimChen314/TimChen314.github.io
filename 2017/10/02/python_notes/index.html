@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,编程语言," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TimChen" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
+<meta name="keywords" content="python,编程语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python notes">
+<meta property="og:url" content="http://timchen314.com/2017/10/02/python_notes/index.html">
+<meta property="og:site_name" content="TimChen">
+<meta property="og:description" content="Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-03T14:31:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python notes">
+<meta name="twitter:description" content="Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://timchen314.com/2017/10/02/python_notes/"/>
+
+
+
+
+
+  <title>python notes | TimChen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TimChen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/2017/10/02/python_notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tim Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_portrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TimChen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python notes</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-02T18:00:00+08:00">
+                2017-10-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/02/python_notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/02/python_notes/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<a id="more"></a>
+<h2 id="python-syntax">Python Syntax</h2>
+<h3 id="python-doc"><a href="https://docs.python.org" target="_blank" rel="external">Python doc</a></h3>
+<h3 id="builtin-functions-import-builtins"><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">builtin functions</a> (import builtin<strong>s</strong>)</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><s>abs()</s></td>
+<td><s>dict()</s></td>
+<td><s>help()</s></td>
+<td><s>min()</s></td>
+<td><s>setattr()</s></td>
+</tr>
+<tr>
+<td><s>all()</s></td>
+<td>dir()</td>
+<td><s>hex()</s></td>
+<td><s>next()</s></td>
+<td>slice()</td>
+</tr>
+<tr>
+<td><s>any()</s></td>
+<td>divmod()</td>
+<td><s>id()</s></td>
+<td><s>object()</s></td>
+<td>sorted()</td>
+</tr>
+<tr>
+<td>ascii()</td>
+<td><s>enumerate()</s></td>
+<td><s>input()</s></td>
+<td><s>oct()</s></td>
+<td>staticmethod()</td>
+</tr>
+<tr>
+<td>bin()</td>
+<td>eval()</td>
+<td><s>int()</s></td>
+<td><s>open()</s></td>
+<td><s>str()</s></td>
+</tr>
+<tr>
+<td><s>bool()</s></td>
+<td>exec()</td>
+<td><s>isinstance()</s></td>
+<td>ord()</td>
+<td><s>sum()</s></td>
+</tr>
+<tr>
+<td>bytearray()</td>
+<td>filter()</td>
+<td>issubclass()</td>
+<td>pow()</td>
+<td>super()</td>
+</tr>
+<tr>
+<td>bytes()</td>
+<td><s>float()</s></td>
+<td><s>iter()</s></td>
+<td><s>print()</s></td>
+<td><s>tuple()</s></td>
+</tr>
+<tr>
+<td>callable()</td>
+<td>format()</td>
+<td><s>len()</s></td>
+<td>property()</td>
+<td><s>type()</s></td>
+</tr>
+<tr>
+<td><s>chr()</s></td>
+<td>frozenset()</td>
+<td><s>list()</s></td>
+<td><s>range()</s></td>
+<td>vars()</td>
+</tr>
+<tr>
+<td>classmethod()</td>
+<td><s>getattr()</s></td>
+<td>locals()</td>
+<td><s>repr()</s></td>
+<td><s>zip()</s></td>
+</tr>
+<tr>
+<td>compile()</td>
+<td>globals()</td>
+<td><s>map()</s></td>
+<td>reversed()</td>
+<td>__import__()</td>
+</tr>
+<tr>
+<td>complex()</td>
+<td><s>hasattr()</s></td>
+<td><s>max()</s></td>
+<td>round()</td>
+<td></td>
+</tr>
+<tr>
+<td><s>delattr()</s></td>
+<td>hash()</td>
+<td>memoryview()</td>
+<td><s>set()</s></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="sum">sum()</h4>
+<p>sum(iterable[, start]) ，iterable</p>
+<h4 id="max"><a href="https://docs.python.org/3/library/functions.html#max" target="_blank" rel="external">max()</a></h4>
+<blockquote>
+<p>max(iterable, *[, key, default])<br>
+max(arg1, arg2, *args[, key])</p>
+</blockquote>
+<blockquote>
+<p>Return the largest item in an iterable or the largest of two or more arguments.</p>
+</blockquote>
+<blockquote>
+<p><strong>If one positional argument is provided, it should be an iterable.</strong> The largest item in the iterable is returned. <strong>If two or more positional arguments are provided, the largest of the positional arguments is returned.</strong></p>
+</blockquote>
+<blockquote>
+<p>There are two optional keyword-only arguments. The key argument specifies a one-argument ordering function like that used for list.sort(). The default argument specifies an object to return if the provided iterable is empty. If the iterable is empty and default is not provided, a ValueError is raised.</p>
+</blockquote>
+<blockquote>
+<p>If multiple items are maximal, the function returns the first one encountered. This is consistent with other sort-stability preserving tools such as sorted(iterable, key=keyfunc, reverse=True)[0] and heapq.nlargest(1, iterable,key=keyfunc).</p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/whatisfantasy/p/6273913.html" target="_blank" rel="external">几个例子</a></li>
+</ul>
+<h4 id="next-iterator-default">next(iterator[, default])</h4>
+<h4 id="all-any"><code>all()/any()</code></h4>
+<blockquote>
+<p>Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:</p>
+</blockquote>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">all</span><span class="params">(iterable)</span>:</span></div><div class="line">    <span class="keyword">for</span> element <span class="keyword">in</span> iterable:</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> element:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h4 id="filter">filter</h4>
+<p>把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。<br>
+python3起，filter 函数返回的对象从列表改为 filter object（迭代器）。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">return</span> n % <span class="number">2</span> == <span class="number">1</span></div><div class="line"></div><div class="line">[item <span class="keyword">for</span> item <span class="keyword">in</span> filter(is_odd, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>]) ]</div></pre></td></tr></table></figure>
+<h4 id="getattr-setattr-hasattr-delattr">getattr()/setattr()/hasattr()/delattr()</h4>
+<blockquote>
+<p>getattr(x, ‘foobar’) is equivalent to x.foobar</p>
+</blockquote>
+<p>All these function are similar. See <strong>docs</strong> for more.</p>
+<h4 id="vars">vars()</h4>
+<p>From python doc:</p>
+<blockquote>
+<p><strong>Return the __dict__</strong> attribute for a module, class, instance, or any other object with a __dict__ attribute.</p>
+</blockquote>
+<h4 id="enumerate">enumerate</h4>
+<p>如果mylist是一个二维数组：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i,line <span class="keyword">in</span> enumerate(mylist):</div><div class="line">    ...</div></pre></td></tr></table></figure>
+<p><strong>line是元组</strong></p>
+<h4 id="staticmethod-function">staticmethod(function)</h4>
+<p>PS:</p>
+<blockquote>
+<p>@classmethod means: when this method is called, we pass the class as the first argument instead of the instance of that class (as we normally do with methods). This means you can use the class and its properties inside that method rather than a particular instance.<br>
+@staticmethod means: when this method is called, we don’t pass an instance of the class to it (as we normally do with methods). This means you can put a function inside a class but you can’t access the instance of that class (this is useful when your method does not use the instance).</p>
+</blockquote>
+<p>classmethod涉及类，不涉及类的实例；staticmethod两者都不涉及，但与类有紧密的联系<br>
+<a href="https://www.zhihu.com/question/20021164" target="_blank" rel="external">ref:</a></p>
+<h3 id="python-类属性-实例属性">Python——类属性/实例属性</h3>
+<p><a href="http://blog.csdn.net/bolike/article/details/21554901" target="_blank" rel="external">Python——类属性/实例属性</a><br>
+<a href="http://www.cnblogs.com/dream-for/p/5199308.html" target="_blank" rel="external">Python类属性，实例属性</a> #非常好</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">C.__name__     <span class="comment"># 类C的名字（字符串）</span></div><div class="line">C.__doc__      <span class="comment"># 类C的文档字符串</span></div><div class="line">C.__bases__    <span class="comment"># 类C的所有父类构成的元组</span></div><div class="line">C.__dict__     <span class="comment"># 类C的属性</span></div><div class="line">C.__module__   <span class="comment"># 类C定义所在的模块</span></div><div class="line">C.__class__    <span class="comment"># 实例C对应的类</span></div></pre></td></tr></table></figure>
+<ul>
+<li>module.<strong>file</strong><br>
+<strong>含有module的路径！</strong></li>
+</ul>
+<h3 id="操作符特性：a-b-b-a-b">操作符特性：<code>a, b = b, a+b</code></h3>
+<p>Take the calculation of Fibinacci:<br>
+<code>a, b = b, a+b</code>  # a and a+b will be computed separately</p>
+<h3 id="print">print</h3>
+<ul>
+<li><code>print(end='str')</code></li>
+</ul>
+<h3 id="dict">dict</h3>
+<ul>
+<li>
+<p>mydict.iterm() 将项以list返回<br>
+<code>for key,val in myd3.iterm():</code></p>
+</li>
+<li>
+<p><s>iteriterms()返回迭代器，节省内存</s> <strong>Only for python2</strong></p>
+</li>
+</ul>
+<h3 id="file">file</h3>
+<ol>
+<li>
+<p><code>f.readline()/readlines()/write()/writelines()</code></p>
+<ul>
+<li><code>readline()</code>#每次读入一行</li>
+<li><code>readlines()</code> #以list的形式存储每一行</li>
+<li><code>write()</code> #自动换行</li>
+<li><code>writelines()</code> #不自动换行</li>
+</ul>
+</li>
+<li>
+<p>f.closed<br>
+注意closed是一个变量，值为True/False</p>
+</li>
+</ol>
+<h3 id="list-comprehension">list comprehension</h3>
+<ul>
+<li>two fold list comprehension <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">content = f.readlines()</div><div class="line">word_list=[word <span class="keyword">for</span> line <span class="keyword">in</span> content <span class="keyword">for</span> word <span class="keyword">in</span> line.split()]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="string">string</h3>
+<h4 id="1-strip-s-chars-去掉首尾的字符">1. strip(s[, chars]) 去掉首尾的字符</h4>
+<p>默认情况下strip() 去掉首尾的whitespace 【whitespace include \n, \t and \r】。</p>
+<blockquote>
+<p>The charsargument is not a prefix or suffix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="string">'www.example.com'</span>.strip(<span class="string">'cmowz.'</span>) </div><div class="line"><span class="string">'example'</span></div></pre></td></tr></table></figure>
+<h4 id="2-format">2. format</h4>
+<ul>
+<li>‘{0:.2f} {1:s} {2:d}’.format( v0[,v1[v2…] )</li>
+<li>可以使用关键词</li>
+<li>应用时转化：{!s}、{!r}</li>
+<li>旧式字符串格式化符号是 %，如：{0:%.4f}</li>
+</ul>
+<h5 id="custom-object-define-format-in-a-class">custom object(define __format__ in a class)</h5>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HAL9000</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__format__</span><span class="params">(self, format)</span>:</span></div><div class="line">        <span class="keyword">if</span> (format == <span class="string">'open-the-pod-bay-doors'</span>):</div><div class="line">            <span class="keyword">return</span> <span class="string">"I'm afraid I can't do that."</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'HAL 9000'</span></div></pre></td></tr></table></figure>
+<h5 id="datetime">datetime</h5>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"><span class="string">'&#123;:%Y-%m-%d %H:%M&#125;'</span>.format(datetime(<span class="number">2001</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))</div></pre></td></tr></table></figure>
+<h5 id="named-placeholder">named placeholder</h5>
+<p>use key to hold the place. <strong>input the dictionary as elements</strong></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span>&#125;</div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</div><div class="line"><span class="comment"># or</span></div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'Hodor'</span>, last=<span class="string">'Hodor!'</span>)</div></pre></td></tr></table></figure>
+<h5 id="getitem-and-getattr">Getitem and Getattr</h5>
+<h5 id="parametrized-formats">Parametrized formats</h5>
+<h4 id="3-rjust-width-fillchar-ljust-center-is-similar">3. rjust(width[, fillchar])  【ljust(), center() is similar】</h4>
+<h4 id="4-zfill-n-左侧填充0至n位">4. zfill(n) 左侧填充0至n位</h4>
+<p>返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串。如果指定的长度小于字符串的长度则返回原字符串。</p>
+<h4 id="5-split-str-num-string-count-str-str-and-num-is-not-a-kewword">5. split(str=&quot;&quot;, num=string.count(str)) # str and num is not a kewword</h4>
+<ul>
+<li>num – 分割次数。</li>
+<li><strong>注意split后常会产生空字符</strong></li>
+</ul>
+<h4 id="6-join">6. join</h4>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">out.write(<span class="string">" "</span>.join(mylist))</div><div class="line"><span class="comment"># 用" "链接mylist中的iterm</span></div></pre></td></tr></table></figure>
+<h4 id="7-encode-decode">7. encode()/decode()</h4>
+<ul>
+<li>str.encode(encoding=“utf-8”, errors=“strict”)
+<blockquote>
+<p>设置不同错误的处理方案。默认为 ‘strict’,意为编码错误引起一个UnicodeError。 其他可能得值有 ‘ignore’, ‘replace’, ‘xmlcharrefreplace’, ‘backslashreplace’ 以及通过 codecs.register_error() 注册的任何值。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="ternary-operator">ternary operator</h3>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result=<span class="string">'5 is larger than 3'</span> <span class="keyword">if</span> <span class="number">5</span>&gt;<span class="number">3</span> <span class="keyword">else</span> <span class="string">'5 is not larger than 3'</span></div></pre></td></tr></table></figure>
+<h3 id="cli">CLI</h3>
+<ul>
+<li><code>python -c &quot;print('hello world')&quot;</code></li>
+<li><code>python -m mymodule</code>
+<ol>
+<li>sys.path is changed</li>
+<li>it’s equal to <code>python mymodule.py</code></li>
+</ol>
+</li>
+</ul>
+<h2 id="module">module</h2>
+<h3 id="re-module">re module</h3>
+<h4 id="1-replace-str1-str2">1. replace(str1, str2)</h4>
+<h3 id="sys-module">sys module</h3>
+<ul>
+<li>sys.version/version_info(version_info is a object)</li>
+</ul>
+<h3 id="os-module">os module</h3>
+<h4 id="1-os-path">1. os.path</h4>
+<p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="external">os.path模块</a></p>
+<ul>
+<li>
+<p>os.path.exist<br>
+determine if a file or dir exists</p>
+</li>
+<li>
+<p>os.remove<br>
+remove a file; if file does not exists, an Error will be throwed out.</p>
+</li>
+<li>
+<p>os.rmdir<br>
+remove a dir</p>
+</li>
+<li>
+<p>os.path.splitext(path)<br>
+Split the pathname path into a pair (root, ext)</p>
+</li>
+<li>
+<p>os.path.basename(your_path)</p>
+</li>
+</ul>
+<h4 id="2-os-popen">2. <s>os.popen</s></h4>
+<ol>
+<li>
+<p><strong>shell cmd is executed in background and you can’t change it</strong></p>
+</li>
+<li>
+<p>inplemented by <em>subprocess.Popen</em>, so why not you use <em>subprocess</em>?</p>
+</li>
+</ol>
+<p>[python doc](</p>
+<p><a href="https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen" target="_blank" rel="external">https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen</a>)</p>
+<h3 id="time-calendar">time &amp; calendar</h3>
+<p><a href="http://www.runoob.com/python/python-date-time.html" target="_blank" rel="external">Python 日期和时间 runoob</a></p>
+<ul>
+<li>time.time()	<br>
+Return the current time in seconds since the Epoch.</li>
+<li>mktime(tupletime)</li>
+<li>localtime()		<br>
+Convert seconds since the Epoch to a time tuple expressing local time.<br>
+When ‘seconds’ is not passed in, convert the current time instead.</li>
+<li>strftime()	<br>
+strftime(format[, tuple]) -&gt; string</li>
+<li>strptime()	<br>
+strptime(string, format) -&gt; struct_time	<br>
+Parse a string to a time tuple according to a format specification.</li>
+<li>time.sleep(secs)</li>
+<li>calendar.isleap(year)</li>
+<li>calendar.weekday(year,month,day)</li>
+</ul>
+<h3 id="subprocess-module">subprocess module</h3>
+<p><a href="https://docs.python.org/3.5/library/subprocess.html?highlight=subprocess#frequently-used-arguments" target="_blank" rel="external">python doc</a></p>
+<h4 id="1-for-cmd-that-needn-t-stdout">1.  For cmd that needn’t stdout</h4>
+<p><code>subprocess.run(&quot;cp standard_py/*py .&quot;, shell=True, check=True)</code></p>
+<ul>
+<li><em>shell=True</em><br>
+you can use a string instead of a series of args!</li>
+<li><em>check=True</em><br>
+throw an Error if shell cmd exit wrong!</li>
+</ul>
+<h4 id="2-for-cmd-needing-stdout">2. For cmd needing stdout</h4>
+<p>An example:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ret = subprocess.run(<span class="string">"ls standard_py/*py"</span>, shell=<span class="keyword">True</span>, check=<span class="keyword">True</span>, universal_newlines=<span class="keyword">True</span>, stdout=PIPE)</div><div class="line">print(ret.stdout, end=<span class="string">""</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><em>universal_newlines=True</em><br>
+stdout<br>
+Captured stdout from the child process. A bytes sequence, or a string if run() was called with universal_newlines=True. None if stdout was not captured.</p>
+</li>
+<li>
+<p>stdout=PIPE<br>
+without this argument, stdout will be printed as stdout of python script, instead of captured, as from python doc:</p>
+<blockquote>
+<p>This(ct: means <em>run</em>) does not capture stdout or stderr by default. To do so, pass PIPE for the stdout and/or stderr arguments.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="glob-module">glob module</h3>
+<p>The glob module finds all the pathnames matching a specified pattern</p>
+<ul>
+<li>glob.glob(pathname, *, recursive=False)</li>
+<li>glob.iglob(pathname, recursive=False)<br>
+Return an iterator which yields the same values as glob()</li>
+</ul>
+<h3 id="collections-module-廖雪峰"><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431953239820157155d21c494e5786fce303f3018c86000" target="_blank" rel="external">collections module 廖雪峰</a></h3>
+<ul>
+<li>Counter</li>
+</ul>
+<h3 id="pil">PIL</h3>
+<ul>
+<li><code>img = Image.open(‘origin.png’) #支持多种格式</code><br>
+注意：类似于.htm和.html，.jpg和.jpeg没有区别，只是两种写法</li>
+<li>font<br>
+<code>font = ImageFont.truetype(&quot;FreeMono.ttf&quot;, 28, encoding=&quot;unic&quot;)</code></li>
+<li><code>img2.save('./test_image_data/cat_001_blur.jpeg','jpeg')</code> #save(‘path’,‘format’)</li>
+<li>resize()、rotate()、convert(mode=‘your_mode’)</li>
+<li>Coordinates (0, 0) in the upper left corner.</li>
+<li><code>draw = ImageDraw.Draw(img)</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#img is from:</div><div class="line">#img = Image.open(&apos;./test_image_data/cat_001.jpg&apos;)</div><div class="line">draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first parameter is the start point of the draw</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="random-doc">random <a href="https://docs.python.org/3/library/random.html" target="_blank" rel="external">doc</a></h3>
+<ul>
+<li>random.seed(a=None, version=2)</li>
+</ul>
+<h4 id="functions-for-integers">functions for integers</h4>
+<ul>
+<li>random.randrange(start, stop[, step])</li>
+<li>random.randint(a, b)
+<blockquote>
+<p>return a random integer N such that a &lt;= N &lt;= b. Alias for randrange(a, b+1).</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="real-valued-distributions">real-valued distributions</h4>
+<ul>
+<li>random.random()
+<blockquote>
+<p>Return the next random floating point number in the range [0.0, 1.0).</p>
+</blockquote>
+</li>
+<li>random.uniform(a, b)</li>
+<li>random.gauss(mu, sigma)</li>
+</ul>
+<h2 id="other-useful-things">other useful things</h2>
+<h3 id="ipython">ipython</h3>
+<ul>
+<li>“?” 帮助，?save 会给出save命令的用法</li>
+</ul>
+<h3 id="conda">conda</h3>
+<ul>
+<li>minicoda</li>
+<li><a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">使用conda管理python环境</a></li>
+<li>anaconda<br>
+<a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a></li>
+<li>conda install scipy #安装scipy</li>
+<li>conda list #列出已安装的包</li>
+</ul>
+<h3 id="pip">pip</h3>
+<ul>
+<li>Usage：<code>pip --help</code><br>
+<a href="http://www.tuicool.com/articles/NFV3yaJ" target="_blank" rel="external">for more info</a></li>
+</ul>
+<h4 id="error">error</h4>
+<ul>
+<li>
+<p>Could not fetch URL <a href="https://pypi.python.org/simple/pytest-cov/" target="_blank" rel="external">https://pypi.python.org/simple/pytest-cov/</a>…</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   Could not fetch URL https://pypi.python.org/simple/pytest-cov/: There was a problem confirming the ssl certificate: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:600) - skipping</div><div class="line">  Could not find a version that satisfies the requirement pytest-cov (from versions: )</div><div class="line">No matching distribution found for pytest-cov</div></pre></td></tr></table></figure>
+<p>解决：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --trusted-host pypi.python.org pytest-xdist</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="工程能力">工程能力</h2>
+<h3 id="工程-oop">工程/OOP</h3>
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/20661448/python-should-all-member-variables-be-initialized-in-init" target="_blank" rel="external">setting all instance variables in the __init__ is cleaner</a></p>
+</li>
+<li>
+<p>工厂函数<br>
+见python核心编程：工厂函数看上去有点像函数，实质上他们是类，当你调用它们时，实际上是生成了该类型的一个实例，就像工厂生产货物一样.</p>
+</li>
+</ul>
+<h3 id="debug">debug</h3>
+<p>要融汇的方法<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>：</p>
+<blockquote>
+<p>回答先在本地重现的就算了吧……那么容易就能重现通常说明最基本的代码逻辑覆盖测试都没做好。相比起C/C++来说，动态语言还是比较幸福的，异常都有详细的堆栈，只要打印到日志里就行了，错误信息通常也比较明确。要点在于该打印的日志一点都不能少，严禁在出现异常的时候只打印错误信息而不打堆栈。但归根结底来说，发现和解决bug靠的是良好的程序结构，必要的defensive（关键函数的参数合法性校验等），自动化的测试流程，线上调试只是亡羊补牢。</p>
+</blockquote>
+<h3 id="test">test</h3>
+<p>pytest比较好！从它入门 ！<br>
+<a href="https://stackoverflow.com/questions/28408750/unittest-vs-pytest-vs-nose" target="_blank" rel="external">unittest vs pytest vs nose </a><br>
+<a href="http://pythontesting.net/transcripts/2-pytest-vs-unittest-vs-nose/" target="_blank" rel="external">Pytest vs Unittest vs Nose</a> 【详细的对比】<br>
+待读！：<br>
+<a href="https://stackoverflow.com/questions/3371255/writing-unit-tests-in-python-how-do-i-start" target="_blank" rel="external">Writing unit tests in Python: How do I start? </a><br>
+<a href="https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/" target="_blank" rel="external">Improve Your Python: Understanding Unit Testing</a><br>
+<a href="http://www.cnblogs.com/beer/p/5075619.html" target="_blank" rel="external">python自动化测试</a> 【先读】<br>
+<a href="http://www.cnblogs.com/yufeihlf/p/5752146.html" target="_blank" rel="external">最完整的自动化测试流程</a></p>
+<h2 id="python缺点">python缺点</h2>
+<ul>
+<li>efficiency
+<ul>
+<li>slow than java</li>
+<li>global lock, which makes multi-threads suck</li>
+</ul>
+</li>
+<li>hard to distribution (compare to JAVA et al., python is dependent to package)</li>
+<li>easily decompiled</li>
+</ul>
+<h3 id="和其他语言的对比">和其他语言的对比</h3>
+<ul>
+<li>ruby<br>
+ruby最大的优势在于Ruby on Rails</li>
+</ul>
+<h3 id="我的经验">我的经验</h3>
+<ul>
+<li>都说python有很多包、方便，然而包里有可能有很多坑（bug or bad practice），比如Pillow中遇到过<code>**karg</code>的滥用。这些特点使得python很容易开发原型，但很难构建稳定、高效、一致的大型应用。</li>
+<li>有不少不符合直觉的&quot;feature&quot;<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+例如： <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; a = ([<span class="number">1</span>], [<span class="number">2</span>])</div><div class="line">   &gt;&gt;&gt; a[<span class="number">0</span>] += [<span class="number">3</span>]</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">""</span>, line <span class="number">1</span>, <span class="keyword">in</span> </div><div class="line">TypeError: <span class="string">'tuple'</span> object does <span class="keyword">not</span> support item assignment</div><div class="line">   &gt;&gt;&gt; a</div><div class="line">([<span class="number">1</span>, <span class="number">3</span>], [<span class="number">2</span>])</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="reference">reference</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)#Features_and_philosophy" target="_blank" rel="external">Python</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://www.zhihu.com/people/ling-jian-94/answers" target="_blank" rel="external">老程序员解bug有那些通用套路？</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/66941121" target="_blank" rel="external">有哪些明明是 bug，却被说成是 feature 的例子？</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>谢谢~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="Tim Chen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Tim Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://timchen314.com/2017/10/02/python_notes/" title="python notes">http://timchen314.com/2017/10/02/python_notes/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/编程语言/" rel="tag"># 编程语言</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/29/vmd笔记/" rel="next" title="vmd笔记">
+                <i class="fa fa-chevron-left"></i> vmd笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/31/numpy/" rel="prev" title="numpy notes">
+                numpy notes <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head_portrait.jpg"
+               alt="Tim Chen" />
+          <p class="site-author-name" itemprop="name">Tim Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TimChen314" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Aether/activities" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-bed"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情站点
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://boism.org" title="浅乎" target="_blank">浅乎</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiaxm.me" title="贾士奇" target="_blank">贾士奇</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-syntax"><span class="nav-text">Python Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-doc"><span class="nav-text">Python doc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#builtin-functions-import-builtins"><span class="nav-text">builtin functions (import builtins)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sum"><span class="nav-text">sum()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max"><span class="nav-text">max()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next-iterator-default"><span class="nav-text">next(iterator[, default])</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#all-any"><span class="nav-text">all()/any()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getattr-setattr-hasattr-delattr"><span class="nav-text">getattr()/setattr()/hasattr()/delattr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vars"><span class="nav-text">vars()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate"><span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#staticmethod-function"><span class="nav-text">staticmethod(function)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-类属性-实例属性"><span class="nav-text">Python——类属性/实例属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作符特性：a-b-b-a-b"><span class="nav-text">操作符特性：a, b = b, a+b</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print"><span class="nav-text">print</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict"><span class="nav-text">dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-text">file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-comprehension"><span class="nav-text">list comprehension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-strip-s-chars-去掉首尾的字符"><span class="nav-text">1. strip(s[, chars]) 去掉首尾的字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-format"><span class="nav-text">2. format</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#custom-object-define-format-in-a-class"><span class="nav-text">custom object(define __format__ in a class)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#datetime"><span class="nav-text">datetime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#named-placeholder"><span class="nav-text">named placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#getitem-and-getattr"><span class="nav-text">Getitem and Getattr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parametrized-formats"><span class="nav-text">Parametrized formats</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-rjust-width-fillchar-ljust-center-is-similar"><span class="nav-text">3. rjust(width[, fillchar])  【ljust(), center() is similar】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-zfill-n-左侧填充0至n位"><span class="nav-text">4. zfill(n) 左侧填充0至n位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-split-str-num-string-count-str-str-and-num-is-not-a-kewword"><span class="nav-text">5. split(str="", num=string.count(str)) # str and num is not a kewword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-join"><span class="nav-text">6. join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-encode-decode"><span class="nav-text">7. encode()/decode()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ternary-operator"><span class="nav-text">ternary operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cli"><span class="nav-text">CLI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#module"><span class="nav-text">module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#re-module"><span class="nav-text">re module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-replace-str1-str2"><span class="nav-text">1. replace(str1, str2)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-module"><span class="nav-text">sys module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#os-module"><span class="nav-text">os module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-os-path"><span class="nav-text">1. os.path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-os-popen"><span class="nav-text">2. os.popen</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-calendar"><span class="nav-text">time & calendar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subprocess-module"><span class="nav-text">subprocess module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-for-cmd-that-needn-t-stdout"><span class="nav-text">1.  For cmd that needn’t stdout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-for-cmd-needing-stdout"><span class="nav-text">2. For cmd needing stdout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#glob-module"><span class="nav-text">glob module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collections-module-廖雪峰"><span class="nav-text">collections module 廖雪峰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pil"><span class="nav-text">PIL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random-doc"><span class="nav-text">random doc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#functions-for-integers"><span class="nav-text">functions for integers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#real-valued-distributions"><span class="nav-text">real-valued distributions</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-useful-things"><span class="nav-text">other useful things</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ipython"><span class="nav-text">ipython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-text">conda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip"><span class="nav-text">pip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程能力"><span class="nav-text">工程能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程-oop"><span class="nav-text">工程/OOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug"><span class="nav-text">debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test"><span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python缺点"><span class="nav-text">python缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#和其他语言的对比"><span class="nav-text">和其他语言的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的经验"><span class="nav-text">我的经验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tim Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://timchen314.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://timchen314.com/2017/10/02/python_notes/';
+          this.page.identifier = '2017/10/02/python_notes/';
+          this.page.title = 'python notes';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://timchen314.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('5');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

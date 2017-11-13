@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-09-29T02:22:20.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://timchen314.com/"/>
+  <updated>2017-11-07T07:58:02.000Z</updated>
+  <id>http://timchen314.com/</id>
   
   <author>
     <name>Tim Chen</name>
@@ -16,11 +16,679 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>solving linux problem</title>
+    <link href="http://timchen314.com/2017/11/05/linux_problem/"/>
+    <id>http://timchen314.com/2017/11/05/linux_problem/</id>
+    <published>2017-11-05T10:00:00.000Z</published>
+    <updated>2017-11-07T07:58:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>解决各种linux问题。</p>
+<a id="more"></a>
+<h2 id="挂载硬盘">挂载硬盘</h2>
+<ol start="0">
+<li>
+<p>找到硬盘编号<br>
+<code>ls /dev/sd*</code><br>
+结果一般为：<br>
+<code>/dev/sda /dev/sda1 /dev/sda2 /dev/sda3 /dev/sdb</code><br>
+后面跟很多数字的是系统盘，上面的例子中系统盘是<code>/dev/sda</code>；那么<code>/dev/sdb</code>就是新安装的备份盘。</p>
+</li>
+<li>
+<p>root下，执行<code>parted /dev/sdb</code>以建立分区列表<br>
+mklabel gpt  #(有不同选项，如MS-DOS gpt Mac) 3T/4T盘必须要手动建立分区列表<br>
+mkpart + Enter键<br>
+ext4 + Enter键<br>
+&quot;Start&quot;&quot; 2048s + Enter键<br>
+&quot;End&quot; -1s  + Enter键  #（s是单位2048s留给分区列表）<br>
+<strong>可选步骤，对齐分区以最优化硬盘性能：</strong><br>
+align-check TYPE + Enter键<br>
+opt + Enter键<br>
+&quot;partition number?&quot; 1 + Enter键</p>
+</li>
+<li>
+<p><code>mkfs.ext4 /dev/sdb/</code> # 格式化硬盘</p>
+</li>
+<li>
+<p><code>mount # 挂载</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir /home/your_name/backup <span class="comment">#建立文件夹</span></div><div class="line">mount -t ext4 /dev/sdb /home/your_name/backup <span class="comment">#挂载文件夹</span></div><div class="line">chown -R your_name:your_name /home/your_name/backup</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>修改<code>/etc/fstab</code> # 设置开机后自动挂载备份硬盘<br>
+得到硬盘的UUID：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@node34 ~]$ uuidgen /dev/sda</div><div class="line">c6af66d2-f6dc-4a4b-8d83-40ce2b8d0b75</div></pre></td></tr></table></figure>
+<p>打开<code>/etc/fstabe</code>，加入备份盘的UUID：<br>
+<code>UUID=c6af66d2-f6dc-4a4b-8d83-40ce2b8d0b75 /home/your_name/backup/ ext4 defaults 1 2</code></p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;解决各种linux问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>numpy notes</title>
+    <link href="http://timchen314.com/2017/10/31/numpy/"/>
+    <id>http://timchen314.com/2017/10/31/numpy/</id>
+    <published>2017-10-31T10:00:00.000Z</published>
+    <updated>2017-11-03T14:31:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>The fundamental package for scientific computing with Python.</p>
+<a id="more"></a>
+<h2 id="numpy">numpy</h2>
+<p>帮助：<a href="http://np.info" target="_blank" rel="external">np.info</a>(np.random)</p>
+<h4 id="ndarray学习">ndarray学习</h4>
+<p><a href="http://blog.csdn.net/qq403977698/article/details/47254597" target="_blank" rel="external">numpy中的ndarray方法和属性</a></p>
+<ul>
+<li>
+<p>ndarray.mean(axis=None, dtype=None, out=None)：返回指定轴的数组元素均值</p>
+</li>
+<li>
+<p>ndarray.var(axis=None, dtype=None, out=None, ddof=0)：返回数组的方差，沿指定的轴。</p>
+</li>
+<li>
+<p>ndarray.std(axis=None, dtype=None, out=None, ddof=0)：沿给定的轴返回数则的标准差</p>
+</li>
+<li>
+<p>ndarray.trace(offset=0, axis1=0, axis2=1, dtype=None, out=None)：返回沿对角线的数组元素之和</p>
+</li>
+<li>
+<p>ndarray.diagonal(offset=0, axis1=0, axis2=1)：返回对角线的所有元素。</p>
+</li>
+<li>
+<p>最大/小值</p>
+<ul>
+<li>ndarray.argmin(axis=None, out=None):返回指定轴最小元素的索引。</li>
+<li>darray.min(axis=None, out=None)：返回指定轴的最小值</li>
+</ul>
+</li>
+<li>
+<p>flat/flatten</p>
+<ul>
+<li>ndarray.flat 和 ndarray.T 一样不是函数调用</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = X.flat</div><div class="line">   &gt;&gt;&gt; x</div><div class="line">&lt;numpy.flatiter object at <span class="number">0x9e82278</span>&gt;</div><div class="line">                            <span class="comment"># 不直接返回一维数组</span></div><div class="line">                            <span class="comment"># 但可直接索引</span></div></pre></td></tr></table></figure>
+<ul>
+<li>flatten()是函数调用，可以指定平坦化的参数。</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">    可选参数，order：</div><div class="line">（1）’C’：C-style，行序优先</div><div class="line">（2）’F’：Fortran-style，列序优先</div><div class="line">（3）’A’：保持</div><div class="line">（4）默认为’C’</div><div class="line">+ ndarray.transpose(*axes) :返回矩阵的转置矩阵</div><div class="line">+ ndarray.take(indices, axis=None, out=None, mode=’raise’):获得数组的指定索引的数据，如：</div><div class="line">   ```python</div><div class="line">   &gt;&gt;&gt; a.take([1,3],axis=1) #提取1，3列的数据</div><div class="line">array([[ 1,  3],</div><div class="line">[ 5,  7],</div><div class="line">[ 9, 11]])</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="构造矩阵">构造矩阵</h4>
+<ul>
+<li>arange()/linspace()</li>
+<li>numpy.zeros，numpy.ones，numpy.eye, numpy.full((2,2),7) <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="keyword">print</span> np.zeros((<span class="number">3</span>,<span class="number">4</span>))</div><div class="line">[[ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</div><div class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</div><div class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]]</div><div class="line">   &gt;&gt;&gt; <span class="keyword">print</span> np.ones((<span class="number">3</span>,<span class="number">4</span>))</div><div class="line">[[ <span class="number">1.</span>  <span class="number">1.</span>  <span class="number">1.</span>  <span class="number">1.</span>]</div><div class="line"> [ <span class="number">1.</span>  <span class="number">1.</span>  <span class="number">1.</span>  <span class="number">1.</span>]</div><div class="line"> [ <span class="number">1.</span>  <span class="number">1.</span>  <span class="number">1.</span>  <span class="number">1.</span>]]</div><div class="line">   &gt;&gt;&gt; <span class="keyword">print</span> np.eye(<span class="number">3</span>)</div><div class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</div><div class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>  <span class="number">0.</span>]</div><div class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">1.</span>]]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="numpy下的vstack和hstack函数：">numpy下的vstack和hstack函数：</h4>
+<p>vstack、hstack是浅拷贝</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; a = np.ones((<span class="number">2</span>,<span class="number">2</span>))</div><div class="line">   &gt;&gt;&gt; b = np.eye(<span class="number">2</span>)</div><div class="line">   &gt;&gt;&gt; <span class="keyword">print</span> np.vstack((a,b))</div><div class="line">[[ <span class="number">1.</span>  <span class="number">1.</span>]</div><div class="line"> [ <span class="number">1.</span>  <span class="number">1.</span>]</div><div class="line"> [ <span class="number">1.</span>  <span class="number">0.</span>]</div><div class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>]]</div></pre></td></tr></table></figure>
+<h4 id="numpy-linalg">numpy.linalg</h4>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="keyword">import</span> numpy.linalg <span class="keyword">as</span> nplg</div><div class="line">   &gt;&gt;&gt; a = np.array([[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">3</span>]])</div><div class="line">   &gt;&gt;&gt; <span class="keyword">print</span> nplg.eig(a)</div><div class="line">(array([ <span class="number">3.</span>,  <span class="number">1.</span>]), array([[ <span class="number">0.</span>        ,  <span class="number">0.70710678</span>],</div><div class="line">       [ <span class="number">1.</span>        , <span class="number">-0.70710678</span>]]))</div></pre></td></tr></table></figure>
+<h4 id="comparison">comparison</h4>
+<ul>
+<li>a == b #逐个元素比较</li>
+<li>a &lt; 2</li>
+<li><code>np.array_equal(a,b)</code></li>
+</ul>
+<h4 id="arithmetic-operation">arithmetic operation</h4>
+<ul>
+<li>+, -, *, / #element-wise</li>
+<li>np.dot(a,b) # matrix multiply</li>
+</ul>
+<h4 id="i-o">I/O</h4>
+<ul>
+<li>np.save(‘myarray’,a)</li>
+<li>np.savez(‘myarray.npz’,a,b)</li>
+<li>np.save(‘myarray.npy’,a)</li>
+<li>np.loadtxt/savetxt/genfromtxt</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The fundamental package for scientific computing with Python.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://timchen314.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
+    
+      <category term="编程语言" scheme="http://timchen314.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python notes</title>
+    <link href="http://timchen314.com/2017/10/02/python_notes/"/>
+    <id>http://timchen314.com/2017/10/02/python_notes/</id>
+    <published>2017-10-02T10:00:00.000Z</published>
+    <updated>2017-11-03T14:31:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<a id="more"></a>
+<h2 id="python-syntax">Python Syntax</h2>
+<h3 id="python-doc"><a href="https://docs.python.org" target="_blank" rel="external">Python doc</a></h3>
+<h3 id="builtin-functions-import-builtins"><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">builtin functions</a> (import builtin<strong>s</strong>)</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><s>abs()</s></td>
+<td><s>dict()</s></td>
+<td><s>help()</s></td>
+<td><s>min()</s></td>
+<td><s>setattr()</s></td>
+</tr>
+<tr>
+<td><s>all()</s></td>
+<td>dir()</td>
+<td><s>hex()</s></td>
+<td><s>next()</s></td>
+<td>slice()</td>
+</tr>
+<tr>
+<td><s>any()</s></td>
+<td>divmod()</td>
+<td><s>id()</s></td>
+<td><s>object()</s></td>
+<td>sorted()</td>
+</tr>
+<tr>
+<td>ascii()</td>
+<td><s>enumerate()</s></td>
+<td><s>input()</s></td>
+<td><s>oct()</s></td>
+<td>staticmethod()</td>
+</tr>
+<tr>
+<td>bin()</td>
+<td>eval()</td>
+<td><s>int()</s></td>
+<td><s>open()</s></td>
+<td><s>str()</s></td>
+</tr>
+<tr>
+<td><s>bool()</s></td>
+<td>exec()</td>
+<td><s>isinstance()</s></td>
+<td>ord()</td>
+<td><s>sum()</s></td>
+</tr>
+<tr>
+<td>bytearray()</td>
+<td>filter()</td>
+<td>issubclass()</td>
+<td>pow()</td>
+<td>super()</td>
+</tr>
+<tr>
+<td>bytes()</td>
+<td><s>float()</s></td>
+<td><s>iter()</s></td>
+<td><s>print()</s></td>
+<td><s>tuple()</s></td>
+</tr>
+<tr>
+<td>callable()</td>
+<td>format()</td>
+<td><s>len()</s></td>
+<td>property()</td>
+<td><s>type()</s></td>
+</tr>
+<tr>
+<td><s>chr()</s></td>
+<td>frozenset()</td>
+<td><s>list()</s></td>
+<td><s>range()</s></td>
+<td>vars()</td>
+</tr>
+<tr>
+<td>classmethod()</td>
+<td><s>getattr()</s></td>
+<td>locals()</td>
+<td><s>repr()</s></td>
+<td><s>zip()</s></td>
+</tr>
+<tr>
+<td>compile()</td>
+<td>globals()</td>
+<td><s>map()</s></td>
+<td>reversed()</td>
+<td>__import__()</td>
+</tr>
+<tr>
+<td>complex()</td>
+<td><s>hasattr()</s></td>
+<td><s>max()</s></td>
+<td>round()</td>
+<td></td>
+</tr>
+<tr>
+<td><s>delattr()</s></td>
+<td>hash()</td>
+<td>memoryview()</td>
+<td><s>set()</s></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="sum">sum()</h4>
+<p>sum(iterable[, start]) ，iterable</p>
+<h4 id="max"><a href="https://docs.python.org/3/library/functions.html#max" target="_blank" rel="external">max()</a></h4>
+<blockquote>
+<p>max(iterable, *[, key, default])<br>
+max(arg1, arg2, *args[, key])</p>
+</blockquote>
+<blockquote>
+<p>Return the largest item in an iterable or the largest of two or more arguments.</p>
+</blockquote>
+<blockquote>
+<p><strong>If one positional argument is provided, it should be an iterable.</strong> The largest item in the iterable is returned. <strong>If two or more positional arguments are provided, the largest of the positional arguments is returned.</strong></p>
+</blockquote>
+<blockquote>
+<p>There are two optional keyword-only arguments. The key argument specifies a one-argument ordering function like that used for list.sort(). The default argument specifies an object to return if the provided iterable is empty. If the iterable is empty and default is not provided, a ValueError is raised.</p>
+</blockquote>
+<blockquote>
+<p>If multiple items are maximal, the function returns the first one encountered. This is consistent with other sort-stability preserving tools such as sorted(iterable, key=keyfunc, reverse=True)[0] and heapq.nlargest(1, iterable,key=keyfunc).</p>
+</blockquote>
+<ul>
+<li><a href="http://www.cnblogs.com/whatisfantasy/p/6273913.html" target="_blank" rel="external">几个例子</a></li>
+</ul>
+<h4 id="next-iterator-default">next(iterator[, default])</h4>
+<h4 id="all-any"><code>all()/any()</code></h4>
+<blockquote>
+<p>Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:</p>
+</blockquote>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">all</span><span class="params">(iterable)</span>:</span></div><div class="line">    <span class="keyword">for</span> element <span class="keyword">in</span> iterable:</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> element:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h4 id="filter">filter</h4>
+<p>把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。<br>
+python3起，filter 函数返回的对象从列表改为 filter object（迭代器）。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">return</span> n % <span class="number">2</span> == <span class="number">1</span></div><div class="line"></div><div class="line">[item <span class="keyword">for</span> item <span class="keyword">in</span> filter(is_odd, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>]) ]</div></pre></td></tr></table></figure>
+<h4 id="getattr-setattr-hasattr-delattr">getattr()/setattr()/hasattr()/delattr()</h4>
+<blockquote>
+<p>getattr(x, ‘foobar’) is equivalent to x.foobar</p>
+</blockquote>
+<p>All these function are similar. See <strong>docs</strong> for more.</p>
+<h4 id="vars">vars()</h4>
+<p>From python doc:</p>
+<blockquote>
+<p><strong>Return the __dict__</strong> attribute for a module, class, instance, or any other object with a __dict__ attribute.</p>
+</blockquote>
+<h4 id="enumerate">enumerate</h4>
+<p>如果mylist是一个二维数组：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i,line <span class="keyword">in</span> enumerate(mylist):</div><div class="line">    ...</div></pre></td></tr></table></figure>
+<p><strong>line是元组</strong></p>
+<h4 id="staticmethod-function">staticmethod(function)</h4>
+<p>PS:</p>
+<blockquote>
+<p>@classmethod means: when this method is called, we pass the class as the first argument instead of the instance of that class (as we normally do with methods). This means you can use the class and its properties inside that method rather than a particular instance.<br>
+@staticmethod means: when this method is called, we don’t pass an instance of the class to it (as we normally do with methods). This means you can put a function inside a class but you can’t access the instance of that class (this is useful when your method does not use the instance).</p>
+</blockquote>
+<p>classmethod涉及类，不涉及类的实例；staticmethod两者都不涉及，但与类有紧密的联系<br>
+<a href="https://www.zhihu.com/question/20021164" target="_blank" rel="external">ref:</a></p>
+<h3 id="python-类属性-实例属性">Python——类属性/实例属性</h3>
+<p><a href="http://blog.csdn.net/bolike/article/details/21554901" target="_blank" rel="external">Python——类属性/实例属性</a><br>
+<a href="http://www.cnblogs.com/dream-for/p/5199308.html" target="_blank" rel="external">Python类属性，实例属性</a> #非常好</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">C.__name__     <span class="comment"># 类C的名字（字符串）</span></div><div class="line">C.__doc__      <span class="comment"># 类C的文档字符串</span></div><div class="line">C.__bases__    <span class="comment"># 类C的所有父类构成的元组</span></div><div class="line">C.__dict__     <span class="comment"># 类C的属性</span></div><div class="line">C.__module__   <span class="comment"># 类C定义所在的模块</span></div><div class="line">C.__class__    <span class="comment"># 实例C对应的类</span></div></pre></td></tr></table></figure>
+<ul>
+<li>module.<strong>file</strong><br>
+<strong>含有module的路径！</strong></li>
+</ul>
+<h3 id="操作符特性：a-b-b-a-b">操作符特性：<code>a, b = b, a+b</code></h3>
+<p>Take the calculation of Fibinacci:<br>
+<code>a, b = b, a+b</code>  # a and a+b will be computed separately</p>
+<h3 id="print">print</h3>
+<ul>
+<li><code>print(end='str')</code></li>
+</ul>
+<h3 id="dict">dict</h3>
+<ul>
+<li>
+<p>mydict.iterm() 将项以list返回<br>
+<code>for key,val in myd3.iterm():</code></p>
+</li>
+<li>
+<p><s>iteriterms()返回迭代器，节省内存</s> <strong>Only for python2</strong></p>
+</li>
+</ul>
+<h3 id="file">file</h3>
+<ol>
+<li>
+<p><code>f.readline()/readlines()/write()/writelines()</code></p>
+<ul>
+<li><code>readline()</code>#每次读入一行</li>
+<li><code>readlines()</code> #以list的形式存储每一行</li>
+<li><code>write()</code> #自动换行</li>
+<li><code>writelines()</code> #不自动换行</li>
+</ul>
+</li>
+<li>
+<p>f.closed<br>
+注意closed是一个变量，值为True/False</p>
+</li>
+</ol>
+<h3 id="list-comprehension">list comprehension</h3>
+<ul>
+<li>two fold list comprehension <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">content = f.readlines()</div><div class="line">word_list=[word <span class="keyword">for</span> line <span class="keyword">in</span> content <span class="keyword">for</span> word <span class="keyword">in</span> line.split()]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="string">string</h3>
+<h4 id="1-strip-s-chars-去掉首尾的字符">1. strip(s[, chars]) 去掉首尾的字符</h4>
+<p>默认情况下strip() 去掉首尾的whitespace 【whitespace include \n, \t and \r】。</p>
+<blockquote>
+<p>The charsargument is not a prefix or suffix; rather, all combinations of its values are stripped:</p>
+</blockquote>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="string">'www.example.com'</span>.strip(<span class="string">'cmowz.'</span>) </div><div class="line"><span class="string">'example'</span></div></pre></td></tr></table></figure>
+<h4 id="2-format">2. format</h4>
+<ul>
+<li>‘{0:.2f} {1:s} {2:d}’.format( v0[,v1[v2…] )</li>
+<li>可以使用关键词</li>
+<li>应用时转化：{!s}、{!r}</li>
+<li>旧式字符串格式化符号是 %，如：{0:%.4f}</li>
+</ul>
+<h5 id="custom-object-define-format-in-a-class">custom object(define __format__ in a class)</h5>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HAL9000</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__format__</span><span class="params">(self, format)</span>:</span></div><div class="line">        <span class="keyword">if</span> (format == <span class="string">'open-the-pod-bay-doors'</span>):</div><div class="line">            <span class="keyword">return</span> <span class="string">"I'm afraid I can't do that."</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'HAL 9000'</span></div></pre></td></tr></table></figure>
+<h5 id="datetime">datetime</h5>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"><span class="string">'&#123;:%Y-%m-%d %H:%M&#125;'</span>.format(datetime(<span class="number">2001</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))</div></pre></td></tr></table></figure>
+<h5 id="named-placeholder">named placeholder</h5>
+<p>use key to hold the place. <strong>input the dictionary as elements</strong></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span>&#125;</div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</div><div class="line"><span class="comment"># or</span></div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'Hodor'</span>, last=<span class="string">'Hodor!'</span>)</div></pre></td></tr></table></figure>
+<h5 id="getitem-and-getattr">Getitem and Getattr</h5>
+<h5 id="parametrized-formats">Parametrized formats</h5>
+<h4 id="3-rjust-width-fillchar-ljust-center-is-similar">3. rjust(width[, fillchar])  【ljust(), center() is similar】</h4>
+<h4 id="4-zfill-n-左侧填充0至n位">4. zfill(n) 左侧填充0至n位</h4>
+<p>返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串。如果指定的长度小于字符串的长度则返回原字符串。</p>
+<h4 id="5-split-str-num-string-count-str-str-and-num-is-not-a-kewword">5. split(str=&quot;&quot;, num=string.count(str)) # str and num is not a kewword</h4>
+<ul>
+<li>num – 分割次数。</li>
+<li><strong>注意split后常会产生空字符</strong></li>
+</ul>
+<h4 id="6-join">6. join</h4>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">out.write(<span class="string">" "</span>.join(mylist))</div><div class="line"><span class="comment"># 用" "链接mylist中的iterm</span></div></pre></td></tr></table></figure>
+<h4 id="7-encode-decode">7. encode()/decode()</h4>
+<ul>
+<li>str.encode(encoding=“utf-8”, errors=“strict”)
+<blockquote>
+<p>设置不同错误的处理方案。默认为 ‘strict’,意为编码错误引起一个UnicodeError。 其他可能得值有 ‘ignore’, ‘replace’, ‘xmlcharrefreplace’, ‘backslashreplace’ 以及通过 codecs.register_error() 注册的任何值。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="ternary-operator">ternary operator</h3>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result=<span class="string">'5 is larger than 3'</span> <span class="keyword">if</span> <span class="number">5</span>&gt;<span class="number">3</span> <span class="keyword">else</span> <span class="string">'5 is not larger than 3'</span></div></pre></td></tr></table></figure>
+<h3 id="cli">CLI</h3>
+<ul>
+<li><code>python -c &quot;print('hello world')&quot;</code></li>
+<li><code>python -m mymodule</code>
+<ol>
+<li>sys.path is changed</li>
+<li>it’s equal to <code>python mymodule.py</code></li>
+</ol>
+</li>
+</ul>
+<h2 id="module">module</h2>
+<h3 id="re-module">re module</h3>
+<h4 id="1-replace-str1-str2">1. replace(str1, str2)</h4>
+<h3 id="sys-module">sys module</h3>
+<ul>
+<li>sys.version/version_info(version_info is a object)</li>
+</ul>
+<h3 id="os-module">os module</h3>
+<h4 id="1-os-path">1. os.path</h4>
+<p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="external">os.path模块</a></p>
+<ul>
+<li>
+<p>os.path.exist<br>
+determine if a file or dir exists</p>
+</li>
+<li>
+<p>os.remove<br>
+remove a file; if file does not exists, an Error will be throwed out.</p>
+</li>
+<li>
+<p>os.rmdir<br>
+remove a dir</p>
+</li>
+<li>
+<p>os.path.splitext(path)<br>
+Split the pathname path into a pair (root, ext)</p>
+</li>
+<li>
+<p>os.path.basename(your_path)</p>
+</li>
+</ul>
+<h4 id="2-os-popen">2. <s>os.popen</s></h4>
+<ol>
+<li>
+<p><strong>shell cmd is executed in background and you can’t change it</strong></p>
+</li>
+<li>
+<p>inplemented by <em>subprocess.Popen</em>, so why not you use <em>subprocess</em>?</p>
+</li>
+</ol>
+<p>[python doc](</p>
+<p><a href="https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen" target="_blank" rel="external">https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen</a>)</p>
+<h3 id="time-calendar">time &amp; calendar</h3>
+<p><a href="http://www.runoob.com/python/python-date-time.html" target="_blank" rel="external">Python 日期和时间 runoob</a></p>
+<ul>
+<li>time.time()	<br>
+Return the current time in seconds since the Epoch.</li>
+<li>mktime(tupletime)</li>
+<li>localtime()		<br>
+Convert seconds since the Epoch to a time tuple expressing local time.<br>
+When ‘seconds’ is not passed in, convert the current time instead.</li>
+<li>strftime()	<br>
+strftime(format[, tuple]) -&gt; string</li>
+<li>strptime()	<br>
+strptime(string, format) -&gt; struct_time	<br>
+Parse a string to a time tuple according to a format specification.</li>
+<li>time.sleep(secs)</li>
+<li>calendar.isleap(year)</li>
+<li>calendar.weekday(year,month,day)</li>
+</ul>
+<h3 id="subprocess-module">subprocess module</h3>
+<p><a href="https://docs.python.org/3.5/library/subprocess.html?highlight=subprocess#frequently-used-arguments" target="_blank" rel="external">python doc</a></p>
+<h4 id="1-for-cmd-that-needn-t-stdout">1.  For cmd that needn’t stdout</h4>
+<p><code>subprocess.run(&quot;cp standard_py/*py .&quot;, shell=True, check=True)</code></p>
+<ul>
+<li><em>shell=True</em><br>
+you can use a string instead of a series of args!</li>
+<li><em>check=True</em><br>
+throw an Error if shell cmd exit wrong!</li>
+</ul>
+<h4 id="2-for-cmd-needing-stdout">2. For cmd needing stdout</h4>
+<p>An example:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ret = subprocess.run(<span class="string">"ls standard_py/*py"</span>, shell=<span class="keyword">True</span>, check=<span class="keyword">True</span>, universal_newlines=<span class="keyword">True</span>, stdout=PIPE)</div><div class="line">print(ret.stdout, end=<span class="string">""</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><em>universal_newlines=True</em><br>
+stdout<br>
+Captured stdout from the child process. A bytes sequence, or a string if run() was called with universal_newlines=True. None if stdout was not captured.</p>
+</li>
+<li>
+<p>stdout=PIPE<br>
+without this argument, stdout will be printed as stdout of python script, instead of captured, as from python doc:</p>
+<blockquote>
+<p>This(ct: means <em>run</em>) does not capture stdout or stderr by default. To do so, pass PIPE for the stdout and/or stderr arguments.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="glob-module">glob module</h3>
+<p>The glob module finds all the pathnames matching a specified pattern</p>
+<ul>
+<li>glob.glob(pathname, *, recursive=False)</li>
+<li>glob.iglob(pathname, recursive=False)<br>
+Return an iterator which yields the same values as glob()</li>
+</ul>
+<h3 id="collections-module-廖雪峰"><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431953239820157155d21c494e5786fce303f3018c86000" target="_blank" rel="external">collections module 廖雪峰</a></h3>
+<ul>
+<li>Counter</li>
+</ul>
+<h3 id="pil">PIL</h3>
+<ul>
+<li><code>img = Image.open(‘origin.png’) #支持多种格式</code><br>
+注意：类似于.htm和.html，.jpg和.jpeg没有区别，只是两种写法</li>
+<li>font<br>
+<code>font = ImageFont.truetype(&quot;FreeMono.ttf&quot;, 28, encoding=&quot;unic&quot;)</code></li>
+<li><code>img2.save('./test_image_data/cat_001_blur.jpeg','jpeg')</code> #save(‘path’,‘format’)</li>
+<li>resize()、rotate()、convert(mode=‘your_mode’)</li>
+<li>Coordinates (0, 0) in the upper left corner.</li>
+<li><code>draw = ImageDraw.Draw(img)</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#img is from:</div><div class="line">#img = Image.open(&apos;./test_image_data/cat_001.jpg&apos;)</div><div class="line">draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first parameter is the start point of the draw</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="random-doc">random <a href="https://docs.python.org/3/library/random.html" target="_blank" rel="external">doc</a></h3>
+<ul>
+<li>random.seed(a=None, version=2)</li>
+</ul>
+<h4 id="functions-for-integers">functions for integers</h4>
+<ul>
+<li>random.randrange(start, stop[, step])</li>
+<li>random.randint(a, b)
+<blockquote>
+<p>return a random integer N such that a &lt;= N &lt;= b. Alias for randrange(a, b+1).</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="real-valued-distributions">real-valued distributions</h4>
+<ul>
+<li>random.random()
+<blockquote>
+<p>Return the next random floating point number in the range [0.0, 1.0).</p>
+</blockquote>
+</li>
+<li>random.uniform(a, b)</li>
+<li>random.gauss(mu, sigma)</li>
+</ul>
+<h2 id="other-useful-things">other useful things</h2>
+<h3 id="ipython">ipython</h3>
+<ul>
+<li>“?” 帮助，?save 会给出save命令的用法</li>
+</ul>
+<h3 id="conda">conda</h3>
+<ul>
+<li>minicoda</li>
+<li><a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">使用conda管理python环境</a></li>
+<li>anaconda<br>
+<a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a></li>
+<li>conda install scipy #安装scipy</li>
+<li>conda list #列出已安装的包</li>
+</ul>
+<h3 id="pip">pip</h3>
+<ul>
+<li>Usage：<code>pip --help</code><br>
+<a href="http://www.tuicool.com/articles/NFV3yaJ" target="_blank" rel="external">for more info</a></li>
+</ul>
+<h4 id="error">error</h4>
+<ul>
+<li>
+<p>Could not fetch URL <a href="https://pypi.python.org/simple/pytest-cov/" target="_blank" rel="external">https://pypi.python.org/simple/pytest-cov/</a>…</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   Could not fetch URL https://pypi.python.org/simple/pytest-cov/: There was a problem confirming the ssl certificate: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:600) - skipping</div><div class="line">  Could not find a version that satisfies the requirement pytest-cov (from versions: )</div><div class="line">No matching distribution found for pytest-cov</div></pre></td></tr></table></figure>
+<p>解决：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --trusted-host pypi.python.org pytest-xdist</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="工程能力">工程能力</h2>
+<h3 id="工程-oop">工程/OOP</h3>
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/20661448/python-should-all-member-variables-be-initialized-in-init" target="_blank" rel="external">setting all instance variables in the __init__ is cleaner</a></p>
+</li>
+<li>
+<p>工厂函数<br>
+见python核心编程：工厂函数看上去有点像函数，实质上他们是类，当你调用它们时，实际上是生成了该类型的一个实例，就像工厂生产货物一样.</p>
+</li>
+</ul>
+<h3 id="debug">debug</h3>
+<p>要融汇的方法<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>：</p>
+<blockquote>
+<p>回答先在本地重现的就算了吧……那么容易就能重现通常说明最基本的代码逻辑覆盖测试都没做好。相比起C/C++来说，动态语言还是比较幸福的，异常都有详细的堆栈，只要打印到日志里就行了，错误信息通常也比较明确。要点在于该打印的日志一点都不能少，严禁在出现异常的时候只打印错误信息而不打堆栈。但归根结底来说，发现和解决bug靠的是良好的程序结构，必要的defensive（关键函数的参数合法性校验等），自动化的测试流程，线上调试只是亡羊补牢。</p>
+</blockquote>
+<h3 id="test">test</h3>
+<p>pytest比较好！从它入门 ！<br>
+<a href="https://stackoverflow.com/questions/28408750/unittest-vs-pytest-vs-nose" target="_blank" rel="external">unittest vs pytest vs nose </a><br>
+<a href="http://pythontesting.net/transcripts/2-pytest-vs-unittest-vs-nose/" target="_blank" rel="external">Pytest vs Unittest vs Nose</a> 【详细的对比】<br>
+待读！：<br>
+<a href="https://stackoverflow.com/questions/3371255/writing-unit-tests-in-python-how-do-i-start" target="_blank" rel="external">Writing unit tests in Python: How do I start? </a><br>
+<a href="https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/" target="_blank" rel="external">Improve Your Python: Understanding Unit Testing</a><br>
+<a href="http://www.cnblogs.com/beer/p/5075619.html" target="_blank" rel="external">python自动化测试</a> 【先读】<br>
+<a href="http://www.cnblogs.com/yufeihlf/p/5752146.html" target="_blank" rel="external">最完整的自动化测试流程</a></p>
+<h2 id="python缺点">python缺点</h2>
+<ul>
+<li>efficiency
+<ul>
+<li>slow than java</li>
+<li>global lock, which makes multi-threads suck</li>
+</ul>
+</li>
+<li>hard to distribution (compare to JAVA et al., python is dependent to package)</li>
+<li>easily decompiled</li>
+</ul>
+<h3 id="和其他语言的对比">和其他语言的对比</h3>
+<ul>
+<li>ruby<br>
+ruby最大的优势在于Ruby on Rails</li>
+</ul>
+<h3 id="我的经验">我的经验</h3>
+<ul>
+<li>都说python有很多包、方便，然而包里有可能有很多坑（bug or bad practice），比如Pillow中遇到过<code>**karg</code>的滥用。这些特点使得python很容易开发原型，但很难构建稳定、高效、一致的大型应用。</li>
+<li>有不少不符合直觉的&quot;feature&quot;<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+例如： <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; a = ([<span class="number">1</span>], [<span class="number">2</span>])</div><div class="line">   &gt;&gt;&gt; a[<span class="number">0</span>] += [<span class="number">3</span>]</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">""</span>, line <span class="number">1</span>, <span class="keyword">in</span> </div><div class="line">TypeError: <span class="string">'tuple'</span> object does <span class="keyword">not</span> support item assignment</div><div class="line">   &gt;&gt;&gt; a</div><div class="line">([<span class="number">1</span>, <span class="number">3</span>], [<span class="number">2</span>])</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="reference">reference</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)#Features_and_philosophy" target="_blank" rel="external">Python</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://www.zhihu.com/people/ling-jian-94/answers" target="_blank" rel="external">老程序员解bug有那些通用套路？</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/66941121" target="_blank" rel="external">有哪些明明是 bug，却被说成是 feature 的例子？</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://timchen314.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
+    
+      <category term="编程语言" scheme="http://timchen314.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vmd笔记</title>
-    <link href="http://yoursite.com/2017/09/29/vmd%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/09/29/vmd笔记/</id>
+    <link href="http://timchen314.com/2017/09/29/vmd%E7%AC%94%E8%AE%B0/"/>
+    <id>http://timchen314.com/2017/09/29/vmd笔记/</id>
     <published>2017-09-29T10:00:00.000Z</published>
-    <updated>2017-09-29T02:22:20.000Z</updated>
+    <updated>2017-11-13T06:00:30.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>
@@ -33,7 +701,7 @@
 <p><a href="http://www.ks.uiuc.edu/Gallery/Science-New/" target="_blank" rel="external">VMD官网的图片示例展览</a></p>
 </li>
 <li>
-<p><strong>本文定位</strong>：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本，GUI因为比较简单，讨论的较少。</p>
+<p><strong>本文定位</strong>：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本；图形界面(GUI)上的操作因为比较简单，讨论的较少。</p>
 </li>
 </ul>
 <a id="more"></a>
@@ -110,7 +778,11 @@ rotate x by/to 90</p>
 <li>console中导入脚本<br>
 source yourscript.tcl</li>
 <li>不显示图形界面的执行脚本<br>
-<code>sh$ vmd -dispdev none -e script.tcl</code></li>
+<code>sh$ vmd -dispdev none -e script.tcl</code><br>
+需要注意到的是，使用<code>-dispdev none</code>选项后，用<code>pbc</code>命令的脚本回报错：<br>
+<code>invalid command name &quot;pbc&quot;</code><br>
+在脚本中添加下列命令即可解决该错误：<br>
+<code>package require pbctools</code></li>
 </ol>
 <h3 id="mol">mol</h3>
 <p>mol的用法帮助：如前面第0节所述，在console中输入mol并且不加参数，就会显示mol的用法。<br>
@@ -330,23 +1002,23 @@ pbc join res -sel尝试了各种办法也没有成功<br>
 &lt;p&gt;&lt;a href=&quot;http://www.ks.uiuc.edu/Gallery/Science-New/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VMD官网的图片示例展览&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;本文定位&lt;/strong&gt;：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本，GUI因为比较简单，讨论的较少。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本文定位&lt;/strong&gt;：本文不适合作为入门教程，适合于在进阶阶段作为参考。本文偏重于VMD脚本；图形界面(GUI)上的操作因为比较简单，讨论的较少。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
     
     
-      <category term="画图" scheme="http://yoursite.com/tags/%E7%94%BB%E5%9B%BE/"/>
+      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
     
   </entry>
   
   <entry>
     <title>如何快速的向Word格式的硕士/博士论文中，添加引用文献？</title>
-    <link href="http://yoursite.com/2017/09/24/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
-    <id>http://yoursite.com/2017/09/24/Word格式论文中添加引用/</id>
+    <link href="http://timchen314.com/2017/09/24/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
+    <id>http://timchen314.com/2017/09/24/Word格式论文中添加引用/</id>
     <published>2017-09-24T10:00:00.000Z</published>
     <updated>2017-09-29T02:21:28.000Z</updated>
     
@@ -374,17 +1046,17 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     
     </summary>
     
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="技术杂烩" scheme="http://timchen314.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
     
     
-      <category term="word" scheme="http://yoursite.com/tags/word/"/>
+      <category term="word" scheme="http://timchen314.com/tags/word/"/>
     
   </entry>
   
   <entry>
     <title>专利申请</title>
-    <link href="http://yoursite.com/2017/09/07/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
-    <id>http://yoursite.com/2017/09/07/申请专利/</id>
+    <link href="http://timchen314.com/2017/09/07/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
+    <id>http://timchen314.com/2017/09/07/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
@@ -438,17 +1110,17 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     
     </summary>
     
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="技术杂烩" scheme="http://timchen314.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
     
     
-      <category term="专利" scheme="http://yoursite.com/tags/%E4%B8%93%E5%88%A9/"/>
+      <category term="专利" scheme="http://timchen314.com/tags/%E4%B8%93%E5%88%A9/"/>
     
   </entry>
   
   <entry>
     <title>All about Digital Currency</title>
-    <link href="http://yoursite.com/2017/08/30/digital_currency/"/>
-    <id>http://yoursite.com/2017/08/30/digital_currency/</id>
+    <link href="http://timchen314.com/2017/08/30/digital_currency/"/>
+    <id>http://timchen314.com/2017/08/30/digital_currency/</id>
     <published>2017-08-30T10:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
@@ -500,212 +1172,17 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     
     </summary>
     
-      <category term="block chain" scheme="http://yoursite.com/categories/block-chain/"/>
+      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
     
     
-      <category term="block chain" scheme="http://yoursite.com/tags/block-chain/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gnuplot笔记（上）</title>
-    <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
-    <id>http://yoursite.com/2017/08/16/gnuplot笔记上/</id>
-    <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2017-09-29T02:08:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
-<a id="more"></a>
-<p>[TOC]</p>
-<h2 id="note-about-version-5">Note about Version 5</h2>
-<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
-<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
-例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
-<h3 id="2-size的用法">2. size的用法</h3>
-<ul>
-<li>eps to png<br>
-when eps size is set to 1.0,1.0，png的像素为600,420<br>
-eps：size 1.8,1.8 那么png的像素为1080,755</li>
-<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
-size 2,2 会导致图像超过窗口大小</li>
-</ul>
-<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
-<p><code>plot ... smooth mcsplines</code><br>
-<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
-<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
-<h3 id="4-变量的引用">4. 变量的引用</h3>
-<p>For 4.6:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
-<p>For 5.0:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
-<h2 id="format">format</h2>
-<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
-<p><code>set logscale</code> # x和y轴都设置成logscale</p>
-<h3 id="2-set-format">2. set format</h3>
-<p>设置坐标轴上数字的格式。<br>
-以1000为例：</p>
-<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
-</code></pre>
-<p>显示出来的格式为10^3</p>
-<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
-</code></pre>
-<p>显示为1×10^3</p>
-<p>需要注意的是：</p>
-<ul>
-<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
-<li><code>%t</code>与<code>%T</code><br>
-比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
-</ul>
-<h3 id="3-offset-x-y">3. offset x,y</h3>
-<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
-<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
-<blockquote>
-<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
-</blockquote>
-<p>只改major tics:<code>set tic scale 2</code></p>
-<h3 id="5-字体font">5. 字体font:</h3>
-<p>(1) gnuplot-5.0.1 manual:</p>
-<blockquote>
-<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
-(2) TimesRoman和TimesNewRoman都是一样的<br>
-For other fonts, 尽管程序不会报错，但也显示不出来<br>
-但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
-<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
-<h3 id="7-border">7. border</h3>
-<p><code>set border lw 3</code> 只改变线的宽度</p>
-<h3 id="8-key">8. key</h3>
-<p><strong>set key height #调节key与坐标轴的距离</strong><br>
-set key spacing 1.3 #调节两行之间的距离<br>
-set key maxcols/maxrow<br>
-set key autotitle</p>
-<h3 id="9-label">9. label</h3>
-<ul>
-<li>设定位置时候，是设定的左下角的坐标</li>
-<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
-</ul>
-<h3 id="10-arrow">10. arrow</h3>
-<ul>
-<li>
-<p>控制起始/终止位置<br>
-set arrow from 坐标 to 坐标<br>
-e.g.:<br>
-<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
-<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
-</li>
-<li>
-<p>控制head<br>
-e.g.:<br>
-<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
-其中head filled size 1,30,55 为控制head的格式。<br>
-<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
-length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
-</li>
-</ul>
-<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
-<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
-<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
-<h3 id="1-line-and-point-types">1. line and point types</h3>
-<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
-<h3 id="2-most-useful-point-type">2. most useful point type</h3>
-<table>
-<thead>
-<tr>
-<th>shape</th>
-<th>full id</th>
-<th>empty  id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>square</td>
-<td>5</td>
-<td>64</td>
-</tr>
-<tr>
-<td>sphere</td>
-<td>7</td>
-<td>65</td>
-</tr>
-<tr>
-<td>up-tri</td>
-<td>9</td>
-<td>66</td>
-</tr>
-<tr>
-<td>down-tri</td>
-<td>11</td>
-<td>67</td>
-</tr>
-<tr>
-<td>diamond</td>
-<td>13</td>
-<td>68</td>
-</tr>
-<tr>
-<td>pentagon</td>
-<td>15</td>
-<td>69</td>
-</tr>
-</tbody>
-</table>
-<p>e.g.:<br>
-<code>p sin(x) w p pt 5</code></p>
-<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
-<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
-<h3 id="4-several-color-set">4. several color set</h3>
-<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
-<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
-<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
-<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
-<ul>
-<li>for循环：<br>
-<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
-<li>字符串数组<br>
-`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
-a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
-**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
-<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
-<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
-</ul>
-<h3 id="1-escape-charactor">1. escape charactor</h3>
-<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
-<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
-<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
-（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
-（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
-（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
-<h3 id="3-string">3. string</h3>
-<ul>
-<li>单引号内的字符串不转义，双引号内的字符串转义</li>
-<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
-<li>“.”, “eq” and “ne&quot;<br>
-Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
-<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
-</ul>
-<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="画图" scheme="http://yoursite.com/tags/%E7%94%BB%E5%9B%BE/"/>
+      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
     
   </entry>
   
   <entry>
     <title>gnuplot笔记（下）</title>
-    <link href="http://yoursite.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
-    <id>http://yoursite.com/2017/08/16/gnuplot笔记下/</id>
+    <link href="http://timchen314.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
+    <id>http://timchen314.com/2017/08/16/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
@@ -913,19 +1390,214 @@ The eps file doesn’t get written until a plot command is specified after speci
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
     
-      <category term="画图" scheme="http://yoursite.com/tags/%E7%94%BB%E5%9B%BE/"/>
+      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gnuplot笔记（上）</title>
+    <link href="http://timchen314.com/2017/08/16/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
+    <id>http://timchen314.com/2017/08/16/gnuplot笔记上/</id>
+    <published>2017-08-16T12:00:00.000Z</published>
+    <updated>2017-09-29T02:08:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="note-about-version-5">Note about Version 5</h2>
+<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
+<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
+例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
+<h3 id="2-size的用法">2. size的用法</h3>
+<ul>
+<li>eps to png<br>
+when eps size is set to 1.0,1.0，png的像素为600,420<br>
+eps：size 1.8,1.8 那么png的像素为1080,755</li>
+<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
+size 2,2 会导致图像超过窗口大小</li>
+</ul>
+<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
+<p><code>plot ... smooth mcsplines</code><br>
+<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
+<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
+<h3 id="4-变量的引用">4. 变量的引用</h3>
+<p>For 4.6:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
+<p>For 5.0:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
+<h2 id="format">format</h2>
+<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
+<p><code>set logscale</code> # x和y轴都设置成logscale</p>
+<h3 id="2-set-format">2. set format</h3>
+<p>设置坐标轴上数字的格式。<br>
+以1000为例：</p>
+<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
+</code></pre>
+<p>显示出来的格式为10^3</p>
+<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
+</code></pre>
+<p>显示为1×10^3</p>
+<p>需要注意的是：</p>
+<ul>
+<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
+<li><code>%t</code>与<code>%T</code><br>
+比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
+</ul>
+<h3 id="3-offset-x-y">3. offset x,y</h3>
+<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
+<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
+<blockquote>
+<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
+</blockquote>
+<p>只改major tics:<code>set tic scale 2</code></p>
+<h3 id="5-字体font">5. 字体font:</h3>
+<p>(1) gnuplot-5.0.1 manual:</p>
+<blockquote>
+<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
+(2) TimesRoman和TimesNewRoman都是一样的<br>
+For other fonts, 尽管程序不会报错，但也显示不出来<br>
+但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
+<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
+<h3 id="7-border">7. border</h3>
+<p><code>set border lw 3</code> 只改变线的宽度</p>
+<h3 id="8-key">8. key</h3>
+<p><strong>set key height #调节key与坐标轴的距离</strong><br>
+set key spacing 1.3 #调节两行之间的距离<br>
+set key maxcols/maxrow<br>
+set key autotitle</p>
+<h3 id="9-label">9. label</h3>
+<ul>
+<li>设定位置时候，是设定的左下角的坐标</li>
+<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
+</ul>
+<h3 id="10-arrow">10. arrow</h3>
+<ul>
+<li>
+<p>控制起始/终止位置<br>
+set arrow from 坐标 to 坐标<br>
+e.g.:<br>
+<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
+<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
+</li>
+<li>
+<p>控制head<br>
+e.g.:<br>
+<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
+其中head filled size 1,30,55 为控制head的格式。<br>
+<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
+length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
+</li>
+</ul>
+<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
+<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
+<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
+<h3 id="1-line-and-point-types">1. line and point types</h3>
+<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
+<h3 id="2-most-useful-point-type">2. most useful point type</h3>
+<table>
+<thead>
+<tr>
+<th>shape</th>
+<th>full id</th>
+<th>empty  id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>square</td>
+<td>5</td>
+<td>64</td>
+</tr>
+<tr>
+<td>sphere</td>
+<td>7</td>
+<td>65</td>
+</tr>
+<tr>
+<td>up-tri</td>
+<td>9</td>
+<td>66</td>
+</tr>
+<tr>
+<td>down-tri</td>
+<td>11</td>
+<td>67</td>
+</tr>
+<tr>
+<td>diamond</td>
+<td>13</td>
+<td>68</td>
+</tr>
+<tr>
+<td>pentagon</td>
+<td>15</td>
+<td>69</td>
+</tr>
+</tbody>
+</table>
+<p>e.g.:<br>
+<code>p sin(x) w p pt 5</code></p>
+<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
+<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
+<h3 id="4-several-color-set">4. several color set</h3>
+<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
+<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
+<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
+<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
+<ul>
+<li>for循环：<br>
+<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
+<li>字符串数组<br>
+`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
+a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
+**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
+<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
+<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
+</ul>
+<h3 id="1-escape-charactor">1. escape charactor</h3>
+<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
+<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
+<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
+（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
+（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
+（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
+<h3 id="3-string">3. string</h3>
+<ul>
+<li>单引号内的字符串不转义，双引号内的字符串转义</li>
+<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
+<li>“.”, “eq” and “ne&quot;<br>
+Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
+<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
+</ul>
+<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
+    
+      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
     
   </entry>
   
   <entry>
     <title>vim笔记</title>
-    <link href="http://yoursite.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/08/01/vim笔记/</id>
+    <link href="http://timchen314.com/2017/08/01/vim%E7%AC%94%E8%AE%B0/"/>
+    <id>http://timchen314.com/2017/08/01/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
@@ -1071,19 +1743,19 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     
     </summary>
     
-      <category term="vim" scheme="http://yoursite.com/categories/vim/"/>
+      <category term="vim" scheme="http://timchen314.com/categories/vim/"/>
     
     
-      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
+      <category term="vim" scheme="http://timchen314.com/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>linux常用命令记录</title>
-    <link href="http://yoursite.com/2017/07/31/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/"/>
-    <id>http://yoursite.com/2017/07/31/linux常用命令记录/</id>
+    <link href="http://timchen314.com/2017/07/31/linux_command/"/>
+    <id>http://timchen314.com/2017/07/31/linux_command/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2017-09-29T02:19:59.000Z</updated>
+    <updated>2017-11-08T07:08:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -1099,7 +1771,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 匹配x或y<br>
 5.x{5,10}<br>
 匹配x出现5到10次</p>
-<h2 id="linux-一句话介绍命令：">linux 一句话介绍命令：</h2>
+<h2 id="一句话介绍一个命令：">一句话介绍一个命令：</h2>
 <ul>
 <li>
 <p>shell 内置<br>
@@ -1133,7 +1805,7 @@ lsof:  <code>lsof -p 456,123</code> 列出进程456和123所有打开的文件�
 <code>env</code>: 输出所有环境变量<br>
 <code>ldd ./exe</code>:  给出链接的库<br>
 <code>systemctl start atd</code>: arch中用at，需要开启<br>
-<code>gimp</code>: 看图<br>
+<code>gimp</code>: 看图png,jpg,bmp都能看<br>
 <code>info &amp; whatis</code>: they tell the information of a command; Note that in OS, info whatis will get “search database …”</p>
 </li>
 </ul>
@@ -1144,7 +1816,7 @@ Ctrl + 方向键左键    光标移动到前一个单词开头<br>
 Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
 <code>^oldstr^newstr</code>    替换前一次命令中字符串<br>
 同时head&amp;tail: <code>ls | (head;tail)</code> 或者 <code>(head; tail) &lt; file</code></p>
-<h3 id="系列命令"><code>!</code>系列命令</h3>
+<h3 id="系列命令">!系列命令</h3>
 <ul>
 <li>
 <p><code>!-n</code>， 重复执行倒数第 n 条命令，n 为正整数；</p>
@@ -1206,6 +1878,26 @@ Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
 <p>简单记忆：<br>
 <code>h|t</code><br>
 <code>r|e</code></p>
+<h3 id="参数的补全">参数的补全</h3>
+<h4 id="引子">引子</h4>
+<p>我们用<code>which &quot;command&quot;</code>命令时，可能感觉到<code>which</code>后面的命令无法补全，很不方便，比如<code>which python3</code>就需要手动输入python3。因此我们不禁希望参数也可以用[tab]补全。<br>
+实际上，linux是可以补全参数的。比如zsh就自带补全参数。最主流的bash经过设置，也是可以补全参数的。<br>
+bash 中标准补全功能包含了<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：</p>
+<ul>
+<li>路径补全</li>
+<li>文件名补全</li>
+<li>变量补全</li>
+<li>用户名补全</li>
+<li>主机名补全<br>
+很多人比较熟悉的补全可能只有前两项。此外，我们还可以通过complete命令，自定义补全参数。<br>
+以<code>which</code>为例，<code>$ complete -c which</code>，就可将所有命令作为<code>which</code>的参数进行补全了。<br>
+complete具有强大的补全功能，更多设置可以参考<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1]</a></sup>。</li>
+</ul>
+<h4 id="complete">complete</h4>
+<ul>
+<li>CentOS 7.3，在<code>/etc/bash_completion.d/</code>进行设置。</li>
+<li><code>-F</code>设定补全函数</li>
+</ul>
 <h3 id="alt">alt</h3>
 <p>如果不是直接在终端上操作，alt键需要进行设置才能使用。**比如Xshell中，在“属性–键盘–将Alt键作为Meta仿真”打钩，才能使用；OS X上，无法用alt键。**PS：win键盘一般alt键当做Meta键；ALt GR：有些老键盘左边是Alt，右边是ALt GR键<br>
 Alt+./Esc+. (!^ !$): 将最近一条命令的参数输出<br>
@@ -1236,6 +1928,15 @@ linux shell 快捷键:      <a href="http://blog.chinaunix.net/uid-361890-id-342
 terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
 <li>terminal类型的选择也会影响快捷键<br>
 Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="系统信息：">系统信息：</h2>
+<ul>
+<li>cpu information<br>
+<code>cat /proc/cpuinfo</code></li>
+<li>列出内核版本、主机名等信息<br>
+<code>uname -a</code></li>
+<li>发行版信息<br>
+<code>cat /etc/redhat-release</code></li>
 </ul>
 <h2 id="alias命令：">alias命令：</h2>
 <p><a href="http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh" target="_blank" rel="external">http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh</a></p>
@@ -1389,6 +2090,8 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 <ul>
 <li><code>-i</code>： 忽略大小写</li>
 <li><code>-v</code>： 不显示匹配的项</li>
+<li>同时匹配多个关键字:<br>
+<code>grep &quot;str1\|str2&quot;</code></li>
 </ul>
 <h2 id="kill命令：">kill命令：</h2>
 <p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
@@ -1446,6 +2149,12 @@ kill -STOP 1234<br>
 <li>ln source target</li>
 <li>hard link<br>
 hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。</li>
+<li><strong>删除文件夹的软链接</strong><br>
+例如mydir是一个文件夹的软链接，如果想删除软链接，我们一般的操作为，<code>rm my[tab]</code>以补全文件名，结果为：<br>
+<code>rm mydir/</code><br>
+然而这样删除会提示：<code>rm: cannot remove ‘test’: Is a directory</code>。<br>
+<strong>这时候千万不能加上<code>-r</code>，如果加上，会把软链接的源文件删除掉！</strong><br>
+正确删除文件夹软链接的命令为：<code>rm mydir</code></li>
 </ul>
 <h2 id="mkdir命令：">mkdir命令：</h2>
 <p>在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。</p>
@@ -1528,7 +2237,13 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 <li>按第二行排序<br>
 <code>sort -n -k2 file</code></li>
 </ol>
-<h2 id="ssh">ssh</h2>
+<h2 id="scp命令">scp命令</h2>
+<ol>
+<li><code>scp</code>与软链接<br>
+会把软链接的文件都拷贝过去！正确的拷贝方法为：<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo tar -czvf test.tgz test</div><div class="line">scp ~/test.tgz </div><div class="line">sudo tar -xzvf test.tgz -C .</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="ssh命令">ssh命令</h2>
 <p>有的命令<code>source .bash_profile</code><br>
 例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></p>
 <h2 id="su命令：">su命令：</h2>
@@ -1588,7 +2303,7 @@ shell 中的写法：<br>
 注意：“[”或“]”与表达式之间必须要有空格。</p>
 </li>
 <li>
-<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
 <code>[ ]</code>是shell built-in，而<code>[[ ]]</code>不属于POSIX；<br>
 <code>[ ]</code>会展开<code>a*</code>，所以用它的时候需要加双引号：<code>[ &quot;$var&quot; ]</code>；<code>[[ ]]</code>不需要<br>
 <code>[ ]</code>会fork a new process，<code>[[ ]]</code>不会</p>
@@ -1641,7 +2356,9 @@ Because blank space is usually used as the separater of command or agruments.<br
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+<li id="fn1" class="footnote-item"><p><a href="http://www.linuxidc.com/Linux/2015-09/123568.htm" target="_blank" rel="external">Linux 中 10 个有用的命令行补全例子</a> <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref2" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -1654,184 +2371,17 @@ Because blank space is usually used as the separater of command or agruments.<br
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人工智能简介</title>
-    <link href="http://yoursite.com/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2017/07/28/人工智能简介/</id>
-    <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2017-09-29T02:08:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
-<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
-<ul>
-<li>Hinton 多伦多大学<br>
-DBN</li>
-<li>LeCun<br>
-CNN</li>
-<li>Bengio<br>
-attention、GAN</li>
-</ul>
-<h2 id="神经网络简介">神经网络简介</h2>
-<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"></p>
-<a id="more"></a>
-<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
-<h2 id="技术备忘">技术备忘</h2>
-<ul>
-<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
-<blockquote>
-<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
-</blockquote>
-</li>
-<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
-<blockquote>
-<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
-</blockquote>
-</li>
-<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
-<blockquote>
-<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
-面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
-</blockquote>
-</li>
-<li>LSTM
-<blockquote>
-<p>LSTM只能避免RNN的梯度消失（gradient vanishing）；梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="历史节点">历史节点</h2>
-<ul>
-<li>1943<br>
-W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
-<li>1949<br>
-D. Olding Hebb: math model</li>
-<li>1957<br>
-F.Rosenblatt: Perceptron</li>
-<li>1969<br>
-Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
-<li>1974<br>
-Paul Werbos: BP(Back Propagation)</li>
-<li>1980<br>
-Hinton: MLP(Multi_Layer Perceptron)</li>
-<li>1982<br>
-John Hopfield: Hopfield Network(pioneer RNN)</li>
-<li>1998<br>
-LeCun: CNN(Convoluted Neural Network)</li>
-<li>2006<br>
-Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
-<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
-<ul>
-<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
-<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
-</ul>
-</li>
-</ul>
-<h2 id="名词概念">名词概念</h2>
-<ul>
-<li>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup></li>
-<li>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
-提升模型在测试集上的预测效果的主题叫做泛化</li>
-<li>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
-相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</li>
-<li>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup><br>
-更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</li>
-<li>DBN(深度信念网络)</li>
-<li>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
-【示意效果】<br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></li>
-<li>the curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>
-<blockquote>
-<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="nn">NN</h1>
-<h2 id="rnn">RNN</h2>
-<p><a href="https://zhuanlan.zhihu.com/p/24813287" target="_blank" rel="external">什么是 LSTM RNN</a><br>
-<a href="https://www.zhihu.com/search?type=content&amp;q=lstm" target="_blank" rel="external">更多介绍</a></p>
-<h2 id="dnn">DNN</h2>
-<h2 id="optimization">optimization</h2>
-<p>待读<br>
-<a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="external">link</a><br>
-<a href="http://ycszen.github.io/2016/08/24/SGD%EF%BC%8CAdagrad%EF%BC%8CAdadelta%EF%BC%8CAdam%E7%AD%89%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%E5%92%8C%E6%AF%94%E8%BE%83/" target="_blank" rel="external">link</a></p>
-<h1 id="技术评论">技术评论</h1>
-<h2 id="技术成熟的条件">技术成熟的条件</h2>
-<h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></h3>
-<blockquote>
-<ul>
-<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
-</ul>
-</blockquote>
-<ul>
-<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
-<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
-<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
-<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
-<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
-</ul>
-<h1 id="reference">reference</h1>
-<h2 id="历史">历史</h2>
-<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
-<h2 id="可读">可读</h2>
-<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
-<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
-[book: Neural networks and deep learning(Michael Nielsen)]<br>
-(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/34878706" target="_blank" rel="external">LSTM如何来避免梯度弥散和梯度爆炸？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref6" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;备忘&quot;&gt;备忘&lt;/h1&gt;
-&lt;h2 id=&quot;三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小&quot;&gt;三巨头介绍&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hinton 多伦多大学&lt;br&gt;
-DBN&lt;/li&gt;
-&lt;li&gt;LeCun&lt;br&gt;
-CNN&lt;/li&gt;
-&lt;li&gt;Bengio&lt;br&gt;
-attention、GAN&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;神经网络简介&quot;&gt;神经网络简介&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg&quot; alt=&quot;极简分类&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="人工智能" scheme="http://yoursite.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="人工智能" scheme="http://yoursite.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>python mechanism</title>
-    <link href="http://yoursite.com/2017/07/28/python_mechanism/"/>
-    <id>http://yoursite.com/2017/07/28/python_mechanism/</id>
+    <link href="http://timchen314.com/2017/07/28/python_mechanism/"/>
+    <id>http://timchen314.com/2017/07/28/python_mechanism/</id>
     <published>2017-07-28T10:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
@@ -1942,123 +2492,297 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="http://timchen314.com/categories/python/"/>
     
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shadownsocks备忘</title>
-    <link href="http://yoursite.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://yoursite.com/2017/07/26/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-09-29T02:08:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://yoursite.com/tags/shadownsocks/"/>
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
     
   </entry>
   
   <entry>
-    <title>Story of Terminal</title>
-    <link href="http://yoursite.com/2017/07/26/Story_of_Terminal/"/>
-    <id>http://yoursite.com/2017/07/26/Story_of_Terminal/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-09-29T02:08:31.000Z</updated>
+    <title>人工智能简介</title>
+    <link href="http://timchen314.com/2017/07/28/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
+    <id>http://timchen314.com/2017/07/28/人工智能简介/</id>
+    <published>2017-07-28T10:00:00.000Z</published>
+    <updated>2017-10-28T10:32:16.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
-<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
-本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
+    <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
+<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
 <ul>
-<li>ctrl+h的编码<br>
-<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
-而ctrl+h的值也为010。<br>
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+<li>Hinton 多伦多大学<br>
+DBN</li>
+<li>LeCun<br>
+CNN</li>
+<li>Bengio<br>
+attention、GAN</li>
 </ul>
+<h2 id="神经网络简介">神经网络简介</h2>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"></p>
 <a id="more"></a>
+<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
+<h2 id="技术特点和技巧的备忘">技术特点和技巧的备忘</h2>
 <ul>
-<li>F1键<br>
-terminal类型的选择也会影响快捷键。<br>
-Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
-</ul>
-<h2 id="问题：">问题：</h2>
-<p>为什么BS无法删除，而是想左移动？<br>
-为什么在执行程序进行输入时，按下BS显示的是^H?</p>
-<h2 id="答案">答案</h2>
-<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
-<p>Terminal</p>
-<ul>
-<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
-<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
-<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
+<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
 <blockquote>
-<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
+<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
 </blockquote>
+</li>
+<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
+<blockquote>
+<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
+</blockquote>
+</li>
+<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
+<blockquote>
+<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
+面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
+</blockquote>
+</li>
+<li>LSTM
+<blockquote>
+<p>LSTM只能避免RNN的梯度消失（gradient vanishing）；梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="历史节点">历史节点</h2>
+<ul>
+<li>1943<br>
+W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
+<li>1949<br>
+D. Olding Hebb: math model</li>
+<li>1957<br>
+F.Rosenblatt: Perceptron</li>
+<li>1969<br>
+Marvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
+<li>1974<br>
+Paul Werbos: BP(Back Propagation)</li>
+<li>1980<br>
+Hinton: MLP(Multi_Layer Perceptron)</li>
+<li>1982<br>
+John Hopfield: Hopfield Network(pioneer RNN)</li>
+<li>1998<br>
+LeCun: CNN(Convoluted Neural Network)</li>
+<li>2006<br>
+Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
+<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
+<ul>
+<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
+<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
+</ul>
+</li>
+</ul>
+<h2 id="名词概念">名词概念</h2>
+<ul>
+<li>
+<p>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup><br>
+【示意效果】<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></p>
+</li>
+<li>
+<p>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
+更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</p>
+</li>
+<li>
+<p>curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+<blockquote>
+<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
+</blockquote>
+</li>
+<li>
+<p>DBN(深度信念网络)</p>
+</li>
+<li>
+<p>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
+提升模型在测试集上的预测效果的主题叫做泛化</p>
+</li>
+<li>
+<p>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup></p>
+</li>
+<li>
+<p>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
+相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</p>
+</li>
+<li>
+<p>schools of AI(译为学派)<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<ol>
+<li>符号主义(symbolicism)，又称为逻辑主义(logicism)、心理学派(psychologism)或计算机学派(computerism)，其原理主要为物理符号系统(即符号操作系统)假设和有限合理性原理。<strong>认为人工智能源于数理逻辑。</strong></li>
+<li>连接主义(connectionism)，又称为仿生学派(bionicsism)或生理学派(physiologism)，其主要原理为神经网络及神经网络间的连接机制与学习算法。<strong>认为人工智能源于仿生学，特别是对人脑模型的研究。</strong></li>
+<li>行为主义(actionism)，又称为进化主义(evolutionism)或控制论学派(cyberneticsism)，其原理为控制论及感知-动作型控制系统。<strong>认为人工智能源于控制论。(认为人工智能源于仿生学，特别是对人脑模型的研究。)</strong></li>
+</ol>
+</li>
+<li>
+<p>Training Set, Validation Set and Testing Set; Ground Truth</p>
+<blockquote>
+<p>验证数据用于最小化过拟合(overfitting)。<br>
+这数据不调整权重和偏差。在基于训练数据调整权重之后，如果基于训练数据的准确度增加了，而基于验证数据的准确度没有增加或反而下降了，则表明过拟合（overfitting）了，需要立即停止训练。<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
+</blockquote>
+</li>
+</ul>
+<p>Ground Truth: 正确标注的数据是Ground Truth， 错误的标记则不是。（也有人将所有标注数据都叫做Ground Truth）<sup class="footnote-ref"><a href="#fn7" id="fnref7:1">[7]</a></sup></p>
+<h1 id="nn">NN</h1>
+<h2 id="rnn">RNN</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/24813287" target="_blank" rel="external">什么是 LSTM RNN</a><br>
+<a href="https://www.zhihu.com/search?type=content&amp;q=lstm" target="_blank" rel="external">更多介绍</a></p>
+<h2 id="dnn">DNN</h2>
+<h2 id="optimization">optimization</h2>
+<p>待读<br>
+<a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="external">link</a><br>
+<a href="http://ycszen.github.io/2016/08/24/SGD%EF%BC%8CAdagrad%EF%BC%8CAdadelta%EF%BC%8CAdam%E7%AD%89%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%E5%92%8C%E6%AF%94%E8%BE%83/" target="_blank" rel="external">link</a></p>
+<h1 id="framework-software">framework &amp; software</h1>
+<h2 id="deepchem">Deepchem</h2>
+<p>Developed by Vijia Panda &amp; Schrodinger Company. <a href="https://deepchem.io" target="_blank" rel="external">deepcheem</a></p>
+<ul>
+<li><a href="https://deepchem.io/docs/notebooks/graph_convolutional_networks_for_tox21.html" target="_blank" rel="external">Modeling Small Molecule Toxicity with Graph Convolutions</a> (An Official Example)<br>
+刚看完<code>In [2]:</code>部分。</li>
+</ul>
+<h1 id="技术评论">技术评论</h1>
+<h2 id="技术成熟的条件">技术成熟的条件</h2>
+<h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></h3>
+<blockquote>
+<ul>
+<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
+</ul>
+</blockquote>
+<ul>
+<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
+<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
+<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
+<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
+<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="历史">历史</h2>
+<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
+<h2 id="可读">可读</h2>
+<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
+<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
+[book: Neural networks and deep learning(Michael Nielsen)]<br>
+(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/34878706" target="_blank" rel="external">LSTM如何来避免梯度弥散和梯度爆炸？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="http://blog.csdn.net/u011531010/article/details/52935348" target="_blank" rel="external">人工智能学派简介</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a href="http://blog.csdn.net/myarrow/article/details/51504328" target="_blank" rel="external">Training Set, Validation Set 和Testing Set之间的差别及关系</a> <a href="#fnref7" class="footnote-backref">↩</a> <a href="#fnref7:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref8" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
-&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
-本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
+      &lt;h1 id=&quot;备忘&quot;&gt;备忘&lt;/h1&gt;
+&lt;h2 id=&quot;三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小&quot;&gt;三巨头介绍&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ctrl+h的编码&lt;br&gt;
-&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
-而ctrl+h的值也为010。&lt;br&gt;
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
+&lt;li&gt;Hinton 多伦多大学&lt;br&gt;
+DBN&lt;/li&gt;
+&lt;li&gt;LeCun&lt;br&gt;
+CNN&lt;/li&gt;
+&lt;li&gt;Bengio&lt;br&gt;
+attention、GAN&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;神经网络简介&quot;&gt;神经网络简介&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg&quot; alt=&quot;极简分类&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="人工智能" scheme="http://timchen314.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+      <category term="人工智能" scheme="http://timchen314.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hdf5简介</title>
+    <link href="http://timchen314.com/2017/07/26/hdf5/"/>
+    <id>http://timchen314.com/2017/07/26/hdf5/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-09-29T02:08:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
+<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
+<h3 id="历史">历史</h3>
+<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
+<h3 id="特性">特性</h3>
+<ul>
+<li>自述性<br>
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
+<li>通用性<br>
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>灵活性<br>
+HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
+<li>扩展性<br>
+HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
+<li>跨平台性</li>
+<li>现代性<br>
+支持并行I/O，线程和其他一些现代系统和应用要求。</li>
+</ul>
+<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
+<h3 id="why-hdf">Why HDF?</h3>
+<ul>
+<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
+<li>NASA’s Earth Observing System等等官网介绍</li>
+</ul>
+<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
+<h2 id="文档">文档</h2>
+<ul>
+<li>sphinx<br>
+它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
+<ul>
+<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
+<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
+<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
+&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
+&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
+&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
+&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自述性&lt;br&gt;
+对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
+&lt;li&gt;通用性&lt;br&gt;
+许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="技术杂烩" scheme="http://timchen314.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="Terminal" scheme="http://yoursite.com/tags/Terminal/"/>
+      <category term="技术杂烩" scheme="http://timchen314.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
     
   </entry>
   
   <entry>
     <title>git笔记</title>
-    <link href="http://yoursite.com/2017/07/26/git/"/>
-    <id>http://yoursite.com/2017/07/26/git/</id>
+    <link href="http://timchen314.com/2017/07/26/git/"/>
+    <id>http://timchen314.com/2017/07/26/git/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2017-09-29T02:08:31.000Z</updated>
+    <updated>2017-11-07T15:12:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -2124,7 +2848,8 @@ terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspa
 <code>git reset --hard 3628164</code></p>
 </li>
 <li>
-<p>reflog 查看历史命令</p>
+<p>reflog 查看历史命令<br>
+与<code>git log</code>的区别：显示整个本地仓储的commit, 包括所有branch的commit, 甚至包括已经撤销的commit, 只要HEAD发生了变化, 就会在reflog里面看得到。 git log只包括当前分支的commit.</p>
 </li>
 <li>
 <p>clone<br>
@@ -2349,88 +3074,121 @@ but not:<br>
     
     </summary>
     
-      <category term="git" scheme="http://yoursite.com/categories/git/"/>
+      <category term="git" scheme="http://timchen314.com/categories/git/"/>
     
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://timchen314.com/tags/git/"/>
     
   </entry>
   
   <entry>
-    <title>hdf5简介</title>
-    <link href="http://yoursite.com/2017/07/26/hdf5/"/>
-    <id>http://yoursite.com/2017/07/26/hdf5/</id>
+    <title>shadownsocks备忘</title>
+    <link href="http://timchen314.com/2017/07/26/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://timchen314.com/2017/07/26/shadowsocks备忘/</id>
     <published>2017-07-26T10:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
-<p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
-<h3 id="历史">历史</h3>
-<p>HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。</p>
-<h3 id="特性">特性</h3>
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
 <ul>
-<li>自述性<br>
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。</li>
-<li>通用性<br>
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。</li>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
 </ul>
 <a id="more"></a>
-<ul>
-<li>灵活性<br>
-HDF允许用户把相关的数据对象组合在一起，放到一个分层结构中，向数据对象添加描述和标签。它还允许用户把科学数据放到多个HDF文件里。</li>
-<li>扩展性<br>
-HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼容。</li>
-<li>跨平台性</li>
-<li>现代性<br>
-支持并行I/O，线程和其他一些现代系统和应用要求。</li>
-</ul>
-<p><strong>解决我的trajectory程序的问题：自述性、通用性、扩展性</strong></p>
-<h3 id="why-hdf">Why HDF?</h3>
-<ul>
-<li>有专门的维护： <a href="https://www.hdfgroup.org" target="_blank" rel="external">hdfgroup.org</a></li>
-<li>NASA’s Earth Observing System等等官网介绍</li>
-</ul>
-<h3 id="caffe等机器学习-深度学习框架原生支持">Caffe等机器学习、深度学习框架原生支持</h3>
-<h2 id="文档">文档</h2>
-<ul>
-<li>sphinx<br>
-它能够把一组 reStructuredText 格式的文件转换成各种输出格式，而且自动地生成交叉引用，生成目录等。也就是说，如果有一个目录，里面包含一堆reST格式的文档（可能子目录里面也同样存在reST格式的文档），Sphinx能够生成一个漂亮的组织结构以及便于浏览和导航的HTML 文件（这些文件在其他的文件夹中）。
-<ul>
-<li>Sphinx介绍：<a href="https://zhuanlan.zhihu.com/p/25688826" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25688826</a></li>
-<li>中文文档：<a href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#" target="_blank" rel="external">https://zh-sphinx-doc.readthedocs.io/en/latest/index.html#</a></li>
-<li>再通过github部署（专门为生成程序介绍页而设计的功能）：<a href="https://segmentfault.com/a/1190000002765287" target="_blank" rel="external">https://segmentfault.com/a/1190000002765287</a></li>
-</ul>
-</li>
-</ul>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;hdf5&quot;&gt;HDF5&lt;/h2&gt;
-&lt;p&gt;可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。&lt;/p&gt;
-&lt;h3 id=&quot;历史&quot;&gt;历史&lt;/h3&gt;
-&lt;p&gt;HDF(Hierarchical Data File)是美国国家高级计算应用中心(National Center for Supercomputing Application,NCSA)为了满足各种领域研究需求而研制的一种能高效存储和分发科学数据的新型数据格式。1998年，发布HDF5版本。迄今为5.1版，已经非常稳定。&lt;/p&gt;
-&lt;h3 id=&quot;特性&quot;&gt;特性&lt;/h3&gt;
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;自述性&lt;br&gt;
-对于一个HDF文件里的每一个数据对象，有关于该数据的综合信息（元数据）。在没有任何外部信息的情况下，HDF允许应用程序解释HDF文件的结构和内容。&lt;/li&gt;
-&lt;li&gt;通用性&lt;br&gt;
-许多数据类型都可以被嵌入在一个HDF文件里。例如，通过使用合适的HDF数据结构，符号、数字和图形数据可以同时存储在一个HDF文件里。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="shadownsocks" scheme="http://timchen314.com/categories/shadownsocks/"/>
     
     
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="shadownsocks" scheme="http://timchen314.com/tags/shadownsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Story of Terminal</title>
+    <link href="http://timchen314.com/2017/07/26/Story_of_Terminal/"/>
+    <id>http://timchen314.com/2017/07/26/Story_of_Terminal/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2017-09-29T02:08:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
+<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
+本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
+<ul>
+<li>ctrl+h的编码<br>
+<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
+而ctrl+h的值也为010。<br>
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>F1键<br>
+terminal类型的选择也会影响快捷键。<br>
+Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
+</ul>
+<h2 id="问题：">问题：</h2>
+<p>为什么BS无法删除，而是想左移动？<br>
+为什么在执行程序进行输入时，按下BS显示的是^H?</p>
+<h2 id="答案">答案</h2>
+<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
+<p>Terminal</p>
+<ul>
+<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
+<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
+<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
+<blockquote>
+<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
+&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
+本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ctrl+h的编码&lt;br&gt;
+&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
+而ctrl+h的值也为010。&lt;br&gt;
+terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
+    
+      <category term="编码" scheme="http://timchen314.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="Terminal" scheme="http://timchen314.com/tags/Terminal/"/>
     
   </entry>
   
   <entry>
     <title>markdown in hexo-render-markdown-it</title>
-    <link href="http://yoursite.com/2017/07/21/markdown_in_hexo/"/>
-    <id>http://yoursite.com/2017/07/21/markdown_in_hexo/</id>
+    <link href="http://timchen314.com/2017/07/21/markdown_in_hexo/"/>
+    <id>http://timchen314.com/2017/07/21/markdown_in_hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
@@ -2646,17 +3404,17 @@ so &lt;code&gt;indent.sh&lt;/code&gt; is used&lt;/li&gt;
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://timchen314.com/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://timchen314.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>阿里云邮箱设置记录</title>
-    <link href="http://yoursite.com/2017/07/21/ali_mail_set/"/>
-    <id>http://yoursite.com/2017/07/21/ali_mail_set/</id>
+    <link href="http://timchen314.com/2017/07/21/ali_mail_set/"/>
+    <id>http://timchen314.com/2017/07/21/ali_mail_set/</id>
     <published>2017-07-21T10:00:00.000Z</published>
     <updated>2017-09-29T02:08:31.000Z</updated>
     
@@ -2740,19 +3498,19 @@ ICP备案是：&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&q
     
     </summary>
     
-      <category term="技术杂烩" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="技术杂烩" scheme="http://timchen314.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
     
     
-      <category term="技术杂烩" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+      <category term="技术杂烩" scheme="http://timchen314.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
     
-      <category term="邮箱设置" scheme="http://yoursite.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
+      <category term="邮箱设置" scheme="http://timchen314.com/tags/%E9%82%AE%E7%AE%B1%E8%AE%BE%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>hexo</title>
-    <link href="http://yoursite.com/2017/07/21/hexo/"/>
-    <id>http://yoursite.com/2017/07/21/hexo/</id>
+    <link href="http://timchen314.com/2017/07/21/hexo/"/>
+    <id>http://timchen314.com/2017/07/21/hexo/</id>
     <published>2017-07-21T10:00:00.000Z</published>
     <updated>2017-09-29T02:17:14.000Z</updated>
     
@@ -2892,12 +3650,12 @@ Fix error to ensure “all article” works normally.&lt;/li&gt;
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://timchen314.com/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://timchen314.com/tags/hexo/"/>
     
-      <category term="yilia" scheme="http://yoursite.com/tags/yilia/"/>
+      <category term="yilia" scheme="http://timchen314.com/tags/yilia/"/>
     
   </entry>
   
