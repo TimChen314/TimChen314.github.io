@@ -24,7 +24,8 @@ tcl语言作为脚本语言，tcl语法可以参考[TCL脚本入门教程](https
    + `pbc`...
 1. pbc 
    + pbc是周期性边界条件的缩写（periodic boundary condition）
-   + pbc wrap -all 【将粒子折回盒子内】
+   + `pbc wrap -all 【将粒子折回盒子内】`
+   + `pbc set {1308.998 1278.998 1281.998} -all`：手动定义盒子
    + 画盒子
      pbc box -on 【画出盒子】   
      pbc box -center origin 【设定盒子中心的位置】   

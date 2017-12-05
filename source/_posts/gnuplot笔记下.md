@@ -216,6 +216,46 @@ view用来设定3d图的观察角度
 ![示意图](http://gnuplot.sourceforge.net/demo_4.6/fillbetween.1.png)
 `plot 'silver.dat' u 1:2:3 w filledcu`
 
+### time series
+To plot data in time series, you need several special sets.
+   > **From manual5.1**
+Xtics timedata
+In case of timeseries data, axis tic position values must be given as quoted dates or times according to the
+formattimefmt. If the <start>, <incr>, <end>form is used,<start>and<end>must be given according
+to timefmt, but <incr>must be in seconds. Times will be written out according to the format given on
+set format, however.
+
+Example:
+   ```
+ set xdata time
+ set timefmt '%Y-%m-%d'
+ set datafile separator ","  # data is from ".csv" file
+ 
+ set xrange ["2012-06-01":]
+ set format x "%m\n%y"
+ set xtics 604800*26 #604800 is the number of second in a week
+ set xlabel "month\nyear"
+```
+![bitcoin](https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png)
+
+## User-defined function
+1. auto name
+   ```gnuplot
+# convert incoming parameter "ARG1" to eps name automatically.
+# e.g., if "ARG1" is "price.plt", then automatic name is "price.eps"
+ name_length=strlen(ARG1)-4
+ name=ARG1[:name_length]
+ set output name.".eps"
+```
+2. save as eps with specific format
+   ```gnuplot
+ set size 1.8,1.8
+ set termoption dash
+ set terminal postscript eps enhanced color lw 4.0 dashlength 8.0 "Helvetica,45"
+ call "auto-eps-name.gnu" ARG1
+```
+Add `call "size1.8-font45-lw4-eps.gnu" ARG0` to your gnuplot script and that's it!
+
 
 ## Error & 问题：   
 + 输出文件的大小为0——解决方法：

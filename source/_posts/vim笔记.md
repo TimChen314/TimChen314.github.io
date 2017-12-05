@@ -23,8 +23,7 @@ date: 2017-08-01 18:00:00
 (7) `<leader>` is backlash   
 (8) “+y  复制到系统剪贴板   
 (11) Vu(VU) # V mode下，大小写转换   
-(12) `:!pwd` # Execute the pwd unix command, then returns to Vi   
-(13) `!!pwd` # Execute the pwd unix command and insert output in file 
+
 (14) vim中的g(global)和%的区别：   
    + g:全局的
 s/pattern/replacement/  : 替换行中出现的每一个pattern
@@ -97,6 +96,16 @@ m/r -- 折叠/打开
 :echo has('python3') #0 is false, 1 means true #判断是否支持python3
 :echo has('viminfo')
 ```
+### ==shell cmd in vim==
+ + `:!pwd` # Execute the pwd unix command, then returns to Vi   
+ + `!!pwd` # Execute the pwd unix command and insert output in file 
+ + `:r !command`
+ + `:起始行号,结束行号 !command`
+ 将起始行号和结束行号指定的范围中的内容输入到shell命令command处理，并将处理结果替换起始行号和结束行号指定的范围中的内容
+ 例如
+ `:62,72 !sort #，将62行到72行的内容进行排序`
+ + `:起始行号,结束行号 w !command`
+ 将起始行号和结束行号所指定的范围的内容作为命令command的输入。不会改变当前编辑的文件的内容
 
 ## vimrc
 ### Plugin
