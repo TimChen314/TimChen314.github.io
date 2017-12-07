@@ -109,6 +109,9 @@ $font-size-headings-base  = 28px
 $font-size-headings-step  = 2px
 ```
 
+## more available setting
++ [Hexo文章简单加密访问](http://blog.csdn.net/Lancelot_Lewis/article/details/53422901)
+
 ## hexo bug
 + ``Error: Cannot find module './build/Release/DTraceProviderBindings'`` in OS X 
    1. `npm install hexo --no-optional` doesn't work

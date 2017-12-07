@@ -1,3 +1,4 @@
+
 ---
 title: numpy notes
 tags: [python, 编程语言]   
@@ -5,11 +6,13 @@ top: 11
 categories: python   
 date: 2017-10-31 18:00:00
 ---
-
+[TOC]
 The fundamental package for scientific computing with Python.
 <!-- more -->
+
 ## numpy
-帮助：np.info(np.random)
+==Since pythoner usually do `import numpy as np`, in most scenes 'np' measn 'numpy'==
+帮助：`np.info(np.random)`
 
 #### ndarray学习
 [numpy中的ndarray方法和属性](http://blog.csdn.net/qq403977698/article/details/47254597)
@@ -31,12 +34,13 @@ The fundamental package for scientific computing with Python.
                             # 但可直接索引
 ```
    + flatten()是函数调用，可以指定平坦化的参数。
-    ```ndarray.flatten(order='C')```
+    `ndarray.flatten(order='C')`
     可选参数，order：
 （1）’C’：C-style，行序优先
 （2）’F’：Fortran-style，列序优先
 （3）’A’：保持
 （4）默认为’C’
+
 + ndarray.transpose(*axes) :返回矩阵的转置矩阵
 + ndarray.take(indices, axis=None, out=None, mode=’raise’):获得数组的指定索引的数据，如：
    ```python
@@ -45,6 +49,10 @@ array([[ 1,  3],
 [ 5,  7],
 [ 9, 11]])
 ```
+
++ `numpy.argmax(a, axis=None, out=None)` ==非常有用==
+Returns the indices of the maximum values along an axis. [doc](https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.argmax.html)
+
 
 
 #### 构造矩阵
@@ -65,8 +73,10 @@ array([[ 1,  3],
  [ 0.  0.  1.]]
 ```
 
-#### numpy下的vstack和hstack函数：
-vstack、hstack是浅拷贝
+#### 数据添加与拷贝
++ `c=a.copy`深拷贝
++ vstack和hstack函数：
+vstack、hstack是==深拷贝==
    ```python
    >>> a = np.ones((2,2))
    >>> b = np.eye(2)
@@ -76,6 +86,8 @@ vstack、hstack是浅拷贝
  [ 1.  0.]
  [ 0.  1.]]
 ```
+
++ `row_stack(matrix,a_row)` 向二维矩阵尾部添加一行
 
 #### numpy.linalg
    ```python

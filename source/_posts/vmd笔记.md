@@ -25,10 +25,12 @@ tcl语言作为脚本语言，tcl语法可以参考[TCL脚本入门教程](https
 1. pbc 
    + pbc是周期性边界条件的缩写（periodic boundary condition）
    + `pbc wrap -all 【将粒子折回盒子内】`
+   + pbc wrap -shiftcenterrel {-0.5 -0.5 -0.5}
+     我们希望wrap后坐标的中心在{0 0 0}处，然而，默认情况下，wrap的中心在{L/2 L/2 L/2}处，所以我们要将其平移回来！
    + `pbc set {1308.998 1278.998 1281.998} -all`：手动定义盒子
    + 画盒子
      pbc box -on 【画出盒子】   
-     pbc box -center origin 【设定盒子中心的位置】   
+     pbc box -center origin 【设定盒子中心的位置为{0 0 0}，而默认的盒子{0 0 0}点在盒子角上】   
      pbc box -center origin -style tubes -width 1 -color gray   
    + pbc join res -border 5 【接上由于pbc导致的盒子边界处的断键】  
 2. display

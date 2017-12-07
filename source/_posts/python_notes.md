@@ -5,7 +5,7 @@ top: 11
 categories: python   
 date: 2017-10-02 18:00:00
 ---
- 
+[TOC] 
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[^3]
 <!-- more -->
 
@@ -275,9 +275,7 @@ Split the pathname path into a pair (root, ext)
 
 2. inplemented by _subprocess.Popen_, so why not you use _subprocess_?
 
-[python doc](
-
-https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen)
+[python doc](https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen)
 
 ### time & calendar
 [Python 日期和时间 runoob](http://www.runoob.com/python/python-date-time.html)
@@ -353,6 +351,12 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 
 ### random [doc](https://docs.python.org/3/library/random.html)
 + random.seed(a=None, version=2)
+
+### shutil
+>The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.
+
+`shutil.copyfile(src, dst)`
+
 
 #### functions for integers
 + random.randrange(start, stop[, step])
