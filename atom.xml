@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://timchen314.com/"/>
-  <updated>2018-01-02T04:00:22.000Z</updated>
+  <updated>2018-01-02T14:12:03.000Z</updated>
   <id>http://timchen314.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
@@ -339,7 +339,7 @@ A complicate answer is:<br>
     <link href="http://timchen314.com/linux_senior_command/"/>
     <id>http://timchen314.com/linux_senior_command/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -440,7 +440,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -489,7 +489,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -549,7 +549,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -735,7 +735,7 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -1265,7 +1265,7 @@ Python features a dynamic type system and automatic memory management and suppor
     <link href="http://timchen314.com/vmd%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vmd笔记/</id>
     <published>2017-09-29T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>
@@ -1466,6 +1466,14 @@ It’s like you give：</p>
 <a href="http://www.ks.uiuc.edu/Research/vmd/mailing_list/vmd-l/17294.html" target="_blank" rel="external">source: vmd mailing list</a></p>
 <h4 id="5-get-one-coor-of-three-only-one-element-in-pxyz">5. get one coor of three(only one element in pxyz)</h4>
    <figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span> pxyz [atomselect top <span class="string">"index = [ expr 250 * $i ]"</span> ]</div><div class="line"><span class="keyword">set</span> px [$pxyz get x]</div></pre></td></tr></table></figure>
+<h3 id="vmd传参数">vmd传参数</h3>
+<p>vmd本身是一个csh脚本!</p>
+<ol>
+<li><code>[lindex $argv 0]</code><br>
+<code>vmd -e yourscript.tcl -args your_first_arg</code></li>
+<li><code>env YOUR_ARG=&quot;ba la ba la&quot; vmd -e yourscript.tcl</code><br>
+<a href="http://www.ks.uiuc.edu/Research/vmd/mailing_list/vmd-l/7839.html" target="_blank" rel="external">http://www.ks.uiuc.edu/Research/vmd/mailing_list/vmd-l/7839.html</a></li>
+</ol>
 <h2 id="存高质量图片">存高质量图片<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></h2>
 <ul>
 <li>render TachyonInternal name.tga<br>
@@ -1600,7 +1608,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
     <id>http://timchen314.com/Word格式论文中添加引用/</id>
     <published>2017-09-24T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的<strong>bib文件</strong>，向Word中添加引用文献。该方法有几个好处:</p>
 <ol>
@@ -1638,7 +1646,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
     <id>http://timchen314.com/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
 <a id="more"></a>
@@ -1702,7 +1710,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/digital_currency/"/>
     <id>http://timchen314.com/digital_currency/</id>
     <published>2017-08-30T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>What a bubble!<br>
 <img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
@@ -1759,7 +1767,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
     <id>http://timchen314.com/gnuplot笔记上/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
 <a id="more"></a>
@@ -1954,7 +1962,7 @@ Three binary operators require string operands: the string concatenation operato
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://timchen314.com/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -2200,7 +2208,7 @@ The eps file doesn’t get written until a plot command is specified after speci
     <link href="http://timchen314.com/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -2366,7 +2374,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://timchen314.com/linux_command/"/>
     <id>http://timchen314.com/linux_command/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -2675,6 +2683,10 @@ The bessel function of integer order n of x.   贝塞尔函数</p>
 </li>
 <li>
 <p><code>convert ${i%plt}eps -density 300 ${i%plt}png</code>  #300代表dpi</p>
+</li>
+<li>
+<p><code>convert -loop 1</code>中loop是播放次数；0代表无限循环<br>
+<code>-pause 200</code>：暂停200毫秒，再进行下一轮播放。</p>
 </li>
 <li>
 <p>animated gif</p>
@@ -3033,7 +3045,7 @@ Because blank space is usually used as the separater of command or agruments.<br
     <link href="http://timchen314.com/python_mechanism/"/>
     <id>http://timchen314.com/python_mechanism/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]</p>
 <h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
@@ -3164,7 +3176,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
     <link href="http://timchen314.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
     <id>http://timchen314.com/人工智能简介/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -3371,7 +3383,7 @@ attention、GAN&lt;/li&gt;
     <link href="http://timchen314.com/shadowsocks%E5%A4%87%E5%BF%98/"/>
     <id>http://timchen314.com/shadowsocks备忘/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
 <ul>
@@ -3409,7 +3421,7 @@ attention、GAN&lt;/li&gt;
     <link href="http://timchen314.com/hdf5/"/>
     <id>http://timchen314.com/hdf5/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -3480,7 +3492,7 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
     <link href="http://timchen314.com/git/"/>
     <id>http://timchen314.com/git/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git">git</h1>
 <h2 id="开始">开始</h2>
@@ -3681,6 +3693,10 @@ $ <code>git checkout -- test.txt</code></p>
 <h2 id="其他概念与原理">其他概念与原理</h2>
 <ul>
 <li>
+<p>conflict<br>
+<a href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank" rel="external">Resolving a merge conflict using the command line</a></p>
+</li>
+<li>
 <p>remote<br>
 remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5]</a></sup></p>
 <blockquote>
@@ -3800,7 +3816,7 @@ but not:<br>
     <link href="http://timchen314.com/Story_of_Terminal/"/>
     <id>http://timchen314.com/Story_of_Terminal/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T04:00:22.000Z</updated>
+    <updated>2018-01-02T14:12:03.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="总结">总结</h1>
 <p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
