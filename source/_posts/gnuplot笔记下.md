@@ -1,7 +1,7 @@
 ---
 title:  gnuplot笔记（下）
 tags: [画图,linux]   
-top: 11
+top: 10
 categories: linux   
 date: 2017-08-16 20:00:00
 ---
@@ -111,6 +111,7 @@ gnuplot -c script.plt hehestr1 str2 str3
 ### 8. how to set the config file?
 show loadpath will show where the configuration file locate at 
 gerenal configuration is in app-defaults dir.
+e.g., write `set loadpath 'your_path'` into .gnuplotrc will avoid every time work.
 
 ### 9. smooth csplines 可以解决由于点多画不出虚线的问题
 

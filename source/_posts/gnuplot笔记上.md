@@ -1,7 +1,7 @@
 ---
 title:  gnuplot笔记（上）
 tags: [画图,linux]   
-top: 11
+top: 10
 categories: linux   
 date: 2017-08-16 20:00:00
 ---

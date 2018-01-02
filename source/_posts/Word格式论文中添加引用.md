@@ -1,7 +1,7 @@
 ---
 title:  如何快速的向Word格式的硕士/博士论文中，添加引用文献？
-tags: [word,]   
-top: 11
+tags: [office]   
+top: 10
 categories: 技术杂烩 
 date: 2017-09-24 18:00:00
 ---

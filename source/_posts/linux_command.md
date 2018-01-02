@@ -67,8 +67,8 @@ Ctrl + 方向键右键    光标移动到后一个单词结尾
 - `!!`， 重复执行上一条命令。该命令等价于 !-1；!?str，重复执行最近一条包含字符串 str 的命令；
 - `!#`，引用当前的命令行，例如：`cp filename filename.bak` 可以写为 `cp filename !#:1.bak`
 
-- `!^`
-重用上一条命令的第一个参数；
+- `!^`/`!$`
+重用上一条命令的第一个参数/最后一个参数；
 `ls /usr/share/doc  /usr/share/man; cd !^   `# 即 cd /usr/share/doc
 - `!*`
 重用上一条命令的所有参数； `touch a.txt b.txt c.txt`
@@ -175,6 +175,19 @@ Xshell中，文件--属性--键盘--功能键类型 选择xterm R6，则VIM中�
 ##  alias命令： 
 http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh
    >Quoted from the man page of bash: Aliases are not expanded when the shell is not interactive, unless the expand_aliases shell option is set using shopt ...
+
+## apt-get
++ Usage: 
+   ```shell
+apt-get update \
+ && apt-get upgrade -y \
+ && apt-get install -y \
+```
+
++ apt-cache can search package
+
++ common package name
+libboost-all-dev
 
 ##     at命令：  
 介绍：定时执行一次命令。如果想周期地执行命令，请使用crontab
@@ -411,6 +424,17 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 ##  mkdir命令：
 在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。
 
+## netstat
+Settings
++ `-t`/`-u`: tcp protocol/udp protocol
++ `-r`: display routing table
+
+Common command
++ `netstat -nr`
+show IP routing table
++ `netstat -tnpl`
+show the listened port
+
 
 ## printf命令： 
 1.补零
@@ -423,6 +447,14 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 1. linux查看进程启动时间(运行多长时间) 
 `ps -eo pid,lstart,etime | grep your_pid`
 
+## scp命令
+1. `scp`与软链接
+会把软链接的文件都拷贝过去！正确的拷贝方法为：
+   ```shell
+sudo tar -czvf test.tgz test
+scp ~/test.tgz 
+sudo tar -xzvf test.tgz -C .
+```
 
 ##   sed命令：  
 [sed命令详解](http://www.cnblogs.com/ctaixw/p/5860221.html)   
@@ -456,6 +488,7 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 10. 匹配空行
 正常匹配空行是`^$`；但是对于从windows拷贝过来的文件，要用`^.$`匹配
 而vim（版本8.0）内置的sed，不论文件来自哪种系统，都可以用`^$`匹配
+`sed '/^[[:space:]]*$/d' file` 可以去掉由空格、Tab和换行组成的空行!
 11. 指定行添加内容
 `sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt`
 
@@ -469,22 +502,24 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 `sed -e 's/str1//;s/str2//' filename`
 
 
+## set命令
+==`set` is important, but always neglected!== 
+`set -u`: if a varible does not exist, report an error.
+`set -x`: print the corresponding command before output.
+`set -e`: stop the script when  an error is encountered.
+`set -o pipefail`: Without this option, the error during a pipeline will not be reported.
+
+These 4 setting should be used at all times.
+In script: add `set -euxo pipefail` in the beginning of script.
+In cli: `$ bash -euxo pipefail script.sh`
 
 ## sort命令 
 1. 按第二行排序
 `sort -n -k2 file`
 
-## scp命令
-1. `scp`与软链接
-会把软链接的文件都拷贝过去！正确的拷贝方法为：
-   ```shell
-sudo tar -czvf test.tgz test
-scp ~/test.tgz 
-sudo tar -xzvf test.tgz -C .
-```
 
 ##  ssh命令
-有的命令`source .bash_profile`
+通过ssh执行命令时，由于没有登录，是不会执行`source .bash_profile`的。可以手动执行解决这个问题：
 例如：`sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy"$i" 192.9.207.204 "source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat"`
 
 ##  su命令： 
@@ -529,7 +564,9 @@ ls *.jpg | xargs -I{} -P 8 convert "{}" `echo {} | sed 's/jpg$/png/'`
 ## yum命令
 1. `yum install foo`
 2. `yum remove foo`
-2. `yum list *foo*  #You can rearch the available packages`
+2. `yum search *foo* `
+2. `yum info *foo* `
+2. `yum list *foo*  # the available packages`
 3. `yum localinstall foo.rpm`
 
 

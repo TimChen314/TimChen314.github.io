@@ -219,6 +219,11 @@ data = {'first': 'Hodor', 'last': 'Hodor!'}
 out.write(" ".join(mylist))
 # 用" "链接mylist中的iterm
 ```
++ elegant use
+   ```python
+out.write(" ".join( map(str,iterable)  ))
+```
+
 
 #### 7. encode()/decode()
 + str.encode(encoding="utf-8", errors="strict")
@@ -352,11 +357,6 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 ### random [doc](https://docs.python.org/3/library/random.html)
 + random.seed(a=None, version=2)
 
-### shutil
-   >The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.
-
-`shutil.copyfile(src, dst)`
-
 
 #### functions for integers
 + random.randrange(start, stop[, step])
@@ -369,11 +369,22 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 + random.uniform(a, b)
 + random.gauss(mu, sigma)
 
+### shutil
+   >The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.
+
+`shutil.copyfile(src, dst)`
+
 
 ## other useful things
 ### ipython
+[入门](https://www.cnblogs.com/cuiyubo/p/6823478.html)
++ "?" 帮助与显示信息
+`?save` 会给出save命令的用法、对象的签名
+`??your_function` 显示源代码
++ `!pwd` 加!执行shell command
++ `%hist`
++ `%edit` 使用编辑器打开
 
-+ "?" 帮助，?save 会给出save命令的用法
 
 ### conda
 + minicoda

@@ -10,9 +10,33 @@ date: 2017-10-31 18:00:00
 The fundamental package for scientific computing with Python.
 <!-- more -->
 
-## numpy
-==Since pythoner usually do `import numpy as np`, in most scenes 'np' measn 'numpy'==
-帮助：`np.info(np.random)`
+#### Introduction
+1. ==Best tutorial: [Quickstart tutorial](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html#tricks-and-tips)==
+2. Since pythoner usually do `import numpy as np`, in most scenes =='np' measn 'numpy'== 
+3. **Note: an 1d array in numpy acts like a row vector in linear algebra, but most lienar algebra textbook are written in column form!
+In text book: matrix x column vector = column vector   
+In numpy: row vector x matrix.T = row vector**
+4. ==string type numpy array automatically encode the string to bytes!==
+   ```python
+new_a = a.astype('U') # get string instead of bytes
+```
+5. 帮助：`np.info`
+例如`np.info(np.random)`
+
+#### [broadcasting](https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html) 
+Broadcasting is one of most error-prone concept in numpy. 
+   >When operating on two arrays, NumPy compares their shapes element-wise. It starts with the trailing dimensions, and works its way forward. Two dimensions are compatible when:
+   >1. they are equal, or
+   >2. one of them is 1
+
+
+1. reshape can turn off the broadcast
+2. an telling example
+   >A      (4d array):  8 x 1 x 6 x 1   
+B      (3d array):      7 x 1 x 5   
+Result (4d array):  8 x 7 x 6 x 5   
+
+   So for a single dimension, the broadcast means numpy will expand (6 x 1) to (6 x 5)， and then do element-wise operation.  
 
 #### ndarray学习
 [numpy中的ndarray方法和属性](http://blog.csdn.net/qq403977698/article/details/47254597)
@@ -57,7 +81,7 @@ Returns the indices of the maximum values along an axis. [doc](https://docs.scip
 
 #### 构造矩阵
 + arange()/linspace()
-+ numpy.zeros，numpy.ones，numpy.eye, numpy.full((2,2),7)
++ numpy.zeros，numpy.ones，numpy.eye, numpy.empty((2,3)), numpy.full((2,2),7)
    ```python
    >>> print np.zeros((3,4))
 [[ 0.  0.  0.  0.]
@@ -72,6 +96,42 @@ Returns the indices of the maximum values along an axis. [doc](https://docs.scip
  [ 0.  1.  0.]
  [ 0.  0.  1.]]
 ```
+
+#### 矩阵indexing
+1. automatic reshaping
+   ```python3
+   >>> a = np.arange(30)
+   >>> a.shape = 2,-1,3  # -1 means "whatever is needed"
+   >>> a.shape
+(2, 5, 3)
+```
+
+2. Indexing with Arrays of Indices
++ Suppose a and idx is a np.array, then `a[i].shape == idx.shape`
++ Supose a, idx_i and idx_j is a np.array, if `idx_i.shape == idx_j.shape`, then `a[i,j].shape ==  idx_i.shape`, idx_i is the first axis index of array a, idx_j is the second axis index of array a. 
+   ```python
+list_ij=[i,j]
+a[list_ij] == a[i,j] # this statement is true
+```
+
+3. Indexing with Boolean Arrays
+   ```python
+   >>> a = np.arange(12).reshape(3,4)
+   >>> b = a > 4
+   >>> b                                          # b is a boolean with a's shape
+array([[False, False, False, False],
+       [False,  True,  True,  True],
+       [ True,  True,  True,  True]], dtype=bool)
+   >>> a[b]                                       # 1d array with the selected elements
+array([ 5,  6,  7,  8,  9, 10, 11])
+   >>> a[b]=0
+   >>> a
+array([[0, 1, 2, 3],
+       [4, 0, 0, 0],
+       [0, 0, 0, 0]])
+```
+Note that a[b] is a 1d array! But a[b]=0 is a 2d array! This is because if you don't assign a value to the 'False' element, there is no value for that element.
+
 
 #### 数据添加与拷贝
 + `c=a.copy`深拷贝
