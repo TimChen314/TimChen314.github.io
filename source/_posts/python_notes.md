@@ -357,6 +357,7 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 ### random [doc](https://docs.python.org/3/library/random.html)
 + random.seed(a=None, version=2)
 
+
 #### functions for integers
 + random.randrange(start, stop[, step])
 + random.randint(a, b)
@@ -367,7 +368,6 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
    >Return the next random floating point number in the range [0.0, 1.0).
 + random.uniform(a, b)
 + random.gauss(mu, sigma)
-
 
 ### shutil
    >The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.
@@ -384,6 +384,7 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 + `!pwd` 加!执行shell command
 + `%hist`
 + `%edit` 使用编辑器打开
+
 
 ### conda
 + minicoda

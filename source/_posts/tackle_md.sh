@@ -10,6 +10,7 @@ sh indent.sh
 sh read_more.sh
 sed -i 's///g' *.md 
 
+exit 0
 #for mdfile in $(ls *.md)
 #do
 #### change title size. Since I find that title size can be setted at file themes/next/source/css/_variables/custom.styl, this part is abandoned.
