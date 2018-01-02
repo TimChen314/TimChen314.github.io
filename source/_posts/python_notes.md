@@ -353,7 +353,7 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 + random.seed(a=None, version=2)
 
 ### shutil
->The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.
+   >The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.
 
 `shutil.copyfile(src, dst)`
 
