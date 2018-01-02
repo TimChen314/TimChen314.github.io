@@ -52,3 +52,4 @@ VT series have their own keyboard: [http://www.vt100.net/](http://www.vt100.net/
 
 [wikipedia](https://en.wikipedia.org/wiki/Computer_terminal):
    >A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.
+

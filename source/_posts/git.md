@@ -19,6 +19,8 @@ date: 2017-07-26 18:00:00
 
 [非常好的入门2](https://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 
++ help
+`git help <verb>`
 + init
 + config    
    ```bash
@@ -26,17 +28,17 @@ git config --global user.name "your name"
 git config --global user.email "your email"
 git config --global core.editor "vim #set vim as editor
 ```
-列出设置的config
-`git config --list`
+   列出设置的config
+   `git config --list`
 + difftool 
 没有默认的difftool，如果首次输入命令`git difftool`，CentOS会自动推荐kompare。
    ```language
 Viewing: 'particles/BinReader.cc'
 Launch 'kompare' [Y/n]: y 
 ```
-kompare的效果非常好。
-+ help
-`git help <verb>`
+   kompare的效果非常好。
++ completion by bash-completion[^6]
+
 
 ## 操作
 + add filename
@@ -183,6 +185,13 @@ $ git branch -a
  `<source-name>:<destination-name>` is a refspec   
    
 
+## tips
++ git clone下载慢
+`git config --global http.postBuffer 524288000`
+
+### about github
+[how to bring up an issue?](hoomd Build_NP_reaction.shhoomd Build_NP_reaction.sh)
+
 ## 错误
 + prompt to input passphrase time and time again:   
 [Git enter long passphrase for every push](https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push)   
@@ -192,12 +201,15 @@ Note that you can use ssh-key only if you use ssh to build remote connections.
 but not:   
    `origin	https://github.com/TimChen314/MDTackle.git`
 
+
+
 # reference
 [^1]: [Git 工作区、暂存区和版本库](http://www.runoob.com/git/git-workspace-index-repo.html)   
 [^2]: [What's the difference between `git reset --hard master` and `git reset --hard origin/master`?](https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or)   
 [^3]: [How to modify existing, unpushed commits?](https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits)   
 [^4]: [6.3 Git 工具 - 儲藏](https://git-scm.com/book/zh/v2/Git-工具-储藏与清理)
 [^5]: [GIT: FETCH AND MERGE, DON’T PULL](https://longair.net/blog/2009/04/16/git-fetch-and-merge/)
+[^6]: [git命令自动补全](http://blog.csdn.net/chenbifeng/article/details/51570606)
 
 ## 待读
 [**超好**: git cheatsheet](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)

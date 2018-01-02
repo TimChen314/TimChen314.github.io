@@ -3,7 +3,7 @@ title:  All about Digital Currency
 tags: [block chain]
 categories: block chain
 date: 2017-08-30 18:00:00
-top: 0
+top: 9
 ---
 
 What a bubble!

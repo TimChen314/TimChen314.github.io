@@ -8,6 +8,7 @@
 
 sh indent.sh
 sh read_more.sh
+sed -i 's///g' *.md 
 
 #for mdfile in $(ls *.md)
 #do

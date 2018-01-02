@@ -1,6 +1,6 @@
 ---
 title:  hexo 
-tags: [hexo,yilia]
+tags: [hexo, yilia]
 categories: hexo
 date: 2017-07-21 18:00:00
 ---
@@ -111,6 +111,7 @@ $font-size-headings-step  = 2px
 
 ## more available setting
 + [Hexo文章简单加密访问](http://blog.csdn.net/Lancelot_Lewis/article/details/53422901)
++ [静态网站计数](http://busuanzi.ibruce.info)
 
 ## hexo bug
 + ``Error: Cannot find module './build/Release/DTraceProviderBindings'`` in OS X 
