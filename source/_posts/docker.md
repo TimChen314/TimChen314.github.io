@@ -7,8 +7,8 @@ categories: 云计算
 date: 2018-01-01 18:00:00
 ---
 ***
-Official introduction.
->Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+Official introduction:
+   >Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 
 我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的轻量级虚拟机。
 
@@ -38,7 +38,7 @@ Tomcat+Mysql,怎么做？
 
 ## docker原理的简介：
 + 原理[^9]
->让某些进程在彼此隔离的命名空间中运行。大家虽然都共用一个内核和某些运行时环境（例如一些系统命令和系统库），但是彼此却看不到，都以为系统中只有自己的存在。这种机制就是容器（Container），利用命名空间来做权限的隔离控制，利用 cgroups 来做资源分配。
+   >让某些进程在彼此隔离的命名空间中运行。大家虽然都共用一个内核和某些运行时环境（例如一些系统命令和系统库），但是彼此却看不到，都以为系统中只有自己的存在。这种机制就是容器（Container），利用命名空间来做权限的隔离控制，利用 cgroups 来做资源分配。
 
 + 灵剑
    >docker可以使用docker build工具链将应用和所有依赖整个安装到镜像中，部署的时候直接启动容器就是一个正确运行的服务了。docker build使用Dockerfile，Dockerfile是一个文本文件，相当于一个脚本，可以在CI系统中自动执行，做持续集成、持续部署很容易，build、test成功后直接替换线上的镜像就行。从原理上来说，docker并不是一个完全独立的虚拟化环境，而是一个有独立namespace的进程，所以启动开销就跟直接在物理机上启动服务差不多，但是保证了环境隔离。
@@ -52,6 +52,8 @@ Tomcat+Mysql,怎么做？
 ![image](https://pic4.zhimg.com/50/v2-385d2404a0ea9dd37c00b445b3168b96_hd.jpg)
    >从Docker依赖的底层技术来看，Docker原生态是不能直接在Windows平台上运行的，只支持linux系统，原因是Docker依赖linux kernel三项最基本的技术,namespaces充当隔离的第一级，是对Docker容器进行隔离，让容器拥有独立的hostname,ip,pid，同时确保一个容器中运行一个进程而且不能看到或影响容器外的其它进程;Cgroups是容器对使用的宿主机资源进行核算并限制的关键功能。
 比如CPU,内存,磁盘等，union FS主要是对镜像也就是image这一块作支持，采用copy-on-write技术，让大家可以共用某一层，对于某些差异层的话就可以在差异的内存存储，Libcontainer是一个库，是对上面这三项技术做一个封装。
+
++ image增量存储、类似git
 
 ## 概念
 可以参考官方[Docker glossary](https://docs.docker.com/glossary/?term=layer)
@@ -70,7 +72,7 @@ Tomcat+Mysql,怎么做？
 在 Dockerfile 文件中写入指令，每个指令都在映像上生成一个新的层。Docker 限制每个映像最多有 127 层，因此，要尽量优化映像层数。
 
 + CoreOS[^7]
->目前最常用的用来执行Docker集装箱的Linux发行版本既不是Ubuntu、Debian也不是RedHat、Fedora，而是CoreOS。这个发行版本根本没有软件包管理程序，所以也不能通过输入某个命令来安装软件。但是CoreOS预装了Docker，所以可以制作集装箱镜像，或者下载别人发布的集装箱镜像来执行。
+   >目前最常用的用来执行Docker集装箱的Linux发行版本既不是Ubuntu、Debian也不是RedHat、Fedora，而是CoreOS。这个发行版本根本没有软件包管理程序，所以也不能通过输入某个命令来安装软件。但是CoreOS预装了Docker，所以可以制作集装箱镜像，或者下载别人发布的集装箱镜像来执行。
 
 
 ## 应用
@@ -83,10 +85,10 @@ There are many AI-related docker in [Datmo docker](https://hub.docker.com/r/datm
 + [Amber](https://hub.docker.com/r/ambermd/amber-build-box/)
 With official support!
 
-17843128771 张 516
-
 + nvidia/cuda
-+ datmo
+
++ galamost3
+
 
 ## 优点/缺点
 + 优点
@@ -108,7 +110,8 @@ With official support!
 + Docker (开源项目)改名 Moby
    >今后的工作方式是：贡献Moby下的项目，然后使用Docker公司的Docker CE产品。
 
-+ google docker reduce image size
+
++ if the image size is too large, google docker reduce image size
 
 + [Kubernetes 是什么？](https://zhuanlan.zhihu.com/p/29232090)
 
@@ -128,7 +131,7 @@ With official support!
 `-runtime=nvidia` without it gpu and its drive wouldn't be found.
 
 + `cp`
-```shell
+   ```shell
 docker cp foo.txt mycontainer:/foo.txt
 docker cp mycontainer:/foo.txt foo.txt
 ```

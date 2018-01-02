@@ -178,7 +178,7 @@ http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-c
 
 ## apt-get
 + Usage: 
-```shell
+   ```shell
 apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y \
