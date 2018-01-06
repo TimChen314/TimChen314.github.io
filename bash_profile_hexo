@@ -1,4 +1,0 @@
-export HEXO=''
-export HEXOMD=''
-alias hexod='cd $HEXOMD && sh tackle_md.sh && hexo clean && hexo g && hexo deploy'
-alias hexol='cd $HEXOMD && sh tackle_md.sh && hexo clean && hexo g && hexo s'
