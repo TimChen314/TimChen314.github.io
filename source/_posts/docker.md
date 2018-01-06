@@ -10,7 +10,10 @@ date: 2018-01-01 18:00:00
 Official introduction:
    >Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 
-我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的轻量级虚拟机。
+我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的轻量级虚拟机。"Build Once, Run Anywhere!"
++ [galamost-3.0.9 docker](https://hub.docker.com/r/timchen314/galamost3/)测试
+1. 完全没有速度损失（docker vs. no-docker in 1080TI: 700 TPS vs. 700±20 TPS）。
+2. 即使host上为cuda8.0而docker上为cuda9.0，速度也基本没有损失（docker vs. no-docker in 1080: 513 TPS vs. 533 TPS）。
 
 <!-- more -->
 
@@ -37,6 +40,8 @@ Tomcat+Mysql,怎么做？
 
 
 ## docker原理的简介：
+
+### 基础介绍
 + 原理[^9]
    >让某些进程在彼此隔离的命名空间中运行。大家虽然都共用一个内核和某些运行时环境（例如一些系统命令和系统库），但是彼此却看不到，都以为系统中只有自己的存在。这种机制就是容器（Container），利用命名空间来做权限的隔离控制，利用 cgroups 来做资源分配。
 
@@ -52,6 +57,42 @@ Tomcat+Mysql,怎么做？
 ![image](https://pic4.zhimg.com/50/v2-385d2404a0ea9dd37c00b445b3168b96_hd.jpg)
    >从Docker依赖的底层技术来看，Docker原生态是不能直接在Windows平台上运行的，只支持linux系统，原因是Docker依赖linux kernel三项最基本的技术,namespaces充当隔离的第一级，是对Docker容器进行隔离，让容器拥有独立的hostname,ip,pid，同时确保一个容器中运行一个进程而且不能看到或影响容器外的其它进程;Cgroups是容器对使用的宿主机资源进行核算并限制的关键功能。
 比如CPU,内存,磁盘等，union FS主要是对镜像也就是image这一块作支持，采用copy-on-write技术，让大家可以共用某一层，对于某些差异层的话就可以在差异的内存存储，Libcontainer是一个库，是对上面这三项技术做一个封装。
+
++ rootfs[^12]
+![image](https://pic1.zhimg.com/50/v2-e7bf9fbb488309f38864cac909a022a5_hd.jpg)
+   >内核空间是 kernel，Linux 刚启动时会加载 bootfs 文件系统，之后 bootfs 会被卸载掉。
+用户空间的文件系统是 rootfs，包含我们熟悉的 /dev, /proc, /bin 等目录。
+对于 base 镜像来说，底层直接用 Host 的 kernel，自己只需要提供 rootfs 就行了。
+而对于一个精简的 OS，rootfs 可以很小，只需要包括最基本的命令、工具和程序库就可以了。相比其他 Linux 发行版，CentOS 的 rootfs 已经算臃肿的了，alpine 还不到 10MB。   
+这里需要说明的是：   
+1. base 镜像只是在用户空间与发行版一致，kernel 版本与发行版是不同的。
+例如 CentOS 7 使用 3.x.x 的 kernel，如果 Docker Host 是 Ubuntu 16.04（比如我们的实验环境），那么在 CentOS 容器中使用的实际是是 Host 4.x.x 的 kernel。
+2. 容器只能使用 Host 的 kernel，并且不能修改。
+
++ ==writable container==[^12]
+![image](https://pic1.zhimg.com/50/v2-9496fbb036445cc557f95f657c5baea8_hd.jpg)
+   >当容器启动时，一个新的可写层被加载到镜像的顶部。
+这一层通常被称作“容器层”，“容器层”之下的都叫“镜像层”。
+所有对容器的改动 - 无论添加、删除、还是修改文件都只会发生在容器层中。
+只有容器层是可写的，容器层下面的所有镜像层都是只读的。
+下面我们深入讨论容器层的细节。
+镜像层数量可能会很多，所有镜像层会联合在一起组成一个统一的文件系统。如果不同层中有一个相同路径的文件，比如 /a，上层的 /a 会覆盖下层的 /a，也就是说用户只能访问到上层中的文件 /a。在容器层中，用户看到的是一个叠加之后的文件系统。
+1. 添加文件 在容器中创建文件时，新文件被添加到容器层中。
+2. 读取文件 在容器中读取某个文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后打开并读入内存。
+3. 修改文件 在容器中修改已存在的文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后修改之。
+删除文件 在容器中删除文件时，Docker 也是从上往下依次在镜像层中查找此文件。找到后，会在容器层中记录下此删除操作。
+4. 只有当需要修改时才复制一份数据，这种特性被称作 Copy-on-Write。可见，容器层保存的是镜像变化的部分，不会对镜像本身进行任何修改。
+
+### 技术细节
++ runtime/runc[^10] 
+   >容器 runtime
+runtime 是容器真正运行的地方。runtime 需要跟操作系统 kernel 紧密协作，为容器提供运行环境。
+如果大家用过 Java，可以这样来理解 runtime 与容器的关系：
+Java 程序就好比是容器，JVM 则好比是 runtime。JVM 为 Java 程序提供运行环境。同样的道理，容器只有在 runtime 中才能运行。
+lxc、runc 和 rkt 是目前主流的三种容器 runtime。
+lxc 是 Linux 上老牌的容器 runtime。Docker 最初也是用 lxc 作为 runtime。
+runc 是 Docker 自己开发的容器 runtime，符合 oci 规范，也是现在 Docker 的默认 runtime。
+rkt 是 CoreOS 开发的容器 runtime，符合 oci 规范，因而能够运行 Docker 的容器。
 
 + image增量存储、类似git
 
@@ -115,6 +156,19 @@ With official support!
 
 + [Kubernetes 是什么？](https://zhuanlan.zhihu.com/p/29232090)
 
+### [Frequently Asked Questions](https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#does-it-have-a-performance-impact-on-my-gpu-workload)
+   >==Does it have a performance impact on my GPU workload?==
+No, usually the impact should be in the order of less than 1% and hardly noticeable.
+==Do you support CUDA Multi Process Service (a.k.a. MPS)?==
+No, MPS is not supported at the moment. However we plan on supporting this feature in the future, and this issue will be updated accordingly.
+**Do you support running a GPU-accelerated X server inside the container?**
+No, running a X server inside the container is not supported at the moment and there is no plan to support it in the near future (see also OpenGL support).
+**I have multiple GPU devices, how can I isolate them between my containers?**
+GPU isolation is achieved through a container environment variable called NVIDIA_VISIBLE_DEVICES.
+Devices can be referenced by index (following the PCI bus order) or by UUID (refer to the documentation).
+**Why is nvidia-smi inside the container not listing the running processes?**
+nvidia-smi and NVML are not compatible with PID namespaces.
+We recommend monitoring your processes on the host or inside a container using --pid=host.
 
 # Command
 + `docker --help`
@@ -128,7 +182,8 @@ With official support!
 `-d` 守护容器，就是后台运行，退出命令窗口容器也不会停止
 `-it` 交互式容器 退出命令窗口容器就停止运行了
 `-P` 将容器内部使用的网络端口映射到我们使用的主机上。`docker ps`会显示**端口是如何映射的**
-`-runtime=nvidia` without it gpu and its drive wouldn't be found.
+`--runtime=nvidia` without it gpu and its drive wouldn't be found.
+
 
 + `cp`
    ```shell
@@ -143,6 +198,10 @@ docker cp mycontainer:/foo.txt foo.txt
 docker save -o centos.tar xianhu/centos:git    # 保存镜像, -o也可以是--output
 docker load -i centos.tar    # 加载镜像, -i也可以是--input
 ```
++ `-H` 指定host IP[^11]
+   >默认配置下，Docker daemon 只能响应来自本地 Host 的客户端请求。如果要允许远程客户端请求，需要在配置文件中打开 TCP 监听，步骤如下：
+1.编辑配置文件 /etc/systemd/system/multi-user.target.wants/docker.service，在环境变量 ExecStart 后面添加 -H tcp://0.0.0.0，允许来自任意 IP 的客户端连接。
+
 + 根据已有容器，新建自有镜像
    1. `docker commit -m "centos with git" -a "your_name" 72f1a8a0e394`
    The last is container ID. `-a` means author
@@ -155,6 +214,7 @@ docker load -i centos.tar    # 加载镜像, -i也可以是--input
    - `docker stats -a` Resource Usage
    - `docker top NAMES` 查看容器内部运行的进程 
    - `docker system df` show the used space
+   - `docker history your_image`   
    - show tags
    For the images pulled to hub.docker.com, the tags can be found by：
    visit 'https://hub.docker.com/r/library/debian/tags/' and you can see tags。
@@ -169,8 +229,32 @@ homebrew直接安装
 `brew cask install docker`
 + CentOS
 [官网](https://docs.docker.com/engine/installation/linux/docker-ce/centos/)
+官网的方法是最正确的：
+   ```shell
+# Add the package repositories
+curl -s -L https://nvidia.github.io/nvidia-docker/centos7/x86_64/nvidia-docker.repo | \
+  sudo tee /etc/yum.repos.d/nvidia-docker.repo
+
+# Install nvidia-docker2 and reload the Docker daemon configuration
+sudo yum install -y nvidia-docker2
+sudo pkill -SIGHUP dockerd
+
+# Test nvidia-smi with the latest official CUDA image
+docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
+```
+
 [CentOS runoob](http://www.runoob.com/docker/centos-docker-install.html)
-官网提到，如果要通过yum安装特定版本的docker时，得到版本名的方法。
+单独安装docker-ce非常麻烦的，因为需要安装和配置nvidia-container-runtime：
+   ```shell
+sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce
+sudo systemctl start docker
+sudo docker run hello-world
+# install nvidia-container-runtime
+yum install -y nvidia-container-runtime
+# Then you should follow the troublesome setting process in https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup
+```
+
 + Docker Machine
    >Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。
 
@@ -203,13 +287,20 @@ A complicate answer is:
 [^7]: [分布式机器学习的故事：Docker改变世界](https://zhuanlan.zhihu.com/p/19902938)
 [^8]: [Limit a container's resources](https://docs.docker.com/engine/admin/resource_constraints/)
 [^9]: [Docker — 从入门到实践](http://docker_practice.gitee.io/image/multistage-builds.html))
+[^10]: [每天5分钟玩转Docker容器技术（一）](https://zhuanlan.zhihu.com/p/32324673)
+[^11]: [每天5分钟玩转Docker容器技术（二）](https://zhuanlan.zhihu.com/p/32356831)
+[^12]: [每天5分钟玩转Docker容器技术（三）](https://zhuanlan.zhihu.com/p/32383774)
 
----
+--- 
 
 + 入门   
 [只要一小时，零基础入门Docker](https://zhuanlan.zhihu.com/p/23599229)     
 [runoob](http://www.runoob.com/docker/docker-container-usage.html)   
 + 进阶   
+《每天5分钟玩转Docker容器技术》系列文章（一）[^10]
 [Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet#layers)   
 [官网 get started](https://docs.docker.com/get-started/)   
 [Docker — 从入门到实践](http://docker_practice.gitee.io/image/multistage-builds.html)
++ 待读
+https://zhuanlan.zhihu.com/p/32462416
+

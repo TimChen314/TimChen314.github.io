@@ -121,9 +121,14 @@
               {% endfor %}
             </ul>
           </div>
-        {% endif %}
+<!-- <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2041358705&auto=1&height=90"></iframe>
+        </div>  -->
 
-        {% include '../_custom/sidebar.swig' %}
+
+{% endif %}
+
+{% include '../_custom/sidebar.swig' %}
 
       </section>
 

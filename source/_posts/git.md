@@ -149,6 +149,9 @@ $ `git checkout -- test.txt`
 git push origin --tags
 
 ## 其他概念与原理
++ conflict
+[Resolving a merge conflict using the command line](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
+
 + remote   
 remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote[^5]
    >“remotes” are just nicknames for other repositories, synonymous with a URL or **the path of a local directory** – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.

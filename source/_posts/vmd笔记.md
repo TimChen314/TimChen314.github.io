@@ -206,7 +206,12 @@ Beside that, coordiante should be used like below:
   set px [$pxyz get x]
 ```
 
-
+### vmd传参数
+vmd本身是一个csh脚本! 
+1. `[lindex $argv 0] `
+`vmd -e yourscript.tcl -args your_first_arg`
+2. `env YOUR_ARG="ba la ba la" vmd -e yourscript.tcl `
+http://www.ks.uiuc.edu/Research/vmd/mailing_list/vmd-l/7839.html
 
 
 ## 存高质量图片[^4]

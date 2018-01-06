@@ -311,7 +311,9 @@ awk '{sum+=$1; sumsq+=$1*$1} END {print sqrt(sumsq/NR-(sum/NR)**2)}' file1
 ## convert命令：
 1. `convert ${i%plt}eps -density 100x100 ${i%plt}tif`
 2. `convert ${i%plt}eps -density 300 ${i%plt}png  `  #300代表dpi
-3. animated gif
+3. `convert -loop 1 `中loop是播放次数；0代表无限循环  
+`-pause 200`：暂停200毫秒，再进行下一轮播放。
+4. animated gif
    >`convert -delay 120 -loop 0 *.png animated.gif`
 The delay parameter specifies the delay between frames in 0.01s, while the loop parameter determines how many times the animation runs (the 0 value will run the loop infinitely).
 
@@ -568,7 +570,11 @@ ls *.jpg | xargs -I{} -P 8 convert "{}" `echo {} | sed 's/jpg$/png/'`
 2. `yum info *foo* `
 2. `yum list *foo*  # the available packages`
 3. `yum localinstall foo.rpm`
-
+4. `yum install -y --downloadonl --downloaddir=/opt`
+But by this method, if the newest package has been installed, then nothing will be done. To solve this problem, you can do :
+`yum install yum-utils`
+`yumdownloader <package>` # will download directly.
+5. package name and virsion name should be concatenated by '-'
 
 
 
