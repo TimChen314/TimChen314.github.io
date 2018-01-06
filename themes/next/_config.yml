@@ -629,4 +629,4 @@ version: 5.1.1
 
 
 reward_comment: 谢谢~
-alipay: ./source/images/alipay2D_small.png
+alipay: /images/alipay2D_small.png
