@@ -53,11 +53,7 @@ Launch 'kompare' [Y/n]: y
    >
    >Make sure you don't have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)
 
-+ reset    
-`git reset --hard HEAD^   `   
-`git reset --hard 3628164`   
-+ reflog 查看历史命令
-与`git log`的区别：显示整个本地仓储的commit, 包括所有branch的commit, 甚至包括已经撤销的commit, 只要HEAD发生了变化, 就会在reflog里面看得到。 git log只包括当前分支的commit.
+
 + clone   
 git clone /path/to/repository    
 如果是远端服务器上的仓库，你的命令会是这个样子：   
@@ -71,8 +67,24 @@ origin is the remote server; the branch name before the colon is local branch na
 git push origin HEAD:refs/for/branch1 # push HEAD branch to a remote branch   
 git push origin :refs/for/branch1  # delete remote branch
 ```
-+ `git checkout hexo myfile`
-从hexo分支得到myfile
++ checkout
+   - `git checkout hexo myfile`
+   从hexo分支得到myfile
+   - `git checkout -b dev #-b参数表示创建并切换`
+   `git checkout -b dev your_SHA1 # 创建并切换到your_SHA1 commit`
+   git checkout master
+   - `git checkout --track local_branch origin/remote_branch`
+   create a local branch based on a remote-tracking branch.
+      >(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)][^5]
+      >The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:
+      > + They allow git pull to know what to merge after fetching new remote-tracking branches.
+      > + If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:
+      > ```
+    Your branch and the tracked remote branch 'origin/master'
+    have diverged, and respectively have 3 and 384 different
+    commit(s) each.
+    ```
+
 + stash[^4]
    >储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。
 
@@ -82,19 +94,6 @@ git push origin :refs/for/branch1  # delete remote branch
    `git stash drop` 删除stash
 
 + branch   	
-   - `git checkout -b dev` #-b参数表示创建并切换   
-git checkout master
-   - `git checkout --track local_branch origin/remote_branch`
-   create a local branch based on a remote-tracking branch.
-   >(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)][^5]
-   >The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:
-   > + They allow git pull to know what to merge after fetching new remote-tracking branches.
-   > + If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:
-   > ```
-    Your branch and the tracked remote branch 'origin/master'
-    have diverged, and respectively have 3 and 384 different
-    commit(s) each.
-    ```
    - git merge dev
 合并指定分支到当前分支
    - git branch -d dev #删除
@@ -108,21 +107,34 @@ git checkout master
 `git fetch origin hexo`从remote repo获取名为hexo的branch
 
 ## 丢弃
-+ git rm (then git commit)
-+ `git checkout -- file   `
++ `git rm` (then git commit)
+`git rm --cached file_a 从stage中删除`
+`git rm file_a 从stage中删除，同时删除物理文件`
+`git mv file_a file_b`
++ `git checkout -- file` (other functions about checkout is discribed above )
+![image](https://res.cloudinary.com/do7yb5qw4/image/upload/v1515256762/杂/git_reset_and_checkout.jpg)
 git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
-
     + 删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：   
-$ `git checkout -- test.txt`
-
+   `git checkout -- test.txt`
     + 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令`git checkout -- file`。   
-    场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。
-要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+    场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令`git reset HEAD file`，就回到了场景1，第二步按场景1操作。
+要重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
+
++ reset    
+`git reset --hard HEAD^   `   
+`git reset --hard 3628164`   
+
 
 ## 显示状态
 + status 
 + log   
-   `git log --oneline --decorate` # 加上--decorate 时，我们可以看到我们的标签   
+   - `git log --oneline --decorate # 加上--decorate 时，我们可以看到我们的标签`  
+   - `git log remotename/branchname # get remote commit. e.g., git log origin/hexo`
+	>Will display the log of a given remote branch in that repository, but only the logs that you have "fetched" from their repository to your personal "copy" of the remote repository.
+	
++ reflog 查看历史命令
+与`git log`的区别：显示整个本地仓储的commit, 包括所有branch的commit, 甚至包括已经撤销的commit, 只要HEAD发生了变化, 就会在reflog里面看得到。 git log只包括当前分支的commit.
+
 + remote  
 看当前配置有哪些远程仓库，可以用命令   
 `git remote`   
@@ -134,7 +146,7 @@ $ `git checkout -- test.txt`
 + diff
    - `git diff #对比工作区和stage文件的差异 `   
 `git diff --cached ` 对比stage和branch之间的差异
-   - `git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch`
+   - `git diff master remotes/origin/hexo #对比本地“master” branch和远程 "remotes/origin/hexo" branch`
    - `git diff origin/hexo #对比当前working tree和远程branch`
 
 

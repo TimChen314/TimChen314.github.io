@@ -62,11 +62,11 @@ ct总结：参数绑定优先级：
    ```python
 def person(name, age, *, city, job):
     print(name, age, city, job)
-
 ```
 
 ## 5. generator
 最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。
+
 ## 6. zip() & Unpacking Argument Lists——"\*" & "\*\*"
 **The implementation of zip is very beautiful：**
 来自[python doc](https://docs.python.org/3/library/functions.html)
@@ -204,6 +204,18 @@ f()
 ### 10.2 ==注意区分list comprehension与generator！==
 + list comprehension是当时计算的
 + 而`list(a+i for i in range(10))`中，里面属于generator
+
+## 11. super and MRO
+MRO: Method Resolution Order. For more details see this great introdcution: [Python: 你不知道的 super](https://segmentfault.com/a/1190000007426467)
+   >super 的一个最常见用法可以说是在子类中调用父类的初始化方法了，比如：
+   ```python
+class A(Base):
+    def __init__(self, a, b, c):
+        super(A, self).__init__(a, b)  # Python3 可使用 super().__init__(a, b)
+        self.c = c
+```
+   >实际上，super(cls, inst) 获得的是 cls 在 inst 的 MRO 列表中的下一个类。
+
 
 ## Style guide
 ### argument

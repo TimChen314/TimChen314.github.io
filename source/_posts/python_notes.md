@@ -258,12 +258,16 @@ result='5 is larger than 3' if 5>3 else '5 is not larger than 3'
 + sys.version/version_info(version_info is a object)
 
 ### os module
-#### 1. os.path
+#### 1. about path
    [os.path模块](http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html)
-
-+ os.path.exist  
-determine if a file or dir exists
-
++ about path
+   ```python
+os.getcwd()
+os.chdir('../')
+os.listdir()
+os.chdir('../')
+os.path.exist   #determine if a file or dir exists
+```
 + os.remove 
 remove a file; if file does not exists, an Error will be throwed out.
 
@@ -273,6 +277,7 @@ remove a dir
 + os.path.splitext(path)
 Split the pathname path into a pair (root, ext)
 + os.path.basename(your_path)
+
 
 #### 2. ~~os.popen~~
 
@@ -377,7 +382,7 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 
 ## other useful things
 ### ipython
-[入门](https://www.cnblogs.com/cuiyubo/p/6823478.html)
+1. [入门](https://www.cnblogs.com/cuiyubo/p/6823478.html)
 + "?" 帮助与显示信息
 `?save` 会给出save命令的用法、对象的签名
 `??your_function` 显示源代码
@@ -385,18 +390,39 @@ draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first par
 + `%hist`
 + `%edit` 使用编辑器打开
 
+2. `%save your_filename 1-30`
+
 
 ### conda
 + minicoda
+`# pip install conda   # does not work!`
+==You have to download miniconda to use conda as package manager.==
 + [使用conda管理python环境](https://zhuanlan.zhihu.com/p/22678445)
 + anaconda
 [Anaconda使用总结](http://python.jobbole.com/86236/)
 + conda install scipy #安装scipy
+   - `conda install --download-only ipython-notebook` 
+   - `conda install --offline -f ***.tar.bz2` 离线安装
 + conda list #列出已安装的包
++ 环境
+`conda create -n env_name python=2.7   # create new env`
+`conda env list   # list all env`
+`conda env export > environment.yml   # export to file`
+`source activate your_env_name   # enter your env.  `
+`source activate root   # to switch back`
 
 ### pip
 + Usage：`pip --help`
 [for more info](http://www.tuicool.com/articles/NFV3yaJ)
++ install
+[centos7下使用yum安装pip](https://www.cnblogs.com/mangoVic/p/6428369.html)
+   >首先安装epel扩展源：
+　　yum -y install epel-release
+　　更新完成之后，就可安装pip：
+　　yum -y install python-pip
+　　安装完成之后清除cache：
+　　yum clean all
+
 #### error
 + Could not fetch URL https://pypi.python.org/simple/pytest-cov/...   
    ```shell
@@ -408,6 +434,9 @@ No matching distribution found for pytest-cov
    ```shell
 pip install --trusted-host pypi.python.org pytest-xdist
 ```
+
+## 需要的工具
++ circleci2.0
 
 ## 工程能力
 
@@ -426,11 +455,10 @@ pytest比较好！从它入门 ！
 [unittest vs pytest vs nose ](https://stackoverflow.com/questions/28408750/unittest-vs-pytest-vs-nose)
 [Pytest vs Unittest vs Nose](http://pythontesting.net/transcripts/2-pytest-vs-unittest-vs-nose/) 【详细的对比】
 待读！：
-[Writing unit tests in Python: How do I start? ](https://stackoverflow.com/questions/3371255/writing-unit-tests-in-python-how-do-i-start) 
-[Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)
-[python自动化测试](http://www.cnblogs.com/beer/p/5075619.html) 【先读】
+[Writing unit tests in Python: How do I start? ](https://stackoverflow.com/questions/3371255/writing-unit-tests-in-python-how-do-i-start)    
+[Improve Your Python: Understanding Unit Testing](https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)   
+[python自动化测试](http://www.cnblogs.com/beer/p/5075619.html) 【先读】   
 [最完整的自动化测试流程](http://www.cnblogs.com/yufeihlf/p/5752146.html)
-
 
 
 

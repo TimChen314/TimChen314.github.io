@@ -8,11 +8,23 @@ top: 9
 
 What a bubble!
 ![bitcoin](https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png)
+
+
 <!-- more -->
 
-# Info source
+# Info 
+![image](https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/杂/Percentage_of_Total_Market_Capitalization_Dominance.png)
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="ripple" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="cardano" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="ethereum" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+
+
+## source
+0. [Cryptocurrency Market Capitalizations](https://coinmarketcap.com)
 1. www.8btc.com
 2. trans.chbtc.com/markets/eth 有长期数据，可以画周线
+
 
 # 其他币
 薛蛮子认为：
@@ -30,12 +42,22 @@ What a bubble!
 ## 待读
 非常好：http://www.8btc.com/reinvent-the-currency
 [以太坊（1）--在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）](http://blog.csdn.net/m0_37327416/article/details/72885395)
+[以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行](http://blog.csdn.net/m0_37327416/article/details/72885521)
 [教程](http://www.8btc.com/smart-contract-solidity)
-
 [Geth搭建私有链](http://m.blog.csdn.net/vinsuan1993/article/details/75208203)
 [中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】](https://www.zhihu.com/question/48049768)
 ## 进展
 按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，
+
+# new_set
+My understanding:
+1. init first block.
+2. then you can mine.
+
+## problem
++ what is private network?
+
+
 
 # 资料&引用
 ## 资料

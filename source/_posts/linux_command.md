@@ -184,6 +184,9 @@ apt-get update \
  && apt-get install -y \
 ```
 
+`update`：第一步，获得最近的软件包的列表；列表中包含一些包的信息，比如这个包是否更新过。
+`upgrade`：第二步，如果这个包没有发布更新，就不管它；如果发布了更新，就把包下载到电脑上，并安装。
+
 + apt-cache can search package
 
 + common package name
@@ -437,6 +440,9 @@ show IP routing table
 + `netstat -tnpl`
 show the listened port
 
+## ping
+Check connection of whole web segment.
+`ping 192.9.204.$i -c2 | grep -q "ttl=" && echo "$i yes" || echo "$i no"`
 
 ## printf命令： 
 1.补零
@@ -515,6 +521,10 @@ These 4 setting should be used at all times.
 In script: add `set -euxo pipefail` in the beginning of script.
 In cli: `$ bash -euxo pipefail script.sh`
 
++ bash option
+`-l`: Make bash act as if it had been invoked as a login shell. ==the profile file will be loaded!== E.g., `/etc/profile`.
+
+
 ## sort命令 
 1. 按第二行排序
 `sort -n -k2 file`
@@ -546,6 +556,9 @@ In cli: `$ bash -euxo pipefail script.sh`
 1. `uniq -c`
 在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。
 
+## unzip 
+unzip -O GBK you_zip_file.zip
+For more ways to tickle with gibberish: [Linux文件乱码]](https://zhuanlan.zhihu.com/p/25988628)
 
 ##  xargs命令 & find命令：  
 1. `awk '{print }' filenames | xargs du -h`
@@ -566,8 +579,8 @@ ls *.jpg | xargs -I{} -P 8 convert "{}" `echo {} | sed 's/jpg$/png/'`
 ## yum命令
 1. `yum install foo`
 2. `yum remove foo`
-2. `yum search *foo* `
-2. `yum info *foo* `
+0. `yum search *foo* `
+1. `yum info *foo* `
 2. `yum list *foo*  # the available packages`
 3. `yum localinstall foo.rpm`
 4. `yum install -y --downloadonl --downloaddir=/opt`
@@ -575,7 +588,17 @@ But by this method, if the newest package has been installed, then nothing will 
 `yum install yum-utils`
 `yumdownloader <package>` # will download directly.
 5. package name and virsion name should be concatenated by '-'
-
+6. install openmpi
+`yum install -y openmpi openmpi-dev`
+7. update & upgrade
+`yum -y update`
+升级所有包，改变软件设置和系统设置，系统版本内核都升级
+`yum -y upgrade`
+升级所有包，不改变软件设置和系统设置，系统版本升级，内核不改变
+==Note!== apt-get的update、upgrade与yum的非常不同。
+8. `yum whatprovides autoconf`
+`wget https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3`
+[CentOS yum中科大源 ](http://kaifage.com/notes/112/centos-yum-source.html)
 
 
 ##  逻辑表达式与`&&`和`||`：

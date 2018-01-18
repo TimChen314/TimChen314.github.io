@@ -10,10 +10,10 @@ date: 2018-01-01 18:00:00
 Official introduction:
    >Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
 
-我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的轻量级虚拟机。"Build Once, Run Anywhere!"
+我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的虚拟机。"Build Once, Run Anywhere!"
 + [galamost-3.0.9 docker](https://hub.docker.com/r/timchen314/galamost3/)测试
-1. 完全没有速度损失（docker vs. no-docker in 1080TI: 700 TPS vs. 700±20 TPS）。
-2. 即使host上为cuda8.0而docker上为cuda9.0，速度也基本没有损失（docker vs. no-docker in 1080: 513 TPS vs. 533 TPS）。
+1. 完全没有速度损失（docker vs. no-docker in 1080TI: 700 TPS vs. 700±20 TPS; IP: 101）。
+2. 即使host上为cuda8.0而docker上为cuda9.0，速度也基本没有损失（docker vs. no-docker in 1080: 513 TPS vs. 533 TPS; IP: 106）。
 
 <!-- more -->
 
@@ -110,7 +110,15 @@ rkt 是 CoreOS 开发的容器 runtime，符合 oci 规范，因而能够运行 
 + layer
    >In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.
 
-在 Dockerfile 文件中写入指令，每个指令都在映像上生成一个新的层。Docker 限制每个映像最多有 127 层，因此，要尽量优化映像层数。
+   - 在 Dockerfile 文件中写入指令，每个指令都在映像上生成一个新的层。Docker 限制每个映像最多有 127 层，因此，要尽量优化映像层数。
+   - During the 'build', the image is generated layer by layer. If bugs are encountered, you can start the toppest correct layer and debug the bug layer.
+   
++ 构建缓存[^9]
+   >在执行每条指令之前，Docker 都会在缓存中查找是否已经存在可重用的镜像，如果有就使用现存的镜像。如果你不想在构建过程中使用缓存，你可以在 docker build 命令中使用 --no-cache=true 选项。遵循的基本规则如下：
+从一个基础镜像开始（FROM 指令指定），下一条指令将和该基础镜像的所有子镜像进行匹配，检查这些子镜像被创建时使用的指令是否和被检查的指令完全一样。如果不是，则缓存失效。
+然而，有些指令需要更多的检查和解释。
+对于 ADD 和 COPY 指令，镜像中对应文件的内容也会被检查，每个文件都会计算出一个校验和。文件的最后修改时间和最后访问时间不会纳入校验。在缓存的查找过程中，会将这些校验和和已存在镜像中的文件校验和进行对比。如果文件有任何改变，比如内容和元数据，则缓存失效。
+除了 ADD 和 COPY 指令，缓存匹配过程不会查看临时容器中的文件来决定缓存是否匹配。例如，当执行完 RUN apt-get -y update 指令后，容器中一些文件被更新，但 Docker 不会检查这些文件。这种情况下，只有指令字符串本身被用来匹配缓存。
 
 + CoreOS[^7]
    >目前最常用的用来执行Docker集装箱的Linux发行版本既不是Ubuntu、Debian也不是RedHat、Fedora，而是CoreOS。这个发行版本根本没有软件包管理程序，所以也不能通过输入某个命令来安装软件。但是CoreOS预装了Docker，所以可以制作集装箱镜像，或者下载别人发布的集装箱镜像来执行。
@@ -183,7 +191,23 @@ We recommend monitoring your processes on the host or inside a container using -
 `-it` 交互式容器 退出命令窗口容器就停止运行了
 `-P` 将容器内部使用的网络端口映射到我们使用的主机上。`docker ps`会显示**端口是如何映射的**
 `--runtime=nvidia` without it gpu and its drive wouldn't be found.
+`--name your_name` assign a name to your container
+   - run centos image in background[^14]
+   ==`docker run --runtime=nvidia -t -d --name conda_hoomd timchen314/galamost3:3.0.9 /bin/bash`==
+   - automatically restart   
+   `--restart=always` 意味着无论容器因何种原因退出（包括正常退出），就立即重启。   
+   `--restart=on-failure:3`，意思是如果启动进程退出代码非0，则重启容器，最多重启3次。   
 
++ `exec`
+`docker exec -it your_container_name bash   # login an existed container`
+   - run source 
+   Source is not an executable (source is a bash shell built-in command that executes the content of the file passed as argument)
+   `docker run --rm -ti _image_name_ bash -c 'source FILE'`
+   - Piping a file into docker run
+   `echo 'export=$PATH:/opt/miniconda2/bin/' | docker exec -i conda_hoomd bash -c "cat >> /etc/profile"`
+   Note that it won't work in this way: `docker exec -i conda_hoomd  echo 'export=$PATH:/opt/miniconda2/bin/' >> /etc/profile`
+
++ pause/unpause
 
 + `cp`
    ```shell
@@ -191,8 +215,34 @@ docker cp foo.txt mycontainer:/foo.txt
 docker cp mycontainer:/foo.txt foo.txt
 ```
 
++ `rm`
+remove all exited containers: 
+`docker rm -v $(docker ps -aq -f status=exited)`
+
++ attach 
+直接进入容器 启动命令 的**终端**，不会启动新的进程。
+
++ `system`
+`docker system prune` 
+
 + tag
-每个仓库会有多个镜像，用tag标示，如果不加tag，默认使用latest镜像。
+每个仓库会有多个镜像，用tag标示，如果不加tag，默认使用latest镜像(不设tag，则默认为latest)[^13]。
+[image name] = [repository]:[tag]
+注意！一个repo可以含有多个image！一个image可以打上多个tag！只有[repository]:[tag]唯一对应一个image！
+   ```shell
+docker tag myimage-v1.9.2 myrepo:1
+docker tag myimage-v1.9.2 myrepo:1.9
+docker tag myimage-v1.9.2 myrepo:1.9.2
+docker tag myimage-v1.9.2 myrepo:latest
+```
+如果执行下面的命令，之前的tag会自动覆盖掉。
+   ```shell
+docker tag myimage-v2.0.0 myrepo:latest
+```
++ logs
+Docker daemon log: `/var/log/daemon.log | grep docker `[^15]
+
+
 + 保存/加载tar格式的镜像
    ```shell
 docker save -o centos.tar xianhu/centos:git    # 保存镜像, -o也可以是--output
@@ -208,7 +258,7 @@ docker load -i centos.tar    # 加载镜像, -i也可以是--input
    `docker commit [选项] <容器ID或容器名> [<仓库名>[:<标签>]]`
    2. Dockerfile
   
-+ show info 
+## show info 
    - `docker images` 显示已有docker
    - `docker ps -a` 查看终止状态的容器
    - `docker stats -a` Resource Usage
@@ -223,6 +273,86 @@ docker load -i centos.tar    # 加载镜像, -i也可以是--input
    Note: `jq` is a tool for processing JSON inputs. If all tags is needed, see reference[^6].
    VALIDATE: `curl 'https://registry.hub.docker.com/v2/repositories/library/python/tags/'|jq '."results"[]["name"]'  ` does work!
     
+
+## build
++ 注释符号`#`
+
++ ADD
+与 COPY 类似，从 build context 复制文件到镜像。不同的是，如果 src 是归档文件（tar, zip, tgz, xz 等），文件会被自动解压到 dest。
++ ARG 
+   >构建参数[^9]
+格式：ARG <参数名>[=<默认值>]
+构建参数和 ENV 的效果一样，都是设置环境变量。所不同的是，ARG 所设置的构建环境的环境变量，在将来容器运行时是不会存在这些环境变量的。但是不要因此就使用 ARG 保存密码之类的信息，因为 docker history 还是可以看到所有值的。
+
+
++ CMD   
+三种格式[^16]   
+   >1. Exec 格式：CMD ["executable","param1","param2"]
+   >2. 这是 CMD 的推荐格式。
+CMD ["param1","param2"] 为 ENTRYPOINT 提供额外的参数，此时 ENTRYPOINT 必须使用 Exec 格式。
+   >3. Shell 格式：CMD command param1 param2
+
+   >==指令就是用于指定默认的容器主进程的启动命令的。==[^9]
+在运行时可以指定新的命令来替代镜像设置中的这个默认命令，比如，`docker run -it ubuntu cat /etc/os-release`   
+在指令格式上，一般推荐使用 exec 格式，这类格式在解析时会被解析为 JSON 数组，因此一定要使用双引号 "，而不要使用单引号。   
+如果使用 shell 格式的话，实际的命令会被包装为 sh -c 的参数的形式进行执行。比如：   
+`CMD echo $HOME`   
+在实际执行中，会将其变更为：   
+`CMD [ "sh", "-c", "echo $HOME" ]`   
+
+另外，docker的主程序不能是退出或后台运行的状态：
+   >对于容器而言，其启动程序就是容器应用进程，容器就是为了主进程而存在的，主进程退出，容器就失去了存在的意义，从而退出，其它辅助进程不是它需要关心的东西。
+
+
+
++ COPY 
+支持两种形式：
+```
+COPY src dest
+COPY ["src", "dest"]
+```
+
++ ENTRYPOINT
+`<ENTRYPOINT> "<CMD>"`
+ENTRYPOINT 不会被忽略，一定会被执行，即使运行 docker run 时指定了其他命令。
+   >`ENTRYPOINT ["/bin/echo", "Hello"]  `   
+`CMD ["world"]`   
+当容器通过 `docker run -it [image]` 启动时，输出为：
+Hello world
+而如果通过 `docker run -it [image] CloudMan` 启动，则输出为：
+Hello CloudMan
+
+PS: 最佳实践[^16]
+   >使用 RUN 指令安装应用和软件包，构建镜像。
+如果 Docker 镜像的用途是运行应用程序或服务，比如运行一个 MySQL，应该优先使用 Exec 格式的 ENTRYPOINT 指令。CMD 可为 ENTRYPOINT 提供额外的默认参数，同时可利用 docker run 命令行替换默认参数。
+如果想为容器设置默认的启动命令，可使用 CMD 指令。用户可在 docker run 命令行中替换此默认命令。
+
++ ENV
+```
+ENV MY_VERSION 1.3
+RUN apt-get install -y mypackage=$MY_VERSION
+```
+
++ LABEL
+   >LABEL指令添加元数据到一个镜像。一个LABEL是一个键值对。要在LABEL值中包含空格，使用双引号和反斜杠(续行)。
+查看LABEL，可以用`docker inspect`。
+例子：   
+   ```docker
+LABEL "com.example.vendor"="ACME Incorporated"
+LABEL com.example.label-with-value="foo"
+LABEL version="1.0"
+LABEL description="This text illustrates \
+that label-values can span multiple lines."
+```
+
+
++ MAINTAINER (depreciate)
+设置镜像的作者，可以是任意字符串。
+
++ 其他
+EXPOSE VOLUME RUN 
+
+
 ## 安装
 + Mac OS
 homebrew直接安装
@@ -271,8 +401,11 @@ ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-comple
 + "Docker version reports bad response from Docker engine"
 A lot of people encounter this error (https://forums.docker.com/t/docker-version-reports-bad-response-from-docker-engine/13395). For me, I sovled this by reset to factory defaults.
 
-## 问题
-+ can't get the size of remote image
+## problem
+### ==use gcc5.x (solved)==
+
+source /opt/rh/devtoolset-4/enable
+### can't get the size of remote image (unsolved)
 by google: docker remote image size, or docker image size in REPOSITORY, there is no cli command to do this.
 A complicate answer is: 
 [Docker: How to get image size?](https://unix.stackexchange.com/questions/134186/docker-how-to-get-image-size)
@@ -286,10 +419,15 @@ A complicate answer is:
 [^6]: [How to list all tags of a docker image](http://www.googlinux.com/list-all-tags-of-docker-image/index.html)
 [^7]: [分布式机器学习的故事：Docker改变世界](https://zhuanlan.zhihu.com/p/19902938)
 [^8]: [Limit a container's resources](https://docs.docker.com/engine/admin/resource_constraints/)
-[^9]: [Docker — 从入门到实践](http://docker_practice.gitee.io/image/multistage-builds.html))
+[^9]: [Docker — 从入门到实践](http://docker_practice.gitee.io/image/multistage-builds.html)
 [^10]: [每天5分钟玩转Docker容器技术（一）](https://zhuanlan.zhihu.com/p/32324673)
 [^11]: [每天5分钟玩转Docker容器技术（二）](https://zhuanlan.zhihu.com/p/32356831)
 [^12]: [每天5分钟玩转Docker容器技术（三）](https://zhuanlan.zhihu.com/p/32383774)
+[^13]: [镜像命名的最佳实践 - 每天5分钟玩转 Docker 容器技术（18）](http://blog.csdn.net/cloudman6/article/details/72603130)
+[^14]: [Docker container will automatically stop after “docker run -d”](https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d/30209974#30209974)
+[^15]: [Where is the Docker daemon log?](https://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log)
+[^16]: [RUN vs CMD vs ENTRYPOINT - 每天5分钟玩转 Doc
+ker 容器技术（17）](https://www.cnblogs.com/CloudMan6/p/6875834.html)
 
 --- 
 
@@ -297,10 +435,24 @@ A complicate answer is:
 [只要一小时，零基础入门Docker](https://zhuanlan.zhihu.com/p/23599229)     
 [runoob](http://www.runoob.com/docker/docker-container-usage.html)   
 + 进阶   
-《每天5分钟玩转Docker容器技术》系列文章（一）[^10]
 [Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet#layers)   
 [官网 get started](https://docs.docker.com/get-started/)   
 [Docker — 从入门到实践](http://docker_practice.gitee.io/image/multistage-builds.html)
 + 待读
-https://zhuanlan.zhihu.com/p/32462416
 
+---
+
+Examples of Dockerfile:
+1. centos   
+   ```docker
+FROM scratch
+ADD centos-7-docker.tar.xz /
+
+LABEL name="CentOS Base Image" \
+    vendor="CentOS" \
+    license="GPLv2" \
+    build-date="20180107"
+
+CMD ["/bin/bash"]
+```
+2. 
