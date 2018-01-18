@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-02T14:12:03.000Z">
+<meta property="og:updated_time" content="2018-01-18T13:20:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python notes">
 <meta name="twitter:description" content="[TOC] Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
@@ -692,12 +692,12 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 <li>sys.version/version_info(version_info is a object)</li>
 </ul>
 <h3 id="os-module">os module</h3>
-<h4 id="1-os-path">1. os.path</h4>
+<h4 id="1-about-path">1. about path</h4>
 <p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="external">os.path模块</a></p>
 <ul>
 <li>
-<p>os.path.exist<br>
-determine if a file or dir exists</p>
+<p>about path</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">os.getcwd()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.listdir()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.path.exist   <span class="comment">#determine if a file or dir exists</span></div></pre></td></tr></table></figure>
 </li>
 <li>
 <p>os.remove<br>
@@ -823,7 +823,9 @@ Return an iterator which yields the same values as glob()</li>
 <p><code>shutil.copyfile(src, dst)</code></p>
 <h2 id="other-useful-things">other useful things</h2>
 <h3 id="ipython">ipython</h3>
-<p><a href="https://www.cnblogs.com/cuiyubo/p/6823478.html" target="_blank" rel="external">入门</a></p>
+<ol>
+<li><a href="https://www.cnblogs.com/cuiyubo/p/6823478.html" target="_blank" rel="external">入门</a></li>
+</ol>
 <ul>
 <li>“?” 帮助与显示信息<br>
 <code>?save</code> 会给出save命令的用法、对象的签名<br>
@@ -832,19 +834,46 @@ Return an iterator which yields the same values as glob()</li>
 <li><code>%hist</code></li>
 <li><code>%edit</code> 使用编辑器打开</li>
 </ul>
+<ol start="2">
+<li><code>%save your_filename 1-30</code></li>
+</ol>
 <h3 id="conda">conda</h3>
 <ul>
-<li>minicoda</li>
+<li>minicoda<br>
+<code># pip install conda # does not work!</code><br>
+<mark>You have to download miniconda to use conda as package manager.</mark></li>
 <li><a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">使用conda管理python环境</a></li>
 <li>anaconda<br>
 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a></li>
-<li>conda install scipy #安装scipy</li>
+<li>conda install scipy #安装scipy
+<ul>
+<li><code>conda install --download-only ipython-notebook</code></li>
+<li><code>conda install --offline -f ***.tar.bz2</code> 离线安装</li>
+</ul>
+</li>
 <li>conda list #列出已安装的包</li>
+<li>环境<br>
+<code>conda create -n env_name python=2.7 # create new env</code><br>
+<code>conda env list # list all env</code><br>
+<code>conda env export &gt; environment.yml # export to file</code><br>
+<code>source activate your_env_name # enter your env.</code><br>
+<code>source activate root # to switch back</code></li>
 </ul>
 <h3 id="pip">pip</h3>
 <ul>
 <li>Usage：<code>pip --help</code><br>
 <a href="http://www.tuicool.com/articles/NFV3yaJ" target="_blank" rel="external">for more info</a></li>
+<li>install<br>
+<a href="https://www.cnblogs.com/mangoVic/p/6428369.html" target="_blank" rel="external">centos7下使用yum安装pip</a>
+<blockquote>
+<p>首先安装epel扩展源：<br>
+　　yum -y install epel-release<br>
+　　更新完成之后，就可安装pip：<br>
+　　yum -y install python-pip<br>
+　　安装完成之后清除cache：<br>
+　　yum clean all</p>
+</blockquote>
+</li>
 </ul>
 <h4 id="error">error</h4>
 <ul>
@@ -854,6 +883,10 @@ Return an iterator which yields the same values as glob()</li>
 <p>解决：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --trusted-host pypi.python.org pytest-xdist</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<h2 id="需要的工具">需要的工具</h2>
+<ul>
+<li>circleci2.0</li>
 </ul>
 <h2 id="工程能力">工程能力</h2>
 <h3 id="工程-oop">工程/OOP</h3>
@@ -938,7 +971,7 @@ ruby最大的优势在于Ruby on Rails</li>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="Tim Chen Alipay"/>
+          <img id="alipay_qr" src="/images/alipay2D_small.png" alt="Tim Chen Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -1082,7 +1115,7 @@ ruby最大的优势在于Ruby on Rails</li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1104,7 +1137,7 @@ ruby最大的优势在于Ruby on Rails</li>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1167,9 +1200,14 @@ ruby最大的优势在于Ruby on Rails</li>
               
             </ul>
           </div>
-        
+<!-- <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2041358705&auto=1&height=90"></iframe>
+        </div>  -->
 
-        
+
+
+
+
 
 
       </section>
@@ -1184,7 +1222,7 @@ ruby最大的优势在于Ruby on Rails</li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-syntax"><span class="nav-text">Python Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-doc"><span class="nav-text">Python doc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#builtin-functions-import-builtins"><span class="nav-text">builtin functions (import builtins)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sum"><span class="nav-text">sum()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max"><span class="nav-text">max()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next-iterator-default"><span class="nav-text">next(iterator[, default])</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#all-any"><span class="nav-text">all()/any()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getattr-setattr-hasattr-delattr"><span class="nav-text">getattr()/setattr()/hasattr()/delattr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vars"><span class="nav-text">vars()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate"><span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#staticmethod-function"><span class="nav-text">staticmethod(function)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-类属性-实例属性"><span class="nav-text">Python——类属性/实例属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作符特性：a-b-b-a-b"><span class="nav-text">操作符特性：a, b = b, a+b</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print"><span class="nav-text">print</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict"><span class="nav-text">dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-text">file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-comprehension"><span class="nav-text">list comprehension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-strip-s-chars-去掉首尾的字符"><span class="nav-text">1. strip(s[, chars]) 去掉首尾的字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-format"><span class="nav-text">2. format</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#custom-object-define-format-in-a-class"><span class="nav-text">custom object(define __format__ in a class)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#datetime"><span class="nav-text">datetime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#named-placeholder"><span class="nav-text">named placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#getitem-and-getattr"><span class="nav-text">Getitem and Getattr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parametrized-formats"><span class="nav-text">Parametrized formats</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-rjust-width-fillchar-ljust-center-is-similar"><span class="nav-text">3. rjust(width[, fillchar])  【ljust(), center() is similar】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-zfill-n-左侧填充0至n位"><span class="nav-text">4. zfill(n) 左侧填充0至n位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-split-str-num-string-count-str-str-and-num-is-not-a-kewword"><span class="nav-text">5. split(str="", num=string.count(str)) # str and num is not a kewword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-join"><span class="nav-text">6. join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-encode-decode"><span class="nav-text">7. encode()/decode()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ternary-operator"><span class="nav-text">ternary operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cli"><span class="nav-text">CLI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#module"><span class="nav-text">module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#re-module"><span class="nav-text">re module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-replace-str1-str2"><span class="nav-text">1. replace(str1, str2)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-module"><span class="nav-text">sys module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#os-module"><span class="nav-text">os module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-os-path"><span class="nav-text">1. os.path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-os-popen"><span class="nav-text">2. os.popen</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-calendar"><span class="nav-text">time & calendar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subprocess-module"><span class="nav-text">subprocess module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-for-cmd-that-needn-t-stdout"><span class="nav-text">1.  For cmd that needn’t stdout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-for-cmd-needing-stdout"><span class="nav-text">2. For cmd needing stdout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#glob-module"><span class="nav-text">glob module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collections-module-廖雪峰"><span class="nav-text">collections module 廖雪峰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pil"><span class="nav-text">PIL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random-doc"><span class="nav-text">random doc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#functions-for-integers"><span class="nav-text">functions for integers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#real-valued-distributions"><span class="nav-text">real-valued distributions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shutil"><span class="nav-text">shutil</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-useful-things"><span class="nav-text">other useful things</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ipython"><span class="nav-text">ipython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-text">conda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip"><span class="nav-text">pip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程能力"><span class="nav-text">工程能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程-oop"><span class="nav-text">工程/OOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug"><span class="nav-text">debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test"><span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python缺点"><span class="nav-text">python缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#和其他语言的对比"><span class="nav-text">和其他语言的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的经验"><span class="nav-text">我的经验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-syntax"><span class="nav-text">Python Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-doc"><span class="nav-text">Python doc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#builtin-functions-import-builtins"><span class="nav-text">builtin functions (import builtins)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sum"><span class="nav-text">sum()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max"><span class="nav-text">max()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next-iterator-default"><span class="nav-text">next(iterator[, default])</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#all-any"><span class="nav-text">all()/any()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getattr-setattr-hasattr-delattr"><span class="nav-text">getattr()/setattr()/hasattr()/delattr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vars"><span class="nav-text">vars()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate"><span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#staticmethod-function"><span class="nav-text">staticmethod(function)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-类属性-实例属性"><span class="nav-text">Python——类属性/实例属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作符特性：a-b-b-a-b"><span class="nav-text">操作符特性：a, b = b, a+b</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print"><span class="nav-text">print</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict"><span class="nav-text">dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-text">file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-comprehension"><span class="nav-text">list comprehension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-strip-s-chars-去掉首尾的字符"><span class="nav-text">1. strip(s[, chars]) 去掉首尾的字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-format"><span class="nav-text">2. format</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#custom-object-define-format-in-a-class"><span class="nav-text">custom object(define __format__ in a class)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#datetime"><span class="nav-text">datetime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#named-placeholder"><span class="nav-text">named placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#getitem-and-getattr"><span class="nav-text">Getitem and Getattr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parametrized-formats"><span class="nav-text">Parametrized formats</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-rjust-width-fillchar-ljust-center-is-similar"><span class="nav-text">3. rjust(width[, fillchar])  【ljust(), center() is similar】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-zfill-n-左侧填充0至n位"><span class="nav-text">4. zfill(n) 左侧填充0至n位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-split-str-num-string-count-str-str-and-num-is-not-a-kewword"><span class="nav-text">5. split(str="", num=string.count(str)) # str and num is not a kewword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-join"><span class="nav-text">6. join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-encode-decode"><span class="nav-text">7. encode()/decode()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ternary-operator"><span class="nav-text">ternary operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cli"><span class="nav-text">CLI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#module"><span class="nav-text">module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#re-module"><span class="nav-text">re module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-replace-str1-str2"><span class="nav-text">1. replace(str1, str2)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-module"><span class="nav-text">sys module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#os-module"><span class="nav-text">os module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-about-path"><span class="nav-text">1. about path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-os-popen"><span class="nav-text">2. os.popen</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-calendar"><span class="nav-text">time & calendar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subprocess-module"><span class="nav-text">subprocess module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-for-cmd-that-needn-t-stdout"><span class="nav-text">1.  For cmd that needn’t stdout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-for-cmd-needing-stdout"><span class="nav-text">2. For cmd needing stdout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#glob-module"><span class="nav-text">glob module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collections-module-廖雪峰"><span class="nav-text">collections module 廖雪峰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pil"><span class="nav-text">PIL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random-doc"><span class="nav-text">random doc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#functions-for-integers"><span class="nav-text">functions for integers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#real-valued-distributions"><span class="nav-text">real-valued distributions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shutil"><span class="nav-text">shutil</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-useful-things"><span class="nav-text">other useful things</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ipython"><span class="nav-text">ipython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-text">conda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip"><span class="nav-text">pip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要的工具"><span class="nav-text">需要的工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程能力"><span class="nav-text">工程能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程-oop"><span class="nav-text">工程/OOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug"><span class="nav-text">debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test"><span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python缺点"><span class="nav-text">python缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#和其他语言的对比"><span class="nav-text">和其他语言的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的经验"><span class="nav-text">我的经验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>

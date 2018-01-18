@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://timchen314.com/"/>
-  <updated>2018-01-02T14:12:03.000Z</updated>
+  <updated>2018-01-18T13:20:08.000Z</updated>
   <id>http://timchen314.com/</id>
   
   <author>
@@ -16,18 +16,129 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jupyter</title>
+    <link href="http://timchen314.com/jupyter/"/>
+    <id>http://timchen314.com/jupyter/</id>
+    <published>2018-01-16T10:00:00.000Z</published>
+    <updated>2018-01-18T13:20:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="tutorial">Tutorial</h1>
+<h2 id="pylab">%pylab?</h2>
+<p>This sentence will give out the ‘help information’ of pylab.<br>
+Note that %pylab will import</p>
+<h2 id="cell-magics">cell magics</h2>
+<p>Magics come in two kinds:【ct】可以简单理解为单行/多行</p>
+<a id="more"></a>
+<ul>
+<li>
+<p>Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</p>
+</li>
+<li>
+<p>Cell magics:</p>
+</li>
+</ul>
+<h3 id="some-simple-cell-magics">Some simple cell magics</h3>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">%%writefile foo.py</div><div class="line">print(<span class="string">'foo'</span>)</div><div class="line">print(<span class="string">'Equinox'</span>)</div></pre></td></tr></table></figure>
+<h3 id="magics-for-running-code-under-other-interpreters">Magics for running code under other interpreters</h3>
+<p>IPython has a %%script cell magic, which lets you run a cell in a subprocess of any interpreter on your system, such as: bash, ruby, perl, zsh, R, etc.</p>
+<p>To use it, simply pass a path or shell command to the program you want to run on the %%script line, and the rest of the cell will be run by that script, and stdout/err from the subprocess are captured and displayed.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">In [10]: %%script python2 import sys print &apos;hello from Python %s&apos; % sys.version</div></pre></td></tr></table></figure>
+<h3 id="background-scripts">Background Scripts</h3>
+<p>These scripts can be run in the background, by adding the --bg flag.<br>
+When you do this, output is discarded unless you use the --out/err flags to store output as above.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">In [17]: %%ruby --bg --out ruby_lines for n in 1...10    sleep 1    puts &quot;line #&#123;n&#125;&quot;    STDOUT.flush end</div></pre></td></tr></table></figure>
+<h2 id="shortcut-key">shortcut key</h2>
+<p><a href="http://www.jianshu.com/p/72493e81a708" target="_blank" rel="external">Jupyter Notebook 的快捷键</a></p>
+<h3 id="command-mode">command mode</h3>
+<ul>
+<li>
+<p><code>ESC</code>: command mode</p>
+</li>
+<li>
+<p><mark>h: 显示快捷键帮助</mark></p>
+</li>
+<li>
+<p><code>Enter</code>: edit mode</p>
+</li>
+<li>
+<p><code>ctrl+enter</code>、<code>shitf+enter</code>: 执行、执行后选中下个单元</p>
+</li>
+<li>
+<p>b: 在下方插入新单元</p>
+</li>
+<li>
+<p>dd: 删除当前cell</p>
+</li>
+<li>
+<p>m: 设为markdown cell</p>
+</li>
+<li>
+<p>y: 单元转入代码状态</p>
+</li>
+<li>
+<p>3:     设定 3 级标题</p>
+</li>
+<li>
+<p>x/c/v: 剪切/复制/粘贴</p>
+</li>
+<li>
+<p>space/shift+spcae: 向下/上滚动</p>
+</li>
+</ul>
+<h3 id="edit-mode">edit mode</h3>
+<ul>
+<li>
+<p>shift+tab:  补全提示</p>
+</li>
+<li>
+<p><code>ctrl + shift + -</code>: 分割cell</p>
+</li>
+</ul>
+<hr>
+<p><a href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/4.0.x/examples/IPython%20Kernel/Cell%20Magics.ipynb" target="_blank" rel="external">source 1</a><br>
+<a href="http://ipython.org/ipython-doc/3/notebook/notebook.html#importing-py-files" target="_blank" rel="external">source 2</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h1&gt;
+&lt;h2 id=&quot;pylab&quot;&gt;%pylab?&lt;/h2&gt;
+&lt;p&gt;This sentence will give out the ‘help information’ of pylab.&lt;br&gt;
+Note that %pylab will import&lt;/p&gt;
+&lt;h2 id=&quot;cell-magics&quot;&gt;cell magics&lt;/h2&gt;
+&lt;p&gt;Magics come in two kinds:【ct】可以简单理解为单行/多行&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://timchen314.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
+    
+      <category term="jupyter" scheme="http://timchen314.com/tags/jupyter/"/>
+    
+  </entry>
+  
+  <entry>
     <title>docker note</title>
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
 <blockquote>
 <p>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</p>
 </blockquote>
-<p>我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的轻量级虚拟机。</p>
+<p>我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的虚拟机。“Build Once, Run Anywhere!”</p>
+<ul>
+<li><a href="https://hub.docker.com/r/timchen314/galamost3/" target="_blank" rel="external">galamost-3.0.9 docker</a>测试</li>
+</ul>
+<ol>
+<li>完全没有速度损失（docker vs. no-docker in 1080TI: 700 TPS vs. 700±20 TPS; IP: 101）。</li>
+<li>即使host上为cuda8.0而docker上为cuda9.0，速度也基本没有损失（docker vs. no-docker in 1080: 513 TPS vs. 533 TPS; IP: 106）。</li>
+</ol>
 <a id="more"></a>
 <h1 id="docker介绍">Docker介绍</h1>
 <h2 id="首先-docker不会降低性能"><strong>首先，Docker不会降低性能！</strong></h2>
@@ -55,6 +166,7 @@ docker还存在着以下几个缺点：<br>
 <p>Tomcat+Mysql,怎么做？<br>
 我们构建两个镜像，一个仅安装Tomcat并部署我们的app，另一个仅安装MySQL，然后启动这两个镜像，得到两个容器，再利用Docker的容器互联技术将二者连接(Docker的容器是通过http连接的)。</p>
 <h2 id="docker原理的简介：">docker原理的简介：</h2>
+<h3 id="基础介绍">基础介绍</h3>
 <ul>
 <li>
 <p>原理<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
@@ -81,6 +193,58 @@ docker还存在着以下几个缺点：<br>
 </blockquote>
 </li>
 <li>
+<p>rootfs<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup><br>
+<img src="https://pic1.zhimg.com/50/v2-e7bf9fbb488309f38864cac909a022a5_hd.jpg" alt="image"></p>
+<blockquote>
+<p>内核空间是 kernel，Linux 刚启动时会加载 bootfs 文件系统，之后 bootfs 会被卸载掉。<br>
+用户空间的文件系统是 rootfs，包含我们熟悉的 /dev, /proc, /bin 等目录。<br>
+对于 base 镜像来说，底层直接用 Host 的 kernel，自己只需要提供 rootfs 就行了。<br>
+而对于一个精简的 OS，rootfs 可以很小，只需要包括最基本的命令、工具和程序库就可以了。相比其他 Linux 发行版，CentOS 的 rootfs 已经算臃肿的了，alpine 还不到 10MB。<br>
+这里需要说明的是：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>base 镜像只是在用户空间与发行版一致，kernel 版本与发行版是不同的。<br>
+例如 CentOS 7 使用 3.x.x 的 kernel，如果 Docker Host 是 Ubuntu 16.04（比如我们的实验环境），那么在 CentOS 容器中使用的实际是是 Host 4.x.x 的 kernel。</li>
+<li>容器只能使用 Host 的 kernel，并且不能修改。</li>
+</ol>
+<ul>
+<li><mark>writable container</mark><sup class="footnote-ref"><a href="#fn6" id="fnref6:1">[6]</a></sup><br>
+<img src="https://pic1.zhimg.com/50/v2-9496fbb036445cc557f95f657c5baea8_hd.jpg" alt="image">
+<blockquote>
+<p>当容器启动时，一个新的可写层被加载到镜像的顶部。<br>
+这一层通常被称作“容器层”，“容器层”之下的都叫“镜像层”。<br>
+所有对容器的改动 - 无论添加、删除、还是修改文件都只会发生在容器层中。<br>
+只有容器层是可写的，容器层下面的所有镜像层都是只读的。<br>
+下面我们深入讨论容器层的细节。<br>
+镜像层数量可能会很多，所有镜像层会联合在一起组成一个统一的文件系统。如果不同层中有一个相同路径的文件，比如 /a，上层的 /a 会覆盖下层的 /a，也就是说用户只能访问到上层中的文件 /a。在容器层中，用户看到的是一个叠加之后的文件系统。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>添加文件 在容器中创建文件时，新文件被添加到容器层中。</li>
+<li>读取文件 在容器中读取某个文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后打开并读入内存。</li>
+<li>修改文件 在容器中修改已存在的文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后修改之。<br>
+删除文件 在容器中删除文件时，Docker 也是从上往下依次在镜像层中查找此文件。找到后，会在容器层中记录下此删除操作。</li>
+<li>只有当需要修改时才复制一份数据，这种特性被称作 Copy-on-Write。可见，容器层保存的是镜像变化的部分，不会对镜像本身进行任何修改。</li>
+</ol>
+<h3 id="技术细节">技术细节</h3>
+<ul>
+<li>
+<p>runtime/runc<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
+<blockquote>
+<p>容器 runtime<br>
+runtime 是容器真正运行的地方。runtime 需要跟操作系统 kernel 紧密协作，为容器提供运行环境。<br>
+如果大家用过 Java，可以这样来理解 runtime 与容器的关系：<br>
+Java 程序就好比是容器，JVM 则好比是 runtime。JVM 为 Java 程序提供运行环境。同样的道理，容器只有在 runtime 中才能运行。<br>
+lxc、runc 和 rkt 是目前主流的三种容器 runtime。<br>
+lxc 是 Linux 上老牌的容器 runtime。Docker 最初也是用 lxc 作为 runtime。<br>
+runc 是 Docker 自己开发的容器 runtime，符合 oci 规范，也是现在 Docker 的默认 runtime。<br>
+rkt 是 CoreOS 开发的容器 runtime，符合 oci 规范，因而能够运行 Docker 的容器。</p>
+</blockquote>
+</li>
+<li>
 <p>image增量存储、类似git</p>
 </li>
 </ul>
@@ -104,11 +268,23 @@ docker还存在着以下几个缺点：<br>
 <blockquote>
 <p>In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.</p>
 </blockquote>
-</li>
-</ul>
-<p>在 Dockerfile 文件中写入指令，每个指令都在映像上生成一个新的层。Docker 限制每个映像最多有 127 层，因此，要尽量优化映像层数。</p>
 <ul>
-<li>CoreOS<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>
+<li>在 Dockerfile 文件中写入指令，每个指令都在映像上生成一个新的层。Docker 限制每个映像最多有 127 层，因此，要尽量优化映像层数。</li>
+<li>During the ‘build’, the image is generated layer by layer. If bugs are encountered, you can start the toppest correct layer and debug the bug layer.</li>
+</ul>
+</li>
+<li>
+<p>构建缓存<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
+<blockquote>
+<p>在执行每条指令之前，Docker 都会在缓存中查找是否已经存在可重用的镜像，如果有就使用现存的镜像。如果你不想在构建过程中使用缓存，你可以在 docker build 命令中使用 --no-cache=true 选项。遵循的基本规则如下：<br>
+从一个基础镜像开始（FROM 指令指定），下一条指令将和该基础镜像的所有子镜像进行匹配，检查这些子镜像被创建时使用的指令是否和被检查的指令完全一样。如果不是，则缓存失效。<br>
+然而，有些指令需要更多的检查和解释。<br>
+对于 ADD 和 COPY 指令，镜像中对应文件的内容也会被检查，每个文件都会计算出一个校验和。文件的最后修改时间和最后访问时间不会纳入校验。在缓存的查找过程中，会将这些校验和和已存在镜像中的文件校验和进行对比。如果文件有任何改变，比如内容和元数据，则缓存失效。<br>
+除了 ADD 和 COPY 指令，缓存匹配过程不会查看临时容器中的文件来决定缓存是否匹配。例如，当执行完 RUN apt-get -y update 指令后，容器中一些文件被更新，但 Docker 不会检查这些文件。这种情况下，只有指令字符串本身被用来匹配缓存。</p>
+</blockquote>
+</li>
+<li>
+<p>CoreOS<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
 <blockquote>
 <p>目前最常用的用来执行Docker集装箱的Linux发行版本既不是Ubuntu、Debian也不是RedHat、Fedora，而是CoreOS。这个发行版本根本没有软件包管理程序，所以也不能通过输入某个命令来安装软件。但是CoreOS预装了Docker，所以可以制作集装箱镜像，或者下载别人发布的集装箱镜像来执行。</p>
 </blockquote>
@@ -152,7 +328,7 @@ With official support!</p>
 </li>
 <li>
 <p>缺点<br>
-参见<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>和<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
+参见<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>和<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup></p>
 <ol>
 <li>调度系统的服务、环境变量<br>
 例如利用cron服务，一旦将cron服务容器化后，原始的环境变数设定都会失效。<br>
@@ -180,6 +356,21 @@ With official support!</p>
 <p><a href="https://zhuanlan.zhihu.com/p/29232090" target="_blank" rel="external">Kubernetes 是什么？</a></p>
 </li>
 </ul>
+<h3 id="frequently-asked-questions"><a href="https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#does-it-have-a-performance-impact-on-my-gpu-workload" target="_blank" rel="external">Frequently Asked Questions</a></h3>
+<blockquote>
+<p><mark>Does it have a performance impact on my GPU workload?</mark><br>
+No, usually the impact should be in the order of less than 1% and hardly noticeable.<br>
+<mark>Do you support CUDA Multi Process Service (a.k.a. MPS)?</mark><br>
+No, MPS is not supported at the moment. However we plan on supporting this feature in the future, and this issue will be updated accordingly.<br>
+<strong>Do you support running a GPU-accelerated X server inside the container?</strong><br>
+No, running a X server inside the container is not supported at the moment and there is no plan to support it in the near future (see also OpenGL support).<br>
+<strong>I have multiple GPU devices, how can I isolate them between my containers?</strong><br>
+GPU isolation is achieved through a container environment variable called NVIDIA_VISIBLE_DEVICES.<br>
+Devices can be referenced by index (following the PCI bus order) or by UUID (refer to the documentation).<br>
+<strong>Why is nvidia-smi inside the container not listing the running processes?</strong><br>
+nvidia-smi and NVML are not compatible with PID namespaces.<br>
+We recommend monitoring your processes on the host or inside a container using --pid=host.</p>
+</blockquote>
 <h1 id="command">Command</h1>
 <ul>
 <li>
@@ -200,19 +391,73 @@ With official support!</p>
 <code>-d</code> 守护容器，就是后台运行，退出命令窗口容器也不会停止<br>
 <code>-it</code> 交互式容器 退出命令窗口容器就停止运行了<br>
 <code>-P</code> 将容器内部使用的网络端口映射到我们使用的主机上。<code>docker ps</code>会显示<strong>端口是如何映射的</strong><br>
-<code>-runtime=nvidia</code> without it gpu and its drive wouldn’t be found.</p>
+<code>--runtime=nvidia</code> without it gpu and its drive wouldn’t be found.<br>
+<code>--name your_name</code> assign a name to your container</p>
+<ul>
+<li>run centos image in background<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup><br>
+<mark><code>docker run --runtime=nvidia -t -d --name conda_hoomd timchen314/galamost3:3.0.9 /bin/bash</code></mark></li>
+<li>automatically restart<br>
+<code>--restart=always</code> 意味着无论容器因何种原因退出（包括正常退出），就立即重启。<br>
+<code>--restart=on-failure:3</code>，意思是如果启动进程退出代码非0，则重启容器，最多重启3次。</li>
+</ul>
+</li>
+<li>
+<p><code>exec</code><br>
+<code>docker exec -it your_container_name bash # login an existed container</code></p>
+<ul>
+<li>run source<br>
+Source is not an executable (source is a bash shell built-in command that executes the content of the file passed as argument)<br>
+<code>docker run --rm -ti _image_name_ bash -c 'source FILE'</code></li>
+<li>Piping a file into docker run<br>
+<code>echo 'export=$PATH:/opt/miniconda2/bin/' | docker exec -i conda_hoomd bash -c &quot;cat &gt;&gt; /etc/profile&quot;</code><br>
+Note that it won’t work in this way: <code>docker exec -i conda_hoomd echo 'export=$PATH:/opt/miniconda2/bin/' &gt;&gt; /etc/profile</code></li>
+</ul>
+</li>
+<li>
+<p>pause/unpause</p>
 </li>
 <li>
 <p><code>cp</code></p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker cp foo.txt mycontainer:/foo.txt</div><div class="line">docker cp mycontainer:/foo.txt foo.txt</div></pre></td></tr></table></figure>
 </li>
 <li>
-<p>tag<br>
-每个仓库会有多个镜像，用tag标示，如果不加tag，默认使用latest镜像。</p>
+<p><code>rm</code><br>
+remove all exited containers:<br>
+<code>docker rm -v $(docker ps -aq -f status=exited)</code></p>
 </li>
+<li>
+<p>attach<br>
+直接进入容器 启动命令 的<strong>终端</strong>，不会启动新的进程。</p>
+</li>
+<li>
+<p><code>system</code><br>
+<code>docker system prune</code></p>
+</li>
+<li>
+<p>tag<br>
+每个仓库会有多个镜像，用tag标示，如果不加tag，默认使用latest镜像(不设tag，则默认为latest)<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>。<br>
+[image name] = [repository]:[tag]<br>
+注意！一个repo可以含有多个image！一个image可以打上多个tag！只有[repository]:[tag]唯一对应一个image！</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">docker tag myimage-v1.9.2 myrepo:1</div><div class="line">docker tag myimage-v1.9.2 myrepo:1.9</div><div class="line">docker tag myimage-v1.9.2 myrepo:1.9.2</div><div class="line">docker tag myimage-v1.9.2 myrepo:latest</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果执行下面的命令，之前的tag会自动覆盖掉。</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker tag myimage-v2.0.0 myrepo:latest</div></pre></td></tr></table></figure>
+<ul>
+<li>logs<br>
+Docker daemon log: <code>/var/log/daemon.log | grep docker</code><sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup></li>
+</ul>
+<ul>
 <li>
 <p>保存/加载tar格式的镜像</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker save -o centos.tar xianhu/centos:git    # 保存镜像, -o也可以是--output</div><div class="line">docker load -i centos.tar    # 加载镜像, -i也可以是--input</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>-H</code> 指定host IP<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup></p>
+<blockquote>
+<p>默认配置下，Docker daemon 只能响应来自本地 Host 的客户端请求。如果要允许远程客户端请求，需要在配置文件中打开 TCP 监听，步骤如下：<br>
+1.编辑配置文件 /etc/systemd/system/multi-user.target.wants/docker.service，在环境变量 ExecStart 后面添加 -H tcp://0.0.0.0，允许来自任意 IP 的客户端连接。</p>
+</blockquote>
 </li>
 <li>
 <p>根据已有容器，新建自有镜像</p>
@@ -223,22 +468,118 @@ The last is container ID. <code>-a</code> means author<br>
 <li>Dockerfile</li>
 </ol>
 </li>
-<li>
-<p>show info</p>
+</ul>
+<h2 id="show-info">show info</h2>
 <ul>
 <li><code>docker images</code> 显示已有docker</li>
 <li><code>docker ps -a</code> 查看终止状态的容器</li>
 <li><code>docker stats -a</code> Resource Usage</li>
 <li><code>docker top NAMES</code> 查看容器内部运行的进程</li>
 <li><code>docker system df</code> show the used space</li>
+<li><code>docker history your_image</code></li>
 <li>show tags<br>
 For the images pulled to <a href="http://hub.docker.com" target="_blank" rel="external">hub.docker.com</a>, the tags can be found by：<br>
 visit ‘<a href="https://hub.docker.com/r/library/debian/tags/" target="_blank" rel="external">https://hub.docker.com/r/library/debian/tags/</a>’ and you can see tags。<br>
 By replace “/r/” in path to “/v2/repositories/” the tags can be downloaded and analysed.<br>
-<code>curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '.&quot;results&quot;[][&quot;name&quot;]'</code> will <mark>List first 10 tags!</mark> <sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup><br>
-Note: <code>jq</code> is a tool for processing JSON inputs. If all tags is needed, see reference<sup class="footnote-ref"><a href="#fn9" id="fnref9:1">[9]</a></sup>.<br>
+<code>curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '.&quot;results&quot;[][&quot;name&quot;]'</code> will <mark>List first 10 tags!</mark> <sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup><br>
+Note: <code>jq</code> is a tool for processing JSON inputs. If all tags is needed, see reference<sup class="footnote-ref"><a href="#fn15" id="fnref15:1">[15]</a></sup>.<br>
 VALIDATE: <code>curl 'https://registry.hub.docker.com/v2/repositories/library/python/tags/'|jq '.&quot;results&quot;[][&quot;name&quot;]'</code> does work!</li>
 </ul>
+<h2 id="build">build</h2>
+<ul>
+<li>
+<p>注释符号<code>#</code></p>
+</li>
+<li>
+<p>ADD<br>
+与 COPY 类似，从 build context 复制文件到镜像。不同的是，如果 src 是归档文件（tar, zip, tgz, xz 等），文件会被自动解压到 dest。</p>
+</li>
+<li>
+<p>ARG</p>
+<blockquote>
+<p>构建参数<sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4]</a></sup><br>
+格式：ARG &lt;参数名&gt;[=&lt;默认值&gt;]<br>
+构建参数和 ENV 的效果一样，都是设置环境变量。所不同的是，ARG 所设置的构建环境的环境变量，在将来容器运行时是不会存在这些环境变量的。但是不要因此就使用 ARG 保存密码之类的信息，因为 docker history 还是可以看到所有值的。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>
+<p>CMD<br>
+三种格式<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup></p>
+<blockquote>
+<ol>
+<li>Exec 格式：CMD [“executable”,“param1”,“param2”]</li>
+<li>这是 CMD 的推荐格式。<br>
+CMD [“param1”,“param2”] 为 ENTRYPOINT 提供额外的参数，此时 ENTRYPOINT 必须使用 Exec 格式。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>Shell 格式：CMD command param1 param2</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><mark>指令就是用于指定默认的容器主进程的启动命令的。</mark><sup class="footnote-ref"><a href="#fn4" id="fnref4:3">[4]</a></sup><br>
+在运行时可以指定新的命令来替代镜像设置中的这个默认命令，比如，<code>docker run -it ubuntu cat /etc/os-release</code><br>
+在指令格式上，一般推荐使用 exec 格式，这类格式在解析时会被解析为 JSON 数组，因此一定要使用双引号 &quot;，而不要使用单引号。<br>
+如果使用 shell 格式的话，实际的命令会被包装为 sh -c 的参数的形式进行执行。比如：<br>
+<code>CMD echo $HOME</code><br>
+在实际执行中，会将其变更为：<br>
+<code>CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code></p>
+</blockquote>
+</li>
+</ul>
+<p>另外，docker的主程序不能是退出或后台运行的状态：</p>
+<blockquote>
+<p>对于容器而言，其启动程序就是容器应用进程，容器就是为了主进程而存在的，主进程退出，容器就失去了存在的意义，从而退出，其它辅助进程不是它需要关心的东西。</p>
+</blockquote>
+<ul>
+<li>COPY<br>
+支持两种形式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">COPY src dest</div><div class="line">COPY [&quot;src&quot;, &quot;dest&quot;]</div></pre></td></tr></table></figure>
+<ul>
+<li>ENTRYPOINT<br>
+<code>&lt;ENTRYPOINT&gt; &quot;&lt;CMD&gt;&quot;</code><br>
+ENTRYPOINT 不会被忽略，一定会被执行，即使运行 docker run 时指定了其他命令。
+<blockquote>
+<p><code>ENTRYPOINT [&quot;/bin/echo&quot;, &quot;Hello&quot;]</code><br>
+<code>CMD [&quot;world&quot;]</code><br>
+当容器通过 <code>docker run -it [image]</code> 启动时，输出为：<br>
+Hello world<br>
+而如果通过 <code>docker run -it [image] CloudMan</code> 启动，则输出为：<br>
+Hello CloudMan</p>
+</blockquote>
+</li>
+</ul>
+<p>PS: 最佳实践<sup class="footnote-ref"><a href="#fn16" id="fnref16:1">[16]</a></sup></p>
+<blockquote>
+<p>使用 RUN 指令安装应用和软件包，构建镜像。<br>
+如果 Docker 镜像的用途是运行应用程序或服务，比如运行一个 MySQL，应该优先使用 Exec 格式的 ENTRYPOINT 指令。CMD 可为 ENTRYPOINT 提供额外的默认参数，同时可利用 docker run 命令行替换默认参数。<br>
+如果想为容器设置默认的启动命令，可使用 CMD 指令。用户可在 docker run 命令行中替换此默认命令。</p>
+</blockquote>
+<ul>
+<li>ENV</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ENV MY_VERSION 1.3</div><div class="line">RUN apt-get install -y mypackage=$MY_VERSION</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>LABEL</p>
+<blockquote>
+<p>LABEL指令添加元数据到一个镜像。一个LABEL是一个键值对。要在LABEL值中包含空格，使用双引号和反斜杠(续行)。<br>
+查看LABEL，可以用<code>docker inspect</code>。<br>
+例子：</p>
+</blockquote>
+ <figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">LABEL</span> "com.example.vendor"="ACME Incorporated"</div><div class="line"><span class="keyword">LABEL</span> com.example.label-with-value="foo"</div><div class="line"><span class="keyword">LABEL</span> version="1.0"</div><div class="line"><span class="keyword">LABEL</span> description="This text illustrates \</div><div class="line">that label-values can span multiple lines."</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>MAINTAINER (depreciate)<br>
+设置镜像的作者，可以是任意字符串。</p>
+</li>
+<li>
+<p>其他<br>
+EXPOSE VOLUME RUN</p>
 </li>
 </ul>
 <h2 id="安装">安装</h2>
@@ -248,8 +589,13 @@ homebrew直接安装<br>
 <code>brew cask install docker</code></li>
 <li>CentOS<br>
 <a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/" target="_blank" rel="external">官网</a><br>
-<a href="http://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="external">CentOS runoob</a><br>
-官网提到，如果要通过yum安装特定版本的docker时，得到版本名的方法。</li>
+官网的方法是最正确的： <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Add the package repositories</div><div class="line">curl -s -L https://nvidia.github.io/nvidia-docker/centos7/x86_64/nvidia-docker.repo | \</div><div class="line">  sudo tee /etc/yum.repos.d/nvidia-docker.repo</div><div class="line"><span class="meta"></span></div><div class="line"># Install nvidia-docker2 and reload the Docker daemon configuration</div><div class="line">sudo yum install -y nvidia-docker2</div><div class="line">sudo pkill -SIGHUP dockerd</div><div class="line"><span class="meta"></span></div><div class="line"># Test nvidia-smi with the latest official CUDA image</div><div class="line">docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="http://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="external">CentOS runoob</a><br>
+单独安装docker-ce非常麻烦的，因为需要安装和配置nvidia-container-runtime：</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line">sudo yum install -y docker-ce</div><div class="line">sudo systemctl start docker</div><div class="line">sudo docker run hello-world</div><div class="line"><span class="meta">#</span> install nvidia-container-runtime</div><div class="line">yum install -y nvidia-container-runtime</div><div class="line"><span class="meta">#</span> Then you should follow the troublesome setting process in https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup</div></pre></td></tr></table></figure>
+<ul>
 <li>Docker Machine
 <blockquote>
 <p>Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。</p>
@@ -271,13 +617,13 @@ homebrew直接安装<br>
 <li>&quot;Docker version reports bad response from Docker engine&quot;<br>
 A lot of people encounter this error (<a href="https://forums.docker.com/t/docker-version-reports-bad-response-from-docker-engine/13395" target="_blank" rel="external">https://forums.docker.com/t/docker-version-reports-bad-response-from-docker-engine/13395</a>). For me, I sovled this by reset to factory defaults.</li>
 </ul>
-<h2 id="问题">问题</h2>
-<ul>
-<li>can’t get the size of remote image<br>
-by google: docker remote image size, or docker image size in REPOSITORY, there is no cli command to do this.<br>
+<h2 id="problem">problem</h2>
+<h3 id="use-gcc5-x-solved"><mark>use gcc5.x (solved)</mark></h3>
+<p>source /opt/rh/devtoolset-4/enable</p>
+<h3 id="can-t-get-the-size-of-remote-image-unsolved">can’t get the size of remote image (unsolved)</h3>
+<p>by google: docker remote image size, or docker image size in REPOSITORY, there is no cli command to do this.<br>
 A complicate answer is:<br>
-<a href="https://unix.stackexchange.com/questions/134186/docker-how-to-get-image-size" target="_blank" rel="external">Docker: How to get image size?</a></li>
-</ul>
+<a href="https://unix.stackexchange.com/questions/134186/docker-how-to-get-image-size" target="_blank" rel="external">Docker: How to get image size?</a></p>
 <h1 id="reference">reference</h1>
 <hr>
 <ul>
@@ -288,7 +634,17 @@ A complicate answer is:<br>
 <a href="https://github.com/wsargent/docker-cheat-sheet#layers" target="_blank" rel="external">Docker Cheat Sheet</a><br>
 <a href="https://docs.docker.com/get-started/" target="_blank" rel="external">官网 get started</a><br>
 <a href="http://docker_practice.gitee.io/image/multistage-builds.html" target="_blank" rel="external">Docker — 从入门到实践</a></li>
+<li>待读</li>
 </ul>
+<hr>
+<p>Examples of Dockerfile:</p>
+<ol>
+<li>
+<p>centos</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> scratch</div><div class="line"><span class="keyword">ADD</span><span class="bash"> centos-7-docker.tar.xz /</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> name=<span class="string">"CentOS Base Image"</span> \</span></div><div class="line">    vendor=<span class="string">"CentOS"</span> \</div><div class="line">    license=<span class="string">"GPLv2"</span> \</div><div class="line">    build-date=<span class="string">"20180107"</span></div><div class="line"></div><div class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"/bin/bash"</span>]</span></div></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -298,17 +654,32 @@ A complicate answer is:<br>
 </li>
 <li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/search?q=docker&amp;type=content" target="_blank" rel="external">docker在web开发中得使用流程是怎样的？</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><a href="http://docker_practice.gitee.io/image/multistage-builds.html" target="_blank" rel="external">Docker — 从入门到实践</a>) <a href="#fnref4" class="footnote-backref">↩</a></p>
+<li id="fn4" class="footnote-item"><p><a href="http://docker_practice.gitee.io/image/multistage-builds.html" target="_blank" rel="external">Docker — 从入门到实践</a> <a href="#fnref4" class="footnote-backref">↩</a> <a href="#fnref4:1" class="footnote-backref">↩</a> <a href="#fnref4:2" class="footnote-backref">↩</a> <a href="#fnref4:3" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn5" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/30713987" target="_blank" rel="external">【 全干货 】5 分钟带你看懂 Docker ！</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/19902938" target="_blank" rel="external">分布式机器学习的故事：Docker改变世界</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
+<li id="fn6" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/32383774" target="_blank" rel="external">每天5分钟玩转Docker容器技术（三）</a> <a href="#fnref6" class="footnote-backref">↩</a> <a href="#fnref6:1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn7" class="footnote-item"><p><a href="https://yq.aliyun.com/articles/113842" target="_blank" rel="external">一年之后重新审视 Docker —— 根本性缺陷和炒作</a> <a href="#fnref7" class="footnote-backref">↩</a></p>
+<li id="fn7" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/32324673" target="_blank" rel="external">每天5分钟玩转Docker容器技术（一）</a> <a href="#fnref7" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn8" class="footnote-item"><p><a href="http://www.sohu.com/a/155079445_120672" target="_blank" rel="external">Docker架构优缺点大剖析</a> <a href="#fnref8" class="footnote-backref">↩</a></p>
+<li id="fn8" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/19902938" target="_blank" rel="external">分布式机器学习的故事：Docker改变世界</a> <a href="#fnref8" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn9" class="footnote-item"><p><a href="http://www.googlinux.com/list-all-tags-of-docker-image/index.html" target="_blank" rel="external">How to list all tags of a docker image</a> <a href="#fnref9" class="footnote-backref">↩</a> <a href="#fnref9:1" class="footnote-backref">↩</a></p>
+<li id="fn9" class="footnote-item"><p><a href="https://yq.aliyun.com/articles/113842" target="_blank" rel="external">一年之后重新审视 Docker —— 根本性缺陷和炒作</a> <a href="#fnref9" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p><a href="http://www.sohu.com/a/155079445_120672" target="_blank" rel="external">Docker架构优缺点大剖析</a> <a href="#fnref10" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p><a href="https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d/30209974#30209974" target="_blank" rel="external">Docker container will automatically stop after “docker run -d”</a> <a href="#fnref11" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p><a href="http://blog.csdn.net/cloudman6/article/details/72603130" target="_blank" rel="external">镜像命名的最佳实践 - 每天5分钟玩转 Docker 容器技术（18）</a> <a href="#fnref12" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p><a href="https://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log" target="_blank" rel="external">Where is the Docker daemon log?</a> <a href="#fnref13" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn14" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/32356831" target="_blank" rel="external">每天5分钟玩转Docker容器技术（二）</a> <a href="#fnref14" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn15" class="footnote-item"><p><a href="http://www.googlinux.com/list-all-tags-of-docker-image/index.html" target="_blank" rel="external">How to list all tags of a docker image</a> <a href="#fnref15" class="footnote-backref">↩</a> <a href="#fnref15:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn16" class="footnote-item"><p><a href="https://www.cnblogs.com/CloudMan6/p/6875834.html" target="_blank" rel="external">RUN vs CMD vs ENTRYPOINT - 每天5分钟玩转 Doc<br>
+ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a> <a href="#fnref16:1" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -321,7 +692,14 @@ A complicate answer is:<br>
 &lt;blockquote&gt;
 &lt;p&gt;Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的轻量级虚拟机。&lt;/p&gt;
+&lt;p&gt;我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的虚拟机。“Build Once, Run Anywhere!”&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/timchen314/galamost3/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;galamost-3.0.9 docker&lt;/a&gt;测试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;完全没有速度损失（docker vs. no-docker in 1080TI: 700 TPS vs. 700±20 TPS; IP: 101）。&lt;/li&gt;
+&lt;li&gt;即使host上为cuda8.0而docker上为cuda9.0，速度也基本没有损失（docker vs. no-docker in 1080: 513 TPS vs. 533 TPS; IP: 106）。&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -339,7 +717,7 @@ A complicate answer is:<br>
     <link href="http://timchen314.com/linux_senior_command/"/>
     <id>http://timchen314.com/linux_senior_command/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -440,7 +818,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -489,7 +867,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -549,7 +927,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -735,7 +1113,7 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -1019,12 +1397,12 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 <li>sys.version/version_info(version_info is a object)</li>
 </ul>
 <h3 id="os-module">os module</h3>
-<h4 id="1-os-path">1. os.path</h4>
+<h4 id="1-about-path">1. about path</h4>
 <p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="external">os.path模块</a></p>
 <ul>
 <li>
-<p>os.path.exist<br>
-determine if a file or dir exists</p>
+<p>about path</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">os.getcwd()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.listdir()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.path.exist   <span class="comment">#determine if a file or dir exists</span></div></pre></td></tr></table></figure>
 </li>
 <li>
 <p>os.remove<br>
@@ -1150,7 +1528,9 @@ Return an iterator which yields the same values as glob()</li>
 <p><code>shutil.copyfile(src, dst)</code></p>
 <h2 id="other-useful-things">other useful things</h2>
 <h3 id="ipython">ipython</h3>
-<p><a href="https://www.cnblogs.com/cuiyubo/p/6823478.html" target="_blank" rel="external">入门</a></p>
+<ol>
+<li><a href="https://www.cnblogs.com/cuiyubo/p/6823478.html" target="_blank" rel="external">入门</a></li>
+</ol>
 <ul>
 <li>“?” 帮助与显示信息<br>
 <code>?save</code> 会给出save命令的用法、对象的签名<br>
@@ -1159,19 +1539,46 @@ Return an iterator which yields the same values as glob()</li>
 <li><code>%hist</code></li>
 <li><code>%edit</code> 使用编辑器打开</li>
 </ul>
+<ol start="2">
+<li><code>%save your_filename 1-30</code></li>
+</ol>
 <h3 id="conda">conda</h3>
 <ul>
-<li>minicoda</li>
+<li>minicoda<br>
+<code># pip install conda # does not work!</code><br>
+<mark>You have to download miniconda to use conda as package manager.</mark></li>
 <li><a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">使用conda管理python环境</a></li>
 <li>anaconda<br>
 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a></li>
-<li>conda install scipy #安装scipy</li>
+<li>conda install scipy #安装scipy
+<ul>
+<li><code>conda install --download-only ipython-notebook</code></li>
+<li><code>conda install --offline -f ***.tar.bz2</code> 离线安装</li>
+</ul>
+</li>
 <li>conda list #列出已安装的包</li>
+<li>环境<br>
+<code>conda create -n env_name python=2.7 # create new env</code><br>
+<code>conda env list # list all env</code><br>
+<code>conda env export &gt; environment.yml # export to file</code><br>
+<code>source activate your_env_name # enter your env.</code><br>
+<code>source activate root # to switch back</code></li>
 </ul>
 <h3 id="pip">pip</h3>
 <ul>
 <li>Usage：<code>pip --help</code><br>
 <a href="http://www.tuicool.com/articles/NFV3yaJ" target="_blank" rel="external">for more info</a></li>
+<li>install<br>
+<a href="https://www.cnblogs.com/mangoVic/p/6428369.html" target="_blank" rel="external">centos7下使用yum安装pip</a>
+<blockquote>
+<p>首先安装epel扩展源：<br>
+　　yum -y install epel-release<br>
+　　更新完成之后，就可安装pip：<br>
+　　yum -y install python-pip<br>
+　　安装完成之后清除cache：<br>
+　　yum clean all</p>
+</blockquote>
+</li>
 </ul>
 <h4 id="error">error</h4>
 <ul>
@@ -1181,6 +1588,10 @@ Return an iterator which yields the same values as glob()</li>
 <p>解决：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --trusted-host pypi.python.org pytest-xdist</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<h2 id="需要的工具">需要的工具</h2>
+<ul>
+<li>circleci2.0</li>
 </ul>
 <h2 id="工程能力">工程能力</h2>
 <h3 id="工程-oop">工程/OOP</h3>
@@ -1265,7 +1676,7 @@ Python features a dynamic type system and automatic memory management and suppor
     <link href="http://timchen314.com/vmd%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vmd笔记/</id>
     <published>2017-09-29T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>
@@ -1608,7 +2019,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
     <id>http://timchen314.com/Word格式论文中添加引用/</id>
     <published>2017-09-24T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的<strong>bib文件</strong>，向Word中添加引用文献。该方法有几个好处:</p>
 <ol>
@@ -1646,7 +2057,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
     <id>http://timchen314.com/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
 <a id="more"></a>
@@ -1710,13 +2121,20 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/digital_currency/"/>
     <id>http://timchen314.com/digital_currency/</id>
     <published>2017-08-30T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>What a bubble!<br>
 <img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
 <a id="more"></a>
-<h1 id="info-source">Info source</h1>
-<ol>
+<h1 id="info">Info</h1>
+<p><img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/%E6%9D%82/Percentage_of_Total_Market_Capitalization_Dominance.png" alt="image"></p>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="ripple" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="cardano" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="ethereum" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+<h2 id="source">source</h2>
+<ol start="0">
+<li><a href="https://coinmarketcap.com" target="_blank" rel="external">Cryptocurrency Market Capitalizations</a></li>
 <li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
 <li><a href="http://trans.chbtc.com/markets/eth" target="_blank" rel="external">trans.chbtc.com/markets/eth</a> 有长期数据，可以画周线</li>
 </ol>
@@ -1738,11 +2156,22 @@ pbc join res -sel尝试了各种办法也没有成功<br>
 <h2 id="待读">待读</h2>
 <p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
 <a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
-<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a></p>
-<p><a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885521" target="_blank" rel="external">以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行</a><br>
+<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a><br>
+<a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
 <a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
 <h2 id="进展">进展</h2>
 <p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
+<h1 id="new-set">new_set</h1>
+<p>My understanding:</p>
+<ol>
+<li>init first block.</li>
+<li>then you can mine.</li>
+</ol>
+<h2 id="problem">problem</h2>
+<ul>
+<li>what is private network?</li>
+</ul>
 <h1 id="资料-引用">资料&amp;引用</h1>
 <h2 id="资料">资料</h2>
 <p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a></p>
@@ -1767,7 +2196,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
     <id>http://timchen314.com/gnuplot笔记上/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
 <a id="more"></a>
@@ -1962,7 +2391,7 @@ Three binary operators require string operands: the string concatenation operato
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://timchen314.com/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -2208,7 +2637,7 @@ The eps file doesn’t get written until a plot command is specified after speci
     <link href="http://timchen314.com/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -2374,7 +2803,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://timchen314.com/linux_command/"/>
     <id>http://timchen314.com/linux_command/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -2564,10 +2993,12 @@ Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM�
 </blockquote>
 <h2 id="apt-get">apt-get</h2>
 <ul>
-<li>
-<p>Usage:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update \</div><div class="line"> &amp;&amp; apt-get upgrade -y \</div><div class="line"> &amp;&amp; apt-get install -y \</div></pre></td></tr></table></figure>
+<li>Usage: <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update \</div><div class="line"> &amp;&amp; apt-get upgrade -y \</div><div class="line"> &amp;&amp; apt-get install -y \</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<p><code>update</code>：第一步，获得最近的软件包的列表；列表中包含一些包的信息，比如这个包是否更新过。<br>
+<code>upgrade</code>：第二步，如果这个包没有发布更新，就不管它；如果发布了更新，就把包下载到电脑上，并安装。</p>
+<ul>
 <li>
 <p>apt-cache can search package</p>
 </li>
@@ -2808,6 +3239,9 @@ show IP routing table</li>
 <li><code>netstat -tnpl</code><br>
 show the listened port</li>
 </ul>
+<h2 id="ping">ping</h2>
+<p>Check connection of whole web segment.<br>
+<code>ping 192.9.204.$i -c2 | grep -q &quot;ttl=&quot; &amp;&amp; echo &quot;$i yes&quot; || echo &quot;$i no&quot;</code></p>
 <h2 id="printf命令：">printf命令：</h2>
 <p>1.补零<br>
 <code>printf &quot;%05d&quot; 123</code><br>
@@ -2898,6 +3332,10 @@ show the listened port</li>
 <p>These 4 setting should be used at all times.<br>
 In script: add <code>set -euxo pipefail</code> in the beginning of script.<br>
 In cli: <code>$ bash -euxo pipefail script.sh</code></p>
+<ul>
+<li>bash option<br>
+<code>-l</code>: Make bash act as if it had been invoked as a login shell. <mark>the profile file will be loaded!</mark> E.g., <code>/etc/profile</code>.</li>
+</ul>
 <h2 id="sort命令">sort命令</h2>
 <ol>
 <li>按第二行排序<br>
@@ -2926,6 +3364,9 @@ In cli: <code>$ bash -euxo pipefail script.sh</code></p>
 <li><code>uniq -c</code><br>
 在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。</li>
 </ol>
+<h2 id="unzip">unzip</h2>
+<p>unzip -O GBK you_zip_file.zip<br>
+For more ways to tickle with gibberish: [Linux文件乱码]](<a href="https://zhuanlan.zhihu.com/p/25988628" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25988628</a>)</p>
 <h2 id="xargs命令-find命令：">xargs命令 &amp; find命令：</h2>
 <ol>
 <li><code>awk '{print }' filenames | xargs du -h</code><br>
@@ -2948,6 +3389,22 @@ find + xargs 是“Argument list too long”问题的标准解决方法，find�
 <li><code>yum info *foo*</code></li>
 <li><code>yum list *foo* # the available packages</code></li>
 <li><code>yum localinstall foo.rpm</code></li>
+<li><code>yum install -y --downloadonl --downloaddir=/opt</code><br>
+But by this method, if the newest package has been installed, then nothing will be done. To solve this problem, you can do :<br>
+<code>yum install yum-utils</code><br>
+<code>yumdownloader &lt;package&gt;</code> # will download directly.</li>
+<li>package name and virsion name should be concatenated by ‘-’</li>
+<li>install openmpi<br>
+<code>yum install -y openmpi openmpi-dev</code></li>
+<li>update &amp; upgrade<br>
+<code>yum -y update</code><br>
+升级所有包，改变软件设置和系统设置，系统版本内核都升级<br>
+<code>yum -y upgrade</code><br>
+升级所有包，不改变软件设置和系统设置，系统版本升级，内核不改变<br>
+<mark>Note!</mark> apt-get的update、upgrade与yum的非常不同。</li>
+<li><code>yum whatprovides autoconf</code><br>
+<code>wget https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3</code><br>
+<a href="http://kaifage.com/notes/112/centos-yum-source.html" target="_blank" rel="external">CentOS yum中科大源 </a></li>
 </ol>
 <h2 id="逻辑表达式与-和-：">逻辑表达式与<code>&amp;&amp;</code>和<code>||</code>：</h2>
 <ul>
@@ -3041,142 +3498,11 @@ Because blank space is usually used as the separater of command or agruments.<br
   </entry>
   
   <entry>
-    <title>python mechanism</title>
-    <link href="http://timchen314.com/python_mechanism/"/>
-    <id>http://timchen314.com/python_mechanism/</id>
-    <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
-<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
-而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
-<a id="more"></a>
-<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
-<p>然而用python或者IPython，结果为False</p>
-<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
-<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
-<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
-<h2 id="2-with-语句">2. with 语句</h2>
-<p><strong>自动进行对象的生命周期进行管理</strong><br>
-Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
-<ul>
-<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="3-list参数传递">3. list参数传递</h2>
-<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
-正确做法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
-<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
-<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
-<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
-ct总结：参数绑定优先级：</p>
-<ol>
-<li>指定参数名</li>
-<li>顺序</li>
-<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
-<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
-<li><strong>限制关键字参数的名字</strong></li>
-</ol>
-<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
-<h2 id="5-generator">5. generator</h2>
-<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
-<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
-<p><strong>The implementation of zip is very beautiful：</strong><br>
-来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
-<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
-集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
-Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
-for x in [1, 2, 3, 4, 5]:<br>
-pass<br>
-实际上完全等价于：<br>
-首先获得Iterator对象:<br>
-<code>it = iter([1, 2, 3, 4, 5])</code><br>
-循环:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
-<ul>
-<li>while my_iterator（参见zip的实现）<br>
-iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
-</ul>
-<h2 id="8-内存">8. 内存</h2>
-<h3 id="8-1-释放内存">8.1. 释放内存</h3>
-<p>先del再gc.collect()</p>
-<h2 id="9-python类">9. Python类</h2>
-<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
-<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
-<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
-<p>Note that user defined attributes shall not end with ‘__’</p>
-<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
-<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
-注意下面的这种错误写法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
-<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
-<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
-<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
-<p>静态语言 vs 动态语言<br>
-对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
-<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
-<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
-<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
-<h2 id="10-为什么-python-的类不构成作用域-scope-？-待深入">10. <mark><a href="https://www.zhihu.com/question/263811118" target="_blank" rel="external">为什么 Python 的类不构成作用域（scope）？</a></mark> 待深入</h2>
-<h3 id="10-1-exec与eval的奇特之处">10.1 exec与eval的奇特之处</h3>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行抛异常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
-<p>然而：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行正常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    ¦   print(a)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
-<h3 id="10-2-注意区分list-comprehension与generator">10.2 <mark>注意区分list comprehension与generator！</mark></h3>
-<ul>
-<li>list comprehension是当时计算的</li>
-<li>而<code>list(a+i for i in range(10))</code>中，里面属于generator</li>
-</ul>
-<h2 id="style-guide">Style guide</h2>
-<h3 id="argument">argument</h3>
-<ul>
-<li><code>**kwargs</code> is a bad practice:
-<ol>
-<li>you don’t know how <code>**kwargs</code> affect.</li>
-<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
-<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
-<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
-</ol>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
-&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
-而id实际上是内存地址，&lt;code&gt;(ob1 is ob2)&lt;/code&gt; 等价于 &lt;code&gt;(id(ob1) == id(ob2))&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://timchen314.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://timchen314.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>人工智能简介</title>
     <link href="http://timchen314.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
     <id>http://timchen314.com/人工智能简介/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
 <h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
@@ -3379,40 +3705,476 @@ attention、GAN&lt;/li&gt;
   </entry>
   
   <entry>
-    <title>shadownsocks备忘</title>
-    <link href="http://timchen314.com/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://timchen314.com/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <title>python mechanism</title>
+    <link href="http://timchen314.com/python_mechanism/"/>
+    <id>http://timchen314.com/python_mechanism/</id>
+    <published>2017-07-28T10:00:00.000Z</published>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
+<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
+而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
 <a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
+<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
+<p>然而用python或者IPython，结果为False</p>
+<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
+<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
+<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
+<h2 id="2-with-语句">2. with 语句</h2>
+<p><strong>自动进行对象的生命周期进行管理</strong><br>
+Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
+<ul>
+<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-list参数传递">3. list参数传递</h2>
+<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
+正确做法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
+<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
+<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
+<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
+ct总结：参数绑定优先级：</p>
+<ol>
+<li>指定参数名</li>
+<li>顺序</li>
+<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
+<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
+<li><strong>限制关键字参数的名字</strong></li>
+</ol>
+<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
+<h2 id="5-generator">5. generator</h2>
+<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
+<p><strong>The implementation of zip is very beautiful：</strong><br>
+来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
+<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
+凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
+集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
+Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
+for x in [1, 2, 3, 4, 5]:<br>
+pass<br>
+实际上完全等价于：<br>
+首先获得Iterator对象:<br>
+<code>it = iter([1, 2, 3, 4, 5])</code><br>
+循环:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
+<ul>
+<li>while my_iterator（参见zip的实现）<br>
+iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
+</ul>
+<h2 id="8-内存">8. 内存</h2>
+<h3 id="8-1-释放内存">8.1. 释放内存</h3>
+<p>先del再gc.collect()</p>
+<h2 id="9-python类">9. Python类</h2>
+<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
+<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
+<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
+<p>Note that user defined attributes shall not end with ‘__’</p>
+<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
+<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
+注意下面的这种错误写法：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
+<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
+<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
+<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
+<p>静态语言 vs 动态语言<br>
+对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
+<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
+<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
+<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
+<h2 id="10-为什么-python-的类不构成作用域-scope-？-待深入">10. <mark><a href="https://www.zhihu.com/question/263811118" target="_blank" rel="external">为什么 Python 的类不构成作用域（scope）？</a></mark> 待深入</h2>
+<h3 id="10-1-exec与eval的奇特之处">10.1 exec与eval的奇特之处</h3>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行抛异常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
+<p>然而：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行正常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    ¦   print(a)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
+<h3 id="10-2-注意区分list-comprehension与generator">10.2 <mark>注意区分list comprehension与generator！</mark></h3>
+<ul>
+<li>list comprehension是当时计算的</li>
+<li>而<code>list(a+i for i in range(10))</code>中，里面属于generator</li>
+</ul>
+<h2 id="11-super-and-mro">11. super and MRO</h2>
+<p>MRO: Method Resolution Order. For more details see this great introdcution: <a href="https://segmentfault.com/a/1190000007426467" target="_blank" rel="external">Python: 你不知道的 super</a></p>
+<blockquote>
+<p>super 的一个最常见用法可以说是在子类中调用父类的初始化方法了，比如：</p>
+</blockquote>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(Base)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a, b, c)</span>:</span></div><div class="line">        super(A, self).__init__(a, b)  <span class="comment"># Python3 可使用 super().__init__(a, b)</span></div><div class="line">        self.c = c</div></pre></td></tr></table></figure>
+<blockquote>
+<p>实际上，super(cls, inst) 获得的是 cls 在 inst 的 MRO 列表中的下一个类。</p>
+</blockquote>
+<h2 id="style-guide">Style guide</h2>
+<h3 id="argument">argument</h3>
+<ul>
+<li><code>**kwargs</code> is a bad practice:
+<ol>
+<li>you don’t know how <code>**kwargs</code> affect.</li>
+<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
+<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
+<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
+</ol>
+</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
+&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
+而id实际上是内存地址，&lt;code&gt;(ob1 is ob2)&lt;/code&gt; 等价于 &lt;code&gt;(id(ob1) == id(ob2))&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="shadownsocks" scheme="http://timchen314.com/categories/shadownsocks/"/>
+      <category term="python" scheme="http://timchen314.com/categories/python/"/>
     
     
-      <category term="shadownsocks" scheme="http://timchen314.com/tags/shadownsocks/"/>
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git笔记</title>
+    <link href="http://timchen314.com/git/"/>
+    <id>http://timchen314.com/git/</id>
+    <published>2017-07-26T10:00:00.000Z</published>
+    <updated>2018-01-18T13:20:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git">git</h1>
+<h2 id="开始">开始</h2>
+<p>非常好的入门:<br>
+<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png" alt="非常好的入门0"><br>
+非常好的入门1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
+<blockquote>
+<ul>
+<li>工作区：就是你在电脑里能看到的目录。</li>
+<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<ul>
+<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+</ul>
+</blockquote>
+<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
+<ul>
+<li>
+<p>help<br>
+<code>git help &lt;verb&gt;</code></p>
+</li>
+<li>
+<p>init</p>
+</li>
+<li>
+<p>config</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
+<p>列出设置的config<br>
+<code>git config --list</code></p>
+</li>
+<li>
+<p>difftool<br>
+没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
+<p>kompare的效果非常好。</p>
+</li>
+<li>
+<p>completion by bash-completion<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</li>
+</ul>
+<h2 id="操作">操作</h2>
+<ul>
+<li>add filename</li>
+<li>commit
+<ul>
+<li><code>git commit -m &quot;your message&quot;</code></li>
+<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
+</ul>
+<blockquote>
+<p><code>git commit --amend</code><br>
+<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
+</blockquote>
+<blockquote>
+<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
+…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
+</blockquote>
+<blockquote>
+<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>
+<p>clone<br>
+git clone /path/to/repository<br>
+如果是远端服务器上的仓库，你的命令会是这个样子：<br>
+<code>git clone username@host:/path/to/repository</code><br>
+<code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code><br>
+<code>git clone -b your_branch your_repo #指定branch</code></p>
+</li>
+<li>
+<p>push<br>
+<code>git push origin master:master</code><br>
+origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch   </span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>checkout</p>
+<ul>
+<li><code>git checkout hexo myfile</code><br>
+从hexo分支得到myfile</li>
+<li><code>git checkout -b dev #-b参数表示创建并切换</code><br>
+<code>git checkout -b dev your_SHA1 # 创建并切换到your_SHA1 commit</code><br>
+git checkout master</li>
+<li><code>git checkout --track local_branch origin/remote_branch</code><br>
+create a local branch based on a remote-tracking branch.
+<blockquote>
+<p>(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)]<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><br>
+The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:</p>
+<ul>
+<li>They allow git pull to know what to merge after fetching new remote-tracking branches.</li>
+<li>If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Your branch and the tracked remote branch &apos;origin/master&apos;</div><div class="line">have diverged, and respectively have 3 and 384 different</div><div class="line">commit(s) each.</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>stash<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+<blockquote>
+<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
+</blockquote>
+<p><code>git stash</code> 临时存储当前状态<br>
+<code>git stash list</code><br>
+<code>git stash apply (--index)</code> 找回临时存储的状态<br>
+<code>git stash drop</code> 删除stash</p>
+</li>
+<li>
+<p>branch</p>
+<ul>
+<li>git merge dev<br>
+合并指定分支到当前分支</li>
+<li>git branch -d dev #删除</li>
+<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
+<code>git branch</code> 查看本地分支</li>
+<li><code>git checkout mybfranch</code> # shift to another branch</li>
+</ul>
+</li>
+<li>
+<p>pull<br>
+<code>git pull origin master</code>相当于<code>git fetch origin # fetch to local repo</code>加上<code>git merge origin/master # origin master shall be in local repo</code></p>
+</li>
+<li>
+<p>fetch<br>
+<code>git fetch origin hexo</code>从remote repo获取名为hexo的branch</p>
+</li>
+</ul>
+<h2 id="丢弃">丢弃</h2>
+<ul>
+<li>
+<p><code>git rm</code> (then git commit)<br>
+<code>git rm --cached file_a 从stage中删除</code><br>
+<code>git rm file_a 从stage中删除，同时删除物理文件</code><br>
+<code>git mv file_a file_b</code></p>
+</li>
+<li>
+<p><code>git checkout -- file</code> (other functions about checkout is discribed above )<br>
+<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515256762/%E6%9D%82/git_reset_and_checkout.jpg" alt="image"><br>
+git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+<ul>
+<li>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：<br>
+<code>git checkout -- test.txt</code></li>
+<li>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD file</code>，就回到了场景1，第二步按场景1操作。<br>
+要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</li>
+</ul>
+</li>
+<li>
+<p>reset<br>
+<code>git reset --hard HEAD^</code><br>
+<code>git reset --hard 3628164</code></p>
+</li>
+</ul>
+<h2 id="显示状态">显示状态</h2>
+<ul>
+<li>
+<p>status</p>
+</li>
+<li>
+<p>log</p>
+<ul>
+<li><code>git log --oneline --decorate # 加上--decorate 时，我们可以看到我们的标签</code></li>
+<li><code>git log remotename/branchname # get remote commit. e.g., git log origin/hexo</code></li>
+</ul>
+<blockquote>
+<p>Will display the log of a given remote branch in that repository, but only the logs that you have “fetched” from their repository to your personal “copy” of the remote repository.</p>
+</blockquote>
+</li>
+<li>
+<p>reflog 查看历史命令<br>
+与<code>git log</code>的区别：显示整个本地仓储的commit, 包括所有branch的commit, 甚至包括已经撤销的commit, 只要HEAD发生了变化, 就会在reflog里面看得到。 git log只包括当前分支的commit.</p>
+</li>
+<li>
+<p>remote<br>
+看当前配置有哪些远程仓库，可以用命令<br>
+<code>git remote</code><br>
+执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
+</li>
+<li>
+<p><code>git ls-files #ls files in present branch</code><br>
+<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
+</li>
+<li>
+<p>diff</p>
+<ul>
+<li><code>git diff #对比工作区和stage文件的差异</code><br>
+<code>git diff --cached</code> 对比stage和branch之间的差异</li>
+<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程 &quot;remotes/origin/hexo&quot; branch</code></li>
+<li><code>git diff origin/hexo #对比当前working tree和远程branch</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="rebase">rebase</h2>
+<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
+<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
+<ul>
+<li>git rebase --skip</li>
+<li>git rebase --continue #use this when you solved conflicts.</li>
+<li>git rebase --abort #放弃当前rebase</li>
+</ul>
+<h2 id="tag">tag</h2>
+<p>git push origin --tags</p>
+<h2 id="其他概念与原理">其他概念与原理</h2>
+<ul>
+<li>
+<p>conflict<br>
+<a href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank" rel="external">Resolving a merge conflict using the command line</a></p>
+</li>
+<li>
+<p>remote<br>
+remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
+<blockquote>
+<p>“remotes” are just nicknames for other repositories, synonymous with a URL or <strong>the path of a local directory</strong> – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.</p>
+</blockquote>
+</li>
+<li>
+<p>origin<br>
+It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签。<br>
+<code>git remote add https://github.com/TimChen314/TimChen314.github.io.git # You can set # set origin by yourself</code></p>
+</li>
+<li>
+<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
+Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
+远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
+<blockquote>
+<p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
+<ul>
+<li>upstream generally refers to the original repo that you have forked<br>
+(see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<blockquote>
+<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit<br>
+only two types of branches, and they are storaged in<sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4]</a></sup>:</p>
+</blockquote>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.git/refs/heads/ <span class="comment">#[for local branches] **only hash in the file**</span></div><div class="line">.git/refs/remotes/ <span class="comment">#[for tracking branches]</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Local branches</li>
+<li>Remote-tracking branches</li>
+</ul>
+</li>
+<li>
+<p>refspec<br>
+<code>&lt;source-name&gt;:&lt;destination-name&gt;</code> is a refspec</p>
+</li>
+</ul>
+<h2 id="tips">tips</h2>
+<ul>
+<li>git clone下载慢<br>
+<code>git config --global http.postBuffer 524288000</code></li>
+</ul>
+<h3 id="about-github">about github</h3>
+<p>[how to bring up an issue?](hoomd Build_NP_reaction.shhoomd Build_NP_reaction.sh)</p>
+<h2 id="错误">错误</h2>
+<ul>
+<li>prompt to input passphrase time and time again:<br>
+<a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
+Note that you can use ssh-key only if you use ssh to build remote connections.<br>
+<code>git remote -v</code> should looks like:<br>
+<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
+but not:<br>
+<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
+</ul>
+<h1 id="reference">reference</h1>
+<h2 id="待读">待读</h2>
+<p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
+<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://blog.csdn.net/chenbifeng/article/details/51570606" target="_blank" rel="external">git命令自动补全</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://longair.net/blog/2009/04/16/git-fetch-and-merge/" target="_blank" rel="external">GIT: FETCH AND MERGE, DON’T PULL</a> <a href="#fnref4" class="footnote-backref">↩</a> <a href="#fnref4:1" class="footnote-backref">↩</a> <a href="#fnref4:2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git&quot;&gt;git&lt;/h1&gt;
+&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
+&lt;p&gt;非常好的入门:&lt;br&gt;
+&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png&quot; alt=&quot;非常好的入门0&quot;&gt;&lt;br&gt;
+非常好的入门1&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;工作区：就是你在电脑里能看到的目录。&lt;/li&gt;
+&lt;li&gt;暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://timchen314.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://timchen314.com/tags/git/"/>
     
   </entry>
   
@@ -3421,7 +4183,7 @@ attention、GAN&lt;/li&gt;
     <link href="http://timchen314.com/hdf5/"/>
     <id>http://timchen314.com/hdf5/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="hdf5">HDF5</h2>
 <p>可以存储不同类型的图像和数码数据的文件格式，同时还有统一处理这种文件格式的函数库。</p>
@@ -3488,392 +4250,40 @@ HDF极易容纳将来新增加的数据模式，容易与其他标准格式兼�
   </entry>
   
   <entry>
-    <title>git笔记</title>
-    <link href="http://timchen314.com/git/"/>
-    <id>http://timchen314.com/git/</id>
+    <title>shadownsocks备忘</title>
+    <link href="http://timchen314.com/shadowsocks%E5%A4%87%E5%BF%98/"/>
+    <id>http://timchen314.com/shadowsocks备忘/</id>
     <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
+    <updated>2018-01-18T13:20:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="git">git</h1>
-<h2 id="开始">开始</h2>
-<p>非常好的入门:<br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png" alt="非常好的入门0"><br>
-非常好的入门1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
-<blockquote>
+    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
 <ul>
-<li>工作区：就是你在电脑里能看到的目录。</li>
-<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
+<li>OS X: 用ShadowsocksX</li>
+<li>iOS: Wingy</li>
+<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
 </ul>
-</blockquote>
 <a id="more"></a>
-<blockquote>
-<ul>
-<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
-</ul>
-</blockquote>
-<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
-<ul>
-<li>
-<p>help<br>
-<code>git help &lt;verb&gt;</code></p>
-</li>
-<li>
-<p>init</p>
-</li>
-<li>
-<p>config</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
-<p>列出设置的config<br>
-<code>git config --list</code></p>
-</li>
-<li>
-<p>difftool<br>
-没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
-<p>kompare的效果非常好。</p>
-</li>
-<li>
-<p>completion by bash-completion<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-</li>
-</ul>
-<h2 id="操作">操作</h2>
-<ul>
-<li>
-<p>add filename</p>
-</li>
-<li>
-<p>commit</p>
-<ul>
-<li><code>git commit -m &quot;your message&quot;</code></li>
-<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
-</ul>
-<blockquote>
-<p><code>git commit --amend</code><br>
-<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
-</blockquote>
-<blockquote>
-<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
-…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
-</blockquote>
-<blockquote>
-<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
-</blockquote>
-</li>
-<li>
-<p>reset<br>
-<code>git reset --hard HEAD^</code><br>
-<code>git reset --hard 3628164</code></p>
-</li>
-<li>
-<p>reflog 查看历史命令<br>
-与<code>git log</code>的区别：显示整个本地仓储的commit, 包括所有branch的commit, 甚至包括已经撤销的commit, 只要HEAD发生了变化, 就会在reflog里面看得到。 git log只包括当前分支的commit.</p>
-</li>
-<li>
-<p>clone<br>
-git clone /path/to/repository<br>
-如果是远端服务器上的仓库，你的命令会是这个样子：<br>
-<code>git clone username@host:/path/to/repository</code><br>
-<code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code></p>
-</li>
-<li>
-<p>push<br>
-<code>git push origin master:master</code><br>
-origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch   </span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>git checkout hexo myfile</code><br>
-从hexo分支得到myfile</p>
-</li>
-<li>
-<p>stash<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
-<blockquote>
-<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
-</blockquote>
-<p><code>git stash</code> 临时存储当前状态<br>
-<code>git stash list</code><br>
-<code>git stash apply (--index)</code> 找回临时存储的状态<br>
-<code>git stash drop</code> 删除stash</p>
-</li>
-<li>
-<p>branch</p>
-<ul>
-<li><code>git checkout -b dev</code> #-b参数表示创建并切换<br>
-git checkout master</li>
-<li><code>git checkout --track local_branch origin/remote_branch</code><br>
-create a local branch based on a remote-tracking branch.</li>
-</ul>
-<blockquote>
-<p>(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)]<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup><br>
-The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:</p>
-<ul>
-<li>They allow git pull to know what to merge after fetching new remote-tracking branches.</li>
-<li>If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Your branch and the tracked remote branch &apos;origin/master&apos;</div><div class="line">have diverged, and respectively have 3 and 384 different</div><div class="line">commit(s) each.</div></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>git merge dev<br>
-合并指定分支到当前分支</li>
-<li>git branch -d dev #删除</li>
-<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
-<code>git branch</code> 查看本地分支</li>
-<li><code>git checkout mybfranch</code> # shift to another branch</li>
-</ul>
-</li>
-<li>
-<p>pull<br>
-<code>git pull origin master</code>相当于<code>git fetch origin # fetch to local repo</code>加上<code>git merge origin/master # origin master shall be in local repo</code></p>
-</li>
-<li>
-<p>fetch<br>
-<code>git fetch origin hexo</code>从remote repo获取名为hexo的branch</p>
-</li>
-</ul>
-<h2 id="丢弃">丢弃</h2>
-<ul>
-<li>
-<p>git rm (then git commit)</p>
-</li>
-<li>
-<p><code>git checkout -- file</code><br>
-git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
-<ul>
-<li>
-<p>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：<br>
-$ <code>git checkout -- test.txt</code></p>
-</li>
-<li>
-<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
-场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。<br>
-要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="显示状态">显示状态</h2>
-<ul>
-<li>
-<p>status</p>
-</li>
-<li>
-<p>log<br>
-<code>git log --oneline --decorate</code> # 加上–decorate 时，我们可以看到我们的标签</p>
-</li>
-<li>
-<p>remote<br>
-看当前配置有哪些远程仓库，可以用命令<br>
-<code>git remote</code><br>
-执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
-</li>
-<li>
-<p><code>git ls-files #ls files in present branch</code><br>
-<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
-</li>
-<li>
-<p>diff</p>
-<ul>
-<li><code>git diff #对比工作区和stage文件的差异</code><br>
-<code>git diff --cached</code> 对比stage和branch之间的差异</li>
-<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程“remotes/origin/hexo” branch</code></li>
-<li><code>git diff origin/hexo #对比当前working tree和远程branch</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="rebase">rebase</h2>
-<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
-<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
-<ul>
-<li>git rebase --skip</li>
-<li>git rebase --continue #use this when you solved conflicts.</li>
-<li>git rebase --abort #放弃当前rebase</li>
-</ul>
-<h2 id="tag">tag</h2>
-<p>git push origin --tags</p>
-<h2 id="其他概念与原理">其他概念与原理</h2>
-<ul>
-<li>
-<p>conflict<br>
-<a href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank" rel="external">Resolving a merge conflict using the command line</a></p>
-</li>
-<li>
-<p>remote<br>
-remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn5" id="fnref5:1">[5]</a></sup></p>
-<blockquote>
-<p>“remotes” are just nicknames for other repositories, synonymous with a URL or <strong>the path of a local directory</strong> – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.</p>
-</blockquote>
-</li>
-<li>
-<p>origin<br>
-It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签</p>
-</li>
-<li>
-<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
-Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
-远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
-</li>
-<li>
-<p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
-<blockquote>
-<p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
-<ul>
-<li>upstream generally refers to the original repo that you have forked<br>
-(see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
-<blockquote>
-<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit<br>
-only two types of branches, and they are storaged in<sup class="footnote-ref"><a href="#fn5" id="fnref5:2">[5]</a></sup>:</p>
-</blockquote>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.git/refs/heads/ <span class="comment">#[for local branches] **only hash in the file**</span></div><div class="line">.git/refs/remotes/ <span class="comment">#[for tracking branches]</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Local branches</li>
-<li>Remote-tracking branches</li>
-</ul>
-</li>
-<li>
-<p>refspec<br>
-<code>&lt;source-name&gt;:&lt;destination-name&gt;</code> is a refspec</p>
-</li>
-</ul>
-<h2 id="tips">tips</h2>
-<ul>
-<li>git clone下载慢<br>
-<code>git config --global http.postBuffer 524288000</code></li>
-</ul>
-<h3 id="about-github">about github</h3>
-<p>[how to bring up an issue?](hoomd Build_NP_reaction.shhoomd Build_NP_reaction.sh)</p>
-<h2 id="错误">错误</h2>
-<ul>
-<li>prompt to input passphrase time and time again:<br>
-<a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
-Note that you can use ssh-key only if you use ssh to build remote connections.<br>
-<code>git remote -v</code> should looks like:<br>
-<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
-but not:<br>
-<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
-</ul>
-<h1 id="reference">reference</h1>
-<h2 id="待读">待读</h2>
-<p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
-<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://blog.csdn.net/chenbifeng/article/details/51570606" target="_blank" rel="external">git命令自动补全</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p><a href="https://longair.net/blog/2009/04/16/git-fetch-and-merge/" target="_blank" rel="external">GIT: FETCH AND MERGE, DON’T PULL</a> <a href="#fnref5" class="footnote-backref">↩</a> <a href="#fnref5:1" class="footnote-backref">↩</a> <a href="#fnref5:2" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
+<h2 id="reference">reference</h2>
+<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;git&quot;&gt;git&lt;/h1&gt;
-&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
-&lt;p&gt;非常好的入门:&lt;br&gt;
-&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png&quot; alt=&quot;非常好的入门0&quot;&gt;&lt;br&gt;
-非常好的入门1&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
+      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;工作区：就是你在电脑里能看到的目录。&lt;/li&gt;
-&lt;li&gt;暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://timchen314.com/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://timchen314.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Story of Terminal</title>
-    <link href="http://timchen314.com/Story_of_Terminal/"/>
-    <id>http://timchen314.com/Story_of_Terminal/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-02T14:12:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
-<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
-本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
-<ul>
-<li>ctrl+h的编码<br>
-<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
-而ctrl+h的值也为010。<br>
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>F1键<br>
-terminal类型的选择也会影响快捷键。<br>
-Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
-</ul>
-<h2 id="问题：">问题：</h2>
-<p>为什么BS无法删除，而是想左移动？<br>
-为什么在执行程序进行输入时，按下BS显示的是^H?</p>
-<h2 id="答案">答案</h2>
-<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
-<p>Terminal</p>
-<ul>
-<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
-<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
-<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
-<blockquote>
-<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
-&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
-本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ctrl+h的编码&lt;br&gt;
-&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
-而ctrl+h的值也为010。&lt;br&gt;
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
+&lt;li&gt;iOS: Wingy&lt;/li&gt;
+&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
-      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
+      <category term="shadownsocks" scheme="http://timchen314.com/categories/shadownsocks/"/>
     
     
-      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
-    
-      <category term="编码" scheme="http://timchen314.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="Terminal" scheme="http://timchen314.com/tags/Terminal/"/>
+      <category term="shadownsocks" scheme="http://timchen314.com/tags/shadownsocks/"/>
     
   </entry>
   

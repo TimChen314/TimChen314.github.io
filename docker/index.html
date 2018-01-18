@@ -104,7 +104,9 @@
 <meta property="og:description" content="Official introduction:  Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.  我认为可以这样介绍：docker是">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic4.zhimg.com/50/v2-385d2404a0ea9dd37c00b445b3168b96_hd.jpg">
-<meta property="og:updated_time" content="2018-01-02T14:12:03.000Z">
+<meta property="og:image" content="https://pic1.zhimg.com/50/v2-e7bf9fbb488309f38864cac909a022a5_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/50/v2-9496fbb036445cc557f95f657c5baea8_hd.jpg">
+<meta property="og:updated_time" content="2018-01-18T13:20:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker note">
 <meta name="twitter:description" content="Official introduction:  Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.  我认为可以这样介绍：docker是">
@@ -417,7 +419,14 @@
 <blockquote>
 <p>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</p>
 </blockquote>
-<p>我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的轻量级虚拟机。</p>
+<p>我认为可以这样介绍：docker是没有性能损失的、打包软件及其运行运行环境(包括系统在内的)的虚拟机。“Build Once, Run Anywhere!”</p>
+<ul>
+<li><a href="https://hub.docker.com/r/timchen314/galamost3/" target="_blank" rel="external">galamost-3.0.9 docker</a>测试</li>
+</ul>
+<ol>
+<li>完全没有速度损失（docker vs. no-docker in 1080TI: 700 TPS vs. 700±20 TPS; IP: 101）。</li>
+<li>即使host上为cuda8.0而docker上为cuda9.0，速度也基本没有损失（docker vs. no-docker in 1080: 513 TPS vs. 533 TPS; IP: 106）。</li>
+</ol>
 <a id="more"></a>
 <h1 id="docker介绍">Docker介绍</h1>
 <h2 id="首先-docker不会降低性能"><strong>首先，Docker不会降低性能！</strong></h2>
@@ -445,6 +454,7 @@ docker还存在着以下几个缺点：<br>
 <p>Tomcat+Mysql,怎么做？<br>
 我们构建两个镜像，一个仅安装Tomcat并部署我们的app，另一个仅安装MySQL，然后启动这两个镜像，得到两个容器，再利用Docker的容器互联技术将二者连接(Docker的容器是通过http连接的)。</p>
 <h2 id="docker原理的简介：">docker原理的简介：</h2>
+<h3 id="基础介绍">基础介绍</h3>
 <ul>
 <li>
 <p>原理<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
@@ -471,6 +481,58 @@ docker还存在着以下几个缺点：<br>
 </blockquote>
 </li>
 <li>
+<p>rootfs<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup><br>
+<img src="https://pic1.zhimg.com/50/v2-e7bf9fbb488309f38864cac909a022a5_hd.jpg" alt="image"></p>
+<blockquote>
+<p>内核空间是 kernel，Linux 刚启动时会加载 bootfs 文件系统，之后 bootfs 会被卸载掉。<br>
+用户空间的文件系统是 rootfs，包含我们熟悉的 /dev, /proc, /bin 等目录。<br>
+对于 base 镜像来说，底层直接用 Host 的 kernel，自己只需要提供 rootfs 就行了。<br>
+而对于一个精简的 OS，rootfs 可以很小，只需要包括最基本的命令、工具和程序库就可以了。相比其他 Linux 发行版，CentOS 的 rootfs 已经算臃肿的了，alpine 还不到 10MB。<br>
+这里需要说明的是：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>base 镜像只是在用户空间与发行版一致，kernel 版本与发行版是不同的。<br>
+例如 CentOS 7 使用 3.x.x 的 kernel，如果 Docker Host 是 Ubuntu 16.04（比如我们的实验环境），那么在 CentOS 容器中使用的实际是是 Host 4.x.x 的 kernel。</li>
+<li>容器只能使用 Host 的 kernel，并且不能修改。</li>
+</ol>
+<ul>
+<li><mark>writable container</mark><sup class="footnote-ref"><a href="#fn6" id="fnref6:1">[6]</a></sup><br>
+<img src="https://pic1.zhimg.com/50/v2-9496fbb036445cc557f95f657c5baea8_hd.jpg" alt="image">
+<blockquote>
+<p>当容器启动时，一个新的可写层被加载到镜像的顶部。<br>
+这一层通常被称作“容器层”，“容器层”之下的都叫“镜像层”。<br>
+所有对容器的改动 - 无论添加、删除、还是修改文件都只会发生在容器层中。<br>
+只有容器层是可写的，容器层下面的所有镜像层都是只读的。<br>
+下面我们深入讨论容器层的细节。<br>
+镜像层数量可能会很多，所有镜像层会联合在一起组成一个统一的文件系统。如果不同层中有一个相同路径的文件，比如 /a，上层的 /a 会覆盖下层的 /a，也就是说用户只能访问到上层中的文件 /a。在容器层中，用户看到的是一个叠加之后的文件系统。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>添加文件 在容器中创建文件时，新文件被添加到容器层中。</li>
+<li>读取文件 在容器中读取某个文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后打开并读入内存。</li>
+<li>修改文件 在容器中修改已存在的文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后修改之。<br>
+删除文件 在容器中删除文件时，Docker 也是从上往下依次在镜像层中查找此文件。找到后，会在容器层中记录下此删除操作。</li>
+<li>只有当需要修改时才复制一份数据，这种特性被称作 Copy-on-Write。可见，容器层保存的是镜像变化的部分，不会对镜像本身进行任何修改。</li>
+</ol>
+<h3 id="技术细节">技术细节</h3>
+<ul>
+<li>
+<p>runtime/runc<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
+<blockquote>
+<p>容器 runtime<br>
+runtime 是容器真正运行的地方。runtime 需要跟操作系统 kernel 紧密协作，为容器提供运行环境。<br>
+如果大家用过 Java，可以这样来理解 runtime 与容器的关系：<br>
+Java 程序就好比是容器，JVM 则好比是 runtime。JVM 为 Java 程序提供运行环境。同样的道理，容器只有在 runtime 中才能运行。<br>
+lxc、runc 和 rkt 是目前主流的三种容器 runtime。<br>
+lxc 是 Linux 上老牌的容器 runtime。Docker 最初也是用 lxc 作为 runtime。<br>
+runc 是 Docker 自己开发的容器 runtime，符合 oci 规范，也是现在 Docker 的默认 runtime。<br>
+rkt 是 CoreOS 开发的容器 runtime，符合 oci 规范，因而能够运行 Docker 的容器。</p>
+</blockquote>
+</li>
+<li>
 <p>image增量存储、类似git</p>
 </li>
 </ul>
@@ -494,11 +556,23 @@ docker还存在着以下几个缺点：<br>
 <blockquote>
 <p>In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.</p>
 </blockquote>
-</li>
-</ul>
-<p>在 Dockerfile 文件中写入指令，每个指令都在映像上生成一个新的层。Docker 限制每个映像最多有 127 层，因此，要尽量优化映像层数。</p>
 <ul>
-<li>CoreOS<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>
+<li>在 Dockerfile 文件中写入指令，每个指令都在映像上生成一个新的层。Docker 限制每个映像最多有 127 层，因此，要尽量优化映像层数。</li>
+<li>During the ‘build’, the image is generated layer by layer. If bugs are encountered, you can start the toppest correct layer and debug the bug layer.</li>
+</ul>
+</li>
+<li>
+<p>构建缓存<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
+<blockquote>
+<p>在执行每条指令之前，Docker 都会在缓存中查找是否已经存在可重用的镜像，如果有就使用现存的镜像。如果你不想在构建过程中使用缓存，你可以在 docker build 命令中使用 --no-cache=true 选项。遵循的基本规则如下：<br>
+从一个基础镜像开始（FROM 指令指定），下一条指令将和该基础镜像的所有子镜像进行匹配，检查这些子镜像被创建时使用的指令是否和被检查的指令完全一样。如果不是，则缓存失效。<br>
+然而，有些指令需要更多的检查和解释。<br>
+对于 ADD 和 COPY 指令，镜像中对应文件的内容也会被检查，每个文件都会计算出一个校验和。文件的最后修改时间和最后访问时间不会纳入校验。在缓存的查找过程中，会将这些校验和和已存在镜像中的文件校验和进行对比。如果文件有任何改变，比如内容和元数据，则缓存失效。<br>
+除了 ADD 和 COPY 指令，缓存匹配过程不会查看临时容器中的文件来决定缓存是否匹配。例如，当执行完 RUN apt-get -y update 指令后，容器中一些文件被更新，但 Docker 不会检查这些文件。这种情况下，只有指令字符串本身被用来匹配缓存。</p>
+</blockquote>
+</li>
+<li>
+<p>CoreOS<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
 <blockquote>
 <p>目前最常用的用来执行Docker集装箱的Linux发行版本既不是Ubuntu、Debian也不是RedHat、Fedora，而是CoreOS。这个发行版本根本没有软件包管理程序，所以也不能通过输入某个命令来安装软件。但是CoreOS预装了Docker，所以可以制作集装箱镜像，或者下载别人发布的集装箱镜像来执行。</p>
 </blockquote>
@@ -542,7 +616,7 @@ With official support!</p>
 </li>
 <li>
 <p>缺点<br>
-参见<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>和<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p>
+参见<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>和<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup></p>
 <ol>
 <li>调度系统的服务、环境变量<br>
 例如利用cron服务，一旦将cron服务容器化后，原始的环境变数设定都会失效。<br>
@@ -570,6 +644,21 @@ With official support!</p>
 <p><a href="https://zhuanlan.zhihu.com/p/29232090" target="_blank" rel="external">Kubernetes 是什么？</a></p>
 </li>
 </ul>
+<h3 id="frequently-asked-questions"><a href="https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#does-it-have-a-performance-impact-on-my-gpu-workload" target="_blank" rel="external">Frequently Asked Questions</a></h3>
+<blockquote>
+<p><mark>Does it have a performance impact on my GPU workload?</mark><br>
+No, usually the impact should be in the order of less than 1% and hardly noticeable.<br>
+<mark>Do you support CUDA Multi Process Service (a.k.a. MPS)?</mark><br>
+No, MPS is not supported at the moment. However we plan on supporting this feature in the future, and this issue will be updated accordingly.<br>
+<strong>Do you support running a GPU-accelerated X server inside the container?</strong><br>
+No, running a X server inside the container is not supported at the moment and there is no plan to support it in the near future (see also OpenGL support).<br>
+<strong>I have multiple GPU devices, how can I isolate them between my containers?</strong><br>
+GPU isolation is achieved through a container environment variable called NVIDIA_VISIBLE_DEVICES.<br>
+Devices can be referenced by index (following the PCI bus order) or by UUID (refer to the documentation).<br>
+<strong>Why is nvidia-smi inside the container not listing the running processes?</strong><br>
+nvidia-smi and NVML are not compatible with PID namespaces.<br>
+We recommend monitoring your processes on the host or inside a container using --pid=host.</p>
+</blockquote>
 <h1 id="command">Command</h1>
 <ul>
 <li>
@@ -590,19 +679,73 @@ With official support!</p>
 <code>-d</code> 守护容器，就是后台运行，退出命令窗口容器也不会停止<br>
 <code>-it</code> 交互式容器 退出命令窗口容器就停止运行了<br>
 <code>-P</code> 将容器内部使用的网络端口映射到我们使用的主机上。<code>docker ps</code>会显示<strong>端口是如何映射的</strong><br>
-<code>-runtime=nvidia</code> without it gpu and its drive wouldn’t be found.</p>
+<code>--runtime=nvidia</code> without it gpu and its drive wouldn’t be found.<br>
+<code>--name your_name</code> assign a name to your container</p>
+<ul>
+<li>run centos image in background<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup><br>
+<mark><code>docker run --runtime=nvidia -t -d --name conda_hoomd timchen314/galamost3:3.0.9 /bin/bash</code></mark></li>
+<li>automatically restart<br>
+<code>--restart=always</code> 意味着无论容器因何种原因退出（包括正常退出），就立即重启。<br>
+<code>--restart=on-failure:3</code>，意思是如果启动进程退出代码非0，则重启容器，最多重启3次。</li>
+</ul>
+</li>
+<li>
+<p><code>exec</code><br>
+<code>docker exec -it your_container_name bash # login an existed container</code></p>
+<ul>
+<li>run source<br>
+Source is not an executable (source is a bash shell built-in command that executes the content of the file passed as argument)<br>
+<code>docker run --rm -ti _image_name_ bash -c 'source FILE'</code></li>
+<li>Piping a file into docker run<br>
+<code>echo 'export=$PATH:/opt/miniconda2/bin/' | docker exec -i conda_hoomd bash -c &quot;cat &gt;&gt; /etc/profile&quot;</code><br>
+Note that it won’t work in this way: <code>docker exec -i conda_hoomd echo 'export=$PATH:/opt/miniconda2/bin/' &gt;&gt; /etc/profile</code></li>
+</ul>
+</li>
+<li>
+<p>pause/unpause</p>
 </li>
 <li>
 <p><code>cp</code></p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker cp foo.txt mycontainer:/foo.txt</div><div class="line">docker cp mycontainer:/foo.txt foo.txt</div></pre></td></tr></table></figure>
 </li>
 <li>
-<p>tag<br>
-每个仓库会有多个镜像，用tag标示，如果不加tag，默认使用latest镜像。</p>
+<p><code>rm</code><br>
+remove all exited containers:<br>
+<code>docker rm -v $(docker ps -aq -f status=exited)</code></p>
 </li>
+<li>
+<p>attach<br>
+直接进入容器 启动命令 的<strong>终端</strong>，不会启动新的进程。</p>
+</li>
+<li>
+<p><code>system</code><br>
+<code>docker system prune</code></p>
+</li>
+<li>
+<p>tag<br>
+每个仓库会有多个镜像，用tag标示，如果不加tag，默认使用latest镜像(不设tag，则默认为latest)<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>。<br>
+[image name] = [repository]:[tag]<br>
+注意！一个repo可以含有多个image！一个image可以打上多个tag！只有[repository]:[tag]唯一对应一个image！</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">docker tag myimage-v1.9.2 myrepo:1</div><div class="line">docker tag myimage-v1.9.2 myrepo:1.9</div><div class="line">docker tag myimage-v1.9.2 myrepo:1.9.2</div><div class="line">docker tag myimage-v1.9.2 myrepo:latest</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果执行下面的命令，之前的tag会自动覆盖掉。</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker tag myimage-v2.0.0 myrepo:latest</div></pre></td></tr></table></figure>
+<ul>
+<li>logs<br>
+Docker daemon log: <code>/var/log/daemon.log | grep docker</code><sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup></li>
+</ul>
+<ul>
 <li>
 <p>保存/加载tar格式的镜像</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker save -o centos.tar xianhu/centos:git    # 保存镜像, -o也可以是--output</div><div class="line">docker load -i centos.tar    # 加载镜像, -i也可以是--input</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>-H</code> 指定host IP<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup></p>
+<blockquote>
+<p>默认配置下，Docker daemon 只能响应来自本地 Host 的客户端请求。如果要允许远程客户端请求，需要在配置文件中打开 TCP 监听，步骤如下：<br>
+1.编辑配置文件 /etc/systemd/system/multi-user.target.wants/docker.service，在环境变量 ExecStart 后面添加 -H tcp://0.0.0.0，允许来自任意 IP 的客户端连接。</p>
+</blockquote>
 </li>
 <li>
 <p>根据已有容器，新建自有镜像</p>
@@ -613,22 +756,118 @@ The last is container ID. <code>-a</code> means author<br>
 <li>Dockerfile</li>
 </ol>
 </li>
-<li>
-<p>show info</p>
+</ul>
+<h2 id="show-info">show info</h2>
 <ul>
 <li><code>docker images</code> 显示已有docker</li>
 <li><code>docker ps -a</code> 查看终止状态的容器</li>
 <li><code>docker stats -a</code> Resource Usage</li>
 <li><code>docker top NAMES</code> 查看容器内部运行的进程</li>
 <li><code>docker system df</code> show the used space</li>
+<li><code>docker history your_image</code></li>
 <li>show tags<br>
 For the images pulled to <a href="http://hub.docker.com" target="_blank" rel="external">hub.docker.com</a>, the tags can be found by：<br>
 visit ‘<a href="https://hub.docker.com/r/library/debian/tags/" target="_blank" rel="external">https://hub.docker.com/r/library/debian/tags/</a>’ and you can see tags。<br>
 By replace “/r/” in path to “/v2/repositories/” the tags can be downloaded and analysed.<br>
-<code>curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '.&quot;results&quot;[][&quot;name&quot;]'</code> will <mark>List first 10 tags!</mark> <sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup><br>
-Note: <code>jq</code> is a tool for processing JSON inputs. If all tags is needed, see reference<sup class="footnote-ref"><a href="#fn9" id="fnref9:1">[9]</a></sup>.<br>
+<code>curl 'https://registry.hub.docker.com/v2/repositories/library/debian/tags/'|jq '.&quot;results&quot;[][&quot;name&quot;]'</code> will <mark>List first 10 tags!</mark> <sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup><br>
+Note: <code>jq</code> is a tool for processing JSON inputs. If all tags is needed, see reference<sup class="footnote-ref"><a href="#fn15" id="fnref15:1">[15]</a></sup>.<br>
 VALIDATE: <code>curl 'https://registry.hub.docker.com/v2/repositories/library/python/tags/'|jq '.&quot;results&quot;[][&quot;name&quot;]'</code> does work!</li>
 </ul>
+<h2 id="build">build</h2>
+<ul>
+<li>
+<p>注释符号<code>#</code></p>
+</li>
+<li>
+<p>ADD<br>
+与 COPY 类似，从 build context 复制文件到镜像。不同的是，如果 src 是归档文件（tar, zip, tgz, xz 等），文件会被自动解压到 dest。</p>
+</li>
+<li>
+<p>ARG</p>
+<blockquote>
+<p>构建参数<sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4]</a></sup><br>
+格式：ARG &lt;参数名&gt;[=&lt;默认值&gt;]<br>
+构建参数和 ENV 的效果一样，都是设置环境变量。所不同的是，ARG 所设置的构建环境的环境变量，在将来容器运行时是不会存在这些环境变量的。但是不要因此就使用 ARG 保存密码之类的信息，因为 docker history 还是可以看到所有值的。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>
+<p>CMD<br>
+三种格式<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup></p>
+<blockquote>
+<ol>
+<li>Exec 格式：CMD [“executable”,“param1”,“param2”]</li>
+<li>这是 CMD 的推荐格式。<br>
+CMD [“param1”,“param2”] 为 ENTRYPOINT 提供额外的参数，此时 ENTRYPOINT 必须使用 Exec 格式。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>Shell 格式：CMD command param1 param2</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><mark>指令就是用于指定默认的容器主进程的启动命令的。</mark><sup class="footnote-ref"><a href="#fn4" id="fnref4:3">[4]</a></sup><br>
+在运行时可以指定新的命令来替代镜像设置中的这个默认命令，比如，<code>docker run -it ubuntu cat /etc/os-release</code><br>
+在指令格式上，一般推荐使用 exec 格式，这类格式在解析时会被解析为 JSON 数组，因此一定要使用双引号 &quot;，而不要使用单引号。<br>
+如果使用 shell 格式的话，实际的命令会被包装为 sh -c 的参数的形式进行执行。比如：<br>
+<code>CMD echo $HOME</code><br>
+在实际执行中，会将其变更为：<br>
+<code>CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code></p>
+</blockquote>
+</li>
+</ul>
+<p>另外，docker的主程序不能是退出或后台运行的状态：</p>
+<blockquote>
+<p>对于容器而言，其启动程序就是容器应用进程，容器就是为了主进程而存在的，主进程退出，容器就失去了存在的意义，从而退出，其它辅助进程不是它需要关心的东西。</p>
+</blockquote>
+<ul>
+<li>COPY<br>
+支持两种形式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">COPY src dest</div><div class="line">COPY [&quot;src&quot;, &quot;dest&quot;]</div></pre></td></tr></table></figure>
+<ul>
+<li>ENTRYPOINT<br>
+<code>&lt;ENTRYPOINT&gt; &quot;&lt;CMD&gt;&quot;</code><br>
+ENTRYPOINT 不会被忽略，一定会被执行，即使运行 docker run 时指定了其他命令。
+<blockquote>
+<p><code>ENTRYPOINT [&quot;/bin/echo&quot;, &quot;Hello&quot;]</code><br>
+<code>CMD [&quot;world&quot;]</code><br>
+当容器通过 <code>docker run -it [image]</code> 启动时，输出为：<br>
+Hello world<br>
+而如果通过 <code>docker run -it [image] CloudMan</code> 启动，则输出为：<br>
+Hello CloudMan</p>
+</blockquote>
+</li>
+</ul>
+<p>PS: 最佳实践<sup class="footnote-ref"><a href="#fn16" id="fnref16:1">[16]</a></sup></p>
+<blockquote>
+<p>使用 RUN 指令安装应用和软件包，构建镜像。<br>
+如果 Docker 镜像的用途是运行应用程序或服务，比如运行一个 MySQL，应该优先使用 Exec 格式的 ENTRYPOINT 指令。CMD 可为 ENTRYPOINT 提供额外的默认参数，同时可利用 docker run 命令行替换默认参数。<br>
+如果想为容器设置默认的启动命令，可使用 CMD 指令。用户可在 docker run 命令行中替换此默认命令。</p>
+</blockquote>
+<ul>
+<li>ENV</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ENV MY_VERSION 1.3</div><div class="line">RUN apt-get install -y mypackage=$MY_VERSION</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>LABEL</p>
+<blockquote>
+<p>LABEL指令添加元数据到一个镜像。一个LABEL是一个键值对。要在LABEL值中包含空格，使用双引号和反斜杠(续行)。<br>
+查看LABEL，可以用<code>docker inspect</code>。<br>
+例子：</p>
+</blockquote>
+ <figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">LABEL</span> "com.example.vendor"="ACME Incorporated"</div><div class="line"><span class="keyword">LABEL</span> com.example.label-with-value="foo"</div><div class="line"><span class="keyword">LABEL</span> version="1.0"</div><div class="line"><span class="keyword">LABEL</span> description="This text illustrates \</div><div class="line">that label-values can span multiple lines."</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>MAINTAINER (depreciate)<br>
+设置镜像的作者，可以是任意字符串。</p>
+</li>
+<li>
+<p>其他<br>
+EXPOSE VOLUME RUN</p>
 </li>
 </ul>
 <h2 id="安装">安装</h2>
@@ -638,8 +877,13 @@ homebrew直接安装<br>
 <code>brew cask install docker</code></li>
 <li>CentOS<br>
 <a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/" target="_blank" rel="external">官网</a><br>
-<a href="http://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="external">CentOS runoob</a><br>
-官网提到，如果要通过yum安装特定版本的docker时，得到版本名的方法。</li>
+官网的方法是最正确的： <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Add the package repositories</div><div class="line">curl -s -L https://nvidia.github.io/nvidia-docker/centos7/x86_64/nvidia-docker.repo | \</div><div class="line">  sudo tee /etc/yum.repos.d/nvidia-docker.repo</div><div class="line"><span class="meta"></span></div><div class="line"># Install nvidia-docker2 and reload the Docker daemon configuration</div><div class="line">sudo yum install -y nvidia-docker2</div><div class="line">sudo pkill -SIGHUP dockerd</div><div class="line"><span class="meta"></span></div><div class="line"># Test nvidia-smi with the latest official CUDA image</div><div class="line">docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="http://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="external">CentOS runoob</a><br>
+单独安装docker-ce非常麻烦的，因为需要安装和配置nvidia-container-runtime：</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line">sudo yum install -y docker-ce</div><div class="line">sudo systemctl start docker</div><div class="line">sudo docker run hello-world</div><div class="line"><span class="meta">#</span> install nvidia-container-runtime</div><div class="line">yum install -y nvidia-container-runtime</div><div class="line"><span class="meta">#</span> Then you should follow the troublesome setting process in https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup</div></pre></td></tr></table></figure>
+<ul>
 <li>Docker Machine
 <blockquote>
 <p>Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。</p>
@@ -661,13 +905,13 @@ homebrew直接安装<br>
 <li>&quot;Docker version reports bad response from Docker engine&quot;<br>
 A lot of people encounter this error (<a href="https://forums.docker.com/t/docker-version-reports-bad-response-from-docker-engine/13395" target="_blank" rel="external">https://forums.docker.com/t/docker-version-reports-bad-response-from-docker-engine/13395</a>). For me, I sovled this by reset to factory defaults.</li>
 </ul>
-<h2 id="问题">问题</h2>
-<ul>
-<li>can’t get the size of remote image<br>
-by google: docker remote image size, or docker image size in REPOSITORY, there is no cli command to do this.<br>
+<h2 id="problem">problem</h2>
+<h3 id="use-gcc5-x-solved"><mark>use gcc5.x (solved)</mark></h3>
+<p>source /opt/rh/devtoolset-4/enable</p>
+<h3 id="can-t-get-the-size-of-remote-image-unsolved">can’t get the size of remote image (unsolved)</h3>
+<p>by google: docker remote image size, or docker image size in REPOSITORY, there is no cli command to do this.<br>
 A complicate answer is:<br>
-<a href="https://unix.stackexchange.com/questions/134186/docker-how-to-get-image-size" target="_blank" rel="external">Docker: How to get image size?</a></li>
-</ul>
+<a href="https://unix.stackexchange.com/questions/134186/docker-how-to-get-image-size" target="_blank" rel="external">Docker: How to get image size?</a></p>
 <h1 id="reference">reference</h1>
 <hr>
 <ul>
@@ -678,7 +922,17 @@ A complicate answer is:<br>
 <a href="https://github.com/wsargent/docker-cheat-sheet#layers" target="_blank" rel="external">Docker Cheat Sheet</a><br>
 <a href="https://docs.docker.com/get-started/" target="_blank" rel="external">官网 get started</a><br>
 <a href="http://docker_practice.gitee.io/image/multistage-builds.html" target="_blank" rel="external">Docker — 从入门到实践</a></li>
+<li>待读</li>
 </ul>
+<hr>
+<p>Examples of Dockerfile:</p>
+<ol>
+<li>
+<p>centos</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">FROM</span> scratch</div><div class="line"><span class="keyword">ADD</span><span class="bash"> centos-7-docker.tar.xz /</span></div><div class="line"></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> name=<span class="string">"CentOS Base Image"</span> \</span></div><div class="line">    vendor=<span class="string">"CentOS"</span> \</div><div class="line">    license=<span class="string">"GPLv2"</span> \</div><div class="line">    build-date=<span class="string">"20180107"</span></div><div class="line"></div><div class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"/bin/bash"</span>]</span></div></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -688,17 +942,32 @@ A complicate answer is:<br>
 </li>
 <li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/search?q=docker&amp;type=content" target="_blank" rel="external">docker在web开发中得使用流程是怎样的？</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn4" class="footnote-item"><p><a href="http://docker_practice.gitee.io/image/multistage-builds.html" target="_blank" rel="external">Docker — 从入门到实践</a>) <a href="#fnref4" class="footnote-backref">↩</a></p>
+<li id="fn4" class="footnote-item"><p><a href="http://docker_practice.gitee.io/image/multistage-builds.html" target="_blank" rel="external">Docker — 从入门到实践</a> <a href="#fnref4" class="footnote-backref">↩</a> <a href="#fnref4:1" class="footnote-backref">↩</a> <a href="#fnref4:2" class="footnote-backref">↩</a> <a href="#fnref4:3" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn5" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/30713987" target="_blank" rel="external">【 全干货 】5 分钟带你看懂 Docker ！</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn6" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/19902938" target="_blank" rel="external">分布式机器学习的故事：Docker改变世界</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
+<li id="fn6" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/32383774" target="_blank" rel="external">每天5分钟玩转Docker容器技术（三）</a> <a href="#fnref6" class="footnote-backref">↩</a> <a href="#fnref6:1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn7" class="footnote-item"><p><a href="https://yq.aliyun.com/articles/113842" target="_blank" rel="external">一年之后重新审视 Docker —— 根本性缺陷和炒作</a> <a href="#fnref7" class="footnote-backref">↩</a></p>
+<li id="fn7" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/32324673" target="_blank" rel="external">每天5分钟玩转Docker容器技术（一）</a> <a href="#fnref7" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn8" class="footnote-item"><p><a href="http://www.sohu.com/a/155079445_120672" target="_blank" rel="external">Docker架构优缺点大剖析</a> <a href="#fnref8" class="footnote-backref">↩</a></p>
+<li id="fn8" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/19902938" target="_blank" rel="external">分布式机器学习的故事：Docker改变世界</a> <a href="#fnref8" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn9" class="footnote-item"><p><a href="http://www.googlinux.com/list-all-tags-of-docker-image/index.html" target="_blank" rel="external">How to list all tags of a docker image</a> <a href="#fnref9" class="footnote-backref">↩</a> <a href="#fnref9:1" class="footnote-backref">↩</a></p>
+<li id="fn9" class="footnote-item"><p><a href="https://yq.aliyun.com/articles/113842" target="_blank" rel="external">一年之后重新审视 Docker —— 根本性缺陷和炒作</a> <a href="#fnref9" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p><a href="http://www.sohu.com/a/155079445_120672" target="_blank" rel="external">Docker架构优缺点大剖析</a> <a href="#fnref10" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p><a href="https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d/30209974#30209974" target="_blank" rel="external">Docker container will automatically stop after “docker run -d”</a> <a href="#fnref11" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p><a href="http://blog.csdn.net/cloudman6/article/details/72603130" target="_blank" rel="external">镜像命名的最佳实践 - 每天5分钟玩转 Docker 容器技术（18）</a> <a href="#fnref12" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p><a href="https://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log" target="_blank" rel="external">Where is the Docker daemon log?</a> <a href="#fnref13" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn14" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/32356831" target="_blank" rel="external">每天5分钟玩转Docker容器技术（二）</a> <a href="#fnref14" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn15" class="footnote-item"><p><a href="http://www.googlinux.com/list-all-tags-of-docker-image/index.html" target="_blank" rel="external">How to list all tags of a docker image</a> <a href="#fnref15" class="footnote-backref">↩</a> <a href="#fnref15:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn16" class="footnote-item"><p><a href="https://www.cnblogs.com/CloudMan6/p/6875834.html" target="_blank" rel="external">RUN vs CMD vs ENTRYPOINT - 每天5分钟玩转 Doc<br>
+ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a> <a href="#fnref16:1" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -725,7 +994,7 @@ A complicate answer is:<br>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="Tim Chen Alipay"/>
+          <img id="alipay_qr" src="/images/alipay2D_small.png" alt="Tim Chen Alipay"/>
           <p>支付宝打赏</p>
         </div>
       
@@ -786,6 +1055,10 @@ A complicate answer is:<br>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/jupyter/" rel="prev" title="jupyter">
+                jupyter <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -865,7 +1138,7 @@ A complicate answer is:<br>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -887,7 +1160,7 @@ A complicate answer is:<br>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -950,9 +1223,14 @@ A complicate answer is:<br>
               
             </ul>
           </div>
-        
+<!-- <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2041358705&auto=1&height=90"></iframe>
+        </div>  -->
 
-        
+
+
+
+
 
 
       </section>
@@ -967,7 +1245,7 @@ A complicate answer is:<br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker介绍"><span class="nav-text">Docker介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先-docker不会降低性能"><span class="nav-text">首先，Docker不会降低性能！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker在web开发中得使用流程是怎样的？"><span class="nav-text">docker在web开发中得使用流程是怎样的？[3]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用docker的正确姿势"><span class="nav-text">使用Docker的正确姿势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker原理的简介："><span class="nav-text">docker原理的简介：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点-缺点"><span class="nav-text">优点/缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#command"><span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuration"><span class="nav-text">configuration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker介绍"><span class="nav-text">Docker介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先-docker不会降低性能"><span class="nav-text">首先，Docker不会降低性能！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker在web开发中得使用流程是怎样的？"><span class="nav-text">docker在web开发中得使用流程是怎样的？[3]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用docker的正确姿势"><span class="nav-text">使用Docker的正确姿势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker原理的简介："><span class="nav-text">docker原理的简介：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础介绍"><span class="nav-text">基础介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术细节"><span class="nav-text">技术细节</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点-缺点"><span class="nav-text">优点/缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#frequently-asked-questions"><span class="nav-text">Frequently Asked Questions</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#command"><span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#show-info"><span class="nav-text">show info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build"><span class="nav-text">build</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuration"><span class="nav-text">configuration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#problem"><span class="nav-text">problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#use-gcc5-x-solved"><span class="nav-text">use gcc5.x (solved)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#can-t-get-the-size-of-remote-image-unsolved"><span class="nav-text">can’t get the size of remote image (unsolved)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
