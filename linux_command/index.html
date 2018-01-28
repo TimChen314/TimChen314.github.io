@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-18T13:20:08.000Z">
+<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令记录">
 <meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
@@ -763,8 +763,10 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 <ul>
 <li><code>-i</code>： 忽略大小写</li>
 <li><code>-v</code>： 不显示匹配的项</li>
-<li>同时匹配多个关键字:<br>
+<li>同时匹配str1<mark>或</mark>str2:<br>
 <code>grep &quot;str1\|str2&quot;</code></li>
+<li>同时匹配str1<mark>与</mark>str2:<br>
+<code>grep str1 filename | grep str2 # I tried, but there's no elegant way to do this.</code></li>
 </ul>
 <h2 id="kill命令：">kill命令：</h2>
 <p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
@@ -1159,8 +1161,8 @@ Because blank space is usually used as the separater of command or agruments.<br
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/人工智能简介/" rel="next" title="人工智能简介">
-                <i class="fa fa-chevron-left"></i> 人工智能简介
+              <a href="/python_mechanism/" rel="next" title="python mechanism">
+                <i class="fa fa-chevron-left"></i> python mechanism
               </a>
             
           </div>

@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-18T13:20:08.000Z">
+<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python mechanism">
 <meta name="twitter:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
@@ -513,6 +513,17 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
 <blockquote>
 <p>实际上，super(cls, inst) 获得的是 cls 在 inst 的 MRO 列表中的下一个类。</p>
 </blockquote>
+<h3 id="12-python-interpreter">12. Python Interpreter</h3>
+<ul>
+<li>CPython<br>
+IPython based on CPython, and is enhanced in interactive.</li>
+<li>PyPy<br>
+Use Jit, and can be different with CPython.</li>
+<li>Jython<br>
+Compile python to Java bytecode.</li>
+<li>IronPython<br>
+Compile python to .net bytecode</li>
+</ul>
 <h2 id="style-guide">Style guide</h2>
 <h3 id="argument">argument</h3>
 <ul>
@@ -525,6 +536,9 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
 </ol>
 </li>
 </ul>
+<h2 id="for-more">For more:</h2>
+<p>[我眼中一个好的Pythoneer应该具备的品质]*(<a href="https://zhuanlan.zhihu.com/p/33266239" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/33266239</a>)<br>
+<a href="https://www.gitbook.com/book/eastlakeside/interpy-zh/details" target="_blank" rel="external">Python进阶 - gitbook</a></p>
 
       
     </div>
@@ -598,8 +612,8 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/git/" rel="next" title="git笔记">
-                <i class="fa fa-chevron-left"></i> git笔记
+              <a href="/人工智能简介/" rel="next" title="人工智能简介">
+                <i class="fa fa-chevron-left"></i> 人工智能简介
               </a>
             
           </div>
@@ -608,8 +622,8 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/人工智能简介/" rel="prev" title="人工智能简介">
-                人工智能简介 <i class="fa fa-chevron-right"></i>
+              <a href="/linux_command/" rel="prev" title="linux常用命令记录">
+                linux常用命令记录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -797,7 +811,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-exec与eval的奇特之处"><span class="nav-text">10.1 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-注意区分list-comprehension与generator"><span class="nav-text">10.2 注意区分list comprehension与generator！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#style-guide"><span class="nav-text">Style guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#argument"><span class="nav-text">argument</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-exec与eval的奇特之处"><span class="nav-text">10.1 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-注意区分list-comprehension与generator"><span class="nav-text">10.2 注意区分list comprehension与generator！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#12-python-interpreter"><span class="nav-text">12. Python Interpreter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#style-guide"><span class="nav-text">Style guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#argument"><span class="nav-text">argument</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-more"><span class="nav-text">For more:</span></a></li></ol></div>
             
 
           </div>

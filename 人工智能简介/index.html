@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg">
-<meta property="og:updated_time" content="2018-01-18T13:20:08.000Z">
+<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能简介">
 <meta name="twitter:description" content="备忘 三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）  Hinton 多伦多大学 DBN LeCun CNN Bengio attention、GAN  神经网络简介">
@@ -538,6 +538,10 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 <p>待读<br>
 <a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="external">link</a><br>
 <a href="http://ycszen.github.io/2016/08/24/SGD%EF%BC%8CAdagrad%EF%BC%8CAdadelta%EF%BC%8CAdam%E7%AD%89%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%E5%92%8C%E6%AF%94%E8%BE%83/" target="_blank" rel="external">link</a></p>
+<h2 id="tips">tips</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/37259515/why-pretraining-for-dnn-is-not-specified-in-keras" target="_blank" rel="external">About Why pretraining for DNN is not specified in keras?</a></li>
+</ul>
 <h1 id="framework-software">framework &amp; software</h1>
 <h2 id="deepchem">Deepchem</h2>
 <p>Developed by Vijia Panda &amp; Schrodinger Company. <a href="https://deepchem.io" target="_blank" rel="external">deepcheem</a></p>
@@ -545,6 +549,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 <li><a href="https://deepchem.io/docs/notebooks/graph_convolutional_networks_for_tox21.html" target="_blank" rel="external">Modeling Small Molecule Toxicity with Graph Convolutions</a> (An Official Example)<br>
 刚看完<code>In [2]:</code>部分。</li>
 </ul>
+<h2 id="deepmd-kit">DeepMD-kit</h2>
 <h1 id="技术评论">技术评论</h1>
 <h2 id="技术成熟的条件">技术成熟的条件</h2>
 <h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></h3>
@@ -560,6 +565,31 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 <li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
 <li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
 </ul>
+<h1 id="deep-learning-花书-笔记">《Deep learning》（花书）笔记</h1>
+<h2 id="第二章-线性代数">第二章 线性代数</h2>
+<p>总结：<br>
+<strong>2.8</strong> SVD、<strong>2.10</strong> trace的性质不熟悉；<strong>2.9</strong> Moore-Penrose很难理解；<strong>2.11</strong> PCA是从“压缩”这个目的，推导出方法，很难；如果从PCA方法出发来看其目的，则很简单，但是花书没有这样做，这对入门的人并不友好。</p>
+<ul>
+<li>
+<p>关于迹</p>
+<ul>
+<li>迹是特征值的和；</li>
+<li>迹是一种线性算子：<br>
+tr(A + B) = tr(A) + tr(B)<br>
+tr(rA) = r tr(A)</li>
+<li>几何上<br>
+<a href="https://www.zhihu.com/question/20533117" target="_blank" rel="external">迹的几何意义是什么？ - 傅渥成的回答 - 知乎</a>：</li>
+</ul>
+<blockquote>
+<p>Geometrically, the trace can be interpreted as the infinitesimal change in volume (as the derivative of the determinant), which is made precise in Jacobi’s formula.</p>
+</blockquote>
+<p>以三维矩阵为例：<br>
+$V=aX_1\cdot bX_2 \cdot cX_3$，那么<br>
+$$ \sum_{i=1}^{3} \frac{\partial V}{\partial X_i}=a + b + c<br>
+$$</p>
+</li>
+</ul>
+<h2 id="第三章-概率与信息论">第三章 概率与信息论</h2>
 <h1 id="reference">reference</h1>
 <h2 id="历史">历史</h2>
 <p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
@@ -662,8 +692,8 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/python_mechanism/" rel="next" title="python mechanism">
-                <i class="fa fa-chevron-left"></i> python mechanism
+              <a href="/shadowsocks备忘/" rel="next" title="shadownsocks备忘">
+                <i class="fa fa-chevron-left"></i> shadownsocks备忘
               </a>
             
           </div>
@@ -672,8 +702,8 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/linux_command/" rel="prev" title="linux常用命令记录">
-                linux常用命令记录 <i class="fa fa-chevron-right"></i>
+              <a href="/python_mechanism/" rel="prev" title="python mechanism">
+                python mechanism <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -861,7 +891,7 @@ Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘"><span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小"><span class="nav-text">三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络简介"><span class="nav-text">神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术特点和技巧的备忘"><span class="nav-text">技术特点和技巧的备忘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史节点"><span class="nav-text">历史节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名词概念"><span class="nav-text">名词概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nn"><span class="nav-text">NN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn"><span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dnn"><span class="nav-text">DNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization"><span class="nav-text">optimization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#framework-software"><span class="nav-text">framework & software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deepchem"><span class="nav-text">Deepchem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术评论"><span class="nav-text">技术评论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术成熟的条件"><span class="nav-text">技术成熟的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#andrew-ng"><span class="nav-text">Andrew Ng[8]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读"><span class="nav-text">可读</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#备忘"><span class="nav-text">备忘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小"><span class="nav-text">三巨头介绍[1]：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络简介"><span class="nav-text">神经网络简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术特点和技巧的备忘"><span class="nav-text">技术特点和技巧的备忘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史节点"><span class="nav-text">历史节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名词概念"><span class="nav-text">名词概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nn"><span class="nav-text">NN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn"><span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dnn"><span class="nav-text">DNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization"><span class="nav-text">optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">tips</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#framework-software"><span class="nav-text">framework & software</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#deepchem"><span class="nav-text">Deepchem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deepmd-kit"><span class="nav-text">DeepMD-kit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术评论"><span class="nav-text">技术评论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术成熟的条件"><span class="nav-text">技术成熟的条件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#andrew-ng"><span class="nav-text">Andrew Ng[8]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#deep-learning-花书-笔记"><span class="nav-text">《Deep learning》（花书）笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-线性代数"><span class="nav-text">第二章 线性代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三章-概率与信息论"><span class="nav-text">第三章 概率与信息论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可读"><span class="nav-text">可读</span></a></li></ol></li></ol></div>
             
 
           </div>
