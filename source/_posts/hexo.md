@@ -3,6 +3,7 @@ title:  hexo
 tags: [hexo, yilia]
 categories: hexo
 date: 2017-07-21 18:00:00
+mathjax: true
 ---
 
 
@@ -108,6 +109,15 @@ next themes的配置文件在`themes/next/source/css/_variables/custom.styl`
 $font-size-headings-base  = 28px
 $font-size-headings-step  = 2px
 ```
+## mathjax
+`npm install hexo-math --save`
+Example:
+Simple inline $a_{i} = b_{i} + c_{i}$. 
+$$\frac{\partial u}{\partial t}
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} +
+\frac{\partial^2 u}{\partial z^2}\right)$$
+
 
 ## more available setting
 + [Hexo文章简单加密访问](http://blog.csdn.net/Lancelot_Lewis/article/details/53422901)

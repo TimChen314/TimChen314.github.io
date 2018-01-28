@@ -357,8 +357,10 @@ http://blog.csdn.net/stanjiang2010/article/details/5655143
 ##  grep命令：  
 - `-i`： 忽略大小写
 - `-v`： 不显示匹配的项
-- 同时匹配多个关键字: 
+- 同时匹配str1==或==str2: 
 `grep "str1\|str2"`
+- 同时匹配str1==与==str2:
+`grep str1 filename | grep str2   # I tried, but there's no elegant way to do this.`
 
 ##   kill命令：  
 如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）

@@ -206,6 +206,9 @@ $ git branch -a
 + git clone下载慢
 `git config --global http.postBuffer 524288000`
 
++ hub
+在终端中输入 `$ hub browse`，它将直接在浏览器中自动地打开 git 仓库的 URL。Boom！
+
 ### about github
 [how to bring up an issue?](hoomd Build_NP_reaction.shhoomd Build_NP_reaction.sh)
 

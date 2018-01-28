@@ -28,7 +28,7 @@ Magics come in two kinds:【ct】可以简单理解为单行/多行
 
 ### Some simple cell magics
 
-```python
+   ```python
 %%writefile foo.py
 print('foo')
 print('Equinox')

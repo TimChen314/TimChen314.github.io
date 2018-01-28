@@ -1,0 +1,17 @@
+---
+title:  mathtest
+tags: []   
+top: 10
+categories:    
+date: 2017-07-21 18:00:00
+mathjax: true
+---
+
+Simple inline $a_{i} = b_{i} + c_{i}$.
+$$\frac{\partial u}{\partial t}
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} +
+\frac{\partial^2 u}{\partial z^2}\right)$$
+
+<!-- more -->
+

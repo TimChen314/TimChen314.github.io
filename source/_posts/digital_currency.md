@@ -49,14 +49,17 @@ What a bubble!
 ## 进展
 按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，
 
-# new_set
+# digital currency
+## ethereum (new_set)
 My understanding:
 1. init first block.
 2. then you can mine.
 
-## problem
+### problem
 + what is private network?
 
+## cardano
+[cardano简介](https://zhuanlan.zhihu.com/p/32874568)
 
 
 # 资料&引用

@@ -216,6 +216,16 @@ class A(Base):
 ```
    >实际上，super(cls, inst) 获得的是 cls 在 inst 的 MRO 列表中的下一个类。
 
+### 12. Python Interpreter
++ CPython
+IPython based on CPython, and is enhanced in interactive.
++ PyPy
+Use Jit, and can be different with CPython.
++ Jython
+Compile python to Java bytecode.
++ IronPython
+Compile python to .net bytecode
+
 
 ## Style guide
 ### argument
@@ -225,3 +235,6 @@ class A(Base):
  `TypeError 'x' is an invalid keyword argument for this function`
  [reference:The Use and Abuse of Keyword Arguments in Python](http://ivory.idyll.org/blog/on-kwargs.html)
 
+## For more:
+[我眼中一个好的Pythoneer应该具备的品质]*(https://zhuanlan.zhihu.com/p/33266239)
+[Python进阶 - gitbook](https://www.gitbook.com/book/eastlakeside/interpy-zh/details)

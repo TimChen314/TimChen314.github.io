@@ -21,6 +21,8 @@
     "hexo-generator-seo-friendly-sitemap": "0.0.21",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
+    "hexo-inject": "^1.0.0",
+    "hexo-math": "^3.0.4",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-markdown-it": "^3.4.1",
     "hexo-renderer-stylus": "^0.3.1",
@@ -31,6 +33,7 @@
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-ins": "^2.0.0",
     "markdown-it-mark": "^2.0.0",
+    "markdown-it-mathjax": "^2.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0"
   }
