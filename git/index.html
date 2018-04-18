@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png">
 <meta property="og:image" content="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515256762/%E6%9D%82/git_reset_and_checkout.jpg">
-<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
+<meta property="og:updated_time" content="2018-04-18T11:42:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git笔记">
 <meta name="twitter:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
@@ -610,7 +610,8 @@ git checkout其实是用版本库里的版本替换工作区的版本，无论�
 </ul>
 <h2 id="rebase">rebase</h2>
 <p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
-<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
+<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a><br>
+<a href="https://blog.yorkxin.org/2011/07/29/git-rebase" target="_blank" rel="external">Git-rebase 小筆記</a> <strong>很好</strong></p>
 <ul>
 <li>git rebase --skip</li>
 <li>git rebase --continue #use this when you solved conflicts.</li>
@@ -687,23 +688,34 @@ only two types of branches, and they are storaged in<sup class="footnote-ref"><a
 <p>hub<br>
 在终端中输入 <code>$ hub browse</code>，它将直接在浏览器中自动地打开 git 仓库的 URL。Boom！</p>
 </li>
+<li>
+<p><a href="https://stackoverflow.com/questions/9683279/make-the-current-commit-the-only-initial-commit-in-a-git-repository" target="_blank" rel="external">Make the current commit the only (initial) commit in a Git repository?</a></p>
+</li>
 </ul>
 <h3 id="about-github">about github</h3>
 <p>[how to bring up an issue?](hoomd Build_NP_reaction.shhoomd Build_NP_reaction.sh)</p>
 <h2 id="错误">错误</h2>
 <ul>
-<li>prompt to input passphrase time and time again:<br>
+<li>
+<p>prompt to input passphrase time and time again:<br>
 <a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
 Note that you can use ssh-key only if you use ssh to build remote connections.<br>
 <code>git remote -v</code> should looks like:<br>
 <code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
 but not:<br>
-<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
+<code>origin	https://github.com/TimChen314/MDTackle.git</code></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/19573031/cant-push-to-github-because-of-large-file-which-i-already-deleted" target="_blank" rel="external">Can’t push to GitHub because of large file which I already deleted<br>
+</a><br>
+A git branch is a chain of commits, e.g., c-base -&gt; c1 -&gt; c2 -&gt; c3 …<br>
+If uploading c1 failed, then even you fix the problem in c2 and c3, the uploading will still fail because of c1.</p>
+</li>
 </ul>
 <h1 id="reference">reference</h1>
-<h2 id="待读">待读</h2>
 <p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
-<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
+<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a><br>
+<a href="https://help.github.com/articles/removing-sensitive-data-from-a-repository/" target="_blank" rel="external">Removing sensitive data from a repository</a></p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -794,8 +806,8 @@ but not:<br>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hdf5/" rel="next" title="hdf5简介">
-                <i class="fa fa-chevron-left"></i> hdf5简介
+              <a href="/Story_of_Terminal/" rel="next" title="Story of Terminal">
+                <i class="fa fa-chevron-left"></i> Story of Terminal
               </a>
             
           </div>
@@ -804,8 +816,8 @@ but not:<br>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Story_of_Terminal/" rel="prev" title="Story of Terminal">
-                Story of Terminal <i class="fa fa-chevron-right"></i>
+              <a href="/hdf5/" rel="prev" title="hdf5简介">
+                hdf5简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -886,7 +898,7 @@ but not:<br>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -897,7 +909,7 @@ but not:<br>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -908,7 +920,7 @@ but not:<br>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -993,7 +1005,7 @@ but not:<br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#丢弃"><span class="nav-text">丢弃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示状态"><span class="nav-text">显示状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase"><span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-text">tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他概念与原理"><span class="nav-text">其他概念与原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#about-github"><span class="nav-text">about github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-text">错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#待读"><span class="nav-text">待读</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#丢弃"><span class="nav-text">丢弃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示状态"><span class="nav-text">显示状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase"><span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-text">tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他概念与原理"><span class="nav-text">其他概念与原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#about-github"><span class="nav-text">about github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-text">错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>

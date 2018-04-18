@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="Tutorial %pylab? This sentence will give out the ‘help information’ of pylab. Note that %pylab will import cell magics Magics come in two kinds:【ct】可以简单理解为单行/多行">
+<meta name="description" content="A Tutorial">
 <meta name="keywords" content="python,jupyter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jupyter">
 <meta property="og:url" content="http://timchen314.com/jupyter/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="Tutorial %pylab? This sentence will give out the ‘help information’ of pylab. Note that %pylab will import cell magics Magics come in two kinds:【ct】可以简单理解为单行/多行">
+<meta property="og:description" content="A Tutorial">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
+<meta property="og:updated_time" content="2018-04-18T11:42:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jupyter">
-<meta name="twitter:description" content="Tutorial %pylab? This sentence will give out the ‘help information’ of pylab. Note that %pylab will import cell magics Magics come in two kinds:【ct】可以简单理解为单行/多行">
+<meta name="twitter:description" content="A Tutorial">
 
 
 
@@ -410,31 +410,34 @@
       
 
       
-        <h1 id="tutorial">Tutorial</h1>
-<h2 id="pylab">%pylab?</h2>
+        <h1 id="a-tutorial">A Tutorial</h1>
+<a id="more"></a>
+<h2 id="pylab"><code>%pylab?</code></h2>
 <p>This sentence will give out the ‘help information’ of pylab.<br>
-Note that %pylab will import</p>
+Note that %pylab will be imported!</p>
 <h2 id="cell-magics">cell magics</h2>
 <p>Magics come in two kinds:【ct】可以简单理解为单行/多行</p>
-<a id="more"></a>
+<h3 id="line-magics-these-are-commands-prepended-by-one-character-and-whose-arguments-only-extend-to-the-end-of-the-current-line">Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</h3>
 <ul>
-<li>
-<p>Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</p>
-</li>
-<li>
-<p>Cell magics:</p>
-</li>
+<li><code>%run</code>可以从<code>.py</code>和<code>.ipynb</code>文件</li>
 </ul>
-<h3 id="some-simple-cell-magics">Some simple cell magics</h3>
+<h3 id="cell-magics-v2">Cell magics:</h3>
+<ul>
+<li>Some simple cell magics</li>
+</ul>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">%%writefile foo.py</div><div class="line">print(<span class="string">'foo'</span>)</div><div class="line">print(<span class="string">'Equinox'</span>)</div></pre></td></tr></table></figure>
-<h3 id="magics-for-running-code-under-other-interpreters">Magics for running code under other interpreters</h3>
-<p>IPython has a %%script cell magic, which lets you run a cell in a subprocess of any interpreter on your system, such as: bash, ruby, perl, zsh, R, etc.</p>
-<p>To use it, simply pass a path or shell command to the program you want to run on the %%script line, and the rest of the cell will be run by that script, and stdout/err from the subprocess are captured and displayed.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">In [10]: %%script python2 import sys print &apos;hello from Python %s&apos; % sys.version</div></pre></td></tr></table></figure>
-<h3 id="background-scripts">Background Scripts</h3>
-<p>These scripts can be run in the background, by adding the --bg flag.<br>
-When you do this, output is discarded unless you use the --out/err flags to store output as above.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">In [17]: %%ruby --bg --out ruby_lines for n in 1...10    sleep 1    puts &quot;line #&#123;n&#125;&quot;    STDOUT.flush end</div></pre></td></tr></table></figure>
+<ul>
+<li>Magics for running code under other interpreters<br>
+IPython has a %%script cell magic, which lets you run a cell in a subprocess of any interpreter on your system, such as: bash, ruby, perl, zsh, R, etc.<br>
+To use it, simply pass a path or shell command to the program you want to run on the %%script line, and the rest of the cell will be run by that script, and stdout/err from the subprocess are captured and displayed.</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">%%script python2 </div><div class="line">import sys </div><div class="line">print &apos;hello from Python %s&apos; % sys.version</div></pre></td></tr></table></figure>
+<ul>
+<li>Background Scripts<br>
+These scripts can be run in the background, by adding the --bg flag.<br>
+When you do this, output is discarded unless you use the --out/err flags to store output as above.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">%%ruby --bg --out ruby_lines</div><div class="line">for n in 1...10</div><div class="line">    sleep 1</div><div class="line">    puts &quot;line #&#123;n&#125;&quot;</div><div class="line">    STDOUT.flush</div><div class="line">end</div></pre></td></tr></table></figure>
 <h2 id="shortcut-key">shortcut key</h2>
 <p><a href="http://www.jianshu.com/p/72493e81a708" target="_blank" rel="external">Jupyter Notebook 的快捷键</a></p>
 <h3 id="command-mode">command mode</h3>
@@ -452,7 +455,7 @@ When you do this, output is discarded unless you use the --out/err flags to stor
 <p><code>ctrl+enter</code>、<code>shitf+enter</code>: 执行、执行后选中下个单元</p>
 </li>
 <li>
-<p>b: 在下方插入新单元</p>
+<p>a/b: 在上/下方插入新单元</p>
 </li>
 <li>
 <p>dd: 删除当前cell</p>
@@ -472,19 +475,65 @@ When you do this, output is discarded unless you use the --out/err flags to stor
 <li>
 <p>space/shift+spcae: 向下/上滚动</p>
 </li>
+<li>
+<p>Shift-K/J : 扩大选中上/下方单元</p>
+</li>
+<li>
+<p>合并/分割<br>
+shfit + m / shift + ctrl + -</p>
+</li>
 </ul>
 <h3 id="edit-mode">edit mode</h3>
 <ul>
+<li>
+<p>alt + 左键: 列模式</p>
+</li>
 <li>
 <p>shift+tab:  补全提示</p>
 </li>
 <li>
 <p><code>ctrl + shift + -</code>: 分割cell</p>
 </li>
+<li>
+<p><code>cmd+[</code> 减小缩进</p>
+</li>
+</ul>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>change default browser<br>
+<code>$ jupyter notebook --generate-config</code><br>
+And then in <code>~/.jupyter/jupyter_notebook_config.py</code> file, <code>c.NotebookApp.browser = '</code> should be modified to<br>
+<code>c.NotebookApp.browser = 'open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome %s'</code>.</li>
+</ul>
+<p>**NOTE: proxy extension (such as shadowsocks) will induce error – ERR_EMPTY_RESPONSE **</p>
+<ul>
+<li>
+<p>Pretty Display of Varibles</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">from IPython.core.interactiveshell import InteractiveShell</div><div class="line">InteractiveShell.ast_node_interactivity = &quot;all&quot;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>不让变量输出<br>
+结尾加个分号！<code>variable;</code></p>
+</li>
+<li>
+<p>添加目录功能<br>
+<code>conda install -c conda-forge jupyter_contrib_nbextensions</code></p>
+</li>
+<li>
+<p><a href="https://www.jianshu.com/p/96433d9ee923" target="_blank" rel="external">beautifulsoup4</a></p>
+<ul>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html#id25" target="_blank" rel="external">文档</a></li>
+<li><code>find_all(text=&quot;your_text&quot;)</code>不好用！</li>
+<li>‘html5lib’ engine is slower but more robust than ‘lxml’！</li>
+<li><code>soup.prettify()</code> and <code>&lt;tag&gt;.prettify()</code><br>
+Formatting html</li>
+</ul>
+</li>
 </ul>
 <hr>
 <p><a href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/4.0.x/examples/IPython%20Kernel/Cell%20Magics.ipynb" target="_blank" rel="external">source 1</a><br>
 <a href="http://ipython.org/ipython-doc/3/notebook/notebook.html#importing-py-files" target="_blank" rel="external">source 2</a></p>
+<p><a href="http://liuchengxu.org/pelican-blog/jupyter-notebook-tips.html" target="_blank" rel="external">27 个Jupyter Notebook的小提示与技巧</a></p>
 
       
     </div>
@@ -570,6 +619,10 @@ When you do this, output is discarded unless you use the --out/err flags to stor
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/pandas/" rel="prev" title="pandas note">
+                pandas note <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -648,7 +701,7 @@ When you do this, output is discarded unless you use the --out/err flags to stor
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -659,7 +712,7 @@ When you do this, output is discarded unless you use the --out/err flags to stor
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -670,7 +723,7 @@ When you do this, output is discarded unless you use the --out/err flags to stor
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -755,7 +808,7 @@ When you do this, output is discarded unless you use the --out/err flags to stor
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tutorial"><span class="nav-text">Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pylab"><span class="nav-text">%pylab?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell-magics"><span class="nav-text">cell magics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-simple-cell-magics"><span class="nav-text">Some simple cell magics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#magics-for-running-code-under-other-interpreters"><span class="nav-text">Magics for running code under other interpreters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#background-scripts"><span class="nav-text">Background Scripts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortcut-key"><span class="nav-text">shortcut key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#command-mode"><span class="nav-text">command mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edit-mode"><span class="nav-text">edit mode</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-tutorial"><span class="nav-text">A Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pylab"><span class="nav-text">%pylab?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell-magics"><span class="nav-text">cell magics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-magics-these-are-commands-prepended-by-one-character-and-whose-arguments-only-extend-to-the-end-of-the-current-line"><span class="nav-text">Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cell-magics-v2"><span class="nav-text">Cell magics:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortcut-key"><span class="nav-text">shortcut key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#command-mode"><span class="nav-text">command mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edit-mode"><span class="nav-text">edit mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">Tips</span></a></li></ol></li></ol></div>
             
 
           </div>

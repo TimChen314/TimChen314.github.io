@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
+<meta property="og:updated_time" content="2018-04-18T11:42:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python mechanism">
 <meta name="twitter:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
@@ -513,7 +513,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
 <blockquote>
 <p>实际上，super(cls, inst) 获得的是 cls 在 inst 的 MRO 列表中的下一个类。</p>
 </blockquote>
-<h3 id="12-python-interpreter">12. Python Interpreter</h3>
+<h2 id="12-python-interpreter">12. Python Interpreter</h2>
 <ul>
 <li>CPython<br>
 IPython based on CPython, and is enhanced in interactive.</li>
@@ -524,21 +524,60 @@ Compile python to Java bytecode.</li>
 <li>IronPython<br>
 Compile python to .net bytecode</li>
 </ul>
-<h2 id="style-guide">Style guide</h2>
-<h3 id="argument">argument</h3>
+<h2 id="13-python3-string">13. Python3 String</h2>
 <ul>
-<li><code>**kwargs</code> is a bad practice:
-<ol>
-<li>you don’t know how <code>**kwargs</code> affect.</li>
-<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
-<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
-<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
-</ol>
+<li>All the python3 string is unicode string.<br>
+NOTE: Unicode is different from utf-8 code! <a href="https://blog.csdn.net/thl789/article/details/7506133" target="_blank" rel="external">Unicode编码及其实现：UTF-16、UTF-8</a></li>
+<li>Real Unicode<br>
+Many introduction about unicode is wrong, even for the Baidu Encyclopedia.<br>
+Japanese: unicode 3040-31FF<br>
+<a href="https://www.cnblogs.com/kingcat/archive/2012/10/16/2726334.html" target="_blank" rel="external">Unicode(UTF-8, UTF-16)令人混淆的概念</a> must be read very carefully.
+<blockquote>
+<p>Unicode涉及到两个步骤,首先是定义一个规范，第二步才是怎么把字符对应的数字保存在计算机中。<br>
+UTF-16就是任何字符对应的数字都用两个字节来保存<br>
+UTF-8,这里的8非常容易误导人，用UTF-8时表示一个字符是可变的,有可能是用一个字节表示一个字符,也可能是两个,三个.当然最多不能超过3个字节了。<br>
+UTF-32就是把所有的字符都用32bit.<br>
+UCS就是前面说的ISO制定的标准,和Unicode是完全一样的,只不过名字不一样.ucs-2对应utf-16,ucs-4对应UTF-32.UTF-8是没有对应的UCS.</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="for-more">For more:</h2>
-<p>[我眼中一个好的Pythoneer应该具备的品质]*(<a href="https://zhuanlan.zhihu.com/p/33266239" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/33266239</a>)<br>
-<a href="https://www.gitbook.com/book/eastlakeside/interpy-zh/details" target="_blank" rel="external">Python进阶 - gitbook</a></p>
+<p>BeautifulSoup4 will automatically find the encoding of HTML page (based on the info in the HTML head), and use this encoding to decode the <code>r.text</code>.<br>
+However, if encoding is not found, encoding will be considered as “ISO-8859-1”, whether it’s because of failing parse or non-existence,</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(r.encoding)</div><div class="line">text = r.text</div><div class="line">text.encode(<span class="string">"ISO-8859-1"</span>,<span class="string">"ignore"</span>) == r.content</div><div class="line"><span class="comment"># result is "ISO-8859-1" and "True"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>two examples:<br>
+<a href="https://www.fileformat.info/info/unicode/char/4e25/index.htm" target="_blank" rel="external">&quot;严&quot;字</a><br>
+<a href="https://www.fileformat.info/info/unicode/char/304d/index.htm" target="_blank" rel="external">&quot;き&quot;字</a></p>
+<ul>
+<li>For “き”: It’s python3 source code is <code>u&quot;\u304D&quot;</code></li>
+<li><code>utf-8</code> is <code>0xE3 0x81 0x8D (e3818d)</code>;</li>
+<li><code>utf-16</code> is <code>0x304D (304d)</code>;</li>
+<li><code>utf-32</code> is <code>0x0000304D (304d)</code></li>
+<li>HTML Entity (hex)  <code>&amp;#x304d;</code></li>
+</ul>
+</li>
+<li>
+<p>code</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">one_char = <span class="string">'き'</span></div><div class="line">print(one_char, one_char.encode(<span class="string">"utf-8"</span>),one_char.encode(<span class="string">"utf-16"</span>), one_char.encode(<span class="string">"utf-32"</span>))</div><div class="line">print(one_char.encode(<span class="string">'unicode_escape'</span>), one_char.encode(<span class="string">'unicode_escape'</span>).decode(<span class="string">'unicode_escape'</span>))</div><div class="line">```</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>き b’\xe3\x81\x8d’ b’\xff\xfeM0’ b’\xff\xfe\x00\x00M0\x00\x00’<br>
+b’\u304d’ き</p>
+<pre><code>
+
+## Style guide
+### argument
++ `**kwargs ` is a bad practice:
+  1. you don't know how `**kwargs` affect.
+  2. **wrong keywrod arguments is no longer reported by the interpreter.** 
+ `TypeError 'x' is an invalid keyword argument for this function`
+ [reference:The Use and Abuse of Keyword Arguments in Python](http://ivory.idyll.org/blog/on-kwargs.html)
+
+## For more:
+[我眼中一个好的Pythoneer应该具备的品质]*(https://zhuanlan.zhihu.com/p/33266239)
+[Python进阶 - gitbook](https://www.gitbook.com/book/eastlakeside/interpy-zh/details)
+</code></pre>
 
       
     </div>
@@ -704,7 +743,7 @@ Compile python to .net bytecode</li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -715,7 +754,7 @@ Compile python to .net bytecode</li>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -726,7 +765,7 @@ Compile python to .net bytecode</li>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -811,7 +850,7 @@ Compile python to .net bytecode</li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-exec与eval的奇特之处"><span class="nav-text">10.1 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-注意区分list-comprehension与generator"><span class="nav-text">10.2 注意区分list comprehension与generator！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#12-python-interpreter"><span class="nav-text">12. Python Interpreter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#style-guide"><span class="nav-text">Style guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#argument"><span class="nav-text">argument</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-more"><span class="nav-text">For more:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-exec与eval的奇特之处"><span class="nav-text">10.1 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-注意区分list-comprehension与generator"><span class="nav-text">10.2 注意区分list comprehension与generator！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-python-interpreter"><span class="nav-text">12. Python Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-python3-string"><span class="nav-text">13. Python3 String</span></a></li></ol></div>
             
 
           </div>

@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Web," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TimChen" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="html5  html In a nutshell The &amp;lt;head&amp;gt; element contains meta information about the document The &amp;lt;body&amp;gt; element contains the visible page content HTML elements are the building blocks of HTML">
+<meta name="keywords" content="Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Learning Note">
+<meta property="og:url" content="http://timchen314.com/Web/index.html">
+<meta property="og:site_name" content="TimChen">
+<meta property="og:description" content="html5  html In a nutshell The &amp;lt;head&amp;gt; element contains meta information about the document The &amp;lt;body&amp;gt; element contains the visible page content HTML elements are the building blocks of HTML">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-18T11:42:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web Learning Note">
+<meta name="twitter:description" content="html5  html In a nutshell The &amp;lt;head&amp;gt; element contains meta information about the document The &amp;lt;body&amp;gt; element contains the visible page content HTML elements are the building blocks of HTML">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://timchen314.com/Web/"/>
+
+
+
+
+
+  <title>Web Learning Note | TimChen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TimChen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/Web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tim Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_portrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TimChen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web Learning Note</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T18:00:00+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Web/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Web/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="html5">html5</h1>
+<ul>
+<li>html In a nutshell<br>
+The <code>&lt;head&gt;</code> element contains meta information about the document<br>
+The <code>&lt;body&gt;</code> element contains the visible page content<br>
+HTML elements are the building blocks of HTML pages<br>
+HTML elements are represented by tags</li>
+</ul>
+<a id="more"></a>
+<p>HTML tags label pieces of content such as “heading”, “paragraph”, “table”, and so on<br>
+tags:<br>
+<code>&lt;tagname&gt;content goes here...&lt;/tagname&gt;</code></p>
+<h2 id="html-basic">html basic</h2>
+<ul>
+<li>
+<p>Headings<br>
+e.g., <code>&lt;h1&gt;</code></p>
+</li>
+<li>
+<p>Paragraphs<br>
+<code>&lt;p&gt;</code></p>
+</li>
+<li>
+<p>Links <code>&lt;a&gt;</code><br>
+<code>&lt;a href=&quot;https://www.w3schools.com&quot;&gt;This is a link&lt;/a&gt;</code></p>
+<ul>
+<li>local links<br>
+<code>&lt;a href=&quot;html_images.asp&quot;&gt;HTML Images&lt;/a&gt;</code></li>
+<li>colors<br>
+By default, a link will appear like this (in all browsers):<br>
+An unvisited link is underlined and blue<br>
+A visited link is underlined and purple<br>
+An active link is underlined and red<br>
+You can change the default colors, e.g.:</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">a:link &#123;</div><div class="line">    color: green; </div><div class="line">    background-color: transparent; </div><div class="line">    text-decoration: none;</div><div class="line">&#125;</div><div class="line">a:visited &#123;</div><div class="line">    color: pink;</div><div class="line">    background-color: transparent;</div><div class="line">    text-decoration: none;</div><div class="line">&#125;</div><div class="line">a:hover &#123;</div><div class="line">    color: red;</div><div class="line">    background-color: transparent;</div><div class="line">    text-decoration: underline;</div><div class="line">&#125;</div><div class="line">a:active &#123;</div><div class="line">    color: yellow;</div><div class="line">    background-color: transparent;</div><div class="line">    text-decoration: underline;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://www.w3schools.com/html/html_links.asp" target="_blank" rel="external">target Attribute</a><br>
+Available values: <code>_blank</code>, <code>_self</code>, <code>_parent</code>, <code>_top</code>, <code>framename - Opens the linked document in a named frame</code></li>
+<li>images<br>
+Note: <code>border:0</code>; is added to prevent IE9 (and earlier) from displaying a border around the image (when the image is a link).</li>
+<li>Create a Bookmark</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;h2 id=&quot;C4&quot;&gt;Chapter 4&lt;/h2&gt;</div><div class="line">&lt;a href=&quot;#C4&quot;&gt;Jump to Chapter 4&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Images<br>
+<code>&lt;img src=&quot;w3schools.jpg&quot; alt=&quot;W3Schools.com&quot; width=&quot;104&quot; height=&quot;142&quot;&gt;</code><br>
+The style attributes are valid in HTML5 and suggested.</p>
+<ul>
+<li>Floating<br>
+let the image float to the right or to the left of a text</li>
+<li>maps<br>
+An image-map is an image with clickable areas.</li>
+<li>Background image</li>
+</ul>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"background-image:url('clouds.jpg')"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Background Image<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>picture element<br>
+Introduced since html5.</li>
+</ul>
+<blockquote>
+<p>Always specify an <img> element as the last child element of the <picture> element. The <img> element is used by browsers that do not support the <picture> element, or if none of the <source> tags matched.</picture></picture></p>
+</blockquote>
+</li>
+<li>
+<p>Buttons<br>
+<code>&lt;button&gt;Click me&lt;/button&gt;</code></p>
+</li>
+<li>
+<p>Lists<br>
+HTML lists are defined with the <code>&lt;ul&gt;</code> (unordered/bullet list) or the <code>&lt;ol&gt;</code> (ordered/numbered list) tag, followed by <code>&lt;li&gt;</code> tags (list items)<br>
+<code>&lt;ul&gt;</code><br>
+<code>&lt;li&gt;Coffee&lt;/li&gt;</code><br>
+<code>&lt;/ul&gt;</code></p>
+</li>
+</ul>
+<h2 id="elements">elements</h2>
+<p>An HTML element usually consists of a start tag and end tag, with the content inserted in between:<br>
+<code>&lt;tagname&gt;Content goes here...&lt;/tagname&gt;</code></p>
+<ul>
+<li>
+<p><code>&lt;br&gt;</code> element<br>
+which indicates a line break.<br>
+Empty elements can be “closed” in the opening tag like this: <code>&lt;br /&gt;</code>.<br>
+HTML5 does not require empty elements to be closed. But if you want stricter validation, or if you need to make your document readable by XML parsers, you must close all HTML elements properly.</p>
+</li>
+<li>
+<p><code>&lt;hr&gt;</code> 水平分割线<br>
+a thematic break.</p>
+</li>
+<li>
+<p>headings<br>
+Note: Use HTML headings for headings only. Don’t use headings to make text BIG or bold.<br>
+For Bigger Headings use: <code>&lt;h1 style=&quot;font-size:60px;&quot;&gt;Heading 1&lt;/h1&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;head&gt;</code> Element<br>
+The HTML <head> element has nothing to do with HTML headings.<br>
+The <head> element is a container for metadata. HTML metadata is data about the HTML document. Metadata is not displayed.<br>
+<strong>The <head> element is placed between the <html> tag and the <body> tag:</body></html></head></strong></head></head></p>
+</li>
+<li>
+<p><code>&lt;pre&gt;</code><br>
+The text inside a <pre> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks. <a href="https://www.w3schools.com/html/html_paragraphs.asp" target="_blank" rel="external">link</a></pre></p>
+</li>
+<li>
+<p>Formating element</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;b&gt; - Bold text   </div><div class="line">&lt;strong&gt; - Important text   </div><div class="line">&lt;i&gt; - Italic text   </div><div class="line">&lt;em&gt; - Emphasized text   </div><div class="line">&lt;mark&gt; - Marked text   </div><div class="line">&lt;small&gt; - Small text   </div><div class="line">&lt;del&gt; - Deleted text   </div><div class="line">&lt;ins&gt; - Inserted text   </div><div class="line">&lt;sub&gt; - Subscript text   </div><div class="line">&lt;sup&gt; - Superscript text</div></pre></td></tr></table></figure>
+<p>Note: Browsers display <code>&lt;strong</code>&gt; as <code>&lt;b</code>&gt;, and <code>&lt;em</code>&gt; as <code>&lt;i</code>&gt;. However, there is a difference in the meaning of these tags: <code>&lt;b</code>&gt; and <code>&lt;i</code>&gt; defines bold and italic text, but <code>&lt;strong</code>&gt; and <code>&lt;em</code>&gt; means that the text is “important”.</p>
+</li>
+<li>
+<p>Quotations</p>
+<ul>
+<li><code>&lt;q&gt;</code> for short and <code>&lt;blockquote&gt;</code> for long Quotations<br>
+e.g., :</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>cite="http://www.worldwildlife.org/who/index.html"></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">For 50 years, WWF has been protecting the future of nature.</div><div class="line">The world&apos;s leading conservation organization,</div><div class="line">WWF works in 100 countries and is supported by</div><div class="line">1.2 million members in the United States and</div><div class="line">close to 5 million globally.</div><div class="line">&lt;/blockquote&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;abbr&gt;</code><br>
+Marking abbreviations can give useful information to browsers, translation systems and search-engines.</li>
+<li><code>&lt;cite&gt;</code><br>
+The HTML <cite> element defines the title of a work.</cite></li>
+<li><code>&lt;bdo&gt;</code> Bi-Directional Override<br>
+e.g., <code>&lt;bdo dir=&quot;rtl&quot;&gt;</code></li>
+</ul>
+<h2 id="comments">comments</h2>
+<p>e.g., <code>&lt;!-- Do not display this at the moment &lt;img border=&quot;0&quot; src=&quot;pic_mountain.jpg&quot; alt=&quot;Mountain&quot;&gt; --&gt;</code></p>
+<h2 id="attributes">Attributes</h2>
+<p>Attributes usually come in name/value pairs like: <strong>name=“value”</strong>, blank is used to sperate attributes.<br>
+e.g., <code>&lt;a href=&quot;https://www.w3schools.com&quot;&gt;This is a link&lt;/a&gt;</code><br>
+<code>href</code> is an attributes.</p>
+<ul>
+<li><code>src</code></li>
+<li><code>width</code> &amp; <code>height</code></li>
+<li><code>alt</code><br>
+The alt attribute specifies an alternative text to be used, when an image cannot be displayed.<br>
+The value of the attribute can be read by screen readers. This way, someone “listening” to the webpage, e.g. a blind person, can “hear” the element.</li>
+<li><code>style</code><br>
+color, font, size etc.<br>
+e.g., <code>&lt;p style=&quot;color:red&quot;&gt;I am a paragraph&lt;/p&gt;</code></li>
+<li><code>lang</code><br>
+<code>&lt;html lang=&quot;en-US&quot;&gt;</code> is important for accessibility applications (screen readers) and search engines.</li>
+<li><code>title</code><br>
+Here, a title attribute is added to the <p> element. The value of the title attribute will be displayed as a tooltip when you mouse over the paragraph. <a href="https://www.w3schools.com/html/html_attributes.asp" target="_blank" rel="external">HTML Attributes</a></p></li>
+</ul>
+<h2 id="json">JSON<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<blockquote>
+<p>JSON[1] 结构有两种结构[2]<br>
+json简单说就是javascript中的对象和数组，所以这两种结构就是对象和数组两种结构，通过这两种结构可以表示各种复杂的结构<br>
+1、对象：对象在js中表示为“{}”括起来的内容，数据结构为 {key：value,key：value,…}的键值对的结构，在面向对象的语言中，key为对象的属性，value为对应的属性值，所以很容易理解，取值方法为 对象.key 获取属性值，这个属性值的类型可以是 数字、字符串、数组、对象几种。<br>
+2、数组：数组在js中是中括号“[]”括起来的内容，数据结构为 [“java”,“javascript”,“vb”,…]，取值方式和所有语言中一样，使用索引获取，字段值的类型可以是 数字、字符串、数组、对象几种。<br>
+经过对象、数组2种结构就可以组合成复杂的数据结构了。</p>
+</blockquote>
+<h2 id="forms">Forms</h2>
+<ul>
+<li>
+<p><code>&lt;input&gt;</code> Element</p>
+<ul>
+<li>type value<br>
+<code>text</code>, <code>radio</code>, <code>submit</code></li>
+<li><code>name</code> Attribute<br>
+Each input field must have a name attribute to be submitted. If the name attribute is omitted, the data of that input field will not be sent at all.</li>
+</ul>
+</li>
+<li>
+<p>Action Attribute<br>
+The action attribute defines the action to be performed when the form is submitted.</p>
+</li>
+<li>
+<p>Target Attribute</p>
+<ul>
+<li>type value<br>
+<code>_self</code>, <code>_blank</code>,</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips">TIPS</h2>
+<ul>
+<li>.htm or .html has no difference.</li>
+<li>HTML tags are not case sensitive<br>
+The HTML5 standard does not require lowercase tags, but W3C recommends lowercase in HTML, and demands lowercase for stricter document types like XHTML.</li>
+<li>Quote Attribute Values<br>
+W3C recommends quotes in HTML, and demands quotes for stricter document types like XHTML.<br>
+<strong>single quotes can also be used.</strong></li>
+<li>With HTML, you cannot change the output by adding extra spaces or extra lines in your HTML code.</li>
+<li>display special symbols<br>
+© - <code>&amp;copy;</code><br>
+® - <code>&amp;reg;</code><br>
+™ - <code>&amp;trade;</code></li>
+<li>MIME type<br>
+也称作content type。<code>Content-Type: text/HTML</code>：http协议中<code>Content-Type</code>的值就是mime type。<br>
+更多信息见：<a href="https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B" target="_blank" rel="external">wiki 互联网媒体类型</a></li>
+</ul>
+<h1 id="css3">CSS3</h1>
+<p>CSS(层叠样式表 Cascading Style Sheets)，专门用来负责html里的<code>&lt;style&gt;</code>。<br>
+<strong>CSS的语法很简单，选择器：{属性1：属性值; 属性2：属性值}。</strong></p>
+<blockquote>
+<p>CSS can be added to HTML elements in 3 ways:</p>
+</blockquote>
+<ul>
+<li>Inline - by using the style attribute in HTML elements</li>
+<li>Internal - by using a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section</li>
+<li>External - by using an external CSS file<br>
+Three examples:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.w3schools.com/html/styles.css&quot;&gt; </div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;/html/styles.css&quot;&gt;</div></pre></td></tr></table></figure>
+<p>Your first test:<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">body &#123;</div><div class="line">    background-color: lightblue;</div><div class="line">&#125;</div><div class="line">h1 &#123;</div><div class="line">    color: white;</div><div class="line">    text-align: center;</div><div class="line">&#125;</div><div class="line">p &#123;</div><div class="line">    font-family: verdana;</div><div class="line">    font-size: 20px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;My First CSS Example&lt;/h1&gt;</div><div class="line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>id attribute<br>
+Note: The id of an element should be unique within a page, so the id selector is used to select one unique element!</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;p01&quot;&gt;I am different&lt;/p&gt;</div><div class="line">#p01 &#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>class attribute</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;error&quot;&gt;I am different&lt;/p&gt;</div><div class="line">p.error &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="css-properties">CSS properties</h2>
+<p>border【Note: border must have at last 3 properites】; color; font-size; font-family; padding &amp; margin(inside/outside the border);</p>
+<h1 id="javascript">JavaScript</h1>
+<ul>
+<li><code>&lt;noscript&gt;</code><br>
+Defines an alternate content for users that do not support client-side scripts.</li>
+<li>Examples</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//change HTML content</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;;</div><div class="line">//change HTML styles</div><div class="line">document.getElementById(&quot;demo&quot;).style.fontSize = &quot;25px&quot;;</div><div class="line">document.getElementById(&quot;demo&quot;).style.color = &quot;red&quot;;</div><div class="line">document.getElementById(&quot;demo&quot;).style.backgroundColor = &quot;yellow&quot;;</div><div class="line">//change HTML attributes</div><div class="line">document.getElementById(&quot;image&quot;).src = &quot;picture.gif&quot;;</div></pre></td></tr></table></figure>
+<h1 id="chares">Chares</h1>
+<ul>
+<li>
+<p>port<br>
+80: http<br>
+443: https</p>
+</li>
+<li>
+<p>浏览器的解析方式<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+浏览器解析html页面首先浏览器先下载html，然后在内存中把html代码转化成Dom Tree，然后浏览器根据Dom Tree上的Node分析css和Images，当文档下载遇到js时，js独立下载。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>HMAC</p>
+<blockquote>
+<p>HMAC是密钥相关的哈希运算消息认证码，HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。<br>
+<strong>hmac主要应用在身份验证中，它的使用方法是这样的：</strong><br>
+(1) 客户端发出登录请求（假设是浏览器的GET请求）<br>
+(2) 服务器返回一个随机值，并在会话中记录这个随机值<br>
+(3) 客户端将该随机值作为密钥，用户密码进行hmac运算，然后提交给服务器<br>
+(4) 服务器读取用户数据库中的用户密码和步骤2中发送的随机值做与客户端一样的hmac运算，然后与用户发送的结果比较，如果结果一致则验证用户合法</p>
+</blockquote>
+</li>
+<li>
+<p>REST/RESTful<br>
+参考：<a href="http://www.ruanyifeng.com/blog/2011/09/restful" target="_blank" rel="external">理解RESTful架构</a><br>
+Representational State Transfer，“表现层状态转化”，主语应该是resource。</p>
+<p>RESTful架构：</p>
+</li>
+</ul>
+<p>（1）每一个URI（统一资源定位符）代表一种资源；</p>
+<p>（2）客户端和服务器之间，传递这种资源的某种表现层；</p>
+<p>（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现&quot;表现层状态转化&quot;。</p>
+<ul>
+<li>
+<p>协程<br>
+优点：</p>
+<ul>
+<li>最大的优势就是协程极高的执行效率。因为子程序切换不是线程切换，而是由程序自身控制，因此，没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。</li>
+<li>第二大优势就是不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量冲突，在协程中控制共享资源不加锁，只需要判断状态就好了，所以执行效率比多线程高很多。</li>
+</ul>
+</li>
+<li>
+<p>socket</p>
+<ul>
+<li>introduction<br>
+默认端口也是80和443;<br>
+协议标识符是ws（如果加密，则为wss）;</li>
+<li>socket所在的层次以及它是什么：<a href="https://www.cnblogs.com/dolphinX/p/3460545.html" target="_blank" rel="external">简单理解Socket</a></li>
+</ul>
+<blockquote>
+<p>从字面意思来看TCP/IP是TCP和IP协议的合称，但实际上TCP/IP协议是指因特网整个TCP/IP协议族。不同于ISO模型的七个分层，TCP/IP协议参考模型把所有的TCP/IP系列协议归类到四个抽象层中</p>
+</blockquote>
+<blockquote>
+<p>应用层：TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet 等等</p>
+</blockquote>
+<blockquote>
+<p>传输层：TCP，UDP</p>
+</blockquote>
+<blockquote>
+<p>网络层：IP，ICMP，OSPF，EIGRP，IGMP</p>
+</blockquote>
+<blockquote>
+<p>数据链路层：SLIP，CSLIP，PPP，MTU</p>
+</blockquote>
+<blockquote>
+<p>我们知道两个进程如果需要进行通讯最基本的一个前提能能够唯一的标示一个进程，在本地进程通讯中我们可以使用PID来唯一标示一个进程，但PID只在本地唯一，网络中的两个进程PID冲突几率很大，这时候我们需要另辟它径了，我们知道IP层的ip地址可以唯一标示主机，而TCP层协议和端口号可以唯一标示主机的一个进程，这样我们可以利用ip地址＋协议＋端口号唯一标示网络中的一个进程。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.jianshu.com/p/979721d30f7d" target="_blank" rel="external">socket连接和HTTP连接的区别</a>:</li>
+</ul>
+<blockquote>
+<p>简单来说，你浏览的网页(网址以HTTP://开头)都是HTTP协议传输到你的浏览器的，而HTTP是基于socket之上的。socket是一套完成TCP.UDP协议的接口.<br>
+HTTP协议:简单对象访问协议，对应于应用层，HTTP协议是基于TCP连接的。<br>
+TCP协议:对应于传输层<br>
+IP协议:对应于网络层<br>
+TCP/IP是传输层协议，主要解决数据如果在网络中传输；<br>
+而HTTP协议是应用层协议，主要解决如何包装数据。<br>
+socket是对TCP/IP协议的封装，socket本身并不是协议，而是一个调用接口(API),通过socket我们才能使用TCP/IP协议.<br>
+http连接:http连接就是所谓的短连接，即客户端向服务器端发送一次请求，服务器端响应后连接即会断掉.<br>
+socket连接:socket连接就是所谓的长连接，理论上客户端和服务器端一旦连接其连接将不会主动断掉；但是由于各种环境因素可能会连接断开，比如说:服务器端或客户端主机down了，网络故障，或者两者之间长时间没有传输数据，网络防火墙可能会断开该连接以释放网络资源。所以当一个socket连接中没有数据传输的时候，那么为了维持连接需要发送心跳消息，具体心跳消息格式是开发者自己定义的。</p>
+</blockquote>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://caibaojian.com/json-baike.html" target="_blank" rel="external">JSON简介</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default" target="_blank" rel="external">CSS3 教程</a><br>
+注意：主要浏览器有5个！ <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/23250329" target="_blank" rel="external">CSS、JS 放置位置与前端性能的关系？</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>谢谢~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay2D_small.png" alt="Tim Chen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Tim Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://timchen314.com/Web/" title="Web Learning Note">http://timchen314.com/Web/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web/" rel="tag"># Web</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/pandas/" rel="next" title="pandas note">
+                <i class="fa fa-chevron-left"></i> pandas note
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/digital_currency/" rel="prev" title="About Digital Currency">
+                About Digital Currency <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head_portrait.jpg"
+               alt="Tim Chen" />
+          <p class="site-author-name" itemprop="name">Tim Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TimChen314" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/Aether/activities" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-bed"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情站点
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://boism.org" title="浅乎" target="_blank">浅乎</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiaxm.me" title="贾士奇" target="_blank">贾士奇</a>
+                </li>
+              
+            </ul>
+          </div>
+<!-- <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2041358705&auto=1&height=90"></iframe>
+        </div>  -->
+
+
+
+
+
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html5"><span class="nav-text">html5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html-basic"><span class="nav-text">html basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#elements"><span class="nav-text">elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comments"><span class="nav-text">comments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attributes"><span class="nav-text">Attributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#json"><span class="nav-text">JSON[1]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forms"><span class="nav-text">Forms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">TIPS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css3"><span class="nav-text">CSS3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#css-properties"><span class="nav-text">CSS properties</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript"><span class="nav-text">JavaScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chares"><span class="nav-text">Chares</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tim Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://timchen314.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://timchen314.com/Web/';
+          this.page.identifier = 'Web/';
+          this.page.title = 'Web Learning Note';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://timchen314.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('5');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

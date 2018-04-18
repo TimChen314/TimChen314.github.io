@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="python,note," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="service，顾名思义，是用于对系统服务进行管理的命令。 Basically, it’s a shell script! vi it! Besides, chkconfig is a closely related command.">
-<meta name="keywords" content="linux">
+<meta name="description" content="数据分析神器Pandas。">
+<meta name="keywords" content="python,note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux命令之service">
-<meta property="og:url" content="http://timchen314.com/linux_senior_command/index.html">
+<meta property="og:title" content="pandas note">
+<meta property="og:url" content="http://timchen314.com/pandas/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="service，顾名思义，是用于对系统服务进行管理的命令。 Basically, it’s a shell script! vi it! Besides, chkconfig is a closely related command.">
+<meta property="og:description" content="数据分析神器Pandas。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
+<meta property="og:updated_time" content="2018-04-18T11:42:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux命令之service">
-<meta name="twitter:description" content="service，顾名思义，是用于对系统服务进行管理的命令。 Basically, it’s a shell script! vi it! Besides, chkconfig is a closely related command.">
+<meta name="twitter:title" content="pandas note">
+<meta name="twitter:description" content="数据分析神器Pandas。">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://timchen314.com/linux_senior_command/"/>
+  <link rel="canonical" href="http://timchen314.com/pandas/"/>
 
 
 
 
 
-  <title>linux命令之service | TimChen</title>
+  <title>pandas note | TimChen</title>
   
 
 
@@ -313,7 +313,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timchen314.com/linux_senior_command/">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/pandas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tim Chen">
@@ -330,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux命令之service</h1>
+          <h1 class="post-title" itemprop="name headline">pandas note</h1>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T03:00:00+08:00">
-                2017-12-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T18:00:00+08:00">
+                2018-02-04
               </time>
             
 
@@ -365,8 +365,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -383,9 +383,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/linux_senior_command/#comments" itemprop="discussionUrl">
+                <a href="/pandas/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="linux_senior_command/" itemprop="commentCount"></span>
+                        data-disqus-identifier="pandas/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -410,80 +410,50 @@
       
 
       
-        <p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
-<strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
-Besides, <code>chkconfig</code> is a closely related command.</p>
+        <p>数据分析神器Pandas。</p>
 <a id="more"></a>
-<p>CentOS中的介绍：</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> info service</span></div><div class="line">DESCRIPTION</div><div class="line">       service  runs  a  System V init script in as predictable environment as</div><div class="line">       possible, removing most environment variables and with current  working</div><div class="line">       directory set to /.</div><div class="line"></div><div class="line">       The  SCRIPT  parameter  specifies  a  System  V init script, located in</div><div class="line">       /etc/init.d/SCRIPT.  The supported values  of  COMMAND  depend  on  the</div><div class="line">       invoked  script,  service  passes  COMMAND  and  OPTIONS it to the init</div><div class="line">       script unmodified.  All scripts should support at least the  start  and</div><div class="line">       stop  commands.   As  a special case, if COMMAND is --full-restart, the</div><div class="line">       script is run twice, first with the stop command, then with  the  start</div><div class="line">       command.</div><div class="line"></div><div class="line">       service --status-all runs all init scripts, in alphabetical order, with</div><div class="line">       the status command.</div><div class="line"></div><div class="line">       If the init script file does not exist, the script tries to use  legacy</div><div class="line">       actions.   If  there  is no suitable legacy action found and COMMAND is</div><div class="line">       one of actions specified in LSB Core Specification, input is redirected</div><div class="line">       to the systemctl.  Otherwise the command fails with return code 2.</div></pre></td></tr></table></figure>
-<p>[TOC]</p>
-<h2 id="service命令">service命令</h2>
-<p><code>service network start</code>就相当于<code>/etc/init.d/network start</code>。</p>
+<p>教程参考<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>  <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>  <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
 <ul>
 <li>
-<p>An example of service command:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> service netconsole</span></div><div class="line">Usage: /etc/init.d/netconsole &#123;start|stop|status|restart|condrestart&#125;</div></pre></td></tr></table></figure>
-<p>Comman used option include “start|stop|status|restart”</p>
-</li>
-<li>
-<p>An example of init service script:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">case "$1" in</div><div class="line">    start)</div><div class="line">        do start-thing;</div><div class="line">        ;;</div><div class="line">    stop)</div><div class="line">        do stop-thing;</div><div class="line">        ;;</div><div class="line">    restart)</div><div class="line">        do restart-thing;</div><div class="line">        ;;</div><div class="line">    ...</div><div class="line">esac</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="chkconfig命令">chkconfig命令</h2>
-<p>service与chkconfig的关系归纳为：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>基本</p>
 <blockquote>
-<p>先要注册成为系统服务(即service可以调用)，然后才能使用chkconfig控制运行级别。<br>
-service是chkconfig的前提条件。</p>
+<p>Pandas 基于两种数据类型，series 和 dataframe。series 是一种一维的数据类型，其中的每个元素都有各自的标签。dataframe 可以看作是一个 series 的字典。</p>
 </blockquote>
-<p><strong>注意</strong>：谨记chkconfig不是立即自动禁止或激活一个服务，它只是简单的改变了<code>/etc/rc*.d</code>中的符号连接。<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 <ul>
-<li>
-<p><code>chkconfig --list</code><br>
-If you want to list systemd services use ‘systemctl list-unit-files’.</p>
+<li>Series有一个与数组关联的数据标签，被叫做 索引 。最简单的Series是由一个数组的数据构成：</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">In [4]: obj = Series([4, 7, -5, 3])    </div><div class="line">In [5]: obj   </div><div class="line">Out[5]:   </div><div class="line">0 4   </div><div class="line">1 7   </div><div class="line">2 -5   </div><div class="line">3 3</div></pre></td></tr></table></figure>
 </li>
 <li>
-<p><code>chkconfig --add/del SERVICE</code></p>
+<p>df.head/tail<br>
+<code>df</code> is the abbre. of dataframe.<br>
+Show first 5 line：<code>df.head(5)</code></p>
 </li>
 <li>
-<p><code>chkconfig SERVICE on/off</code><br>
-是否开机就执行</p>
+<p>Changing column labels so you can getting a column by label .</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df.columns = [&apos;water_year&apos;,&apos;rain_octsep&apos;, &apos;outflow_octsep&apos;,</div><div class="line">              &apos;rain_decfeb&apos;, &apos;outflow_decfeb&apos;, &apos;rain_junaug&apos;, &apos;outflow_junaug&apos;]</div><div class="line">df.rain_octsep # 相当于df[&apos;rain_octsep&apos;]</div></pre></td></tr></table></figure>
 </li>
 <li>
-<p><code>chkconfig --level SERVICE 3456</code><br>
-只在3456级别下运行该SERVICE<br>
-(<code>/etc/rc*.d</code>下)S开始的文件向脚本传递start参数<br>
-K开始的文件向脚本传递stop参数<br>
-K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启动越晚。<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup></p>
+<p>len(df)</p>
 </li>
 <li>
-<p>相应级别的文件在<code>/etc/rc*.d</code>之下</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> ls /etc/rc*.d -d</span></div><div class="line">/etc/rc.d  /etc/rc0.d  /etc/rc1.d  /etc/rc2.d  /etc/rc3.d  /etc/rc4.d  /etc/rc5.d  /etc/rc6.d</div></pre></td></tr></table></figure>
+<p>basic statistical information of dataset.</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pd.options.display.float_format = &apos;&#123;:,.3f&#125;&apos;.format # Limit output to 3 decimal places.</div><div class="line">df.describe()</div></pre></td></tr></table></figure>
 </li>
 <li>
-<p>PS: <code>/etc/rc.d/rc*.d/</code>下的文件均为符号链接，最终绝大部分都是都是链接到<code>/etc/rc.d/init.d</code>下面。<code>/etc/rc.d/init.d</code>目录下面的都是开启启动脚本文件，用来启动相应的程序。</p>
-</li>
-<li>
-<p>PPS: 开机顺序<br>
-硬件自检 -&gt; 初始化启动bootloade -&gt; 加载内核 -&gt; 初始化硬件 -&gt; 加载根文件系统 -&gt; 加载驱动 -&gt; 启动一个init用户级程序</p>
-</li>
-<li>
-<p>PPPS: 上面两次加载硬件，是因为驱动分成两种：<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
-<blockquote>
-<p>1.随内核加载的驱动，一般是中断控制器，串口，定时器，时钟，各种总线等；这种驱动的初始化函数一般会放到一个特殊的初始化段中，在内核初始化时调用；<br>
-2.编译成模块的驱动，在内核初始化完成，也就是初始线程创建完成，出现shell时，根据应用程序的需要或者脚本按需加载。</p>
-</blockquote>
+<p>filter</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Using a series of booleans to filter</div><div class="line">df[df.rain_octsep &lt; 1000]</div><div class="line"># Filtering by multiple conditionals</div><div class="line">df[(df.rain_octsep &lt; 1000) &amp; (df.outflow_octsep &lt; 4000)] </div><div class="line"># 这里不能用 and 关键字，因为会引发操作顺序的问题。必须用 &amp; 和圆括号。</div><div class="line"># Filtering by string methods</div><div class="line">df[df.water_year.str.startswith(&apos;199&apos;)]</div><div class="line"># 注意，你必须用 .str.[string method] ，而不能直接在字符串上调用字符方法。</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="reference">reference</h2>
+<h1 id="reference">reference</h1>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://www.cnblogs.com/wangtao_20/archive/2014/04/04/3645690.html" target="_blank" rel="external">linux中注册系统服务—service命令的原理通俗</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+<li id="fn1" class="footnote-item"><p><a href="http://codingpy.com/article/a-quick-intro-to-pandas/" target="_blank" rel="external">十分钟快速入门 Pandas</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p><a href="http://blog.csdn.net/taiyang1987912/article/details/41698817" target="_blank" rel="external">linux启动脚本和service、chkconfig</a> <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a></p>
+<li id="fn2" class="footnote-item"><p><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html" target="_blank" rel="external">10 Minutes to pandas</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/35619555/answer/150110115" target="_blank" rel="external">古斟布衣</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+<li id="fn3" class="footnote-item"><p><a href="http://pda.readthedocs.io/en/latest/chp5.html" target="_blank" rel="external">indexnext |previous |Python For Data Analysis: Pandas入门</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -531,7 +501,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://timchen314.com/linux_senior_command/" title="linux命令之service">http://timchen314.com/linux_senior_command/</a>
+      <a href="http://timchen314.com/pandas/" title="pandas note">http://timchen314.com/pandas/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -547,7 +517,9 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
           
         </div>
       
@@ -560,8 +532,8 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/tools_for_MD_analysis/" rel="next" title="tools for MD analysis">
-                <i class="fa fa-chevron-left"></i> tools for MD analysis
+              <a href="/jupyter/" rel="next" title="jupyter">
+                <i class="fa fa-chevron-left"></i> jupyter
               </a>
             
           </div>
@@ -570,8 +542,8 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/docker/" rel="prev" title="docker note">
-                docker note <i class="fa fa-chevron-right"></i>
+              <a href="/Web/" rel="prev" title="Web Learning Note">
+                Web Learning Note <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -652,7 +624,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -663,7 +635,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -674,7 +646,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -759,7 +731,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#service命令"><span class="nav-text">service命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chkconfig命令"><span class="nav-text">chkconfig命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
@@ -912,9 +884,9 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://timchen314.com/linux_senior_command/';
-          this.page.identifier = 'linux_senior_command/';
-          this.page.title = 'linux命令之service';
+          this.page.url = 'http://timchen314.com/pandas/';
+          this.page.identifier = 'pandas/';
+          this.page.title = 'pandas note';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://timchen314.disqus.com/embed.js';

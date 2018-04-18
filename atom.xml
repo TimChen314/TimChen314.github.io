@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://timchen314.com/"/>
-  <updated>2018-01-28T03:44:41.000Z</updated>
+  <updated>2018-04-18T11:42:14.000Z</updated>
   <id>http://timchen314.com/</id>
   
   <author>
@@ -16,37 +16,1088 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Digital Currency Market</title>
+    <link href="http://timchen314.com/btc_market/"/>
+    <id>http://timchen314.com/btc_market/</id>
+    <published>2018-04-17T10:00:00.000Z</published>
+    <updated>2018-04-18T11:42:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="市场">市场</h3>
+<ul>
+<li>2018.01.08 Total Market Capitalization is up to 820 billion dollars, which is roughly equivalent to one year GDP of Turkey.</li>
+<li>Info source
+<ul>
+<li><a href="https://data.bitcoinity.org/markets/volume/6m?c=e&amp;r=day&amp;t=b" target="_blank" rel="external">bitcoinity</a>有相对可靠地成交量的数据</li>
+</ul>
+</li>
+</ul>
+<h4 id="交易所">交易所</h4>
+<ul>
+<li>已注册：</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>
+<p>binance：google邮箱</p>
+</li>
+<li>
+<p>币安Binance<br>
+<a href="https://zhuanlan.zhihu.com/p/32890420" target="_blank" rel="external">从零开始的比特币购买与储存图文教程</a><br>
+费用：充值免费；提现：0.0005 BTC ≈ 3到5$；交易: 0.1%</p>
+</li>
+<li>
+<p>huobi：手机号</p>
+</li>
+<li>
+<p>otcbtc: google邮箱<br>
+<a href="https://zhuanlan.zhihu.com/p/32758860" target="_blank" rel="external">如何购买 Cardano(ADA) 或其它加密币？</a></p>
+</li>
+<li>
+<p><a href="http://xn--localbitcoins-vv2u921hvhgs65bqno.com" target="_blank" rel="external">场外交易所localbitcoins.com</a> <strong>全球最大</strong><br>
+<a href="https://www.bilibili.com/video/av14653153/?from=search&amp;seid=7472298098998538778" target="_blank" rel="external">用法</a></p>
+</li>
+<li>
+<p><a href="http://xn--coincola-570m522evvenm7av7k.com" target="_blank" rel="external">场外交易所coincola.com</a> <strong>骗子交易所</strong></p>
+</li>
+</ul>
+<ul>
+<li>
+<p>btc交易份额：<br>
+<a href="https://coinmarketcap.com/currencies/bitcoin/#markets" target="_blank" rel="external">https://coinmarketcap.com/currencies/bitcoin/#markets</a><br>
+可以注册火币  币安或者OKcoin  先用法币购买usdt  然后就可以购买比特币或者其他的了</p>
+</li>
+<li>
+<p>未注册</p>
+<ul>
+<li>OKEx<br>
+份额世界最大 国内团队</li>
+<li>bitstamp 注册于卢森堡</li>
+<li>gdad 美国加州 属于Coinbase公司</li>
+<li>bitfinex 香港</li>
+</ul>
+</li>
+<li>
+<p>火币huobi</p>
+<ul>
+<li>溢价(时间为02.08 16:30)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>品种</th>
+<th>实价￥</th>
+<th>估价￥</th>
+<th>溢价比率(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC</td>
+<td>53800</td>
+<td>52430</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>ETH</td>
+<td>5388</td>
+<td>5244</td>
+<td>2.7</td>
+</tr>
+<tr>
+<td>USTD</td>
+<td>6.44</td>
+<td>6.31</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>费率<br>
+ETH/USTD 0.2%<br>
+ETH提币 0.01ETH<br>
+btc提币 0.001btc<br>
+ustd提币 10ustd<br>
+总结：提币费用总在10美元左右</p>
+</li>
+<li>
+<p>app<br>
+需要香港的apple ID；<br>
+要么直接买，要么申请；<br>
+申请而香港apple ID需要通过电话或银行卡绑定才能使用，而异地申请香港银行卡非常麻烦。<br>
+<a href="http://www.sohu.com/a/166464312_481438" target="_blank" rel="external">如何办理香港银行卡？2017最新收藏版！</a><br>
+<a href="http://www.sohu.com/a/164265016_679976" target="_blank" rel="external">聊聊怎么低成本在香港开户一张银行卡</a><br>
+<a href="http://www.icbcasia.com/ICBC/%E6%B5%B7%E5%A4%96%E5%88%86%E8%A1%8C/%E5%B7%A5%E9%93%B6%E4%BA%9A%E6%B4%B2/TC/%E5%80%8B%E4%BA%BA%E9%87%91%E8%9E%8D/%E4%BA%BA%E6%B0%91%E5%B9%A3%E5%8F%8A%E8%B7%A8%E5%A2%83%E7%90%86%E8%B2%A1/%E5%85%A7%E5%9C%B0%E5%AE%A2%E6%88%B6%E6%9C%8D%E5%8B%99%E5%B0%88%E5%8D%80/scm_aow.htm" target="_blank" rel="external">工銀亞洲內地客戶見證開戶服務介紹</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="期货">期货</h4>
+<h5 id="bitmex交易指南">bitmex交易指南</h5>
+<ul>
+<li>
+<p>大幅下跌时会无法下单，例如<br>
+18/03/12 22:15–15分钟，成交量5M，9706-&gt;9363</p>
+</li>
+<li>
+<p>合约参考价格<br>
+BMX指数是由bitstamp和gdad各贡献50%得到的；合约参考价格是基于BMX修正得到的“合理标记价格”。<br>
+因为参考价格经过了修正，所以永续合约和季度合约的“标记价格”才不同。</p>
+</li>
+<li>
+<p>费用</p>
+<ul>
+<li>maker &amp; taker<br>
+maker是限价交易单，提供流动性，有0.25%的返点；<br>
+taker是市价交易单，抽取流动性，交易费0.75%。<br>
+该费用在永续合约与定期合约中都存在。</li>
+<li>资金费用funding rate<br>
+只在永续合约中存在；每天三次收取，分别在北京时间（4:00, 12:00, 20:00）；多空双方相互支付，比如，如果多单数量比较大，多单向空方支付</li>
+<li>定期合约交割<br>
+<strong>没有找到交割的定义，我猜测，所谓交割就是平仓。</strong> XBT交割费为0.05%，其他币为0.25%（记录于18/03/19）。</li>
+<li>存款/提款 无费用</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>仓位 &amp; 保证金
+<ol start="0">
+<li>空仓时，可以以任意价格进行委托；有仓位时，委托价位不能超过爆仓价</li>
+<li>逐仓 全仓<br>
+跨期保证金<br>
+默认情况下所有仓位的最初设置都为 “全仓保证金”。<br>
+调整杠杆是整个仓位的杠杆！比如你有5x底仓，然后你想20倍加仓，那你最后的杠杆就是20x。</li>
+<li>自动减仓机制<br>
+平台会挑选杠杆高、盈利大的仓位，自动减仓，这是为了平掉对手仓，保证平台的流动性。</li>
+<li><a href="https://www.bitmex.com/app/riskLimits" target="_blank" rel="external">风险限额</a>：<br>
+仓位超过50XBT，会需要额外的保证金，仓位越大，额外保证金越多。</li>
+<li>限价止损(Stop Limit) &amp; 限价止盈(Take Profit Limit)<br>
+写在前面：触发价格默认是参考最新成交价格的，你也可以设置成标记价格或指数价格；如果在“触发后平仓”选项上打钩，那么系统只会减仓不会加仓，由于它们的行为很绕，这样可以防止失误。<br>
+首先要注意，在没有达到触发价格之前，是不需要下单保证金的。<br>
+其次，这个翻译好像有点问题，Stop Limit和Take Profit Limit并不是意在止损和止盈，它们的行为如下：<br>
+限价止损(Stop Limit)，触发价格高于参考价格，只允许买入/做多；触发价格低于参考价格，只允许卖出/做空。<strong>这一行为与你持有多仓还是空仓并没有关系！</strong>。限价止盈(Take Profit Limit)刚好相反，触发价格高于参考价格，只允许卖出/做空；触发价格低于参考价格，只允许买入/做多。<br>
+如何记忆：<br>
+对于限价止损(Stop Limit)，为了方便，可以理解成系统是假设你开空的，如果你开了空仓要止损，才会触发价格高于参考价格时买入。</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>账本
+<ul>
+<li>
+<p>测试<br>
+1000CNY -&gt; 537 ADA -&gt;(18/03/12) 0.01222212btc -&gt; 转账后0.0117</p>
+</li>
+<li>
+<p>Until to 2018/03/21<br>
+Total CNY = 13000<br>
+Deposit = 0.2254 = 0.0117 + 0.0731 + 0.1406（Deposit Time: 2018/03/12 pm 5:35:43, 2018/03/19 pm 12:09:54, 2018/03/20 12:43:10 ）<br>
+Withdraw = 0.0102 (Withdraw Time: 2018/03/21 12:30:38 ; 0.0002 is transaction fee.)<br>
+Net Deposit = 0.2152</p>
+</li>
+<li>
+<p>Until to 2018/03/27<br>
+Total CNY = 23000<br>
+Deposit = 0.4167 = 0.0117 + 0.0731 + 0.1406 + 0.1913（Deposit Time: 2018/03/12 pm 5:35:43, 2018/03/19 pm 12:09:54, 2018/03/20 12:43:10 ）<br>
+Withdraw = 0.0102 (Withdraw Time: 2018/03/21 12:30:38 ; 0.0002 is transaction fee.)<br>
+Net Deposit = 0.40651</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>其他
+<ul>
+<li>提币时间为每天UTC 13：00前（北京时间21：00）；</li>
+<li>btc盈亏<br>
+btc盈亏$ = (1$/open - 1$/close )*close = close/open = btc/$ 涨跌<br>
+例如开1万$多仓，按照美元计价，那么btc价格上涨10%，收益就是1000$；下跌10%，收益是-1000$</li>
+<li><a href="https://datamish.com/dashboard/db/btcusd?refresh=10s&amp;orgId=1&amp;from=1521070753057&amp;to=1523707776033" target="_blank" rel="external">Datamish: collecting dada from bitmex</a> Super useful!</li>
+</ul>
+</li>
+</ul>
+<h5 id="问题">问题</h5>
+<ul>
+<li>
+<p>&quot;account has insufficient available balance&quot;<br>
+状态： 已开空单，20x<br>
+现象： 无法开10x多单<br>
+答：杠杆是整个仓位的杠杆，而不是一笔交易的杠杆。由于仓位中可用余额有限，而持仓的合约很多，杠杆只能保持在很高的水平。</p>
+</li>
+<li>
+<p>429<br>
+&quot;你发出太多的请求。请稍候，然后重试。&quot;</p>
+</li>
+</ul>
+<h5 id="bitmex自动交易">bitmex自动交易</h5>
+<ul>
+<li>
+<p>错误</p>
+<ul>
+<li>无法连接服务器（没有翻墙也会导致这个问题）</li>
+</ul>
+ <figure class="highlight plain"><figcaption><span>22:01:47,646 - INFO - ws_thread - Started thread</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2018-03-23 22:01:52,666 - ERROR - ws_thread - Couldn&apos;t connect to WS! Exiting.</div></pre></td></tr></table></figure>
+<ul>
+<li>api_key错误</li>
+</ul>
+ <figure class="highlight plain"><figcaption><span>21:19:20,598 - INFO - ws_thread - Started thread</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2018-03-23 21:19:22,799 - ERROR - ws_thread - Handshake status 401 Unauthorized</div></pre></td></tr></table></figure>
+<ul>
+<li>Errno 61<br>
+<code>2018-03-29 20:27:00,382 - ERROR - ws_thread - [Errno 61] Connection refused</code><br>
+原因未知。</li>
+</ul>
+</li>
+<li>
+<p>TIPS:</p>
+<ul>
+<li>mac上，shadowsocks在命令行下士无效的。想要在命令行下shadowsocks，请参考<br>
+<a href="http://www.cashqian.net/blog/001486989831982332565298e4942a2bb8f56b08f9d2475000" target="_blank" rel="external">Mac命令行终端下使用shadowsocks翻墙</a>。<br>
+最终测试可以用<code>curl www.google.com</code>（注意www不能少），成功的话会返回一堆html。</li>
+<li>时间单位是秒（例如<code>TIMEOUT = 2</code>）</li>
+</ul>
+</li>
+</ul>
+<h5 id="期货基础">期货基础</h5>
+<ul>
+<li>
+<p>BRR()和BRTI（Bitcoin Real Time Index）是CME推出的标准化btc价格指数。</p>
+</li>
+<li>
+<p>交易所期货：bitfinex、bitmex、okex</p>
+</li>
+<li>
+<p>Market Order , Limit , Stop, Stop Limit<br>
+市价、限价、止损/盈、限价止损/盈。Stop采用的是市价。<br>
+限价会保证 成交价格，价格达不到就不成交；市价是保证成交，价格达不到就涨/降价格。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>已实现亏盈和未实现亏盈<br>
+比如bitmex开仓100手，那只有未实现盈亏；如果这100手平掉40手，还剩60手，那么平掉的40手就会产生未实现盈亏。</p>
+</li>
+<li>
+<p>期货定价机制(bitmex)<br>
+比特币以太坊期货等还有个名字叫做“虚拟合约”，本质可以理解为“炒空气”，期货的本质是多空互相博弈，买入来自于平空&amp;开多，卖出来自于开空&amp;平多，交易的平衡最终决定了当前成交价。但是这个价格总会和实币交易有偏差。</p>
+</li>
+</ul>
+<p>Please note that the execution price you see is your bankruptcy price, not your liquidation price. Your liquidation price includes the maintenance margin requirement of 0.5% over 17024, which is 16935.</p>
+<p>强制平仓损失=未实现亏+仓位占用的保证金。计算强平价格时候，要把持仓保证金算进去！！！</p>
+<h5 id="tips">TIPS:</h5>
+<ul>
+<li><a href="https://www.zhihu.com/question/68686398/answer/333151303" target="_blank" rel="external">btc期货没有点差</a><br>
+点差–spread</li>
+<li>下载大陆用不了的app
+<ul>
+<li>taobao香港的AppleID就可以。<br>
+买来之后只用AppleID登陆app store，而不登录iCloud，就是安全的</li>
+<li>美国AppleID不行，还需要绑定美国的信用卡或paypal。注意必须用美国的户头绑定到paypal才有用。</li>
+</ul>
+</li>
+</ul>
+<h5 id="策略">策略</h5>
+<ol start="0">
+<li>掉期</li>
+<li>hedge</li>
+<li>顺势</li>
+<li>发动趋势</li>
+<li>少量仓位一百倍杠杆<br>
+杠杆</li>
+</ol>
+<h5 id="交易系统研究">交易系统研究</h5>
+<h6 id="boll-布林线">BOLL（布林线）</h6>
+<ul>
+<li>计算
+<blockquote>
+<p>（1）计算MA<br>
+MA=N日内的收盘价之和÷N<br>
+（2）计算标准差MD<br>
+MD=平方根N日的（C－MA）的两次方之和除以N<br>
+（3）计算MB、UP、DN线<br>
+MB=（N－1）日的MA<br>
+UP=MB＋2×MD<br>
+DN=MB－2×MD</p>
+</blockquote>
+</li>
+<li>信号
+<ul>
+<li>对于BTC日线，默认参数(20, 2)似乎确实是最有效的。<br>
+20指的是平均的天数；2指的是两倍标准差；后面结论都建立在本条基础之上。<br>
+如果阐述设为其他值，比如(99, 2)，那么中线和标准差都有99天的价格计算得到的，那么它对近期的价格变化非常非常不敏感！</li>
+<li>超出上轨/下轨不是一点的，都会回调。</li>
+<li>收窄意味着转折可能要发生。</li>
+</ul>
+</li>
+</ul>
+<h5 id="心得">心得</h5>
+<ul>
+<li>
+<p>搞清楚状态！！！<br>
+有好多次下单弄错了价格/数量/合约/杠杆。这是非常危险的。</p>
+</li>
+<li>
+<p>不要重仓<br>
+<a href="https://www.zhihu.com/question/33322297" target="_blank" rel="external">如何看待期货界传奇人物刘强跳楼自杀事件？</a></p>
+</li>
+<li>
+<p>18/03/18到18/03/19两天，btc反弹20%！<br>
+在连续一段时间的下跌后，我的思路也受到了限制。幸亏有几次小幅度减仓，外加充值了一些，否则爆仓了。</p>
+</li>
+<li>
+<p>因为做空，就心理偏向空方，而且也不愿意兑现损失。</p>
+</li>
+<li>
+<p>18/03/26 本来看空，想找反弹，结果就为了不愿意兑现损失，持续加仓！<br>
+暴露问题是：</p>
+<ol start="0">
+<li>思想上，上涨预期在26号02：00和26号13：00都没有没有兑现，却仍然没有改变思路！</li>
+<li>不愿兑现损失，导致头寸暴露，最终导致巨大风险</li>
+<li>没有止损，资金管理糟糕，没有规则。<br>
+正确的做法是:</li>
+<li>首先思想上要转变，逾期没有兑现，这说明你没有看清楚情况，先赶快出场！！！</li>
+<li>敢于并甘于兑现损失</li>
+<li>学习资金管理策略</li>
+</ol>
+</li>
+</ul>
+<h3 id="中英文词汇表">中英文词汇表</h3>
+<p>spread – 点差<br>
+market/limit – 市价/限价<br>
+position – 头寸<br>
+Settlement – 交割（bitmex adapt cash settlement）<br>
+expiry – 到期<br>
+exercise – 行权</p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;市场&quot;&gt;市场&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;2018.01.08 Total Market Capitalization is up to 820 billion dollars, which is roughly equivalent to one year GDP of Turkey.&lt;/li&gt;
+&lt;li&gt;Info source
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://data.bitcoinity.org/markets/volume/6m?c=e&amp;amp;r=day&amp;amp;t=b&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;bitcoinity&lt;/a&gt;有相对可靠地成交量的数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;交易所&quot;&gt;交易所&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;已注册：&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
+    
+    
+      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vultr VPS</title>
+    <link href="http://timchen314.com/VPS_Vultr/"/>
+    <id>http://timchen314.com/VPS_Vultr/</id>
+    <published>2018-03-31T10:00:00.000Z</published>
+    <updated>2018-04-18T11:42:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Vultr是老牌的VPS服务商。这里记录一下购买和使用流程。</p>
+<a id="more"></a>
+<ul>
+<li>可以支付宝</li>
+<li>费用是随用随扣<br>
+买了主机，不想用（比如我因为ping太高了），可以马上销毁，点击&quot;Server Destory&quot;就可以。费用只有几美分。<br>
+可以再&quot;Deploy&quot;其他Server。</li>
+<li>ping<br>
+将<a href="HTTPS://WWW.VULTRVPS.COM/TEST-SERVER" target="_blank" rel="external">VULTR各节点测试地址</a>的结果粘贴到自己的linux/mac的node_info_file文件上，再执行下面shell命令，批量测速。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for node in $(awk &apos;&#123;for(i=1;i&lt;=NF;++i) &#123;print $i&#125;&#125;&apos; node_info_file | grep com); </div><div class="line">do </div><div class="line">    echo $node </div><div class="line">    ping -c 5 $node</div><div class="line">done</div></pre></td></tr></table></figure>
+<p>oneline模式<code>for node in $(awk '{for(i=1;i&lt;=NF;++i) {print $i}}' node_info_file | grep com); do echo $node ; ping -c 5 $node; done &gt; result</code><br>
+<strong>结果是Tokyo的机房最快。</strong></p>
+<ul>
+<li>给的是root用户<br>
+可以自己建普通用户。</li>
+<li>Deploy的时候填上ssh-key可以免密登录<br>
+这个免密登录只针对root用户，普通用户如果想免密登录，可将/root/.ssh中的内容拷贝到自己的home目录下。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vultr是老牌的VPS服务商。这里记录一下购买和使用流程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术杂烩" scheme="http://timchen314.com/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+    
+      <category term="技术杂烩" scheme="http://timchen314.com/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E7%83%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About Digital Currency</title>
+    <link href="http://timchen314.com/digital_currency/"/>
+    <id>http://timchen314.com/digital_currency/</id>
+    <published>2018-03-22T10:00:00.000Z</published>
+    <updated>2018-04-18T11:42:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>What a bubble!<br>
+<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
+<a id="more"></a>
+<h2 id="总览">总览</h2>
+<h3 id="info">Info</h3>
+<p><img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/%E6%9D%82/Percentage_of_Total_Market_Capitalization_Dominance.png" alt="image"></p>
+<h4 id="source">source</h4>
+<ol start="0">
+<li><a href="https://coinmarketcap.com" target="_blank" rel="external">Cryptocurrency Market Capitalizations</a></li>
+<li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
+<li>很好的网站  <a href="http://bitcointalk.org/" target="_blank" rel="external">http://bitcointalk.org/</a></li>
+</ol>
+<h3 id="问题与挑战">问题与挑战</h3>
+<h4 id="1-税收">1. 税收</h4>
+<p>美国国税局（IRS, Internal Revenue Service）在努力调查bitcoin避税，这是bitcoin正式应用所面临的一个问题。</p>
+<blockquote>
+<p>像达世（Dash）、门罗（Monero）和ZCash等币都部署了隐私功能，其交易是很难被追踪到的。</p>
+</blockquote>
+<h4 id="个人目标">个人目标</h4>
+<ul>
+<li>量化策略投资<br>
+ICO是一锤子买卖，在2018年会有很多坑。ICO及其之后的项目准备阶段，币价的特点是不确定性大、严重依赖消息。<br>
+资金量大、消息面广的，可以广撒网。<br>
+以我的资金量和消息面，是玩不转的。</li>
+</ul>
+<ul>
+<li>自媒体？</li>
+</ul>
+<ol>
+<li><a href="https://www.zhihu.com/question/52116246" target="_blank" rel="external">英文翻译</a><br>
+猪八戒上千字100，千字140的价格算高的了。</li>
+<li>英文约稿与推荐<br>
+只要求中文独家，最好中文先发。</li>
+<li>中文转载</li>
+</ol>
+<h2 id="待读-进展">待读&amp;进展</h2>
+<h3 id="待读">待读</h3>
+<p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885521" target="_blank" rel="external">以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行</a><br>
+<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a><br>
+<a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
+<a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
+<h3 id="进展">进展</h3>
+<p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
+<h2 id="digital-currency">digital currency</h2>
+<h3 id="ethereum-new-set">ethereum (new_set)</h3>
+<ul>
+<li>practice<br>
+My understanding:
+<ol>
+<li>init first block.</li>
+<li>then you can mine.</li>
+</ol>
+</li>
+</ul>
+<h3 id="cardano">cardano</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/32874568" target="_blank" rel="external">cardano简介</a><br>
+爱丁堡大学一个中心IOHK牵头。</p>
+<ul>
+<li>ADA <a href="https://daedaluswallet.io/faq/" target="_blank" rel="external">不支持win32和移动钱包</a></li>
+</ul>
+<h3 id="eos">EOS</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/33496593" target="_blank" rel="external">EOS：疯子的狂欢</a></p>
+<ul>
+<li>BM出品，李笑来站台</li>
+</ul>
+<h3 id="steem"><s>STEEM</s></h3>
+<ul>
+<li>BM出品，远没有btc强势</li>
+</ul>
+<h3 id="其他币">其他币</h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34723125?group_id=959209805945008128" target="_blank" rel="external">TUNE：音乐应用</a><br>
+三位创始人都是格莱美奖得主。</li>
+</ul>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34733907" target="_blank" rel="external">太空链</a>：严重破发</li>
+</ul>
+<p>薛蛮子认为：</p>
+<blockquote>
+<p>对于ICO的投资标准，薛蛮子表示，首先是人靠谱，此前投资的比原链是国内区块链最大的社区巴比特发起的，墨链是纸贵科技发起的，BEX是美豹金融发起的，这些项目的团队本身已经有了成功的创业案例，且在细分领域处于排头兵的地位。</p>
+</blockquote>
+<blockquote>
+<p>拿比原链来说，薛蛮子表示，“我认为，比原链的创始团队很年轻，富有朝气，大家都很努力，但是比原链的技术挑战挺大，需要天时地利人和，很多条件具备才能做成，不是轻描淡写，一挥而就的。团队最要紧的是不断试错，踏踏实实做事情，不要辜负投资人的信任。我不看好的是，有的小伙子一辈子没赚过大钱，也没花过100万以上的钱，突然通过ICO拿了几个亿，这些人hold不住。”</p>
+</blockquote>
+<h2 id="tech">tech</h2>
+<blockquote>
+<p>1、 共识算法:POW/POS/DPOS/PBFT/BFT-Raft/Paxos/Kafka<br>
+2、 P2P通讯:自举(bootstrapped)/连接/广播<br>
+3、 签名验签:ECDSA/secp256k1/ED25519/MultiSig<br>
+4、 Hash锁定:Merkle树/MPT树<br>
+5、 UTXO记账:流水账<br>
+6、 智能合约:P2PKH/P2SH/Oracle/状态机<br>
+7、 隐私保护:零知识证明、同态加密、CoinJoin加密技术<br>
+8、 私钥存储:HD协议(Hierarchical Deterministic Key Creation)、钱包Wallets、丢失找回<br>
+9、 算力分发：矿池分发</p>
+</blockquote>
+<ul>
+<li>冷热钱包<br>
+热是指在线。如果热钱包断网，那么从存储的角度来讲，也是冷钱包了。但是离线的热钱包和冷钱包还是有很多不同之处。</li>
+</ul>
+<p><a href="https://www.zhihu.com/question/21478404" target="_blank" rel="external">常用的钱包</a></p>
+<h3 id="共识">共识</h3>
+<p><a href="https://www.zhihu.com/question/267440381/answer/325981371" target="_blank" rel="external">区块链技术如何兼顾共识和匿名，解决储存和处理速度问题？</a><br>
+1.共识机制下如何兼顾匿名。举个例子，甲转账给乙两个比特币，但乙不承认。在共识机制下，我们都可以看到确实有2个比特币从地址A转到了地址B，此时有<br>
+问题一：甲可以想办法证明地址A就是他的，但这个证明仍旧是传统的，需要一个个说服别人的证明，而不是一下子说服全部人的证明。<br>
+问题二：即使甲说服了大部分人地址A就是他的，乙仍旧可以不承认地址B是他的，也没有共识机制可以指出地址B是谁的。甲仍旧不能证明转给乙两个比特币。<br>
+问题三：如果存在共识机制能指出地址AB是对应甲和乙的，隐私性就无从谈起，等于所有人的交易都是暴露的。<br>
+2.数据储存过大。举个例子在淘宝买东西，传统交易是中心化的，数据都记录在阿里的硬盘里，我们害怕阿里偷偷修改了以前的数据，要去中心化，所以用上了区块链技术取代阿里云，但所有的交易数据可不是几个T这么少，普通用户如何储存。如果只是少数人储存，那仍旧没有去中心化。<br>
+3.计算速度的问题。假设以后所有交易都在区块链上，区块链技术也得到改进，每秒能处理上亿比交易，如果每个人都要记录，是否意味着每个人都有强大的处理能力，如果但普通计算机无法胜任，只能交给少数超级计算机处理，是否意味普通人失去了记录的能力。</p>
+<p>共识（consensus）算法指的是大家对某一个提案达成一致意见的过程，也就是分布式系统中多个节点之间，对某个状态达成一致结果的过程。至于提案（proposal），几乎可以认为任何可以达成一致的信息就是一个提案。</p><p>在具体的区块记账中，问题1所对应的提案就是地址A向地址B转账这条交易信息是否存在。达成共识的过程就是大家确认该笔交易存在并且有效。因此，不涉及到问题1.1和1.2，即地址A是甲的地址，地址B是乙的地址这个身份关联过程，因此，可以视为该过程是匿名的。除非提案内容更改为&quot;地址A是甲的地址，地址B是乙的地址，地址A向地址B发起了一笔转账&quot;。<br>
+这样就触发了问题三，问题三的描述里，确实无法保证隐私性，这个不用多说。</p>
+<h3 id="闪电链">闪电链</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/34681487" target="_blank" rel="external">闪电链科普</a>：<br>
+所谓闪电链就是小额交易不上主链，而是放在侧链上，在达到一定交易量后再统一上到主链上。<br>
+闪电链相当于中心化的节点。</p>
+<blockquote>
+<p><strong>闪电网络的反作弊机制</strong><br>
+一个叫双向支付通道（Bi-Directional Payment Channel )<br>
+一个叫时间锁（TimeLock）<br>
+一个叫密码（Secret Value）</p>
+</blockquote>
+<p>双向通道：交易双方都确认，才能交易成功。</p>
+<h3 id="pow">POW</h3>
+<ul>
+<li>btc的block上，负责POW的nounce。</li>
+<li>btc采用POW是为了增加作假block的成本，进而禁止了双花。</li>
+</ul>
+<h3 id="utxo">UTXO</h3>
+<p><a href="http://8btc.com/thread-45640-1-1.html" target="_blank" rel="external">玛_雅和vatten解释的很好</a><br>
+<a href="http://8btc.com/article-4381-1.html" target="_blank" rel="external">其实并没有什么比特币，只有 UTXO</a></p>
+<h3 id="隐私保护机制">隐私保护机制<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
+<ol>
+<li>
+<p>零知识证明<br>
+<img src="https://pic4.zhimg.com/80/v2-8e9aa2a8dd3457c05cbbc688f2679ff1_hd.jpg" alt="image"><br>
+零知识证明也就是证明者在不泄露秘密的情况下，让验证者相信证明者知道这个秘密。</p>
+<blockquote>
+<p>Zcash是首个使用零知识证明机制的区块链系统。不同于其他加密数字货币会公开所有的交易记录，Zcash可以用零知识证明将完全加密的交易记录确认为有效，但是他有一个很关键的缺点就是<strong>速度缓慢</strong>。<br>
+Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行隐藏。</p>
+</blockquote>
+</li>
+<li>
+<p>同态加密</p>
+<blockquote>
+<p>明文加密后得到密文，对密文进行特定的代数运算得到的还是加密的结果，对结果进行解密可以得到对明文进行同样运算一样的结果。也就是说可以在不知道原数据的情况下进行运算，最后同样能得到正确的结果。</p>
+</blockquote>
+</li>
+<li>
+<p>混币</p>
+<blockquote>
+<p>以门罗币（Monero）为例，他使用了RingCT（环形加密匿名）技术来实现隐私保护。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="problem">problem</h3>
+<ul>
+<li>what is private network?</li>
+</ul>
+<h2 id="资料-引用">资料&amp;引用</h2>
+<ul>
+<li>
+<p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a><br>
+<a href="https://zhuanlan.zhihu.com/p/34220442?group_id=953729236041809920" target="_blank" rel="external">2亿美元被锁死在区块链中？以太坊智能合约被爆存在巨大漏洞，新技术落地恐怕要“迟到”了</a></p>
+</li>
+<li>
+<p>BM是指网名byteMaster (Daniel Larimer)的程序员，BTS、STEEMIT、EOS创始人</p>
+</li>
+</ul>
+<p>reference:</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/34709735" target="_blank" rel="external">知识点 || 区块链的隐私保护机制有哪些？真的安全吗？</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;What a bubble!&lt;br&gt;
+&lt;img src=&quot;https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png&quot; alt=&quot;bitcoin&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
+    
+    
+      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web Learning Note</title>
+    <link href="http://timchen314.com/Web/"/>
+    <id>http://timchen314.com/Web/</id>
+    <published>2018-03-22T10:00:00.000Z</published>
+    <updated>2018-04-18T11:42:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="html5">html5</h1>
+<ul>
+<li>html In a nutshell<br>
+The <code>&lt;head&gt;</code> element contains meta information about the document<br>
+The <code>&lt;body&gt;</code> element contains the visible page content<br>
+HTML elements are the building blocks of HTML pages<br>
+HTML elements are represented by tags</li>
+</ul>
+<a id="more"></a>
+<p>HTML tags label pieces of content such as “heading”, “paragraph”, “table”, and so on<br>
+tags:<br>
+<code>&lt;tagname&gt;content goes here...&lt;/tagname&gt;</code></p>
+<h2 id="html-basic">html basic</h2>
+<ul>
+<li>
+<p>Headings<br>
+e.g., <code>&lt;h1&gt;</code></p>
+</li>
+<li>
+<p>Paragraphs<br>
+<code>&lt;p&gt;</code></p>
+</li>
+<li>
+<p>Links <code>&lt;a&gt;</code><br>
+<code>&lt;a href=&quot;https://www.w3schools.com&quot;&gt;This is a link&lt;/a&gt;</code></p>
+<ul>
+<li>local links<br>
+<code>&lt;a href=&quot;html_images.asp&quot;&gt;HTML Images&lt;/a&gt;</code></li>
+<li>colors<br>
+By default, a link will appear like this (in all browsers):<br>
+An unvisited link is underlined and blue<br>
+A visited link is underlined and purple<br>
+An active link is underlined and red<br>
+You can change the default colors, e.g.:</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">a:link &#123;</div><div class="line">    color: green; </div><div class="line">    background-color: transparent; </div><div class="line">    text-decoration: none;</div><div class="line">&#125;</div><div class="line">a:visited &#123;</div><div class="line">    color: pink;</div><div class="line">    background-color: transparent;</div><div class="line">    text-decoration: none;</div><div class="line">&#125;</div><div class="line">a:hover &#123;</div><div class="line">    color: red;</div><div class="line">    background-color: transparent;</div><div class="line">    text-decoration: underline;</div><div class="line">&#125;</div><div class="line">a:active &#123;</div><div class="line">    color: yellow;</div><div class="line">    background-color: transparent;</div><div class="line">    text-decoration: underline;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://www.w3schools.com/html/html_links.asp" target="_blank" rel="external">target Attribute</a><br>
+Available values: <code>_blank</code>, <code>_self</code>, <code>_parent</code>, <code>_top</code>, <code>framename - Opens the linked document in a named frame</code></li>
+<li>images<br>
+Note: <code>border:0</code>; is added to prevent IE9 (and earlier) from displaying a border around the image (when the image is a link).</li>
+<li>Create a Bookmark</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;h2 id=&quot;C4&quot;&gt;Chapter 4&lt;/h2&gt;</div><div class="line">&lt;a href=&quot;#C4&quot;&gt;Jump to Chapter 4&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Images<br>
+<code>&lt;img src=&quot;w3schools.jpg&quot; alt=&quot;W3Schools.com&quot; width=&quot;104&quot; height=&quot;142&quot;&gt;</code><br>
+The style attributes are valid in HTML5 and suggested.</p>
+<ul>
+<li>Floating<br>
+let the image float to the right or to the left of a text</li>
+<li>maps<br>
+An image-map is an image with clickable areas.</li>
+<li>Background image</li>
+</ul>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"background-image:url('clouds.jpg')"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Background Image<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>picture element<br>
+Introduced since html5.</li>
+</ul>
+<blockquote>
+<p>Always specify an <img> element as the last child element of the <picture> element. The <img> element is used by browsers that do not support the <picture> element, or if none of the <source> tags matched.</picture></picture></p>
+</blockquote>
+</li>
+<li>
+<p>Buttons<br>
+<code>&lt;button&gt;Click me&lt;/button&gt;</code></p>
+</li>
+<li>
+<p>Lists<br>
+HTML lists are defined with the <code>&lt;ul&gt;</code> (unordered/bullet list) or the <code>&lt;ol&gt;</code> (ordered/numbered list) tag, followed by <code>&lt;li&gt;</code> tags (list items)<br>
+<code>&lt;ul&gt;</code><br>
+<code>&lt;li&gt;Coffee&lt;/li&gt;</code><br>
+<code>&lt;/ul&gt;</code></p>
+</li>
+</ul>
+<h2 id="elements">elements</h2>
+<p>An HTML element usually consists of a start tag and end tag, with the content inserted in between:<br>
+<code>&lt;tagname&gt;Content goes here...&lt;/tagname&gt;</code></p>
+<ul>
+<li>
+<p><code>&lt;br&gt;</code> element<br>
+which indicates a line break.<br>
+Empty elements can be “closed” in the opening tag like this: <code>&lt;br /&gt;</code>.<br>
+HTML5 does not require empty elements to be closed. But if you want stricter validation, or if you need to make your document readable by XML parsers, you must close all HTML elements properly.</p>
+</li>
+<li>
+<p><code>&lt;hr&gt;</code> 水平分割线<br>
+a thematic break.</p>
+</li>
+<li>
+<p>headings<br>
+Note: Use HTML headings for headings only. Don’t use headings to make text BIG or bold.<br>
+For Bigger Headings use: <code>&lt;h1 style=&quot;font-size:60px;&quot;&gt;Heading 1&lt;/h1&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;head&gt;</code> Element<br>
+The HTML <head> element has nothing to do with HTML headings.<br>
+The <head> element is a container for metadata. HTML metadata is data about the HTML document. Metadata is not displayed.<br>
+<strong>The <head> element is placed between the <html> tag and the <body> tag:</body></html></head></strong></head></head></p>
+</li>
+<li>
+<p><code>&lt;pre&gt;</code><br>
+The text inside a <pre> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks. <a href="https://www.w3schools.com/html/html_paragraphs.asp" target="_blank" rel="external">link</a></pre></p>
+</li>
+<li>
+<p>Formating element</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;b&gt; - Bold text   </div><div class="line">&lt;strong&gt; - Important text   </div><div class="line">&lt;i&gt; - Italic text   </div><div class="line">&lt;em&gt; - Emphasized text   </div><div class="line">&lt;mark&gt; - Marked text   </div><div class="line">&lt;small&gt; - Small text   </div><div class="line">&lt;del&gt; - Deleted text   </div><div class="line">&lt;ins&gt; - Inserted text   </div><div class="line">&lt;sub&gt; - Subscript text   </div><div class="line">&lt;sup&gt; - Superscript text</div></pre></td></tr></table></figure>
+<p>Note: Browsers display <code>&lt;strong</code>&gt; as <code>&lt;b</code>&gt;, and <code>&lt;em</code>&gt; as <code>&lt;i</code>&gt;. However, there is a difference in the meaning of these tags: <code>&lt;b</code>&gt; and <code>&lt;i</code>&gt; defines bold and italic text, but <code>&lt;strong</code>&gt; and <code>&lt;em</code>&gt; means that the text is “important”.</p>
+</li>
+<li>
+<p>Quotations</p>
+<ul>
+<li><code>&lt;q&gt;</code> for short and <code>&lt;blockquote&gt;</code> for long Quotations<br>
+e.g., :</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>cite="http://www.worldwildlife.org/who/index.html"></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">For 50 years, WWF has been protecting the future of nature.</div><div class="line">The world&apos;s leading conservation organization,</div><div class="line">WWF works in 100 countries and is supported by</div><div class="line">1.2 million members in the United States and</div><div class="line">close to 5 million globally.</div><div class="line">&lt;/blockquote&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;abbr&gt;</code><br>
+Marking abbreviations can give useful information to browsers, translation systems and search-engines.</li>
+<li><code>&lt;cite&gt;</code><br>
+The HTML <cite> element defines the title of a work.</cite></li>
+<li><code>&lt;bdo&gt;</code> Bi-Directional Override<br>
+e.g., <code>&lt;bdo dir=&quot;rtl&quot;&gt;</code></li>
+</ul>
+<h2 id="comments">comments</h2>
+<p>e.g., <code>&lt;!-- Do not display this at the moment &lt;img border=&quot;0&quot; src=&quot;pic_mountain.jpg&quot; alt=&quot;Mountain&quot;&gt; --&gt;</code></p>
+<h2 id="attributes">Attributes</h2>
+<p>Attributes usually come in name/value pairs like: <strong>name=“value”</strong>, blank is used to sperate attributes.<br>
+e.g., <code>&lt;a href=&quot;https://www.w3schools.com&quot;&gt;This is a link&lt;/a&gt;</code><br>
+<code>href</code> is an attributes.</p>
+<ul>
+<li><code>src</code></li>
+<li><code>width</code> &amp; <code>height</code></li>
+<li><code>alt</code><br>
+The alt attribute specifies an alternative text to be used, when an image cannot be displayed.<br>
+The value of the attribute can be read by screen readers. This way, someone “listening” to the webpage, e.g. a blind person, can “hear” the element.</li>
+<li><code>style</code><br>
+color, font, size etc.<br>
+e.g., <code>&lt;p style=&quot;color:red&quot;&gt;I am a paragraph&lt;/p&gt;</code></li>
+<li><code>lang</code><br>
+<code>&lt;html lang=&quot;en-US&quot;&gt;</code> is important for accessibility applications (screen readers) and search engines.</li>
+<li><code>title</code><br>
+Here, a title attribute is added to the <p> element. The value of the title attribute will be displayed as a tooltip when you mouse over the paragraph. <a href="https://www.w3schools.com/html/html_attributes.asp" target="_blank" rel="external">HTML Attributes</a></p></li>
+</ul>
+<h2 id="json">JSON<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<blockquote>
+<p>JSON[1] 结构有两种结构[2]<br>
+json简单说就是javascript中的对象和数组，所以这两种结构就是对象和数组两种结构，通过这两种结构可以表示各种复杂的结构<br>
+1、对象：对象在js中表示为“{}”括起来的内容，数据结构为 {key：value,key：value,…}的键值对的结构，在面向对象的语言中，key为对象的属性，value为对应的属性值，所以很容易理解，取值方法为 对象.key 获取属性值，这个属性值的类型可以是 数字、字符串、数组、对象几种。<br>
+2、数组：数组在js中是中括号“[]”括起来的内容，数据结构为 [“java”,“javascript”,“vb”,…]，取值方式和所有语言中一样，使用索引获取，字段值的类型可以是 数字、字符串、数组、对象几种。<br>
+经过对象、数组2种结构就可以组合成复杂的数据结构了。</p>
+</blockquote>
+<h2 id="forms">Forms</h2>
+<ul>
+<li>
+<p><code>&lt;input&gt;</code> Element</p>
+<ul>
+<li>type value<br>
+<code>text</code>, <code>radio</code>, <code>submit</code></li>
+<li><code>name</code> Attribute<br>
+Each input field must have a name attribute to be submitted. If the name attribute is omitted, the data of that input field will not be sent at all.</li>
+</ul>
+</li>
+<li>
+<p>Action Attribute<br>
+The action attribute defines the action to be performed when the form is submitted.</p>
+</li>
+<li>
+<p>Target Attribute</p>
+<ul>
+<li>type value<br>
+<code>_self</code>, <code>_blank</code>,</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips">TIPS</h2>
+<ul>
+<li>.htm or .html has no difference.</li>
+<li>HTML tags are not case sensitive<br>
+The HTML5 standard does not require lowercase tags, but W3C recommends lowercase in HTML, and demands lowercase for stricter document types like XHTML.</li>
+<li>Quote Attribute Values<br>
+W3C recommends quotes in HTML, and demands quotes for stricter document types like XHTML.<br>
+<strong>single quotes can also be used.</strong></li>
+<li>With HTML, you cannot change the output by adding extra spaces or extra lines in your HTML code.</li>
+<li>display special symbols<br>
+© - <code>&amp;copy;</code><br>
+® - <code>&amp;reg;</code><br>
+™ - <code>&amp;trade;</code></li>
+<li>MIME type<br>
+也称作content type。<code>Content-Type: text/HTML</code>：http协议中<code>Content-Type</code>的值就是mime type。<br>
+更多信息见：<a href="https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B" target="_blank" rel="external">wiki 互联网媒体类型</a></li>
+</ul>
+<h1 id="css3">CSS3</h1>
+<p>CSS(层叠样式表 Cascading Style Sheets)，专门用来负责html里的<code>&lt;style&gt;</code>。<br>
+<strong>CSS的语法很简单，选择器：{属性1：属性值; 属性2：属性值}。</strong></p>
+<blockquote>
+<p>CSS can be added to HTML elements in 3 ways:</p>
+</blockquote>
+<ul>
+<li>Inline - by using the style attribute in HTML elements</li>
+<li>Internal - by using a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section</li>
+<li>External - by using an external CSS file<br>
+Three examples:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.w3schools.com/html/styles.css&quot;&gt; </div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;/html/styles.css&quot;&gt;</div></pre></td></tr></table></figure>
+<p>Your first test:<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">body &#123;</div><div class="line">    background-color: lightblue;</div><div class="line">&#125;</div><div class="line">h1 &#123;</div><div class="line">    color: white;</div><div class="line">    text-align: center;</div><div class="line">&#125;</div><div class="line">p &#123;</div><div class="line">    font-family: verdana;</div><div class="line">    font-size: 20px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;My First CSS Example&lt;/h1&gt;</div><div class="line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>id attribute<br>
+Note: The id of an element should be unique within a page, so the id selector is used to select one unique element!</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;p01&quot;&gt;I am different&lt;/p&gt;</div><div class="line">#p01 &#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>class attribute</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p class=&quot;error&quot;&gt;I am different&lt;/p&gt;</div><div class="line">p.error &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="css-properties">CSS properties</h2>
+<p>border【Note: border must have at last 3 properites】; color; font-size; font-family; padding &amp; margin(inside/outside the border);</p>
+<h1 id="javascript">JavaScript</h1>
+<ul>
+<li><code>&lt;noscript&gt;</code><br>
+Defines an alternate content for users that do not support client-side scripts.</li>
+<li>Examples</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//change HTML content</div><div class="line">document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;;</div><div class="line">//change HTML styles</div><div class="line">document.getElementById(&quot;demo&quot;).style.fontSize = &quot;25px&quot;;</div><div class="line">document.getElementById(&quot;demo&quot;).style.color = &quot;red&quot;;</div><div class="line">document.getElementById(&quot;demo&quot;).style.backgroundColor = &quot;yellow&quot;;</div><div class="line">//change HTML attributes</div><div class="line">document.getElementById(&quot;image&quot;).src = &quot;picture.gif&quot;;</div></pre></td></tr></table></figure>
+<h1 id="chares">Chares</h1>
+<ul>
+<li>
+<p>port<br>
+80: http<br>
+443: https</p>
+</li>
+<li>
+<p>浏览器的解析方式<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+浏览器解析html页面首先浏览器先下载html，然后在内存中把html代码转化成Dom Tree，然后浏览器根据Dom Tree上的Node分析css和Images，当文档下载遇到js时，js独立下载。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>HMAC</p>
+<blockquote>
+<p>HMAC是密钥相关的哈希运算消息认证码，HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。<br>
+<strong>hmac主要应用在身份验证中，它的使用方法是这样的：</strong><br>
+(1) 客户端发出登录请求（假设是浏览器的GET请求）<br>
+(2) 服务器返回一个随机值，并在会话中记录这个随机值<br>
+(3) 客户端将该随机值作为密钥，用户密码进行hmac运算，然后提交给服务器<br>
+(4) 服务器读取用户数据库中的用户密码和步骤2中发送的随机值做与客户端一样的hmac运算，然后与用户发送的结果比较，如果结果一致则验证用户合法</p>
+</blockquote>
+</li>
+<li>
+<p>REST/RESTful<br>
+参考：<a href="http://www.ruanyifeng.com/blog/2011/09/restful" target="_blank" rel="external">理解RESTful架构</a><br>
+Representational State Transfer，“表现层状态转化”，主语应该是resource。</p>
+<p>RESTful架构：</p>
+</li>
+</ul>
+<p>（1）每一个URI（统一资源定位符）代表一种资源；</p>
+<p>（2）客户端和服务器之间，传递这种资源的某种表现层；</p>
+<p>（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现&quot;表现层状态转化&quot;。</p>
+<ul>
+<li>
+<p>协程<br>
+优点：</p>
+<ul>
+<li>最大的优势就是协程极高的执行效率。因为子程序切换不是线程切换，而是由程序自身控制，因此，没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。</li>
+<li>第二大优势就是不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量冲突，在协程中控制共享资源不加锁，只需要判断状态就好了，所以执行效率比多线程高很多。</li>
+</ul>
+</li>
+<li>
+<p>socket</p>
+<ul>
+<li>introduction<br>
+默认端口也是80和443;<br>
+协议标识符是ws（如果加密，则为wss）;</li>
+<li>socket所在的层次以及它是什么：<a href="https://www.cnblogs.com/dolphinX/p/3460545.html" target="_blank" rel="external">简单理解Socket</a></li>
+</ul>
+<blockquote>
+<p>从字面意思来看TCP/IP是TCP和IP协议的合称，但实际上TCP/IP协议是指因特网整个TCP/IP协议族。不同于ISO模型的七个分层，TCP/IP协议参考模型把所有的TCP/IP系列协议归类到四个抽象层中</p>
+</blockquote>
+<blockquote>
+<p>应用层：TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet 等等</p>
+</blockquote>
+<blockquote>
+<p>传输层：TCP，UDP</p>
+</blockquote>
+<blockquote>
+<p>网络层：IP，ICMP，OSPF，EIGRP，IGMP</p>
+</blockquote>
+<blockquote>
+<p>数据链路层：SLIP，CSLIP，PPP，MTU</p>
+</blockquote>
+<blockquote>
+<p>我们知道两个进程如果需要进行通讯最基本的一个前提能能够唯一的标示一个进程，在本地进程通讯中我们可以使用PID来唯一标示一个进程，但PID只在本地唯一，网络中的两个进程PID冲突几率很大，这时候我们需要另辟它径了，我们知道IP层的ip地址可以唯一标示主机，而TCP层协议和端口号可以唯一标示主机的一个进程，这样我们可以利用ip地址＋协议＋端口号唯一标示网络中的一个进程。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.jianshu.com/p/979721d30f7d" target="_blank" rel="external">socket连接和HTTP连接的区别</a>:</li>
+</ul>
+<blockquote>
+<p>简单来说，你浏览的网页(网址以HTTP://开头)都是HTTP协议传输到你的浏览器的，而HTTP是基于socket之上的。socket是一套完成TCP.UDP协议的接口.<br>
+HTTP协议:简单对象访问协议，对应于应用层，HTTP协议是基于TCP连接的。<br>
+TCP协议:对应于传输层<br>
+IP协议:对应于网络层<br>
+TCP/IP是传输层协议，主要解决数据如果在网络中传输；<br>
+而HTTP协议是应用层协议，主要解决如何包装数据。<br>
+socket是对TCP/IP协议的封装，socket本身并不是协议，而是一个调用接口(API),通过socket我们才能使用TCP/IP协议.<br>
+http连接:http连接就是所谓的短连接，即客户端向服务器端发送一次请求，服务器端响应后连接即会断掉.<br>
+socket连接:socket连接就是所谓的长连接，理论上客户端和服务器端一旦连接其连接将不会主动断掉；但是由于各种环境因素可能会连接断开，比如说:服务器端或客户端主机down了，网络故障，或者两者之间长时间没有传输数据，网络防火墙可能会断开该连接以释放网络资源。所以当一个socket连接中没有数据传输的时候，那么为了维持连接需要发送心跳消息，具体心跳消息格式是开发者自己定义的。</p>
+</blockquote>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://caibaojian.com/json-baike.html" target="_blank" rel="external">JSON简介</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default" target="_blank" rel="external">CSS3 教程</a><br>
+注意：主要浏览器有5个！ <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/23250329" target="_blank" rel="external">CSS、JS 放置位置与前端性能的关系？</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;html5&quot;&gt;html5&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;html In a nutshell&lt;br&gt;
+The &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; element contains meta information about the document&lt;br&gt;
+The &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; element contains the visible page content&lt;br&gt;
+HTML elements are the building blocks of HTML pages&lt;br&gt;
+HTML elements are represented by tags&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Web" scheme="http://timchen314.com/categories/Web/"/>
+    
+    
+      <category term="Web" scheme="http://timchen314.com/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pandas note</title>
+    <link href="http://timchen314.com/pandas/"/>
+    <id>http://timchen314.com/pandas/</id>
+    <published>2018-02-04T10:00:00.000Z</published>
+    <updated>2018-04-18T11:42:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>数据分析神器Pandas。</p>
+<a id="more"></a>
+<p>教程参考<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>  <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>  <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+<ul>
+<li>
+<p>基本</p>
+<blockquote>
+<p>Pandas 基于两种数据类型，series 和 dataframe。series 是一种一维的数据类型，其中的每个元素都有各自的标签。dataframe 可以看作是一个 series 的字典。</p>
+</blockquote>
+<ul>
+<li>Series有一个与数组关联的数据标签，被叫做 索引 。最简单的Series是由一个数组的数据构成：</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">In [4]: obj = Series([4, 7, -5, 3])    </div><div class="line">In [5]: obj   </div><div class="line">Out[5]:   </div><div class="line">0 4   </div><div class="line">1 7   </div><div class="line">2 -5   </div><div class="line">3 3</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>df.head/tail<br>
+<code>df</code> is the abbre. of dataframe.<br>
+Show first 5 line：<code>df.head(5)</code></p>
+</li>
+<li>
+<p>Changing column labels so you can getting a column by label .</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df.columns = [&apos;water_year&apos;,&apos;rain_octsep&apos;, &apos;outflow_octsep&apos;,</div><div class="line">              &apos;rain_decfeb&apos;, &apos;outflow_decfeb&apos;, &apos;rain_junaug&apos;, &apos;outflow_junaug&apos;]</div><div class="line">df.rain_octsep # 相当于df[&apos;rain_octsep&apos;]</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>len(df)</p>
+</li>
+<li>
+<p>basic statistical information of dataset.</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pd.options.display.float_format = &apos;&#123;:,.3f&#125;&apos;.format # Limit output to 3 decimal places.</div><div class="line">df.describe()</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>filter</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Using a series of booleans to filter</div><div class="line">df[df.rain_octsep &lt; 1000]</div><div class="line"># Filtering by multiple conditionals</div><div class="line">df[(df.rain_octsep &lt; 1000) &amp; (df.outflow_octsep &lt; 4000)] </div><div class="line"># 这里不能用 and 关键字，因为会引发操作顺序的问题。必须用 &amp; 和圆括号。</div><div class="line"># Filtering by string methods</div><div class="line">df[df.water_year.str.startswith(&apos;199&apos;)]</div><div class="line"># 注意，你必须用 .str.[string method] ，而不能直接在字符串上调用字符方法。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://codingpy.com/article/a-quick-intro-to-pandas/" target="_blank" rel="external">十分钟快速入门 Pandas</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html" target="_blank" rel="external">10 Minutes to pandas</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="http://pda.readthedocs.io/en/latest/chp5.html" target="_blank" rel="external">indexnext |previous |Python For Data Analysis: Pandas入门</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;数据分析神器Pandas。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://timchen314.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
+    
+      <category term="note" scheme="http://timchen314.com/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
     <title>jupyter</title>
     <link href="http://timchen314.com/jupyter/"/>
     <id>http://timchen314.com/jupyter/</id>
     <published>2018-01-16T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="tutorial">Tutorial</h1>
-<h2 id="pylab">%pylab?</h2>
+    <content type="html"><![CDATA[<h1 id="a-tutorial">A Tutorial</h1>
+<a id="more"></a>
+<h2 id="pylab"><code>%pylab?</code></h2>
 <p>This sentence will give out the ‘help information’ of pylab.<br>
-Note that %pylab will import</p>
+Note that %pylab will be imported!</p>
 <h2 id="cell-magics">cell magics</h2>
 <p>Magics come in two kinds:【ct】可以简单理解为单行/多行</p>
-<a id="more"></a>
+<h3 id="line-magics-these-are-commands-prepended-by-one-character-and-whose-arguments-only-extend-to-the-end-of-the-current-line">Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</h3>
 <ul>
-<li>
-<p>Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</p>
-</li>
-<li>
-<p>Cell magics:</p>
-</li>
+<li><code>%run</code>可以从<code>.py</code>和<code>.ipynb</code>文件</li>
 </ul>
-<h3 id="some-simple-cell-magics">Some simple cell magics</h3>
+<h3 id="cell-magics-v2">Cell magics:</h3>
+<ul>
+<li>Some simple cell magics</li>
+</ul>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">%%writefile foo.py</div><div class="line">print(<span class="string">'foo'</span>)</div><div class="line">print(<span class="string">'Equinox'</span>)</div></pre></td></tr></table></figure>
-<h3 id="magics-for-running-code-under-other-interpreters">Magics for running code under other interpreters</h3>
-<p>IPython has a %%script cell magic, which lets you run a cell in a subprocess of any interpreter on your system, such as: bash, ruby, perl, zsh, R, etc.</p>
-<p>To use it, simply pass a path or shell command to the program you want to run on the %%script line, and the rest of the cell will be run by that script, and stdout/err from the subprocess are captured and displayed.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">In [10]: %%script python2 import sys print &apos;hello from Python %s&apos; % sys.version</div></pre></td></tr></table></figure>
-<h3 id="background-scripts">Background Scripts</h3>
-<p>These scripts can be run in the background, by adding the --bg flag.<br>
-When you do this, output is discarded unless you use the --out/err flags to store output as above.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">In [17]: %%ruby --bg --out ruby_lines for n in 1...10    sleep 1    puts &quot;line #&#123;n&#125;&quot;    STDOUT.flush end</div></pre></td></tr></table></figure>
+<ul>
+<li>Magics for running code under other interpreters<br>
+IPython has a %%script cell magic, which lets you run a cell in a subprocess of any interpreter on your system, such as: bash, ruby, perl, zsh, R, etc.<br>
+To use it, simply pass a path or shell command to the program you want to run on the %%script line, and the rest of the cell will be run by that script, and stdout/err from the subprocess are captured and displayed.</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">%%script python2 </div><div class="line">import sys </div><div class="line">print &apos;hello from Python %s&apos; % sys.version</div></pre></td></tr></table></figure>
+<ul>
+<li>Background Scripts<br>
+These scripts can be run in the background, by adding the --bg flag.<br>
+When you do this, output is discarded unless you use the --out/err flags to store output as above.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">%%ruby --bg --out ruby_lines</div><div class="line">for n in 1...10</div><div class="line">    sleep 1</div><div class="line">    puts &quot;line #&#123;n&#125;&quot;</div><div class="line">    STDOUT.flush</div><div class="line">end</div></pre></td></tr></table></figure>
 <h2 id="shortcut-key">shortcut key</h2>
 <p><a href="http://www.jianshu.com/p/72493e81a708" target="_blank" rel="external">Jupyter Notebook 的快捷键</a></p>
 <h3 id="command-mode">command mode</h3>
@@ -64,7 +1115,7 @@ When you do this, output is discarded unless you use the --out/err flags to stor
 <p><code>ctrl+enter</code>、<code>shitf+enter</code>: 执行、执行后选中下个单元</p>
 </li>
 <li>
-<p>b: 在下方插入新单元</p>
+<p>a/b: 在上/下方插入新单元</p>
 </li>
 <li>
 <p>dd: 删除当前cell</p>
@@ -84,29 +1135,70 @@ When you do this, output is discarded unless you use the --out/err flags to stor
 <li>
 <p>space/shift+spcae: 向下/上滚动</p>
 </li>
+<li>
+<p>Shift-K/J : 扩大选中上/下方单元</p>
+</li>
+<li>
+<p>合并/分割<br>
+shfit + m / shift + ctrl + -</p>
+</li>
 </ul>
 <h3 id="edit-mode">edit mode</h3>
 <ul>
+<li>
+<p>alt + 左键: 列模式</p>
+</li>
 <li>
 <p>shift+tab:  补全提示</p>
 </li>
 <li>
 <p><code>ctrl + shift + -</code>: 分割cell</p>
 </li>
+<li>
+<p><code>cmd+[</code> 减小缩进</p>
+</li>
+</ul>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>change default browser<br>
+<code>$ jupyter notebook --generate-config</code><br>
+And then in <code>~/.jupyter/jupyter_notebook_config.py</code> file, <code>c.NotebookApp.browser = '</code> should be modified to<br>
+<code>c.NotebookApp.browser = 'open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome %s'</code>.</li>
+</ul>
+<p>**NOTE: proxy extension (such as shadowsocks) will induce error – ERR_EMPTY_RESPONSE **</p>
+<ul>
+<li>
+<p>Pretty Display of Varibles</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">from IPython.core.interactiveshell import InteractiveShell</div><div class="line">InteractiveShell.ast_node_interactivity = &quot;all&quot;</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>不让变量输出<br>
+结尾加个分号！<code>variable;</code></p>
+</li>
+<li>
+<p>添加目录功能<br>
+<code>conda install -c conda-forge jupyter_contrib_nbextensions</code></p>
+</li>
+<li>
+<p><a href="https://www.jianshu.com/p/96433d9ee923" target="_blank" rel="external">beautifulsoup4</a></p>
+<ul>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html#id25" target="_blank" rel="external">文档</a></li>
+<li><code>find_all(text=&quot;your_text&quot;)</code>不好用！</li>
+<li>‘html5lib’ engine is slower but more robust than ‘lxml’！</li>
+<li><code>soup.prettify()</code> and <code>&lt;tag&gt;.prettify()</code><br>
+Formatting html</li>
+</ul>
+</li>
 </ul>
 <hr>
 <p><a href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/4.0.x/examples/IPython%20Kernel/Cell%20Magics.ipynb" target="_blank" rel="external">source 1</a><br>
 <a href="http://ipython.org/ipython-doc/3/notebook/notebook.html#importing-py-files" target="_blank" rel="external">source 2</a></p>
+<p><a href="http://liuchengxu.org/pelican-blog/jupyter-notebook-tips.html" target="_blank" rel="external">27 个Jupyter Notebook的小提示与技巧</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;tutorial&quot;&gt;Tutorial&lt;/h1&gt;
-&lt;h2 id=&quot;pylab&quot;&gt;%pylab?&lt;/h2&gt;
-&lt;p&gt;This sentence will give out the ‘help information’ of pylab.&lt;br&gt;
-Note that %pylab will import&lt;/p&gt;
-&lt;h2 id=&quot;cell-magics&quot;&gt;cell magics&lt;/h2&gt;
-&lt;p&gt;Magics come in two kinds:【ct】可以简单理解为单行/多行&lt;/p&gt;
+      &lt;h1 id=&quot;a-tutorial&quot;&gt;A Tutorial&lt;/h1&gt;
     
     </summary>
     
@@ -124,7 +1216,7 @@ Note that %pylab will import&lt;/p&gt;
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
@@ -563,6 +1655,8 @@ Hello CloudMan</p>
 <li>ENV</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ENV MY_VERSION 1.3</div><div class="line">RUN apt-get install -y mypackage=$MY_VERSION</div></pre></td></tr></table></figure>
+<p>以设置PATH为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ENV PATH=&quot;/opt/conda3/bin:$&#123;PATH&#125;&quot;</div></pre></td></tr></table></figure>
 <ul>
 <li>
 <p>LABEL</p>
@@ -714,10 +1808,10 @@ ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a>
   
   <entry>
     <title>linux命令之service</title>
-    <link href="http://timchen314.com/linux_senior_command/"/>
-    <id>http://timchen314.com/linux_senior_command/</id>
+    <link href="http://timchen314.com/linux_senior_service/"/>
+    <id>http://timchen314.com/linux_senior_service/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -818,7 +1912,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -867,7 +1961,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -927,7 +2021,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -1090,6 +2184,11 @@ vstack、hstack是<mark>深拷贝</mark></p>
 <li>np.save(‘myarray.npy’,a)</li>
 <li>np.loadtxt/savetxt/genfromtxt</li>
 </ul>
+<h4 id="other">Other</h4>
+<ul>
+<li>np.newaxis</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a=np.array([1,2,3,4,5])</div><div class="line">b=a[np.newaxis,:]</div><div class="line">print(a.shape,b.shape)</div><div class="line">(5,) (1, 5)</div><div class="line"></div><div class="line">a=np.array([1,2,3,4,5])</div><div class="line">b=a[:,np.newaxis]</div><div class="line">print(a.shape,b.shape)</div><div class="line">(5,) (5, 1)</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
@@ -1113,7 +2212,7 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -1310,6 +2409,10 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 <li>
 <p><s>iteriterms()返回迭代器，节省内存</s> <strong>Only for python2</strong></p>
 </li>
+<li>
+<p><strong>filter a dictionary according condition</strong><br>
+<code>{k: v for k, v in points.items() if v[0] &lt; 5 and v[1] &lt; 5}</code></p>
+</li>
 </ul>
 <h3 id="file">file</h3>
 <ol>
@@ -1341,7 +2444,8 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="string">'www.example.com'</span>.strip(<span class="string">'cmowz.'</span>) </div><div class="line"><span class="string">'example'</span></div></pre></td></tr></table></figure>
 <h4 id="2-format">2. format</h4>
 <ul>
-<li>‘{0:.2f} {1:s} {2:d}’.format( v0[,v1[v2…] )</li>
+<li><code>'{0:.2f} {1:s} {2:d}'.format( v0[,v1[v2...] )</code></li>
+<li><code>'{:,.2f}'</code>中逗号表示较大的数字用逗号分隔，比如100万: <code>1, 000, 000</code></li>
 <li>可以使用关键词</li>
 <li>应用时转化：{!s}、{!r}</li>
 <li>旧式字符串格式化符号是 %，如：{0:%.4f}</li>
@@ -1390,8 +2494,14 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 </li>
 </ul>
 <h2 id="module">module</h2>
+<p><a href="http://funhacks.net/2016/12/27/regular_expression/#match-%E6%96%B9%E6%B3%95" target="_blank" rel="external">Python 正则表达式 re 模块</a></p>
 <h3 id="re-module">re module</h3>
-<h4 id="1-replace-str1-str2">1. replace(str1, str2)</h4>
+<ol>
+<li>replace(str1, str2)</li>
+<li>compile(r’[0-9]+’)<br>
+Usage:<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">pattern = re.compile(<span class="string">r'[0-9]+'</span>)</div><div class="line">frist_number = pattern.match(your_str).group(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+</li>
+</ol>
 <h3 id="sys-module">sys module</h3>
 <ul>
 <li>sys.version/version_info(version_info is a object)</li>
@@ -1484,7 +2594,15 @@ Return an iterator which yields the same values as glob()</li>
 </ul>
 <h3 id="collections-module-廖雪峰"><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431953239820157155d21c494e5786fce303f3018c86000" target="_blank" rel="external">collections module 廖雪峰</a></h3>
 <ul>
-<li>Counter</li>
+<li>
+<p>Counter</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; Counter([<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>])</div><div class="line">Counter(&#123;<span class="number">1</span>: <span class="number">5</span>, <span class="number">2</span>: <span class="number">3</span>, <span class="number">3</span>: <span class="number">2</span>&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>OrderedDict<br>
+This dict will record the <strong>insert</strong> order!</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">dic = collections.OrderedDict()</div><div class="line">dic[<span class="string">'k1'</span>] = <span class="string">'v1'</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h3 id="pil">PIL</h3>
 <ul>
@@ -1526,6 +2644,16 @@ Return an iterator which yields the same values as glob()</li>
 <p>The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.</p>
 </blockquote>
 <p><code>shutil.copyfile(src, dst)</code></p>
+<h3 id="logging">logging<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>  <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h3>
+<ul>
+<li>A sample example:<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line">logging.warning(<span class="string">'Watch out!'</span>)  <span class="comment"># will print a message to the console</span></div><div class="line">logging.info(<span class="string">'I told you so'</span>)  <span class="comment"># will not print anything</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>result is : <code>WARNING:root:Watch out!</code></p>
+<ul>
+<li>Used in program:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import logging</div><div class="line"></div><div class="line">logger = logging.getLogger()</div><div class="line">handler = logging.StreamHandler()</div><div class="line">formatter = logging.Formatter(</div><div class="line">        &apos;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&apos;)</div><div class="line">handler.setFormatter(formatter)</div><div class="line">logger.addHandler(handler)</div><div class="line">logger.setLevel(logging.DEBUG)</div><div class="line"></div><div class="line">logger.debug(&apos;often makes a very good meal of %s&apos;, &apos;visiting tourists&apos;)</div></pre></td></tr></table></figure>
 <h2 id="other-useful-things">other useful things</h2>
 <h3 id="ipython">ipython</h3>
 <ol>
@@ -1589,23 +2717,73 @@ Return an iterator which yields the same values as glob()</li>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install --trusted-host pypi.python.org pytest-xdist</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="需要的工具">需要的工具</h2>
+<h3 id="my-snippet">My Snippet</h3>
+<ul>
+<li>translate in one line:<br>
+Translate word by word: <code>[ your_dict[i] if i in your_dict else i for i in some_words ]</code></li>
+</ul>
+<h2 id="工具">工具</h2>
 <ul>
 <li>circleci2.0</li>
+<li><a href="https://docs.python.org/3/library/" target="_blank" rel="external">python标准库列表</a></li>
 </ul>
 <h2 id="工程能力">工程能力</h2>
-<h3 id="工程-oop">工程/OOP</h3>
+<h3 id="oop">OOP</h3>
 <ul>
 <li>
-<p><a href="https://stackoverflow.com/questions/20661448/python-should-all-member-variables-be-initialized-in-init" target="_blank" rel="external">setting all instance variables in the __init__ is cleaner</a></p>
+<p>工厂函数<br>
+见python核心编程：工厂函数看上去有点像函数，实质上他们是类，当你调用它们时，实际上是生成了该类型的一个实例，就像工厂生产货物一样.<br>
+e.g., <code>list()</code>, <code>set()</code>就是工厂函数，输入Iterable对象，它们就会生产出list或set的实例。</p>
 </li>
 <li>
-<p>工厂函数<br>
-见python核心编程：工厂函数看上去有点像函数，实质上他们是类，当你调用它们时，实际上是生成了该类型的一个实例，就像工厂生产货物一样.</p>
+<p>关联，聚合，组合三者的异同<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>  <sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup><br>
+相同点：都是说两个类的关系，下面以class A和class B为例。<br>
+不同点：A和B之间的依赖程度不同</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>关联</th>
+<th>聚合</th>
+<th>组合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖程度</td>
+<td>A可以没有B<br>B可以没有A</td>
+<td>A可以没有B</td>
+<td>A不可以没有B</td>
+</tr>
+<tr>
+<td>例子</td>
+<td>B是A的朋友<br>AB为关联关系</td>
+<td>B是A的衬衫<br>AB为聚合关系</td>
+<td>B是A的心脏<br>AB为组合关系</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>__init__</code><br>
+Some people may think <a href="https://stackoverflow.com/questions/20661448/python-should-all-member-variables-be-initialized-in-init" target="_blank" rel="external">setting all instance variables in the __init__ is cleaner</a>.<br>
+However, notice that setting a class attribute will make this attribute accessible in the class, even if you just want this attribute accessible to some method.<br>
+So my point is instance and initialize variables unless you need it.</p>
+</li>
+<li>
+<p>TIPS</p>
+<ul>
+<li>UML(Unified Modeling Language)本身很少有应用了，但是提出的概念广为人知，并且很有用。</li>
+</ul>
 </li>
 </ul>
+<h3 id="best-practice">best practice</h3>
+<ul>
+<li><code>my_return= my_funct(para=para)</code>是可以的<br>
+上面左边的<code>para</code>是参数名，右边的是变量名，这样写是可以的，而且是明了的。</li>
+</ul>
 <h3 id="debug">debug</h3>
-<p>要融汇的方法<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>：</p>
+<p>要融汇的方法<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>：</p>
 <blockquote>
 <p>回答先在本地重现的就算了吧……那么容易就能重现通常说明最基本的代码逻辑覆盖测试都没做好。相比起C/C++来说，动态语言还是比较幸福的，异常都有详细的堆栈，只要打印到日志里就行了，错误信息通常也比较明确。要点在于该打印的日志一点都不能少，严禁在出现异常的时候只打印错误信息而不打堆栈。但归根结底来说，发现和解决bug靠的是良好的程序结构，必要的defensive（关键函数的参数合法性校验等），自动化的测试流程，线上调试只是亡羊补牢。</p>
 </blockquote>
@@ -1637,19 +2815,28 @@ ruby最大的优势在于Ruby on Rails</li>
 <h3 id="我的经验">我的经验</h3>
 <ul>
 <li>都说python有很多包、方便，然而包里有可能有很多坑（bug or bad practice），比如Pillow中遇到过<code>**karg</code>的滥用。这些特点使得python很容易开发原型，但很难构建稳定、高效、一致的大型应用。</li>
-<li>有不少不符合直觉的&quot;feature&quot;<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup><br>
+<li>有不少不符合直觉的&quot;feature&quot;<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup><br>
 例如： <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; a = ([<span class="number">1</span>], [<span class="number">2</span>])</div><div class="line">   &gt;&gt;&gt; a[<span class="number">0</span>] += [<span class="number">3</span>]</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">""</span>, line <span class="number">1</span>, <span class="keyword">in</span> </div><div class="line">TypeError: <span class="string">'tuple'</span> object does <span class="keyword">not</span> support item assignment</div><div class="line">   &gt;&gt;&gt; a</div><div class="line">([<span class="number">1</span>, <span class="number">3</span>], [<span class="number">2</span>])</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="reference">reference</h2>
+<!-- ^6~^8 is used in logging module -->
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)#Features_and_philosophy" target="_blank" rel="external">Python</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p><a href="https://www.zhihu.com/people/ling-jian-94/answers" target="_blank" rel="external">老程序员解bug有那些通用套路？</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+<li id="fn2" class="footnote-item"><p><a href="http://docs.python-guide.org/en/latest/writing/logging/" target="_blank" rel="external">THe hitchhiker’s guide to python</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/66941121" target="_blank" rel="external">有哪些明明是 bug，却被说成是 feature 的例子？</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+<li id="fn3" class="footnote-item"><p><a href="https://docs.python.org/3/howto/logging.html" target="_blank" rel="external">Official Logging How to </a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://stackoverflow.com/questions/19861785/composition-and-aggregation-in-python/37910618#37910618" target="_blank" rel="external">N Randhawa’s answer</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="http://www.cnblogs.com/angushine/archive/2008/06/16/1223055.html" target="_blank" rel="external">关联，聚合，组合</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="https://www.zhihu.com/people/ling-jian-94/answers" target="_blank" rel="external">老程序员解bug有那些通用套路？</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a href="https://www.zhihu.com/question/66941121" target="_blank" rel="external">有哪些明明是 bug，却被说成是 feature 的例子？</a> <a href="#fnref7" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -1676,7 +2863,7 @@ Python features a dynamic type system and automatic memory management and suppor
     <link href="http://timchen314.com/vmd%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vmd笔记/</id>
     <published>2017-09-29T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>
@@ -2019,7 +3206,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
     <id>http://timchen314.com/Word格式论文中添加引用/</id>
     <published>2017-09-24T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的<strong>bib文件</strong>，向Word中添加引用文献。该方法有几个好处:</p>
 <ol>
@@ -2057,7 +3244,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
     <id>http://timchen314.com/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
 <a id="more"></a>
@@ -2117,80 +3304,197 @@ pbc join res -sel尝试了各种办法也没有成功<br>
   </entry>
   
   <entry>
-    <title>All about Digital Currency</title>
-    <link href="http://timchen314.com/digital_currency/"/>
-    <id>http://timchen314.com/digital_currency/</id>
-    <published>2017-08-30T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <title>gnuplot笔记（上）</title>
+    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
+    <id>http://timchen314.com/gnuplot笔记上/</id>
+    <published>2017-08-16T12:00:00.000Z</published>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p>What a bubble!<br>
-<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
+    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
 <a id="more"></a>
-<h1 id="info">Info</h1>
-<p><img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/%E6%9D%82/Percentage_of_Total_Market_Capitalization_Dominance.png" alt="image"></p>
-<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
-<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="ripple" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
-<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="cardano" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
-<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currency="ethereum" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
-<h2 id="source">source</h2>
-<ol start="0">
-<li><a href="https://coinmarketcap.com" target="_blank" rel="external">Cryptocurrency Market Capitalizations</a></li>
-<li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
-<li><a href="http://trans.chbtc.com/markets/eth" target="_blank" rel="external">trans.chbtc.com/markets/eth</a> 有长期数据，可以画周线</li>
-</ol>
-<h1 id="其他币">其他币</h1>
-<p>薛蛮子认为：</p>
-<blockquote>
-<p>对于ICO的投资标准，薛蛮子表示，首先是人靠谱，此前投资的比原链是国内区块链最大的社区巴比特发起的，墨链是纸贵科技发起的，BEX是美豹金融发起的，这些项目的团队本身已经有了成功的创业案例，且在细分领域处于排头兵的地位。</p>
-</blockquote>
-<blockquote>
-<p>拿比原链来说，薛蛮子表示，“我认为，比原链的创始团队很年轻，富有朝气，大家都很努力，但是比原链的技术挑战挺大，需要天时地利人和，很多条件具备才能做成，不是轻描淡写，一挥而就的。团队最要紧的是不断试错，踏踏实实做事情，不要辜负投资人的信任。我不看好的是，有的小伙子一辈子没赚过大钱，也没花过100万以上的钱，突然通过ICO拿了几个亿，这些人hold不住。”</p>
-</blockquote>
-<h1 id="问题与挑战">问题与挑战</h1>
-<h2 id="1-税收">1. 税收</h2>
-<p>美国国税局（IRS, Internal Revenue Service）在努力调查bitcoin避税，这是bitcoin正式应用所面临的一个问题。</p>
-<blockquote>
-<p>像达世（Dash）、门罗（Monero）和ZCash等币都部署了隐私功能，其交易是很难被追踪到的。</p>
-</blockquote>
-<h1 id="待读-进展">待读&amp;进展</h1>
-<h2 id="待读">待读</h2>
-<p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
-<a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
-<a href="http://blog.csdn.net/m0_37327416/article/details/72885521" target="_blank" rel="external">以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行</a><br>
-<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a><br>
-<a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
-<a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
-<h2 id="进展">进展</h2>
-<p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
-<h1 id="digital-currency">digital currency</h1>
-<h2 id="ethereum-new-set">ethereum (new_set)</h2>
-<p>My understanding:</p>
-<ol>
-<li>init first block.</li>
-<li>then you can mine.</li>
-</ol>
-<h3 id="problem">problem</h3>
+<p>[TOC]</p>
+<h2 id="note-about-version-5">Note about Version 5</h2>
+<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
+<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
+例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
+<h3 id="2-size的用法">2. size的用法</h3>
 <ul>
-<li>what is private network?</li>
+<li>eps to png<br>
+when eps size is set to 1.0,1.0，png的像素为600,420<br>
+eps：size 1.8,1.8 那么png的像素为1080,755</li>
+<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
+size 2,2 会导致图像超过窗口大小</li>
 </ul>
-<h2 id="cardano">cardano</h2>
-<p><a href="https://zhuanlan.zhihu.com/p/32874568" target="_blank" rel="external">cardano简介</a></p>
-<h1 id="资料-引用">资料&amp;引用</h1>
-<h2 id="资料">资料</h2>
-<p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a></p>
+<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
+<p><code>plot ... smooth mcsplines</code><br>
+<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
+<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
+<h3 id="4-变量的引用">4. 变量的引用</h3>
+<p>For 4.6:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
+<p>For 5.0:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
+<h2 id="format">format</h2>
+<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
+<p><code>set logscale</code> # x和y轴都设置成logscale</p>
+<h3 id="2-set-format">2. set format</h3>
+<p>设置坐标轴上数字的格式。<br>
+以1000为例：</p>
+<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
+</code></pre>
+<p>显示出来的格式为10^3</p>
+<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
+</code></pre>
+<p>显示为1×10^3</p>
+<p>需要注意的是：</p>
+<ul>
+<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
+<li><code>%t</code>与<code>%T</code><br>
+比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
+</ul>
+<h3 id="3-offset-x-y">3. offset x,y</h3>
+<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
+<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
+<blockquote>
+<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
+</blockquote>
+<p>只改major tics:<code>set tic scale 2</code></p>
+<h3 id="5-字体font">5. 字体font:</h3>
+<p>(1) gnuplot-5.0.1 manual:</p>
+<blockquote>
+<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
+(2) TimesRoman和TimesNewRoman都是一样的<br>
+For other fonts, 尽管程序不会报错，但也显示不出来<br>
+但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
+<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
+<h3 id="7-border">7. border</h3>
+<p><code>set border lw 3</code> 只改变线的宽度</p>
+<h3 id="8-key">8. key</h3>
+<p><strong>set key height #调节key与坐标轴的距离</strong><br>
+set key spacing 1.3 #调节两行之间的距离<br>
+set key maxcols/maxrow<br>
+set key autotitle</p>
+<h3 id="9-label">9. label</h3>
+<ul>
+<li>设定位置时候，是设定的左下角的坐标</li>
+<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
+</ul>
+<h3 id="10-arrow">10. arrow</h3>
+<ul>
+<li>
+<p>控制起始/终止位置<br>
+set arrow from 坐标 to 坐标<br>
+e.g.:<br>
+<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
+<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
+</li>
+<li>
+<p>控制head<br>
+e.g.:<br>
+<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
+其中head filled size 1,30,55 为控制head的格式。<br>
+<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
+length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
+</li>
+</ul>
+<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
+<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
+<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
+<h3 id="1-line-and-point-types">1. line and point types</h3>
+<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
+<h3 id="2-most-useful-point-type">2. most useful point type</h3>
+<table>
+<thead>
+<tr>
+<th>shape</th>
+<th>full id</th>
+<th>empty  id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>square</td>
+<td>5</td>
+<td>64</td>
+</tr>
+<tr>
+<td>sphere</td>
+<td>7</td>
+<td>65</td>
+</tr>
+<tr>
+<td>up-tri</td>
+<td>9</td>
+<td>66</td>
+</tr>
+<tr>
+<td>down-tri</td>
+<td>11</td>
+<td>67</td>
+</tr>
+<tr>
+<td>diamond</td>
+<td>13</td>
+<td>68</td>
+</tr>
+<tr>
+<td>pentagon</td>
+<td>15</td>
+<td>69</td>
+</tr>
+</tbody>
+</table>
+<p>e.g.:<br>
+<code>p sin(x) w p pt 5</code></p>
+<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
+<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
+<h3 id="4-several-color-set">4. several color set</h3>
+<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
+<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
+<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
+<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
+<ul>
+<li>for循环：<br>
+<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
+<li>字符串数组<br>
+`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
+a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
+**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
+<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
+<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
+</ul>
+<h3 id="1-escape-charactor">1. escape charactor</h3>
+<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
+<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
+<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
+（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
+（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
+（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
+<h3 id="3-string">3. string</h3>
+<ul>
+<li>单引号内的字符串不转义，双引号内的字符串转义</li>
+<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
+<li>“.”, “eq” and “ne&quot;<br>
+Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
+<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
+</ul>
+<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;What a bubble!&lt;br&gt;
-&lt;img src=&quot;https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png&quot; alt=&quot;bitcoin&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
     
     </summary>
     
-      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
     
     
-      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
+    
+      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
     
   </entry>
   
@@ -2199,7 +3503,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://timchen314.com/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -2434,204 +3738,9 @@ The eps file doesn’t get written until a plot command is specified after speci
       <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
     
     
-      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
-    
       <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
     
-  </entry>
-  
-  <entry>
-    <title>gnuplot笔记（上）</title>
-    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
-    <id>http://timchen314.com/gnuplot笔记上/</id>
-    <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
-<a id="more"></a>
-<p>[TOC]</p>
-<h2 id="note-about-version-5">Note about Version 5</h2>
-<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
-<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
-例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
-<h3 id="2-size的用法">2. size的用法</h3>
-<ul>
-<li>eps to png<br>
-when eps size is set to 1.0,1.0，png的像素为600,420<br>
-eps：size 1.8,1.8 那么png的像素为1080,755</li>
-<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
-size 2,2 会导致图像超过窗口大小</li>
-</ul>
-<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
-<p><code>plot ... smooth mcsplines</code><br>
-<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
-<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
-<h3 id="4-变量的引用">4. 变量的引用</h3>
-<p>For 4.6:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
-<p>For 5.0:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
-<h2 id="format">format</h2>
-<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
-<p><code>set logscale</code> # x和y轴都设置成logscale</p>
-<h3 id="2-set-format">2. set format</h3>
-<p>设置坐标轴上数字的格式。<br>
-以1000为例：</p>
-<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
-</code></pre>
-<p>显示出来的格式为10^3</p>
-<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
-</code></pre>
-<p>显示为1×10^3</p>
-<p>需要注意的是：</p>
-<ul>
-<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
-<li><code>%t</code>与<code>%T</code><br>
-比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
-</ul>
-<h3 id="3-offset-x-y">3. offset x,y</h3>
-<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
-<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
-<blockquote>
-<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
-</blockquote>
-<p>只改major tics:<code>set tic scale 2</code></p>
-<h3 id="5-字体font">5. 字体font:</h3>
-<p>(1) gnuplot-5.0.1 manual:</p>
-<blockquote>
-<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
-(2) TimesRoman和TimesNewRoman都是一样的<br>
-For other fonts, 尽管程序不会报错，但也显示不出来<br>
-但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
-<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
-<h3 id="7-border">7. border</h3>
-<p><code>set border lw 3</code> 只改变线的宽度</p>
-<h3 id="8-key">8. key</h3>
-<p><strong>set key height #调节key与坐标轴的距离</strong><br>
-set key spacing 1.3 #调节两行之间的距离<br>
-set key maxcols/maxrow<br>
-set key autotitle</p>
-<h3 id="9-label">9. label</h3>
-<ul>
-<li>设定位置时候，是设定的左下角的坐标</li>
-<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
-</ul>
-<h3 id="10-arrow">10. arrow</h3>
-<ul>
-<li>
-<p>控制起始/终止位置<br>
-set arrow from 坐标 to 坐标<br>
-e.g.:<br>
-<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
-<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
-</li>
-<li>
-<p>控制head<br>
-e.g.:<br>
-<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
-其中head filled size 1,30,55 为控制head的格式。<br>
-<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
-length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
-</li>
-</ul>
-<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
-<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
-<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
-<h3 id="1-line-and-point-types">1. line and point types</h3>
-<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
-<h3 id="2-most-useful-point-type">2. most useful point type</h3>
-<table>
-<thead>
-<tr>
-<th>shape</th>
-<th>full id</th>
-<th>empty  id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>square</td>
-<td>5</td>
-<td>64</td>
-</tr>
-<tr>
-<td>sphere</td>
-<td>7</td>
-<td>65</td>
-</tr>
-<tr>
-<td>up-tri</td>
-<td>9</td>
-<td>66</td>
-</tr>
-<tr>
-<td>down-tri</td>
-<td>11</td>
-<td>67</td>
-</tr>
-<tr>
-<td>diamond</td>
-<td>13</td>
-<td>68</td>
-</tr>
-<tr>
-<td>pentagon</td>
-<td>15</td>
-<td>69</td>
-</tr>
-</tbody>
-</table>
-<p>e.g.:<br>
-<code>p sin(x) w p pt 5</code></p>
-<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
-<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
-<h3 id="4-several-color-set">4. several color set</h3>
-<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
-<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
-<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
-<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
-<ul>
-<li>for循环：<br>
-<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
-<li>字符串数组<br>
-`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
-a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
-**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
-<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
-<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
-</ul>
-<h3 id="1-escape-charactor">1. escape charactor</h3>
-<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
-<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
-<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
-（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
-（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
-（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
-<h3 id="3-string">3. string</h3>
-<ul>
-<li>单引号内的字符串不转义，双引号内的字符串转义</li>
-<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
-<li>“.”, “eq” and “ne&quot;<br>
-Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
-<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
-</ul>
-<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
-    
-    
       <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
-    
-      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
     
   </entry>
   
@@ -2640,7 +3749,7 @@ Three binary operators require string operands: the string concatenation operato
     <link href="http://timchen314.com/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -2806,7 +3915,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://timchen314.com/linux_command/"/>
     <id>http://timchen314.com/linux_command/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -2844,15 +3953,17 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 <code>toe /usr/share/terminfo/</code>: supported terminal; you can compare two terminal by <code>infocmp vt100 vt220</code></p>
 </li>
 <li>
-<p>其他<br>
+<p>文本处理相关<br>
 <code>tac</code>: cat倒过来写，是将文件反向输出的命令<br>
 <code>join命令</code>: 横向连接文件，可以合并第一列<br>
 <code>tee</code>: <code>tee file1 file2 -</code>  #将标准输出，输出到file1、file2和标准输出（“-”就是代表标准输出）（<strong>注意</strong> 该命令本身会向标准输出 输出一次，所以tee file1 file2 - 会将标准输出 输出两次）<br>
+<code>read</code>: <code>read -p &quot;make dir now?[y/n]:&quot; select</code>#直接读入变量值</p>
+</li>
+<li>
+<p>其他<br>
 <code>basename &amp; dirname</code>: 从路径名得到root部分和文件名部分<br>
-<code>read</code>: <code>read -p &quot;make dir now?[y/n]:&quot; select</code>#直接读入变量值<br>
 <code>df -T</code>: 显示硬盘分区类型<br>
 lsof:  <code>lsof -p 456,123</code> 列出进程456和123所有打开的文件。<code>lsof -i 6</code> 列出所有IPv6协议的网络文件<br>
-<code>ssh -X</code>:   <code>Enables X11 forwarding</code>然后就可以用vmd、gnuplot等软件了。<br>
 <code>env</code>: 输出所有环境变量<br>
 <code>ldd ./exe</code>:  给出链接的库<br>
 <code>systemctl start atd</code>: arch中用at，需要开启<br>
@@ -3347,8 +4458,11 @@ In cli: <code>$ bash -euxo pipefail script.sh</code></p>
 <code>sort -n -k2 file</code></li>
 </ol>
 <h2 id="ssh命令">ssh命令</h2>
-<p>通过ssh执行命令时，由于没有登录，是不会执行<code>source .bash_profile</code>的。可以手动执行解决这个问题：<br>
-例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></p>
+<ul>
+<li><code>ssh -X</code>:   <code>Enables X11 forwarding</code>然后就可以用vmd、gnuplot等软件了。</li>
+<li>通过ssh执行命令时，由于没有登录，是不会执行<code>source .bash_profile</code>的。可以手动执行解决这个问题：<br>
+例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></li>
+</ul>
 <h2 id="su命令：">su命令：</h2>
 <p>1.关于login<br>
 （1）.直接登录root<br>
@@ -3507,7 +4621,7 @@ Because blank space is usually used as the separater of command or agruments.<br
     <link href="http://timchen314.com/python_mechanism/"/>
     <id>http://timchen314.com/python_mechanism/</id>
     <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
+    <updated>2018-04-18T11:42:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]</p>
 <h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
@@ -3612,7 +4726,7 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
 <blockquote>
 <p>实际上，super(cls, inst) 获得的是 cls 在 inst 的 MRO 列表中的下一个类。</p>
 </blockquote>
-<h3 id="12-python-interpreter">12. Python Interpreter</h3>
+<h2 id="12-python-interpreter">12. Python Interpreter</h2>
 <ul>
 <li>CPython<br>
 IPython based on CPython, and is enhanced in interactive.</li>
@@ -3623,21 +4737,60 @@ Compile python to Java bytecode.</li>
 <li>IronPython<br>
 Compile python to .net bytecode</li>
 </ul>
-<h2 id="style-guide">Style guide</h2>
-<h3 id="argument">argument</h3>
+<h2 id="13-python3-string">13. Python3 String</h2>
 <ul>
-<li><code>**kwargs</code> is a bad practice:
-<ol>
-<li>you don’t know how <code>**kwargs</code> affect.</li>
-<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
-<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
-<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
-</ol>
+<li>All the python3 string is unicode string.<br>
+NOTE: Unicode is different from utf-8 code! <a href="https://blog.csdn.net/thl789/article/details/7506133" target="_blank" rel="external">Unicode编码及其实现：UTF-16、UTF-8</a></li>
+<li>Real Unicode<br>
+Many introduction about unicode is wrong, even for the Baidu Encyclopedia.<br>
+Japanese: unicode 3040-31FF<br>
+<a href="https://www.cnblogs.com/kingcat/archive/2012/10/16/2726334.html" target="_blank" rel="external">Unicode(UTF-8, UTF-16)令人混淆的概念</a> must be read very carefully.
+<blockquote>
+<p>Unicode涉及到两个步骤,首先是定义一个规范，第二步才是怎么把字符对应的数字保存在计算机中。<br>
+UTF-16就是任何字符对应的数字都用两个字节来保存<br>
+UTF-8,这里的8非常容易误导人，用UTF-8时表示一个字符是可变的,有可能是用一个字节表示一个字符,也可能是两个,三个.当然最多不能超过3个字节了。<br>
+UTF-32就是把所有的字符都用32bit.<br>
+UCS就是前面说的ISO制定的标准,和Unicode是完全一样的,只不过名字不一样.ucs-2对应utf-16,ucs-4对应UTF-32.UTF-8是没有对应的UCS.</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="for-more">For more:</h2>
-<p>[我眼中一个好的Pythoneer应该具备的品质]*(<a href="https://zhuanlan.zhihu.com/p/33266239" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/33266239</a>)<br>
-<a href="https://www.gitbook.com/book/eastlakeside/interpy-zh/details" target="_blank" rel="external">Python进阶 - gitbook</a></p>
+<p>BeautifulSoup4 will automatically find the encoding of HTML page (based on the info in the HTML head), and use this encoding to decode the <code>r.text</code>.<br>
+However, if encoding is not found, encoding will be considered as “ISO-8859-1”, whether it’s because of failing parse or non-existence,</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(r.encoding)</div><div class="line">text = r.text</div><div class="line">text.encode(<span class="string">"ISO-8859-1"</span>,<span class="string">"ignore"</span>) == r.content</div><div class="line"><span class="comment"># result is "ISO-8859-1" and "True"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>two examples:<br>
+<a href="https://www.fileformat.info/info/unicode/char/4e25/index.htm" target="_blank" rel="external">&quot;严&quot;字</a><br>
+<a href="https://www.fileformat.info/info/unicode/char/304d/index.htm" target="_blank" rel="external">&quot;き&quot;字</a></p>
+<ul>
+<li>For “き”: It’s python3 source code is <code>u&quot;\u304D&quot;</code></li>
+<li><code>utf-8</code> is <code>0xE3 0x81 0x8D (e3818d)</code>;</li>
+<li><code>utf-16</code> is <code>0x304D (304d)</code>;</li>
+<li><code>utf-32</code> is <code>0x0000304D (304d)</code></li>
+<li>HTML Entity (hex)  <code>&amp;#x304d;</code></li>
+</ul>
+</li>
+<li>
+<p>code</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">one_char = <span class="string">'き'</span></div><div class="line">print(one_char, one_char.encode(<span class="string">"utf-8"</span>),one_char.encode(<span class="string">"utf-16"</span>), one_char.encode(<span class="string">"utf-32"</span>))</div><div class="line">print(one_char.encode(<span class="string">'unicode_escape'</span>), one_char.encode(<span class="string">'unicode_escape'</span>).decode(<span class="string">'unicode_escape'</span>))</div><div class="line">```</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>き b’\xe3\x81\x8d’ b’\xff\xfeM0’ b’\xff\xfe\x00\x00M0\x00\x00’<br>
+b’\u304d’ き</p>
+<pre><code>
+
+## Style guide
+### argument
++ `**kwargs ` is a bad practice:
+  1. you don't know how `**kwargs` affect.
+  2. **wrong keywrod arguments is no longer reported by the interpreter.** 
+ `TypeError 'x' is an invalid keyword argument for this function`
+ [reference:The Use and Abuse of Keyword Arguments in Python](http://ivory.idyll.org/blog/on-kwargs.html)
+
+## For more:
+[我眼中一个好的Pythoneer应该具备的品质]*(https://zhuanlan.zhihu.com/p/33266239)
+[Python进阶 - gitbook](https://www.gitbook.com/book/eastlakeside/interpy-zh/details)
+</code></pre>
 ]]></content>
     
     <summary type="html">
@@ -3653,687 +4806,6 @@ Compile python to .net bytecode</li>
     
     
       <category term="python" scheme="http://timchen314.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人工智能简介</title>
-    <link href="http://timchen314.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%AE%80%E4%BB%8B/"/>
-    <id>http://timchen314.com/人工智能简介/</id>
-    <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="备忘">备忘</h1>
-<h2 id="三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小">三巨头介绍<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）</h2>
-<ul>
-<li>Hinton 多伦多大学<br>
-DBN</li>
-<li>LeCun<br>
-CNN</li>
-<li>Bengio<br>
-attention、GAN</li>
-</ul>
-<h2 id="神经网络简介">神经网络简介</h2>
-<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg" alt="极简分类"></p>
-<a id="more"></a>
-<p><img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B21_trnlla.jpg" alt="极简史"><br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626520/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%8F%B22_f7v7jy.jpg" alt="极简史2"></p>
-<h2 id="技术特点和技巧的备忘">技术特点和技巧的备忘</h2>
-<ul>
-<li>单层线性、双层非线性<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>
-<blockquote>
-<p>隐藏层的参数矩阵的作用就是使得数据的原始坐标空间从线性不可分，转换成了线性可分。</p>
-</blockquote>
-</li>
-<li>层数的影响<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup>
-<blockquote>
-<p>参数数量一样的情况下，更深的网络往往具有比浅层的网络更好的识别效率。这点也在ImageNet的多次大赛中得到了证实。从2012年起，每年获得ImageNet冠军的深度神经网络的层数逐年增加，2015年最好的方法GoogleNet是一个多达22层的神经网络。在最新一届的ImageNet大赛上，目前拿到最好成绩的MSRA团队的方法使用的更是一个深达152层的网络！关于这个方法更多的信息有兴趣的可以查阅ImageNet网站。</p>
-</blockquote>
-</li>
-<li>BP的缺点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>
-<blockquote>
-<p>基于梯度下降的反向传播法很容易在训练网络参数时收敛于局部极小值。此外，反向传播法训练网络参数还存在很多实际问题，比如需要大量的标签样本来训练网络的权值，多隐含层的神经网络权值的训练速度很慢，权值的修正随着反向传播层数的增加逐渐削弱等。<br>
-面对采用反向传播法来训练具有多隐含层的深度网络的网络参数时存在的缺陷，一部分研究人员开始探索通过改变感知器的结构来改善网络学习的性能，由此产生了很多著名的单隐含层的浅层学习模型，如SVM、logistic regression、Maximum entropy model和朴素贝叶斯模型等。浅层学习模型能够有效地解决简单或者具有复杂条件限制的问题，但受限于只含一个隐含层，所以浅层学习模型特征构造的能力有限，不能有效处理包含复杂特征的问题。</p>
-</blockquote>
-</li>
-<li>LSTM
-<blockquote>
-<p>LSTM只能避免RNN的梯度消失（gradient vanishing）；梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="历史节点">历史节点</h2>
-<ul>
-<li>1943<br>
-W.Pitts &amp; W.McCulloch: Concept of ANN(Artificial Neural Network)<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup></li>
-<li>1949<br>
-D. Olding Hebb: math model</li>
-<li>1957<br>
-F.Rosenblatt: Perceptron</li>
-<li>1969<br>
-arvin Minsky &amp; Seymour Papert: Perceptron’s inability of XOR &amp; limitation of computing power</li>
-<li>1974<br>
-Paul Werbos: BP(Back Propagation)</li>
-<li>1980<br>
-Hinton: MLP(Multi_Layer Perceptron)</li>
-<li>1982<br>
-John Hopfield: Hopfield Network(pioneer RNN)</li>
-<li>1998<br>
-LeCun: CNN(Convoluted Neural Network)</li>
-<li>2006<br>
-Hinton, &lt;<science>&gt; DBN(Deep Belief Networks)</science></li>
-<li>2012<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2]</a></sup>
-<ul>
-<li>深度学习技术又在图像识别领域大展拳脚。Hinton与他的学生在ImageNet竞赛中，用多层的卷积神经网络成功地对包含一千类别的一百万张图片进行了训练，取得了分类错误率15%的好成绩，这个成绩比第二名高了近11个百分点，</li>
-<li>Jeff Dean &amp; Andrew Ng in GoogleBrain: “the Cat”</li>
-</ul>
-</li>
-</ul>
-<h2 id="名词概念">名词概念</h2>
-<ul>
-<li>
-<p>activation function<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2]</a></sup><br>
-【示意效果】<br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/c_scale,w_0.5/v1500626521/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/activation_function_uykbzx.jpg" alt="activation function"></p>
-</li>
-<li>
-<p>capcity<sup class="footnote-ref"><a href="#fn2" id="fnref2:4">[2]</a></sup><br>
-更多的参数意味着其模拟的函数可以更加的复杂，可以有更多的容量（capcity）去拟合真正的关系。</p>
-</li>
-<li>
-<p>curse of dimensionality（维数灾祸）<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
-<blockquote>
-<p>在机器学习里是指随着样本空间和参数空间维数的增加，潜在参数组合的数量指数型增长，相同精确度的预测会需要多得多的训练样本。当训练样本不变时，预测的精度与空间维数的增加成反比。</p>
-</blockquote>
-</li>
-<li>
-<p>DBN(深度信念网络)</p>
-</li>
-<li>
-<p>generalization<sup class="footnote-ref"><a href="#fn2" id="fnref2:5">[2]</a></sup><br>
-提升模型在测试集上的预测效果的主题叫做泛化</p>
-</li>
-<li>
-<p>Grid Search（网格搜索：用尝试的方法选择中间层的节点数）<sup class="footnote-ref"><a href="#fn2" id="fnref2:6">[2]</a></sup></p>
-</li>
-<li>
-<p>regularization<sup class="footnote-ref"><a href="#fn2" id="fnref2:7">[2]</a></sup><br>
-相关方法被称作正则化。神经网络中常用的泛化技术有权重衰减等。</p>
-</li>
-<li>
-<p>schools of AI(译为学派)<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
-<ol>
-<li>符号主义(symbolicism)，又称为逻辑主义(logicism)、心理学派(psychologism)或计算机学派(computerism)，其原理主要为物理符号系统(即符号操作系统)假设和有限合理性原理。<strong>认为人工智能源于数理逻辑。</strong></li>
-<li>连接主义(connectionism)，又称为仿生学派(bionicsism)或生理学派(physiologism)，其主要原理为神经网络及神经网络间的连接机制与学习算法。<strong>认为人工智能源于仿生学，特别是对人脑模型的研究。</strong></li>
-<li>行为主义(actionism)，又称为进化主义(evolutionism)或控制论学派(cyberneticsism)，其原理为控制论及感知-动作型控制系统。<strong>认为人工智能源于控制论。(认为人工智能源于仿生学，特别是对人脑模型的研究。)</strong></li>
-</ol>
-</li>
-<li>
-<p>Training Set, Validation Set and Testing Set; Ground Truth</p>
-<blockquote>
-<p>验证数据用于最小化过拟合(overfitting)。<br>
-这数据不调整权重和偏差。在基于训练数据调整权重之后，如果基于训练数据的准确度增加了，而基于验证数据的准确度没有增加或反而下降了，则表明过拟合（overfitting）了，需要立即停止训练。<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
-</blockquote>
-</li>
-</ul>
-<p>Ground Truth: 正确标注的数据是Ground Truth， 错误的标记则不是。（也有人将所有标注数据都叫做Ground Truth）<sup class="footnote-ref"><a href="#fn7" id="fnref7:1">[7]</a></sup></p>
-<h1 id="nn">NN</h1>
-<h2 id="rnn">RNN</h2>
-<p><a href="https://zhuanlan.zhihu.com/p/24813287" target="_blank" rel="external">什么是 LSTM RNN</a><br>
-<a href="https://www.zhihu.com/search?type=content&amp;q=lstm" target="_blank" rel="external">更多介绍</a></p>
-<h2 id="dnn">DNN</h2>
-<h2 id="optimization">optimization</h2>
-<p>待读<br>
-<a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="external">link</a><br>
-<a href="http://ycszen.github.io/2016/08/24/SGD%EF%BC%8CAdagrad%EF%BC%8CAdadelta%EF%BC%8CAdam%E7%AD%89%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%E5%92%8C%E6%AF%94%E8%BE%83/" target="_blank" rel="external">link</a></p>
-<h2 id="tips">tips</h2>
-<ul>
-<li><a href="https://stackoverflow.com/questions/37259515/why-pretraining-for-dnn-is-not-specified-in-keras" target="_blank" rel="external">About Why pretraining for DNN is not specified in keras?</a></li>
-</ul>
-<h1 id="framework-software">framework &amp; software</h1>
-<h2 id="deepchem">Deepchem</h2>
-<p>Developed by Vijia Panda &amp; Schrodinger Company. <a href="https://deepchem.io" target="_blank" rel="external">deepcheem</a></p>
-<ul>
-<li><a href="https://deepchem.io/docs/notebooks/graph_convolutional_networks_for_tox21.html" target="_blank" rel="external">Modeling Small Molecule Toxicity with Graph Convolutions</a> (An Official Example)<br>
-刚看完<code>In [2]:</code>部分。</li>
-</ul>
-<h2 id="deepmd-kit">DeepMD-kit</h2>
-<h1 id="技术评论">技术评论</h1>
-<h2 id="技术成熟的条件">技术成熟的条件</h2>
-<h3 id="andrew-ng">Andrew Ng<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></h3>
-<blockquote>
-<ul>
-<li>一个新科技的出现要掐着时间，不能太早也能太晚。比如说iphone，2007年才是它发布的正确时间，而不是在1993年，因为那时的芯片，电池，屏幕技术还没到位。</li>
-</ul>
-</blockquote>
-<ul>
-<li>另外一个极端的例子是达芬奇发明直升机，他发明直升机的时间是1480年代，而飞机引擎技术在1900年代才出现。</li>
-<li>还有自动驾驶技术，2007年研究自动驾驶技术还太早，因为AI要用到的传感器还没生产出来。2015年以后，整个自动驾驶的生态系统才算比较完善。</li>
-<li>同样在1990年代，网络，视频流还不足以支撑慕课问世，到2011年，整个网络基础建设才为在线视频教育提供了较好的环境。</li>
-<li>深度学习也是，90年代数据/计算比较小，浅层算法效果更好。从2007开始，有了大数据做基础，深度学习才取得了更好的效果。</li>
-<li>但是，我们还是要感谢历史中所有的革新者，包括早期的那些人，他们的工作对后来的发展进步也非常具有影响和帮助。【现在不叫座，以后可能叫好】</li>
-</ul>
-<h1 id="deep-learning-花书-笔记">《Deep learning》（花书）笔记</h1>
-<h2 id="第二章-线性代数">第二章 线性代数</h2>
-<p>总结：<br>
-<strong>2.8</strong> SVD、<strong>2.10</strong> trace的性质不熟悉；<strong>2.9</strong> Moore-Penrose很难理解；<strong>2.11</strong> PCA是从“压缩”这个目的，推导出方法，很难；如果从PCA方法出发来看其目的，则很简单，但是花书没有这样做，这对入门的人并不友好。</p>
-<ul>
-<li>
-<p>关于迹</p>
-<ul>
-<li>迹是特征值的和；</li>
-<li>迹是一种线性算子：<br>
-tr(A + B) = tr(A) + tr(B)<br>
-tr(rA) = r tr(A)</li>
-<li>几何上<br>
-<a href="https://www.zhihu.com/question/20533117" target="_blank" rel="external">迹的几何意义是什么？ - 傅渥成的回答 - 知乎</a>：</li>
-</ul>
-<blockquote>
-<p>Geometrically, the trace can be interpreted as the infinitesimal change in volume (as the derivative of the determinant), which is made precise in Jacobi’s formula.</p>
-</blockquote>
-<p>以三维矩阵为例：<br>
-$V=aX_1\cdot bX_2 \cdot cX_3$，那么<br>
-$$ \sum_{i=1}^{3} \frac{\partial V}{\partial X_i}=a + b + c<br>
-$$</p>
-</li>
-</ul>
-<h2 id="第三章-概率与信息论">第三章 概率与信息论</h2>
-<h1 id="reference">reference</h1>
-<h2 id="历史">历史</h2>
-<p><a href="http://www.it610.com/article/5198053.htm" target="_blank" rel="external">a brief history of maching learning(机器学习简史)</a> 【已读】</p>
-<h2 id="可读">可读</h2>
-<p><a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/" target="_blank" rel="external">colah blog</a><br>
-<a href="www.deeplearningbook.org/">book: Deep learning(Ian. Goodfellow)</a><br>
-[book: Neural networks and deep learning(Michael Nielsen)]<br>
-(<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">www.deeplearningbook.org/</a>)</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://www.zhihu.com/question/37922364" target="_blank" rel="external">Yoshua Bengio为什么能跟Hinton、LeCun相提并论？</a> 包含学术传承与贡献的讨论 <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/23523568" target="_blank" rel="external">历史|从神经元到深度学习</a> 【可再读】 <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a> <a href="#fnref2:2" class="footnote-backref">↩</a> <a href="#fnref2:3" class="footnote-backref">↩</a> <a href="#fnref2:4" class="footnote-backref">↩</a> <a href="#fnref2:5" class="footnote-backref">↩</a> <a href="#fnref2:6" class="footnote-backref">↩</a> <a href="#fnref2:7" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/60148469" target="_blank" rel="external">深度学习技术发展历史及应用现状如何？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="https://www.zhihu.com/question/34878706" target="_blank" rel="external">LSTM如何来避免梯度弥散和梯度爆炸？</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p><a href="https://www.zhihu.com/question/54139566" target="_blank" rel="external">神经网络的历史？</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p><a href="http://blog.csdn.net/u011531010/article/details/52935348" target="_blank" rel="external">人工智能学派简介</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn7" class="footnote-item"><p><a href="http://blog.csdn.net/myarrow/article/details/51504328" target="_blank" rel="external">Training Set, Validation Set 和Testing Set之间的差别及关系</a> <a href="#fnref7" class="footnote-backref">↩</a> <a href="#fnref7:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn8" class="footnote-item"><p><a href="https://www.douban.com/note/629481991/" target="_blank" rel="external">【干货|持更】人工智能产业的相关资料及入门指南</a> 【已读】 <a href="#fnref8" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;备忘&quot;&gt;备忘&lt;/h1&gt;
-&lt;h2 id=&quot;三巨头介绍：geoffrey-hinton-yann-lecun-yoshua-bengio-年级由大到小&quot;&gt;三巨头介绍&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;：Geoffrey Hinton、Yann LeCun、Yoshua Bengio（年级由大到小）&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Hinton 多伦多大学&lt;br&gt;
-DBN&lt;/li&gt;
-&lt;li&gt;LeCun&lt;br&gt;
-CNN&lt;/li&gt;
-&lt;li&gt;Bengio&lt;br&gt;
-attention、GAN&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;神经网络简介&quot;&gt;神经网络简介&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500626522/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%9E%81%E7%AE%80%E5%88%86%E7%B1%BB_qygbx8.jpg&quot; alt=&quot;极简分类&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="人工智能" scheme="http://timchen314.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-      <category term="人工智能" scheme="http://timchen314.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shadownsocks备忘</title>
-    <link href="http://timchen314.com/shadowsocks%E5%A4%87%E5%BF%98/"/>
-    <id>http://timchen314.com/shadowsocks备忘/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="备忘">备忘</h2>
-<ul>
-<li><a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">官网</a></li>
-<li>OS X: 用ShadowsocksX</li>
-<li>iOS: Wingy</li>
-<li>windows: Shadowsocks-Qt，可以用二维码进行设置</li>
-</ul>
-<a id="more"></a>
-<h2 id="reference">reference</h2>
-<p><a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html" target="_blank" rel="external">各种系统下Shadowsocks客户端的安装与配置</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;备忘&quot;&gt;备忘&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;OS X: 用ShadowsocksX&lt;/li&gt;
-&lt;li&gt;iOS: Wingy&lt;/li&gt;
-&lt;li&gt;windows: Shadowsocks-Qt，可以用二维码进行设置&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="shadownsocks" scheme="http://timchen314.com/categories/shadownsocks/"/>
-    
-    
-      <category term="shadownsocks" scheme="http://timchen314.com/tags/shadownsocks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Story of Terminal</title>
-    <link href="http://timchen314.com/Story_of_Terminal/"/>
-    <id>http://timchen314.com/Story_of_Terminal/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="总结">总结</h1>
-<p>从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：<br>
-本地terminal类型和编码 -&gt; linux下terminal类型和编码</p>
-<ul>
-<li>ctrl+h的编码<br>
-<strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
-而ctrl+h的值也为010。<br>
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>F1键<br>
-terminal类型的选择也会影响快捷键。<br>
-Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
-</ul>
-<h2 id="问题：">问题：</h2>
-<p>为什么BS无法删除，而是想左移动？<br>
-为什么在执行程序进行输入时，按下BS显示的是^H?</p>
-<h2 id="答案">答案</h2>
-<p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
-<p>Terminal</p>
-<ul>
-<li><a href="http://www.ibb.net/~anne/keyboard.html" target="_blank" rel="external">VT100</a><br>
-<strong>Xterms on the other hand, emulate the vt100 terminal, which didn’t have a [Delete].</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII DEL (0x7F)</div><div class="line">  --------------------------------------------------</div><div class="line">Xterm&apos;s emulation of VT100</div><div class="line">Key            KeySymName       Console characters</div><div class="line">  --------------------------------------------------</div><div class="line">  Ctrl+H   ---&gt;  Control_H  ---&gt;  ASCII  BS (0x08)</div><div class="line">  [&lt;---]   ---&gt;  Backspace  ---&gt;  ASCII BS (0x08)</div><div class="line">  [Delete] ---&gt;  Delete     ---&gt;  ASCII DEL (0x7F)</div></pre></td></tr></table></figure>
-<p>VT series have their own keyboard: <a href="http://www.vt100.net/docs/vt510-rm/chapter8.html" target="_blank" rel="external">http://www.vt100.net/</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_blank" rel="external">wikipedia</a>:</p>
-<blockquote>
-<p>A personal computer can run** terminal emulator** software that replicates the function of a terminal, sometimes allowing concurrent use of local programs and access to a distant terminal host system.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
-&lt;p&gt;从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程：&lt;br&gt;
-本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ctrl+h的编码&lt;br&gt;
-&lt;strong&gt;ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.&lt;/strong&gt;&lt;br&gt;
-而ctrl+h的值也为010。&lt;br&gt;
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
-    
-      <category term="编码" scheme="http://timchen314.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-      <category term="Terminal" scheme="http://timchen314.com/tags/Terminal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git笔记</title>
-    <link href="http://timchen314.com/git/"/>
-    <id>http://timchen314.com/git/</id>
-    <published>2017-07-26T10:00:00.000Z</published>
-    <updated>2018-01-28T03:44:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="git">git</h1>
-<h2 id="开始">开始</h2>
-<p>非常好的入门:<br>
-<img src="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png" alt="非常好的入门0"><br>
-非常好的入门1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
-<blockquote>
-<ul>
-<li>工作区：就是你在电脑里能看到的目录。</li>
-<li>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<ul>
-<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
-</ul>
-</blockquote>
-<p><a href="https://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">非常好的入门2</a></p>
-<ul>
-<li>
-<p>help<br>
-<code>git help &lt;verb&gt;</code></p>
-</li>
-<li>
-<p>init</p>
-</li>
-<li>
-<p>config</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your name"</span></div><div class="line">git config --global user.email <span class="string">"your email"</span></div><div class="line">git config --global core.editor <span class="string">"vim #set vim as editor</span></div></pre></td></tr></table></figure>
-<p>列出设置的config<br>
-<code>git config --list</code></p>
-</li>
-<li>
-<p>difftool<br>
-没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
-<p>kompare的效果非常好。</p>
-</li>
-<li>
-<p>completion by bash-completion<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-</li>
-</ul>
-<h2 id="操作">操作</h2>
-<ul>
-<li>add filename</li>
-<li>commit
-<ul>
-<li><code>git commit -m &quot;your message&quot;</code></li>
-<li>Amending the most recent commit message<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></li>
-</ul>
-<blockquote>
-<p><code>git commit --amend</code><br>
-<strong>will open your editor</strong>, allowing you to change the commit message of the most recent commit. Additionally, you can set the commit message directly in the command line with:</p>
-</blockquote>
-<blockquote>
-<p><code>git commit --amend -m &quot;New commit message&quot;</code><br>
-…however, this can make multi-line commit messages or small corrections more cumbersome to enter.</p>
-</blockquote>
-<blockquote>
-<p>Make sure you don’t have any working copy changes staged before doing this or they will get committed too. (Unstaged changes will not get committed.)</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>
-<p>clone<br>
-git clone /path/to/repository<br>
-如果是远端服务器上的仓库，你的命令会是这个样子：<br>
-<code>git clone username@host:/path/to/repository</code><br>
-<code>git clone git@github.com:dunitian/Windows10.git &quot;F:/Work/WP/Windows10&quot; #到指定文件夹</code><br>
-<code>git clone -b your_branch your_repo #指定branch</code></p>
-</li>
-<li>
-<p>push<br>
-<code>git push origin master:master</code><br>
-origin is the remote server; the branch name before the colon is local branch name, and that after the colon is remote branch name. e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin HEAD:refs/<span class="keyword">for</span>/branch1 <span class="comment"># push HEAD branch to a remote branch   </span></div><div class="line">git push origin :refs/<span class="keyword">for</span>/branch1  <span class="comment"># delete remote branch</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>checkout</p>
-<ul>
-<li><code>git checkout hexo myfile</code><br>
-从hexo分支得到myfile</li>
-<li><code>git checkout -b dev #-b参数表示创建并切换</code><br>
-<code>git checkout -b dev your_SHA1 # 创建并切换到your_SHA1 commit</code><br>
-git checkout master</li>
-<li><code>git checkout --track local_branch origin/remote_branch</code><br>
-create a local branch based on a remote-tracking branch.
-<blockquote>
-<p>(In recent versions of git the “–track” option is actually unnecessary since it’s implied when the final parameter is a remote-tracking branch, as in this example.)]<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><br>
-The “–track” option sets up some configuration variables that associate the local branch with the remote-tracking branch. These are useful chiefly for two things:</p>
-<ul>
-<li>They allow git pull to know what to merge after fetching new remote-tracking branches.</li>
-<li>If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Your branch and the tracked remote branch &apos;origin/master&apos;</div><div class="line">have diverged, and respectively have 3 and 384 different</div><div class="line">commit(s) each.</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>
-<p>stash<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
-<blockquote>
-<p>储藏会处理工作目录的脏的状态 - 即，修改的跟踪文件与暂存改动 - 然后将未完成的修改保存到一个栈上，而你可以在任何时候重新应用这些改动。</p>
-</blockquote>
-<p><code>git stash</code> 临时存储当前状态<br>
-<code>git stash list</code><br>
-<code>git stash apply (--index)</code> 找回临时存储的状态<br>
-<code>git stash drop</code> 删除stash</p>
-</li>
-<li>
-<p>branch</p>
-<ul>
-<li>git merge dev<br>
-合并指定分支到当前分支</li>
-<li>git branch -d dev #删除</li>
-<li><code>git branch -r/-a</code> # 查看远程/所有分支；<br>
-<code>git branch</code> 查看本地分支</li>
-<li><code>git checkout mybfranch</code> # shift to another branch</li>
-</ul>
-</li>
-<li>
-<p>pull<br>
-<code>git pull origin master</code>相当于<code>git fetch origin # fetch to local repo</code>加上<code>git merge origin/master # origin master shall be in local repo</code></p>
-</li>
-<li>
-<p>fetch<br>
-<code>git fetch origin hexo</code>从remote repo获取名为hexo的branch</p>
-</li>
-</ul>
-<h2 id="丢弃">丢弃</h2>
-<ul>
-<li>
-<p><code>git rm</code> (then git commit)<br>
-<code>git rm --cached file_a 从stage中删除</code><br>
-<code>git rm file_a 从stage中删除，同时删除物理文件</code><br>
-<code>git mv file_a file_b</code></p>
-</li>
-<li>
-<p><code>git checkout -- file</code> (other functions about checkout is discribed above )<br>
-<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515256762/%E6%9D%82/git_reset_and_checkout.jpg" alt="image"><br>
-git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
-<ul>
-<li>删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：<br>
-<code>git checkout -- test.txt</code></li>
-<li>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
-场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD file</code>，就回到了场景1，第二步按场景1操作。<br>
-要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</li>
-</ul>
-</li>
-<li>
-<p>reset<br>
-<code>git reset --hard HEAD^</code><br>
-<code>git reset --hard 3628164</code></p>
-</li>
-</ul>
-<h2 id="显示状态">显示状态</h2>
-<ul>
-<li>
-<p>status</p>
-</li>
-<li>
-<p>log</p>
-<ul>
-<li><code>git log --oneline --decorate # 加上--decorate 时，我们可以看到我们的标签</code></li>
-<li><code>git log remotename/branchname # get remote commit. e.g., git log origin/hexo</code></li>
-</ul>
-<blockquote>
-<p>Will display the log of a given remote branch in that repository, but only the logs that you have “fetched” from their repository to your personal “copy” of the remote repository.</p>
-</blockquote>
-</li>
-<li>
-<p>reflog 查看历史命令<br>
-与<code>git log</code>的区别：显示整个本地仓储的commit, 包括所有branch的commit, 甚至包括已经撤销的commit, 只要HEAD发生了变化, 就会在reflog里面看得到。 git log只包括当前分支的commit.</p>
-</li>
-<li>
-<p>remote<br>
-看当前配置有哪些远程仓库，可以用命令<br>
-<code>git remote</code><br>
-执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。</p>
-</li>
-<li>
-<p><code>git ls-files #ls files in present branch</code><br>
-<code>git ls-files -u #显示冲突的文件，-s是显示标记为冲突已解决的文件</code></p>
-</li>
-<li>
-<p>diff</p>
-<ul>
-<li><code>git diff #对比工作区和stage文件的差异</code><br>
-<code>git diff --cached</code> 对比stage和branch之间的差异</li>
-<li><code>git diff master remotes/origin/hexo #对比本地“master” branch和远程 &quot;remotes/origin/hexo&quot; branch</code></li>
-<li><code>git diff origin/hexo #对比当前working tree和远程branch</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="rebase">rebase</h2>
-<p><a href="http://blog.csdn.net/wangjia55/article/details/8776409" target="_blank" rel="external">git rebase 用法</a><br>
-<a href="https://stackoverflow.com/questions/29902967/rebase-in-progress-can-not-commit-how-to-proceed-or-stop-abort" target="_blank" rel="external">stackoverflow</a></p>
-<ul>
-<li>git rebase --skip</li>
-<li>git rebase --continue #use this when you solved conflicts.</li>
-<li>git rebase --abort #放弃当前rebase</li>
-</ul>
-<h2 id="tag">tag</h2>
-<p>git push origin --tags</p>
-<h2 id="其他概念与原理">其他概念与原理</h2>
-<ul>
-<li>
-<p>conflict<br>
-<a href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank" rel="external">Resolving a merge conflict using the command line</a></p>
-</li>
-<li>
-<p>remote<br>
-remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
-<blockquote>
-<p>“remotes” are just nicknames for other repositories, synonymous with a URL or <strong>the path of a local directory</strong> – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.</p>
-</blockquote>
-</li>
-<li>
-<p>origin<br>
-It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签。<br>
-<code>git remote add https://github.com/TimChen314/TimChen314.github.io.git # You can set # set origin by yourself</code></p>
-</li>
-<li>
-<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
-Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
-远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
-</li>
-<li>
-<p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
-<blockquote>
-<p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
-<ul>
-<li>upstream generally refers to the original repo that you have forked<br>
-(see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
-<blockquote>
-<p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit<br>
-only two types of branches, and they are storaged in<sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4]</a></sup>:</p>
-</blockquote>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.git/refs/heads/ <span class="comment">#[for local branches] **only hash in the file**</span></div><div class="line">.git/refs/remotes/ <span class="comment">#[for tracking branches]</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Local branches</li>
-<li>Remote-tracking branches</li>
-</ul>
-</li>
-<li>
-<p>refspec<br>
-<code>&lt;source-name&gt;:&lt;destination-name&gt;</code> is a refspec</p>
-</li>
-</ul>
-<h2 id="tips">tips</h2>
-<ul>
-<li>
-<p>git clone下载慢<br>
-<code>git config --global http.postBuffer 524288000</code></p>
-</li>
-<li>
-<p>hub<br>
-在终端中输入 <code>$ hub browse</code>，它将直接在浏览器中自动地打开 git 仓库的 URL。Boom！</p>
-</li>
-</ul>
-<h3 id="about-github">about github</h3>
-<p>[how to bring up an issue?](hoomd Build_NP_reaction.shhoomd Build_NP_reaction.sh)</p>
-<h2 id="错误">错误</h2>
-<ul>
-<li>prompt to input passphrase time and time again:<br>
-<a href="https://stackoverflow.com/questions/6106137/git-enter-long-passphrase-for-every-push" target="_blank" rel="external">Git enter long passphrase for every push</a><br>
-Note that you can use ssh-key only if you use ssh to build remote connections.<br>
-<code>git remote -v</code> should looks like:<br>
-<code>origin	git@github.com:TimChen314/MDTackle.git (fetch)</code><br>
-but not:<br>
-<code>origin	https://github.com/TimChen314/MDTackle.git</code></li>
-</ul>
-<h1 id="reference">reference</h1>
-<h2 id="待读">待读</h2>
-<p><a href="http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;" target="_blank" rel="external"><strong>超好</strong>: git cheatsheet</a><br>
-<a href="http://www.jb51.net/article/55441.htm" target="_blank" rel="external">常用git</a></p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://www.runoob.com/git/git-workspace-index-repo.html" target="_blank" rel="external">Git 工作区、暂存区和版本库</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://blog.csdn.net/chenbifeng/article/details/51570606" target="_blank" rel="external">git命令自动补全</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">How to modify existing, unpushed commits?</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="https://longair.net/blog/2009/04/16/git-fetch-and-merge/" target="_blank" rel="external">GIT: FETCH AND MERGE, DON’T PULL</a> <a href="#fnref4" class="footnote-backref">↩</a> <a href="#fnref4:1" class="footnote-backref">↩</a> <a href="#fnref4:2" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn5" class="footnote-item"><p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86" target="_blank" rel="external">6.3 Git 工具 - 儲藏</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p><a href="https://stackoverflow.com/questions/29862319/whats-the-difference-between-git-reset-hard-master-and-git-reset-hard-or" target="_blank" rel="external">What’s the difference between <code>git reset --hard master</code> and <code>git reset --hard origin/master</code>?</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;git&quot;&gt;git&lt;/h1&gt;
-&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
-&lt;p&gt;非常好的入门:&lt;br&gt;
-&lt;img src=&quot;http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png&quot; alt=&quot;非常好的入门0&quot;&gt;&lt;br&gt;
-非常好的入门1&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;工作区：就是你在电脑里能看到的目录。&lt;/li&gt;
-&lt;li&gt;暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://timchen314.com/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://timchen314.com/tags/git/"/>
     
   </entry>
   

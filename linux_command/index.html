@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-28T03:44:41.000Z">
+<meta property="og:updated_time" content="2018-04-18T11:42:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令记录">
 <meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
@@ -446,15 +446,17 @@
 <code>toe /usr/share/terminfo/</code>: supported terminal; you can compare two terminal by <code>infocmp vt100 vt220</code></p>
 </li>
 <li>
-<p>其他<br>
+<p>文本处理相关<br>
 <code>tac</code>: cat倒过来写，是将文件反向输出的命令<br>
 <code>join命令</code>: 横向连接文件，可以合并第一列<br>
 <code>tee</code>: <code>tee file1 file2 -</code>  #将标准输出，输出到file1、file2和标准输出（“-”就是代表标准输出）（<strong>注意</strong> 该命令本身会向标准输出 输出一次，所以tee file1 file2 - 会将标准输出 输出两次）<br>
+<code>read</code>: <code>read -p &quot;make dir now?[y/n]:&quot; select</code>#直接读入变量值</p>
+</li>
+<li>
+<p>其他<br>
 <code>basename &amp; dirname</code>: 从路径名得到root部分和文件名部分<br>
-<code>read</code>: <code>read -p &quot;make dir now?[y/n]:&quot; select</code>#直接读入变量值<br>
 <code>df -T</code>: 显示硬盘分区类型<br>
 lsof:  <code>lsof -p 456,123</code> 列出进程456和123所有打开的文件。<code>lsof -i 6</code> 列出所有IPv6协议的网络文件<br>
-<code>ssh -X</code>:   <code>Enables X11 forwarding</code>然后就可以用vmd、gnuplot等软件了。<br>
 <code>env</code>: 输出所有环境变量<br>
 <code>ldd ./exe</code>:  给出链接的库<br>
 <code>systemctl start atd</code>: arch中用at，需要开启<br>
@@ -949,8 +951,11 @@ In cli: <code>$ bash -euxo pipefail script.sh</code></p>
 <code>sort -n -k2 file</code></li>
 </ol>
 <h2 id="ssh命令">ssh命令</h2>
-<p>通过ssh执行命令时，由于没有登录，是不会执行<code>source .bash_profile</code>的。可以手动执行解决这个问题：<br>
-例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></p>
+<ul>
+<li><code>ssh -X</code>:   <code>Enables X11 forwarding</code>然后就可以用vmd、gnuplot等软件了。</li>
+<li>通过ssh执行命令时，由于没有登录，是不会执行<code>source .bash_profile</code>的。可以手动执行解决这个问题：<br>
+例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></li>
+</ul>
 <h2 id="su命令：">su命令：</h2>
 <p>1.关于login<br>
 （1）.直接登录root<br>
@@ -1253,7 +1258,7 @@ Because blank space is usually used as the separater of command or agruments.<br
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1264,7 +1269,7 @@ Because blank space is usually used as the separater of command or agruments.<br
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1275,7 +1280,7 @@ Because blank space is usually used as the separater of command or agruments.<br
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
