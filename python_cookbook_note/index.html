@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="service，顾名思义，是用于对系统服务进行管理的命令。 Basically, it’s a shell script! vi it! Besides, chkconfig is a closely related command.">
-<meta name="keywords" content="linux">
+<meta name="description" content="python cookbook 非常好！">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux命令之service">
-<meta property="og:url" content="http://timchen314.com/linux_senior_service/index.html">
+<meta property="og:title" content="python cookbook note">
+<meta property="og:url" content="http://timchen314.com/python_cookbook_note/index.html">
 <meta property="og:site_name" content="TimChen">
-<meta property="og:description" content="service，顾名思义，是用于对系统服务进行管理的命令。 Basically, it’s a shell script! vi it! Besides, chkconfig is a closely related command.">
+<meta property="og:description" content="python cookbook 非常好！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-04-19T12:07:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux命令之service">
-<meta name="twitter:description" content="service，顾名思义，是用于对系统服务进行管理的命令。 Basically, it’s a shell script! vi it! Besides, chkconfig is a closely related command.">
+<meta name="twitter:title" content="python cookbook note">
+<meta name="twitter:description" content="python cookbook 非常好！">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://timchen314.com/linux_senior_service/"/>
+  <link rel="canonical" href="http://timchen314.com/python_cookbook_note/"/>
 
 
 
 
 
-  <title>linux命令之service | TimChen</title>
+  <title>python cookbook note | TimChen</title>
   
 
 
@@ -313,7 +313,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timchen314.com/linux_senior_service/">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/python_cookbook_note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tim Chen">
@@ -330,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux命令之service</h1>
+          <h1 class="post-title" itemprop="name headline">python cookbook note</h1>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T03:00:00+08:00">
-                2017-12-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T18:00:00+08:00">
+                2018-04-18
               </time>
             
 
@@ -353,28 +353,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -383,9 +361,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/linux_senior_service/#comments" itemprop="discussionUrl">
+                <a href="/python_cookbook_note/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="linux_senior_service/" itemprop="commentCount"></span>
+                        data-disqus-identifier="python_cookbook_note/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -410,83 +388,26 @@
       
 
       
-        <p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
-<strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
-Besides, <code>chkconfig</code> is a closely related command.</p>
+        <p>python cookbook 非常好！</p>
 <a id="more"></a>
-<p>CentOS中的介绍：</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> info service</span></div><div class="line">DESCRIPTION</div><div class="line">       service  runs  a  System V init script in as predictable environment as</div><div class="line">       possible, removing most environment variables and with current  working</div><div class="line">       directory set to /.</div><div class="line"></div><div class="line">       The  SCRIPT  parameter  specifies  a  System  V init script, located in</div><div class="line">       /etc/init.d/SCRIPT.  The supported values  of  COMMAND  depend  on  the</div><div class="line">       invoked  script,  service  passes  COMMAND  and  OPTIONS it to the init</div><div class="line">       script unmodified.  All scripts should support at least the  start  and</div><div class="line">       stop  commands.   As  a special case, if COMMAND is --full-restart, the</div><div class="line">       script is run twice, first with the stop command, then with  the  start</div><div class="line">       command.</div><div class="line"></div><div class="line">       service --status-all runs all init scripts, in alphabetical order, with</div><div class="line">       the status command.</div><div class="line"></div><div class="line">       If the init script file does not exist, the script tries to use  legacy</div><div class="line">       actions.   If  there  is no suitable legacy action found and COMMAND is</div><div class="line">       one of actions specified in LSB Core Specification, input is redirected</div><div class="line">       to the systemctl.  Otherwise the command fails with return code 2.</div></pre></td></tr></table></figure>
-<p>[TOC]</p>
-<h2 id="service命令">service命令</h2>
-<p><code>service network start</code>就相当于<code>/etc/init.d/network start</code>。</p>
-<ul>
-<li>
-<p>An example of service command:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> service netconsole</span></div><div class="line">Usage: /etc/init.d/netconsole &#123;start|stop|status|restart|condrestart&#125;</div></pre></td></tr></table></figure>
-<p>Comman used option include “start|stop|status|restart”</p>
-</li>
-<li>
-<p>An example of init service script:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">case "$1" in</div><div class="line">    start)</div><div class="line">        do start-thing;</div><div class="line">        ;;</div><div class="line">    stop)</div><div class="line">        do stop-thing;</div><div class="line">        ;;</div><div class="line">    restart)</div><div class="line">        do restart-thing;</div><div class="line">        ;;</div><div class="line">    ...</div><div class="line">esac</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="chkconfig命令">chkconfig命令</h2>
-<p>service与chkconfig的关系归纳为：<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<blockquote>
-<p>先要注册成为系统服务(即service可以调用)，然后才能使用chkconfig控制运行级别。<br>
-service是chkconfig的前提条件。</p>
-</blockquote>
-<p><strong>注意</strong>：谨记chkconfig不是立即自动禁止或激活一个服务，它只是简单的改变了<code>/etc/rc*.d</code>中的符号连接。<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<ul>
-<li>
-<p><code>chkconfig --list</code><br>
-If you want to list systemd services use ‘systemctl list-unit-files’.</p>
-</li>
-<li>
-<p><code>chkconfig --add/del SERVICE</code></p>
-</li>
-<li>
-<p><code>chkconfig SERVICE on/off</code><br>
-是否开机就执行</p>
-</li>
-<li>
-<p><code>chkconfig --level SERVICE 3456</code><br>
-只在3456级别下运行该SERVICE<br>
-(<code>/etc/rc*.d</code>下)S开始的文件向脚本传递start参数<br>
-K开始的文件向脚本传递stop参数<br>
-K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启动越晚。<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup></p>
-</li>
-<li>
-<p>相应级别的文件在<code>/etc/rc*.d</code>之下</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> ls /etc/rc*.d -d</span></div><div class="line">/etc/rc.d  /etc/rc0.d  /etc/rc1.d  /etc/rc2.d  /etc/rc3.d  /etc/rc4.d  /etc/rc5.d  /etc/rc6.d</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>PS: <code>/etc/rc.d/rc*.d/</code>下的文件均为符号链接，最终绝大部分都是都是链接到<code>/etc/rc.d/init.d</code>下面。<code>/etc/rc.d/init.d</code>目录下面的都是开启启动脚本文件，用来启动相应的程序。</p>
-</li>
-<li>
-<p>PPS: 开机顺序<br>
-硬件自检 -&gt; 初始化启动bootloade -&gt; 加载内核 -&gt; 初始化硬件 -&gt; 加载根文件系统 -&gt; 加载驱动 -&gt; 启动一个init用户级程序</p>
-</li>
-<li>
-<p>PPPS: 上面两次加载硬件，是因为驱动分成两种：<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
-<blockquote>
-<p>1.随内核加载的驱动，一般是中断控制器，串口，定时器，时钟，各种总线等；这种驱动的初始化函数一般会放到一个特殊的初始化段中，在内核初始化时调用；<br>
-2.编译成模块的驱动，在内核初始化完成，也就是初始线程创建完成，出现shell时，根据应用程序的需要或者脚本按需加载。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="reference">reference</h2>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://www.cnblogs.com/wangtao_20/archive/2014/04/04/3645690.html" target="_blank" rel="external">linux中注册系统服务—service命令的原理通俗</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="http://blog.csdn.net/taiyang1987912/article/details/41698817" target="_blank" rel="external">linux启动脚本和service、chkconfig</a> <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/question/35619555/answer/150110115" target="_blank" rel="external">古斟布衣</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
+<h1 id="第一章：数据结构和算法">第一章：数据结构和算法</h1>
+<h2 id="1-1-解压序列赋值给多个变量">1.1 解压序列赋值给多个变量</h2>
+<p>例子：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">data = [ <span class="string">'ACME'</span>, <span class="number">50</span>, <span class="number">91.1</span>, (<span class="number">2012</span>, <span class="number">12</span>, <span class="number">21</span>), <span class="number">98</span> ]</div><div class="line">_, _, weight, (year, month, day), _ = data</div></pre></td></tr></table></figure>
+<p>学到：tuple可以解压；可以多层解压；不想要的变量用<code>_</code>接受；</p>
+<h2 id="1-2-解压可迭代对象赋值给多个变量">1.2 解压可迭代对象赋值给多个变量</h2>
+<p>可用来分割字符串以及其他多种用途；可以抛弃（用<code>_</code>或<code>ign</code>）/接受任意多个元素；<code>*</code>表达式解压出来的数据，无论是0个还是n个，type都是list。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">line = <span class="string">'nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false'</span></div><div class="line">uname, *_, homedir, sh = line.split(<span class="string">':'</span>)</div></pre></td></tr></table></figure>
+<p>还能用这种分割语法去巧妙的实现递归算法：<br>
+def sum(items):<br>
+head, *tail = items<br>
+return head + sum(tail) if tail else head</p>
+<h1 id="第四章：迭代器与生成器">第四章：迭代器与生成器</h1>
+<h2 id="4-3-使用生成器创建新的迭代模式">4.3 使用生成器创建新的迭代模式</h2>
+<p>例子：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">frange</span><span class="params">(start, stop, increment)</span>:</span></div><div class="line">    x = start</div><div class="line">    <span class="keyword">while</span> x &lt; stop:</div><div class="line">        <span class="keyword">yield</span> x</div><div class="line">        x += increment</div><div class="line"></div><div class="line"><span class="keyword">for</span> n <span class="keyword">in</span> frange(<span class="number">0</span>, <span class="number">4</span>, <span class="number">0.5</span>):</div><div class="line">	print(n)</div><div class="line">list(frange(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.125</span>))</div></pre></td></tr></table></figure>
+<p>for和list()都是调用了frange的next函数。</p>
+<h1 id="reference">reference</h1>
 
       
     </div>
@@ -531,7 +452,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://timchen314.com/linux_senior_service/" title="linux命令之service">http://timchen314.com/linux_senior_service/</a>
+      <a href="http://timchen314.com/python_cookbook_note/" title="python cookbook note">http://timchen314.com/python_cookbook_note/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -547,7 +468,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -560,8 +481,8 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/tools_for_MD_analysis/" rel="next" title="tools for MD analysis">
-                <i class="fa fa-chevron-left"></i> tools for MD analysis
+              <a href="/btc_market/" rel="next" title="Digital Currency Market">
+                <i class="fa fa-chevron-left"></i> Digital Currency Market
               </a>
             
           </div>
@@ -569,10 +490,6 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/docker/" rel="prev" title="docker note">
-                docker note <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -759,7 +676,7 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#service命令"><span class="nav-text">service命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chkconfig命令"><span class="nav-text">chkconfig命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章：数据结构和算法"><span class="nav-text">第一章：数据结构和算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-解压序列赋值给多个变量"><span class="nav-text">1.1 解压序列赋值给多个变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-解压可迭代对象赋值给多个变量"><span class="nav-text">1.2 解压可迭代对象赋值给多个变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章：迭代器与生成器"><span class="nav-text">第四章：迭代器与生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-使用生成器创建新的迭代模式"><span class="nav-text">4.3 使用生成器创建新的迭代模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
@@ -912,9 +829,9 @@ K/S后面的数字代表开机启动脚本中的启动顺序，数组越大启�
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://timchen314.com/linux_senior_service/';
-          this.page.identifier = 'linux_senior_service/';
-          this.page.title = 'linux命令之service';
+          this.page.url = 'http://timchen314.com/python_cookbook_note/';
+          this.page.identifier = 'python_cookbook_note/';
+          this.page.title = 'python cookbook note';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://timchen314.disqus.com/embed.js';

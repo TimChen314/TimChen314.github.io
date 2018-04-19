@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://timchen314.com/"/>
-  <updated>2018-04-18T11:42:14.000Z</updated>
+  <updated>2018-04-19T12:07:29.000Z</updated>
   <id>http://timchen314.com/</id>
   
   <author>
@@ -16,11 +16,51 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python cookbook note</title>
+    <link href="http://timchen314.com/python_cookbook_note/"/>
+    <id>http://timchen314.com/python_cookbook_note/</id>
+    <published>2018-04-18T10:00:00.000Z</published>
+    <updated>2018-04-19T12:07:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>python cookbook 非常好！</p>
+<a id="more"></a>
+<h1 id="第一章：数据结构和算法">第一章：数据结构和算法</h1>
+<h2 id="1-1-解压序列赋值给多个变量">1.1 解压序列赋值给多个变量</h2>
+<p>例子：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">data = [ <span class="string">'ACME'</span>, <span class="number">50</span>, <span class="number">91.1</span>, (<span class="number">2012</span>, <span class="number">12</span>, <span class="number">21</span>), <span class="number">98</span> ]</div><div class="line">_, _, weight, (year, month, day), _ = data</div></pre></td></tr></table></figure>
+<p>学到：tuple可以解压；可以多层解压；不想要的变量用<code>_</code>接受；</p>
+<h2 id="1-2-解压可迭代对象赋值给多个变量">1.2 解压可迭代对象赋值给多个变量</h2>
+<p>可用来分割字符串以及其他多种用途；可以抛弃（用<code>_</code>或<code>ign</code>）/接受任意多个元素；<code>*</code>表达式解压出来的数据，无论是0个还是n个，type都是list。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">line = <span class="string">'nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false'</span></div><div class="line">uname, *_, homedir, sh = line.split(<span class="string">':'</span>)</div></pre></td></tr></table></figure>
+<p>还能用这种分割语法去巧妙的实现递归算法：<br>
+def sum(items):<br>
+head, *tail = items<br>
+return head + sum(tail) if tail else head</p>
+<h1 id="第四章：迭代器与生成器">第四章：迭代器与生成器</h1>
+<h2 id="4-3-使用生成器创建新的迭代模式">4.3 使用生成器创建新的迭代模式</h2>
+<p>例子：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">frange</span><span class="params">(start, stop, increment)</span>:</span></div><div class="line">    x = start</div><div class="line">    <span class="keyword">while</span> x &lt; stop:</div><div class="line">        <span class="keyword">yield</span> x</div><div class="line">        x += increment</div><div class="line"></div><div class="line"><span class="keyword">for</span> n <span class="keyword">in</span> frange(<span class="number">0</span>, <span class="number">4</span>, <span class="number">0.5</span>):</div><div class="line">	print(n)</div><div class="line">list(frange(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0.125</span>))</div></pre></td></tr></table></figure>
+<p>for和list()都是调用了frange的next函数。</p>
+<h1 id="reference">reference</h1>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python cookbook 非常好！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Digital Currency Market</title>
     <link href="http://timchen314.com/btc_market/"/>
     <id>http://timchen314.com/btc_market/</id>
     <published>2018-04-17T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="市场">市场</h3>
 <ul>
@@ -38,7 +78,7 @@
 <a id="more"></a>
 <ul>
 <li>
-<p>binance：google邮箱</p>
+<p>binance</p>
 </li>
 <li>
 <p>币安Binance<br>
@@ -46,10 +86,10 @@
 费用：充值免费；提现：0.0005 BTC ≈ 3到5$；交易: 0.1%</p>
 </li>
 <li>
-<p>huobi：手机号</p>
+<p>huobi，一般用手机号登录，不像其他网站用邮箱</p>
 </li>
 <li>
-<p>otcbtc: google邮箱<br>
+<p>otcbtc<br>
 <a href="https://zhuanlan.zhihu.com/p/32758860" target="_blank" rel="external">如何购买 Cardano(ADA) 或其它加密币？</a></p>
 </li>
 <li>
@@ -121,13 +161,19 @@ ustd提币 10ustd<br>
 总结：提币费用总在10美元左右</p>
 </li>
 <li>
-<p>app<br>
-需要香港的apple ID；<br>
-要么直接买，要么申请；<br>
-申请而香港apple ID需要通过电话或银行卡绑定才能使用，而异地申请香港银行卡非常麻烦。<br>
+<p>app</p>
+<ul>
+<li><s>需要香港的apple ID；<br>
+申请而香港apple ID需要通过电话或银行卡绑定才能使用，而异地申请香港银行卡非常麻烦。</s><br>
 <a href="http://www.sohu.com/a/166464312_481438" target="_blank" rel="external">如何办理香港银行卡？2017最新收藏版！</a><br>
 <a href="http://www.sohu.com/a/164265016_679976" target="_blank" rel="external">聊聊怎么低成本在香港开户一张银行卡</a><br>
-<a href="http://www.icbcasia.com/ICBC/%E6%B5%B7%E5%A4%96%E5%88%86%E8%A1%8C/%E5%B7%A5%E9%93%B6%E4%BA%9A%E6%B4%B2/TC/%E5%80%8B%E4%BA%BA%E9%87%91%E8%9E%8D/%E4%BA%BA%E6%B0%91%E5%B9%A3%E5%8F%8A%E8%B7%A8%E5%A2%83%E7%90%86%E8%B2%A1/%E5%85%A7%E5%9C%B0%E5%AE%A2%E6%88%B6%E6%9C%8D%E5%8B%99%E5%B0%88%E5%8D%80/scm_aow.htm" target="_blank" rel="external">工銀亞洲內地客戶見證開戶服務介紹</a></p>
+<a href="http://www.icbcasia.com/ICBC/%E6%B5%B7%E5%A4%96%E5%88%86%E8%A1%8C/%E5%B7%A5%E9%93%B6%E4%BA%9A%E6%B4%B2/TC/%E5%80%8B%E4%BA%BA%E9%87%91%E8%9E%8D/%E4%BA%BA%E6%B0%91%E5%B9%A3%E5%8F%8A%E8%B7%A8%E5%A2%83%E7%90%86%E8%B2%A1/%E5%85%A7%E5%9C%B0%E5%AE%A2%E6%88%B6%E6%9C%8D%E5%8B%99%E5%B0%88%E5%8D%80/scm_aow.htm" target="_blank" rel="external">工銀亞洲內地客戶見證開戶服務介紹</a></li>
+<li>购买需要香港的apple ID<br>
+首先，美国的不行，美国apple ID还要绑定美国的信用卡；<br>
+第二，香港apple ID只在app store登录，只要不等度iCloud，就绝不会影响账号安全！<br>
+第三，app分用人民币交易的场外app和用数字货币交易的币币app，apple ID只能下载到币币app<br>
+第四，场外app，要首先登录huobi官网，扫描二维码进行下载，再对app授信，才能使用。</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -400,7 +446,7 @@ exercise – 行权</p>
     <link href="http://timchen314.com/VPS_Vultr/"/>
     <id>http://timchen314.com/VPS_Vultr/</id>
     <published>2018-03-31T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>Vultr是老牌的VPS服务商。这里记录一下购买和使用流程。</p>
 <a id="more"></a>
@@ -441,7 +487,7 @@ exercise – 行权</p>
     <link href="http://timchen314.com/digital_currency/"/>
     <id>http://timchen314.com/digital_currency/</id>
     <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>What a bubble!<br>
 <img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
@@ -642,7 +688,7 @@ Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行
     <link href="http://timchen314.com/Web/"/>
     <id>http://timchen314.com/Web/</id>
     <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="html5">html5</h1>
 <ul>
@@ -997,22 +1043,20 @@ HTML elements are represented by tags&lt;/li&gt;
     <link href="http://timchen314.com/pandas/"/>
     <id>http://timchen314.com/pandas/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>数据分析神器Pandas。</p>
 <a id="more"></a>
 <p>教程参考<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>  <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>  <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
-<ul>
-<li>
-<p>基本</p>
+<h1 id="基本">基本</h1>
 <blockquote>
 <p>Pandas 基于两种数据类型，series 和 dataframe。series 是一种一维的数据类型，其中的每个元素都有各自的标签。dataframe 可以看作是一个 series 的字典。</p>
 </blockquote>
 <ul>
 <li>Series有一个与数组关联的数据标签，被叫做 索引 。最简单的Series是由一个数组的数据构成：</li>
 </ul>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">In [4]: obj = Series([4, 7, -5, 3])    </div><div class="line">In [5]: obj   </div><div class="line">Out[5]:   </div><div class="line">0 4   </div><div class="line">1 7   </div><div class="line">2 -5   </div><div class="line">3 3</div></pre></td></tr></table></figure>
-</li>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">In [4]: obj = Series([4, 7, -5, 3])    </div><div class="line">In [5]: obj   </div><div class="line">Out[5]:   </div><div class="line">0 4   </div><div class="line">1 7   </div><div class="line">2 -5   </div><div class="line">3 3</div></pre></td></tr></table></figure>
+<ul>
 <li>
 <p>df.head/tail<br>
 <code>df</code> is the abbre. of dataframe.<br>
@@ -1033,6 +1077,11 @@ Show first 5 line：<code>df.head(5)</code></p>
 <p>filter</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Using a series of booleans to filter</div><div class="line">df[df.rain_octsep &lt; 1000]</div><div class="line"># Filtering by multiple conditionals</div><div class="line">df[(df.rain_octsep &lt; 1000) &amp; (df.outflow_octsep &lt; 4000)] </div><div class="line"># 这里不能用 and 关键字，因为会引发操作顺序的问题。必须用 &amp; 和圆括号。</div><div class="line"># Filtering by string methods</div><div class="line">df[df.water_year.str.startswith(&apos;199&apos;)]</div><div class="line"># 注意，你必须用 .str.[string method] ，而不能直接在字符串上调用字符方法。</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<h1 id="读取">读取</h1>
+<ul>
+<li>直接读取html中的表格<br>
+<code>pd.read_html(&quot;https://coinmarketcap.com/currencies/bitcoin/&quot;)</code></li>
 </ul>
 <h1 id="reference">reference</h1>
 <hr class="footnotes-sep">
@@ -1068,7 +1117,7 @@ Show first 5 line：<code>df.head(5)</code></p>
     <link href="http://timchen314.com/jupyter/"/>
     <id>http://timchen314.com/jupyter/</id>
     <published>2018-01-16T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="a-tutorial">A Tutorial</h1>
 <a id="more"></a>
@@ -1216,7 +1265,7 @@ Formatting html</li>
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
@@ -1665,7 +1714,7 @@ Hello CloudMan</p>
 查看LABEL，可以用<code>docker inspect</code>。<br>
 例子：</p>
 </blockquote>
- <figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">LABEL</span> "com.example.vendor"="ACME Incorporated"</div><div class="line"><span class="keyword">LABEL</span> com.example.label-with-value="foo"</div><div class="line"><span class="keyword">LABEL</span> version="1.0"</div><div class="line"><span class="keyword">LABEL</span> description="This text illustrates \</div><div class="line">that label-values can span multiple lines."</div></pre></td></tr></table></figure>
+ <figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">LABEL</span><span class="bash"> <span class="string">"com.example.vendor"</span>=<span class="string">"ACME Incorporated"</span></span></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> com.example.label-with-value=<span class="string">"foo"</span></span></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> version=<span class="string">"1.0"</span></span></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> description=<span class="string">"This text illustrates \</span></span></div><div class="line">that label-values can span multiple lines."</div></pre></td></tr></table></figure>
 </li>
 <li>
 <p>MAINTAINER (depreciate)<br>
@@ -1683,12 +1732,12 @@ homebrew直接安装<br>
 <code>brew cask install docker</code></li>
 <li>CentOS<br>
 <a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/" target="_blank" rel="external">官网</a><br>
-官网的方法是最正确的： <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Add the package repositories</div><div class="line">curl -s -L https://nvidia.github.io/nvidia-docker/centos7/x86_64/nvidia-docker.repo | \</div><div class="line">  sudo tee /etc/yum.repos.d/nvidia-docker.repo</div><div class="line"><span class="meta"></span></div><div class="line"># Install nvidia-docker2 and reload the Docker daemon configuration</div><div class="line">sudo yum install -y nvidia-docker2</div><div class="line">sudo pkill -SIGHUP dockerd</div><div class="line"><span class="meta"></span></div><div class="line"># Test nvidia-smi with the latest official CUDA image</div><div class="line">docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi</div></pre></td></tr></table></figure>
+官网的方法是最正确的： <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> Add the package repositories</span></div><div class="line">curl -s -L https://nvidia.github.io/nvidia-docker/centos7/x86_64/nvidia-docker.repo | \</div><div class="line">  sudo tee /etc/yum.repos.d/nvidia-docker.repo</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> Install nvidia-docker2 and reload the Docker daemon configuration</span></div><div class="line">sudo yum install -y nvidia-docker2</div><div class="line">sudo pkill -SIGHUP dockerd</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> Test nvidia-smi with the latest official CUDA image</span></div><div class="line">docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><a href="http://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="external">CentOS runoob</a><br>
 单独安装docker-ce非常麻烦的，因为需要安装和配置nvidia-container-runtime：</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line">sudo yum install -y docker-ce</div><div class="line">sudo systemctl start docker</div><div class="line">sudo docker run hello-world</div><div class="line"><span class="meta">#</span> install nvidia-container-runtime</div><div class="line">yum install -y nvidia-container-runtime</div><div class="line"><span class="meta">#</span> Then you should follow the troublesome setting process in https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup</div></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line">sudo yum install -y docker-ce</div><div class="line">sudo systemctl start docker</div><div class="line">sudo docker run hello-world</div><div class="line"><span class="meta">#</span><span class="bash"> install nvidia-container-runtime</span></div><div class="line">yum install -y nvidia-container-runtime</div><div class="line"><span class="meta">#</span><span class="bash"> Then you should follow the troublesome setting process <span class="keyword">in</span> https://github.com/nvidia/nvidia-container-runtime<span class="comment">#docker-engine-setup</span></span></div></pre></td></tr></table></figure>
 <ul>
 <li>Docker Machine
 <blockquote>
@@ -1811,7 +1860,7 @@ ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a>
     <link href="http://timchen314.com/linux_senior_service/"/>
     <id>http://timchen314.com/linux_senior_service/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -1912,7 +1961,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -1961,7 +2010,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -2021,7 +2070,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -2212,7 +2261,7 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -2331,8 +2380,23 @@ Python features a dynamic type system and automatic memory management and suppor
 </tr>
 </tbody>
 </table>
-<h4 id="sum">sum()</h4>
-<p>sum(iterable[, start]) ，iterable</p>
+<h3 id="dict">dict</h3>
+<ul>
+<li>
+<p>mydict.iterm() 将项以list返回<br>
+<code>for key,val in myd3.iterm():</code></p>
+</li>
+<li>
+<p><s>iteriterms()返回迭代器，节省内存</s> <strong>Only for python2</strong></p>
+</li>
+<li>
+<p>dict comprehension</p>
+<ul>
+<li><strong>filter a dictionary according condition</strong><br>
+<code>{k: v for k, v in points.items() if v[0] &lt; 5 and v[1] &lt; 5}</code></li>
+</ul>
+</li>
+</ul>
 <h4 id="max"><a href="https://docs.python.org/3/library/functions.html#max" target="_blank" rel="external">max()</a></h4>
 <blockquote>
 <p>max(iterable, *[, key, default])<br>
@@ -2353,7 +2417,6 @@ max(arg1, arg2, *args[, key])</p>
 <ul>
 <li><a href="http://www.cnblogs.com/whatisfantasy/p/6273913.html" target="_blank" rel="external">几个例子</a></li>
 </ul>
-<h4 id="next-iterator-default">next(iterator[, default])</h4>
 <h4 id="all-any"><code>all()/any()</code></h4>
 <blockquote>
 <p>Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:</p>
@@ -2368,15 +2431,15 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 <p>getattr(x, ‘foobar’) is equivalent to x.foobar</p>
 </blockquote>
 <p>All these function are similar. See <strong>docs</strong> for more.</p>
-<h4 id="vars">vars()</h4>
-<p>From python doc:</p>
-<blockquote>
-<p><strong>Return the __dict__</strong> attribute for a module, class, instance, or any other object with a __dict__ attribute.</p>
-</blockquote>
 <h4 id="enumerate">enumerate</h4>
 <p>如果mylist是一个二维数组：</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i,line <span class="keyword">in</span> enumerate(mylist):</div><div class="line">    ...</div></pre></td></tr></table></figure>
 <p><strong>line是元组</strong></p>
+<h4 id="next-iterator-default">next(iterator[, default])</h4>
+<h3 id="print">print</h3>
+<ul>
+<li><code>print(end='str')</code></li>
+</ul>
 <h4 id="staticmethod-function">staticmethod(function)</h4>
 <p>PS:</p>
 <blockquote>
@@ -2385,6 +2448,13 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 </blockquote>
 <p>classmethod涉及类，不涉及类的实例；staticmethod两者都不涉及，但与类有紧密的联系<br>
 <a href="https://www.zhihu.com/question/20021164" target="_blank" rel="external">ref:</a></p>
+<h4 id="sum">sum()</h4>
+<p>sum(iterable[, start]) ，iterable</p>
+<h4 id="vars">vars()</h4>
+<p>From python doc:</p>
+<blockquote>
+<p><strong>Return the __dict__</strong> attribute for a module, class, instance, or any other object with a __dict__ attribute.</p>
+</blockquote>
 <h3 id="python-类属性-实例属性">Python——类属性/实例属性</h3>
 <p><a href="http://blog.csdn.net/bolike/article/details/21554901" target="_blank" rel="external">Python——类属性/实例属性</a><br>
 <a href="http://www.cnblogs.com/dream-for/p/5199308.html" target="_blank" rel="external">Python类属性，实例属性</a> #非常好</p>
@@ -2392,27 +2462,6 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 <ul>
 <li>module.<strong>file</strong><br>
 <strong>含有module的路径！</strong></li>
-</ul>
-<h3 id="操作符特性：a-b-b-a-b">操作符特性：<code>a, b = b, a+b</code></h3>
-<p>Take the calculation of Fibinacci:<br>
-<code>a, b = b, a+b</code>  # a and a+b will be computed separately</p>
-<h3 id="print">print</h3>
-<ul>
-<li><code>print(end='str')</code></li>
-</ul>
-<h3 id="dict">dict</h3>
-<ul>
-<li>
-<p>mydict.iterm() 将项以list返回<br>
-<code>for key,val in myd3.iterm():</code></p>
-</li>
-<li>
-<p><s>iteriterms()返回迭代器，节省内存</s> <strong>Only for python2</strong></p>
-</li>
-<li>
-<p><strong>filter a dictionary according condition</strong><br>
-<code>{k: v for k, v in points.items() if v[0] &lt; 5 and v[1] &lt; 5}</code></p>
-</li>
 </ul>
 <h3 id="file">file</h3>
 <ol>
@@ -2483,6 +2532,11 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
 </ul>
 <h3 id="ternary-operator">ternary operator</h3>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result=<span class="string">'5 is larger than 3'</span> <span class="keyword">if</span> <span class="number">5</span>&gt;<span class="number">3</span> <span class="keyword">else</span> <span class="string">'5 is not larger than 3'</span></div></pre></td></tr></table></figure>
+<h3 id="deep-copy">deep copy</h3>
+<ul>
+<li><code>import copy</code></li>
+<li><code>dict.copy(mydict)</code></li>
+</ul>
 <h3 id="cli">CLI</h3>
 <ul>
 <li><code>python -c &quot;print('hello world')&quot;</code></li>
@@ -2863,7 +2917,7 @@ Python features a dynamic type system and automatic memory management and suppor
     <link href="http://timchen314.com/vmd%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vmd笔记/</id>
     <published>2017-09-29T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>
@@ -3206,7 +3260,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
     <id>http://timchen314.com/Word格式论文中添加引用/</id>
     <published>2017-09-24T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的<strong>bib文件</strong>，向Word中添加引用文献。该方法有几个好处:</p>
 <ol>
@@ -3244,7 +3298,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
     <id>http://timchen314.com/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
 <a id="more"></a>
@@ -3304,206 +3358,11 @@ pbc join res -sel尝试了各种办法也没有成功<br>
   </entry>
   
   <entry>
-    <title>gnuplot笔记（上）</title>
-    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
-    <id>http://timchen314.com/gnuplot笔记上/</id>
-    <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
-<a id="more"></a>
-<p>[TOC]</p>
-<h2 id="note-about-version-5">Note about Version 5</h2>
-<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
-<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
-例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
-<h3 id="2-size的用法">2. size的用法</h3>
-<ul>
-<li>eps to png<br>
-when eps size is set to 1.0,1.0，png的像素为600,420<br>
-eps：size 1.8,1.8 那么png的像素为1080,755</li>
-<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
-size 2,2 会导致图像超过窗口大小</li>
-</ul>
-<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
-<p><code>plot ... smooth mcsplines</code><br>
-<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
-<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
-<h3 id="4-变量的引用">4. 变量的引用</h3>
-<p>For 4.6:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
-<p>For 5.0:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
-<h2 id="format">format</h2>
-<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
-<p><code>set logscale</code> # x和y轴都设置成logscale</p>
-<h3 id="2-set-format">2. set format</h3>
-<p>设置坐标轴上数字的格式。<br>
-以1000为例：</p>
-<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
-</code></pre>
-<p>显示出来的格式为10^3</p>
-<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
-</code></pre>
-<p>显示为1×10^3</p>
-<p>需要注意的是：</p>
-<ul>
-<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
-<li><code>%t</code>与<code>%T</code><br>
-比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
-</ul>
-<h3 id="3-offset-x-y">3. offset x,y</h3>
-<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
-<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
-<blockquote>
-<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
-</blockquote>
-<p>只改major tics:<code>set tic scale 2</code></p>
-<h3 id="5-字体font">5. 字体font:</h3>
-<p>(1) gnuplot-5.0.1 manual:</p>
-<blockquote>
-<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
-(2) TimesRoman和TimesNewRoman都是一样的<br>
-For other fonts, 尽管程序不会报错，但也显示不出来<br>
-但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
-<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
-<h3 id="7-border">7. border</h3>
-<p><code>set border lw 3</code> 只改变线的宽度</p>
-<h3 id="8-key">8. key</h3>
-<p><strong>set key height #调节key与坐标轴的距离</strong><br>
-set key spacing 1.3 #调节两行之间的距离<br>
-set key maxcols/maxrow<br>
-set key autotitle</p>
-<h3 id="9-label">9. label</h3>
-<ul>
-<li>设定位置时候，是设定的左下角的坐标</li>
-<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
-</ul>
-<h3 id="10-arrow">10. arrow</h3>
-<ul>
-<li>
-<p>控制起始/终止位置<br>
-set arrow from 坐标 to 坐标<br>
-e.g.:<br>
-<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
-<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
-</li>
-<li>
-<p>控制head<br>
-e.g.:<br>
-<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
-其中head filled size 1,30,55 为控制head的格式。<br>
-<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
-length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
-</li>
-</ul>
-<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
-<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
-<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
-<h3 id="1-line-and-point-types">1. line and point types</h3>
-<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
-<h3 id="2-most-useful-point-type">2. most useful point type</h3>
-<table>
-<thead>
-<tr>
-<th>shape</th>
-<th>full id</th>
-<th>empty  id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>square</td>
-<td>5</td>
-<td>64</td>
-</tr>
-<tr>
-<td>sphere</td>
-<td>7</td>
-<td>65</td>
-</tr>
-<tr>
-<td>up-tri</td>
-<td>9</td>
-<td>66</td>
-</tr>
-<tr>
-<td>down-tri</td>
-<td>11</td>
-<td>67</td>
-</tr>
-<tr>
-<td>diamond</td>
-<td>13</td>
-<td>68</td>
-</tr>
-<tr>
-<td>pentagon</td>
-<td>15</td>
-<td>69</td>
-</tr>
-</tbody>
-</table>
-<p>e.g.:<br>
-<code>p sin(x) w p pt 5</code></p>
-<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
-<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
-<h3 id="4-several-color-set">4. several color set</h3>
-<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
-<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
-<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
-<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
-<ul>
-<li>for循环：<br>
-<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
-<li>字符串数组<br>
-`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
-a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
-**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
-<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
-<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
-</ul>
-<h3 id="1-escape-charactor">1. escape charactor</h3>
-<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
-<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
-<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
-（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
-（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
-（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
-<h3 id="3-string">3. string</h3>
-<ul>
-<li>单引号内的字符串不转义，双引号内的字符串转义</li>
-<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
-<li>“.”, “eq” and “ne&quot;<br>
-Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
-<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
-</ul>
-<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
-    
-      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>gnuplot笔记（下）</title>
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://timchen314.com/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -3745,11 +3604,206 @@ The eps file doesn’t get written until a plot command is specified after speci
   </entry>
   
   <entry>
+    <title>gnuplot笔记（上）</title>
+    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
+    <id>http://timchen314.com/gnuplot笔记上/</id>
+    <published>2017-08-16T12:00:00.000Z</published>
+    <updated>2018-04-19T12:07:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="note-about-version-5">Note about Version 5</h2>
+<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
+<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
+例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
+<h3 id="2-size的用法">2. size的用法</h3>
+<ul>
+<li>eps to png<br>
+when eps size is set to 1.0,1.0，png的像素为600,420<br>
+eps：size 1.8,1.8 那么png的像素为1080,755</li>
+<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
+size 2,2 会导致图像超过窗口大小</li>
+</ul>
+<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
+<p><code>plot ... smooth mcsplines</code><br>
+<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
+<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
+<h3 id="4-变量的引用">4. 变量的引用</h3>
+<p>For 4.6:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
+<p>For 5.0:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
+<h2 id="format">format</h2>
+<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
+<p><code>set logscale</code> # x和y轴都设置成logscale</p>
+<h3 id="2-set-format">2. set format</h3>
+<p>设置坐标轴上数字的格式。<br>
+以1000为例：</p>
+<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
+</code></pre>
+<p>显示出来的格式为10^3</p>
+<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
+</code></pre>
+<p>显示为1×10^3</p>
+<p>需要注意的是：</p>
+<ul>
+<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
+<li><code>%t</code>与<code>%T</code><br>
+比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
+</ul>
+<h3 id="3-offset-x-y">3. offset x,y</h3>
+<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
+<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
+<blockquote>
+<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
+</blockquote>
+<p>只改major tics:<code>set tic scale 2</code></p>
+<h3 id="5-字体font">5. 字体font:</h3>
+<p>(1) gnuplot-5.0.1 manual:</p>
+<blockquote>
+<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
+(2) TimesRoman和TimesNewRoman都是一样的<br>
+For other fonts, 尽管程序不会报错，但也显示不出来<br>
+但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
+<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
+<h3 id="7-border">7. border</h3>
+<p><code>set border lw 3</code> 只改变线的宽度</p>
+<h3 id="8-key">8. key</h3>
+<p><strong>set key height #调节key与坐标轴的距离</strong><br>
+set key spacing 1.3 #调节两行之间的距离<br>
+set key maxcols/maxrow<br>
+set key autotitle</p>
+<h3 id="9-label">9. label</h3>
+<ul>
+<li>设定位置时候，是设定的左下角的坐标</li>
+<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
+</ul>
+<h3 id="10-arrow">10. arrow</h3>
+<ul>
+<li>
+<p>控制起始/终止位置<br>
+set arrow from 坐标 to 坐标<br>
+e.g.:<br>
+<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
+<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
+</li>
+<li>
+<p>控制head<br>
+e.g.:<br>
+<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
+其中head filled size 1,30,55 为控制head的格式。<br>
+<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
+length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
+</li>
+</ul>
+<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
+<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
+<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
+<h3 id="1-line-and-point-types">1. line and point types</h3>
+<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
+<h3 id="2-most-useful-point-type">2. most useful point type</h3>
+<table>
+<thead>
+<tr>
+<th>shape</th>
+<th>full id</th>
+<th>empty  id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>square</td>
+<td>5</td>
+<td>64</td>
+</tr>
+<tr>
+<td>sphere</td>
+<td>7</td>
+<td>65</td>
+</tr>
+<tr>
+<td>up-tri</td>
+<td>9</td>
+<td>66</td>
+</tr>
+<tr>
+<td>down-tri</td>
+<td>11</td>
+<td>67</td>
+</tr>
+<tr>
+<td>diamond</td>
+<td>13</td>
+<td>68</td>
+</tr>
+<tr>
+<td>pentagon</td>
+<td>15</td>
+<td>69</td>
+</tr>
+</tbody>
+</table>
+<p>e.g.:<br>
+<code>p sin(x) w p pt 5</code></p>
+<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
+<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
+<h3 id="4-several-color-set">4. several color set</h3>
+<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
+<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
+<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
+<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
+<ul>
+<li>for循环：<br>
+<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
+<li>字符串数组<br>
+`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
+a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
+**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
+<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
+<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
+</ul>
+<h3 id="1-escape-charactor">1. escape charactor</h3>
+<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
+<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
+<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
+（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
+（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
+（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
+<h3 id="3-string">3. string</h3>
+<ul>
+<li>单引号内的字符串不转义，双引号内的字符串转义</li>
+<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
+<li>“.”, “eq” and “ne&quot;<br>
+Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
+<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
+</ul>
+<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
+    
+      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vim笔记</title>
     <link href="http://timchen314.com/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -3915,7 +3969,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://timchen314.com/linux_command/"/>
     <id>http://timchen314.com/linux_command/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
+    <updated>2018-04-19T12:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
@@ -4355,6 +4409,13 @@ show IP routing table</li>
 <li><code>netstat -tnpl</code><br>
 show the listened port</li>
 </ul>
+<h2 id="openssl">openssl</h2>
+<ul>
+<li>cipher a file<br>
+<code>openssl aes-128-cbc -salt -in test.txt -out test.txt.aes</code><br>
+decipher:<br>
+<code>openssl aes-128-cbc -d -salt -in test.txt.aes -out test.txt.out</code></li>
+</ul>
 <h2 id="ping">ping</h2>
 <p>Check connection of whole web segment.<br>
 <code>ping 192.9.204.$i -c2 | grep -q &quot;ttl=&quot; &amp;&amp; echo &quot;$i yes&quot; || echo &quot;$i no&quot;</code></p>
@@ -4613,199 +4674,6 @@ Because blank space is usually used as the separater of command or agruments.<br
     
     
       <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python mechanism</title>
-    <link href="http://timchen314.com/python_mechanism/"/>
-    <id>http://timchen314.com/python_mechanism/</id>
-    <published>2017-07-28T10:00:00.000Z</published>
-    <updated>2018-04-18T11:42:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h2 id="0-is-与-的区别">0. is 与 <code>==</code>的区别</h2>
-<p>python对象有三个要素：id、type、value。is 比较的是id；==比较的是value<br>
-而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
-<a id="more"></a>
-<p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
-<p>然而用python或者IPython，结果为False</p>
-<h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
-<p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
-<p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
-<h2 id="2-with-语句">2. with 语句</h2>
-<p><strong>自动进行对象的生命周期进行管理</strong><br>
-Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit__</code>函数。调用with语句时，会先分析该语句，执行<code>__enter__</code>函数，然后在当前suite退出时，会调用<code>__exit__</code>函数。<code>__exit__</code>函数中除了可以做释放资源的操作之外，同时也是异常处理的地方。如果当前suite正常退出，没有抛出任何异常，<code>__exit__</code>的几个参数均为None。否则，则将此异常的type、value、traceback作为参数传递给<code>__exit__</code>函数，同时，如果<code>__exit__</code>返回false，此异常会再次抛出，上一级代码suite可以继续处理，如果<code>__exit__</code>返回true，那么此异常就不会被再次抛出了。</p>
-<ul>
-<li>同时打开多个文件 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(filename1, <span class="string">'rb'</span>) <span class="keyword">as</span> fp1, open(filename2, <span class="string">'rb'</span>) <span class="keyword">as</span> fp2, open(filename3, <span class="string">'rb'</span>) <span class="keyword">as</span> fp3:</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> fp1:</div><div class="line">        j = fp2.readline()</div><div class="line">        k = fp3.readline()</div><div class="line">        print(i, j, k)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="3-list参数传递">3. list参数传递</h2>
-<p>python中的默认变量是定义时得到的，类似于static，<strong>其它的时候无论调用几次函数，如果没有传参进来，就会一直用这个默认参数了</strong>。<br>
-正确做法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
-<h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
-<p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
-<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
-ct总结：参数绑定优先级：</p>
-<ol>
-<li>指定参数名</li>
-<li>顺序</li>
-<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
-<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
-<li><strong>限制关键字参数的名字</strong></li>
-</ol>
-<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
-<h2 id="5-generator">5. generator</h2>
-<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
-<h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
-<p><strong>The implementation of zip is very beautiful：</strong><br>
-来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
-<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
-集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
-Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
-for x in [1, 2, 3, 4, 5]:<br>
-pass<br>
-实际上完全等价于：<br>
-首先获得Iterator对象:<br>
-<code>it = iter([1, 2, 3, 4, 5])</code><br>
-循环:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
-<ul>
-<li>while my_iterator（参见zip的实现）<br>
-iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
-</ul>
-<h2 id="8-内存">8. 内存</h2>
-<h3 id="8-1-释放内存">8.1. 释放内存</h3>
-<p>先del再gc.collect()</p>
-<h2 id="9-python类">9. Python类</h2>
-<h3 id="9-1-和静态语言不同-python允许对实例变量绑定任何数据">9.1. 和静态语言不同，Python允许对<strong>实例变量</strong>绑定任何数据</h3>
-<p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
-<h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
-<p>Note that user defined attributes shall not end with ‘__’</p>
-<h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
-<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
-注意下面的这种错误写法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
-<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
-<h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
-<h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
-<p>静态语言 vs 动态语言<br>
-对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
-<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
-<p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
-<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
-<h2 id="10-为什么-python-的类不构成作用域-scope-？-待深入">10. <mark><a href="https://www.zhihu.com/question/263811118" target="_blank" rel="external">为什么 Python 的类不构成作用域（scope）？</a></mark> 待深入</h2>
-<h3 id="10-1-exec与eval的奇特之处">10.1 exec与eval的奇特之处</h3>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行抛异常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
-<p>然而：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行正常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    ¦   print(a)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
-<h3 id="10-2-注意区分list-comprehension与generator">10.2 <mark>注意区分list comprehension与generator！</mark></h3>
-<ul>
-<li>list comprehension是当时计算的</li>
-<li>而<code>list(a+i for i in range(10))</code>中，里面属于generator</li>
-</ul>
-<h2 id="11-super-and-mro">11. super and MRO</h2>
-<p>MRO: Method Resolution Order. For more details see this great introdcution: <a href="https://segmentfault.com/a/1190000007426467" target="_blank" rel="external">Python: 你不知道的 super</a></p>
-<blockquote>
-<p>super 的一个最常见用法可以说是在子类中调用父类的初始化方法了，比如：</p>
-</blockquote>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(Base)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a, b, c)</span>:</span></div><div class="line">        super(A, self).__init__(a, b)  <span class="comment"># Python3 可使用 super().__init__(a, b)</span></div><div class="line">        self.c = c</div></pre></td></tr></table></figure>
-<blockquote>
-<p>实际上，super(cls, inst) 获得的是 cls 在 inst 的 MRO 列表中的下一个类。</p>
-</blockquote>
-<h2 id="12-python-interpreter">12. Python Interpreter</h2>
-<ul>
-<li>CPython<br>
-IPython based on CPython, and is enhanced in interactive.</li>
-<li>PyPy<br>
-Use Jit, and can be different with CPython.</li>
-<li>Jython<br>
-Compile python to Java bytecode.</li>
-<li>IronPython<br>
-Compile python to .net bytecode</li>
-</ul>
-<h2 id="13-python3-string">13. Python3 String</h2>
-<ul>
-<li>All the python3 string is unicode string.<br>
-NOTE: Unicode is different from utf-8 code! <a href="https://blog.csdn.net/thl789/article/details/7506133" target="_blank" rel="external">Unicode编码及其实现：UTF-16、UTF-8</a></li>
-<li>Real Unicode<br>
-Many introduction about unicode is wrong, even for the Baidu Encyclopedia.<br>
-Japanese: unicode 3040-31FF<br>
-<a href="https://www.cnblogs.com/kingcat/archive/2012/10/16/2726334.html" target="_blank" rel="external">Unicode(UTF-8, UTF-16)令人混淆的概念</a> must be read very carefully.
-<blockquote>
-<p>Unicode涉及到两个步骤,首先是定义一个规范，第二步才是怎么把字符对应的数字保存在计算机中。<br>
-UTF-16就是任何字符对应的数字都用两个字节来保存<br>
-UTF-8,这里的8非常容易误导人，用UTF-8时表示一个字符是可变的,有可能是用一个字节表示一个字符,也可能是两个,三个.当然最多不能超过3个字节了。<br>
-UTF-32就是把所有的字符都用32bit.<br>
-UCS就是前面说的ISO制定的标准,和Unicode是完全一样的,只不过名字不一样.ucs-2对应utf-16,ucs-4对应UTF-32.UTF-8是没有对应的UCS.</p>
-</blockquote>
-</li>
-</ul>
-<p>BeautifulSoup4 will automatically find the encoding of HTML page (based on the info in the HTML head), and use this encoding to decode the <code>r.text</code>.<br>
-However, if encoding is not found, encoding will be considered as “ISO-8859-1”, whether it’s because of failing parse or non-existence,</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(r.encoding)</div><div class="line">text = r.text</div><div class="line">text.encode(<span class="string">"ISO-8859-1"</span>,<span class="string">"ignore"</span>) == r.content</div><div class="line"><span class="comment"># result is "ISO-8859-1" and "True"</span></div></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>two examples:<br>
-<a href="https://www.fileformat.info/info/unicode/char/4e25/index.htm" target="_blank" rel="external">&quot;严&quot;字</a><br>
-<a href="https://www.fileformat.info/info/unicode/char/304d/index.htm" target="_blank" rel="external">&quot;き&quot;字</a></p>
-<ul>
-<li>For “き”: It’s python3 source code is <code>u&quot;\u304D&quot;</code></li>
-<li><code>utf-8</code> is <code>0xE3 0x81 0x8D (e3818d)</code>;</li>
-<li><code>utf-16</code> is <code>0x304D (304d)</code>;</li>
-<li><code>utf-32</code> is <code>0x0000304D (304d)</code></li>
-<li>HTML Entity (hex)  <code>&amp;#x304d;</code></li>
-</ul>
-</li>
-<li>
-<p>code</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">one_char = <span class="string">'き'</span></div><div class="line">print(one_char, one_char.encode(<span class="string">"utf-8"</span>),one_char.encode(<span class="string">"utf-16"</span>), one_char.encode(<span class="string">"utf-32"</span>))</div><div class="line">print(one_char.encode(<span class="string">'unicode_escape'</span>), one_char.encode(<span class="string">'unicode_escape'</span>).decode(<span class="string">'unicode_escape'</span>))</div><div class="line">```</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>き b’\xe3\x81\x8d’ b’\xff\xfeM0’ b’\xff\xfe\x00\x00M0\x00\x00’<br>
-b’\u304d’ き</p>
-<pre><code>
-
-## Style guide
-### argument
-+ `**kwargs ` is a bad practice:
-  1. you don't know how `**kwargs` affect.
-  2. **wrong keywrod arguments is no longer reported by the interpreter.** 
- `TypeError 'x' is an invalid keyword argument for this function`
- [reference:The Use and Abuse of Keyword Arguments in Python](http://ivory.idyll.org/blog/on-kwargs.html)
-
-## For more:
-[我眼中一个好的Pythoneer应该具备的品质]*(https://zhuanlan.zhihu.com/p/33266239)
-[Python进阶 - gitbook](https://www.gitbook.com/book/eastlakeside/interpy-zh/details)
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;0-is-与-的区别&quot;&gt;0. is 与 &lt;code&gt;==&lt;/code&gt;的区别&lt;/h2&gt;
-&lt;p&gt;python对象有三个要素：id、type、value。is 比较的是id；==比较的是value&lt;br&gt;
-而id实际上是内存地址，&lt;code&gt;(ob1 is ob2)&lt;/code&gt; 等价于 &lt;code&gt;(id(ob1) == id(ob2))&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://timchen314.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://timchen314.com/tags/python/"/>
     
   </entry>
   

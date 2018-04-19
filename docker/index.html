@@ -106,7 +106,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/50/v2-385d2404a0ea9dd37c00b445b3168b96_hd.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/50/v2-e7bf9fbb488309f38864cac909a022a5_hd.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/50/v2-9496fbb036445cc557f95f657c5baea8_hd.jpg">
-<meta property="og:updated_time" content="2018-04-18T11:42:14.000Z">
+<meta property="og:updated_time" content="2018-04-19T12:07:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker note">
 <meta name="twitter:description" content="Official introduction:  Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.  我认为可以这样介绍：docker是">
@@ -861,7 +861,7 @@ Hello CloudMan</p>
 查看LABEL，可以用<code>docker inspect</code>。<br>
 例子：</p>
 </blockquote>
- <figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">LABEL</span> "com.example.vendor"="ACME Incorporated"</div><div class="line"><span class="keyword">LABEL</span> com.example.label-with-value="foo"</div><div class="line"><span class="keyword">LABEL</span> version="1.0"</div><div class="line"><span class="keyword">LABEL</span> description="This text illustrates \</div><div class="line">that label-values can span multiple lines."</div></pre></td></tr></table></figure>
+ <figure class="highlight docker"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">LABEL</span><span class="bash"> <span class="string">"com.example.vendor"</span>=<span class="string">"ACME Incorporated"</span></span></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> com.example.label-with-value=<span class="string">"foo"</span></span></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> version=<span class="string">"1.0"</span></span></div><div class="line"><span class="keyword">LABEL</span><span class="bash"> description=<span class="string">"This text illustrates \</span></span></div><div class="line">that label-values can span multiple lines."</div></pre></td></tr></table></figure>
 </li>
 <li>
 <p>MAINTAINER (depreciate)<br>
@@ -879,12 +879,12 @@ homebrew直接安装<br>
 <code>brew cask install docker</code></li>
 <li>CentOS<br>
 <a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/" target="_blank" rel="external">官网</a><br>
-官网的方法是最正确的： <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> Add the package repositories</div><div class="line">curl -s -L https://nvidia.github.io/nvidia-docker/centos7/x86_64/nvidia-docker.repo | \</div><div class="line">  sudo tee /etc/yum.repos.d/nvidia-docker.repo</div><div class="line"><span class="meta"></span></div><div class="line"># Install nvidia-docker2 and reload the Docker daemon configuration</div><div class="line">sudo yum install -y nvidia-docker2</div><div class="line">sudo pkill -SIGHUP dockerd</div><div class="line"><span class="meta"></span></div><div class="line"># Test nvidia-smi with the latest official CUDA image</div><div class="line">docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi</div></pre></td></tr></table></figure>
+官网的方法是最正确的： <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> Add the package repositories</span></div><div class="line">curl -s -L https://nvidia.github.io/nvidia-docker/centos7/x86_64/nvidia-docker.repo | \</div><div class="line">  sudo tee /etc/yum.repos.d/nvidia-docker.repo</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> Install nvidia-docker2 and reload the Docker daemon configuration</span></div><div class="line">sudo yum install -y nvidia-docker2</div><div class="line">sudo pkill -SIGHUP dockerd</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> Test nvidia-smi with the latest official CUDA image</span></div><div class="line">docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><a href="http://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="external">CentOS runoob</a><br>
 单独安装docker-ce非常麻烦的，因为需要安装和配置nvidia-container-runtime：</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line">sudo yum install -y docker-ce</div><div class="line">sudo systemctl start docker</div><div class="line">sudo docker run hello-world</div><div class="line"><span class="meta">#</span> install nvidia-container-runtime</div><div class="line">yum install -y nvidia-container-runtime</div><div class="line"><span class="meta">#</span> Then you should follow the troublesome setting process in https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup</div></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line">sudo yum install -y docker-ce</div><div class="line">sudo systemctl start docker</div><div class="line">sudo docker run hello-world</div><div class="line"><span class="meta">#</span><span class="bash"> install nvidia-container-runtime</span></div><div class="line">yum install -y nvidia-container-runtime</div><div class="line"><span class="meta">#</span><span class="bash"> Then you should follow the troublesome setting process <span class="keyword">in</span> https://github.com/nvidia/nvidia-container-runtime<span class="comment">#docker-engine-setup</span></span></div></pre></td></tr></table></figure>
 <ul>
 <li>Docker Machine
 <blockquote>
@@ -1140,7 +1140,7 @@ ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
