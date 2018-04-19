@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://timchen314.com/"/>
-  <updated>2018-04-19T12:07:29.000Z</updated>
+  <updated>2018-04-19T12:12:28.000Z</updated>
   <id>http://timchen314.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://timchen314.com/python_cookbook_note/"/>
     <id>http://timchen314.com/python_cookbook_note/</id>
     <published>2018-04-18T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>python cookbook 非常好！</p>
 <a id="more"></a>
@@ -60,7 +60,7 @@ return head + sum(tail) if tail else head</p>
     <link href="http://timchen314.com/btc_market/"/>
     <id>http://timchen314.com/btc_market/</id>
     <published>2018-04-17T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="市场">市场</h3>
 <ul>
@@ -156,7 +156,7 @@ return head + sum(tail) if tail else head</p>
 <p>费率<br>
 ETH/USTD 0.2%<br>
 ETH提币 0.01ETH<br>
-btc提币 0.001btc<br>
+btc提币 0.001btc（这是btc网络交易费）<br>
 ustd提币 10ustd<br>
 总结：提币费用总在10美元左右</p>
 </li>
@@ -446,7 +446,7 @@ exercise – 行权</p>
     <link href="http://timchen314.com/VPS_Vultr/"/>
     <id>http://timchen314.com/VPS_Vultr/</id>
     <published>2018-03-31T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>Vultr是老牌的VPS服务商。这里记录一下购买和使用流程。</p>
 <a id="more"></a>
@@ -487,7 +487,7 @@ exercise – 行权</p>
     <link href="http://timchen314.com/digital_currency/"/>
     <id>http://timchen314.com/digital_currency/</id>
     <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>What a bubble!<br>
 <img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
@@ -688,7 +688,7 @@ Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行
     <link href="http://timchen314.com/Web/"/>
     <id>http://timchen314.com/Web/</id>
     <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="html5">html5</h1>
 <ul>
@@ -1043,7 +1043,7 @@ HTML elements are represented by tags&lt;/li&gt;
     <link href="http://timchen314.com/pandas/"/>
     <id>http://timchen314.com/pandas/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>数据分析神器Pandas。</p>
 <a id="more"></a>
@@ -1117,7 +1117,7 @@ Show first 5 line：<code>df.head(5)</code></p>
     <link href="http://timchen314.com/jupyter/"/>
     <id>http://timchen314.com/jupyter/</id>
     <published>2018-01-16T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="a-tutorial">A Tutorial</h1>
 <a id="more"></a>
@@ -1265,7 +1265,7 @@ Formatting html</li>
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
@@ -1860,7 +1860,7 @@ ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a>
     <link href="http://timchen314.com/linux_senior_service/"/>
     <id>http://timchen314.com/linux_senior_service/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -1961,7 +1961,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -2010,7 +2010,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -2070,7 +2070,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -2261,7 +2261,7 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -2917,7 +2917,7 @@ Python features a dynamic type system and automatic memory management and suppor
     <link href="http://timchen314.com/vmd%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vmd笔记/</id>
     <published>2017-09-29T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>
@@ -3260,7 +3260,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
     <id>http://timchen314.com/Word格式论文中添加引用/</id>
     <published>2017-09-24T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的<strong>bib文件</strong>，向Word中添加引用文献。该方法有几个好处:</p>
 <ol>
@@ -3298,7 +3298,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
     <id>http://timchen314.com/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
 <a id="more"></a>
@@ -3358,11 +3358,206 @@ pbc join res -sel尝试了各种办法也没有成功<br>
   </entry>
   
   <entry>
+    <title>gnuplot笔记（上）</title>
+    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
+    <id>http://timchen314.com/gnuplot笔记上/</id>
+    <published>2017-08-16T12:00:00.000Z</published>
+    <updated>2018-04-19T12:12:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="note-about-version-5">Note about Version 5</h2>
+<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
+<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
+例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
+<h3 id="2-size的用法">2. size的用法</h3>
+<ul>
+<li>eps to png<br>
+when eps size is set to 1.0,1.0，png的像素为600,420<br>
+eps：size 1.8,1.8 那么png的像素为1080,755</li>
+<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
+size 2,2 会导致图像超过窗口大小</li>
+</ul>
+<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
+<p><code>plot ... smooth mcsplines</code><br>
+<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
+<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
+<h3 id="4-变量的引用">4. 变量的引用</h3>
+<p>For 4.6:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
+<p>For 5.0:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
+<h2 id="format">format</h2>
+<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
+<p><code>set logscale</code> # x和y轴都设置成logscale</p>
+<h3 id="2-set-format">2. set format</h3>
+<p>设置坐标轴上数字的格式。<br>
+以1000为例：</p>
+<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
+</code></pre>
+<p>显示出来的格式为10^3</p>
+<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
+</code></pre>
+<p>显示为1×10^3</p>
+<p>需要注意的是：</p>
+<ul>
+<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
+<li><code>%t</code>与<code>%T</code><br>
+比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
+</ul>
+<h3 id="3-offset-x-y">3. offset x,y</h3>
+<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
+<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
+<blockquote>
+<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
+</blockquote>
+<p>只改major tics:<code>set tic scale 2</code></p>
+<h3 id="5-字体font">5. 字体font:</h3>
+<p>(1) gnuplot-5.0.1 manual:</p>
+<blockquote>
+<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
+(2) TimesRoman和TimesNewRoman都是一样的<br>
+For other fonts, 尽管程序不会报错，但也显示不出来<br>
+但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
+<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
+<h3 id="7-border">7. border</h3>
+<p><code>set border lw 3</code> 只改变线的宽度</p>
+<h3 id="8-key">8. key</h3>
+<p><strong>set key height #调节key与坐标轴的距离</strong><br>
+set key spacing 1.3 #调节两行之间的距离<br>
+set key maxcols/maxrow<br>
+set key autotitle</p>
+<h3 id="9-label">9. label</h3>
+<ul>
+<li>设定位置时候，是设定的左下角的坐标</li>
+<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
+</ul>
+<h3 id="10-arrow">10. arrow</h3>
+<ul>
+<li>
+<p>控制起始/终止位置<br>
+set arrow from 坐标 to 坐标<br>
+e.g.:<br>
+<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
+<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
+</li>
+<li>
+<p>控制head<br>
+e.g.:<br>
+<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
+其中head filled size 1,30,55 为控制head的格式。<br>
+<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
+length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
+</li>
+</ul>
+<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
+<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
+<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
+<h3 id="1-line-and-point-types">1. line and point types</h3>
+<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
+<h3 id="2-most-useful-point-type">2. most useful point type</h3>
+<table>
+<thead>
+<tr>
+<th>shape</th>
+<th>full id</th>
+<th>empty  id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>square</td>
+<td>5</td>
+<td>64</td>
+</tr>
+<tr>
+<td>sphere</td>
+<td>7</td>
+<td>65</td>
+</tr>
+<tr>
+<td>up-tri</td>
+<td>9</td>
+<td>66</td>
+</tr>
+<tr>
+<td>down-tri</td>
+<td>11</td>
+<td>67</td>
+</tr>
+<tr>
+<td>diamond</td>
+<td>13</td>
+<td>68</td>
+</tr>
+<tr>
+<td>pentagon</td>
+<td>15</td>
+<td>69</td>
+</tr>
+</tbody>
+</table>
+<p>e.g.:<br>
+<code>p sin(x) w p pt 5</code></p>
+<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
+<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
+<h3 id="4-several-color-set">4. several color set</h3>
+<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
+<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
+<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
+<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
+<ul>
+<li>for循环：<br>
+<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
+<li>字符串数组<br>
+`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
+a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
+**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
+<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
+<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
+</ul>
+<h3 id="1-escape-charactor">1. escape charactor</h3>
+<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
+<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
+<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
+（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
+（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
+（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
+<h3 id="3-string">3. string</h3>
+<ul>
+<li>单引号内的字符串不转义，双引号内的字符串转义</li>
+<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
+<li>“.”, “eq” and “ne&quot;<br>
+Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
+<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
+</ul>
+<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
+    
+      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>gnuplot笔记（下）</title>
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://timchen314.com/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -3604,206 +3799,11 @@ The eps file doesn’t get written until a plot command is specified after speci
   </entry>
   
   <entry>
-    <title>gnuplot笔记（上）</title>
-    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
-    <id>http://timchen314.com/gnuplot笔记上/</id>
-    <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
-<a id="more"></a>
-<p>[TOC]</p>
-<h2 id="note-about-version-5">Note about Version 5</h2>
-<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
-<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
-例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
-<h3 id="2-size的用法">2. size的用法</h3>
-<ul>
-<li>eps to png<br>
-when eps size is set to 1.0,1.0，png的像素为600,420<br>
-eps：size 1.8,1.8 那么png的像素为1080,755</li>
-<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
-size 2,2 会导致图像超过窗口大小</li>
-</ul>
-<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
-<p><code>plot ... smooth mcsplines</code><br>
-<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
-<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
-<h3 id="4-变量的引用">4. 变量的引用</h3>
-<p>For 4.6:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
-<p>For 5.0:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
-<h2 id="format">format</h2>
-<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
-<p><code>set logscale</code> # x和y轴都设置成logscale</p>
-<h3 id="2-set-format">2. set format</h3>
-<p>设置坐标轴上数字的格式。<br>
-以1000为例：</p>
-<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
-</code></pre>
-<p>显示出来的格式为10^3</p>
-<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
-</code></pre>
-<p>显示为1×10^3</p>
-<p>需要注意的是：</p>
-<ul>
-<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
-<li><code>%t</code>与<code>%T</code><br>
-比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
-</ul>
-<h3 id="3-offset-x-y">3. offset x,y</h3>
-<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
-<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
-<blockquote>
-<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
-</blockquote>
-<p>只改major tics:<code>set tic scale 2</code></p>
-<h3 id="5-字体font">5. 字体font:</h3>
-<p>(1) gnuplot-5.0.1 manual:</p>
-<blockquote>
-<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
-(2) TimesRoman和TimesNewRoman都是一样的<br>
-For other fonts, 尽管程序不会报错，但也显示不出来<br>
-但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
-<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
-<h3 id="7-border">7. border</h3>
-<p><code>set border lw 3</code> 只改变线的宽度</p>
-<h3 id="8-key">8. key</h3>
-<p><strong>set key height #调节key与坐标轴的距离</strong><br>
-set key spacing 1.3 #调节两行之间的距离<br>
-set key maxcols/maxrow<br>
-set key autotitle</p>
-<h3 id="9-label">9. label</h3>
-<ul>
-<li>设定位置时候，是设定的左下角的坐标</li>
-<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
-</ul>
-<h3 id="10-arrow">10. arrow</h3>
-<ul>
-<li>
-<p>控制起始/终止位置<br>
-set arrow from 坐标 to 坐标<br>
-e.g.:<br>
-<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
-<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
-</li>
-<li>
-<p>控制head<br>
-e.g.:<br>
-<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
-其中head filled size 1,30,55 为控制head的格式。<br>
-<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
-length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
-</li>
-</ul>
-<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
-<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
-<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
-<h3 id="1-line-and-point-types">1. line and point types</h3>
-<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
-<h3 id="2-most-useful-point-type">2. most useful point type</h3>
-<table>
-<thead>
-<tr>
-<th>shape</th>
-<th>full id</th>
-<th>empty  id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>square</td>
-<td>5</td>
-<td>64</td>
-</tr>
-<tr>
-<td>sphere</td>
-<td>7</td>
-<td>65</td>
-</tr>
-<tr>
-<td>up-tri</td>
-<td>9</td>
-<td>66</td>
-</tr>
-<tr>
-<td>down-tri</td>
-<td>11</td>
-<td>67</td>
-</tr>
-<tr>
-<td>diamond</td>
-<td>13</td>
-<td>68</td>
-</tr>
-<tr>
-<td>pentagon</td>
-<td>15</td>
-<td>69</td>
-</tr>
-</tbody>
-</table>
-<p>e.g.:<br>
-<code>p sin(x) w p pt 5</code></p>
-<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
-<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
-<h3 id="4-several-color-set">4. several color set</h3>
-<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
-<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
-<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
-<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
-<ul>
-<li>for循环：<br>
-<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
-<li>字符串数组<br>
-`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
-a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
-**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
-<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
-<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
-</ul>
-<h3 id="1-escape-charactor">1. escape charactor</h3>
-<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
-<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
-<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
-（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
-（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
-（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
-<h3 id="3-string">3. string</h3>
-<ul>
-<li>单引号内的字符串不转义，双引号内的字符串转义</li>
-<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
-<li>“.”, “eq” and “ne&quot;<br>
-Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
-<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
-</ul>
-<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
-    
-      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vim笔记</title>
     <link href="http://timchen314.com/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -3969,7 +3969,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     <link href="http://timchen314.com/linux_command/"/>
     <id>http://timchen314.com/linux_command/</id>
     <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2018-04-19T12:07:29.000Z</updated>
+    <updated>2018-04-19T12:12:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
 长度感人。</p>
