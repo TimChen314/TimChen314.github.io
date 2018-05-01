@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-19T12:12:28.000Z">
+<meta property="og:updated_time" content="2018-05-01T05:26:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python notes">
 <meta name="twitter:description" content="[TOC] Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
@@ -650,6 +650,8 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HAL9000</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__format__</span><span class="params">(self, format)</span>:</span></div><div class="line">        <span class="keyword">if</span> (format == <span class="string">'open-the-pod-bay-doors'</span>):</div><div class="line">            <span class="keyword">return</span> <span class="string">"I'm afraid I can't do that."</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'HAL 9000'</span></div></pre></td></tr></table></figure>
 <h5 id="datetime">datetime</h5>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"><span class="string">'&#123;:%Y-%m-%d %H:%M&#125;'</span>.format(datetime(<span class="number">2001</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))</div></pre></td></tr></table></figure>
+<p>Another Example:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># expiry and timestamp is string like 2018-06-29T12:00:00.000Z and 2018-04-19T18:44:44.320Z</span></div><div class="line">FMT = <span class="string">'%Y-%m-%dT%H:%M:%S'</span></div><div class="line">time_delta = datetime.strptime(expiry, FMT) - datetime.strptime(timestamp, FMT)</div></pre></td></tr></table></figure>
 <h5 id="named-placeholder">named placeholder</h5>
 <p>use key to hold the place. <strong>input the dictionary as elements</strong></p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span>&#125;</div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</div><div class="line"><span class="comment"># or</span></div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'Hodor'</span>, last=<span class="string">'Hodor!'</span>)</div></pre></td></tr></table></figure>
@@ -922,6 +924,8 @@ This dict will record the <strong>insert</strong> order!</p>
 <ul>
 <li>translate in one line:<br>
 Translate word by word: <code>[ your_dict[i] if i in your_dict else i for i in some_words ]</code></li>
+<li>string to number: commas as thousands separators <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> locale</div><div class="line">locale.setlocale( locale.LC_ALL, <span class="string">'en_US.UTF-8'</span>  ) </div><div class="line">locale.atoi(<span class="string">'1,000,000'</span>)</div><div class="line">locale.atof(<span class="string">'1,000,000.53'</span>)</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="工具">工具</h2>
 <ul>
@@ -1208,7 +1212,7 @@ ruby最大的优势在于Ruby on Rails</li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

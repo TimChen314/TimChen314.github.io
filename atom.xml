@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://timchen314.com/"/>
-  <updated>2018-04-19T12:12:28.000Z</updated>
+  <updated>2018-05-01T05:26:20.000Z</updated>
   <id>http://timchen314.com/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>block chain妙用</title>
+    <link href="http://timchen314.com/blockchain_magic/"/>
+    <id>http://timchen314.com/blockchain_magic/</id>
+    <published>2018-04-24T10:00:00.000Z</published>
+    <updated>2018-05-01T05:26:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是历史性的一个事件：<br>
+在遭遇了半夜一点被叫起来强制删帖之后，北大学生将沈X阳事件中自己的遭遇写入了以太坊&quot;input data&quot;中，这意味着这一文件永远无法被删除了!<br>
+<a href="https://etherscan.io/tx/0x2d6a7b0f6adeff38423d4c62cd8b6ccb708ddad85da5d3d06756ad4d8a04a6a2?from=timeline&amp;isappinstalled=0" target="_blank" rel="external">Etherscan</a><br>
+点击&quot;Convert to ACSII&quot;，就可以看到内容。</p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是历史性的一个事件：&lt;br&gt;
+在遭遇了半夜一点被叫起来强制删帖之后，北大学生将沈X阳事件中自己的遭遇写入了以太坊&amp;quot;input data&amp;quot;中，这意味着这一文件永远无法被删除了!&lt;br&gt;
+&lt;a href=&quot;https://etherscan.io/tx/0x2d6a7b0f6adeff38423d4c62cd8b6ccb708ddad85da5d3d06756ad4d8a04a6a2?from=timeline&amp;amp;isappinstalled=0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Etherscan&lt;/a&gt;&lt;br&gt;
+点击&amp;quot;Convert to ACSII&amp;quot;，就可以看到内容。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
+    
+    
+      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python cookbook note</title>
     <link href="http://timchen314.com/python_cookbook_note/"/>
     <id>http://timchen314.com/python_cookbook_note/</id>
     <published>2018-04-18T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>python cookbook 非常好！</p>
 <a id="more"></a>
@@ -60,7 +90,7 @@ return head + sum(tail) if tail else head</p>
     <link href="http://timchen314.com/btc_market/"/>
     <id>http://timchen314.com/btc_market/</id>
     <published>2018-04-17T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="市场">市场</h3>
 <ul>
@@ -71,22 +101,20 @@ return head + sum(tail) if tail else head</p>
 </ul>
 </li>
 </ul>
-<h4 id="交易所">交易所</h4>
+<h4 id="现货交易所">现货交易所</h4>
 <ul>
 <li>已注册：</li>
 </ul>
 <a id="more"></a>
 <ul>
 <li>
-<p>binance</p>
-</li>
-<li>
 <p>币安Binance<br>
 <a href="https://zhuanlan.zhihu.com/p/32890420" target="_blank" rel="external">从零开始的比特币购买与储存图文教程</a><br>
 费用：充值免费；提现：0.0005 BTC ≈ 3到5$；交易: 0.1%</p>
 </li>
 <li>
-<p>huobi，一般用手机号登录，不像其他网站用邮箱</p>
+<p>huobi，一般用手机号登录，不像其他网站用邮箱<br>
+[x] 杠杆</p>
 </li>
 <li>
 <p>otcbtc<br>
@@ -95,9 +123,6 @@ return head + sum(tail) if tail else head</p>
 <li>
 <p><a href="http://xn--localbitcoins-vv2u921hvhgs65bqno.com" target="_blank" rel="external">场外交易所localbitcoins.com</a> <strong>全球最大</strong><br>
 <a href="https://www.bilibili.com/video/av14653153/?from=search&amp;seid=7472298098998538778" target="_blank" rel="external">用法</a></p>
-</li>
-<li>
-<p><a href="http://xn--coincola-570m522evvenm7av7k.com" target="_blank" rel="external">场外交易所coincola.com</a> <strong>骗子交易所</strong></p>
 </li>
 </ul>
 <ul>
@@ -110,10 +135,11 @@ return head + sum(tail) if tail else head</p>
 <p>未注册</p>
 <ul>
 <li>OKEx<br>
-份额世界最大 国内团队</li>
+份额世界最大 国内团队 <strong>交易量造假</strong></li>
 <li>bitstamp 注册于卢森堡</li>
 <li>gdad 美国加州 属于Coinbase公司</li>
 <li>bitfinex 香港</li>
+<li><a href="http://xn--coincola-570m522evvenm7av7k.com" target="_blank" rel="external">场外交易所coincola.com</a> <strong>骗子交易所</strong></li>
 </ul>
 </li>
 <li>
@@ -177,6 +203,97 @@ ustd提币 10ustd<br>
 </li>
 </ul>
 </li>
+<li>
+<p>otcbtc<br>
+2018-04-26记录</p>
+<table>
+<thead>
+<tr>
+<th>品种</th>
+<th>提币费</th>
+<th>提币费￥</th>
+<th>溢价比率(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC</td>
+<td>0.001</td>
+<td>57</td>
+<td></td>
+</tr>
+<tr>
+<td>ETH</td>
+<td>0.003</td>
+<td>12</td>
+<td></td>
+</tr>
+<tr>
+<td>BCH</td>
+<td>0.001</td>
+<td>8.5</td>
+<td></td>
+</tr>
+<tr>
+<td>LTC</td>
+<td>0.01</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>XRP</td>
+<td>0.02</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>ADA</td>
+<td>0.5</td>
+<td>1.75</td>
+<td></td>
+</tr>
+<tr>
+<td>USTD</td>
+<td>5</td>
+<td>31.5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>另外，otcbtc的点差非常大！2018-04-26的XRP，买5.20卖5.0，点差达到4%！火币不存在这个问题！<br>
+火币的点差一般为千二左右。</p>
+</li>
+<li>
+<p>其他分类</p>
+<ul>
+<li>ADA<br>
+<a href="https://www.cardano.org/zh/buy-sell-ada-3/" target="_blank" rel="external">ADA官网：可以购买ADA的交易所</a><br>
+现货杠杆：<br>
+bitfinex 有杠杆没现货<br>
+<a href="http://www.bitcointradingsites.net/features/leverage/" target="_blank" rel="external">杠杆现货交易所</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="场外交易">场外交易</h4>
+<ul>
+<li>huobi<br>
+网站：<a href="http://otc.huobi.pro" target="_blank" rel="external">otc.huobi.pro</a><br>
+成为中间商的要求：
+<ul>
+<li>申请表</li>
+<li>手持身份证录制视频</li>
+<li>押金5000HT<br>
+4月24日值7万多人民币。</li>
+</ul>
+</li>
+<li>otcbtc
+<ul>
+<li>场外交易没有api。</li>
+<li>费用<br>
+2018-6-29 23:59前广告免费；手续费： 成交额的 0.5 %</li>
+</ul>
+</li>
+<li>localcoins</li>
 </ul>
 <h4 id="期货">期货</h4>
 <h5 id="bitmex交易指南">bitmex交易指南</h5>
@@ -186,10 +303,26 @@ ustd提币 10ustd<br>
 18/03/12 22:15–15分钟，成交量5M，9706-&gt;9363</p>
 </li>
 <li>
+<p>三种价格</p>
+<ul>
+<li>最新成交价<br>
+网站上彩色大字的是最新成交价。instrument中key为&quot;lastPrice&quot;</li>
+<li>价格指数<br>
+现货交易所30分钟的平均价格。<br>
+altcoin中除了ADA是参考bittrex，剩下的都参考Poloniex。<br>
+只用于交割。instrument中key为&quot;indicativeSettlePrice&quot;。</li>
+<li>标记价格<br>
+强平会参考这个价格，而不是最新成交价。<br>
+instrument中key为&quot;fairPrice&quot;。</li>
+</ul>
+</li>
+<li>
 <p>合约参考价格<br>
 BMX指数是由bitstamp和gdad各贡献50%得到的；合约参考价格是基于BMX修正得到的“合理标记价格”。<br>
 因为参考价格经过了修正，所以永续合约和季度合约的“标记价格”才不同。</p>
 </li>
+</ul>
+<ul>
 <li>
 <p>费用</p>
 <ul>
@@ -204,9 +337,8 @@ taker是市价交易单，抽取流动性，交易费0.75%。<br>
 <li>存款/提款 无费用</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>仓位 &amp; 保证金
+<li>
+<p>仓位 &amp; 保证金</p>
 <ol start="0">
 <li>空仓时，可以以任意价格进行委托；有仓位时，委托价位不能超过爆仓价</li>
 <li>逐仓 全仓<br>
@@ -228,30 +360,6 @@ taker是市价交易单，抽取流动性，交易费0.75%。<br>
 </li>
 </ul>
 <ul>
-<li>账本
-<ul>
-<li>
-<p>测试<br>
-1000CNY -&gt; 537 ADA -&gt;(18/03/12) 0.01222212btc -&gt; 转账后0.0117</p>
-</li>
-<li>
-<p>Until to 2018/03/21<br>
-Total CNY = 13000<br>
-Deposit = 0.2254 = 0.0117 + 0.0731 + 0.1406（Deposit Time: 2018/03/12 pm 5:35:43, 2018/03/19 pm 12:09:54, 2018/03/20 12:43:10 ）<br>
-Withdraw = 0.0102 (Withdraw Time: 2018/03/21 12:30:38 ; 0.0002 is transaction fee.)<br>
-Net Deposit = 0.2152</p>
-</li>
-<li>
-<p>Until to 2018/03/27<br>
-Total CNY = 23000<br>
-Deposit = 0.4167 = 0.0117 + 0.0731 + 0.1406 + 0.1913（Deposit Time: 2018/03/12 pm 5:35:43, 2018/03/19 pm 12:09:54, 2018/03/20 12:43:10 ）<br>
-Withdraw = 0.0102 (Withdraw Time: 2018/03/21 12:30:38 ; 0.0002 is transaction fee.)<br>
-Net Deposit = 0.40651</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
 <li>其他
 <ul>
 <li>提币时间为每天UTC 13：00前（北京时间21：00）；</li>
@@ -262,6 +370,9 @@ btc盈亏$ = (1$/open - 1$/close )*close = close/open = btc/$ 涨跌<br>
 </ul>
 </li>
 </ul>
+<h5 id="期权">期权</h5>
+<p>只有一个strike price，初始价格为现价（最小单位50，比如现价10020，strike price是10000）+1000$。<br>
+结算日是每周五的 UTC 12:00:00。</p>
 <h5 id="问题">问题</h5>
 <ul>
 <li>
@@ -347,8 +458,8 @@ btc盈亏$ = (1$/open - 1$/close )*close = close/open = btc/$ 涨跌<br>
 <li>hedge</li>
 <li>顺势</li>
 <li>发动趋势</li>
-<li>少量仓位一百倍杠杆<br>
-杠杆</li>
+<li>凯利公式化<br>
+少量仓位一百倍杠杆，按照凯利公式的假设，要么翻倍要么赔光</li>
 </ol>
 <h5 id="交易系统研究">交易系统研究</h5>
 <h6 id="boll-布林线">BOLL（布林线）</h6>
@@ -375,44 +486,21 @@ DN=MB－2×MD</p>
 </ul>
 </li>
 </ul>
-<h5 id="心得">心得</h5>
-<ul>
-<li>
-<p>搞清楚状态！！！<br>
-有好多次下单弄错了价格/数量/合约/杠杆。这是非常危险的。</p>
-</li>
-<li>
-<p>不要重仓<br>
-<a href="https://www.zhihu.com/question/33322297" target="_blank" rel="external">如何看待期货界传奇人物刘强跳楼自杀事件？</a></p>
-</li>
-<li>
-<p>18/03/18到18/03/19两天，btc反弹20%！<br>
-在连续一段时间的下跌后，我的思路也受到了限制。幸亏有几次小幅度减仓，外加充值了一些，否则爆仓了。</p>
-</li>
-<li>
-<p>因为做空，就心理偏向空方，而且也不愿意兑现损失。</p>
-</li>
-<li>
-<p>18/03/26 本来看空，想找反弹，结果就为了不愿意兑现损失，持续加仓！<br>
-暴露问题是：</p>
-<ol start="0">
-<li>思想上，上涨预期在26号02：00和26号13：00都没有没有兑现，却仍然没有改变思路！</li>
-<li>不愿兑现损失，导致头寸暴露，最终导致巨大风险</li>
-<li>没有止损，资金管理糟糕，没有规则。<br>
-正确的做法是:</li>
-<li>首先思想上要转变，逾期没有兑现，这说明你没有看清楚情况，先赶快出场！！！</li>
-<li>敢于并甘于兑现损失</li>
-<li>学习资金管理策略</li>
-</ol>
-</li>
-</ul>
+<h5 id="支持信息">支持信息</h5>
+<p><a href="http://www.dce.com.cn/dalianshangpin/sspz/cjzx/5503775/index.html" target="_blank" rel="external">交易额比较大的期货品种</a></p>
 <h3 id="中英文词汇表">中英文词汇表</h3>
-<p>spread – 点差<br>
+<p>bids/asks – 买/卖<br>
+spot/future – 现货/期货<br>
+spread – 点差<br>
 market/limit – 市价/限价<br>
 position – 头寸<br>
 Settlement – 交割（bitmex adapt cash settlement）<br>
 expiry – 到期<br>
-exercise – 行权</p>
+exercise – 行权<br>
+Premium – 权利金，指买进期权合约所需支付的代价，可视为由期权的内在价值及时间价值构成。<br>
+Call/put Option – 认购期权/认沽期权<br>
+stike price – 行权价格<br>
+maturity – 到期</p>
 <hr>
 ]]></content>
     
@@ -427,7 +515,7 @@ exercise – 行权</p>
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;交易所&quot;&gt;交易所&lt;/h4&gt;
+&lt;h4 id=&quot;现货交易所&quot;&gt;现货交易所&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;已注册：&lt;/li&gt;
 &lt;/ul&gt;
@@ -446,7 +534,7 @@ exercise – 行权</p>
     <link href="http://timchen314.com/VPS_Vultr/"/>
     <id>http://timchen314.com/VPS_Vultr/</id>
     <published>2018-03-31T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>Vultr是老牌的VPS服务商。这里记录一下购买和使用流程。</p>
 <a id="more"></a>
@@ -483,212 +571,11 @@ exercise – 行权</p>
   </entry>
   
   <entry>
-    <title>About Digital Currency</title>
-    <link href="http://timchen314.com/digital_currency/"/>
-    <id>http://timchen314.com/digital_currency/</id>
-    <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>What a bubble!<br>
-<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
-<a id="more"></a>
-<h2 id="总览">总览</h2>
-<h3 id="info">Info</h3>
-<p><img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/%E6%9D%82/Percentage_of_Total_Market_Capitalization_Dominance.png" alt="image"></p>
-<h4 id="source">source</h4>
-<ol start="0">
-<li><a href="https://coinmarketcap.com" target="_blank" rel="external">Cryptocurrency Market Capitalizations</a></li>
-<li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
-<li>很好的网站  <a href="http://bitcointalk.org/" target="_blank" rel="external">http://bitcointalk.org/</a></li>
-</ol>
-<h3 id="问题与挑战">问题与挑战</h3>
-<h4 id="1-税收">1. 税收</h4>
-<p>美国国税局（IRS, Internal Revenue Service）在努力调查bitcoin避税，这是bitcoin正式应用所面临的一个问题。</p>
-<blockquote>
-<p>像达世（Dash）、门罗（Monero）和ZCash等币都部署了隐私功能，其交易是很难被追踪到的。</p>
-</blockquote>
-<h4 id="个人目标">个人目标</h4>
-<ul>
-<li>量化策略投资<br>
-ICO是一锤子买卖，在2018年会有很多坑。ICO及其之后的项目准备阶段，币价的特点是不确定性大、严重依赖消息。<br>
-资金量大、消息面广的，可以广撒网。<br>
-以我的资金量和消息面，是玩不转的。</li>
-</ul>
-<ul>
-<li>自媒体？</li>
-</ul>
-<ol>
-<li><a href="https://www.zhihu.com/question/52116246" target="_blank" rel="external">英文翻译</a><br>
-猪八戒上千字100，千字140的价格算高的了。</li>
-<li>英文约稿与推荐<br>
-只要求中文独家，最好中文先发。</li>
-<li>中文转载</li>
-</ol>
-<h2 id="待读-进展">待读&amp;进展</h2>
-<h3 id="待读">待读</h3>
-<p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
-<a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
-<a href="http://blog.csdn.net/m0_37327416/article/details/72885521" target="_blank" rel="external">以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行</a><br>
-<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a><br>
-<a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
-<a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
-<h3 id="进展">进展</h3>
-<p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
-<h2 id="digital-currency">digital currency</h2>
-<h3 id="ethereum-new-set">ethereum (new_set)</h3>
-<ul>
-<li>practice<br>
-My understanding:
-<ol>
-<li>init first block.</li>
-<li>then you can mine.</li>
-</ol>
-</li>
-</ul>
-<h3 id="cardano">cardano</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/32874568" target="_blank" rel="external">cardano简介</a><br>
-爱丁堡大学一个中心IOHK牵头。</p>
-<ul>
-<li>ADA <a href="https://daedaluswallet.io/faq/" target="_blank" rel="external">不支持win32和移动钱包</a></li>
-</ul>
-<h3 id="eos">EOS</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/33496593" target="_blank" rel="external">EOS：疯子的狂欢</a></p>
-<ul>
-<li>BM出品，李笑来站台</li>
-</ul>
-<h3 id="steem"><s>STEEM</s></h3>
-<ul>
-<li>BM出品，远没有btc强势</li>
-</ul>
-<h3 id="其他币">其他币</h3>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/34723125?group_id=959209805945008128" target="_blank" rel="external">TUNE：音乐应用</a><br>
-三位创始人都是格莱美奖得主。</li>
-</ul>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/34733907" target="_blank" rel="external">太空链</a>：严重破发</li>
-</ul>
-<p>薛蛮子认为：</p>
-<blockquote>
-<p>对于ICO的投资标准，薛蛮子表示，首先是人靠谱，此前投资的比原链是国内区块链最大的社区巴比特发起的，墨链是纸贵科技发起的，BEX是美豹金融发起的，这些项目的团队本身已经有了成功的创业案例，且在细分领域处于排头兵的地位。</p>
-</blockquote>
-<blockquote>
-<p>拿比原链来说，薛蛮子表示，“我认为，比原链的创始团队很年轻，富有朝气，大家都很努力，但是比原链的技术挑战挺大，需要天时地利人和，很多条件具备才能做成，不是轻描淡写，一挥而就的。团队最要紧的是不断试错，踏踏实实做事情，不要辜负投资人的信任。我不看好的是，有的小伙子一辈子没赚过大钱，也没花过100万以上的钱，突然通过ICO拿了几个亿，这些人hold不住。”</p>
-</blockquote>
-<h2 id="tech">tech</h2>
-<blockquote>
-<p>1、 共识算法:POW/POS/DPOS/PBFT/BFT-Raft/Paxos/Kafka<br>
-2、 P2P通讯:自举(bootstrapped)/连接/广播<br>
-3、 签名验签:ECDSA/secp256k1/ED25519/MultiSig<br>
-4、 Hash锁定:Merkle树/MPT树<br>
-5、 UTXO记账:流水账<br>
-6、 智能合约:P2PKH/P2SH/Oracle/状态机<br>
-7、 隐私保护:零知识证明、同态加密、CoinJoin加密技术<br>
-8、 私钥存储:HD协议(Hierarchical Deterministic Key Creation)、钱包Wallets、丢失找回<br>
-9、 算力分发：矿池分发</p>
-</blockquote>
-<ul>
-<li>冷热钱包<br>
-热是指在线。如果热钱包断网，那么从存储的角度来讲，也是冷钱包了。但是离线的热钱包和冷钱包还是有很多不同之处。</li>
-</ul>
-<p><a href="https://www.zhihu.com/question/21478404" target="_blank" rel="external">常用的钱包</a></p>
-<h3 id="共识">共识</h3>
-<p><a href="https://www.zhihu.com/question/267440381/answer/325981371" target="_blank" rel="external">区块链技术如何兼顾共识和匿名，解决储存和处理速度问题？</a><br>
-1.共识机制下如何兼顾匿名。举个例子，甲转账给乙两个比特币，但乙不承认。在共识机制下，我们都可以看到确实有2个比特币从地址A转到了地址B，此时有<br>
-问题一：甲可以想办法证明地址A就是他的，但这个证明仍旧是传统的，需要一个个说服别人的证明，而不是一下子说服全部人的证明。<br>
-问题二：即使甲说服了大部分人地址A就是他的，乙仍旧可以不承认地址B是他的，也没有共识机制可以指出地址B是谁的。甲仍旧不能证明转给乙两个比特币。<br>
-问题三：如果存在共识机制能指出地址AB是对应甲和乙的，隐私性就无从谈起，等于所有人的交易都是暴露的。<br>
-2.数据储存过大。举个例子在淘宝买东西，传统交易是中心化的，数据都记录在阿里的硬盘里，我们害怕阿里偷偷修改了以前的数据，要去中心化，所以用上了区块链技术取代阿里云，但所有的交易数据可不是几个T这么少，普通用户如何储存。如果只是少数人储存，那仍旧没有去中心化。<br>
-3.计算速度的问题。假设以后所有交易都在区块链上，区块链技术也得到改进，每秒能处理上亿比交易，如果每个人都要记录，是否意味着每个人都有强大的处理能力，如果但普通计算机无法胜任，只能交给少数超级计算机处理，是否意味普通人失去了记录的能力。</p>
-<p>共识（consensus）算法指的是大家对某一个提案达成一致意见的过程，也就是分布式系统中多个节点之间，对某个状态达成一致结果的过程。至于提案（proposal），几乎可以认为任何可以达成一致的信息就是一个提案。</p><p>在具体的区块记账中，问题1所对应的提案就是地址A向地址B转账这条交易信息是否存在。达成共识的过程就是大家确认该笔交易存在并且有效。因此，不涉及到问题1.1和1.2，即地址A是甲的地址，地址B是乙的地址这个身份关联过程，因此，可以视为该过程是匿名的。除非提案内容更改为&quot;地址A是甲的地址，地址B是乙的地址，地址A向地址B发起了一笔转账&quot;。<br>
-这样就触发了问题三，问题三的描述里，确实无法保证隐私性，这个不用多说。</p>
-<h3 id="闪电链">闪电链</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/34681487" target="_blank" rel="external">闪电链科普</a>：<br>
-所谓闪电链就是小额交易不上主链，而是放在侧链上，在达到一定交易量后再统一上到主链上。<br>
-闪电链相当于中心化的节点。</p>
-<blockquote>
-<p><strong>闪电网络的反作弊机制</strong><br>
-一个叫双向支付通道（Bi-Directional Payment Channel )<br>
-一个叫时间锁（TimeLock）<br>
-一个叫密码（Secret Value）</p>
-</blockquote>
-<p>双向通道：交易双方都确认，才能交易成功。</p>
-<h3 id="pow">POW</h3>
-<ul>
-<li>btc的block上，负责POW的nounce。</li>
-<li>btc采用POW是为了增加作假block的成本，进而禁止了双花。</li>
-</ul>
-<h3 id="utxo">UTXO</h3>
-<p><a href="http://8btc.com/thread-45640-1-1.html" target="_blank" rel="external">玛_雅和vatten解释的很好</a><br>
-<a href="http://8btc.com/article-4381-1.html" target="_blank" rel="external">其实并没有什么比特币，只有 UTXO</a></p>
-<h3 id="隐私保护机制">隐私保护机制<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
-<ol>
-<li>
-<p>零知识证明<br>
-<img src="https://pic4.zhimg.com/80/v2-8e9aa2a8dd3457c05cbbc688f2679ff1_hd.jpg" alt="image"><br>
-零知识证明也就是证明者在不泄露秘密的情况下，让验证者相信证明者知道这个秘密。</p>
-<blockquote>
-<p>Zcash是首个使用零知识证明机制的区块链系统。不同于其他加密数字货币会公开所有的交易记录，Zcash可以用零知识证明将完全加密的交易记录确认为有效，但是他有一个很关键的缺点就是<strong>速度缓慢</strong>。<br>
-Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行隐藏。</p>
-</blockquote>
-</li>
-<li>
-<p>同态加密</p>
-<blockquote>
-<p>明文加密后得到密文，对密文进行特定的代数运算得到的还是加密的结果，对结果进行解密可以得到对明文进行同样运算一样的结果。也就是说可以在不知道原数据的情况下进行运算，最后同样能得到正确的结果。</p>
-</blockquote>
-</li>
-<li>
-<p>混币</p>
-<blockquote>
-<p>以门罗币（Monero）为例，他使用了RingCT（环形加密匿名）技术来实现隐私保护。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="problem">problem</h3>
-<ul>
-<li>what is private network?</li>
-</ul>
-<h2 id="资料-引用">资料&amp;引用</h2>
-<ul>
-<li>
-<p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a><br>
-<a href="https://zhuanlan.zhihu.com/p/34220442?group_id=953729236041809920" target="_blank" rel="external">2亿美元被锁死在区块链中？以太坊智能合约被爆存在巨大漏洞，新技术落地恐怕要“迟到”了</a></p>
-</li>
-<li>
-<p>BM是指网名byteMaster (Daniel Larimer)的程序员，BTS、STEEMIT、EOS创始人</p>
-</li>
-</ul>
-<p>reference:</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/34709735" target="_blank" rel="external">知识点 || 区块链的隐私保护机制有哪些？真的安全吗？</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;What a bubble!&lt;br&gt;
-&lt;img src=&quot;https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png&quot; alt=&quot;bitcoin&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
-    
-    
-      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Web Learning Note</title>
     <link href="http://timchen314.com/Web/"/>
     <id>http://timchen314.com/Web/</id>
     <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="html5">html5</h1>
 <ul>
@@ -1039,11 +926,212 @@ HTML elements are represented by tags&lt;/li&gt;
   </entry>
   
   <entry>
+    <title>About Digital Currency</title>
+    <link href="http://timchen314.com/digital_currency/"/>
+    <id>http://timchen314.com/digital_currency/</id>
+    <published>2018-03-22T10:00:00.000Z</published>
+    <updated>2018-05-01T05:26:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>What a bubble!<br>
+<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
+<a id="more"></a>
+<h2 id="总览">总览</h2>
+<h3 id="info">Info</h3>
+<p><img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/%E6%9D%82/Percentage_of_Total_Market_Capitalization_Dominance.png" alt="image"></p>
+<h4 id="source">source</h4>
+<ol start="0">
+<li><a href="https://coinmarketcap.com" target="_blank" rel="external">Cryptocurrency Market Capitalizations</a></li>
+<li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
+<li>很好的网站  <a href="http://bitcointalk.org/" target="_blank" rel="external">http://bitcointalk.org/</a></li>
+</ol>
+<h3 id="问题与挑战">问题与挑战</h3>
+<h4 id="1-税收">1. 税收</h4>
+<p>美国国税局（IRS, Internal Revenue Service）在努力调查bitcoin避税，这是bitcoin正式应用所面临的一个问题。</p>
+<blockquote>
+<p>像达世（Dash）、门罗（Monero）和ZCash等币都部署了隐私功能，其交易是很难被追踪到的。</p>
+</blockquote>
+<h4 id="个人目标">个人目标</h4>
+<ul>
+<li>量化策略投资<br>
+ICO是一锤子买卖，在2018年会有很多坑。ICO及其之后的项目准备阶段，币价的特点是不确定性大、严重依赖消息。<br>
+资金量大、消息面广的，可以广撒网。<br>
+以我的资金量和消息面，是玩不转的。</li>
+</ul>
+<ul>
+<li>自媒体？</li>
+</ul>
+<ol>
+<li><a href="https://www.zhihu.com/question/52116246" target="_blank" rel="external">英文翻译</a><br>
+猪八戒上千字100，千字140的价格算高的了。</li>
+<li>英文约稿与推荐<br>
+只要求中文独家，最好中文先发。</li>
+<li>中文转载</li>
+</ol>
+<h2 id="待读-进展">待读&amp;进展</h2>
+<h3 id="待读">待读</h3>
+<p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885521" target="_blank" rel="external">以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行</a><br>
+<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a><br>
+<a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
+<a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
+<h3 id="进展">进展</h3>
+<p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
+<h2 id="digital-currency">digital currency</h2>
+<h3 id="ethereum-new-set">ethereum (new_set)</h3>
+<ul>
+<li>practice<br>
+My understanding:
+<ol>
+<li>init first block.</li>
+<li>then you can mine.</li>
+</ol>
+</li>
+</ul>
+<h3 id="cardano">cardano</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/32874568" target="_blank" rel="external">cardano简介</a><br>
+爱丁堡大学一个中心IOHK牵头。</p>
+<ul>
+<li>ADA <a href="https://daedaluswallet.io/faq/" target="_blank" rel="external">不支持win32和移动钱包</a></li>
+</ul>
+<h3 id="eos">EOS</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/33496593" target="_blank" rel="external">EOS：疯子的狂欢</a></p>
+<ul>
+<li>BM出品，李笑来站台</li>
+</ul>
+<h3 id="steem"><s>STEEM</s></h3>
+<ul>
+<li>BM出品，远没有btc强势</li>
+</ul>
+<h3 id="其他币">其他币</h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34723125?group_id=959209805945008128" target="_blank" rel="external">TUNE：音乐应用</a><br>
+三位创始人都是格莱美奖得主。</li>
+</ul>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34733907" target="_blank" rel="external">太空链</a>：严重破发</li>
+</ul>
+<p>薛蛮子认为：</p>
+<blockquote>
+<p>对于ICO的投资标准，薛蛮子表示，首先是人靠谱，此前投资的比原链是国内区块链最大的社区巴比特发起的，墨链是纸贵科技发起的，BEX是美豹金融发起的，这些项目的团队本身已经有了成功的创业案例，且在细分领域处于排头兵的地位。</p>
+</blockquote>
+<blockquote>
+<p>拿比原链来说，薛蛮子表示，“我认为，比原链的创始团队很年轻，富有朝气，大家都很努力，但是比原链的技术挑战挺大，需要天时地利人和，很多条件具备才能做成，不是轻描淡写，一挥而就的。团队最要紧的是不断试错，踏踏实实做事情，不要辜负投资人的信任。我不看好的是，有的小伙子一辈子没赚过大钱，也没花过100万以上的钱，突然通过ICO拿了几个亿，这些人hold不住。”</p>
+</blockquote>
+<h2 id="tech">tech</h2>
+<blockquote>
+<p>1、 共识算法:POW/POS/DPOS/PBFT/BFT-Raft/Paxos/Kafka<br>
+2、 P2P通讯:自举(bootstrapped)/连接/广播<br>
+3、 签名验签:ECDSA/secp256k1/ED25519/MultiSig<br>
+4、 Hash锁定:Merkle树/MPT树<br>
+5、 UTXO记账:流水账<br>
+6、 智能合约:P2PKH/P2SH/Oracle/状态机<br>
+7、 隐私保护:零知识证明、同态加密、CoinJoin加密技术<br>
+8、 私钥存储:HD协议(Hierarchical Deterministic Key Creation)、钱包Wallets、丢失找回<br>
+9、 算力分发：矿池分发</p>
+</blockquote>
+<ul>
+<li>冷热钱包<br>
+热是指在线。如果热钱包断网，那么从存储的角度来讲，也是冷钱包了。但是离线的热钱包和冷钱包还是有很多不同之处。</li>
+</ul>
+<p><a href="https://www.zhihu.com/question/21478404" target="_blank" rel="external">常用的钱包</a></p>
+<h3 id="共识">共识</h3>
+<p><a href="https://www.zhihu.com/question/267440381/answer/325981371" target="_blank" rel="external">区块链技术如何兼顾共识和匿名，解决储存和处理速度问题？</a><br>
+1.共识机制下如何兼顾匿名。举个例子，甲转账给乙两个比特币，但乙不承认。在共识机制下，我们都可以看到确实有2个比特币从地址A转到了地址B，此时有<br>
+问题一：甲可以想办法证明地址A就是他的，但这个证明仍旧是传统的，需要一个个说服别人的证明，而不是一下子说服全部人的证明。<br>
+问题二：即使甲说服了大部分人地址A就是他的，乙仍旧可以不承认地址B是他的，也没有共识机制可以指出地址B是谁的。甲仍旧不能证明转给乙两个比特币。<br>
+问题三：如果存在共识机制能指出地址AB是对应甲和乙的，隐私性就无从谈起，等于所有人的交易都是暴露的。<br>
+2.数据储存过大。举个例子在淘宝买东西，传统交易是中心化的，数据都记录在阿里的硬盘里，我们害怕阿里偷偷修改了以前的数据，要去中心化，所以用上了区块链技术取代阿里云，但所有的交易数据可不是几个T这么少，普通用户如何储存。如果只是少数人储存，那仍旧没有去中心化。<br>
+3.计算速度的问题。假设以后所有交易都在区块链上，区块链技术也得到改进，每秒能处理上亿比交易，如果每个人都要记录，是否意味着每个人都有强大的处理能力，如果但普通计算机无法胜任，只能交给少数超级计算机处理，是否意味普通人失去了记录的能力。</p>
+<p>共识（consensus）算法指的是大家对某一个提案达成一致意见的过程，也就是分布式系统中多个节点之间，对某个状态达成一致结果的过程。至于提案（proposal），几乎可以认为任何可以达成一致的信息就是一个提案。</p><p>在具体的区块记账中，问题1所对应的提案就是地址A向地址B转账这条交易信息是否存在。达成共识的过程就是大家确认该笔交易存在并且有效。因此，不涉及到问题1.1和1.2，即地址A是甲的地址，地址B是乙的地址这个身份关联过程，因此，可以视为该过程是匿名的。除非提案内容更改为&quot;地址A是甲的地址，地址B是乙的地址，地址A向地址B发起了一笔转账&quot;。<br>
+这样就触发了问题三，问题三的描述里，确实无法保证隐私性，这个不用多说。</p>
+<h3 id="闪电链">闪电链</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/34681487" target="_blank" rel="external">闪电链科普</a>：<br>
+所谓闪电链就是小额交易不上主链，而是放在侧链上，在达到一定交易量后再统一上到主链上。<br>
+闪电链相当于中心化的节点。</p>
+<blockquote>
+<p><strong>闪电网络的反作弊机制</strong><br>
+一个叫双向支付通道（Bi-Directional Payment Channel )<br>
+一个叫时间锁（TimeLock）<br>
+一个叫密码（Secret Value）</p>
+</blockquote>
+<p>双向通道：交易双方都确认，才能交易成功。</p>
+<h3 id="pow">POW</h3>
+<ul>
+<li>btc的block上，负责POW的nounce。</li>
+<li>btc采用POW是为了增加作假block的成本，进而禁止了双花。</li>
+</ul>
+<h3 id="utxo">UTXO</h3>
+<p><a href="http://8btc.com/thread-45640-1-1.html" target="_blank" rel="external">玛_雅和vatten解释的很好</a><br>
+<a href="http://8btc.com/article-4381-1.html" target="_blank" rel="external">其实并没有什么比特币，只有 UTXO</a></p>
+<h3 id="隐私保护机制">隐私保护机制<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h3>
+<ol>
+<li>
+<p>零知识证明<br>
+<img src="https://pic4.zhimg.com/80/v2-8e9aa2a8dd3457c05cbbc688f2679ff1_hd.jpg" alt="image"><br>
+零知识证明也就是证明者在不泄露秘密的情况下，让验证者相信证明者知道这个秘密。</p>
+<blockquote>
+<p>Zcash是首个使用零知识证明机制的区块链系统。不同于其他加密数字货币会公开所有的交易记录，Zcash可以用零知识证明将完全加密的交易记录确认为有效，但是他有一个很关键的缺点就是<strong>速度缓慢</strong>。<br>
+Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行隐藏。</p>
+</blockquote>
+</li>
+<li>
+<p>同态加密</p>
+<blockquote>
+<p>明文加密后得到密文，对密文进行特定的代数运算得到的还是加密的结果，对结果进行解密可以得到对明文进行同样运算一样的结果。也就是说可以在不知道原数据的情况下进行运算，最后同样能得到正确的结果。</p>
+</blockquote>
+</li>
+<li>
+<p>混币</p>
+<blockquote>
+<p>以门罗币（Monero）为例，他使用了RingCT（环形加密匿名）技术来实现隐私保护。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="problem">problem</h3>
+<ul>
+<li>what is private network?</li>
+</ul>
+<h2 id="资料-引用">资料&amp;引用</h2>
+<ul>
+<li>
+<p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a><br>
+<a href="https://zhuanlan.zhihu.com/p/34220442?group_id=953729236041809920" target="_blank" rel="external">2亿美元被锁死在区块链中？以太坊智能合约被爆存在巨大漏洞，新技术落地恐怕要“迟到”了</a></p>
+</li>
+<li>
+<p>BM是指网名byteMaster (Daniel Larimer)的程序员，BTS、STEEMIT、EOS创始人</p>
+</li>
+</ul>
+<p>reference:</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/34709735" target="_blank" rel="external">知识点 || 区块链的隐私保护机制有哪些？真的安全吗？</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;What a bubble!&lt;br&gt;
+&lt;img src=&quot;https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png&quot; alt=&quot;bitcoin&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
+    
+    
+      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
+    
+  </entry>
+  
+  <entry>
     <title>pandas note</title>
     <link href="http://timchen314.com/pandas/"/>
     <id>http://timchen314.com/pandas/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>数据分析神器Pandas。</p>
 <a id="more"></a>
@@ -1077,11 +1165,31 @@ Show first 5 line：<code>df.head(5)</code></p>
 <p>filter</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Using a series of booleans to filter</div><div class="line">df[df.rain_octsep &lt; 1000]</div><div class="line"># Filtering by multiple conditionals</div><div class="line">df[(df.rain_octsep &lt; 1000) &amp; (df.outflow_octsep &lt; 4000)] </div><div class="line"># 这里不能用 and 关键字，因为会引发操作顺序的问题。必须用 &amp; 和圆括号。</div><div class="line"># Filtering by string methods</div><div class="line">df[df.water_year.str.startswith(&apos;199&apos;)]</div><div class="line"># 注意，你必须用 .str.[string method] ，而不能直接在字符串上调用字符方法。</div></pre></td></tr></table></figure>
 </li>
+<li>
+<p>add a row</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df = DataFrame(columns=(&apos;lib&apos;, &apos;qty1&apos;, &apos;qty2&apos;))#生成空的pandas表  </div><div class="line">for i in range(5):#插入一行</div><div class="line">    df.loc[i] = [randint(-1,1) for n in range(3)]</div></pre></td></tr></table></figure>
+<ul>
+<li>pandas的DataFrame对象如何清空？<br>
+<code>df.drop(df.index,inplace=True)</code></li>
 </ul>
 <h1 id="读取">读取</h1>
 <ul>
 <li>直接读取html中的表格<br>
 <code>pd.read_html(&quot;https://coinmarketcap.com/currencies/bitcoin/&quot;)</code></li>
+<li><a href="https://www.zhihu.com/question/36170252" target="_blank" rel="external">python pandas 怎样高效地添加一行数据？</a>
+<blockquote>
+<p>Pandas/numpy structures are fundamentally not suited for efficiently growing. They work best when they are created with a fixed size and stay that way.</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="写入">写入</h1>
+<ul>
+<li><code>df.to_csv('D:\\a.csv', sep=',', header=True, index=True)</code></li>
+<li><code>df.to_json('D:\\a.json')</code></li>
+<li><code>df.to_html('D:\\a.html')</code></li>
+<li><code>df.to_sql('tableName', con=dbcon, flavor='mysql')</code></li>
 </ul>
 <h1 id="reference">reference</h1>
 <hr class="footnotes-sep">
@@ -1117,7 +1225,7 @@ Show first 5 line：<code>df.head(5)</code></p>
     <link href="http://timchen314.com/jupyter/"/>
     <id>http://timchen314.com/jupyter/</id>
     <published>2018-01-16T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="a-tutorial">A Tutorial</h1>
 <a id="more"></a>
@@ -1238,6 +1346,10 @@ And then in <code>~/.jupyter/jupyter_notebook_config.py</code> file, <code>c.Not
 Formatting html</li>
 </ul>
 </li>
+<li>
+<p>convert to .py file<br>
+<code>jupyter nbconvert --to script [YOUR_NOTEBOOK].ipynb</code></p>
+</li>
 </ul>
 <hr>
 <p><a href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/4.0.x/examples/IPython%20Kernel/Cell%20Magics.ipynb" target="_blank" rel="external">source 1</a><br>
@@ -1265,7 +1377,7 @@ Formatting html</li>
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
@@ -1860,7 +1972,7 @@ ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a>
     <link href="http://timchen314.com/linux_senior_service/"/>
     <id>http://timchen314.com/linux_senior_service/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -1961,7 +2073,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -2010,7 +2122,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -2070,7 +2182,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -2261,7 +2373,7 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -2503,6 +2615,8 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HAL9000</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__format__</span><span class="params">(self, format)</span>:</span></div><div class="line">        <span class="keyword">if</span> (format == <span class="string">'open-the-pod-bay-doors'</span>):</div><div class="line">            <span class="keyword">return</span> <span class="string">"I'm afraid I can't do that."</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'HAL 9000'</span></div></pre></td></tr></table></figure>
 <h5 id="datetime">datetime</h5>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"><span class="string">'&#123;:%Y-%m-%d %H:%M&#125;'</span>.format(datetime(<span class="number">2001</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))</div></pre></td></tr></table></figure>
+<p>Another Example:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># expiry and timestamp is string like 2018-06-29T12:00:00.000Z and 2018-04-19T18:44:44.320Z</span></div><div class="line">FMT = <span class="string">'%Y-%m-%dT%H:%M:%S'</span></div><div class="line">time_delta = datetime.strptime(expiry, FMT) - datetime.strptime(timestamp, FMT)</div></pre></td></tr></table></figure>
 <h5 id="named-placeholder">named placeholder</h5>
 <p>use key to hold the place. <strong>input the dictionary as elements</strong></p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data = &#123;<span class="string">'first'</span>: <span class="string">'Hodor'</span>, <span class="string">'last'</span>: <span class="string">'Hodor!'</span>&#125;</div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(**data)</div><div class="line"><span class="comment"># or</span></div><div class="line"><span class="string">'&#123;first&#125; &#123;last&#125;'</span>.format(first=<span class="string">'Hodor'</span>, last=<span class="string">'Hodor!'</span>)</div></pre></td></tr></table></figure>
@@ -2775,6 +2889,8 @@ This dict will record the <strong>insert</strong> order!</p>
 <ul>
 <li>translate in one line:<br>
 Translate word by word: <code>[ your_dict[i] if i in your_dict else i for i in some_words ]</code></li>
+<li>string to number: commas as thousands separators <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> locale</div><div class="line">locale.setlocale( locale.LC_ALL, <span class="string">'en_US.UTF-8'</span>  ) </div><div class="line">locale.atoi(<span class="string">'1,000,000'</span>)</div><div class="line">locale.atof(<span class="string">'1,000,000.53'</span>)</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="工具">工具</h2>
 <ul>
@@ -2917,7 +3033,7 @@ Python features a dynamic type system and automatic memory management and suppor
     <link href="http://timchen314.com/vmd%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vmd笔记/</id>
     <published>2017-09-29T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>
@@ -3260,7 +3376,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/Word%E6%A0%BC%E5%BC%8F%E8%AE%BA%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8/"/>
     <id>http://timchen314.com/Word格式论文中添加引用/</id>
     <published>2017-09-24T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>通常，很多理工科硕士/博士的毕业论文，是将自己Paper翻译成汉语再稍作组织而写成的。由于论文要求是Word格式的，重新向Word中添加引用文献是一项繁琐的工作。这里我介绍一种方法，利用Latex写Paper时准备的<strong>bib文件</strong>，向Word中添加引用文献。该方法有几个好处:</p>
 <ol>
@@ -3298,7 +3414,7 @@ pbc join res -sel尝试了各种办法也没有成功<br>
     <link href="http://timchen314.com/%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/"/>
     <id>http://timchen314.com/申请专利/</id>
     <published>2017-09-07T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前想把研究结果申请成专利(化工领域)，所以做了下列功课，在此分享给有相同需求的人。</p>
 <a id="more"></a>
@@ -3358,206 +3474,11 @@ pbc join res -sel尝试了各种办法也没有成功<br>
   </entry>
   
   <entry>
-    <title>gnuplot笔记（上）</title>
-    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
-    <id>http://timchen314.com/gnuplot笔记上/</id>
-    <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
-<a id="more"></a>
-<p>[TOC]</p>
-<h2 id="note-about-version-5">Note about Version 5</h2>
-<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
-<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
-例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
-<h3 id="2-size的用法">2. size的用法</h3>
-<ul>
-<li>eps to png<br>
-when eps size is set to 1.0,1.0，png的像素为600,420<br>
-eps：size 1.8,1.8 那么png的像素为1080,755</li>
-<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
-size 2,2 会导致图像超过窗口大小</li>
-</ul>
-<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
-<p><code>plot ... smooth mcsplines</code><br>
-<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
-<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
-<h3 id="4-变量的引用">4. 变量的引用</h3>
-<p>For 4.6:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
-<p>For 5.0:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
-<h2 id="format">format</h2>
-<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
-<p><code>set logscale</code> # x和y轴都设置成logscale</p>
-<h3 id="2-set-format">2. set format</h3>
-<p>设置坐标轴上数字的格式。<br>
-以1000为例：</p>
-<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
-</code></pre>
-<p>显示出来的格式为10^3</p>
-<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
-</code></pre>
-<p>显示为1×10^3</p>
-<p>需要注意的是：</p>
-<ul>
-<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
-<li><code>%t</code>与<code>%T</code><br>
-比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
-</ul>
-<h3 id="3-offset-x-y">3. offset x,y</h3>
-<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
-<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
-<blockquote>
-<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
-</blockquote>
-<p>只改major tics:<code>set tic scale 2</code></p>
-<h3 id="5-字体font">5. 字体font:</h3>
-<p>(1) gnuplot-5.0.1 manual:</p>
-<blockquote>
-<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
-(2) TimesRoman和TimesNewRoman都是一样的<br>
-For other fonts, 尽管程序不会报错，但也显示不出来<br>
-但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
-<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
-<h3 id="7-border">7. border</h3>
-<p><code>set border lw 3</code> 只改变线的宽度</p>
-<h3 id="8-key">8. key</h3>
-<p><strong>set key height #调节key与坐标轴的距离</strong><br>
-set key spacing 1.3 #调节两行之间的距离<br>
-set key maxcols/maxrow<br>
-set key autotitle</p>
-<h3 id="9-label">9. label</h3>
-<ul>
-<li>设定位置时候，是设定的左下角的坐标</li>
-<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
-</ul>
-<h3 id="10-arrow">10. arrow</h3>
-<ul>
-<li>
-<p>控制起始/终止位置<br>
-set arrow from 坐标 to 坐标<br>
-e.g.:<br>
-<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
-<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
-</li>
-<li>
-<p>控制head<br>
-e.g.:<br>
-<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
-其中head filled size 1,30,55 为控制head的格式。<br>
-<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
-length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
-</li>
-</ul>
-<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
-<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
-<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
-<h3 id="1-line-and-point-types">1. line and point types</h3>
-<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
-<h3 id="2-most-useful-point-type">2. most useful point type</h3>
-<table>
-<thead>
-<tr>
-<th>shape</th>
-<th>full id</th>
-<th>empty  id</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>square</td>
-<td>5</td>
-<td>64</td>
-</tr>
-<tr>
-<td>sphere</td>
-<td>7</td>
-<td>65</td>
-</tr>
-<tr>
-<td>up-tri</td>
-<td>9</td>
-<td>66</td>
-</tr>
-<tr>
-<td>down-tri</td>
-<td>11</td>
-<td>67</td>
-</tr>
-<tr>
-<td>diamond</td>
-<td>13</td>
-<td>68</td>
-</tr>
-<tr>
-<td>pentagon</td>
-<td>15</td>
-<td>69</td>
-</tr>
-</tbody>
-</table>
-<p>e.g.:<br>
-<code>p sin(x) w p pt 5</code></p>
-<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
-<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
-<h3 id="4-several-color-set">4. several color set</h3>
-<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
-<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
-<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
-<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
-<ul>
-<li>for循环：<br>
-<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
-<li>字符串数组<br>
-`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
-a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
-**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
-<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
-<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
-</ul>
-<h3 id="1-escape-charactor">1. escape charactor</h3>
-<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
-<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
-<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
-（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
-（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
-（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
-<h3 id="3-string">3. string</h3>
-<ul>
-<li>单引号内的字符串不转义，双引号内的字符串转义</li>
-<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
-<li>“.”, “eq” and “ne&quot;<br>
-Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
-<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
-</ul>
-<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
-    
-      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>gnuplot笔记（下）</title>
     <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8B/"/>
     <id>http://timchen314.com/gnuplot笔记下/</id>
     <published>2017-08-16T12:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>gnuplot笔记下半部分。</p>
 <a id="more"></a>
@@ -3799,11 +3720,206 @@ The eps file doesn’t get written until a plot command is specified after speci
   </entry>
   
   <entry>
+    <title>gnuplot笔记（上）</title>
+    <link href="http://timchen314.com/gnuplot%E7%AC%94%E8%AE%B0%E4%B8%8A/"/>
+    <id>http://timchen314.com/gnuplot笔记上/</id>
+    <published>2017-08-16T12:00:00.000Z</published>
+    <updated>2018-05-01T05:26:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。</p>
+<a id="more"></a>
+<p>[TOC]</p>
+<h2 id="note-about-version-5">Note about Version 5</h2>
+<h3 id="1-dashtype需要单独设置">1. dashtype需要单独设置</h3>
+<p>与4.x版本不同，现在linetype画出的都是实线了。<br>
+例子：<code>p sin(x) dt 2 #设为2型虚线</code></p>
+<h3 id="2-size的用法">2. size的用法</h3>
+<ul>
+<li>eps to png<br>
+when eps size is set to 1.0,1.0，png的像素为600,420<br>
+eps：size 1.8,1.8 那么png的像素为1080,755</li>
+<li><mark><strong>x11</strong></mark> set terminal x11 size 600,420应该是默认大小<br>
+size 2,2 会导致图像超过窗口大小</li>
+</ul>
+<h3 id="3-新加入几个命令">3. 新加入几个命令</h3>
+<p><code>plot ... smooth mcsplines</code><br>
+<code>plot &lt;datafile&gt; skip N</code>    # skip lines at start of ascii data file<br>
+<code>set colorsequence default|classic|podo</code> # colors used by successive plot elements</p>
+<h3 id="4-变量的引用">4. 变量的引用</h3>
+<p>For 4.6:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 &apos;var&apos; at 1,1</div></pre></td></tr></table></figure>
+<p>For 5.0:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var=123</div><div class="line">set label 1 var at 1,1</div></pre></td></tr></table></figure>
+<h2 id="format">format</h2>
+<h3 id="1-set-logscale-y">1. <code>set logscale y</code></h3>
+<p><code>set logscale</code> # x和y轴都设置成logscale</p>
+<h3 id="2-set-format">2. set format</h3>
+<p>设置坐标轴上数字的格式。<br>
+以1000为例：</p>
+<pre><code class="language-gnuplot">set format x &quot;10^{%L}&quot; 
+</code></pre>
+<p>显示出来的格式为10^3</p>
+<pre><code class="language-gnuplot">set format x &quot;%2.0t{\327}10^{%T}&quot; 
+</code></pre>
+<p>显示为1×10^3</p>
+<p>需要注意的是：</p>
+<ul>
+<li><code>{\327}</code>是乘号，需要将编码指定为<code>set encoding iso_8859_1</code>才可以使用</li>
+<li><code>%t</code>与<code>%T</code><br>
+比如1200, %t=1.2 %T=3。这种写法可以方便的描线性标度下的较大的刻度。</li>
+</ul>
+<h3 id="3-offset-x-y">3. offset x,y</h3>
+<p>设置label到坐标轴的距离， 0,0 是默认距离 e.g. <code>set xlabel &quot;123&quot; offset 1,0</code></p>
+<h3 id="4-set-ticscale-n-m">4. <code>set ticscale n m</code></h3>
+<blockquote>
+<p>Command set ticscale n m changes the length (size) of tics. The major tics are multiplied by the provided value n, while the minor tics are multiplied by m.</p>
+</blockquote>
+<p>只改major tics:<code>set tic scale 2</code></p>
+<h3 id="5-字体font">5. 字体font:</h3>
+<p>(1) gnuplot-5.0.1 manual:</p>
+<blockquote>
+<p>All PostScript printers or viewers should know about the standard set of Adobe fonts Times-Roman, Helvetica, Courier, and Symbol.</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/question/36527847" target="_blank" rel="external">注意：TimesNewRoman和Times（又称TimesRoman）是几乎一样的</a><br>
+(2) TimesRoman和TimesNewRoman都是一样的<br>
+For other fonts, 尽管程序不会报错，但也显示不出来<br>
+但是可以加粗/斜体 （可以参看http://www.manpagez.com/info/gnuplot/gnuplot-4.4.0/gnuplot_390.php）</p>
+<h3 id="6-tc-textcolor">6. tc (textcolor)</h3>
+<h3 id="7-border">7. border</h3>
+<p><code>set border lw 3</code> 只改变线的宽度</p>
+<h3 id="8-key">8. key</h3>
+<p><strong>set key height #调节key与坐标轴的距离</strong><br>
+set key spacing 1.3 #调节两行之间的距离<br>
+set key maxcols/maxrow<br>
+set key autotitle</p>
+<h3 id="9-label">9. label</h3>
+<ul>
+<li>设定位置时候，是设定的左下角的坐标</li>
+<li>用法：·set label 1 ‘20%wt’ at graph 0.42,0.92 font ‘,50’·</li>
+</ul>
+<h3 id="10-arrow">10. arrow</h3>
+<ul>
+<li>
+<p>控制起始/终止位置<br>
+set arrow from 坐标 to 坐标<br>
+e.g.:<br>
+<code>set arrow from 9.5,3.8 to 9.5,1.8 nohead lt 5 lc rgb &quot;black&quot;</code><br>
+<code>set arrow 1 from (log10(50000)),-1 to (log10(50000)),2 nohead lt 5 lc rgb &quot;black&quot;</code>  &quot;arrow 1&quot;中&quot;1&quot;是一个标记数组，方便arrow的管理，比如<code>unset arrow 1</code>就取消arrow 1。</p>
+</li>
+<li>
+<p>控制head<br>
+e.g.:<br>
+<code>set arrow from -4,-4 to 4,-4 head filled size screen 1,30,55 lw 2 lt 2 lc rgb &quot;cyan&quot;</code><br>
+其中head filled size 1,30,55 为控制head的格式。<br>
+<code>size &lt;length&gt;,&lt;angle&gt;{,&lt;backangle&gt;}</code><br>
+length是长度,加上screen是代表屏幕长度，也就是相对长度；后面两个是箭头与线的角度</p>
+</li>
+</ul>
+<h3 id="11-lmargin-rmargin-tmargin-bmargin-左右上下">11. lmargin rmargin tmargin bmargin(左右上下)</h3>
+<p>以lmargin为例，lmargin是左侧坐标轴到图左边边界的距离</p>
+<h2 id="style：颜色-形状等与审美相关的设置">style：颜色、形状等与审美相关的设置</h2>
+<h3 id="1-line-and-point-types">1. line and point types</h3>
+<p><a href="https://img.alicdn.com/imgextra/i4/95029972/TB21hDfhpXXXXbrXpXXXXXXXXXX_!!95029972.png" target="_blank" rel="external">gnuplot-line-and-point-types</a></p>
+<h3 id="2-most-useful-point-type">2. most useful point type</h3>
+<table>
+<thead>
+<tr>
+<th>shape</th>
+<th>full id</th>
+<th>empty  id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>square</td>
+<td>5</td>
+<td>64</td>
+</tr>
+<tr>
+<td>sphere</td>
+<td>7</td>
+<td>65</td>
+</tr>
+<tr>
+<td>up-tri</td>
+<td>9</td>
+<td>66</td>
+</tr>
+<tr>
+<td>down-tri</td>
+<td>11</td>
+<td>67</td>
+</tr>
+<tr>
+<td>diamond</td>
+<td>13</td>
+<td>68</td>
+</tr>
+<tr>
+<td>pentagon</td>
+<td>15</td>
+<td>69</td>
+</tr>
+</tbody>
+</table>
+<p>e.g.:<br>
+<code>p sin(x) w p pt 5</code></p>
+<h3 id="3-点的颜色的设置方法：">3. 点的颜色的设置方法：</h3>
+<p><code>lc rgb &quot;red&quot;</code>，或者<code>ls 1</code>也可以！</p>
+<h3 id="4-several-color-set">4. several color set</h3>
+<p><img src="https://img.alicdn.com/imgextra/i3/95029972/TB2RODgopXXXXbSXXXXXXXXXXXX_!!95029972.png" alt="my color"></p>
+<h2 id="dsl-domain-specific-language-in-dsl">DSL(domain-specific language) in DSL</h2>
+<p>有时候一个图里可能有一次画10条线，如果一条一条的画太麻烦了。为此gnuplot内置了自己的DSL。包括循环、逻辑等语句。</p>
+<h3 id="0-for-字符串数组">0. for、字符串数组</h3>
+<ul>
+<li>for循环：<br>
+<code>p for [i = 1:9] sample.i.'.dat' u 1:2 w l ls i t 'p='.i #一次画九条先，每条线有不同的title和linesytle（sytle是自己定义的）</code></li>
+<li>字符串数组<br>
+`a=&quot;2 3 4 6 8 9 12 16 24&quot;<br>
+a被当成字符串数组,word(a,n)是字符串类型。整数可以除字符串，例如864/word(a,1)。sprintf内的变量也可以用864/word(a,1)。<br>
+**.**点：字符串连接操作符，只能用于处理字符串和变量，不能处理表达式！！！<br>
+<strong>注意：sprintf与C++的sprintf一样，百分号的转义字符是%%。</strong><br>
+<strong>总结：字符串和文件名都用sprinf；无论是字符类型还是数字类型，都可以用在ls，column这些地方，并且可以进行数学运算。例子可见Paper3_segMSD.plt</strong></li>
+</ul>
+<h3 id="1-escape-charactor">1. escape charactor</h3>
+<p>In postscript eps enhanced terminal, use <code>&quot;\\&quot;</code> before an escape charactor to keep its basic form, e.g. , <code>&quot;\\_&quot;</code>  representation <code>&quot;_&quot;</code>.</p>
+<h3 id="2-各种字符的表达方式-可以google-syntax-for-postscript-enhanced-option">2.各种字符的表达方式，可以google “Syntax for postscript enhanced option”</h3>
+<p>（0）例子：<code>set terminal postscript eps enhanced color lw 3.0 dashlength 3.0 &quot;TimsRoman,50&quot;</code><br>
+（1）PostScript Character Codes的模式是T模式；输入&quot;set encoding&quot;后是E模式<br>
+（2）希腊字母写法的例子：<code>{/Symbol r}</code><br>
+（3）上下标同时出现：<code>t@^{\*}_{p}</code>，多用了一个@字符</p>
+<h3 id="3-string">3. string</h3>
+<ul>
+<li>单引号内的字符串不转义，双引号内的字符串转义</li>
+<li>set title noenhanced #让title的内容直接输出，不进行转义</li>
+<li>“.”, “eq” and “ne&quot;<br>
+Three binary operators require string operands: the string concatenation operator”.&quot;, the string equality operator&quot;eq&quot;and the string inequality operator&quot;ne&quot;. The following example will print TRUE.<br>
+<code>if (&quot;A&quot;.&quot;B&quot; eq &quot;AB&quot;) print &quot;TRUE&quot;</code></li>
+</ul>
+<h3 id="4-print-hello-world">4.<code>print &quot;hello world!&quot;</code></h3>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gnuplot笔记，包含中高级使用方法，方便入门之后的进阶学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
+    
+      <category term="画图" scheme="http://timchen314.com/tags/%E7%94%BB%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vim笔记</title>
     <link href="http://timchen314.com/vim%E7%AC%94%E8%AE%B0/"/>
     <id>http://timchen314.com/vim笔记/</id>
     <published>2017-08-01T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
+    <updated>2018-05-01T05:26:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。</p>
 <a id="more"></a>
@@ -3961,719 +4077,6 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
     
     
       <category term="vim" scheme="http://timchen314.com/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux常用命令记录</title>
-    <link href="http://timchen314.com/linux_command/"/>
-    <id>http://timchen314.com/linux_command/</id>
-    <published>2017-07-31T10:00:00.000Z</published>
-    <updated>2018-04-19T12:12:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>记录用过的命令，方便以后查找。不包含太简单的或太难的。<br>
-长度感人。</p>
-<a id="more"></a>
-<p>[TOC]</p>
-<h2 id="正则表达式">正则表达式</h2>
-<p>1.&lt; #匹配词头 &gt; #匹配词尾<br>
-2.+<br>
-匹配1或多个<br>
-3.？<br>
-匹配0或1个<br>
-4.x|y<br>
-匹配x或y<br>
-5.x{5,10}<br>
-匹配x出现5到10次</p>
-<h2 id="一句话介绍一个命令：">一句话介绍一个命令：</h2>
-<ul>
-<li>
-<p>shell 内置<br>
-<code>--</code>: a double dash (<code>--</code>) is used to signify the end of command options. 例如<code>ls -- -l</code>中会把<code>-l</code>当成文件名<br>
-<code>echo $((a%b))</code>: 余数</p>
-</li>
-<li>
-<p>资源管理<br>
-<code>ulimit</code>: 管理用户占用的资源<br>
-<code>nice &amp; renice 命令</code>: 管理任务优先级<br>
-<code>pkill -kill -t pts/5</code>: 踢掉相应的用户<br>
-<code>sudo sh -c &quot;echo 1 &gt; /proc/sys/vm/drop_caches&quot;</code>: 清理硬盘<br>
-<code>iostat -x sdb1 1 3</code>: 显示sdb1的状态，每1秒显示一次，一共显示3次。</p>
-</li>
-<li>
-<p>键盘<br>
-<code>bind -p</code>:  查看所有的键盘绑定<br>
-<code>stty -a</code>: 查看下默认的键位设置<br>
-<code>toe /usr/share/terminfo/</code>: supported terminal; you can compare two terminal by <code>infocmp vt100 vt220</code></p>
-</li>
-<li>
-<p>文本处理相关<br>
-<code>tac</code>: cat倒过来写，是将文件反向输出的命令<br>
-<code>join命令</code>: 横向连接文件，可以合并第一列<br>
-<code>tee</code>: <code>tee file1 file2 -</code>  #将标准输出，输出到file1、file2和标准输出（“-”就是代表标准输出）（<strong>注意</strong> 该命令本身会向标准输出 输出一次，所以tee file1 file2 - 会将标准输出 输出两次）<br>
-<code>read</code>: <code>read -p &quot;make dir now?[y/n]:&quot; select</code>#直接读入变量值</p>
-</li>
-<li>
-<p>其他<br>
-<code>basename &amp; dirname</code>: 从路径名得到root部分和文件名部分<br>
-<code>df -T</code>: 显示硬盘分区类型<br>
-lsof:  <code>lsof -p 456,123</code> 列出进程456和123所有打开的文件。<code>lsof -i 6</code> 列出所有IPv6协议的网络文件<br>
-<code>env</code>: 输出所有环境变量<br>
-<code>ldd ./exe</code>:  给出链接的库<br>
-<code>systemctl start atd</code>: arch中用at，需要开启<br>
-<code>gimp</code>: 看图png,jpg,bmp都能看<br>
-<code>info &amp; whatis</code>: they tell the information of a command; Note that in OS, info whatis will get “search database …”</p>
-</li>
-</ul>
-<h2 id="linux-command-line">linux Command line</h2>
-<p>Ctrl + a, Ctrl + e, alt + f 前进一个单词、alt + b(通过xshell并不好使):  谁用谁知道<br>
-Ctrl + f, Ctrl + b 前进一个字母/后退一个字母<br>
-Ctrl + 方向键左键    光标移动到前一个单词开头<br>
-Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
-<code>^oldstr^newstr</code>    替换前一次命令中字符串<br>
-同时head&amp;tail: <code>ls | (head;tail)</code> 或者 <code>(head; tail) &lt; file</code></p>
-<h3 id="系列命令">!系列命令</h3>
-<ul>
-<li>
-<p><code>!-n</code>， 重复执行倒数第 n 条命令，n 为正整数；</p>
-</li>
-<li>
-<p><code>!!</code>， 重复执行上一条命令。该命令等价于 !-1；!?str，重复执行最近一条包含字符串 str 的命令；</p>
-</li>
-<li>
-<p><code>!#</code>，引用当前的命令行，例如：<code>cp filename filename.bak</code> 可以写为 <code>cp filename !#:1.bak</code></p>
-</li>
-<li>
-<p><code>!^</code>/<code>!$</code><br>
-重用上一条命令的第一个参数/最后一个参数；<br>
-<code>ls /usr/share/doc /usr/share/man; cd !^</code># 即 cd /usr/share/doc</p>
-</li>
-<li>
-<p><code>!*</code><br>
-重用上一条命令的所有参数； <code>touch a.txt b.txt c.txt</code><br>
-<code>vim !*</code>  # 即 vim a.txt b.txt c.txt</p>
-</li>
-<li>
-<p><code>!!:n</code><br>
-重用上一条命令中的第 n 个参数，n 为正整数。<br>
-<code>vim {a..c}.txt</code><br>
-<code>vim !!:2</code>   # 即 vim b.txt</p>
-</li>
-<li>
-<p><code>!str:x-y</code><br>
-重用上一条以 str 开头的命令的第 x 到第 y 个参数；<br>
-<code>touch a.txt b.txt c.txt d.txt</code><br>
-<code>vim !touch:2-3</code>   # 即 vim b.txt c.txt</p>
-</li>
-<li>
-<p><code>!?str:n*</code><br>
-重用上一条包含 str 的命令的从第 n 个到最后一个参数；<br>
-<code>vim foo.h foo.cc bar.h bar.cc</code><br>
-<code>wc !?vim:2*</code># 即 wc <a href="http://foo.cc" target="_blank" rel="external">foo.cc</a> bar.h <a href="http://bar.cc" target="_blank" rel="external">bar.cc</a></p>
-</li>
-</ul>
-<h3 id="参数的子字符串">参数的子字符串</h3>
-<ul>
-<li>
-<p>利用 :h 截取路径开头，相当于 dirname</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls /usr/share/fonts/truetype/dejavu    </div><div class="line"><span class="built_in">cd</span> !$:h  <span class="comment"># 即 cd /usr/share/fonts/truetype</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>利用 :t 截取路径结尾，相当于 basename<br>
-<code>tar zxf !$:t # 相当于 tar zxf nginx-1.4.7.tar.gz</code></p>
-</li>
-<li>
-<p>利用 :r 截取文件名</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gunzip filename.gzip</div><div class="line"><span class="built_in">cd</span> !$:r  <span class="comment"># 即 cd filename</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>利用 :e 截取文件扩展名</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls file.jpg</div><div class="line"><span class="built_in">echo</span> !$:e  <span class="comment"># 即 echo jpg&lt;b&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>简单记忆：<br>
-<code>h|t</code><br>
-<code>r|e</code></p>
-<h3 id="参数的补全">参数的补全</h3>
-<h4 id="引子">引子</h4>
-<p>我们用<code>which &quot;command&quot;</code>命令时，可能感觉到<code>which</code>后面的命令无法补全，很不方便，比如<code>which python3</code>就需要手动输入python3。因此我们不禁希望参数也可以用[tab]补全。<br>
-实际上，linux是可以补全参数的。比如zsh就自带补全参数。最主流的bash经过设置，也是可以补全参数的。<br>
-bash 中标准补全功能包含了<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：</p>
-<ul>
-<li>路径补全</li>
-<li>文件名补全</li>
-<li>变量补全</li>
-<li>用户名补全</li>
-<li>主机名补全<br>
-很多人比较熟悉的补全可能只有前两项。此外，我们还可以通过complete命令，自定义补全参数。<br>
-以<code>which</code>为例，<code>$ complete -c which</code>，就可将所有命令作为<code>which</code>的参数进行补全了。<br>
-complete具有强大的补全功能，更多设置可以参考<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1]</a></sup>。</li>
-</ul>
-<h4 id="complete">complete</h4>
-<ul>
-<li>CentOS 7.3，在<code>/etc/bash_completion.d/</code>进行设置。</li>
-<li><code>-F</code>设定补全函数</li>
-</ul>
-<h3 id="alt">alt</h3>
-<p>如果不是直接在终端上操作，alt键需要进行设置才能使用。**比如Xshell中，在“属性–键盘–将Alt键作为Meta仿真”打钩，才能使用；OS X上，无法用alt键。**PS：win键盘一般alt键当做Meta键；ALt GR：有些老键盘左边是Alt，右边是ALt GR键<br>
-Alt+./Esc+. (!^ !$): 将最近一条命令的参数输出<br>
-Alt+ f/b: 向前/后移动一个词</p>
-<h3 id="其他">其他</h3>
-<ul>
-<li>Brace Expansion<br>
-<code>ls /usr/{,local}/bin</code>，会列出&quot;/usr/bin&quot;和&quot;/usr/local/bin&quot;</li>
-<li>shell特殊变量<br>
-<code>$0</code>     当前shell程序的名字<br>
-<code>$1 ~ $9</code>    命令行上的第一到第九个参数<br>
-<code>$#</code>    命令行上的参数个数<br>
-<code>$*, $@</code>   命令行上的所有参数<br>
-<code>$?</code>    上一条命令的退出状态<br>
-<code>$$</code>    当前进程的进程标识号(PID)<br>
-<code>$!</code>    最后一个后台进程的进程标识号</li>
-</ul>
-<h3 id="外部资源链接">外部资源链接</h3>
-<p>更多牛逼命令：           <a href="http://www.zhihu.com/question/20140085" target="_blank" rel="external">http://www.zhihu.com/question/20140085</a><br>
-<a href="http://www.zhihu.com/question/20273259" target="_blank" rel="external">http://www.zhihu.com/question/20273259</a><br>
-<a href="http://www.zhihu.com/question/25910725/answer/31951050" target="_blank" rel="external">http://www.zhihu.com/question/25910725/answer/31951050</a><br>
-linux shell 快捷键:      <a href="http://blog.chinaunix.net/uid-361890-id-342066.html" target="_blank" rel="external">http://blog.chinaunix.net/uid-361890-id-342066.html</a></p>
-<h3 id="编码-ctrl-h；终端-f1">编码 ctrl+h；终端 F1</h3>
-<ul>
-<li><strong>ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways.</strong><br>
-而ctrl+h的值也为010。<br>
-<br>
-terminal区分不了二者，因此输入以ascii编码，则ctrl+h变为Backspace；而输入不以ascii编码，Backspace也会显示成^H，即ctrl+h</li>
-<li>terminal类型的选择也会影响快捷键<br>
-Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM中可以绑定F1；如果选linux，则不可以</li>
-</ul>
-<h2 id="系统信息：">系统信息：</h2>
-<ul>
-<li>cpu information<br>
-<code>cat /proc/cpuinfo</code></li>
-<li>列出内核版本、主机名等信息<br>
-<code>uname -a</code></li>
-<li>发行版信息<br>
-<code>cat /etc/redhat-release</code></li>
-</ul>
-<h2 id="alias命令：">alias命令：</h2>
-<p><a href="http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh" target="_blank" rel="external">http://stackoverflow.com/questions/22537699/cannot-use-alias-while-executing-a-command-via-ssh</a></p>
-<blockquote>
-<p>Quoted from the man page of bash: Aliases are not expanded when the shell is not interactive, unless the expand_aliases shell option is set using shopt …</p>
-</blockquote>
-<h2 id="apt-get">apt-get</h2>
-<ul>
-<li>Usage: <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update \</div><div class="line"> &amp;&amp; apt-get upgrade -y \</div><div class="line"> &amp;&amp; apt-get install -y \</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>update</code>：第一步，获得最近的软件包的列表；列表中包含一些包的信息，比如这个包是否更新过。<br>
-<code>upgrade</code>：第二步，如果这个包没有发布更新，就不管它；如果发布了更新，就把包下载到电脑上，并安装。</p>
-<ul>
-<li>
-<p>apt-cache can search package</p>
-</li>
-<li>
-<p>common package name<br>
-libboost-all-dev</p>
-</li>
-</ul>
-<h2 id="at命令：">at命令：</h2>
-<p>介绍：定时执行一次命令。如果想周期地执行命令，请使用crontab</p>
-<ol>
-<li><code>at -f work.sh now +3 min</code><br>
-3分钟后执行脚本 <a href="http://work.sh" target="_blank" rel="external">work.sh</a>    -f指的是从文件读入命令<br>
-其他的时间表示法：at 17:30 2/24/99</li>
-<li>atq （等于at -l）<br>
-查看at任务队列</li>
-<li>atrm+任务号</li>
-<li>似乎没有单命令行的用法，一般用法都是“at 时间”然后进入at命令，输入要执行的命令，然后退出</li>
-</ol>
-<h2 id="awk命令：">awk命令：</h2>
-<p><strong>替换操作在awk中不易执行。</strong></p>
-<ol>
-<li>
-<p><code>awk '/pattern/ {print $0 }' filename</code><br>
-e.g.  <code>awk '/abc/ {print $0 }' filename</code>, 则含有 abcde 的行也会被输出。</p>
-</li>
-<li>
-<p><code>awk 'NR==2 {print $0}' aver.tmp</code></p>
-</li>
-<li>
-<p><code>awk '$1!~/match_str/ {print $0 }' filename</code></p>
-</li>
-<li>
-<p>去掉重复的单词</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/awk -f</span></div><div class="line"></div><div class="line">&#123;</div><div class="line">  <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= NF; i++)</div><div class="line">  &#123;</div><div class="line">      ++word[<span class="variable">$i</span>]</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (word[<span class="variable">$i</span>] == <span class="number">1</span>)</div><div class="line">          printf(<span class="string">"%s "</span>, <span class="variable">$i</span>)</div><div class="line">  &#125;</div><div class="line">  printf(<span class="string">"\n"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>awk script</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/awk -f</span></div><div class="line"><span class="comment">#是注释符号</span></div><div class="line"><span class="keyword">BEGIN</span> &#123;</div><div class="line">......</div><div class="line">&#125;</div><div class="line">&#123; <span class="comment">#这个中括号不能省略</span></div><div class="line">......</div><div class="line">&#125;</div><div class="line"><span class="keyword">END</span> &#123;</div><div class="line">......</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>引用外部变量的几种方式：<br>
-【来自：<a href="http://club.topsage.com/thread-393615-1-1.html%E3%80%91" target="_blank" rel="external">http://club.topsage.com/thread-393615-1-1.html】</a></p>
-<blockquote>
-<p>（1）<code>&quot;'&quot;var&quot;'&quot; ——错。应该是&quot;'&quot;$var&quot;'&quot;</code><br>
-（2）<code>awk '{print a, b}' a=111 b=222 yourfile</code><br>
-（3）<code>awk –v a=111 –v b=222 ‘{print a,b}’ yourfile</code><br>
-（4）【ct】<code>pid=$(ps -f | awk '/gpu='&quot;$gpu&quot;'/ &amp;&amp; !/awk/ {print $2}')</code>   ——在//之间，引用外部变量的正确方式是’&quot;$v&quot;’</p>
-</blockquote>
-</li>
-<li>
-<p>引用外部命令的两种方式：【<a href="http://hi.baidu.com/gubuntu/blog/item/050398ceb010513fb700c8d0.html%E3%80%91" target="_blank" rel="external">http://hi.baidu.com/gubuntu/blog/item/050398ceb010513fb700c8d0.html】</a><br>
-例:<code>awk '{if(/Beren/) {print $0 | &quot;cut -b 2-&quot; } else print $0}' job.plm</code><br>
-但糟糕的是，上面这条命令的输出顺序与你设想的并不一致</p>
-</li>
-<li>
-<p>求最大值、最小值、求方差等</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">awk <span class="string">'&#123;if (max=="")  &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;if (min=="")  &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;'</span> file1 </div><div class="line">【注意】：中间不能有空行或短行，否则<span class="variable">$3</span>=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>求和</p>
-<ul>
-<li>对六百列分别求和</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>((i=1;i&lt;=600;i++))</div><div class="line"><span class="keyword">do</span></div><div class="line">  awk <span class="string">'&#123;sum+=$'</span><span class="string">"<span class="variable">$i</span>"</span><span class="string">'&#125;END&#123;print sum/"'</span><span class="string">"<span class="variable">$num_exc</span>"</span><span class="string">'"&#125;'</span> ttt1.tmp &gt;&gt; data</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<ul>
-<li>对行求和</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">awk -v FS=<span class="string">","</span> -v OFS=<span class="string">"+"</span> <span class="string">'&#123;$1="";system("echo $["$0"]")&#125;'</span></div><div class="line">awk -F<span class="string">','</span> <span class="string">'&#123;for(i=2;i&lt;=NF;i++)sum[NR]+=$i;print $1","sum[NR]&#125;'</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>【来自】<a href="http://bbs.chinaunix.net/thread-1384345-1-1.html" target="_blank" rel="external">http://bbs.chinaunix.net/thread-1384345-1-1.html</a></p>
-<ol start="10">
-<li>printf用法<br>
-<code>printf &quot;%s %s %s &quot;,$1,$2,$3</code></li>
-<li>求最大值、最小值、求方差等</li>
-</ol>
-   <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">awk <span class="string">'&#123;if (max=="")  &#123;max=$3&#125; else &#123;if ($3&gt;max) max=$3&#125;&#125; END &#123;print max&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;if (min=="")  &#123;min=$2&#125; else &#123;if ($2&lt;min) min=$2&#125;&#125; END &#123;print min&#125;'</span> file1 </div><div class="line">awk <span class="string">'&#123;sum+=$1; sumsq+=$1*$1&#125; END &#123;print sqrt(sumsq/NR-(sum/NR)**2)&#125;'</span> file1 </div><div class="line">【注意】：中间不能有空行或短行，否则<span class="variable">$3</span>=null，而系统会认为null比负数还小，如果数列中含有负数，那么上式就会出现问题</div></pre></td></tr></table></figure>
-<ol start="12">
-<li>awk中 ‘’ 和 “” 【单引号和双引号】<br>
-&quot;&quot;是直接输出<br>
-’'是转义输出,'C1’就有特殊的含义</li>
-<li><a href="https://stackoverflow.com/questions/16529716/awk-save-modifications-in-place" target="_blank" rel="external">gawk 4.1.0之后才可以原位修改文件</a></li>
-</ol>
-<h2 id="bc命令：">bc命令：</h2>
-<p>1.m的n次方<br>
-<code>echo &quot;m^n&quot;|bc</code><br>
-2.计算π：<br>
-<code>echo &quot;scale=100; a(1)*4&quot; | bc -l</code><br>
-【附一部分man】</p>
-<blockquote>
-<p>MATH LIBRARY<br>
-If bc is invoked with the -l option, a math library is preloaded and the default  scale  is  set  to  20.<br>
-The  math  functions  will  calculate their results to the scale set at the time of their call.  The math<br>
-library defines the following functions:<br>
-s (x)  The sine of x, x is in radians.    正玄函数<br>
-c (x)  The cosine of x, x is in radians.  余玄函数<br>
-a (x)  The arctangent of x, arctangent returns radians. 反正切函数<br>
-l (x)  The natural logarithm of x.  log函数(以2为底)<br>
-e (x)  The exponential function of raising e to the value x.  e的指数函数<br>
-j (n,x)<br>
-The bessel function of integer order n of x.   贝塞尔函数</p>
-</blockquote>
-<p>3.做加减法时（比如<code>a*b+c</code>）bc不会读入scale信息，所以要想设定scale，可以写成<code>(a*b+c）/1</code>,除法是一定会读入scale的。（<code>(a*b+c）*1</code>）没有效果，但<code>a*b</code>有效果）<br>
-【第二次测试，不存在这个问题了】</p>
-<ol start="4">
-<li>bc不能识别形式为科学计数法的输入，如1.2345e+06</li>
-</ol>
-<h2 id="convert命令：">convert命令：</h2>
-<ol>
-<li>
-<p><code>convert ${i%plt}eps -density 100x100 ${i%plt}tif</code></p>
-</li>
-<li>
-<p><code>convert ${i%plt}eps -density 300 ${i%plt}png</code>  #300代表dpi</p>
-</li>
-<li>
-<p><code>convert -loop 1</code>中loop是播放次数；0代表无限循环<br>
-<code>-pause 200</code>：暂停200毫秒，再进行下一轮播放。</p>
-</li>
-<li>
-<p>animated gif</p>
-<blockquote>
-<p><code>convert -delay 120 -loop 0 *.png animated.gif</code><br>
-The delay parameter specifies the delay between frames in 0.01s, while the loop parameter determines how many times the animation runs (the 0 value will run the loop infinitely).</p>
-</blockquote>
-<p><a href="http://www.linux-magazine.com/Online/Blogs/Productivity-Sauce/Create-Animated-GIFs-with-ImageMagick" target="_blank" rel="external">source</a></p>
-</li>
-</ol>
-<h2 id="cp命令：">cp命令：</h2>
-<ol>
-<li><a href="http://blog.chinaunix.net/uid-9525959-id-2303690.html" target="_blank" rel="external">cp自动创建层级结构</a><br>
-例子: <code>cp --parents parentdir1/parentdir2/sourcefile destdir/</code></li>
-</ol>
-<h2 id="cut命令：">cut命令：</h2>
-<p>cut命令很好用<br>
-<code>awk '/Beren/ {print $0}' tt1 | cut -b 2-</code>cut部分的意思是截取第二个到最后一个字符。</p>
-<h2 id="diff命令">diff命令</h2>
-<p>1.对比两个文件夹的不同<br>
-<code>diff -ruN tmp_galamost-3.0.6/ galamost-3.0.6_origin/ &gt; diff_text</code></p>
-<h2 id="echo命令：">echo命令：</h2>
-<ul>
-<li><code>-e</code> 开启反斜杠转义字符</li>
-<li><code>-E</code> 关闭反斜杠转义字符</li>
-<li><code>-n</code> 去掉echo默认输出的换行符</li>
-<li>测试 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> -e <span class="string">"a\tb\tc\n"</span></div><div class="line">a	b	c</div><div class="line">$ <span class="built_in">echo</span> -E <span class="string">"a\tb\tc\n"</span></div><div class="line">a\tb\tc\n</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="gprof：">gprof：</h2>
-<p><a href="http://blog.csdn.net/linquidx/article/details/5916701" target="_blank" rel="external">http://blog.csdn.net/linquidx/article/details/5916701</a><br>
-<a href="http://blog.csdn.net/stanjiang2010/article/details/5655143" target="_blank" rel="external">http://blog.csdn.net/stanjiang2010/article/details/5655143</a></p>
-<ol>
-<li>gprof -b -A -p -q test gmon.out &gt; x<br>
--b选项的作用是输出程序说明，对比加-b选项和不加的情况就明白了</li>
-</ol>
-<h2 id="grep命令：">grep命令：</h2>
-<ul>
-<li><code>-i</code>： 忽略大小写</li>
-<li><code>-v</code>： 不显示匹配的项</li>
-<li>同时匹配str1<mark>或</mark>str2:<br>
-<code>grep &quot;str1\|str2&quot;</code></li>
-<li>同时匹配str1<mark>与</mark>str2:<br>
-<code>grep str1 filename | grep str2 # I tried, but there's no elegant way to do this.</code></li>
-</ul>
-<h2 id="kill命令：">kill命令：</h2>
-<p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
-kill -STOP 1234<br>
-如果要恢复到前台，请在当时运行该进程的那个终端用jobs命令查询暂停的进程</p>
-<h2 id="ls命令：">ls命令：</h2>
-<p>1.只显示文件<br>
-<code>ls -l | grep ^- | awk '{print $9}'</code><br>
-<code>ls -1 -F | grep -v [/$]</code></p>
-<p>2.只显示文件夹<br>
-只显示文件夹： <code>ls -d */</code><br>
-<code>-d</code>的意义:      显示目录本身的信息，而不是列出目录下的文件<br>
-<code>ls *</code>：         显示所有文件、文件夹及其中的文件(文件夹)<br>
-<code>ls -d *</code>:       显示所有文件、文件夹</p>
-<h3 id="查看linux进程的执行文件路径">查看linux进程的执行文件路径</h3>
-<blockquote>
-<pre><code>      1、以超级用户登陆
-</code></pre>
-</blockquote>
-<pre><code>       2、进入/proc目录
-       3、ps查看所有符合./cmd的进程，找出其对应的PID进程号
-       4、用ll命令： ll 进程号 
-          如下显示一个示例：
-          [root@Cluster1 proc]# ll 22401 (proc文件夹中有对应PID码的文件名,进入即可)
-   total 0
-   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cmdline
-   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 cpu
-   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 cwd -&gt; /home/zhouys/sbs/bin
-   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 environ
-   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 exe -&gt; /home/zhouys/sbs/bin/cbs (deleted)
-   dr-x------    2 zhouys    zhouys     0 Dec 11 11:10 fd
-   -r--------    1 zhouys    zhouys     0 Dec 11 11:10 maps
-   -rw-------    1 zhouys    zhouys     0 Dec 11 11:10 mem
-   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 mounts
-   lrwxrwxrwx    1 zhouys    zhouys     0 Dec 11 11:10 root -&gt; /
-   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 stat
-   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 statm
-   -r--r--r--    1 zhouys    zhouys     0 Dec 11 11:10 status
-          /proc文件系统下的 进程号目录 下面的文件镜像了进程的当前运行信息，
-          从中可以看到：
-          cwd符号链接的就是进程22401的运行目录；
-          exe符号连接就是执行程序的绝对路径；
-          cmdline就是程序运行时输入的命令行命令；本例为：./cbs
-          cpu记录了进程可能运行在其上的cpu；显示虚拟的cpu信息
-          environ记录了进程运行时的环境变量
-          fd目录下是进程打开或使用的文件的符号连接
-          ...
-    通过cwd直接进入进程运行目录，通过查看相关信息就可以定位此目录对应那个端口号，以及
-定位是那个应用才使用此服务程序。       
-       5、`ps -aux` 命令
-       ps也可打印其路径,但不是万能的,有些路径只能使用以上两种方法取得
-</code></pre>
-<h2 id="ln">ln</h2>
-<ul>
-<li>ln source target</li>
-<li>hard link<br>
-hard link是两个文件共享一个inode，然而各种编辑器编辑文件时（例如vi, Mou），是会重新生成一个文件并删除老文件的，这导致inode变化。所以hard link是几乎没用的功能：因为文件的inode经常会变。</li>
-<li><strong>删除文件夹的软链接</strong><br>
-例如mydir是一个文件夹的软链接，如果想删除软链接，我们一般的操作为，<code>rm my[tab]</code>以补全文件名，结果为：<br>
-<code>rm mydir/</code><br>
-然而这样删除会提示：<code>rm: cannot remove ‘test’: Is a directory</code>。<br>
-<strong>这时候千万不能加上<code>-r</code>，如果加上，会把软链接的源文件删除掉！</strong><br>
-正确删除文件夹软链接的命令为：<code>rm mydir</code></li>
-</ul>
-<h2 id="mkdir命令：">mkdir命令：</h2>
-<p>在预设情况下目录得一层一层的建立，但通过-p参数，就可以之间建立。</p>
-<h2 id="netstat">netstat</h2>
-<p>Settings</p>
-<ul>
-<li><code>-t</code>/<code>-u</code>: tcp protocol/udp protocol</li>
-<li><code>-r</code>: display routing table</li>
-</ul>
-<p>Common command</p>
-<ul>
-<li><code>netstat -nr</code><br>
-show IP routing table</li>
-<li><code>netstat -tnpl</code><br>
-show the listened port</li>
-</ul>
-<h2 id="openssl">openssl</h2>
-<ul>
-<li>cipher a file<br>
-<code>openssl aes-128-cbc -salt -in test.txt -out test.txt.aes</code><br>
-decipher:<br>
-<code>openssl aes-128-cbc -d -salt -in test.txt.aes -out test.txt.out</code></li>
-</ul>
-<h2 id="ping">ping</h2>
-<p>Check connection of whole web segment.<br>
-<code>ping 192.9.204.$i -c2 | grep -q &quot;ttl=&quot; &amp;&amp; echo &quot;$i yes&quot; || echo &quot;$i no&quot;</code></p>
-<h2 id="printf命令：">printf命令：</h2>
-<p>1.补零<br>
-<code>printf &quot;%05d&quot; 123</code><br>
-结果是：00123<br>
-参考：<a href="http://blog.csdn.net/truelie/article/details/1692942" target="_blank" rel="external">http://blog.csdn.net/truelie/article/details/1692942</a></p>
-<h2 id="ps命令">ps命令</h2>
-<ol>
-<li>linux查看进程启动时间(运行多长时间)<br>
-<code>ps -eo pid,lstart,etime | grep your_pid</code></li>
-</ol>
-<h2 id="scp命令">scp命令</h2>
-<ol>
-<li><code>scp</code>与软链接<br>
-会把软链接的文件都拷贝过去！正确的拷贝方法为：<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo tar -czvf test.tgz test</div><div class="line">scp ~/test.tgz </div><div class="line">sudo tar -xzvf test.tgz -C .</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="sed命令：">sed命令：</h2>
-<p><a href="http://www.cnblogs.com/ctaixw/p/5860221.html" target="_blank" rel="external">sed命令详解</a></p>
-<ol>
-<li>
-<p>抓取第m 到 第n行：<br>
-<code>sed -n &quot;m,np&quot; filename</code><br>
-<code>sed -n &quot;$[$fl*($i-1)+1],$[$fl*$i]p&quot; ../../precopy/h-tail-10 &gt; frame$i</code></p>
-</li>
-<li>
-<p>在file1第3行之后插入file2:<br>
-<code>sed '3 r file2' file1</code></p>
-</li>
-<li>
-<p>将“vel[i].x vel[i].y vel[i].z”替换成“velx[i] vely[i] velz[i]”<br>
-<code>s/\[i\]\.\([xyz]\)/\1[i]/g</code></p>
-</li>
-<li>
-<p>&amp;字符 : 代表其前 pattern 字串<br>
-例：<code>sed -e 's/test/&amp; my car/'</code>替换后变为：test my car</p>
-</li>
-<li>
-<p>在有字符串33的行的行首，添加<br>
-<code>sed -i '/33/s/^/#&amp;/' t1.plm</code><br>
-注意为什么要有^：<br>
-有“^”，“&amp;”代表的是有字符串33存在的整行<br>
-没有“^”，“&amp;”代表的是字符串33</p>
-</li>
-<li>
-<p>将原来的所有空行删除并在每一行后面增加一空行<br>
-<code>sed '/^$/d;G' file3</code></p>
-</li>
-<li>
-<p>在指定(export)行前面加行<br>
-<code>sed '/export/i xxx' file</code>或<code>sed '/export/i \xxx' file</code><br>
-在指定(export)行前面后行<br>
-<code>sed '/export/a xxx' file</code>或<code>sed '/export/a \xxx' file</code></p>
-</li>
-<li>
-<p>单引号的转义<br>
-<code>'\''</code><br>
-<code>sed 's/'\''//g'</code># 将单引号替换为空格</p>
-</li>
-<li>
-<p>匹配空行<br>
-正常匹配空行是<code>^$</code>；但是对于从windows拷贝过来的文件，要用<code>^.$</code>匹配<br>
-而vim（版本8.0）内置的sed，不论文件来自哪种系统，都可以用<code>^$</code>匹配<br>
-<code>sed '/^[[:space:]]*$/d' file</code> 可以去掉由空格、Tab和换行组成的空行!</p>
-</li>
-<li>
-<p>指定行添加内容<br>
-<code>sed -i '1 i \#!/home/ct/bin/gnuplot5/bin/gnuplot5/' gnu.plt</code></p>
-</li>
-<li>
-<p>外部变量<br>
-<code>sed 's/standard/'&quot;$i&quot;'/'</code></p>
-</li>
-<li>
-<p><code>sed -i</code>会使软链接失效<br>
-<code>--follow-symlinks</code>可以保持软连接</p>
-</li>
-<li>
-<p>同时取代多个字符串<br>
-<code>sed -e 's/str1//;s/str2//' filename</code></p>
-</li>
-</ol>
-<h2 id="set命令">set命令</h2>
-<p><mark><code>set</code> is important, but always neglected!</mark><br>
-<code>set -u</code>: if a varible does not exist, report an error.<br>
-<code>set -x</code>: print the corresponding command before output.<br>
-<code>set -e</code>: stop the script when  an error is encountered.<br>
-<code>set -o pipefail</code>: Without this option, the error during a pipeline will not be reported.</p>
-<p>These 4 setting should be used at all times.<br>
-In script: add <code>set -euxo pipefail</code> in the beginning of script.<br>
-In cli: <code>$ bash -euxo pipefail script.sh</code></p>
-<ul>
-<li>bash option<br>
-<code>-l</code>: Make bash act as if it had been invoked as a login shell. <mark>the profile file will be loaded!</mark> E.g., <code>/etc/profile</code>.</li>
-</ul>
-<h2 id="sort命令">sort命令</h2>
-<ol>
-<li>按第二行排序<br>
-<code>sort -n -k2 file</code></li>
-</ol>
-<h2 id="ssh命令">ssh命令</h2>
-<ul>
-<li><code>ssh -X</code>:   <code>Enables X11 forwarding</code>然后就可以用vmd、gnuplot等软件了。</li>
-<li>通过ssh执行命令时，由于没有登录，是不会执行<code>source .bash_profile</code>的。可以手动执行解决这个问题：<br>
-例如：<code>sshpass -p 'password' ssh -o StrictHostKeyChecking=no -l lzy&quot;$i&quot; 192.9.207.204 &quot;source .bash_profile;/opt/sge/sge6_2u4/bin/lx24-amd64/qstat&quot;</code></li>
-</ul>
-<h2 id="su命令：">su命令：</h2>
-<p>1.关于login<br>
-（1）.直接登录root<br>
-（2）.由其他用户名登录到root:  su -，否则就是没有login<br>
-（3）<code>su -c 'command'</code></p>
-<h2 id="time命令">time命令</h2>
-<ol>
-<li><code>time ./program</code><br>
-参数：<strong>-p</strong> 以秒为默认单位来进行输出</li>
-</ol>
-<h2 id="top命令：">top命令：</h2>
-<p>1.查看内存<br>
-可以直接使用top命令后，查看%MEM的内容<br>
-查看用户ct的进程的内存： <code>top -u ct</code><br>
-查看特定进程的内存：<code>top -d 1 -p pid [,pid ...]</code> //设置为delay 1s，默认是delay 3s；如果想根据内存使用量进行排序，可以shift + m（Sort by memory usage）</p>
-<h2 id="uniq命令">uniq命令</h2>
-<ol>
-<li><code>uniq -c</code><br>
-在每行行首加上本行在文件中出现的次数(count)。它可取代-u加-d。</li>
-</ol>
-<h2 id="unzip">unzip</h2>
-<p>unzip -O GBK you_zip_file.zip<br>
-For more ways to tickle with gibberish: [Linux文件乱码]](<a href="https://zhuanlan.zhihu.com/p/25988628" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25988628</a>)</p>
-<h2 id="xargs命令-find命令：">xargs命令 &amp; find命令：</h2>
-<ol>
-<li><code>awk '{print }' filenames | xargs du -h</code><br>
-文件filenames中存储了一些文件名，用这种方式，可以看到每个文件的大小</li>
-<li><code>find . -name &quot;pa*.xml&quot; | xargs -n 10000 rm -f</code><br>
-find + xargs 是“Argument list too long”问题的标准解决方法，find命令是持续输出的，而xargs再将find的出处分成若干段，再进行下一步处理</li>
-<li>`find -name *.dcd | tee -a dcd_name | xargs rm &amp;<br>
-删除文件，并将删除的文件的路径输入到dcd_name中</li>
-<li>批量转换文件格式<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls *.jpg | xargs -I&#123;&#125; -P 8 convert <span class="string">"&#123;&#125;"</span> `<span class="built_in">echo</span> &#123;&#125; | sed <span class="string">'s/jpg$/png/'</span>`</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>其中-P代表进程数；<br>
--i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给{}，可以用{}代替。”<br>
-在当前这个命令下，以tmp.jpg为例，实际上执行的是 convert tmp.jpg tmp.png</p>
-<h2 id="yum命令">yum命令</h2>
-<ol>
-<li><code>yum install foo</code></li>
-<li><code>yum remove foo</code></li>
-<li><code>yum search *foo*</code></li>
-<li><code>yum info *foo*</code></li>
-<li><code>yum list *foo* # the available packages</code></li>
-<li><code>yum localinstall foo.rpm</code></li>
-<li><code>yum install -y --downloadonl --downloaddir=/opt</code><br>
-But by this method, if the newest package has been installed, then nothing will be done. To solve this problem, you can do :<br>
-<code>yum install yum-utils</code><br>
-<code>yumdownloader &lt;package&gt;</code> # will download directly.</li>
-<li>package name and virsion name should be concatenated by ‘-’</li>
-<li>install openmpi<br>
-<code>yum install -y openmpi openmpi-dev</code></li>
-<li>update &amp; upgrade<br>
-<code>yum -y update</code><br>
-升级所有包，改变软件设置和系统设置，系统版本内核都升级<br>
-<code>yum -y upgrade</code><br>
-升级所有包，不改变软件设置和系统设置，系统版本升级，内核不改变<br>
-<mark>Note!</mark> apt-get的update、upgrade与yum的非常不同。</li>
-<li><code>yum whatprovides autoconf</code><br>
-<code>wget https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3</code><br>
-<a href="http://kaifage.com/notes/112/centos-yum-source.html" target="_blank" rel="external">CentOS yum中科大源 </a></li>
-</ol>
-<h2 id="逻辑表达式与-和-：">逻辑表达式与<code>&amp;&amp;</code>和<code>||</code>：</h2>
-<ul>
-<li>
-<p>逻辑表达式<br>
-（1）C语言中写法：<br>
-<code>if (a == b &amp;&amp; a == c)</code></p>
-<p>shell 中的写法：<br>
-<code>if ([ $a -eq $b ] &amp;&amp; [ $a -eq $c ]); then</code><br>
-(2) C 语言中的写法：<br>
-<code>if (a == b &amp;&amp; a == c &amp;&amp; b == c)</code><br>
-shell 中的写法：<br>
-<code>if [ $a -eq $b -o $a -eq $c -o $b -eq $c ]; then</code><br>
-<code>if [ $a -eq $b ] &amp;&amp; [ $a -eq $c ] &amp;&amp; [ $b -eq $c ]; then</code><br>
-注意：“[”或“]”与表达式之间必须要有空格。</p>
-</li>
-<li>
-<p><code>[[ ]]</code> vs. <code>[ ]</code> <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup><br>
-<code>[ ]</code>是shell built-in，而<code>[[ ]]</code>不属于POSIX；<br>
-<code>[ ]</code>会展开<code>a*</code>，所以用它的时候需要加双引号：<code>[ &quot;$var&quot; ]</code>；<code>[[ ]]</code>不需要<br>
-<code>[ ]</code>会fork a new process，<code>[[ ]]</code>不会</p>
-</li>
-</ul>
-<ul>
-<li><code>&amp;&amp;</code>和<code>||</code><br>
-<code>&amp;&amp;</code>和<code>||</code>与逻辑表达式表面相似，实则完全不同，如果混淆了会导致严重的错误。<br>
-<code>command1 &amp;&amp; command2</code>，如果command1返回值为真（<code>$?==0</code>），才会执行command2。一般命令正确执行了，都会返回0。<br>
-<code>command1 || command2</code>则是command1返回值为假（<code>$? != 0</code>）才执行command2。<br>
-关于这两个算符，还<strong>有个隐僻但重要的问题</strong>是<code>command1 &amp;&amp; command2</code>的返回值，如果command1返回值为假，<strong>整个表达式的返回值也为假，表达式所在的脚本的返回值也为假！</strong>。<br>
-有不少人认为<code>[ ... ] &amp;&amp; ...</code>和<code>if</code>语句效果一样但更简洁，这种想法是错误的，因为前一种用法会影响程序返回值，而<code>if</code>语句不会。如果在脚本中用前一种方法，会莫名其妙的导致返回值为假又没有任何报错。</li>
-</ul>
-<h2 id="脚本注意事项：">脚本注意事项：</h2>
-<ol>
-<li>
-<p><code>declare -A var # 声明为关联数组</code><br>
-<code>declare -a var # 声明为数组</code><br>
-二者很不同</p>
-</li>
-<li>
-<p>关联数组定义的后面不能加#<br>
-例如：<code>array=([seg]=100)# 这样会出问题</code></p>
-</li>
-<li>
-<p>命令中blank space是不能随便加的<br>
-Because blank space is usually used as the separater of command or agruments.<br>
-<code>&lt;&lt;block #</code>&lt;&lt; 和 block之间不能有空格</p>
-</li>
-</ol>
-<ol start="4">
-<li>脚本的长度<br>
-不要把不同功能写到一个脚本中，尤其是脚本较大的时候。<br>
-即使你可以非常顺利的写出脚本的每一句，也不意味着你的脚本可以正常执行。<br>
-所以要分块编写:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">!/bin/sh</div><div class="line">  part1.sh</div><div class="line">  part2.sh</div><div class="line">  part3.sh</div><div class="line"><span class="built_in">exit</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>优点：<br>
-这样编写把part1-3的内容写在一个脚本里执行起来是一样的，但是，像这样将脚本分割，有利于调试脚本。由于脚本过于灵活，所以非常容易出错，而出错几率是和大小成指数关系的。所以要把脚本分化，使每一部分都有明确的意义，一来方便检查脚本是否有误，二来增加代码的重复利用率。</li>
-<li>缺点：<br>
-传递参数麻烦。</li>
-</ul>
-<h3 id="常见错误">常见错误</h3>
-<ul>
-<li>循环变量的错误使用<br>
-比如说循环变量i，在其他地方是否被改动了？<br>
-这种错误shell是不会检查出来的</li>
-</ul>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://www.linuxidc.com/Linux/2015-09/123568.htm" target="_blank" rel="external">Linux 中 10 个有用的命令行补全例子</a> <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://stackoverflow.com/questions/669452/is-preferable-over-in-bash" target="_blank" rel="external">Is double braket preferable over single braket in Bash? </a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;记录用过的命令，方便以后查找。不包含太简单的或太难的。&lt;br&gt;
-长度感人。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="http://timchen314.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://timchen314.com/tags/linux/"/>
     
   </entry>
   

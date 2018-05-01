@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="数据分析神器Pandas。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-19T12:12:28.000Z">
+<meta property="og:updated_time" content="2018-05-01T05:26:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas note">
 <meta name="twitter:description" content="数据分析神器Pandas。">
@@ -442,11 +442,31 @@ Show first 5 line：<code>df.head(5)</code></p>
 <p>filter</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Using a series of booleans to filter</div><div class="line">df[df.rain_octsep &lt; 1000]</div><div class="line"># Filtering by multiple conditionals</div><div class="line">df[(df.rain_octsep &lt; 1000) &amp; (df.outflow_octsep &lt; 4000)] </div><div class="line"># 这里不能用 and 关键字，因为会引发操作顺序的问题。必须用 &amp; 和圆括号。</div><div class="line"># Filtering by string methods</div><div class="line">df[df.water_year.str.startswith(&apos;199&apos;)]</div><div class="line"># 注意，你必须用 .str.[string method] ，而不能直接在字符串上调用字符方法。</div></pre></td></tr></table></figure>
 </li>
+<li>
+<p>add a row</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df = DataFrame(columns=(&apos;lib&apos;, &apos;qty1&apos;, &apos;qty2&apos;))#生成空的pandas表  </div><div class="line">for i in range(5):#插入一行</div><div class="line">    df.loc[i] = [randint(-1,1) for n in range(3)]</div></pre></td></tr></table></figure>
+<ul>
+<li>pandas的DataFrame对象如何清空？<br>
+<code>df.drop(df.index,inplace=True)</code></li>
 </ul>
 <h1 id="读取">读取</h1>
 <ul>
 <li>直接读取html中的表格<br>
 <code>pd.read_html(&quot;https://coinmarketcap.com/currencies/bitcoin/&quot;)</code></li>
+<li><a href="https://www.zhihu.com/question/36170252" target="_blank" rel="external">python pandas 怎样高效地添加一行数据？</a>
+<blockquote>
+<p>Pandas/numpy structures are fundamentally not suited for efficiently growing. They work best when they are created with a fixed size and stay that way.</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="写入">写入</h1>
+<ul>
+<li><code>df.to_csv('D:\\a.csv', sep=',', header=True, index=True)</code></li>
+<li><code>df.to_json('D:\\a.json')</code></li>
+<li><code>df.to_html('D:\\a.html')</code></li>
+<li><code>df.to_sql('tableName', con=dbcon, flavor='mysql')</code></li>
 </ul>
 <h1 id="reference">reference</h1>
 <hr class="footnotes-sep">
@@ -545,8 +565,8 @@ Show first 5 line：<code>df.head(5)</code></p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Web/" rel="prev" title="Web Learning Note">
-                Web Learning Note <i class="fa fa-chevron-right"></i>
+              <a href="/digital_currency/" rel="prev" title="About Digital Currency">
+                About Digital Currency <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,7 +647,7 @@ Show first 5 line：<code>df.head(5)</code></p>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -734,7 +754,7 @@ Show first 5 line：<code>df.head(5)</code></p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本"><span class="nav-text">基本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读取"><span class="nav-text">读取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本"><span class="nav-text">基本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读取"><span class="nav-text">读取</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入"><span class="nav-text">写入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
