@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] The fundamental package for scientific computing with Python.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T05:26:20.000Z">
+<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="numpy notes">
 <meta name="twitter:description" content="[TOC] The fundamental package for scientific computing with Python.">
@@ -468,7 +468,8 @@ Result (4d array):  8 x 7 x 6 x 5</p>
 <p>ndarray.var(axis=None, dtype=None, out=None, ddof=0)：返回数组的方差，沿指定的轴。</p>
 </li>
 <li>
-<p>ndarray.std(axis=None, dtype=None, out=None, ddof=0)：沿给定的轴返回数则的标准差</p>
+<p>ndarray.std(axis=None, dtype=None, out=None, ddof=0)：沿给定的轴返回数则的标准差<br>
+注意std默认是除以N而不是N-1的，如果要除以N-1，将ddof设为1；另外，pandas中std是除以N-1的。</p>
 </li>
 <li>
 <p>ndarray.trace(offset=0, axis1=0, axis2=1, dtype=None, out=None)：返回沿对角线的数组元素之和</p>
@@ -791,15 +792,6 @@ vstack、hstack是<mark>深拷贝</mark></p>
                     <i class="fa fa-fw fa-github"></i>
                   
                   GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/Aether/activities" target="_blank" title="zhihu">
-                  
-                    <i class="fa fa-fw fa-bed"></i>
-                  
-                  zhihu
                 </a>
               </span>
             

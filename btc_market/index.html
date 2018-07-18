@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="市场  2018.01.08 Total Market Capitalization is up to 820 billion dollars, which is roughly equivalent to one year GDP of Turkey. Info source  bitcoinity有相对可靠地成交量的数据    现货交易所  已注册：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T05:26:20.000Z">
+<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Digital Currency Market">
 <meta name="twitter:description" content="市场  2018.01.08 Total Market Capitalization is up to 820 billion dollars, which is roughly equivalent to one year GDP of Turkey. Info source  bitcoinity有相对可靠地成交量的数据    现货交易所  已注册：">
@@ -530,7 +530,6 @@ ustd提币 10ustd<br>
 <th>品种</th>
 <th>提币费</th>
 <th>提币费￥</th>
-<th>溢价比率(%)</th>
 </tr>
 </thead>
 <tbody>
@@ -538,43 +537,36 @@ ustd提币 10ustd<br>
 <td>BTC</td>
 <td>0.001</td>
 <td>57</td>
-<td></td>
 </tr>
 <tr>
 <td>ETH</td>
 <td>0.003</td>
 <td>12</td>
-<td></td>
 </tr>
 <tr>
 <td>BCH</td>
 <td>0.001</td>
 <td>8.5</td>
-<td></td>
 </tr>
 <tr>
 <td>LTC</td>
 <td>0.01</td>
 <td>9</td>
-<td></td>
 </tr>
 <tr>
 <td>XRP</td>
 <td>0.02</td>
 <td>1</td>
-<td></td>
 </tr>
 <tr>
 <td>ADA</td>
 <td>0.5</td>
 <td>1.75</td>
-<td></td>
 </tr>
 <tr>
 <td>USTD</td>
 <td>5</td>
 <td>31.5</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -689,7 +681,7 @@ btc盈亏$ = (1$/open - 1$/close )*close = close/open = btc/$ 涨跌<br>
 </li>
 </ul>
 <h5 id="期权">期权</h5>
-<p>只有一个strike price，初始价格为现价（最小单位50，比如现价10020，strike price是10000）+1000$。<br>
+<p>只有一个strike price（执行价格），初始价格为现价（最小单位50，比如现价10020，strike price是10000）+1000$。<br>
 结算日是每周五的 UTC 12:00:00。</p>
 <h5 id="问题">问题</h5>
 <ul>
@@ -723,13 +715,10 @@ btc盈亏$ = (1$/open - 1$/close )*close = close/open = btc/$ 涨跌<br>
 </ul>
 </li>
 <li>
-<p>TIPS:</p>
-<ul>
-<li>mac上，shadowsocks在命令行下士无效的。想要在命令行下shadowsocks，请参考<br>
-<a href="http://www.cashqian.net/blog/001486989831982332565298e4942a2bb8f56b08f9d2475000" target="_blank" rel="external">Mac命令行终端下使用shadowsocks翻墙</a>。<br>
-最终测试可以用<code>curl www.google.com</code>（注意www不能少），成功的话会返回一堆html。</li>
-<li>时间单位是秒（例如<code>TIMEOUT = 2</code>）</li>
-</ul>
+<p>获取历史数据<br>
+18年之前的index、quote、trade已经获得；<br>
+instrument和instrument/indices只能获取当前数据；<br>
+quote不好使；</p>
 </li>
 </ul>
 <h5 id="期货基础">期货基础</h5>
@@ -769,15 +758,21 @@ btc盈亏$ = (1$/open - 1$/close )*close = close/open = btc/$ 涨跌<br>
 <li>美国AppleID不行，还需要绑定美国的信用卡或paypal。注意必须用美国的户头绑定到paypal才有用。</li>
 </ul>
 </li>
+<li>mac上，shadowsocks在命令行下士无效的。想要在命令行下shadowsocks，请参考<br>
+<a href="http://www.cashqian.net/blog/001486989831982332565298e4942a2bb8f56b08f9d2475000" target="_blank" rel="external">Mac命令行终端下使用shadowsocks翻墙</a>。<br>
+最终测试可以用<code>curl www.google.com</code>（注意www不能少），成功的话会返回一堆html。</li>
+<li>api-connecter中时间单位是秒（例如<code>TIMEOUT = 2</code>）</li>
 </ul>
 <h5 id="策略">策略</h5>
 <ol start="0">
 <li>掉期</li>
 <li>hedge</li>
 <li>顺势</li>
-<li>发动趋势</li>
+<li><s>发动趋势</s></li>
 <li>凯利公式化<br>
 少量仓位一百倍杠杆，按照凯利公式的假设，要么翻倍要么赔光</li>
+<li>小市值、非空气策略<br>
+BNB(17)、LOOM?(67)(New)、HT(66)、ELF?(62)(weak)、NAS?(Nebulas)(56)(weak)、AE(28)、Ont(25)(New)、ADA(7)</li>
 </ol>
 <h5 id="交易系统研究">交易系统研究</h5>
 <h6 id="boll-布林线">BOLL（布林线）</h6>
@@ -806,20 +801,75 @@ DN=MB－2×MD</p>
 </ul>
 <h5 id="支持信息">支持信息</h5>
 <p><a href="http://www.dce.com.cn/dalianshangpin/sspz/cjzx/5503775/index.html" target="_blank" rel="external">交易额比较大的期货品种</a></p>
-<h3 id="中英文词汇表">中英文词汇表</h3>
-<p>bids/asks – 买/卖<br>
+<h3 id="金融信息">金融信息</h3>
+<h4 id="宏观">宏观</h4>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/35262569" target="_blank" rel="external">比特币价格：与标准普尔 500 指数相关性创新高</a><br>
+背景介绍与这对我们意味着什么？：<br>
+首先，金融资产的风险，是由市场来决定的，市场承认它风险低，它才是风险低。在金融市场上，可以将金融资产按风险分类，例如，美国国债是最低风险资产，美股股指是中风险资产，美股高科技公司、新兴市场（印度巴西中国）股指是高风险资产。<br>
+当市场认为现在市场整体的风险上升时，资本会向更低风险的资产流动，高风险资产贬值、低风险资产升值。例如，如果经济学家对全球经济增长不看好，那么新兴市场股指就会下跌。<br>
+反过来看，要想知道一种资产的风险程度，可以看它与哪种资产的相关性高。**BTC价格与标普500相关性创新高，意味着BTC的风险在降低！**这对BTC是好消息，但对我们是坏消息。因为风险越低的资产，投资者越多，我们获得超额收益的机会就越小……</li>
+</ul>
+<h4 id="金融类文章">金融类文章</h4>
+<p>我最近在研究对冲策略的提升，发现bitmex创始人兼CEO写的文章<br>
+<a href="https://blog.bitmex.com/basic-basis-trading-strategies/" target="_blank" rel="external">Basic Basis Trading Strategies</a>，我们现在做的就是Basis Trading，稍微需要点背景知识，感兴趣可以看看。<br>
+另外这是CEO亚瑟·海耶斯（ Arthur Hayes ）的介绍，沃顿商学院毕业的，背景超牛：<a href="https://www.zhihu.com/search?type=content&amp;q=%E4%BA%9A%E7%91%9F%E6%B5%B7%E8%80%B6%E6%96%AF" target="_blank" rel="external">花旗前交易员创立bitmex，仅2018一月利润就达2100万美元</a></p>
+<h4 id="中英文金融词汇表">中英文金融词汇表</h4>
+<p>常用术语的查询可以去：<a href="https://www.investopedia.com" target="_blank" rel="external">投资百科全书：investopedia</a></p>
+<p>arbitrage/hedging – 套利/对冲（套利一般是指跨市场、高频的买卖；对冲是同时开空和多<a href="https://www.investopedia.com/ask/answers/013015/what-difference-between-arbitrage-and-hedging.asp" target="_blank" rel="external">difference between arbitrage and hedging</a> ）<br>
+bids/asks – 买/卖<br>
+expiry – 到期<br>
+long/short – 空/多<br>
+market/limit – 市价/限价<br>
+maturity – 到期<br>
+position – 头寸<br>
 spot/future – 现货/期货<br>
 spread – 点差<br>
-market/limit – 市价/限价<br>
-position – 头寸<br>
-Settlement – 交割（bitmex adapt cash settlement）<br>
-expiry – 到期<br>
-exercise – 行权<br>
-Premium – 权利金，指买进期权合约所需支付的代价，可视为由期权的内在价值及时间价值构成。<br>
+Settlement – 交割（bitmex adapt cash settlement）</p>
+<ul>
+<li>
+<p>期权<br>
+exercise – 行权（期权术语）<br>
 Call/put Option – 认购期权/认沽期权<br>
+Premium – 权利金，指买进期权合约所需支付的代价，可视为由期权的内在价值及时间价值构成。<br>
 stike price – 行权价格<br>
-maturity – 到期</p>
+KO(Knock-out) barrier price – 译为“敲出障碍价格”。即期权的止损价格。比如看跌bitmex期权，行权价格7500，敲出障碍价格3750那么：如果到期前跌倒7000，你就赚500；如果到期前跌倒3750，你就赚3750；如果继续下跌、价格低于3750，那么合约终止。这样可以保护看跌期权的做市商不损失太多。</p>
+</li>
+<li>
+<p>‘Mutual Fund’</p>
+<blockquote>
+<p>A mutual fund is an investment vehicle made up of a pool of moneys collected from many investors for the purpose of investing in securities such as stocks, bonds, money market instruments and other assets. Mutual funds are operated by professional money managers, who allocate the fund’s investments and attempt to produce capital gains and/or income for the fund’s investors. <strong>A mutual fund’s portfolio is structured and maintained to match the investment objectives stated in its prospectus.</strong></p>
+</blockquote>
+</li>
+<li>
+<p>quote/trade</p>
+<blockquote>
+<p>“Quote Data” usually means top-of-book bid/ask data. (Also called BBO=best bid/offer, TOB, inside market, etc.) But more generally it can also mean all the current resting orders sitting on the book at any given time. These are limit orders that are less competitive than ones at the top-of-book.<br>
+“Trade Data” means the record of trades that were actually transacted.</p>
+</blockquote>
+</li>
+<li>
+<p>log return<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+总结：采用log return在数学推导上有很多优点；根据log return也很容易得出raw return</p>
+<blockquote>
+<ol>
+<li>log-normality: if we assume that prices are distributed log normally (which, in practice, may or may not be true for any given price series), then log(1 + r_i) is conveniently normally distributed</li>
+<li>approximate raw-log equality: when returns are very small, log returns are close in value raw returns</li>
+<li>time-additivity: the product of normally-distributed variables is not normal. Instead, the sum of normally-distributed variables is normal</li>
+<li>mathematical ease: ln is easy to integration and differentiation</li>
+<li>numerical stability:  multiplying small numbers is not as it is subject to arithmetic underflow, while addition of small numbers is numerically safe.</li>
+</ol>
+</blockquote>
+</li>
+</ul>
 <hr>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://quantivity.wordpress.com/2011/02/21/why-log-returns/" target="_blank" rel="external">Why Log Returns</a> <strong>写的简单又专业</strong> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 
       
     </div>
@@ -1036,15 +1086,6 @@ maturity – 到期</p>
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/Aether/activities" target="_blank" title="zhihu">
-                  
-                    <i class="fa fa-fw fa-bed"></i>
-                  
-                  zhihu
-                </a>
-              </span>
-            
           
         </div>
 
@@ -1092,7 +1133,7 @@ maturity – 到期</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#市场"><span class="nav-text">市场</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#现货交易所"><span class="nav-text">现货交易所</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#场外交易"><span class="nav-text">场外交易</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#期货"><span class="nav-text">期货</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#bitmex交易指南"><span class="nav-text">bitmex交易指南</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#期权"><span class="nav-text">期权</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题"><span class="nav-text">问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bitmex自动交易"><span class="nav-text">bitmex自动交易</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#期货基础"><span class="nav-text">期货基础</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tips"><span class="nav-text">TIPS:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#策略"><span class="nav-text">策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交易系统研究"><span class="nav-text">交易系统研究</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#boll-布林线"><span class="nav-text">BOLL（布林线）</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#支持信息"><span class="nav-text">支持信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中英文词汇表"><span class="nav-text">中英文词汇表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#市场"><span class="nav-text">市场</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#现货交易所"><span class="nav-text">现货交易所</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#场外交易"><span class="nav-text">场外交易</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#期货"><span class="nav-text">期货</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#bitmex交易指南"><span class="nav-text">bitmex交易指南</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#期权"><span class="nav-text">期权</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题"><span class="nav-text">问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bitmex自动交易"><span class="nav-text">bitmex自动交易</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#期货基础"><span class="nav-text">期货基础</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tips"><span class="nav-text">TIPS:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#策略"><span class="nav-text">策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交易系统研究"><span class="nav-text">交易系统研究</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#boll-布林线"><span class="nav-text">BOLL（布林线）</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#支持信息"><span class="nav-text">支持信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#金融信息"><span class="nav-text">金融信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#宏观"><span class="nav-text">宏观</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#金融类文章"><span class="nav-text">金融类文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中英文金融词汇表"><span class="nav-text">中英文金融词汇表</span></a></li></ol></li></ol></div>
             
 
           </div>

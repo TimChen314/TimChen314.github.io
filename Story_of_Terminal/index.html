@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="总结 从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程： 本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码  ctrl+h的编码 ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways. 而ctrl+h">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T05:26:20.000Z">
+<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Story of Terminal">
 <meta name="twitter:description" content="总结 从本地到远程sever，经过了多个编码环节。从按下一个键到远程server最终反应，经历的过程： 本地terminal类型和编码 -&amp;gt; linux下terminal类型和编码  ctrl+h的编码 ascii中Backspace的值为010（八进制），而ASCII values can be represented in several equivalent ways. 而ctrl+h">
@@ -428,6 +428,9 @@ Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM�
 <h2 id="问题：">问题：</h2>
 <p>为什么BS无法删除，而是想左移动？<br>
 为什么在执行程序进行输入时，按下BS显示的是^H?</p>
+<h2 id="vimrc">vimrc</h2>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1</div><div class="line"><span class="built_in">set</span> encoding=utf-8</div><div class="line"><span class="built_in">set</span> termencoding=utf-8</div></pre></td></tr></table></figure>
+<p>In debian (My Japan VPS), you must relog to enable this.</p>
 <h2 id="答案">答案</h2>
 <p><a href="https://www.zhihu.com/question/23550774/answer/132576876" target="_blank" rel="external">知乎</a>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">早在 VT100终端时代，^H（ASCII码 0x08）表示&lt;BS&gt; 而 ^? （ASCII码 0x7f）表示&lt;DEL&gt;。过去 0x7f是留给 DELETE键使用的。而到了 VT220时代，DELETE已经变为 ^[[3~ （ASCII 码 0x1b, 0x5b, 0x33, 0x7e 共4个字节），而 ^? 的 0x7f 换给了我们的&lt;BS&gt;，有些老点版本的终端软件，默认 &lt;BS&gt;还是使用 VT100的 ^H，比如 Xshell 4 Build 0142以前的版本，默认&lt;BS&gt;是发送^H。SecureCRT直到6.x版本还在默认发送 VT100的 ^H。</div></pre></td></tr></table></figure>
@@ -519,8 +522,8 @@ Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/shadowsocks备忘/" rel="next" title="shadownsocks备忘">
-                <i class="fa fa-chevron-left"></i> shadownsocks备忘
+              <a href="/hdf5/" rel="next" title="hdf5简介">
+                <i class="fa fa-chevron-left"></i> hdf5简介
               </a>
             
           </div>
@@ -529,8 +532,8 @@ Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/人工智能简介/" rel="prev" title="人工智能简介">
-                人工智能简介 <i class="fa fa-chevron-right"></i>
+              <a href="/shadowsocks备忘/" rel="prev" title="shadownsocks备忘">
+                shadownsocks备忘 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,15 +665,6 @@ Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM�
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/Aether/activities" target="_blank" title="zhihu">
-                  
-                    <i class="fa fa-fw fa-bed"></i>
-                  
-                  zhihu
-                </a>
-              </span>
-            
           
         </div>
 
@@ -718,7 +712,7 @@ Xshell中，文件–属性–键盘–功能键类型 选择xterm R6，则VIM�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题："><span class="nav-text">问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#答案"><span class="nav-text">答案</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题："><span class="nav-text">问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vimrc"><span class="nav-text">vimrc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#答案"><span class="nav-text">答案</span></a></li></ol></li></ol></div>
             
 
           </div>

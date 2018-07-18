@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="A Tutorial">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T05:26:20.000Z">
+<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jupyter">
 <meta name="twitter:description" content="A Tutorial">
@@ -498,6 +498,11 @@ shfit + m / shift + ctrl + -</p>
 <p><code>cmd+[</code> 减小缩进</p>
 </li>
 </ul>
+<h2 id="errors">Errors</h2>
+<ul>
+<li><code>c.NotebookApp.allow_origin</code> and <code>c.NotebookApp.ip</code> :<br>
+They don’t work. Except certain ip, it supposes to be unaccessible when these parameters is set.</li>
+</ul>
 <h2 id="tips">Tips</h2>
 <ul>
 <li>change default browser<br>
@@ -505,7 +510,13 @@ shfit + m / shift + ctrl + -</p>
 And then in <code>~/.jupyter/jupyter_notebook_config.py</code> file, <code>c.NotebookApp.browser = '</code> should be modified to<br>
 <code>c.NotebookApp.browser = 'open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome %s'</code>.</li>
 </ul>
-<p>**NOTE: proxy extension (such as shadowsocks) will induce error – ERR_EMPTY_RESPONSE **</p>
+<p>2018.07.06: In OS X, the easiest way is modifying the system default browser to Chrome and then jupyter-notebook will use Chrome as default browser.</p>
+<ul>
+<li>about proxy<br>
+**NOTE: proxy extension (such as shadowsocks) will induce error – ERR_EMPTY_RESPONSE **</li>
+</ul>
+<p>In Chrome, the use of privoxy will lead to a forever loading page. (Maybe it’s because the local http request is transferred by proxy and hence the port is changed to 12333.)<br>
+Solution: You can change SS to “自动代理模式” and start jupyter, and then change SS back to “全局代理模式”.</p>
 <ul>
 <li>
 <p>Pretty Display of Varibles</p>
@@ -532,6 +543,10 @@ Formatting html</li>
 <li>
 <p>convert to .py file<br>
 <code>jupyter nbconvert --to script [YOUR_NOTEBOOK].ipynb</code></p>
+</li>
+<li>
+<p><code>jupyter notebook list</code><br>
+Show running notebook</p>
 </li>
 </ul>
 <hr>
@@ -756,15 +771,6 @@ Formatting html</li>
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/Aether/activities" target="_blank" title="zhihu">
-                  
-                    <i class="fa fa-fw fa-bed"></i>
-                  
-                  zhihu
-                </a>
-              </span>
-            
           
         </div>
 
@@ -812,7 +818,7 @@ Formatting html</li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-tutorial"><span class="nav-text">A Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pylab"><span class="nav-text">%pylab?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell-magics"><span class="nav-text">cell magics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-magics-these-are-commands-prepended-by-one-character-and-whose-arguments-only-extend-to-the-end-of-the-current-line"><span class="nav-text">Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cell-magics-v2"><span class="nav-text">Cell magics:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortcut-key"><span class="nav-text">shortcut key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#command-mode"><span class="nav-text">command mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edit-mode"><span class="nav-text">edit mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">Tips</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-tutorial"><span class="nav-text">A Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pylab"><span class="nav-text">%pylab?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell-magics"><span class="nav-text">cell magics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-magics-these-are-commands-prepended-by-one-character-and-whose-arguments-only-extend-to-the-end-of-the-current-line"><span class="nav-text">Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cell-magics-v2"><span class="nav-text">Cell magics:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortcut-key"><span class="nav-text">shortcut key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#command-mode"><span class="nav-text">command mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edit-mode"><span class="nav-text">edit mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#errors"><span class="nav-text">Errors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">Tips</span></a></li></ol></li></ol></div>
             
 
           </div>

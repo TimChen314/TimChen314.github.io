@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T05:26:20.000Z">
+<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python mechanism">
 <meta name="twitter:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
@@ -446,7 +446,22 @@ ct总结：参数绑定优先级：</p>
 <p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
 <h2 id="5-generator">5. generator</h2>
-<p>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<ul>
+<li>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</li>
+<li>generator is an iterator!<br>
+official doc:
+<blockquote>
+<p>generator: A function which returns a generator iterator.</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="http://kissg.me/2016/04/09/python-generator-yield/" target="_blank" rel="external">Python之生成器详解</a>:</p>
+<blockquote>
+<p>我们常说的生成器,就是带有yield的函数,而generator iterator则是generator function的返回值,即一个generator对象,而形如(elem for elem in [1, 2, 3])的表达式,称为generator expression,实际使用与generator无异.</p>
+</blockquote>
+<blockquote>
+<p>调用send(value)时要注意,要确保,generator是在yield处被暂停了,如此才能向yield表达式传值,否则将会报错(如上所示),可通过next()方法或send(None)使generator执行到yield.</p>
+</blockquote>
 <h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
 <p><strong>The implementation of zip is very beautiful：</strong><br>
 来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
@@ -457,10 +472,17 @@ ct总结：参数绑定优先级：</p>
 </li>
 </ul>
 <h2 id="7-iterable和iterator">7. Iterable和Iterator</h2>
-<p>凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法；<br>
-集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。<br>
-Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
+<ul>
+<li>Iterable<br>
+凡是可作用于for循环的对象都是Iterable类型，它有__getitem__()方法；<br>
+集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。</li>
+<li>Iterator<br>
+Iterator is Iterable!<br>
+凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列，它有__next__()和__iter__()方法<br>
+理解：想一想C++中的Iterator，它就是个指针。<br>
+Iterator是消耗型的,即每一个值被使用过后,就消失了，但是最终它并不等于<code>None</code>。</li>
+</ul>
+<p>Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
 for x in [1, 2, 3, 4, 5]:<br>
 pass<br>
 实际上完全等价于：<br>
@@ -572,23 +594,34 @@ However, if encoding is not found, encoding will be considered as “ISO-8859-1�
 </ul>
 <p>き b’\xe3\x81\x8d’ b’\xff\xfeM0’ b’\xff\xfe\x00\x00M0\x00\x00’<br>
 b’\u304d’ き</p>
-<pre><code>
-
-## Style guide
-### argument
-+ `**kwargs ` is a bad practice:
-  1. you don't know how `**kwargs` affect.
-  2. **wrong keywrod arguments is no longer reported by the interpreter.** 
- `TypeError 'x' is an invalid keyword argument for this function`
- [reference:The Use and Abuse of Keyword Arguments in Python](http://ivory.idyll.org/blog/on-kwargs.html)
-
-## For more:
-[我眼中一个好的Pythoneer应该具备的品质]*(https://zhuanlan.zhihu.com/p/33266239)
-[Python进阶 - gitbook](https://www.gitbook.com/book/eastlakeside/interpy-zh/details)
-
-## TIPS
-+ `you need to flush stdout periodically (e.g. sys.stdout.flush()). Python doesn't automatically do this even with print until the program exits.`
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">## 14. python path</div><div class="line">There&apos;re two kind of path: executing path (EP) and python file path (PFP). e.g.:</div><div class="line"></div><div class="line">   ```python</div><div class="line">$ ls test/</div><div class="line">test_all.py</div></pre></td></tr></table></figure>
+<p>Then EP is <code>.</code>, PFP is <code>./test/</code>!</p>
+<ul>
+<li>The <code>sys.path</code> contains PFP, not EP.</li>
+<li>In <code>from * import *</code>, PEP is used, i.e., it’s ‘from’ <code>./test/</code> dir.</li>
+</ul>
+<h2 id="style-guide">Style guide</h2>
+<h3 id="argument">argument</h3>
+<ul>
+<li><code>**kwargs</code> is a bad practice:
+<ol>
+<li>you don’t know how <code>**kwargs</code> affect.</li>
+<li><strong>wrong keywrod arguments is no longer reported by the interpreter.</strong><br>
+<code>TypeError 'x' is an invalid keyword argument for this function</code><br>
+<a href="http://ivory.idyll.org/blog/on-kwargs.html" target="_blank" rel="external">reference:The Use and Abuse of Keyword Arguments in Python</a></li>
+</ol>
+</li>
+</ul>
+<h3 id="逻辑判断">逻辑判断</h3>
+<p>布尔测试应该很简单,如果它们很复杂的话,你需要将它们的运算事先放到一个变量里,并<br>
+且为变量取一个好名字 – [learn python the hard way]</p>
+<h2 id="for-more">For more:</h2>
+<p>[我眼中一个好的Pythoneer应该具备的品质]*(<a href="https://zhuanlan.zhihu.com/p/33266239" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/33266239</a>)<br>
+<a href="https://www.gitbook.com/book/eastlakeside/interpy-zh/details" target="_blank" rel="external">Python进阶 - gitbook</a></p>
+<h2 id="tips">TIPS</h2>
+<ul>
+<li><code>you need to flush stdout periodically (e.g. sys.stdout.flush()). Python doesn't automatically do this even with print until the program exits.</code></li>
+</ul>
 
       
     </div>
@@ -805,15 +838,6 @@ b’\u304d’ き</p>
                 </a>
               </span>
             
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/Aether/activities" target="_blank" title="zhihu">
-                  
-                    <i class="fa fa-fw fa-bed"></i>
-                  
-                  zhihu
-                </a>
-              </span>
-            
           
         </div>
 
@@ -861,7 +885,7 @@ b’\u304d’ き</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-0-the-scope-of-a-variable-initialized-in-an-if-statement"><span class="nav-text">10.0 the scope of a variable initialized in an if statement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-exec与eval的奇特之处"><span class="nav-text">10.1 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-注意区分list-comprehension与generator"><span class="nav-text">10.2 注意区分list comprehension与generator！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-python-interpreter"><span class="nav-text">12. Python Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-python3-string"><span class="nav-text">13. Python3 String</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-0-the-scope-of-a-variable-initialized-in-an-if-statement"><span class="nav-text">10.0 the scope of a variable initialized in an if statement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-exec与eval的奇特之处"><span class="nav-text">10.1 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-注意区分list-comprehension与generator"><span class="nav-text">10.2 注意区分list comprehension与generator！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-python-interpreter"><span class="nav-text">12. Python Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-python3-string"><span class="nav-text">13. Python3 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#style-guide"><span class="nav-text">Style guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#argument"><span class="nav-text">argument</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑判断"><span class="nav-text">逻辑判断</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-more"><span class="nav-text">For more:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">TIPS</span></a></li></ol></div>
             
 
           </div>
