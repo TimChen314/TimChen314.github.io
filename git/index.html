@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://res.cloudinary.com/do7yb5qw4/image/upload/v1500901433/%E6%9D%82/MgaV9.png">
 <meta property="og:image" content="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515256762/%E6%9D%82/git_reset_and_checkout.jpg">
-<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git笔记">
 <meta name="twitter:description" content="git 开始 非常好的入门:  非常好的入门1[1]:   工作区：就是你在电脑里能看到的目录。 暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。">
@@ -447,6 +447,7 @@
 </li>
 <li>
 <p>difftool<br>
+<code>git config --global diff.tool bc3</code><br>
 没有默认的difftool，如果首次输入命令<code>git difftool</code>，CentOS会自动推荐kompare。</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Viewing: &apos;particles/BinReader.cc&apos;</div><div class="line">Launch &apos;kompare&apos; [Y/n]: y</div></pre></td></tr></table></figure>
 <p>kompare的效果非常好。</p>
@@ -508,10 +509,12 @@ The “–track” option sets up some configuration variables that associate th
 <li>They allow git pull to know what to merge after fetching new remote-tracking branches.</li>
 <li>If you do git checkout to a local branch which has been set up in this way, it will give you a helpful message such as:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Your branch and the tracked remote branch &apos;origin/master&apos;</div><div class="line">have diverged, and respectively have 3 and 384 different</div><div class="line">commit(s) each.</div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
+<p>Your branch and the tracked remote branch 'origin/master’<br>
+have diverged, and respectively have 3 and 384 different<br>
+commit(s) each.</p>
 </li>
 <li>
 <p>stash<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
@@ -618,65 +621,49 @@ git checkout其实是用版本库里的版本替换工作区的版本，无论�
 <li>git rebase --abort #放弃当前rebase</li>
 </ul>
 <h2 id="tag">tag</h2>
-<p>git push origin --tags</p>
+<p><code>git tag &lt;tagname&gt;</code><br>
+<code>git tag &lt;tagname&gt; -a</code> add an annotated tag<br>
+<code>git push origin --tags</code></p>
+<h2 id="show">show</h2>
+<p><code>git show HEAD~4:altcoin_spot_future_hedging.py</code><br>
+显示HEAD之前的第四个commit中<code>altcoin_spot_future_hedging.py</code>文件的内容</p>
 <h2 id="其他概念与原理">其他概念与原理</h2>
-<ul>
-<li>
-<p>conflict<br>
-<a href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank" rel="external">Resolving a merge conflict using the command line</a></p>
-</li>
-<li>
-<p>remote<br>
-remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
+<h3 id="conflict">conflict</h3>
+<p><a href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank" rel="external">Resolving a merge conflict using the command line</a></p>
+<h3 id="remote">remote</h3>
+<p>remote是一个相对的概念，一个存储在本地其他文件夹的repo也可以是remote<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></p>
 <blockquote>
 <p>“remotes” are just nicknames for other repositories, synonymous with a URL or <strong>the path of a local directory</strong> – you can set up extra remotes yourself with “git remote”, but “git clone” by default sets up “origin” for you.</p>
 </blockquote>
-</li>
-<li>
-<p>origin<br>
-It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签。<br>
+<h3 id="origin">origin</h3>
+<p>It’s a repo! 顾名思义，origin就是一个名字，它是在你clone一个托管在Github上代码库时，git为你默认创建的指向这个远程代码库的标签。<br>
 <code>git remote add https://github.com/TimChen314/TimChen314.github.io.git # You can set # set origin by yourself</code></p>
-</li>
-<li>
-<p>(远程仓库名)/(分支名) 这样的形式表示远程分支<br>
-Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来<br>
-远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
-</li>
-<li>
+<h3 id="远程仓库名-分支名-这样的形式表示远程分支">(远程仓库名)/(分支名) 这样的形式表示远程分支</h3>
+<p>Note that when <code>git branch -a</code> is used, there is ‘remote’ in front of branch name, e.g.:</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git branch -r   </div><div class="line">  orgin/master   </div><div class="line">$ git branch -a   </div><div class="line">  remote/origin/master</div></pre></td></tr></table></figure>
+<h3 id="local-branch-name-remote-branch-name-这是push-pull的时候顺序反过来"><code>local_branch_name:remote_branch_name</code> # 这是push，pull的时候顺序反过来</h3>
+<p>远程分支和本地分支的名字相同，可以省略远程分支的名字</p>
+<h3 id="refspec">refspec</h3>
+<p><code>&lt;source-name&gt;:&lt;destination-name&gt;</code> is a refspec</p>
+<h3 id="upstream-vs-origin">upstream vs. origin</h3>
 <p><a href="https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901" target="_blank" rel="external">upstream vs. origin</a></p>
 <blockquote>
 <p>This should be understood in the context of GitHub forks (where you fork a GitHub repo at GitHub before cloning that fork locally)</p>
 <ul>
 <li>upstream generally refers to the original repo that you have forked<br>
 (see also “Definition of “downstream” and “upstream”” for more on upstream term)</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
 <li>origin is your fork: your own repo on GitHub, clone of the original repo of GitHub</li>
 </ul>
 </blockquote>
-</li>
-<li>
-<p>branch &amp; hash<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></p>
+<h3 id="branch-hash">branch &amp; hash<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></h3>
 <blockquote>
 <p>you need to understand that branch and tag names are just pointers to hash values, which represent a single commit<br>
 only two types of branches, and they are storaged in<sup class="footnote-ref"><a href="#fn4" id="fnref4:2">[4]</a></sup>:</p>
 </blockquote>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.git/refs/heads/ <span class="comment">#[for local branches] **only hash in the file**</span></div><div class="line">.git/refs/remotes/ <span class="comment">#[for tracking branches]</span></div></pre></td></tr></table></figure>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.git/refs/heads/ <span class="comment">#[for local branches] **only hash in the file**</span></div><div class="line">.git/refs/remotes/ <span class="comment">#[for tracking branches]</span></div></pre></td></tr></table></figure>
 <ul>
 <li>Local branches</li>
 <li>Remote-tracking branches</li>
-</ul>
-</li>
-<li>
-<p>refspec<br>
-<code>&lt;source-name&gt;:&lt;destination-name&gt;</code> is a refspec</p>
-</li>
 </ul>
 <h2 id="tips">tips</h2>
 <ul>
@@ -806,8 +793,8 @@ If uploading c1 failed, then even you fix the problem in c2 and c3, the uploadin
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/shadowsocks备忘/" rel="next" title="shadownsocks备忘">
-                <i class="fa fa-chevron-left"></i> shadownsocks备忘
+              <a href="/hdf5/" rel="next" title="hdf5简介">
+                <i class="fa fa-chevron-left"></i> hdf5简介
               </a>
             
           </div>
@@ -816,8 +803,8 @@ If uploading c1 failed, then even you fix the problem in c2 and c3, the uploadin
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/人工智能简介/" rel="prev" title="人工智能简介">
-                人工智能简介 <i class="fa fa-chevron-right"></i>
+              <a href="/shadowsocks备忘/" rel="prev" title="shadownsocks备忘">
+                shadownsocks备忘 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -898,7 +885,7 @@ If uploading c1 failed, then even you fix the problem in c2 and c3, the uploadin
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -909,7 +896,7 @@ If uploading c1 failed, then even you fix the problem in c2 and c3, the uploadin
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -920,7 +907,7 @@ If uploading c1 failed, then even you fix the problem in c2 and c3, the uploadin
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -996,7 +983,7 @@ If uploading c1 failed, then even you fix the problem in c2 and c3, the uploadin
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#丢弃"><span class="nav-text">丢弃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示状态"><span class="nav-text">显示状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase"><span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-text">tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他概念与原理"><span class="nav-text">其他概念与原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#about-github"><span class="nav-text">about github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-text">错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-text">git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#丢弃"><span class="nav-text">丢弃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示状态"><span class="nav-text">显示状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase"><span class="nav-text">rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-text">tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show"><span class="nav-text">show</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他概念与原理"><span class="nav-text">其他概念与原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#conflict"><span class="nav-text">conflict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remote"><span class="nav-text">remote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#origin"><span class="nav-text">origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程仓库名-分支名-这样的形式表示远程分支"><span class="nav-text">(远程仓库名)/(分支名) 这样的形式表示远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#local-branch-name-remote-branch-name-这是push-pull的时候顺序反过来"><span class="nav-text">local_branch_name:remote_branch_name # 这是push，pull的时候顺序反过来</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#refspec"><span class="nav-text">refspec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#upstream-vs-origin"><span class="nav-text">upstream vs. origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#branch-hash"><span class="nav-text">branch & hash[6]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#about-github"><span class="nav-text">about github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-text">错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
@@ -1024,7 +1011,7 @@ If uploading c1 failed, then even you fix the problem in c2 and c3, the uploadin
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

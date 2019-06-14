@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux常用命令记录">
 <meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。 长度感人。">
@@ -510,6 +510,11 @@ Ctrl + 方向键右键    光标移动到后一个单词结尾<br>
 <code>vim foo.h foo.cc bar.h bar.cc</code><br>
 <code>wc !?vim:2*</code># 即 wc <a href="http://foo.cc" target="_blank" rel="external">foo.cc</a> bar.h <a href="http://bar.cc" target="_blank" rel="external">bar.cc</a></p>
 </li>
+<li>
+<p><code>!(except_file)</code><br>
+有时候在一个文件夹下面，有几个废物的<br>
+<code>a_file b_file except_file</code></p>
+</li>
 </ul>
 <h3 id="参数的子字符串">参数的子字符串</h3>
 <ul>
@@ -714,6 +719,8 @@ The bessel function of integer order n of x.   贝塞尔函数</p>
 <ol start="4">
 <li>bc不能识别形式为科学计数法的输入，如1.2345e+06</li>
 </ol>
+<h2 id="compgen">compgen</h2>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">compgen -c <span class="comment"># will list all the commands you could run.</span></div><div class="line">compgen -a <span class="comment"># will list all the aliases you could run.</span></div><div class="line">compgen -b <span class="comment"># will list all the built-ins you could run.</span></div><div class="line">compgen -k <span class="comment"># will list all the keywords you could run.</span></div><div class="line">compgen -A <span class="keyword">function</span> <span class="comment"># will list all the functions you could run.</span></div><div class="line">compgen -A <span class="keyword">function</span> -abck <span class="comment"># will list all the above in one go.</span></div></pre></td></tr></table></figure>
 <h2 id="convert命令：">convert命令：</h2>
 <ol>
 <li>
@@ -771,9 +778,21 @@ The delay parameter specifies the delay between frames in 0.01s, while the loop 
 <code>grep str1 filename | grep str2 # I tried, but there's no elegant way to do this.</code></li>
 </ul>
 <h2 id="kill命令：">kill命令：</h2>
-<p>如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
+<ul>
+<li>后台运行恢复到前台<br>
+如果要让它恢复到后台，用kill -CONT 1234 （很多在前台运行的程序这样是不行的）<br>
 kill -STOP 1234<br>
-如果要恢复到前台，请在当时运行该进程的那个终端用jobs命令查询暂停的进程</p>
+如果要恢复到前台，请在当时运行该进程的那个终端用jobs命令查询暂停的进程</li>
+<li>signal<br>
+<code>kill -9</code>: 发送SIGKILL，必杀型signal。该信号作用是杀掉进程<br>
+<code>kill -15</code>: 发送SIGTERM。该信号作用是终止当前运行的软件。当程序接收到该signal后，将会发生以下的事情:
+<blockquote>
+<p>程序立刻停止<br>
+当程序释放相应资源后再停止<br>
+程序可能仍然继续运行</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="ls命令：">ls命令：</h2>
 <p>1.只显示文件<br>
 <code>ls -l | grep ^- | awk '{print $9}'</code><br>
@@ -847,6 +866,11 @@ hard link是两个文件共享一个inode，然而各种编辑器编辑文件时
 show IP routing table</li>
 <li><code>netstat -tnpl</code><br>
 show the listened port</li>
+</ul>
+<h2 id="od">od</h2>
+<ul>
+<li><code>cat &quot;ace&quot; | od -A n -t x1</code><br>
+将字符串转为十六进制</li>
 </ul>
 <h2 id="openssl">openssl</h2>
 <ul>
@@ -938,7 +962,25 @@ decipher:<br>
 <p>同时取代多个字符串<br>
 <code>sed -e 's/str1//;s/str2//' filename</code></p>
 </li>
+<li>
+<p>删除<br>
+<a href="https://blog.csdn.net/zxjcarrot/article/details/8941220" target="_blank" rel="external">linux下使用sed 命令来删除指定行</a><br>
+删除第N行<br>
+<code>sed 'Nd'filename</code><br>
+删除第M到第N行<br>
+<code>sed 'M,Nd'filename</code><br>
+从第三行开始,每隔一行删除<br>
+<code>sed '3~2d' filename</code><br>
+删除匹配行和之后两行<br>
+<code>sed '/Storage/,+2d'</code></p>
+</li>
 </ol>
+<h3 id="sed问题">sed问题</h3>
+<p><code>sed 's/,\&quot;\&quot;$//' export-0xa6214.csv</code>无效；<br>
+然而，<code>sed 's/,\&quot;\&quot;\r//' export-0xa6214.csv</code>有效；<br>
+用vim打开，也找不到<code>\r</code>字符；<br>
+实际上，用od命令看16进制文件后，会发现确实存在<code>\r</code>；<br>
+vim找不到<code>\r</code>是因为，打开的vim会自动把<code>\r</code>去掉了，但是注意没有把文件中的<code>\r</code>去掉</p>
 <h2 id="set命令">set命令</h2>
 <p><mark><code>set</code> is important, but always neglected!</mark><br>
 <code>set -u</code>: if a varible does not exist, report an error.<br>
@@ -1025,7 +1067,8 @@ But by this method, if the newest package has been installed, then nothing will 
 <code>wget https://lug.ustc.edu.cn/wiki/_export/code/mirrors/help/centos?codeblock=3</code><br>
 <a href="http://kaifage.com/notes/112/centos-yum-source.html" target="_blank" rel="external">CentOS yum中科大源 </a></li>
 </ol>
-<h2 id="逻辑表达式与-和-：">逻辑表达式与<code>&amp;&amp;</code>和<code>||</code>：</h2>
+<h2 id="其他-v2">其他</h2>
+<h3 id="逻辑表达式与-和-：">逻辑表达式与<code>&amp;&amp;</code>和<code>||</code>：</h3>
 <ul>
 <li>
 <p>逻辑表达式<br>
@@ -1055,6 +1098,17 @@ shell 中的写法：<br>
 关于这两个算符，还<strong>有个隐僻但重要的问题</strong>是<code>command1 &amp;&amp; command2</code>的返回值，如果command1返回值为假，<strong>整个表达式的返回值也为假，表达式所在的脚本的返回值也为假！</strong>。<br>
 有不少人认为<code>[ ... ] &amp;&amp; ...</code>和<code>if</code>语句效果一样但更简洁，这种想法是错误的，因为前一种用法会影响程序返回值，而<code>if</code>语句不会。如果在脚本中用前一种方法，会莫名其妙的导致返回值为假又没有任何报错。</li>
 </ul>
+<h3 id="r-n和-r"><code>\r\n</code>和<code>\r</code></h3>
+<p>Windows采用前者，mac、unix采用后者；<br>
+<code>\r</code>和<code>\n</code>的16进制代码分别是<code>0d</code>和<code>0a</code></p>
+<h3 id="含空格的变量">含空格的变量</h3>
+<p>含有空格的变量可以这样写:</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mypath=<span class="string">"/home/my path"</span></div><div class="line">mypath=<span class="string">'/home/my path'</span></div><div class="line">mypath=/home/my\ path</div></pre></td></tr></table></figure>
+<p><strong>但需要注意的是，引用时一定要加双引号</strong>：<br>
+<code>ls &quot;$mypath&quot;</code></p>
+<blockquote>
+<p>Always quote variable dereferences. Otherwise, the shell confuses the spaces in the variable’s value as spaces separating multiple values.</p>
+</blockquote>
 <h2 id="脚本注意事项：">脚本注意事项：</h2>
 <ol>
 <li>
@@ -1265,7 +1319,7 @@ Because blank space is usually used as the separater of command or agruments.<br
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1276,7 +1330,7 @@ Because blank space is usually used as the separater of command or agruments.<br
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1287,7 +1341,7 @@ Because blank space is usually used as the separater of command or agruments.<br
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1363,7 +1417,7 @@ Because blank space is usually used as the separater of command or agruments.<br
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一句话介绍一个命令："><span class="nav-text">一句话介绍一个命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-command-line"><span class="nav-text">linux Command line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系列命令"><span class="nav-text">!系列命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的子字符串"><span class="nav-text">参数的子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的补全"><span class="nav-text">参数的补全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引子"><span class="nav-text">引子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#complete"><span class="nav-text">complete</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alt"><span class="nav-text">alt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部资源链接"><span class="nav-text">外部资源链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码-ctrl-h；终端-f1"><span class="nav-text">编码 ctrl+h；终端 F1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统信息："><span class="nav-text">系统信息：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias命令："><span class="nav-text">alias命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apt-get"><span class="nav-text">apt-get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at命令："><span class="nav-text">at命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awk命令："><span class="nav-text">awk命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bc命令："><span class="nav-text">bc命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert命令："><span class="nav-text">convert命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp命令："><span class="nav-text">cp命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut命令："><span class="nav-text">cut命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diff命令"><span class="nav-text">diff命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo命令："><span class="nav-text">echo命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gprof："><span class="nav-text">gprof：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep命令："><span class="nav-text">grep命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kill命令："><span class="nav-text">kill命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls命令："><span class="nav-text">ls命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看linux进程的执行文件路径"><span class="nav-text">查看linux进程的执行文件路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln"><span class="nav-text">ln</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir命令："><span class="nav-text">mkdir命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#netstat"><span class="nav-text">netstat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openssl"><span class="nav-text">openssl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ping"><span class="nav-text">ping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf命令："><span class="nav-text">printf命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps命令"><span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scp命令"><span class="nav-text">scp命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sed命令："><span class="nav-text">sed命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set命令"><span class="nav-text">set命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort命令"><span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh命令"><span class="nav-text">ssh命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#su命令："><span class="nav-text">su命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time命令"><span class="nav-text">time命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#top命令："><span class="nav-text">top命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq命令"><span class="nav-text">uniq命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzip"><span class="nav-text">unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xargs命令-find命令："><span class="nav-text">xargs命令 & find命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum命令"><span class="nav-text">yum命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑表达式与-和-："><span class="nav-text">逻辑表达式与&&和||：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本注意事项："><span class="nav-text">脚本注意事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一句话介绍一个命令："><span class="nav-text">一句话介绍一个命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-command-line"><span class="nav-text">linux Command line</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系列命令"><span class="nav-text">!系列命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的子字符串"><span class="nav-text">参数的子字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数的补全"><span class="nav-text">参数的补全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引子"><span class="nav-text">引子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#complete"><span class="nav-text">complete</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alt"><span class="nav-text">alt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部资源链接"><span class="nav-text">外部资源链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码-ctrl-h；终端-f1"><span class="nav-text">编码 ctrl+h；终端 F1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统信息："><span class="nav-text">系统信息：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias命令："><span class="nav-text">alias命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apt-get"><span class="nav-text">apt-get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at命令："><span class="nav-text">at命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#awk命令："><span class="nav-text">awk命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bc命令："><span class="nav-text">bc命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compgen"><span class="nav-text">compgen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert命令："><span class="nav-text">convert命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp命令："><span class="nav-text">cp命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut命令："><span class="nav-text">cut命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diff命令"><span class="nav-text">diff命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo命令："><span class="nav-text">echo命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gprof："><span class="nav-text">gprof：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep命令："><span class="nav-text">grep命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kill命令："><span class="nav-text">kill命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls命令："><span class="nav-text">ls命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看linux进程的执行文件路径"><span class="nav-text">查看linux进程的执行文件路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln"><span class="nav-text">ln</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir命令："><span class="nav-text">mkdir命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#netstat"><span class="nav-text">netstat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#od"><span class="nav-text">od</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openssl"><span class="nav-text">openssl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ping"><span class="nav-text">ping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf命令："><span class="nav-text">printf命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps命令"><span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scp命令"><span class="nav-text">scp命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sed命令："><span class="nav-text">sed命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sed问题"><span class="nav-text">sed问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set命令"><span class="nav-text">set命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort命令"><span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh命令"><span class="nav-text">ssh命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#su命令："><span class="nav-text">su命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time命令"><span class="nav-text">time命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#top命令："><span class="nav-text">top命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq命令"><span class="nav-text">uniq命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzip"><span class="nav-text">unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xargs命令-find命令："><span class="nav-text">xargs命令 & find命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum命令"><span class="nav-text">yum命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他-v2"><span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑表达式与-和-："><span class="nav-text">逻辑表达式与&&和||：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#r-n和-r"><span class="nav-text">\r\n和\r</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含空格的变量"><span class="nav-text">含空格的变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本注意事项："><span class="nav-text">脚本注意事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1391,7 +1445,7 @@ Because blank space is usually used as the separater of command or agruments.<br
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

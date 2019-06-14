@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim笔记">
 <meta name="twitter:description" content="记录用过的命令，方便以后查找。不包含太简单的或太难的。">
@@ -443,7 +443,8 @@ linux中的grep = g/rep/p</p>
 即 : buffers delete<br>
 就可以关闭了.<br>
 (17) 两条命令合在一起用<br>
-<code>:%s/abc/def/ | wq</code></p>
+<code>:%s/abc/def/ | wq</code><br>
+(18) <code>gd</code> 全局搜索当前名字第一次出现的地方</p>
 <h3 id="移动">移动</h3>
 <ul>
 <li>zz 光标所在行居中</li>
@@ -525,6 +526,16 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 </li>
 </ul>
 <h3 id="youcompleteme">YouCompleteMe</h3>
+<ul>
+<li>Mac下安装：<br>
+参考：<a href="https://github.com/Valloric/YouCompleteMe/#mac-os-x" target="_blank" rel="external">Install YCM in Mac</a><br>
+Note:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/python  install.py --clang-completer --system-libclang</div></pre></td></tr></table></figure>
+<blockquote>
+<p>YCM does not work with Anaconda Python<br>
+Anaconda is often incompatible with the pre-built libclang used by YCM and therefore is not supported.</p>
+</blockquote>
 <ul>
 <li>
 <p>需要进入bundle文件夹进行编译</p>
@@ -719,7 +730,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -730,7 +741,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -741,7 +752,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -845,7 +856,7 @@ github readme里，有括号包裹单词这个功能，但我尝试多次也没�
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

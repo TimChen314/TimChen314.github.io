@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python mechanism">
 <meta name="twitter:description" content="[TOC] 0. is 与 ==的区别 python对象有三个要素：id、type、value。is 比较的是id；==比较的是value 而id实际上是内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2))">
@@ -416,8 +416,11 @@
 而id实际上是内存地址，<code>(ob1 is ob2)</code> 等价于 <code>(id(ob1) == id(ob2))</code></p>
 <a id="more"></a>
 <p>另外，一些具体的问题，结果不确定，<a href="http://xn--python-hh4kj42jdtr.py" target="_blank" rel="external">比如用python.py</a>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = 500</div><div class="line">   &gt;&gt;&gt; y = 500</div><div class="line">   &gt;&gt;&gt; x is y</div><div class="line">True</div><div class="line">   ```language</div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; x = <span class="number">500</span></div><div class="line">   &gt;&gt;&gt; y = <span class="number">500</span></div><div class="line">   &gt;&gt;&gt; x <span class="keyword">is</span> y</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
 <p>然而用python或者IPython，结果为False</p>
+<ul>
+<li>NOTE: The result of <code>5 == 5.0</code>  is <code>True</code>! <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></li>
+</ul>
 <h2 id="1-mutable-immutable">1. mutable &amp; immutable</h2>
 <p>不可变（immutable）：int、字符串(string)、float、（数值型number）、元组（tuple)</p>
 <p>可变（mutable）：字典型(dictionary)、列表型(list)</p>
@@ -434,17 +437,35 @@ Python中的with语句中要求对象实现<code>__enter__</code>和<code>__exit
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(element, mylist=None)</span>:</span></div><div class="line">    <span class="keyword">if</span> mylist <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        mylist = []</div><div class="line">    mylist.append(element)</div><div class="line">    <span class="keyword">return</span> mylist</div></pre></td></tr></table></figure>
 <h2 id="4-python中函数的参数传递与可变长参数">4*. <a href="http://www.cnblogs.com/xudong-bupt/p/3833933.html" target="_blank" rel="external">Python中函数的参数传递与可变长参数</a></h2>
 <p>【tricky】可变长度参数：<code>*tupleArg,**dictAr</code><br>
-<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a><br>
-ct总结：参数绑定优先级：</p>
-<ol>
-<li>指定参数名</li>
-<li>顺序</li>
-<li>不符合前两条的可以被<strong>可变长度参数</strong>捕捉</li>
-<li><strong>可变长度参数</strong>是通过拷贝传到函数内的！与一般机制不同</li>
-<li><strong>限制关键字参数的名字</strong></li>
-</ol>
+<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">廖雪峰的更详细的介绍</a></p>
+<p>需要注意python函数参数种类比较多，分类方法杂。下面我试图清晰的分类：</p>
+<h3 id="零-关键字参数-这个名字-在不同语境下-所指是不同的-及其容易弄混">零、 “关键字参数”这个名字，在不同语境下，所指是不同的，及其容易弄混</h3>
+<h3 id="一-从实参的角度看">一、 从实参的角度看</h3>
+<p>参数只分为位置参数和关键字参数。<br>
+所谓关键字参数，就是值和形参名字绑定在一起。<br>
+剩下的就是位置参数。<br>
+实参传递时，位置参数要在关键字参数之前。<br>
+以上四条就是实参传递的所有规则。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x, y=<span class="number">1</span>)</span>:</span></div><div class="line">    print(x,y)</div></pre></td></tr></table></figure>
+<h3 id="二-从形参的角度看">二、 从形参的角度看</h3>
+<p>形参是用来接收实参的值的。<br>
+下面按照形参接受实参的顺序排序（注意形参接受实参的顺序不等于形参定义时应该遵从的顺讯）。<br>
+首先，最先接收的是实参的关键字参数（也就是实参中指定了形参参数名）。<br>
+然后，接收的是实参的位置参数。接收方法就是依次绑定。<br>
+第三，默认（形参）参数，也是接收实参的位置参数，只不过对应的实参如果不存在，就用默认参数。正因为默认参数所对应的实参可有可无，所以它在形参中，应该放在位置参数之后。另外，就是著名的python坑，“默认参数一定要指向不变对象”。<br>
+PS：其机理是，默认参数是在函数声明时，将默认值的地址绑定到函数的默认参数。因而，如果默认参数是一个可变对象，那么这个可变参数的地址就永远绑定到函数的默认参数上了。之后，每次调用函数，不会改变可变参数的地址，只会改变可变参数的内容。<br>
+第四，剩下的实参被可变长度参数（或称可变参数）捕获为tuple。<br>
+注意，在未被捕获的实参中，默认参数会先捕获，剩下的才被可变参数捕获。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x,y=<span class="number">-1</span>,*args)</span>:</span></div><div class="line">        print(x,y)</div><div class="line">        print(args)</div><div class="line">   &gt;&gt;&gt; func(<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>)</div><div class="line"><span class="number">1</span> <span class="number">3</span></div><div class="line">(<span class="number">5</span>,<span class="number">7</span>)</div></pre></td></tr></table></figure>
+<p>第五，剩下的实参关键字参数被形参关键字参数捕获</p>
 <p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">person</span><span class="params">(name, age, *, city, job)</span>:</span></div><div class="line">    print(name, age, city, job)</div></pre></td></tr></table></figure>
+<p>机理是，所有位置参数都已经被星号及其之前的形参接受，所以剩下的必须用关键字参数接收。</p>
+<h3 id="形参定义时-因该遵从的顺序">形参定义时，因该遵从的顺序</h3>
+<p>参数定义的顺序必须是：必选参数–&gt;默认参数–&gt;可变参数–&gt;命名关键字参数–&gt;关键字参数<br>
+关键字参数一定是放在最后的。</p>
+<h3 id="reference">reference</h3>
+<p><a href="https://blog.csdn.net/u014745194/article/details/70158926" target="_blank" rel="external">Python中位置参数、默认参数、可变参数、命名关键字参数、关键字参数的区别</a></p>
 <h2 id="5-generator">5. generator</h2>
 <ul>
 <li>最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</li>
@@ -457,16 +478,19 @@ official doc:
 </ul>
 <p><a href="http://kissg.me/2016/04/09/python-generator-yield/" target="_blank" rel="external">Python之生成器详解</a>:</p>
 <blockquote>
-<p>我们常说的生成器,就是带有yield的函数,而generator iterator则是generator function的返回值,即一个generator对象,而形如(elem for elem in [1, 2, 3])的表达式,称为generator expression,实际使用与generator无异.</p>
+<p>我们常说的生成器,就是带有yield的函数,而generator iterator则是generator function的返回值,即一个generator对象,而形如<code>mygenerator=(elem for elem in [1, 2, 3])</code>括号中的表达式,称为generator expression,实际使用与generator无异。<br>
+iterator是消耗型的,用一次少一次</p>
 </blockquote>
 <blockquote>
 <p>调用send(value)时要注意,要确保,generator是在yield处被暂停了,如此才能向yield表达式传值,否则将会报错(如上所示),可通过next()方法或send(None)使generator执行到yield.</p>
 </blockquote>
+<p>send(none)起的作用相当于next()<br>
+generator可以用于for循环，例如：<code>for i in mygenerator: # mygenerator的定义见上文</code></p>
 <h2 id="6-zip-unpacking-argument-lists">6. zip() &amp; Unpacking Argument Lists——&quot;*&quot; &amp; “**”</h2>
 <p><strong>The implementation of zip is very beautiful：</strong><br>
 来自<a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">python doc</a></p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">zip</span><span class="params">(*iterables)</span>:</span></div><div class="line">    <span class="comment"># zip('ABCD', 'xy') --&gt; Ax By</span></div><div class="line">    sentinel = object()</div><div class="line">    <span class="comment"># ct: iterators is a "Iterator" point to the "Iterator" of different parameters(形参)</span></div><div class="line">    <span class="comment">#     e.g., at first, iterators is the "Iterator" of 'ABCM';</span></div><div class="line">    <span class="comment">#     iterators.next() is the "Iterator" of 'xy';</span></div><div class="line">    iterators = [iter(it) <span class="keyword">for</span> it <span class="keyword">in</span> iterables]</div><div class="line">    <span class="keyword">while</span> iterators:</div><div class="line">        result = []</div><div class="line">        <span class="keyword">for</span> it <span class="keyword">in</span> iterators:</div><div class="line">            elem = next(it, sentinel)</div><div class="line">            <span class="keyword">if</span> elem <span class="keyword">is</span> sentinel:</div><div class="line">                <span class="keyword">return</span></div><div class="line">            result.append(elem)</div><div class="line">        <span class="keyword">yield</span> tuple(result)</div></pre></td></tr></table></figure>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">#zip() in conjunction with the * operator can be used to unzip a list:</span></div><div class="line">   &gt;&gt;&gt; x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">   &gt;&gt;&gt; y = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; zipped = zip(x, y)</div><div class="line">   &gt;&gt;&gt; list(zipped)</div><div class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</div><div class="line">   &gt;&gt;&gt; x2, y2 = zip(*zip(x, y))</div><div class="line">   &gt;&gt;&gt; x == list(x2) <span class="keyword">and</span> y == list(y2)</div><div class="line"><span class="keyword">True</span></div></pre></td></tr></table></figure>
 <ul>
 <li>Unpacking Argument Lists <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; list(range(<span class="number">3</span>, <span class="number">6</span>))            <span class="comment"># normal call with separate arguments</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">   &gt;&gt;&gt; args = [<span class="number">3</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; list(range(*args))            <span class="comment"># call with arguments unpacked from a list</span></div><div class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
 </li>
@@ -482,18 +506,27 @@ Iterator is Iterable!<br>
 理解：想一想C++中的Iterator，它就是个指针。<br>
 Iterator是消耗型的,即每一个值被使用过后,就消失了，但是最终它并不等于<code>None</code>。</li>
 </ul>
+<ul>
+<li>while my_iterator（参见zip的实现）<br>
+iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
+</ul>
+<h2 id="8-for">8. <code>for</code></h2>
 <p>Python的for循环本质上就是通过不断调用next()函数实现的，例如：<br>
 for x in [1, 2, 3, 4, 5]:<br>
 pass<br>
 实际上完全等价于：<br>
 首先获得Iterator对象:<br>
 <code>it = iter([1, 2, 3, 4, 5])</code><br>
-循环:</p>
+然后在循环:</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="comment"># 获得下一个值:</span></div><div class="line">        x = next(it)</div><div class="line">    <span class="keyword">except</span> StopIteration:</div><div class="line">        <span class="comment"># 遇到StopIteration就退出循环break</span></div></pre></td></tr></table></figure>
+<p>NOTE: The implement of  <code>for</code> directly influence the corresponding results, e.g.:</p>
 <ul>
-<li>while my_iterator（参见zip的实现）<br>
-iterator最终会返回StopIteration对象，而while可以对其进行判断。</li>
+<li>example of <code>for</code> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">some_string = <span class="string">"wtf"</span></div><div class="line">some_dict = &#123;&#125;</div><div class="line"><span class="keyword">for</span> i, some_dict[i] <span class="keyword">in</span> enumerate(some_string):</div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>Output of some_dict:<br>
+<code>{0: 'w', 1: 't', 2: 'f'}</code><br>
+NOTE: This is because during <code>for</code> statement, dummy variables(e.g., i and some_dict[i] in present case) will be assigned in each loop.</p>
 <h2 id="8-内存">8. 内存</h2>
 <h3 id="8-1-释放内存">8.1. 释放内存</h3>
 <p>先del再gc.collect()</p>
@@ -502,12 +535,12 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
 <p>也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同：</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">   &gt;&gt;&gt; lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">   &gt;&gt;&gt; bart.age = <span class="number">8</span></div><div class="line">   &gt;&gt;&gt; bart.age</div><div class="line"><span class="number">8</span></div><div class="line">   &gt;&gt;&gt; lisa.age</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></div></pre></td></tr></table></figure>
 <h3 id="9-2-python的伪私有属性">9.2. <a href="http://www.cnblogs.com/blackmatrix/p/5600830.html" target="_blank" rel="external">Python的伪私有属性</a></h3>
-<p>Note that user defined attributes shall not end with ‘__’</p>
+<p>Note that user defined attributes shall not end with <code>__</code></p>
 <h3 id="9-3-私有变量的访问方法">9.3. 私有变量的访问方法</h3>
-<p>不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量。<br>
+<p>不能直接访问<code>__name</code>是因为Python解释器对外把<code>__name</code>变量改成了<code>_Student__name</code>，所以，仍然可以通过<code>_Student__name</code>来访问<code>__name</code>变量。<br>
 注意下面的这种错误写法：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span>&gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
-<p>表面上看，外部代码“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给bart新增了一个__name变量。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">98</span>)</div><div class="line">   &gt;&gt;&gt; bart.get_name()</div><div class="line"><span class="string">'Bart Simpson'</span></div><div class="line">   &gt;&gt;&gt; bart.__name = <span class="string">'New Name'</span> <span class="comment"># 设置__name变量！</span></div><div class="line">   &gt;&gt;&gt; bart.__name</div><div class="line"><span class="string">'New Name'</span></div></pre></td></tr></table></figure>
+<p>表面上看，外部代码“成功”地设置了<code>__name</code>变量，但实际上这个<code>__name</code>变量和class内部的<code>__name</code>变量不是一个变量！内部的<code>__name</code>变量已经被Python解释器自动改成了<code>_Student__name</code>，而外部代码给bart新增了一个<code>__name</code>变量。</p>
 <h3 id="9-4-特殊函数-call-模糊了对象与函数的区别">9.4. <a href="http://www.cnblogs.com/superxuezhazha/p/5793536.html" target="_blank" rel="external">特殊函数<code>__call__</code>模糊了对象与函数的区别</a></h3>
 <h3 id="9-5-类类型的检查-不检查">9.5. 类类型的检查–不检查</h3>
 <p>静态语言 vs 动态语言<br>
@@ -516,24 +549,128 @@ iterator最终会返回StopIteration对象，而while可以对其进行判断。
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Timer</span><span class="params">(object)</span>:</span><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Start...'</span>)</div></pre></td></tr></table></figure>
 <p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
 <p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
+<h2 id="18-namespace-and-scope">18. namespace and scope</h2>
+<p><a href="https://softwareengineering.stackexchange.com/questions/273302/what-is-the-relationship-between-scope-and-namespaces-in-python" target="_blank" rel="external">What is the relationship between scope and namespaces in Python?</a><br>
+<a href="https://stackoverflow.com/questions/30045175/difference-between-scopes-and-namespaces-in-python" target="_blank" rel="external">Difference between Scopes and Namespaces in python?</a></p>
+<ul>
+<li>namespace
+<blockquote>
+<p>A namespace is a dictionary, mapping names (as strings) to values. When you do an assignment, like a = 1, you’re mutating a namespace. When you make a reference, like print(a), Python looks through a list of namespaces to try and find one with the name as a key.</p>
+</blockquote>
+</li>
+</ul>
+<p>namespaces is a dict in deepdown.</p>
+<blockquote>
+<p>We can picture a namespace as a Python dictionary structure, where the dictionary keys represent the names and the dictionary values the object itself (and this is also how namespaces are currently implemented in Python), e.g.,<br>
+<code>a_namespace = {'name_a':object_1, 'name_b':object_2, ...}</code></p>
+</blockquote>
+<ul>
+<li>
+<p>scope<br>
+A very good explanation (<a href="http://sebastianraschka.com/Articles/2014_python_scope_and_namespaces.html#objectives" target="_blank" rel="external">A Beginner’s Guide to Python’s Namespaces, Scope Resolution, and the LEGB Rule</a>):</p>
+<blockquote>
+<p>The “scope” in Python defines the “hierarchy level” in which we search namespaces for certain “name-to-object” mappings.</p>
+</blockquote>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">i = <span class="number">1</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">    i = <span class="number">5</span></div><div class="line">    print(i, <span class="string">'in foo()'</span>)</div><div class="line"></div><div class="line">print(i, <span class="string">'global'</span>)</div><div class="line"></div><div class="line">foo()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>In above scope, there are two namespaces.</p>
+</blockquote>
+</li>
+</ul>
+<p>A bad explanation:</p>
+<blockquote>
+<p><s>You can think of “scope” as being the set of names that you have access to from a particular point in the code.</s></p>
+</blockquote>
+<ul>
+<li>LEGB rule<br>
+Local -&gt; Enclosed -&gt; Global -&gt; Built-in</li>
+</ul>
+<ul>
+<li>example (I’m not sure it’s right) <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">1</span></div><div class="line">y = <span class="number">2</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></div><div class="line">  z = <span class="number">3</span> + y</div><div class="line">  <span class="comment"># P1 point !</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">Here, I have access to `x, y, foo` -- They are in the current scope.</div><div class="line">`z` is not in the current scope.  It is in the scope of `foo`.</div><div class="line">'''</div><div class="line">a = x + y <span class="comment"># P2 point !</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>At ‘P1’ point:<br>
+scope:<br>
+scope includes x, y, foo and z, but not a.<br>
+namespace:<br>
+At foo namespace, foo includes z</p>
+<p>At ‘P2’ point:<br>
+scope:<br>
+scope includes x, y, foo and a, but not z.<br>
+namespace:<br>
+namespace of this module/file includes x, y, foo and a, but not z.<br>
+NOTE: In ‘P2’ point, scope and namespace has the same included object.</p>
+<h2 id="16-闭包">16. 闭包</h2>
+<p><a href="https://www.cnblogs.com/Lin-Yi/p/7305364.html" target="_blank" rel="external">谈谈自己的理解:python中闭包，闭包的实质</a><br>
+example 1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">def outer( a ):</div><div class="line">    b = 10</div><div class="line">    # inner是内函数</div><div class="line">    def inner():</div><div class="line">        #在内函数中 用到了外函数的临时变量</div><div class="line">        print(a+b)</div><div class="line">    # 外函数的返回值是内函数的引用</div><div class="line">    return inner</div></pre></td></tr></table></figure>
+<p>内函数外函数在英文中也会写作enclosing function和enclosed function.</p>
+<h3 id="闭包中内函数修改外函数局部变量">闭包中内函数修改外函数局部变量</h3>
+<p>example 2:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">( a )</span>:</span></div><div class="line">    <span class="comment"># outer是外部函数 a和b都是外函数的临时变量</span></div><div class="line">    b = <span class="number">10</span>  <span class="comment"># a和b都是闭包变量</span></div><div class="line">    c = [a] <span class="comment">#这里对应修改闭包变量的方法2</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></div><div class="line">        <span class="comment">#内函数中想修改闭包变量</span></div><div class="line">        <span class="comment"># 方法1 nonlocal关键字声明</span></div><div class="line">        <span class="keyword">nonlocal</span>  b</div><div class="line">        b+=<span class="number">1</span></div><div class="line">        <span class="comment"># 方法二，把闭包变量修改成可变数据类型 比如列表</span></div><div class="line">        c[<span class="number">0</span>] += <span class="number">1</span></div><div class="line">        print(c[<span class="number">0</span>])</div><div class="line">        print(b)</div><div class="line">    <span class="comment"># 外函数的返回值是内函数的引用</span></div><div class="line">    <span class="keyword">return</span> inner</div></pre></td></tr></table></figure>
+<p>my example:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">record_order_to_csv</span><span class="params">(logger, order_in_pair_utctime, filename)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorate</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">        @wraps(func)</span></div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line"></div><div class="line">            res = func(*args, **kwargs)</div><div class="line"></div><div class="line">            <span class="comment"># in here, an error will be raised. To avoid that, aclaim nonlocal b, or just change the name : `fn = get_csv_name(filename)`</span></div><div class="line">            filename = get_csv_name(filename)</div><div class="line">            <span class="keyword">with</span> open(filename, <span class="string">'a+'</span>) <span class="keyword">as</span> f:</div><div class="line">                f.write(<span class="string">', '</span>.join([<span class="string">"some "</span>, <span class="string">"thing"</span>]) + <span class="string">"\n"</span>)</div><div class="line"></div><div class="line">            <span class="keyword">return</span> res</div><div class="line"></div><div class="line">        <span class="keyword">return</span> wrapper</div><div class="line">    <span class="keyword">return</span> decorate</div></pre></td></tr></table></figure>
+<h3 id="变量绑定给内函数">变量绑定给内函数</h3>
+<ol>
+<li>每次调用外函数，它都创建一个内函数，虽然代码一样，但是却创建了不同的对象</li>
+<li>临时变量会绑定给内函数，再把内函数引用返回!</li>
+</ol>
+<p>以example 1的代码为例，调用两次outer，两次返回inner都绑定了同一个变量<code>b</code>，而不是两个<code>b</code>的值！<br>
+这是一个经典的大坑！</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">funcs = []</div><div class="line">results = []</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">7</span>):</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">some_func</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">return</span> x</div><div class="line">    funcs.append(some_func)</div><div class="line">    results.append(some_func())</div><div class="line"></div><div class="line">funcs_results = [func() <span class="keyword">for</span> func <span class="keyword">in</span> funcs]</div><div class="line"></div><div class="line">    <span class="comment">#Output:</span></div><div class="line">   &gt;&gt;&gt; results</div><div class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">   &gt;&gt;&gt; funcs_results</div><div class="line">[<span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>, <span class="number">6</span>]</div></pre></td></tr></table></figure>
+<p>这就是因为所有的<code>some_func</code>都绑定到了变量<code>x</code>上，而<code>x</code>的值是会变的。</p>
+<p>解决方案：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">some_func</span><span class="params">(x=x)</span>:</span></div><div class="line">        <span class="keyword">return</span> x</div></pre></td></tr></table></figure>
+<p>这样<code>x</code>就会变成<code>some_func</code>的内部变量，值就会传进来（我们知道，python中函数的默认值只是在定义时传入一次）。</p>
+<h3 id="有什么用？">有什么用？</h3>
+<ol>
+<li>做装饰器<br>
+对已有的函数添加功能（以及变量）</li>
+<li>面向对象<br>
+将外函数的临时变量和内函数绑定，和面向对象中将变量和方法绑定，是如出一辙</li>
+</ol>
 <h2 id="10-为什么-python-的类不构成作用域-scope-？-待深入">10. <mark><a href="https://www.zhihu.com/question/263811118" target="_blank" rel="external">为什么 Python 的类不构成作用域（scope）？</a></mark> 待深入</h2>
-<h3 id="10-0-the-scope-of-a-variable-initialized-in-an-if-statement">10.0 <a href="https://stackoverflow.com/questions/2829528/whats-the-scope-of-a-variable-initialized-in-an-if-statement" target="_blank" rel="external">the scope of a variable initialized in an if statement</a></h3>
+<h3 id="10-1-scope-search-order">10.1 scope search order:</h3>
+<p>顺序可以简记为legb(local, enclosing, global, built-ins)</p>
+<ul>
+<li>Search the local scope</li>
+<li>Search the scope of any enclosing functions</li>
+<li>Search the global scope</li>
+<li>Search the built-ins
+<blockquote>
+<p>Only classes, functions, and modules provide scope in Python, so anything declared in an if block has the same scope as anything decleared outside the block.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="10-2-the-scope-of-a-variable-initialized-in-an-if-statement">10.2 <a href="https://stackoverflow.com/questions/2829528/whats-the-scope-of-a-variable-initialized-in-an-if-statement" target="_blank" rel="external">the scope of a variable initialized in an if statement</a></h3>
 <p>In python the scope of a variable is veeery different with other languages.</p>
 <blockquote>
 <p>Python variables are scoped to the innermost function, class, or module in which they’re assigned. Control blocks like if and while blocks don’t count, so a variable assigned inside an if is still scoped to a function, class, or module.<br>
 (Implicit functions defined by a generator expression or list/set/dict comprehension do count, as do lambda expressions. You can’t stuff an assignment statement into any of those, but lambda parameters and for clause targets are implicit assignment.)</p>
 </blockquote>
 <p>e.g.:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    x = <span class="number">5</span></div><div class="line">print(x)</div><div class="line"><span class="comment"># x is equal to 5!</span></div></pre></td></tr></table></figure>
-<h3 id="10-1-exec与eval的奇特之处">10.1 exec与eval的奇特之处</h3>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    x = <span class="number">5</span></div><div class="line">print(x)</div><div class="line">    <span class="comment"># x is equal to 5!</span></div></pre></td></tr></table></figure>
+<h3 id="10-3-exec与eval的奇特之处">10.3 exec与eval的奇特之处</h3>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行抛异常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
 <p>然而：</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span> <span class="comment">#运行正常</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">    ¦   exec(<span class="string">"print(a)"</span>)</div><div class="line">    ¦   print(a)</div><div class="line">    g()</div><div class="line">    </div><div class="line">f()</div></pre></td></tr></table></figure>
-<h3 id="10-2-注意区分list-comprehension与generator">10.2 <mark>注意区分list comprehension与generator！</mark></h3>
+<h3 id="10-4-注意区分list-comprehension与generator">10.4 <mark>注意区分list comprehension与generator！</mark></h3>
 <ul>
 <li>list comprehension是当时计算的</li>
 <li>而<code>list(a+i for i in range(10))</code>中，里面属于generator，是一个匿名函数。</li>
 </ul>
+<h3 id="10-5-类的方法与普通函数的区别">10.5 类的方法与普通函数的区别</h3>
+<p>运行到class这句的时候，会先将class下面的代码块“假装”当成一个函数来执行，但语法上和正常函数有一些区别：</p>
+<ol>
+<li>无输入参数</li>
+<li>不能显式return</li>
+<li>类代码块中定义的函数，不视为类代码块的闭包，具体例子如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">print</span> a</div><div class="line">    g()</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>会报错，函数<code>g</code>找不到<code>a</code>。</p>
+<p>正常的闭包：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    a = <span class="number">123</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">print</span> a</div><div class="line">    g()</div></pre></td></tr></table></figure>
+<p>结果就不会报错</p>
 <h2 id="11-super-and-mro">11. super and MRO</h2>
 <p>MRO: Method Resolution Order. For more details see this great introdcution: <a href="https://segmentfault.com/a/1190000007426467" target="_blank" rel="external">Python: 你不知道的 super</a></p>
 <blockquote>
@@ -555,8 +692,11 @@ Compile python to Java bytecode.</li>
 Compile python to .net bytecode</li>
 </ul>
 <h2 id="13-python3-string">13. Python3 String</h2>
+<h3 id="13-1-unicode">13.1 unicode</h3>
 <ul>
 <li>All the python3 string is unicode string.<br>
+e.g.:<br>
+<code>print('\u5730\u5740\u9519\u8bef')</code>会显示<code>地址错误</code><br>
 NOTE: Unicode is different from utf-8 code! <a href="https://blog.csdn.net/thl789/article/details/7506133" target="_blank" rel="external">Unicode编码及其实现：UTF-16、UTF-8</a></li>
 <li>Real Unicode<br>
 Many introduction about unicode is wrong, even for the Baidu Encyclopedia.<br>
@@ -573,12 +713,11 @@ UCS就是前面说的ISO制定的标准,和Unicode是完全一样的,只不过�
 </ul>
 <p>BeautifulSoup4 will automatically find the encoding of HTML page (based on the info in the HTML head), and use this encoding to decode the <code>r.text</code>.<br>
 However, if encoding is not found, encoding will be considered as “ISO-8859-1”, whether it’s because of failing parse or non-existence,</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(r.encoding)</div><div class="line">text = r.text</div><div class="line">text.encode(<span class="string">"ISO-8859-1"</span>,<span class="string">"ignore"</span>) == r.content</div><div class="line"><span class="comment"># result is "ISO-8859-1" and "True"</span></div></pre></td></tr></table></figure>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(r.encoding)</div><div class="line">text = r.text</div><div class="line">text.encode(<span class="string">"ISO-8859-1"</span>,<span class="string">"ignore"</span>) == r.content</div><div class="line">    <span class="comment"># result is "ISO-8859-1" and "True"</span></div></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>two examples:<br>
+<li>two examples:<br>
 <a href="https://www.fileformat.info/info/unicode/char/4e25/index.htm" target="_blank" rel="external">&quot;严&quot;字</a><br>
-<a href="https://www.fileformat.info/info/unicode/char/304d/index.htm" target="_blank" rel="external">&quot;き&quot;字</a></p>
+<a href="https://www.fileformat.info/info/unicode/char/304d/index.htm" target="_blank" rel="external">&quot;き&quot;字</a>
 <ul>
 <li>For “き”: It’s python3 source code is <code>u&quot;\u304D&quot;</code></li>
 <li><code>utf-8</code> is <code>0xE3 0x81 0x8D (e3818d)</code>;</li>
@@ -587,18 +726,88 @@ However, if encoding is not found, encoding will be considered as “ISO-8859-1�
 <li>HTML Entity (hex)  <code>&amp;#x304d;</code></li>
 </ul>
 </li>
-<li>
-<p>code</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">one_char = <span class="string">'き'</span></div><div class="line">print(one_char, one_char.encode(<span class="string">"utf-8"</span>),one_char.encode(<span class="string">"utf-16"</span>), one_char.encode(<span class="string">"utf-32"</span>))</div><div class="line">print(one_char.encode(<span class="string">'unicode_escape'</span>), one_char.encode(<span class="string">'unicode_escape'</span>).decode(<span class="string">'unicode_escape'</span>))</div><div class="line">```</div></pre></td></tr></table></figure>
+</ul>
+<ul>
+<li>code <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">one_char = <span class="string">'き'</span></div><div class="line">print(one_char, one_char.encode(<span class="string">"utf-8"</span>),one_char.encode(<span class="string">"utf-16"</span>), one_char.encode(<span class="string">"utf-32"</span>))</div><div class="line">print(one_char.encode(<span class="string">'unicode_escape'</span>), one_char.encode(<span class="string">'unicode_escape'</span>).decode(<span class="string">'unicode_escape'</span>))</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>き b’\xe3\x81\x8d’ b’\xff\xfeM0’ b’\xff\xfe\x00\x00M0\x00\x00’<br>
-b’\u304d’ き</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">## 14. python path</div><div class="line">There&apos;re two kind of path: executing path (EP) and python file path (PFP). e.g.:</div><div class="line"></div><div class="line">   ```python</div><div class="line">$ ls test/</div><div class="line">test_all.py</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">き <span class="string">b'\xe3\x81\x8d'</span> <span class="string">b'\xff\xfeM0'</span> <span class="string">b'\xff\xfe\x00\x00M0\x00\x00'</span></div><div class="line"><span class="string">b'\\u304d'</span> き</div></pre></td></tr></table></figure>
+<h3 id="13-2-hex">13.2 hex</h3>
+<ul>
+<li>
+<p>decode a hex string<br>
+十六进制可以看成一种编码方式。实际使用中，我们一般用到的是hex string，比如ethereum RPC的返回值:<br>
+<code>res = '0x000000a2'</code><br>
+以<code>res</code>为例，所谓hex string，就是说<code>res</code>在python中的类型还是<code>string</code>，但显然它是一个16进制编码过的string。<br>
+那么我们要得到真实信息，就需要解码；要解码，就需要知道<code>res</code>原本是什么类型。(比如0x41，解码成整数，那就是整数65；但按照解码ascii，第65个ascii字符，就是小写字母a)</p>
+</li>
+<li>
+<p>HexBytes type to hex string<br>
+HexBytes is a built-in type, e.g.:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> web3 <span class="keyword">import</span> Web3</div><div class="line"><span class="comment"># web3.__version__ == '4.4.1'</span></div><div class="line">res = Web3.sha3(text=<span class="string">"numberOfProposals()"</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>The type of res is HexBytes. To get a hex string, just use res.hex(), then a string will be returned.</p>
+<h2 id="14-python-path">14. python path</h2>
+<p>There’re two kind of path: executing path (EP) and python file path (PFP). e.g.:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ls test/</div><div class="line">test_all.py</div></pre></td></tr></table></figure>
 <p>Then EP is <code>.</code>, PFP is <code>./test/</code>!</p>
 <ul>
 <li>The <code>sys.path</code> contains PFP, not EP.</li>
 <li>In <code>from * import *</code>, PEP is used, i.e., it’s ‘from’ <code>./test/</code> dir.</li>
+</ul>
+<h3 id="一个module应该只有一种方式import">一个module应该只有一种方式import</h3>
+<p>有一种说法是：python中的包只会被import一次<br>
+但是，<code>from logger import logger</code>和<code>from log.logger import logger</code>明明是一个module，python却会导入两次！<br>
+ref: <a href="https://zhuanlan.zhihu.com/p/68888890" target="_blank" rel="external">python中的module不一定是单例，有可能会被多次import成多个module</a></p>
+<h2 id="15-slots">15. <code>__slots__</code></h2>
+<p>First of all, python allow run-time adding attributes and methods to a defined class or a instance of defined class. e.g.:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    <span class="comment"># Student is a defined class</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_score</span><span class="params">(self, score)</span>:</span></div><div class="line">    self.score = score</div><div class="line"></div><div class="line">Student.set_score = set_score</div><div class="line"></div><div class="line">s = Student()</div><div class="line">s.set_score = set_score</div></pre></td></tr></table></figure>
+<p>Then to restrict the <strong>attributes</strong>, <code>__slots__</code> is defined so that only the attributes in <code>__slots__</code> can be defined in class.<br>
+e.g.:<br>
+<code>__slots__ = ('name', 'age') # name and age can be defined in present class</code><br>
+<code>__slots__ = () # none attribute can be defined.</code></p>
+<blockquote>
+<p>使用<code>__slots__</code>要注意，<code>__slots__</code>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的<br>
+除非在子类中也定义<code>__slots__</code>，这样，子类实例允许定义的属性就是自身的<code>__slots__</code>加上父类的<code>__slots__</code>。</p>
+</blockquote>
+<h2 id="17-myth-of-code-object">17. myth of code object</h2>
+<p><a href="https://pycoders-weekly-chinese.readthedocs.io/en/latest/issue7/exploring-python-code-objects.html" target="_blank" rel="external">探索 Python 代码对象</a><br>
+三个层次：function object -&gt; code object -&gt; stack-based bytecode(字节码)</p>
+<blockquote>
+<p>CPython 实现了一个执行基于栈的字节码 (stack-based bytecode) 的虚拟机。<br>
+在运行时，任何可执行的东西 (函数、方法、模块、类主体 (class body)、Lambda 式、语句、表达式等等) 都以字节码的形式由 Python 虚拟机执行。</p>
+</blockquote>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a = b)</span>:</span></div><div class="line">    <span class="keyword">print</span> a</div></pre></td></tr></table></figure>
+<ul>
+<li>f的代码块在编译时被编译为一个code object放在字节码中，然后执行到这里的时候，根据这个code object构建一个function object，然后，将这个function object赋值给f这个变量。</li>
+<li>function object还含有一些动态的信息，比如函数参数默认值（上面的b），或是否闭包的信息（若f是一个闭包函数）等</li>
+</ul>
+<h2 id="19-decorator">19. decorator</h2>
+<p>Decorator is just a syntactic sugar:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@my_decorator</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>:</span></div></pre></td></tr></table></figure>
+<p>Above code is just the same as: <code>func = my_decorator(func)</code></p>
+<h3 id="basic-version">basic version</h3>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">timethis</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line">    Decorator that reports the execution time.</div><div class="line">    '''</div><div class="line"><span class="meta">    @wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line">        start = time.time()</div><div class="line">        result = func(*args, **kwargs)</div><div class="line">        end = time.time()</div><div class="line">        print(func.__name__, end-start)</div><div class="line">        <span class="keyword">return</span> result</div><div class="line">    <span class="keyword">return</span> wrapper</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>机理的理解：</p>
+<ol start="0">
+<li>decorator实际相当于：<code>new_func = timethis(func)</code></li>
+<li>timethis返回了wrapper函数，所以<code>new_func</code>实际上就是<code>timethis</code>中的<code>wrapper</code>函数</li>
+<li>调用<code>new_func</code>时的参数都传给了<code>wrapper</code></li>
+</ol>
+</li>
+<li>
+<p>调用未包装的原始函数：<br>
+使用了<code>@wraps</code>或者直接设置了<code>__wrapped__</code>属性，那么<code>new_func.__wrapped__</code>就是原函数</p>
+</li>
+<li>
+<p>如果有多个包装器，那么访问<code>__wrapped__</code>属性的行为是不可预知的，应该避免这样做。<br>
+在Python3.4中，它会如我们预期的一样。<br>
+在Python3.3中，它会略过所有的包装层。</p>
+</li>
 </ul>
 <h2 id="style-guide">Style guide</h2>
 <h3 id="argument">argument</h3>
@@ -615,13 +824,60 @@ b’\u304d’ き</p>
 <h3 id="逻辑判断">逻辑判断</h3>
 <p>布尔测试应该很简单,如果它们很复杂的话,你需要将它们的运算事先放到一个变量里,并<br>
 且为变量取一个好名字 – [learn python the hard way]</p>
+<h3 id="add-static-variable-to-function">add static variable to function</h3>
+<p>There are many different ways to add a static variable in a function. Below one happens to be a good way:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> hasattr(func, <span class="string">'x'</span>):</div><div class="line">        func.x = <span class="string">"lala"</span></div></pre></td></tr></table></figure>
+<h2 id="tips">TIPS</h2>
+<ul>
+<li>
+<p><code>you need to flush stdout periodically (e.g. sys.stdout.flush()). Python doesn't automatically do this even with print until the program exits.</code></p>
+</li>
+<li>
+<p><code>id(WTF()) == id(WTF())</code> result is <code>True</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1]</a></sup><br>
+<code>id(WTF())</code> will (1) instantiate a <code>WTC</code> object and (2) get the id of this object and (3) destroy this object.<br>
+Hence this two objects has same id.</p>
+</li>
+<li>
+<p>Evaluation time discrepancy 非常重要！</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">array = [<span class="number">1</span>, <span class="number">8</span>, <span class="number">15</span>]</div><div class="line">g = (x <span class="keyword">for</span> x <span class="keyword">in</span> array <span class="keyword">if</span> array.count(x) &gt; <span class="number">0</span>)</div><div class="line">array = [<span class="number">2</span>, <span class="number">8</span>, <span class="number">22</span>]</div><div class="line">    <span class="comment">#Output:</span></div><div class="line">   &gt;&gt;&gt; print(list(g))</div><div class="line">[<span class="number">8</span>]</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>A tic-tac-toe where X wins in the first attempt!</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="string">'''</span></div><div class="line">我们先初始化一个变量row</div><div class="line">'''</div><div class="line">row = [<span class="string">""</span>]*<span class="number">3</span> <span class="comment">#row i['', '', '']</span></div><div class="line">board = [row]*<span class="number">3</span> <span class="comment"># 并创建一个变量board</span></div><div class="line">    <span class="comment">#Output:</span></div><div class="line">   &gt;&gt;&gt; board</div><div class="line">[[<span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>], [<span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>], [<span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>]]</div><div class="line">   &gt;&gt;&gt; board[<span class="number">0</span>][<span class="number">0</span>]</div><div class="line"><span class="string">''</span></div><div class="line">   &gt;&gt;&gt; board[<span class="number">0</span>][<span class="number">0</span>] = <span class="string">"X"</span></div><div class="line">   &gt;&gt;&gt; board</div><div class="line">[[<span class="string">'X'</span>, <span class="string">''</span>, <span class="string">''</span>], [<span class="string">'X'</span>, <span class="string">''</span>, <span class="string">''</span>], [<span class="string">'X'</span>, <span class="string">''</span>, <span class="string">''</span>]]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Right way to do it is :<br>
+<code>&gt;&gt;&gt; board = [['']*3 for _ in range(3)]</code></p>
+<ul>
+<li>
+<p><code>==</code>的优先级高于<code>not</code></p>
+</li>
+<li>
+<p>unbounded method不太懂，不过在python3中已经完全抛弃了</p>
+</li>
+<li>
+<p>check whether a variable is a function<br>
+<code>isinstance(func, (types.FunctionType, types.BuiltinFunctionType, functools.partial))</code></p>
+</li>
+</ul>
+<h2 id="thinking">thinking</h2>
+<ul>
+<li>Abstact leak永远会存在。<br>
+换言之，永远都需要向下一层，去理解当前用到的技术是如何实现的。<br>
+以Evaluation time discrepancy为例:<br>
+<code>for</code> statement has a simple implement, <code>in</code> statement has a simple implement too.<br>
+然而，当几个简单的语句组合在一起，复杂性就产生了。除了语言的自洽性和正确性，又需要考虑到性能、异步等问题。</li>
+</ul>
 <h2 id="for-more">For more:</h2>
 <p>[我眼中一个好的Pythoneer应该具备的品质]*(<a href="https://zhuanlan.zhihu.com/p/33266239" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/33266239</a>)<br>
 <a href="https://www.gitbook.com/book/eastlakeside/interpy-zh/details" target="_blank" rel="external">Python进阶 - gitbook</a></p>
-<h2 id="tips">TIPS</h2>
-<ul>
-<li><code>you need to flush stdout periodically (e.g. sys.stdout.flush()). Python doesn't automatically do this even with print until the program exits.</code></li>
-</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://github.com/leisurelicht/wtfpython-cn#-return-return-everywhere%E5%88%B0%E5%A4%84%E8%BF%94%E5%9B%9E" target="_blank" rel="external">What the f*ck Python!</a> <a href="#fnref1" class="footnote-backref">↩</a> <a href="#fnref1:1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
 
       
     </div>
@@ -787,7 +1043,7 @@ b’\u304d’ き</p>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -798,7 +1054,7 @@ b’\u304d’ き</p>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -809,7 +1065,7 @@ b’\u304d’ き</p>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -885,7 +1141,7 @@ b’\u304d’ き</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-0-the-scope-of-a-variable-initialized-in-an-if-statement"><span class="nav-text">10.0 the scope of a variable initialized in an if statement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-exec与eval的奇特之处"><span class="nav-text">10.1 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-注意区分list-comprehension与generator"><span class="nav-text">10.2 注意区分list comprehension与generator！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-python-interpreter"><span class="nav-text">12. Python Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-python3-string"><span class="nav-text">13. Python3 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#style-guide"><span class="nav-text">Style guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#argument"><span class="nav-text">argument</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑判断"><span class="nav-text">逻辑判断</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-more"><span class="nav-text">For more:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">TIPS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-is-与-的区别"><span class="nav-text">0. is 与 ==的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-mutable-immutable"><span class="nav-text">1. mutable & immutable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-with-语句"><span class="nav-text">2. with 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-list参数传递"><span class="nav-text">3. list参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-python中函数的参数传递与可变长参数"><span class="nav-text">4*. Python中函数的参数传递与可变长参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#零-关键字参数-这个名字-在不同语境下-所指是不同的-及其容易弄混"><span class="nav-text">零、 “关键字参数”这个名字，在不同语境下，所指是不同的，及其容易弄混</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一-从实参的角度看"><span class="nav-text">一、 从实参的角度看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-从形参的角度看"><span class="nav-text">二、 从形参的角度看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#形参定义时-因该遵从的顺序"><span class="nav-text">形参定义时，因该遵从的顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-generator"><span class="nav-text">5. generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-zip-unpacking-argument-lists"><span class="nav-text">6. zip() & Unpacking Argument Lists——"*" & “**”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-iterable和iterator"><span class="nav-text">7. Iterable和Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-for"><span class="nav-text">8. for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-内存"><span class="nav-text">8. 内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-释放内存"><span class="nav-text">8.1. 释放内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-python类"><span class="nav-text">9. Python类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-和静态语言不同-python允许对实例变量绑定任何数据"><span class="nav-text">9.1. 和静态语言不同，Python允许对实例变量绑定任何数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-python的伪私有属性"><span class="nav-text">9.2. Python的伪私有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-私有变量的访问方法"><span class="nav-text">9.3. 私有变量的访问方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-特殊函数-call-模糊了对象与函数的区别"><span class="nav-text">9.4. 特殊函数__call__模糊了对象与函数的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5-类类型的检查-不检查"><span class="nav-text">9.5. 类类型的检查–不检查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-namespace-and-scope"><span class="nav-text">18. namespace and scope</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-闭包"><span class="nav-text">16. 闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包中内函数修改外函数局部变量"><span class="nav-text">闭包中内函数修改外函数局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量绑定给内函数"><span class="nav-text">变量绑定给内函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有什么用？"><span class="nav-text">有什么用？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-为什么-python-的类不构成作用域-scope-？-待深入"><span class="nav-text">10. 为什么 Python 的类不构成作用域（scope）？ 待深入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-scope-search-order"><span class="nav-text">10.1 scope search order:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-the-scope-of-a-variable-initialized-in-an-if-statement"><span class="nav-text">10.2 the scope of a variable initialized in an if statement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-3-exec与eval的奇特之处"><span class="nav-text">10.3 exec与eval的奇特之处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-4-注意区分list-comprehension与generator"><span class="nav-text">10.4 注意区分list comprehension与generator！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-5-类的方法与普通函数的区别"><span class="nav-text">10.5 类的方法与普通函数的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-super-and-mro"><span class="nav-text">11. super and MRO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-python-interpreter"><span class="nav-text">12. Python Interpreter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-python3-string"><span class="nav-text">13. Python3 String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-unicode"><span class="nav-text">13.1 unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-hex"><span class="nav-text">13.2 hex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-python-path"><span class="nav-text">14. python path</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个module应该只有一种方式import"><span class="nav-text">一个module应该只有一种方式import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-slots"><span class="nav-text">15. __slots__</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-myth-of-code-object"><span class="nav-text">17. myth of code object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-decorator"><span class="nav-text">19. decorator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-version"><span class="nav-text">basic version</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#style-guide"><span class="nav-text">Style guide</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#argument"><span class="nav-text">argument</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑判断"><span class="nav-text">逻辑判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-static-variable-to-function"><span class="nav-text">add static variable to function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">TIPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#thinking"><span class="nav-text">thinking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-more"><span class="nav-text">For more:</span></a></li></ol></div>
             
 
           </div>
@@ -913,7 +1169,7 @@ b’\u304d’ き</p>
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

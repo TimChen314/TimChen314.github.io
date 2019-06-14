@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TimChen" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="基本概念 ref: runoob sql   大小写敏感性  有个重要的点值得注意，SQLite 是不区分大小写的，但也有一些命令是大小写敏感的，比如 GLOB 和 glob 在 SQLite 的语句中有不同的含义。    注释  SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqlite note">
+<meta property="og:url" content="http://timchen314.com/sqlite/index.html">
+<meta property="og:site_name" content="TimChen">
+<meta property="og:description" content="基本概念 ref: runoob sql   大小写敏感性  有个重要的点值得注意，SQLite 是不区分大小写的，但也有一些命令是大小写敏感的，比如 GLOB 和 glob 在 SQLite 的语句中有不同的含义。    注释  SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sqlite note">
+<meta name="twitter:description" content="基本概念 ref: runoob sql   大小写敏感性  有个重要的点值得注意，SQLite 是不区分大小写的，但也有一些命令是大小写敏感的，比如 GLOB 和 glob 在 SQLite 的语句中有不同的含义。    注释  SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://timchen314.com/sqlite/"/>
+
+
+
+
+
+  <title>sqlite note | TimChen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TimChen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://timchen314.com/sqlite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tim Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head_portrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TimChen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sqlite note</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T18:00:00+08:00">
+                2018-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/sqlite/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="sqlite/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="基本概念">基本概念</h1>
+<p>ref: <a href="http://www.runoob.com/sqlite/sqlite-syntax.html" target="_blank" rel="external">runoob sql</a></p>
+<ul>
+<li>
+<p>大小写敏感性</p>
+<blockquote>
+<p>有个重要的点值得注意，SQLite 是不区分大小写的，但也有一些命令是大小写敏感的，比如 GLOB 和 glob 在 SQLite 的语句中有不同的含义。</p>
+</blockquote>
+</li>
+<li>
+<p>注释</p>
+<blockquote>
+<p>SQLite 注释是附加的注释，可以在 SQLite 代码中添加注释以增加其可读性，他们可以出现在任何空白处，包括在表达式内和其他 SQL 语句的中间，但它们不能嵌套。<br>
+SQL 注释以两个连续的 “-” 字符（ASCII 0x2d）开始，并扩展至下一个换行符（ASCII 0x0a）或直到输入结束，以先到者为准。<br>
+您也可以使用 C 风格的注释，以 “/<em>&quot; 开始，并扩展至下一个 &quot;</em>/” 字符对或直到输入结束，以先到者为准。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="main-database">main database<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<blockquote>
+<p>The “.databases” command shows a list of all databases open in the current connection. There will always be at least 2. The first one is “main”, the original database opened. The second is “temp”, the database used for temporary tables. There may be additional databases listed for databases attached using the ATTACH statement. The first output column is the name the database is attached with, and the second column is the filename of the external file.</p>
+</blockquote>
+<p>如果导入同一个库两次，<code>.table</code>会显示什么？</p>
+   <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sqlite&gt; .open test.db</div><div class="line">sqlite&gt; .database</div><div class="line">main: /Users/Aether/Documents/hexo_file/source/_posts/test.db</div><div class="line">sqlite&gt; ATTACH DATABASE 'test.db' as 'foo';</div><div class="line">sqlite&gt; .databases</div><div class="line">main: /Users/Aether/Documents/hexo_file/source/_posts/test.db</div><div class="line">foo: /Users/Aether/Documents/hexo_file/source/_posts/test.db</div><div class="line">sqlite&gt; .table</div><div class="line">COMPANY      foo.COMPANY</div></pre></td></tr></table></figure>
+<h2 id="回滚日志">回滚日志<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h2>
+<p>如果崩溃或断电发生在事务的中间某时刻，则在硬盘上会留有回滚日志。在下次另外一个应用程序尝试打开数据库文件时，它会通知存在回滚日志(“热日志”)，并使用日志中的信息来把数据库恢复到未完成事务开始之前的状态。这就是SQLite实现原子提交的基本原理。</p>
+<h2 id="temp">TEMP<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup></h2>
+<p>临时数据库文件总是在数据库连接关闭时自动删除。</p>
+<h2 id="字段类型">字段类型</h2>
+<blockquote>
+<p>SQLite是无类型的. 这意味着你可以保存任何类型的数据到你所想要保存的任何表的任何列中, 无论这列声明的数据类型是什么(只有自动递增Integer Primary Key才有用). 对于SQLite来说对字段不指定类型是完全有效的.<br>
+建表时声明啥类型或者不声明类型都可以,也就意味着创表语句可以这么写:create table if not exists  t_student(name, age);</p>
+</blockquote>
+<blockquote>
+<p>一般数据采用的固定的静态数据类型，而SQLite采用的是动态数据类型，会根据存入值自动判断。SQLite的数据存储类型有: integer (有符号整形), real (浮点值,以8字节IEEE浮点数存放), text(文本字符串,使用数据库编码UTF-8，UTF-16BE或者UTF-16LE存放), blob(是一个数据块,完全按照输入存放; 二进制数据,比如: 文件) 布尔类型 Sqlite没有单独的布尔存储类型，它使用INTEGER作为存储类型，0为false，1为true</p>
+</blockquote>
+<p><code>IS_OPENING BOOLEAN NOT NULL CHECK (IS_OPENING IN (0,1))</code></p>
+<blockquote>
+<p>NUMERIC类型：当文本数据被插入到亲缘性为NUMERIC的字段中时，如果转换操作不会导致数据信息丢失以及完全可逆，那么SQLite就会将该文本数据转换为INTEGER或REAL类型的数据，如果转换失败，SQLite仍会以TEXT方式存储该数据。对于NULL或BLOB类型的新数据，SQLite将不做任何转换，直接以NULL或BLOB的方式存储该数据。需要额外说明的是，对于浮点格式的常量文本，如&quot;30000.0&quot;，如果该值可以转换为INTEGER同时又不会丢失数值信息，那么SQLite就会将其转换为INTEGER的存储方式。</p>
+</blockquote>
+<blockquote>
+<p>Date 与 Time 数据类型<br>
+SQLite 没有一个单独的用于存储日期和/或时间的存储类，但 SQLite 能够把日期和时间存储为 TEXT、REAL 或 INTEGER 值。</p>
+</blockquote>
+<p>虽然可以不写类型，但为了以后方便理解，最好还是写上。</p>
+<h2 id="sqlite-master-sqlite-temp-master">sqlite_master &amp; sqlite_temp_master</h2>
+<p><a href="https://blog.csdn.net/runtime233/article/details/52439881" target="_blank" rel="external">sqlite查询库里所有表名</a><br>
+每一个 SQLite 数据库都有一个叫 SQLITE_MASTER 的表， 里面存储着数据库的数据结构（表结构、视图结构、索引结构等），只可以对他使用查询语句<br>
+SQLITE_MASTER 表DDL信息如下:<br>
+<code>CREATE TABLE sqlite_master (type TEXT,name TEXT,tbl_name TEXT,rootpage INTEGER,sql TEXT);</code></p>
+<p><code>SELECT name FROM sqlite_master WHERE type=’table’ ORDER BY name;</code></p>
+<ul>
+<li>NOTE: ‘TEMP’ is in sqlite_temp_master</li>
+</ul>
+<h2 id="sql语句的种类">SQL语句的种类</h2>
+<ul>
+<li>数据定义语句: (DDL:Data Definition Language)<br>
+包括create和drop等操作;   例如:在数据库中创建新表或删除表(create table或drop table)</li>
+<li>数据操作语句(DML:Data Manipulation Language)<br>
+包括insert、update、delete等操作(添加、修改(更新)、删除表中的数据)</li>
+<li>数据查询语句(DQL:Data Query Language)<br>
+可以用于查询获得表中的数据,  关键字select是DQL(也是所有SQL)用得最多的操作     其他DQL常用的关键字有where,order by,group by和having</li>
+</ul>
+<h2 id="transaction">transaction</h2>
+<ul>
+<li>BEGIN TRANSACTION：开始事务处理。</li>
+<li>COMMIT：保存更改，或者可以使用 END TRANSACTION 命令。</li>
+<li>ROLLBACK：回滚所做的更改。</li>
+<li><strong>By default, each INSERT statement is its own transaction. But if you surround multiple INSERT statements with BEGIN…COMMIT then all the inserts are grouped into a single transaction. The time needed to commit the transaction is amortized over all the enclosed insert statements and so the time per insert statement is greatly reduced.</strong></li>
+</ul>
+<h3 id="about-savepoint">about Savepoint</h3>
+<p>可以参考：<a href="https://blog.csdn.net/pfysw/article/details/80491463" target="_blank" rel="external">SQLite3源码学习（29） 用户事务和Savepoint</a></p>
+<h2 id="vacuum">VACUUM</h2>
+<p>通过复制主数据库中的内容到一个临时数据库文件，然后清空主数据库，并从副本中重新载入原始的数据库文件。这消除了空闲页，把表中的数据排列为连续的，另外会清理数据库文件结构。(ct: sqlite是以树结构存储数据的)</p>
+<h2 id="约束">约束</h2>
+<blockquote>
+<p>NOT NULL 约束：确保某列不能有 NULL 值。<br>
+DEFAULT 约束：当某列没有指定值时，为该列提供默认值。<br>
+UNIQUE 约束：确保某列中的所有值是不同的。<br>
+PRIMARY Key 约束：唯一标识数据库表中的各行/记录。<br>
+CHECK 约束：CHECK 约束确保某列中的所有值满足一定条件。</p>
+</blockquote>
+<blockquote>
+<p>SQLite 支持 ALTER TABLE 的有限子集。重命名列，删除一列，或从一个表中添加或删除约束都是不可能的!!!</p>
+</blockquote>
+<h1 id="操作">操作</h1>
+<h2 id="dot-command">dot command</h2>
+<p>你不能从Python中调用点命令，因为点命令是特定于命令行shell工具的。</p>
+<ul>
+<li><code>.schema table_name</code>: 列出创建表的语句。<code>.sch</code>也可以</li>
+<li><code>.tables</code>: 列出所有表名</li>
+<li><code>.headers on</code> 列出表头(column names)</li>
+</ul>
+<h2 id="command-line">command line</h2>
+<p><code>$sqlite3 testDB.db .dump &gt; testDB.sql</code></p>
+<h2 id="insert">INSERT</h2>
+<ul>
+<li>insert by python dictionary <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">values = &#123;<span class="string">'title'</span>:<span class="string">'jack'</span>, <span class="string">'type'</span>:<span class="keyword">None</span>, <span class="string">'genre'</span>:<span class="string">'Action'</span>, <span class="string">'onchapter'</span>:<span class="keyword">None</span>,<span class="string">'chapters'</span>:<span class="number">6</span>,<span class="string">'status'</span>:<span class="string">'Ongoing'</span>&#125;</div><div class="line">cur.execute(<span class="string">'INSERT INTO Media (id, title, type, onchapter, chapters, status) VALUES (:id, :title, :type, :onchapter, :chapters, :status);'</span>), values)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="attach">ATTACH</h2>
+<p>The ATTACH DATABASE statement adds another database file to the current database connection. Database files that were previously attached can be removed using the DETACH DATABASE command.</p>
+<h2 id="view-视图">VIEW(视图)</h2>
+<p>SQLite 视图是只读的，因此可能无法在视图上执行 DELETE、INSERT 或 UPDATE 语句。但是可以在视图上创建一个触发器，当尝试 DELETE、INSERT 或 UPDATE 视图时触发，需要做的动作在触发器内容中定义。</p>
+<p>最简单的视图：<br>
+<code>CREATE VIEW testview AS SELECT * FROM testtable WHERE first_col &gt; 100;</code>    <br>
+    <br>
+创建临时视图：<br>
+<code>sqlite&gt; CREATE TEMP VIEW tempview AS SELECT * FROM testtable WHERE first_col &gt; 100;</code></p>
+<p>“IF NOT EXISTS”<br>
+<code>sqlite&gt; CREATE VIEW IF NOT EXISTS testview AS SELECT * FROM testtable WHERE first_col &gt; 100;</code></p>
+<p>删除视图<br>
+<code>sqlite&gt; DROP VIEW IF EXISTS testview;</code></p>
+<h2 id="alter-table">ALTER TABLE</h2>
+<p>只有两个用法：</p>
+<ol>
+<li>重命名表<br>
+<code>ALTER TABLE database_name.table_name RENAME TO new_table_name;</code></li>
+<li>在已有的表中添加列<br>
+<code>ALTER TABLE database_name.table_name ADD COLUMN column_def...;</code><br>
+注意，新添加的列是以 NULL 值来填充的</li>
+</ol>
+<h2 id="select">select</h2>
+<ul>
+<li>
+<p>日期表达式<br>
+返回当前系统日期和时间值，注意是<strong>UTC+0时间</strong><br>
+<code>SELECT CURRENT_TIMESTAMP;</code></p>
+</li>
+<li>
+<p>例子<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sqlite&gt; SELECT * FROM COMPANY WHERE AGE &gt;= 25 OR SALARY &gt;= 65000;</div><div class="line">sqlite&gt;  SELECT * FROM COMPANY WHERE AGE IS NOT NULL;</div><div class="line">sqlite&gt; SELECT * FROM COMPANY WHERE AGE NOT IN ( 25, 27 ); /* 既不是 25 也不是 27 的所有记录 */</div><div class="line">sqlite&gt; SELECT * FROM COMPANY WHERE AGE BETWEEN 25 AND 27;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="update">UPDATE</h2>
+   <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sqlite&gt; UPDATE COMPANY SET ADDRESS = 'Texas' WHERE ID = 6;</div><div class="line">sqlite&gt; UPDATE COMPANY SET ADDRESS = 'Texas', SALARY = 20000.00; /* 修改所有 */</div></pre></td></tr></table></figure>
+<h3 id="update-multiple-rows">UPDATE multiple rows</h3>
+<p>参考：<br>
+<a href="https://stackoverflow.com/questions/11563869/update-multiple-rows-with-different-values-in-a-single-sql-query" target="_blank" rel="external">Update multiple rows with different values in a single SQL query</a><br>
+<a href="https://bbs.csdn.net/topics/392185187" target="_blank" rel="external">sqlite update 多行</a></p>
+<h2 id="delete">DELETE</h2>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sqlite&gt; DELETE FROM COMPANY WHERE ID = 7;</div><div class="line">sqlite&gt; DELETE FROM COMPANY; /* 删除所有 */</div></pre></td></tr></table></figure>
+<h2 id="字符串匹配">字符串匹配</h2>
+<p>GLOB大小写敏感；LIKE大小写不敏感</p>
+<h3 id="glob">GLOB</h3>
+<ul>
+<li>星号（*）<br>
+代表零个、一个或多个数字或字符。</li>
+<li>问号（?）<br>
+代表一个单一的数字或字符。这些符号可以被组合使用。</li>
+</ul>
+<h3 id="like">LIKE</h3>
+<ul>
+<li>百分号（%）<br>
+代表零个、一个或多个数字或字符。</li>
+<li>下划线（_）<br>
+代表一个单一的数字或字符。这些符号可以被组合使用。</li>
+</ul>
+<h2 id="python">python</h2>
+<h3 id="connection">connection<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></h3>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Fill the table</span></div><div class="line">persons = [</div><div class="line">    (<span class="string">"Hugo"</span>, <span class="string">"Boss"</span>),</div><div class="line">    (<span class="string">"Calvin"</span>, <span class="string">"Klein"</span>)</div><div class="line">    ]</div><div class="line">con.executemany(<span class="string">"insert into person(firstname, lastname) values (?, ?)"</span>, persons)</div><div class="line"></div><div class="line"><span class="comment"># Print the table contents</span></div><div class="line"><span class="keyword">for</span> row <span class="keyword">in</span> con.execute(<span class="string">"select firstname, lastname from person"</span>):</div><div class="line">    print(row)</div><div class="line">print(<span class="string">"I just deleted"</span>, con.execute(<span class="string">"delete from person"</span>).rowcount, <span class="string">"rows"</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>security<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup><br>
+Use <code>?</code> as a placeholder!<br>
+Use Python’s string operations to assemble a query makes program vulnerable to an SQL injection attack</p>
+</li>
+<li>
+<p>if connection is not closed</p>
+<blockquote>
+<p>When the connection is closed explicitly by code or implicitly by program exit then any outstanding transaction is rolled back.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="connection-as-a-context-manager">connection as a context manager<sup class="footnote-ref"><a href="#fn4" id="fnref4:1">[4]</a></sup></h4>
+<blockquote>
+<p>Connection objects can be used as context managers that automatically commit or rollback transactions. In the event of an exception, the transaction is rolled back; otherwise, the transaction is committed.</p>
+</blockquote>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Successful, con.commit() is called automatically afterwards</span></div><div class="line"><span class="keyword">with</span> con:</div><div class="line">    con.execute(<span class="string">"insert into person(firstname) values (?)"</span>, (<span class="string">"Joe"</span>,))</div><div class="line"><span class="comment"># con.rollback() is called after the with block finishes with an exception!</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">with</span> con:</div><div class="line">        con.execute(<span class="string">"insert into person(firstname) values (?)"</span>, (<span class="string">"Joe"</span>,))</div><div class="line"><span class="keyword">except</span> sqlite3.IntegrityError:</div><div class="line">    print(<span class="string">"couldn't add Joe twice"</span>)</div></pre></td></tr></table></figure>
+<h3 id="cursor">cursor</h3>
+<p>FIRST OF ALL: There’re two distinct ‘cursor’ concept:</p>
+<ul>
+<li>
+<p>In standard SQL, it’s like concept of iterator<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>:</p>
+<blockquote>
+<p>In computer science and technology, a database cursor is a control structure that enables traversal over the records in a database. Cursors facilitate subsequent processing in conjunction with the traversal, such as retrieval, addition and removal of database records. The database cursor characteristic of traversal makes cursors akin to the programming language concept of iterator.</p>
+</blockquote>
+</li>
+<li>
+<p>In sqlite module of python, it’s basically the same with connection. Or say, connection is a shortcut of cursor (make things easier).<sup class="footnote-ref"><a href="#fn6" id="fnref6:1">[6]</a></sup></p>
+<blockquote>
+<p>Connection.execute<br>
+This is a nonstandard shortcut that creates a cursor object by calling the cursor() method, calls the cursor’s execute() method with the parameters given, and returns the cursor.</p>
+</blockquote>
+<blockquote>
+<p>As long as you use the standard methods of the Cursor object, you can be sure that if you switch to another database implementation that follows the above specification, your code will be fully portable. Perhaps you will only need to change the import line.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="cursor-in-sqlite-module-of-python">cursor in sqlite module of python<sup class="footnote-ref"><a href="#fn6" id="fnref6:2">[6]</a></sup></h4>
+<blockquote>
+<p>Cursor objects allow you to keep track of which result set is which, since it’s possible to run multiple queries before you’re done fetching the results of the first.</p>
+</blockquote>
+<h3 id="commit">commit</h3>
+<p>ref: <a href="https://stackoverflow.com/questions/36243538/python-sqlite3-how-often-do-i-have-to-commit" target="_blank" rel="external">how often do I have to commit?</a></p>
+<ul>
+<li>
+<p>What concurrent readers see</p>
+<blockquote>
+<p>When a change to the database is committed, it becomes visible for other connections. Unless it is committed, it remains visible only locally for the connection to which the change was done. Because of the limited concurrency features of sqlite, the database can only be read while a transaction is open.</p>
+</blockquote>
+</li>
+<li>
+<p>balance between Performance and Exclusively locking the database</p>
+<blockquote>
+<p>Actually, SQLite will easily do 50,000 or more INSERT statements per second on an average desktop computer. But it will only do a few dozen transactions per second.</p>
+</blockquote>
+</li>
+<li>
+<p>sqlite3 in python<br>
+By default, the ‘isolation_level’ parameter of a connection is set as DEFERRED.<br>
+Set ‘isolation_level’ to ‘None’, this will leave the underlying sqlite3 library operating in autocommit mode. (autocommit mode means that statements that modify the database take effect immediately.)</p>
+</li>
+</ul>
+<h3 id="read-datetime-datetime-from-sqlite3">read datetime.datetime from sqlite3<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></h3>
+<p>for more about read datetime.datetime or even adapter, see doc: <a href="https://docs.python.org/3/library/sqlite3.html#default-adapters-and-converters" target="_blank" rel="external">DB-API 2.0 interface for SQLite databases</a></p>
+<p>建立connect时加上<code>detect_types=sqlite3.PARSE_DECLTYPES</code>, 就可以直接读写datetime类型:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; db = sqlite3.connect(<span class="string">'test.db'</span>, detect_types=sqlite3.PARSE_DECLTYPES)</div><div class="line">   &gt;&gt;&gt; c = db.cursor()</div><div class="line">   &gt;&gt;&gt; c.execute(<span class="string">'create table foo (bar integer, baz timestamp)'</span>)</div><div class="line">&lt;sqlite3.Cursor object at <span class="number">0x40fc50</span>&gt;</div><div class="line">   &gt;&gt;&gt; c.execute(<span class="string">'insert into foo values(?, ?)'</span>, (<span class="number">23</span>, datetime.datetime.now()))</div></pre></td></tr></table></figure>
+<h4 id="using-adapters-to-store-additional-python-types">Using adapters to store additional Python types<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></h4>
+<ul>
+<li>
+<p>simple example<br>
+read &amp; write boolean directly:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sqlite3.register_adapter(bool, int)</div><div class="line">sqlite3.register_converter(<span class="string">"BOOLEAN"</span>, <span class="keyword">lambda</span> v: bool(int(v)))</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>define <code>__conform__</code> in your class</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span></div><div class="line">        self.x, self.y = x, y</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__conform__</span><span class="params">(self, protocol)</span>:</span></div><div class="line">        <span class="keyword">if</span> protocol <span class="keyword">is</span> sqlite3.PrepareProtocol:</div><div class="line">            <span class="keyword">return</span> <span class="string">"%f;%f"</span> % (self.x, self.y)</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>register an adapter callable</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">adapt_point</span><span class="params">(point)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"%f;%f"</span> % (point.x, point.y)</div><div class="line">sqlite3.register_adapter(Point, adapt_point)</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>datatime.date and datetime.datetime can be directly written to sqlite3</p>
+<blockquote>
+<p>sqlite3 module has two default adapters for Python’s built-in datetime.date and datetime.datetime types.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="pragma">PRAGMA</h3>
+<p><code>cur.execute(&quot;PRAGMA table_info('my_table_name')&quot;).fetchall()</code><br>
+返回值是a list of tuple; tuple分别含有下列元素：<br>
+cid name type notnull dflt_value pk<br>
+e.g.:<br>
+<code>[(0, 'ORDER_IN_PAIR_UTCTIME', 'TIMESTAMP', 1, None, 0)]</code></p>
+<h3 id="dot-command-in-python">dot command in python</h3>
+<p>First of all, dot command is just for sql shell.</p>
+<ul>
+<li><code>.schema</code> – corresponding to PRAGMA</li>
+</ul>
+<h3 id="参数占位">参数占位</h3>
+<h1 id="best-practice">Best Practice</h1>
+<h2 id="don-t-use-autoincrement">Don’t use autoincrement<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup></h2>
+<ol>
+<li>If ‘WITHOUT ROWID’ option isn’t specified, you always get an implicit auto increment column called rowid.</li>
+<li>If you don’t specify the rowid value or use a NULL value when you insert a new row, SQLite assigns an integer that is one larger than the largest rowid in the table.</li>
+<li>The maximum value of rowid column is 9223372036854775807.</li>
+<li>diference between ‘autoincrement’ and ‘rowid’: ‘autoincrement’ only complains when rowid is overflow.</li>
+</ol>
+<h1 id="reference">reference</h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://stackoverflow.com/questions/7313190/how-to-name-an-sqlite-database-so-it-doesnt-have-the-default-name-of-main" target="_blank" rel="external">How to name an SQLite database so it doesn’t have the default name of main?</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://blog.csdn.net/zhuhongshu/article/details/61202108" target="_blank" rel="external">SQLite剖析之临时文件、内存数据库</a> <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="http://www.runoob.com/sqlite/sqlite-where-clause.html" target="_blank" rel="external">SQLite Where 子句</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://docs.python.org/3/library/sqlite3.html#using-sqlite3-efficiently" target="_blank" rel="external">using-sqlite3-efficiently</a> <a href="#fnref4" class="footnote-backref">↩</a> <a href="#fnref4:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://docs.python.org/3.7/library/sqlite3.html" target="_blank" rel="external">sqlite3 — DB-API 2.0 interface for SQLite databases</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p><a href="https://stackoverflow.com/questions/6318126/why-do-you-need-to-create-a-cursor-when-querying-a-sqlite-database/30464446" target="_blank" rel="external">Why do you need to create a cursor when querying a sqlite database?</a> <a href="#fnref6" class="footnote-backref">↩</a> <a href="#fnref6:1" class="footnote-backref">↩</a> <a href="#fnref6:2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a href="https://stackoverflow.com/questions/1829872/how-to-read-datetime-back-from-sqlite-as-a-datetime-instead-of-string-in-python" target="_blank" rel="external">How to read datetime back from sqlite as a datetime instead of string in Python?</a> <a href="#fnref7" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p><a href="https://docs.python.org/3/library/sqlite3.html#using-adapters-to-store-additional-python-types-in-sqlite-databases" target="_blank" rel="external">Using adapters to store additional Python types in SQLite databases</a> <a href="#fnref8" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p><a href="http://www.sqlitetutorial.net/sqlite-autoincrement/" target="_blank" rel="external">SQLite AUTOINCREMENT : Why You Should Avoid Using It</a> <a href="#fnref9" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>谢谢~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay2D_small.png" alt="Tim Chen Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Tim Chen
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://timchen314.com/sqlite/" title="sqlite note">http://timchen314.com/sqlite/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/pandas/" rel="next" title="pandas note">
+                <i class="fa fa-chevron-left"></i> pandas note
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Web/" rel="prev" title="Web Learning Note">
+                Web Learning Note <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head_portrait.jpg"
+               alt="Tim Chen" />
+          <p class="site-author-name" itemprop="name">Tim Chen</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/TimChen314" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情站点
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://boism.org" title="浅乎" target="_blank">浅乎</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://jiaxm.me" title="贾士奇" target="_blank">贾士奇</a>
+                </li>
+              
+            </ul>
+          </div>
+<!-- <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2041358705&auto=1&height=90"></iframe>
+        </div>  -->
+
+
+
+
+
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#main-database"><span class="nav-text">main database[1]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回滚日志"><span class="nav-text">回滚日志[2]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#temp"><span class="nav-text">TEMP[2]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字段类型"><span class="nav-text">字段类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlite-master-sqlite-temp-master"><span class="nav-text">sqlite_master & sqlite_temp_master</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql语句的种类"><span class="nav-text">SQL语句的种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transaction"><span class="nav-text">transaction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#about-savepoint"><span class="nav-text">about Savepoint</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vacuum"><span class="nav-text">VACUUM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#约束"><span class="nav-text">约束</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作"><span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dot-command"><span class="nav-text">dot command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#command-line"><span class="nav-text">command line</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#insert"><span class="nav-text">INSERT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attach"><span class="nav-text">ATTACH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#view-视图"><span class="nav-text">VIEW(视图)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alter-table"><span class="nav-text">ALTER TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select"><span class="nav-text">select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update"><span class="nav-text">UPDATE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#update-multiple-rows"><span class="nav-text">UPDATE multiple rows</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串匹配"><span class="nav-text">字符串匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#glob"><span class="nav-text">GLOB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#like"><span class="nav-text">LIKE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python"><span class="nav-text">python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#connection"><span class="nav-text">connection[4]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#connection-as-a-context-manager"><span class="nav-text">connection as a context manager[4]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cursor"><span class="nav-text">cursor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cursor-in-sqlite-module-of-python"><span class="nav-text">cursor in sqlite module of python[6]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commit"><span class="nav-text">commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read-datetime-datetime-from-sqlite3"><span class="nav-text">read datetime.datetime from sqlite3[7]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#using-adapters-to-store-additional-python-types"><span class="nav-text">Using adapters to store additional Python types[8]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pragma"><span class="nav-text">PRAGMA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dot-command-in-python"><span class="nav-text">dot command in python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数占位"><span class="nav-text">参数占位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#best-practice"><span class="nav-text">Best Practice</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#don-t-use-autoincrement"><span class="nav-text">Don’t use autoincrement[9]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+<div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tim Chen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://timchen314.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://timchen314.com/sqlite/';
+          this.page.identifier = 'sqlite/';
+          this.page.title = 'sqlite note';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://timchen314.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('5');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

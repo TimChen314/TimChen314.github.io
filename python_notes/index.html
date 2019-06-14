@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="[TOC] Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python notes">
 <meta name="twitter:description" content="[TOC] Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.[1]">
@@ -414,8 +414,10 @@
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
 <a id="more"></a>
 <h2 id="python-syntax">Python Syntax</h2>
-<h3 id="python-doc"><a href="https://docs.python.org" target="_blank" rel="external">Python doc</a></h3>
-<h3 id="builtin-functions-import-builtins"><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">builtin functions</a> (import builtin<strong>s</strong>)</h3>
+<h3 id="python-doc">Python doc</h3>
+<p><a href="https://docs.python.org" target="_blank" rel="external">Python doc</a></p>
+<h3 id="builtin-function">builtin function</h3>
+<p><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">builtin functions</a> (import builtin<strong>s</strong>)</p>
 <table>
 <thead>
 <tr>
@@ -527,7 +529,7 @@ Python features a dynamic type system and automatic memory management and suppor
 </tr>
 </tbody>
 </table>
-<h3 id="dict">dict</h3>
+<h4 id="dict">dict</h4>
 <ul>
 <li>
 <p>mydict.items() 将项以list返回<br>
@@ -535,12 +537,26 @@ Python features a dynamic type system and automatic memory management and suppor
 </li>
 <li>
 <p>check if dict has element<br>
-Note: I think this method is not easy to read for noobs</p>
+Note: I think this method is not easy to read for noobs.<br>
+为了方便记忆，可以将<code>bool()</code>读作有东西，例如：<br>
+<code>if bool(mydict):</code>可以独坐如果<code>mydict</code>中有东西;<br>
+<code>if not bool(mylist):</code>可以独坐如果<code>mylist</code>中有东西</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; mydict = &#123;&#125;</div><div class="line">   &gt;&gt;&gt; bool(mydict)</div><div class="line">False</div></pre></td></tr></table></figure>
 </li>
 <li>
 <p><s>iteriterms()返回迭代器，节省内存</s> <strong>Only for python2</strong></p>
 </li>
+<li>
+<p>dict.pop()<br>
+<code>pop(key[,default])</code><br>
+key: 要删除的键值<br>
+default: 如果没有 key，返回 default 值</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mydict.pop(<span class="string">'mykey'</span>, <span class="keyword">None</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>PS: 或者也可以:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> key <span class="keyword">in</span> mydict:</div><div class="line">    <span class="keyword">del</span> mydict[key]</div></pre></td></tr></table></figure>
+<ul>
 <li>
 <p>dict comprehension</p>
 <ul>
@@ -548,8 +564,25 @@ Note: I think this method is not easy to read for noobs</p>
 <code>{k: v for k, v in points.items() if v[0] &lt; 5 and v[1] &lt; 5}</code></li>
 </ul>
 </li>
+<li>
+<p>dict.get()<br>
+doc:<br>
+dict.get(k[,d]) -&gt; dict[k] if k in dict, else d.  d defaults to None.<br>
+Note taht if k is not in dict, dict.get won’t add k to dict</p>
+</li>
+<li>
+<p>dict initialize<br>
+Following two ways are equivalent:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myd = dict(age=<span class="number">27</span>)</div><div class="line">myd = &#123;<span class="string">"age"</span>:<span class="number">27</span>&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h4 id="max"><a href="https://docs.python.org/3/library/functions.html#max" target="_blank" rel="external">max()</a></h4>
+<h4 id="tuple">tuple</h4>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">my_tuple = (<span class="string">'haha'</span>,)  <span class="comment"># This is the right way to initialize an one-element tuple </span></div><div class="line">var = (<span class="string">'haha'</span>)</div><div class="line">type(var)  <span class="comment"># result is string</span></div></pre></td></tr></table></figure>
+<h4 id="set">set</h4>
+<p>交集，并集，差集，对称差集:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">s1 &amp; s2</div><div class="line">s1 | s2</div><div class="line">s1 - s2</div><div class="line">s1 ^ s2</div></pre></td></tr></table></figure>
+<h4 id="max">max()</h4>
+<p><a href="https://docs.python.org/3/library/functions.html#max" target="_blank" rel="external">max()</a></p>
 <blockquote>
 <p>max(iterable, *[, key, default])<br>
 max(arg1, arg2, *args[, key])</p>
@@ -574,6 +607,11 @@ max(arg1, arg2, *args[, key])</p>
 <p>Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:</p>
 </blockquote>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">all</span><span class="params">(iterable)</span>:</span></div><div class="line">    <span class="keyword">for</span> element <span class="keyword">in</span> iterable:</div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> element:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<h4 id="eval-repr">eval/repr</h4>
+<p><code>repr</code>将<code>obj</code>转化为字符串格式。<br>
+<code>obj==eval(repr(obj))</code><br>
+example of <code>repr</code>:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; dict = &#123;<span class="string">'runoob'</span>: <span class="string">'runoob.com'</span>, <span class="string">'google'</span>: <span class="string">'google.com'</span>&#125;;</div><div class="line">   &gt;&gt;&gt; repr(dict)</div><div class="line"><span class="string">"&#123;'google': 'google.com', 'runoob': 'runoob.com'&#125;"</span></div></pre></td></tr></table></figure>
 <h4 id="filter">filter</h4>
 <p>把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。<br>
 python3起，filter 函数返回的对象从列表改为 filter object（迭代器）。</p>
@@ -588,7 +626,7 @@ python3起，filter 函数返回的对象从列表改为 filter object（迭代�
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i,line <span class="keyword">in</span> enumerate(mylist):</div><div class="line">    ...</div></pre></td></tr></table></figure>
 <p><strong>line是元组</strong></p>
 <h4 id="next-iterator-default">next(iterator[, default])</h4>
-<h3 id="print">print</h3>
+<h4 id="print">print</h4>
 <ul>
 <li><code>print(end='str')</code></li>
 </ul>
@@ -655,11 +693,25 @@ list comprehension是将：</p>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="string">'www.example.com'</span>.strip(<span class="string">'cmowz.'</span>) </div><div class="line"><span class="string">'example'</span></div></pre></td></tr></table></figure>
 <h4 id="2-format">2. format</h4>
 <ul>
-<li><code>'{0:.2f} {1:s} {2:d}'.format( v0[,v1[v2...] )</code></li>
-<li><code>'{:,.2f}'</code>中逗号表示较大的数字用逗号分隔，比如100万: <code>1, 000, 000</code></li>
-<li>可以使用关键词</li>
-<li>应用时转化：{!s}、{!r}</li>
-<li>旧式字符串格式化符号是 %，如：{0:%.4f}</li>
+<li>
+<p>significant digital(有效数字)</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; format(<span class="number">12.456789</span>, <span class="string">'.3g'</span>)</div><div class="line"><span class="string">'12.5'</span></div><div class="line">   &gt;&gt;&gt; format(<span class="number">12.456789</span>, <span class="string">'.3f'</span>)</div><div class="line"><span class="string">'12.457'</span></div><div class="line">   &gt;&gt;&gt; format(<span class="number">12.456789</span>, <span class="string">'.3e'</span>)</div><div class="line"><span class="string">'1.246e+01'</span></div><div class="line">   &gt;&gt;&gt; format(<span class="number">12.456789</span>, <span class="string">'.3%'</span>)</div><div class="line"><span class="string">'1245.679%'</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>'{0:.2f} {1:s} {2:d}'.format( v0[,v1[v2...] )</code></p>
+</li>
+<li>
+<p><code>'{:,.2f}'</code>中逗号表示较大的数字用逗号分隔，比如100万: <code>1, 000, 000</code></p>
+</li>
+<li>
+<p>可以使用关键词</p>
+</li>
+<li>
+<p>应用时转化：{!s}、{!r}</p>
+</li>
+<li>
+<p>旧式字符串格式化符号是 %，如：{0:%.4f}</p>
+</li>
 </ul>
 <h5 id="custom-object-define-format-in-a-class">custom object(define __format__ in a class)</h5>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HAL9000</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__format__</span><span class="params">(self, format)</span>:</span></div><div class="line">        <span class="keyword">if</span> (format == <span class="string">'open-the-pod-bay-doors'</span>):</div><div class="line">            <span class="keyword">return</span> <span class="string">"I'm afraid I can't do that."</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'HAL 9000'</span></div></pre></td></tr></table></figure>
@@ -694,6 +746,28 @@ list comprehension是将：</p>
 </blockquote>
 </li>
 </ul>
+<h3 id="or-and-operator">or / and operator</h3>
+<p>ref: <a href="https://www.quora.com/How-do-the-and-and-or-operators-work-in-Python" target="_blank" rel="external">How do the “and” and “or” operators work in Python?</a><br>
+two additional functionality:</p>
+<ul>
+<li>short circuiting(短路求值) <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> param <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> param[<span class="string">'foo'</span>] == <span class="number">3</span>:</div><div class="line">	<span class="keyword">pass</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>becasue of short circuiting, even if <code>param</code> doesn’t exist,  <code>param['foo']</code> won’t report error.</p>
+<ul>
+<li>
+<p>Objects can have a boolean value</p>
+<blockquote>
+<p>Objects can have a boolean value, and boolean operators respect that.</p>
+</blockquote>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">my_list = [<span class="string">"abc"</span>, <span class="string">"123"</span>]</div><div class="line">[<span class="string">"abc"</span>, <span class="string">"123"</span>] <span class="keyword">or</span> []</div><div class="line">   &gt;&gt;&gt; [<span class="string">"abc"</span>, <span class="string">"123"</span>]</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>short circuiting when objects have a boolean value<br>
+Still take a list as an example:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[] <span class="keyword">and</span> [<span class="string">"abc"</span>, <span class="string">"123"</span>]</div><div class="line">   &gt;&gt;&gt; []</div><div class="line"><span class="comment">#<span class="doctag">NOTE:</span></span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>] <span class="keyword">and</span> [<span class="string">"abc"</span>, <span class="string">"123"</span>]</div><div class="line">   &gt;&gt;&gt; [<span class="string">"abc"</span>, <span class="string">"123"</span>]</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <h3 id="ternary-operator">ternary operator</h3>
    <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result=<span class="string">'5 is larger than 3'</span> <span class="keyword">if</span> <span class="number">5</span>&gt;<span class="number">3</span> <span class="keyword">else</span> <span class="string">'5 is not larger than 3'</span></div></pre></td></tr></table></figure>
 <h3 id="deep-copy">deep copy</h3>
@@ -711,193 +785,55 @@ list comprehension是将：</p>
 </ol>
 </li>
 </ul>
-<h2 id="module">module</h2>
-<p><a href="http://funhacks.net/2016/12/27/regular_expression/#match-%E6%96%B9%E6%B3%95" target="_blank" rel="external">Python 正则表达式 re 模块</a></p>
-<h3 id="heapq-heap-queue-algorithm">heapq (Heap queue algorithm)</h3>
-<ul>
-<li>nlargest/nsmallest <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">nums = [<span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">23</span>, <span class="number">7</span>, <span class="number">-4</span>, <span class="number">18</span>, <span class="number">23</span>, <span class="number">42</span>, <span class="number">37</span>, <span class="number">2</span>]</div><div class="line">heapq.nlargest(<span class="number">3</span>, nums)</div><div class="line"><span class="comment"># or more complicated:</span></div><div class="line">portfolio = [</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'IBM'</span>, <span class="string">'shares'</span>: <span class="number">100</span>, <span class="string">'price'</span>: <span class="number">91.1</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'AAPL'</span>, <span class="string">'shares'</span>: <span class="number">50</span>, <span class="string">'price'</span>: <span class="number">543.22</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'FB'</span>, <span class="string">'shares'</span>: <span class="number">200</span>, <span class="string">'price'</span>: <span class="number">21.09</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'HPQ'</span>, <span class="string">'shares'</span>: <span class="number">35</span>, <span class="string">'price'</span>: <span class="number">31.75</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'YHOO'</span>, <span class="string">'shares'</span>: <span class="number">45</span>, <span class="string">'price'</span>: <span class="number">16.35</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'ACME'</span>, <span class="string">'shares'</span>: <span class="number">75</span>, <span class="string">'price'</span>: <span class="number">115.65</span>&#125;</div><div class="line">]</div><div class="line">cheap = heapq.nsmallest(<span class="number">3</span>, portfolio, key=<span class="keyword">lambda</span> s: s[<span class="string">'price'</span>])</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="re-module">re module</h3>
-<ol>
-<li>
-<p>replace(str1, str2)</p>
-</li>
-<li>
-<p>compile(r’[0-9]+’)<br>
-Usage:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">pattern = re.compile(<span class="string">r'[0-9]+'</span>)</div><div class="line">frist_number = pattern.match(your_str).group(<span class="number">0</span>)</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>split()</p>
-<blockquote>
-<p>string 对象的 split() 方法只适应于非常简单的字符串分割情形， 它并不允许有多个分隔符或者是分隔符周围不确定的空格。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; line = <span class="string">'asdf fjdk; afed, fjek,asdf, foo'</span></div><div class="line">   &gt;&gt;&gt; re.split(<span class="string">r'[;,\s]\s*'</span>, line)</div><div class="line">[<span class="string">'asdf'</span>, <span class="string">'fjdk'</span>, <span class="string">'afed'</span>, <span class="string">'fjek'</span>, <span class="string">'asdf'</span>, <span class="string">'foo'</span>]</div></pre></td></tr></table></figure>
-<blockquote>
-<p>当你使用 re.split() 函数时候，需要特别注意的是正则表达式中是否包含一个括号捕获分组。 如果使用了捕获分组，那么被匹配的文本也将出现在结果列表中。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; fields = re.split(<span class="string">r'(;|,|\s)\s*'</span>, line)</div><div class="line">   &gt;&gt;&gt; fields</div><div class="line">[<span class="string">'asdf'</span>, <span class="string">' '</span>, <span class="string">'fjdk'</span>, <span class="string">';'</span>, <span class="string">'afed'</span>, <span class="string">','</span>, <span class="string">'fjek'</span>, <span class="string">','</span>, <span class="string">'asdf'</span>, <span class="string">','</span>, <span class="string">'foo'</span>]</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="sys-module">sys module</h3>
-<ul>
-<li>sys.version/version_info(version_info is a object)</li>
-</ul>
-<h3 id="os-module">os module</h3>
-<h4 id="1-about-path">1. about path</h4>
-<p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="external">os.path模块</a></p>
-<ul>
-<li>
-<p>about path</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">os.getcwd()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.listdir()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.path.exist   <span class="comment">#determine if a file or dir exists</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>os.remove<br>
-remove a file; if file does not exists, an Error will be throwed out.</p>
-</li>
-<li>
-<p>os.rmdir<br>
-remove a dir</p>
-</li>
-<li>
-<p>os.path.splitext(path)<br>
-Split the pathname path into a pair (root, ext)</p>
-</li>
-<li>
-<p>os.path.basename(your_path)</p>
-</li>
-</ul>
-<h4 id="2-os-popen">2. <s>os.popen</s></h4>
-<ol>
-<li>
-<p><strong>shell cmd is executed in background and you can’t change it</strong></p>
-</li>
-<li>
-<p>inplemented by <em>subprocess.Popen</em>, so why not you use <em>subprocess</em>?</p>
-</li>
-</ol>
-<p><a href="https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen" target="_blank" rel="external">python doc</a></p>
-<h3 id="time-calendar">time &amp; calendar</h3>
-<p><a href="http://www.runoob.com/python/python-date-time.html" target="_blank" rel="external">Python 日期和时间 runoob</a></p>
-<ul>
-<li>time.time()	<br>
-Return the current time in seconds since the Epoch.</li>
-<li>mktime(tupletime)</li>
-<li>localtime()		<br>
-Convert seconds since the Epoch to a time tuple expressing local time.<br>
-When ‘seconds’ is not passed in, convert the current time instead.</li>
-<li>strftime()	<br>
-strftime(format[, tuple]) -&gt; string</li>
-<li>strptime()	<br>
-strptime(string, format) -&gt; struct_time	<br>
-Parse a string to a time tuple according to a format specification.</li>
-<li>time.sleep(secs)</li>
-<li>calendar.isleap(year)</li>
-<li>calendar.weekday(year,month,day)</li>
-</ul>
-<h3 id="subprocess-module">subprocess module</h3>
-<p><a href="https://docs.python.org/3.5/library/subprocess.html?highlight=subprocess#frequently-used-arguments" target="_blank" rel="external">python doc</a></p>
-<h4 id="1-for-cmd-that-needn-t-stdout">1.  For cmd that needn’t stdout</h4>
-<p><code>subprocess.run(&quot;cp standard_py/*py .&quot;, shell=True, check=True)</code></p>
-<ul>
-<li><em>shell=True</em><br>
-you can use a string instead of a series of args!</li>
-<li><em>check=True</em><br>
-throw an Error if shell cmd exit wrong!</li>
-</ul>
-<h4 id="2-for-cmd-needing-stdout">2. For cmd needing stdout</h4>
-<p>An example:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ret = subprocess.run(<span class="string">"ls standard_py/*py"</span>, shell=<span class="keyword">True</span>, check=<span class="keyword">True</span>, universal_newlines=<span class="keyword">True</span>, stdout=PIPE)</div><div class="line">print(ret.stdout, end=<span class="string">""</span>)</div></pre></td></tr></table></figure>
-<ul>
-<li>
-<p><em>universal_newlines=True</em><br>
-stdout<br>
-Captured stdout from the child process. A bytes sequence, or a string if run() was called with universal_newlines=True. None if stdout was not captured.</p>
-</li>
-<li>
-<p>stdout=PIPE<br>
-without this argument, stdout will be printed as stdout of python script, instead of captured, as from python doc:</p>
-<blockquote>
-<p>This(ct: means <em>run</em>) does not capture stdout or stderr by default. To do so, pass PIPE for the stdout and/or stderr arguments.</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="glob-module">glob module</h3>
-<p>The glob module finds all the pathnames matching a specified pattern</p>
-<ul>
-<li>glob.glob(pathname, *, recursive=False)</li>
-<li>glob.iglob(pathname, recursive=False)<br>
-Return an iterator which yields the same values as glob()</li>
-</ul>
-<h3 id="collections-module-廖雪峰"><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431953239820157155d21c494e5786fce303f3018c86000" target="_blank" rel="external">collections module 廖雪峰</a></h3>
-<ul>
-<li>
-<p>Counter</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; Counter([<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>])</div><div class="line">Counter(&#123;<span class="number">1</span>: <span class="number">5</span>, <span class="number">2</span>: <span class="number">3</span>, <span class="number">3</span>: <span class="number">2</span>&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><a href="https://docs.python.org/3.5/library/collections.html" target="_blank" rel="external">deque (double-ended queue, pronounced as ‘Deck’)</a><br>
-doc: <code>deque([iterable[, maxlen]])</code><br>
-method: pop(popleft) / append / extend; clear / copy (It’s shadow copy  ) / insert / remove; count / index ; reverse / rotate</p>
-</li>
-<li>
-<p>OrderedDict<br>
-This dict will record the <strong>insert</strong> order!</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">dic = collections.OrderedDict()</div><div class="line">dic[<span class="string">'k1'</span>] = <span class="string">'v1'</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="pil">PIL</h3>
-<ul>
-<li><code>img = Image.open(‘origin.png’) #支持多种格式</code><br>
-注意：类似于.htm和.html，.jpg和.jpeg没有区别，只是两种写法</li>
-<li>font<br>
-<code>font = ImageFont.truetype(&quot;FreeMono.ttf&quot;, 28, encoding=&quot;unic&quot;)</code></li>
-<li><code>img2.save('./test_image_data/cat_001_blur.jpeg','jpeg')</code> #save(‘path’,‘format’)</li>
-<li>resize()、rotate()、convert(mode=‘your_mode’)</li>
-<li>Coordinates (0, 0) in the upper left corner.</li>
-<li><code>draw = ImageDraw.Draw(img)</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#img is from:</div><div class="line">#img = Image.open(&apos;./test_image_data/cat_001.jpg&apos;)</div><div class="line">draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first parameter is the start point of the draw</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="random-doc">random <a href="https://docs.python.org/3/library/random.html" target="_blank" rel="external">doc</a></h3>
-<ul>
-<li>random.seed(a=None, version=2)</li>
-</ul>
-<h4 id="functions-for-integers">functions for integers</h4>
-<ul>
-<li>random.randrange(start, stop[, step])</li>
-<li>random.randint(a, b)
-<blockquote>
-<p>return a random integer N such that a &lt;= N &lt;= b. Alias for randrange(a, b+1).</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="real-valued-distributions">real-valued distributions</h4>
-<ul>
-<li>random.random()
-<blockquote>
-<p>Return the next random floating point number in the range [0.0, 1.0).</p>
-</blockquote>
-</li>
-<li>random.uniform(a, b)</li>
-<li>random.gauss(mu, sigma)</li>
-</ul>
-<h3 id="shutil">shutil</h3>
-<blockquote>
-<p>The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.</p>
-</blockquote>
-<p><code>shutil.copyfile(src, dst)</code></p>
-<h3 id="logging">logging<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>  <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h3>
-<ul>
-<li>A sample example:<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line">logging.warning(<span class="string">'Watch out!'</span>)  <span class="comment"># will print a message to the console</span></div><div class="line">logging.info(<span class="string">'I told you so'</span>)  <span class="comment"># will not print anything</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>result is : <code>WARNING:root:Watch out!</code></p>
-<ul>
-<li>Used in program:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import logging</div><div class="line"></div><div class="line">logger = logging.getLogger()</div><div class="line">handler = logging.StreamHandler()</div><div class="line">formatter = logging.Formatter(</div><div class="line">        &apos;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&apos;)</div><div class="line">handler.setFormatter(formatter)</div><div class="line">logger.addHandler(handler)</div><div class="line">logger.setLevel(logging.DEBUG)</div><div class="line"></div><div class="line">logger.debug(&apos;often makes a very good meal of %s&apos;, &apos;visiting tourists&apos;)</div></pre></td></tr></table></figure>
 <h2 id="other-useful-things">other useful things</h2>
+<h3 id="try-exception">try-exception</h3>
+<p>ref: <a href="https://stackoverflow.com/questions/16138232/is-it-a-good-practice-to-use-try-except-else-in-python" target="_blank" rel="external">Is it a good practice to use try-except-else in Python? (Answer is: Yes)</a></p>
+<ol>
+<li>
+<p>这种用法是标准用法</p>
+</li>
+<li>
+<p>so-called race-condition<br>
+如果用<code>if</code>语句，错误可能出现在你检测之后，问题才出现（比如你检查磁盘是否有足够空间，可能你检查之后，磁盘又没有空间了）。try-exception则没有这个问题。</p>
+</li>
+<li>
+<p>try-exception is very efficient<br>
+CPython already implements code for exception checking at every step, regardless of whether you actually use exceptions or not</p>
+</li>
+<li>
+<p><code>finally:</code> 之后的语句一定会被执行，哪怕之前已经执行了<code>return</code>语句! <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<blockquote>
+<p><code>finally</code> will execute no matter what, even if another line is being evaluated with a return statement.</p>
+</blockquote>
+</li>
+</ol>
+<p>e.g.<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3]</a></sup>:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    try_this(whatever)</div><div class="line"><span class="keyword">except</span> SomeException <span class="keyword">as</span> the_exception:</div><div class="line">    handle_SomeException(the_exception)</div><div class="line"><span class="keyword">else</span>: </div><div class="line">    <span class="keyword">return</span> something()</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    <span class="keyword">return</span> <span class="keyword">True</span></div></pre></td></tr></table></figure>
+<p>NOTE: 这个过程中，<code>something()</code>将会被调用执行，但不会被返回！因为<code>finally</code>劫持了程序，最终返回值为<code>True</code>.</p>
+<ol start="5">
+<li>
+<p><code>raise</code> or <code>raise ... from</code>! Don’t <code>raise Error</code><br>
+Always <code>raise</code> (not <code>raise Error</code>) because in this way stacktrace will be kept.<br>
+Or <code>raise ... from</code>, this can preserve the backtrace with exception chaining too:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    try_this(whatever)</div><div class="line"><span class="keyword">except</span> SomeException <span class="keyword">as</span> the_exception:</div><div class="line">    handle(the_exception)</div><div class="line">    <span class="keyword">raise</span> <span class="comment"># simplly raise it to upper level. This can keep stacktrace</span></div><div class="line">    <span class="comment"># or do it like this:</span></div><div class="line">    <span class="comment"># raise DifferentException from the_exception</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>args of error<br>
+e.g.:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">raise</span> ValueError(<span class="string">"Bala bala"</span>, <span class="number">3.14</span>)</div><div class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</div><div class="line">    print(e.args)</div><div class="line">    <span class="comment"># output is "Bala bala", 3.14</span></div><div class="line"></div><div class="line">    <span class="comment"># print traceback</span></div><div class="line">    print(traceback.format_exc())</div><div class="line">    <span class="comment"># or </span></div><div class="line">    print(traceback.format_tb( sys.exc_info()[<span class="number">2</span>] ))</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>注意<code>raise</code>，没有写<code>raise</code>相当于没有错误发生！例子如下：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    ValueError(<span class="string">"Bala bala"</span>, <span class="number">3.14</span>)</div><div class="line"><span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</div><div class="line">    print(e.args)</div><div class="line">    <span class="comment"># no output</span></div></pre></td></tr></table></figure>
+<ol start="7">
+<li>traceback<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">raise</span> ValueError(<span class="string">"Bala bala"</span>, <span class="number">3.14</span>)</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    print(sys.exc_info())</div><div class="line">    <span class="comment"># exc_info contains three object: a type object, a Error object and a traceback object</span></div><div class="line">    <span class="comment"># Note: if Error is catched by 'except' statement, then in 'finally:' statement `print(sys.exc_info())` has no output</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="best-practice">best practice</h4>
+<p>ref: <a href="http://yosefk.com/blog/error-codes-vs-exceptions-critical-code-vs-typical-code.html" target="_blank" rel="external">Error codes vs exceptions: critical code vs typical code</a><br>
+如果你真的对可能出现的错误了如指掌，这时候采用error code；一般情况下，都要用exception，它使你很容易debug。</p>
+<h4 id="tips">TIPS</h4>
+<p><a href="https://stackoverflow.com/questions/6278426/raising-exceptions-when-an-exception-is-already-present-in-python-3" target="_blank" rel="external">Raising exceptions when an exception is already present in Python 3</a></p>
 <h3 id="ipython">ipython</h3>
 <ol>
 <li><a href="https://www.cnblogs.com/cuiyubo/p/6823478.html" target="_blank" rel="external">入门</a></li>
@@ -915,25 +851,48 @@ This dict will record the <strong>insert</strong> order!</p>
 </ol>
 <h3 id="conda">conda</h3>
 <ul>
-<li>minicoda<br>
+<li>
+<p>minicoda<br>
 <code># pip install conda # does not work!</code><br>
-<mark>You have to download miniconda to use conda as package manager.</mark></li>
-<li><a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">使用conda管理python环境</a></li>
-<li>anaconda<br>
-<a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a></li>
-<li>conda install scipy #安装scipy
+<mark>You have to download miniconda to use conda as package manager.</mark></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/22678445" target="_blank" rel="external">使用conda管理python环境</a></p>
+</li>
+<li>
+<p>anaconda<br>
+<a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a></p>
+</li>
+<li>
+<p>conda install scipy #安装scipy</p>
 <ul>
 <li><code>conda install --download-only ipython-notebook</code></li>
 <li><code>conda install --offline -f ***.tar.bz2</code> 离线安装</li>
 </ul>
 </li>
-<li>conda list #列出已安装的包</li>
-<li>环境<br>
+<li>
+<p>conda list #列出已安装的包</p>
+</li>
+<li>
+<p>环境<br>
 <code>conda create -n env_name python=2.7 # create new env</code><br>
 <code>conda env list # list all env</code><br>
 <code>conda env export &gt; environment.yml # export to file</code><br>
 <code>source activate your_env_name # enter your env.</code><br>
-<code>source activate root # to switch back</code></li>
+<code>source activate root # to switch back</code></p>
+</li>
+<li>
+<p>update python major version<br>
+Search a lot by google and finally I just <code>rf -rf ~/Anaconda</code> and re-install it.<br>
+What was said in <a href="https://stackoverflow.com/questions/41535881/how-do-i-upgrade-to-python-3-6-with-conda" target="_blank" rel="external">stackoverflow: How do I upgrade to Python 3.6 with conda?</a> is true. It’s very hard to update python major version in-place.</p>
+</li>
+<li>
+<p>upgrade pip in anaconda!<br>
+<code>pip install --upgrade your_package</code><br>
+此时pip会试图更细，并删掉老版本pip。<br>
+然而mac上更新pip是需要root权限的！这就导致老版本被删掉，而新版本没有被安装！<br>
+解决：easy_install pip</p>
+</li>
 </ul>
 <h3 id="pip">pip</h3>
 <ul>
@@ -950,6 +909,8 @@ This dict will record the <strong>insert</strong> order!</p>
 　　yum clean all</p>
 </blockquote>
 </li>
+<li>更新<br>
+<code>pip install --upgrade your_package</code></li>
 </ul>
 <h4 id="error">error</h4>
 <ul>
@@ -1022,13 +983,13 @@ So my point is instance and initialize variables unless you need it.</p>
 </ul>
 </li>
 </ul>
-<h3 id="best-practice">best practice</h3>
+<h3 id="best-practice-v2">best practice</h3>
 <ul>
 <li><code>my_return= my_funct(para=para)</code>是可以的<br>
 上面左边的<code>para</code>是参数名，右边的是变量名，这样写是可以的，而且是明了的。</li>
 </ul>
 <h3 id="debug">debug</h3>
-<p>要融汇的方法<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>：</p>
+<p>要融汇的方法<sup class="footnote-ref"><a href="#fn3" id="fnref3:2">[3]</a></sup>：</p>
 <blockquote>
 <p>回答先在本地重现的就算了吧……那么容易就能重现通常说明最基本的代码逻辑覆盖测试都没做好。相比起C/C++来说，动态语言还是比较幸福的，异常都有详细的堆栈，只要打印到日志里就行了，错误信息通常也比较明确。要点在于该打印的日志一点都不能少，严禁在出现异常的时候只打印错误信息而不打堆栈。但归根结底来说，发现和解决bug靠的是良好的程序结构，必要的defensive（关键函数的参数合法性校验等），自动化的测试流程，线上调试只是亡羊补牢。</p>
 </blockquote>
@@ -1041,6 +1002,15 @@ So my point is instance and initialize variables unless you need it.</p>
 <a href="https://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/" target="_blank" rel="external">Improve Your Python: Understanding Unit Testing</a><br>
 <a href="http://www.cnblogs.com/beer/p/5075619.html" target="_blank" rel="external">python自动化测试</a> 【先读】<br>
 <a href="http://www.cnblogs.com/yufeihlf/p/5752146.html" target="_blank" rel="external">最完整的自动化测试流程</a></p>
+<h3 id="tips-v2">TIPS</h3>
+<h4 id="unrar-file-with-password-in-python">unrar file with password in python?</h4>
+<p>IT IS VERY HARD! STOP IT.<br>
+Just run <code>unrar x 001.rar -ppassword</code> in shell!</p>
+<ul>
+<li>pyunpack + patool + unrar (sucks!)<br>
+To unrar a file, you need install 2 python lib and 1 shell command(unrar).<br>
+And it comes to an end that you can’t unrar files with password!</li>
+</ul>
 <h2 id="python缺点">python缺点</h2>
 <ul>
 <li>efficiency
@@ -1065,7 +1035,7 @@ ruby最大的优势在于Ruby on Rails</li>
 <h3 id="我的经验">我的经验</h3>
 <ul>
 <li>都说python有很多包、方便，然而包里有可能有很多坑（bug or bad practice），比如Pillow中遇到过<code>**karg</code>的滥用。这些特点使得python很容易开发原型，但很难构建稳定、高效、一致的大型应用。</li>
-<li>有不少不符合直觉的&quot;feature&quot;<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup><br>
+<li>有不少不符合直觉的&quot;feature&quot;<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup><br>
 例如： <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; a = ([<span class="number">1</span>], [<span class="number">2</span>])</div><div class="line">   &gt;&gt;&gt; a[<span class="number">0</span>] += [<span class="number">3</span>]</div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">""</span>, line <span class="number">1</span>, <span class="keyword">in</span> </div><div class="line">TypeError: <span class="string">'tuple'</span> object does <span class="keyword">not</span> support item assignment</div><div class="line">   &gt;&gt;&gt; a</div><div class="line">([<span class="number">1</span>, <span class="number">3</span>], [<span class="number">2</span>])</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -1076,17 +1046,13 @@ ruby最大的优势在于Ruby on Rails</li>
 <ol class="footnotes-list">
 <li id="fn1" class="footnote-item"><p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)#Features_and_philosophy" target="_blank" rel="external">Python</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p><a href="http://docs.python-guide.org/en/latest/writing/logging/" target="_blank" rel="external">THe hitchhiker’s guide to python</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+<li id="fn2" class="footnote-item"><p><a href="https://www.zhihu.com/question/66941121" target="_blank" rel="external">有哪些明明是 bug，却被说成是 feature 的例子？</a> <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a></p>
 </li>
-<li id="fn3" class="footnote-item"><p><a href="https://docs.python.org/3/howto/logging.html" target="_blank" rel="external">Official Logging How to </a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a></p>
+<li id="fn3" class="footnote-item"><p><a href="https://www.zhihu.com/people/ling-jian-94/answers" target="_blank" rel="external">老程序员解bug有那些通用套路？</a> <a href="#fnref3" class="footnote-backref">↩</a> <a href="#fnref3:1" class="footnote-backref">↩</a> <a href="#fnref3:2" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn4" class="footnote-item"><p><a href="https://stackoverflow.com/questions/19861785/composition-and-aggregation-in-python/37910618#37910618" target="_blank" rel="external">N Randhawa’s answer</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
 </li>
 <li id="fn5" class="footnote-item"><p><a href="http://www.cnblogs.com/angushine/archive/2008/06/16/1223055.html" target="_blank" rel="external">关联，聚合，组合</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn6" class="footnote-item"><p><a href="https://www.zhihu.com/people/ling-jian-94/answers" target="_blank" rel="external">老程序员解bug有那些通用套路？</a> <a href="#fnref6" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn7" class="footnote-item"><p><a href="https://www.zhihu.com/question/66941121" target="_blank" rel="external">有哪些明明是 bug，却被说成是 feature 的例子？</a> <a href="#fnref7" class="footnote-backref">↩</a></p>
 </li>
 </ol>
 </section>
@@ -1165,8 +1131,8 @@ ruby最大的优势在于Ruby on Rails</li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/vmd笔记/" rel="next" title="vmd笔记">
-                <i class="fa fa-chevron-left"></i> vmd笔记
+              <a href="/python_modules/" rel="next" title="python modules">
+                <i class="fa fa-chevron-left"></i> python modules
               </a>
             
           </div>
@@ -1257,7 +1223,7 @@ ruby最大的优势在于Ruby on Rails</li>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1268,7 +1234,7 @@ ruby最大的优势在于Ruby on Rails</li>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1279,7 +1245,7 @@ ruby最大的优势在于Ruby on Rails</li>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1355,7 +1321,7 @@ ruby最大的优势在于Ruby on Rails</li>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-syntax"><span class="nav-text">Python Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-doc"><span class="nav-text">Python doc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#builtin-functions-import-builtins"><span class="nav-text">builtin functions (import builtins)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict"><span class="nav-text">dict</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#max"><span class="nav-text">max()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#all-any"><span class="nav-text">all()/any()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getattr-setattr-hasattr-delattr"><span class="nav-text">getattr()/setattr()/hasattr()/delattr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate"><span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next-iterator-default"><span class="nav-text">next(iterator[, default])</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print"><span class="nav-text">print</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#staticmethod-function"><span class="nav-text">staticmethod(function)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sum"><span class="nav-text">sum()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vars"><span class="nav-text">vars()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-类属性-实例属性"><span class="nav-text">Python——类属性/实例属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-text">file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-comprehension"><span class="nav-text">list comprehension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-strip-s-chars-去掉首尾的字符"><span class="nav-text">1. strip(s[, chars]) 去掉首尾的字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-format"><span class="nav-text">2. format</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#custom-object-define-format-in-a-class"><span class="nav-text">custom object(define __format__ in a class)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#datetime"><span class="nav-text">datetime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#named-placeholder"><span class="nav-text">named placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#getitem-and-getattr"><span class="nav-text">Getitem and Getattr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parametrized-formats"><span class="nav-text">Parametrized formats</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-rjust-width-fillchar-ljust-center-is-similar"><span class="nav-text">3. rjust(width[, fillchar])  【ljust(), center() is similar】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-zfill-n-左侧填充0至n位"><span class="nav-text">4. zfill(n) 左侧填充0至n位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-split-str-num-string-count-str-str-and-num-is-not-a-kewword"><span class="nav-text">5. split(str="", num=string.count(str)) # str and num is not a kewword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-join"><span class="nav-text">6. join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-encode-decode"><span class="nav-text">7. encode()/decode()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ternary-operator"><span class="nav-text">ternary operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deep-copy"><span class="nav-text">deep copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cli"><span class="nav-text">CLI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#module"><span class="nav-text">module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#heapq-heap-queue-algorithm"><span class="nav-text">heapq (Heap queue algorithm)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#re-module"><span class="nav-text">re module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sys-module"><span class="nav-text">sys module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#os-module"><span class="nav-text">os module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-about-path"><span class="nav-text">1. about path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-os-popen"><span class="nav-text">2. os.popen</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-calendar"><span class="nav-text">time & calendar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subprocess-module"><span class="nav-text">subprocess module</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-for-cmd-that-needn-t-stdout"><span class="nav-text">1.  For cmd that needn’t stdout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-for-cmd-needing-stdout"><span class="nav-text">2. For cmd needing stdout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#glob-module"><span class="nav-text">glob module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collections-module-廖雪峰"><span class="nav-text">collections module 廖雪峰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pil"><span class="nav-text">PIL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random-doc"><span class="nav-text">random doc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#functions-for-integers"><span class="nav-text">functions for integers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#real-valued-distributions"><span class="nav-text">real-valued distributions</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shutil"><span class="nav-text">shutil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logging"><span class="nav-text">logging[2]  [3]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-useful-things"><span class="nav-text">other useful things</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ipython"><span class="nav-text">ipython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-text">conda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip"><span class="nav-text">pip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#my-snippet"><span class="nav-text">My Snippet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程能力"><span class="nav-text">工程能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#oop"><span class="nav-text">OOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#best-practice"><span class="nav-text">best practice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug"><span class="nav-text">debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test"><span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python缺点"><span class="nav-text">python缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#和其他语言的对比"><span class="nav-text">和其他语言的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的经验"><span class="nav-text">我的经验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-syntax"><span class="nav-text">Python Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-doc"><span class="nav-text">Python doc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#builtin-function"><span class="nav-text">builtin function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dict"><span class="nav-text">dict</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tuple"><span class="nav-text">tuple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max"><span class="nav-text">max()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#all-any"><span class="nav-text">all()/any()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#eval-repr"><span class="nav-text">eval/repr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getattr-setattr-hasattr-delattr"><span class="nav-text">getattr()/setattr()/hasattr()/delattr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate"><span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next-iterator-default"><span class="nav-text">next(iterator[, default])</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#print"><span class="nav-text">print</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#staticmethod-function"><span class="nav-text">staticmethod(function)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sum"><span class="nav-text">sum()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vars"><span class="nav-text">vars()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-类属性-实例属性"><span class="nav-text">Python——类属性/实例属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-text">file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-comprehension"><span class="nav-text">list comprehension</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string"><span class="nav-text">string</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-strip-s-chars-去掉首尾的字符"><span class="nav-text">1. strip(s[, chars]) 去掉首尾的字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-format"><span class="nav-text">2. format</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#custom-object-define-format-in-a-class"><span class="nav-text">custom object(define __format__ in a class)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#datetime"><span class="nav-text">datetime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#named-placeholder"><span class="nav-text">named placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#getitem-and-getattr"><span class="nav-text">Getitem and Getattr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parametrized-formats"><span class="nav-text">Parametrized formats</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-rjust-width-fillchar-ljust-center-is-similar"><span class="nav-text">3. rjust(width[, fillchar])  【ljust(), center() is similar】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-zfill-n-左侧填充0至n位"><span class="nav-text">4. zfill(n) 左侧填充0至n位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-split-str-num-string-count-str-str-and-num-is-not-a-kewword"><span class="nav-text">5. split(str="", num=string.count(str)) # str and num is not a kewword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-join"><span class="nav-text">6. join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-encode-decode"><span class="nav-text">7. encode()/decode()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#or-and-operator"><span class="nav-text">or / and operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ternary-operator"><span class="nav-text">ternary operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deep-copy"><span class="nav-text">deep copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cli"><span class="nav-text">CLI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-useful-things"><span class="nav-text">other useful things</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#try-exception"><span class="nav-text">try-exception</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#best-practice"><span class="nav-text">best practice</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tips"><span class="nav-text">TIPS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ipython"><span class="nav-text">ipython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conda"><span class="nav-text">conda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip"><span class="nav-text">pip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#my-snippet"><span class="nav-text">My Snippet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程能力"><span class="nav-text">工程能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#oop"><span class="nav-text">OOP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#best-practice-v2"><span class="nav-text">best practice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug"><span class="nav-text">debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test"><span class="nav-text">test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tips-v2"><span class="nav-text">TIPS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#unrar-file-with-password-in-python"><span class="nav-text">unrar file with password in python?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python缺点"><span class="nav-text">python缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#和其他语言的对比"><span class="nav-text">和其他语言的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我的经验"><span class="nav-text">我的经验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
@@ -1383,7 +1349,7 @@ ruby最大的优势在于Ruby on Rails</li>
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

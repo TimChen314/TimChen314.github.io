@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="A Tutorial">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jupyter">
 <meta name="twitter:description" content="A Tutorial">
@@ -412,16 +412,26 @@
       
         <h1 id="a-tutorial">A Tutorial</h1>
 <a id="more"></a>
-<h2 id="pylab"><code>%pylab?</code></h2>
-<p>This sentence will give out the ‘help information’ of pylab.<br>
+<h2 id="package-management">package management</h2>
+<p>pip只能管理python package，而conda可以管理非python语言的package。</p>
+<blockquote>
+<p>So Conda is a packaging tool and installer that aims to do more than what pip does; handle library dependencies outside of the Python packages as well as the Python packages themselves.</p>
+</blockquote>
+<p>曾读到过，对于python package，conda基本就是用的pip。简单讲，如果安装一个包的命令是<code>pip install wanted_package</code>，在conda中<code>conda install wanted_package</code>同样可以安装。</p>
+<h3 id="package-for-jupyter">package for jupyter</h3>
+<p>Since jupyter is belong to anaconda, package shall be installed by conda if you want use it in jupyter!</p>
+<h2 id="pylab-help-info">pylab help info</h2>
+<p><code>%pylab?</code><br>
+This sentence will give out the ‘help information’ of pylab.<br>
 Note that %pylab will be imported!</p>
-<h2 id="cell-magics">cell magics</h2>
+<h2 id="magics">magics</h2>
 <p>Magics come in two kinds:【ct】可以简单理解为单行/多行</p>
-<h3 id="line-magics-these-are-commands-prepended-by-one-character-and-whose-arguments-only-extend-to-the-end-of-the-current-line">Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</h3>
+<h3 id="line-magics">Line magics</h3>
+<p>these are commands prepended by one % character and whose arguments only extend to the end of the current line.</p>
 <ul>
 <li><code>%run</code>可以从<code>.py</code>和<code>.ipynb</code>文件</li>
 </ul>
-<h3 id="cell-magics-v2">Cell magics:</h3>
+<h3 id="cell-magics">Cell magics:</h3>
 <ul>
 <li>Some simple cell magics</li>
 </ul>
@@ -439,7 +449,8 @@ When you do this, output is discarded unless you use the --out/err flags to stor
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">%%ruby --bg --out ruby_lines</div><div class="line">for n in 1...10</div><div class="line">    sleep 1</div><div class="line">    puts &quot;line #&#123;n&#125;&quot;</div><div class="line">    STDOUT.flush</div><div class="line">end</div></pre></td></tr></table></figure>
 <h2 id="shortcut-key">shortcut key</h2>
-<p><a href="http://www.jianshu.com/p/72493e81a708" target="_blank" rel="external">Jupyter Notebook 的快捷键</a></p>
+<p><a href="http://www.jianshu.com/p/72493e81a708" target="_blank" rel="external">Jupyter Notebook 的快捷键</a><br>
+<a href="https://gist.github.com/kidpixo/f4318f8c8143adee5b40" target="_blank" rel="external">Keyboard shortcuts</a></p>
 <h3 id="command-mode">command mode</h3>
 <ul>
 <li>
@@ -482,6 +493,13 @@ When you do this, output is discarded unless you use the --out/err flags to stor
 <p>合并/分割<br>
 shfit + m / shift + ctrl + -</p>
 </li>
+<li>
+<p>cmd + s : safe and Checkpoint</p>
+</li>
+</ul>
+<ul>
+<li>restart kernel<br>
+00  即在command mode下，</li>
 </ul>
 <h3 id="edit-mode">edit mode</h3>
 <ul>
@@ -531,16 +549,6 @@ Solution: You can change SS to “自动代理模式” and start jupyter, and t
 <code>conda install -c conda-forge jupyter_contrib_nbextensions</code></p>
 </li>
 <li>
-<p><a href="https://www.jianshu.com/p/96433d9ee923" target="_blank" rel="external">beautifulsoup4</a></p>
-<ul>
-<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html#id25" target="_blank" rel="external">文档</a></li>
-<li><code>find_all(text=&quot;your_text&quot;)</code>不好用！</li>
-<li>‘html5lib’ engine is slower but more robust than ‘lxml’！</li>
-<li><code>soup.prettify()</code> and <code>&lt;tag&gt;.prettify()</code><br>
-Formatting html</li>
-</ul>
-</li>
-<li>
 <p>convert to .py file<br>
 <code>jupyter nbconvert --to script [YOUR_NOTEBOOK].ipynb</code></p>
 </li>
@@ -548,11 +556,21 @@ Formatting html</li>
 <p><code>jupyter notebook list</code><br>
 Show running notebook</p>
 </li>
+<li>
+<p>add kernel &amp; edit kernel<br>
+Add kernel:<br>
+<a href="https://stackoverflow.com/questions/28831854/how-do-i-add-python3-kernel-to-jupyter-ipython" target="_blank" rel="external">How do I add python3 kernel to jupyter (IPython)</a><br>
+NOTE: Don’t forget to point to a specific python.</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">python3<span class="number">.7</span>-m pip install ipykernel</div><div class="line">python3<span class="number">.7</span> -m ipykernel install --user</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>Edit kernel:<br>
+<a href="https://forums.fast.ai/t/jupyter-notebook-not-pointing-to-anaconda/6820/3" target="_blank" rel="external">Jupyter notebook not pointing to Anaconda</a></p>
 <hr>
 <p><a href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/4.0.x/examples/IPython%20Kernel/Cell%20Magics.ipynb" target="_blank" rel="external">source 1</a><br>
 <a href="http://ipython.org/ipython-doc/3/notebook/notebook.html#importing-py-files" target="_blank" rel="external">source 2</a></p>
 <p><a href="http://liuchengxu.org/pelican-blog/jupyter-notebook-tips.html" target="_blank" rel="external">27 个Jupyter Notebook的小提示与技巧</a></p>
+<h1 id="reference">reference</h1>
 
       
     </div>
@@ -638,8 +656,8 @@ Show running notebook</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pandas/" rel="prev" title="pandas note">
-                pandas note <i class="fa fa-chevron-right"></i>
+              <a href="/flask/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -720,7 +738,7 @@ Show running notebook</p>
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -731,7 +749,7 @@ Show running notebook</p>
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -742,7 +760,7 @@ Show running notebook</p>
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -818,7 +836,7 @@ Show running notebook</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-tutorial"><span class="nav-text">A Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pylab"><span class="nav-text">%pylab?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell-magics"><span class="nav-text">cell magics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-magics-these-are-commands-prepended-by-one-character-and-whose-arguments-only-extend-to-the-end-of-the-current-line"><span class="nav-text">Line magics: these are commands prepended by one % character and whose arguments only extend to the end of the current line.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cell-magics-v2"><span class="nav-text">Cell magics:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortcut-key"><span class="nav-text">shortcut key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#command-mode"><span class="nav-text">command mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edit-mode"><span class="nav-text">edit mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#errors"><span class="nav-text">Errors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">Tips</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-tutorial"><span class="nav-text">A Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#package-management"><span class="nav-text">package management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#package-for-jupyter"><span class="nav-text">package for jupyter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pylab-help-info"><span class="nav-text">pylab help info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#magics"><span class="nav-text">magics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-magics"><span class="nav-text">Line magics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cell-magics"><span class="nav-text">Cell magics:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortcut-key"><span class="nav-text">shortcut key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#command-mode"><span class="nav-text">command mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edit-mode"><span class="nav-text">edit mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#errors"><span class="nav-text">Errors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-text">Tips</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
@@ -846,7 +864,7 @@ Show running notebook</p>
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

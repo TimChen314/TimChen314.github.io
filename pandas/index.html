@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="TimChen">
 <meta property="og:description" content="数据分析神器Pandas。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T07:22:53.000Z">
+<meta property="og:updated_time" content="2019-06-14T07:33:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas note">
 <meta name="twitter:description" content="数据分析神器Pandas。">
@@ -423,10 +423,13 @@
    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">In [4]: obj = Series([4, 7, -5, 3])    </div><div class="line">In [5]: obj   </div><div class="line">Out[5]:   </div><div class="line">0 4   </div><div class="line">1 7   </div><div class="line">2 -5   </div><div class="line">3 3</div></pre></td></tr></table></figure>
 <ul>
 <li>Dataframe<br>
-行、列的index，分别为index, columns</li>
+axis=0表示行，axis=1表示列<br>
+行、列的index，分别为index, columns，例如：<br>
+<code>df.columns</code></li>
 <li>loc是根据标签索引；iloc是index索引:<br>
-<code>df.iloc[1] # 第二行</code><br>
-<code>df.iloc[:,1] # 第二列</code></li>
+<code>df.iloc(1) # 第二行</code><br>
+<code>df.iloc(:,1) # 第二列</code><br>
+<code>df.loc([0], ['size') # 第一行、「size」列</code></li>
 </ul>
 <ul>
 <li>
@@ -443,23 +446,62 @@ Show first 5 line：<code>df.head(5)</code></p>
 </li>
 </ul>
 <ul>
-<li>
-<p>filter</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Using a series of booleans to filter</div><div class="line">df[df.rain_octsep &lt; 1000]</div><div class="line"># Filtering by multiple conditionals</div><div class="line">df[(df.rain_octsep &lt; 1000) &amp; (df.outflow_octsep &lt; 4000)] </div><div class="line"># 这里不能用 and 关键字，因为会引发操作顺序的问题。必须用 &amp; 和圆括号。</div><div class="line"># Filtering by string methods</div><div class="line">df[df.water_year.str.startswith(&apos;199&apos;)]</div><div class="line"># 注意，你必须用 .str.[string method] ，而不能直接在字符串上调用字符方法。</div></pre></td></tr></table></figure>
+<li>filter <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Using a series of booleans to filter</div><div class="line">df[df.rain_octsep &lt; 1000]</div><div class="line"># Filtering by multiple conditionals</div><div class="line">df[(df.rain_octsep &lt; 1000) &amp; (df.outflow_octsep &lt; 4000)] </div><div class="line"># 这里不能用 and 关键字，因为会引发操作顺序的问题。必须用 &amp; 和圆括号。</div><div class="line"># Filtering by string methods</div><div class="line">df[df.water_year.str.startswith(&apos;199&apos;)]</div><div class="line"># 注意，你必须用 .str.[string method] ，而不能直接在字符串上调用字符方法。</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<h2 id="添加-add-data">添加(add data)</h2>
+<h3 id="add-a-row">add a row</h3>
+<p>ref: <a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#joining-on-index" target="_blank" rel="external">Merge, join, and concatenate</a><br>
+In short, there are several methods to add data to a Dataframe: Merge, join, concatenate and append.<br>
+<strong>But only loc can add data inplace!!! All other methods will return a new dataframe and without ‘inplace’ arg</strong></p>
+<ul>
 <li>
-<p>append/drop 以及修改</p>
+<p>append</p>
 <ul>
 <li>Dataframe: add a row</li>
 </ul>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df = DataFrame(columns=(<span class="string">'lib'</span>, <span class="string">'qty1'</span>, <span class="string">'qty2'</span>))<span class="comment">#生成空的pandas表  </span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):<span class="comment">#插入一行</span></div><div class="line">    df.loc[i] = [randint(<span class="number">-1</span>,<span class="number">1</span>) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">3</span>)]</div></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># method 1</span></div><div class="line">df = DataFrame(columns=(<span class="string">'lib'</span>, <span class="string">'qty1'</span>, <span class="string">'qty2'</span>))<span class="comment">#生成空的pandas表  </span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):<span class="comment">#插入一行</span></div><div class="line">    df.loc[i] = [randint(<span class="number">-1</span>,<span class="number">1</span>) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">3</span>)]  </div><div class="line"><span class="comment"># method 2 append from a python dict</span></div><div class="line"><span class="comment"># ref : [pandas.DataFrame.append](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.append.html)</span></div><div class="line">df.append(your_dict, ignore_index=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
 <ul>
-<li>Dataframe: pandas的DataFrame对象如何清空？<br>
-<code>df.drop(df.index,inplace=True)</code></li>
+<li>
+<p><a href="https://www.zhihu.com/question/36170252" target="_blank" rel="external">python pandas 怎样高效地添加一行数据？</a><br>
+简而言之：</p>
+<blockquote>
+<p>Pandas/numpy structures are fundamentally not suited for efficiently growing. They work best when they are created with a fixed size and stay that way.</p>
+</blockquote>
+</li>
+<li>
+<p>add a column<br>
+<code>df[1]=np.arange(1,11,2) # add a column of which name is 1</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="add-dict-to-dataframe">add dict to DataFrame</h3>
+<ul>
+<li>add one-D dict to one line of a DataFrame <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.loc[len(df.index)] = mydict</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="删除-修改">删除/修改</h2>
+<ul>
+<li>
+<p>引用以及修改</p>
+<ul>
+<li>Dataframe<br>
+<code>df[1] # columns=1的列</code><br>
+<code>df[1:2] # 第二行</code><br>
+<code>df.iloc[-8:, 1:] # 取倒数八行、不要第一列</code><br>
+<code>df.iat[1,1] #选择已知标量（单个元素）</code></li>
 <li>Series: 修改<br>
 <code>s3 = pd.Series( [3,5,7], index = list('ABC'),name='s3' )</code>, 那么修改方法为：<br>
 <code>s3['B'] = 6</code>或者<code>s3[1] = 6</code><br>
 即：通过label和index都可以修改</li>
+</ul>
+</li>
+<li>
+<p>drop</p>
+<ul>
+<li>Dataframe: pandas的DataFrame对象如何清空？<br>
+<code>df.drop(df.index,inplace=True)</code></li>
 <li>Series: drop以及重新添加<br>
 <code>s3.drop('A')</code><br>
 <code>s3.index.append(pd.Index(['A']) )</code></li>
@@ -479,12 +521,15 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
 </ul>
 </li>
 <li>
-<p>basic statistical information of dataset.</p>
+<p><code>info, describe # describe: basic statistical information of dataset.</code></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pd.options.display.float_format = &apos;&#123;:,.3f&#125;&apos;.format # Limit output to 3 decimal places.</div><div class="line">df.describe()</div></pre></td></tr></table></figure>
 </li>
 <li>
-<p>std<br>
+<p><code>sum, mean, std, corr # correlation between two columns(pearson correlation)</code><br>
 注意std默认是除以N-1而不是N的；</p>
+</li>
+<li>
+<p><code>min, max, median, idxmin, idxmax # Index of the largest value</code></p>
 </li>
 </ul>
 <h1 id="写入-读取">写入/读取</h1>
@@ -494,19 +539,36 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
 <li><code>df.to_json('D:\\a.json')</code></li>
 <li><code>df.to_html('D:\\a.html')</code></li>
 <li><code>df.to_sql('tableName', con=dbcon, flavor='mysql')</code></li>
+<li><code>df.to_dict</code></li>
 </ul>
 <h2 id="读">读</h2>
 <ul>
 <li>直接读取html中的表格<br>
 <code>pd.read_html(&quot;https://coinmarketcap.com/currencies/bitcoin/&quot;)</code></li>
-<li><a href="https://www.zhihu.com/question/36170252" target="_blank" rel="external">python pandas 怎样高效地添加一行数据？</a>
-<blockquote>
-<p>Pandas/numpy structures are fundamentally not suited for efficiently growing. They work best when they are created with a fixed size and stay that way.</p>
-</blockquote>
+<li><code>df.from_dict</code></li>
+</ul>
+<h1 id="数据清洗-分析">数据清洗、分析</h1>
+<h2 id="清洗">清洗</h2>
+<ul>
+<li><code>drop(), dropna(), fillna(), replace()</code>, 重复值处理: <code>duplicated()，unique()，drop_duplictad()</code></li>
+<li>转格式<br>
+<code>pd.to_datetime</code>() : Convert argument to datetime, so you can <code>df.sort_values()</code> by time.</li>
+</ul>
+<h2 id="分析">分析</h2>
+<ul>
+<li>groupby<br>
+<code>a6214[&quot;Value_IN(ETH)&quot;].groupby(a6214[&quot;From&quot;]) # 按照转账人分类，得到的结果为SeriesGroupBy类型</code></li>
+</ul>
+<h1 id="显示">显示</h1>
+<h2 id="打印dataframe设置">打印dataframe设置</h2>
+<ul>
+<li>完整打印table<br>
+当一行较长时，完整显示一行：<code>'display.max_rows', None, 'display.max_columns', None</code><br>
+不自动换行：<code>expand_frame_repr', False</code> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">conn = sqlite3.connect(<span class="string">'./order_record.db'</span>, detect_types=sqlite3.PARSE_DECLTYPES)</div><div class="line"><span class="keyword">with</span> pd.option_context(<span class="string">'display.max_rows'</span>, <span class="keyword">None</span>, <span class="string">'display.max_columns'</span>, <span class="keyword">None</span>, <span class="string">'expand_frame_repr'</span>, <span class="keyword">False</span>):  <span class="comment"># more options can be specified also</span></div><div class="line">    print(pd.read_sql_query(<span class="string">"SELECT * FROM ALL_ORDER"</span>, conn))</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="数据清洗">数据清洗</h1>
-<p><code>drop(), dropna(), fillna(), replace()</code>, 重复值处理: <code>duplicated()，unique()，drop_duplictad()</code></p>
+<h2 id="显示的精度">显示的精度</h2>
+<p><code>pandas.set_option(&quot;display.precision&quot;, 10)</code></p>
 <h1 id="reference">reference</h1>
 <hr class="footnotes-sep">
 <section class="footnotes">
@@ -596,8 +658,8 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/jupyter/" rel="next" title="jupyter">
-                <i class="fa fa-chevron-left"></i> jupyter
+              <a href="/flask/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -606,8 +668,8 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Web/" rel="prev" title="Web Learning Note">
-                Web Learning Note <i class="fa fa-chevron-right"></i>
+              <a href="/sqlite/" rel="prev" title="sqlite note">
+                sqlite note <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -688,7 +750,7 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -699,7 +761,7 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -710,7 +772,7 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -786,7 +848,7 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本"><span class="nav-text">基本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#statistic-arithmetic-operation"><span class="nav-text">statistic/arithmetic operation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入-读取"><span class="nav-text">写入/读取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写"><span class="nav-text">写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读"><span class="nav-text">读</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据清洗"><span class="nav-text">数据清洗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本"><span class="nav-text">基本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加-add-data"><span class="nav-text">添加(add data)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add-a-row"><span class="nav-text">add a row</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-dict-to-dataframe"><span class="nav-text">add dict to DataFrame</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除-修改"><span class="nav-text">删除/修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#statistic-arithmetic-operation"><span class="nav-text">statistic/arithmetic operation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入-读取"><span class="nav-text">写入/读取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写"><span class="nav-text">写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读"><span class="nav-text">读</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据清洗-分析"><span class="nav-text">数据清洗、分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#清洗"><span class="nav-text">清洗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显示"><span class="nav-text">显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#打印dataframe设置"><span class="nav-text">打印dataframe设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示的精度"><span class="nav-text">显示的精度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
@@ -814,7 +876,7 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
 <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
