@@ -17,8 +17,8 @@
   
   <entry>
     <title>我们刚刚与一波金融危机擦肩而过</title>
-    <link href="http://timchen314.com/baoshang_bank/"/>
-    <id>http://timchen314.com/baoshang_bank/</id>
+    <link href="http://timchen314.com/pri/baoshang_bank/"/>
+    <id>http://timchen314.com/pri/baoshang_bank/</id>
     <published>2019-06-14T10:00:00.000Z</published>
     <updated>2019-06-14T07:39:10.000Z</updated>
     
@@ -106,7 +106,7 @@
     <link href="http://timchen314.com/matplotlib/"/>
     <id>http://timchen314.com/matplotlib/</id>
     <published>2019-03-08T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://www.labri.fr/perso/nrougier/teaching/matplotlib/" target="_blank" rel="external">very good tutorial</a><br>
 <a href="https://www.cnblogs.com/yinxiangnan-charles/p/5928689.html" target="_blank" rel="external">matplotlib和PIL打开图片的方法</a></p>
@@ -233,7 +233,7 @@ ref: <a href="https://stackoverflow.com/questions/37970424/what-is-the-differenc
     <link href="http://timchen314.com/ethereum/"/>
     <id>http://timchen314.com/ethereum/</id>
     <published>2019-02-28T11:11:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>
 <h1 id="web3-py"><a href="http://Web3.py" target="_blank" rel="external">Web3.py</a></h1>
@@ -276,7 +276,7 @@ offset means how many items in a page!</li>
     <link href="http://timchen314.com/blockchain_magic/"/>
     <id>http://timchen314.com/blockchain_magic/</id>
     <published>2018-04-24T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>这是历史性的一个事件：<br>
 在遭遇了半夜一点被叫起来强制删帖之后，北大学生将沈X阳事件中自己的遭遇写入了以太坊&quot;input data&quot;中，这意味着这一文件永远无法被删除了!<br>
@@ -306,7 +306,7 @@ offset means how many items in a page!</li>
     <link href="http://timchen314.com/python_cookbook_note/"/>
     <id>http://timchen314.com/python_cookbook_note/</id>
     <published>2018-04-18T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>python cookbook 非常好！</p>
 <a id="more"></a>
@@ -359,7 +359,7 @@ return head + sum(tail) if tail else head</p>
     <link href="http://timchen314.com/btc_market/"/>
     <id>http://timchen314.com/btc_market/</id>
     <published>2018-04-17T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="市场">市场</h3>
 <ul>
@@ -854,7 +854,7 @@ KO(Knock-out) barrier price – 译为“敲出障碍价格”。即期权的止
     <link href="http://timchen314.com/VPS_Vultr/"/>
     <id>http://timchen314.com/VPS_Vultr/</id>
     <published>2018-03-31T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>Vultr是老牌的VPS服务商。这里记录一下购买和使用流程。</p>
 <a id="more"></a>
@@ -891,231 +891,11 @@ KO(Knock-out) barrier price – 译为“敲出障碍价格”。即期权的止
   </entry>
   
   <entry>
-    <title>About Digital Currency</title>
-    <link href="http://timchen314.com/pri/digital_currency/"/>
-    <id>http://timchen314.com/pri/digital_currency/</id>
-    <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2019-06-14T07:24:45.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>What a bubble!<br>
-<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
-<a id="more"></a>
-<h2 id="总览">总览</h2>
-<h3 id="info">Info</h3>
-<p><img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/%E6%9D%82/Percentage_of_Total_Market_Capitalization_Dominance.png" alt="image"></p>
-<h4 id="source">source</h4>
-<ol start="0">
-<li><a href="https://coinmarketcap.com" target="_blank" rel="external">Cryptocurrency Market Capitalizations</a></li>
-<li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
-<li>很好的网站  <a href="http://bitcointalk.org/" target="_blank" rel="external">http://bitcointalk.org/</a></li>
-</ol>
-<h3 id="问题与挑战">问题与挑战</h3>
-<h4 id="1-税收">1. 税收</h4>
-<p>美国国税局（IRS, Internal Revenue Service）在努力调查bitcoin避税，这是bitcoin正式应用所面临的一个问题。</p>
-<blockquote>
-<p>像达世（Dash）、门罗（Monero）和ZCash等币都部署了隐私功能，其交易是很难被追踪到的。</p>
-</blockquote>
-<h4 id="个人目标">个人目标</h4>
-<ul>
-<li>量化策略投资<br>
-ICO是一锤子买卖，在2018年会有很多坑。ICO及其之后的项目准备阶段，币价的特点是不确定性大、严重依赖消息。<br>
-资金量大、消息面广的，可以广撒网。<br>
-以我的资金量和消息面，是玩不转的。</li>
-</ul>
-<ul>
-<li>自媒体？</li>
-</ul>
-<ol>
-<li><a href="https://www.zhihu.com/question/52116246" target="_blank" rel="external">英文翻译</a><br>
-猪八戒上千字100，千字140的价格算高的了。</li>
-<li>英文约稿与推荐<br>
-只要求中文独家，最好中文先发。</li>
-<li>中文转载</li>
-</ol>
-<h2 id="待读-进展">待读&amp;进展</h2>
-<h3 id="待读">待读</h3>
-<p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
-<a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
-<a href="http://blog.csdn.net/m0_37327416/article/details/72885521" target="_blank" rel="external">以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行</a><br>
-<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a><br>
-<a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
-<a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
-<h3 id="进展">进展</h3>
-<p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
-<h2 id="digital-currency">digital currency</h2>
-<h3 id="ethereum-new-set">ethereum (new_set)</h3>
-<ul>
-<li>practice<br>
-My understanding:
-<ol>
-<li>init first block.</li>
-<li>then you can mine.</li>
-</ol>
-</li>
-</ul>
-<h3 id="cardano">cardano</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/32874568" target="_blank" rel="external">cardano简介</a><br>
-爱丁堡大学一个中心IOHK牵头。</p>
-<ul>
-<li>ADA <a href="https://daedaluswallet.io/faq/" target="_blank" rel="external">不支持win32和移动钱包</a></li>
-</ul>
-<h3 id="eos">EOS</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/33496593" target="_blank" rel="external">EOS：疯子的狂欢</a></p>
-<ul>
-<li>BM出品，李笑来站台</li>
-</ul>
-<h3 id="steem"><s>STEEM</s></h3>
-<ul>
-<li>BM出品，远没有btc强势</li>
-</ul>
-<h3 id="其他币">其他币</h3>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/34723125?group_id=959209805945008128" target="_blank" rel="external">TUNE：音乐应用</a><br>
-三位创始人都是格莱美奖得主。</li>
-</ul>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/34733907" target="_blank" rel="external">太空链</a>：严重破发</li>
-</ul>
-<p>薛蛮子认为：</p>
-<blockquote>
-<p>对于ICO的投资标准，薛蛮子表示，首先是人靠谱，此前投资的比原链是国内区块链最大的社区巴比特发起的，墨链是纸贵科技发起的，BEX是美豹金融发起的，这些项目的团队本身已经有了成功的创业案例，且在细分领域处于排头兵的地位。</p>
-</blockquote>
-<blockquote>
-<p>拿比原链来说，薛蛮子表示，“我认为，比原链的创始团队很年轻，富有朝气，大家都很努力，但是比原链的技术挑战挺大，需要天时地利人和，很多条件具备才能做成，不是轻描淡写，一挥而就的。团队最要紧的是不断试错，踏踏实实做事情，不要辜负投资人的信任。我不看好的是，有的小伙子一辈子没赚过大钱，也没花过100万以上的钱，突然通过ICO拿了几个亿，这些人hold不住。”</p>
-</blockquote>
-<h2 id="tech">tech</h2>
-<blockquote>
-<p>1、 共识算法:POW/POS/DPOS/PBFT/BFT-Raft/Paxos/Kafka<br>
-2、 P2P通讯:自举(bootstrapped)/连接/广播<br>
-3、 签名验签:ECDSA/secp256k1/ED25519/MultiSig<br>
-4、 Hash锁定:Merkle树/MPT树<br>
-5、 UTXO记账:流水账<br>
-6、 智能合约:P2PKH/P2SH/Oracle/状态机<br>
-7、 隐私保护:零知识证明、同态加密、CoinJoin加密技术<br>
-8、 私钥存储:HD协议(Hierarchical Deterministic Key Creation)、钱包Wallets、丢失找回<br>
-9、 算力分发：矿池分发</p>
-</blockquote>
-<ul>
-<li>
-<p>冷热钱包<br>
-热是指在线。如果热钱包断网，那么从存储的角度来讲，也是冷钱包了。但是离线的热钱包和冷钱包还是有很多不同之处。</p>
-<p><a href="https://www.zhihu.com/question/21478404" target="_blank" rel="external">常用的钱包</a></p>
-</li>
-</ul>
-<h3 id="btc">BTC</h3>
-<blockquote>
-<p>比特币系统的一个重要的可扩展特性是：它的区块存储在多层次的数据结构中。一个区块的哈希实际上只是区块头的哈希，区块头是包含时间戳、随机数、上个区块哈希和存储了所有的区块交易的默克尔树的根哈希的长度大约为200字节的一段数据。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-</blockquote>
-<h3 id="钱包相关">钱包相关</h3>
-<ul>
-<li><a href="https://www.jianshu.com/p/d0a4a44685d3" target="_blank" rel="external">简单科普私钥、地址、助记词、Keystore的区别</a></li>
-<li><a href="http://www.8btc.com/wiki/bitcoin-wallet-safe-use-perfect-backup" target="_blank" rel="external">比特币钱包的安全使用和完美备份</a>
-<ul>
-<li>介绍了如何<strong>离线生成脑钱包</strong></li>
-</ul>
-</li>
-</ul>
-<h4 id="ripple钱包-os-x-client">ripple钱包: OS X client</h4>
-<p>只要记住私钥，那么点击“通过私钥创建一个账户”，就可以得到一个已经创建过的账户的钱包！</p>
-<h3 id="共识">共识</h3>
-<p><a href="https://www.zhihu.com/question/267440381/answer/325981371" target="_blank" rel="external">区块链技术如何兼顾共识和匿名，解决储存和处理速度问题？</a><br>
-1.共识机制下如何兼顾匿名。举个例子，甲转账给乙两个比特币，但乙不承认。在共识机制下，我们都可以看到确实有2个比特币从地址A转到了地址B，此时有<br>
-问题一：甲可以想办法证明地址A就是他的，但这个证明仍旧是传统的，需要一个个说服别人的证明，而不是一下子说服全部人的证明。<br>
-问题二：即使甲说服了大部分人地址A就是他的，乙仍旧可以不承认地址B是他的，也没有共识机制可以指出地址B是谁的。甲仍旧不能证明转给乙两个比特币。<br>
-问题三：如果存在共识机制能指出地址AB是对应甲和乙的，隐私性就无从谈起，等于所有人的交易都是暴露的。<br>
-2.数据储存过大。举个例子在淘宝买东西，传统交易是中心化的，数据都记录在阿里的硬盘里，我们害怕阿里偷偷修改了以前的数据，要去中心化，所以用上了区块链技术取代阿里云，但所有的交易数据可不是几个T这么少，普通用户如何储存。如果只是少数人储存，那仍旧没有去中心化。<br>
-3.计算速度的问题。假设以后所有交易都在区块链上，区块链技术也得到改进，每秒能处理上亿比交易，如果每个人都要记录，是否意味着每个人都有强大的处理能力，如果但普通计算机无法胜任，只能交给少数超级计算机处理，是否意味普通人失去了记录的能力。</p>
-<p>共识（consensus）算法指的是大家对某一个提案达成一致意见的过程，也就是分布式系统中多个节点之间，对某个状态达成一致结果的过程。至于提案（proposal），几乎可以认为任何可以达成一致的信息就是一个提案。</p><p>在具体的区块记账中，问题1所对应的提案就是地址A向地址B转账这条交易信息是否存在。达成共识的过程就是大家确认该笔交易存在并且有效。因此，不涉及到问题1.1和1.2，即地址A是甲的地址，地址B是乙的地址这个身份关联过程，因此，可以视为该过程是匿名的。除非提案内容更改为&quot;地址A是甲的地址，地址B是乙的地址，地址A向地址B发起了一笔转账&quot;。<br>
-这样就触发了问题三，问题三的描述里，确实无法保证隐私性，这个不用多说。</p>
-<h3 id="闪电链">闪电链</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/34681487" target="_blank" rel="external">闪电链科普</a>：<br>
-所谓闪电链就是小额交易不上主链，而是放在侧链上，在达到一定交易量后再统一上到主链上。<br>
-闪电链相当于中心化的节点。</p>
-<blockquote>
-<p><strong>闪电网络的反作弊机制</strong><br>
-一个叫双向支付通道（Bi-Directional Payment Channel )<br>
-一个叫时间锁（TimeLock）<br>
-一个叫密码（Secret Value）</p>
-</blockquote>
-<p>双向通道：交易双方都确认，才能交易成功。</p>
-<h3 id="pow">POW</h3>
-<ul>
-<li>btc的block上，负责POW的nounce。</li>
-<li>btc采用POW是为了增加作假block的成本，进而禁止了双花。</li>
-</ul>
-<h3 id="utxo">UTXO</h3>
-<p><a href="http://8btc.com/thread-45640-1-1.html" target="_blank" rel="external">玛_雅和vatten解释的很好</a><br>
-<a href="http://8btc.com/article-4381-1.html" target="_blank" rel="external">其实并没有什么比特币，只有 UTXO</a></p>
-<h3 id="隐私保护机制">隐私保护机制<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h3>
-<ol>
-<li>
-<p>零知识证明<br>
-<img src="https://pic4.zhimg.com/80/v2-8e9aa2a8dd3457c05cbbc688f2679ff1_hd.jpg" alt="image"><br>
-零知识证明也就是证明者在不泄露秘密的情况下，让验证者相信证明者知道这个秘密。</p>
-<blockquote>
-<p>Zcash是首个使用零知识证明机制的区块链系统。不同于其他加密数字货币会公开所有的交易记录，Zcash可以用零知识证明将完全加密的交易记录确认为有效，但是他有一个很关键的缺点就是<strong>速度缓慢</strong>。<br>
-Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行隐藏。</p>
-</blockquote>
-</li>
-<li>
-<p>同态加密</p>
-<blockquote>
-<p>明文加密后得到密文，对密文进行特定的代数运算得到的还是加密的结果，对结果进行解密可以得到对明文进行同样运算一样的结果。也就是说可以在不知道原数据的情况下进行运算，最后同样能得到正确的结果。</p>
-</blockquote>
-</li>
-<li>
-<p>混币</p>
-<blockquote>
-<p>以门罗币（Monero）为例，他使用了RingCT（环形加密匿名）技术来实现隐私保护。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="problem">problem</h3>
-<ul>
-<li>what is private network?</li>
-</ul>
-<h2 id="资料-引用">资料&amp;引用</h2>
-<ul>
-<li>
-<p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a><br>
-<a href="https://zhuanlan.zhihu.com/p/34220442?group_id=953729236041809920" target="_blank" rel="external">2亿美元被锁死在区块链中？以太坊智能合约被爆存在巨大漏洞，新技术落地恐怕要“迟到”了</a></p>
-</li>
-<li>
-<p>BM是指网名byteMaster (Daniel Larimer)的程序员，BTS、STEEMIT、EOS创始人</p>
-</li>
-</ul>
-<p>reference:</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="https://ethfans.org/wikis/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%99%BD%E7%9A%AE%E4%B9%A6" target="_blank" rel="external"></a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/34709735" target="_blank" rel="external">知识点 || 区块链的隐私保护机制有哪些？真的安全吗？</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;What a bubble!&lt;br&gt;
-&lt;img src=&quot;https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png&quot; alt=&quot;bitcoin&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
-    
-    
-      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Web Learning Note</title>
     <link href="http://timchen314.com/Web/"/>
     <id>http://timchen314.com/Web/</id>
     <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="html5">html5</h1>
 <ul>
@@ -1466,11 +1246,258 @@ HTML elements are represented by tags&lt;/li&gt;
   </entry>
   
   <entry>
+    <title>About Digital Currency</title>
+    <link href="http://timchen314.com/pri/digital_currency/"/>
+    <id>http://timchen314.com/pri/digital_currency/</id>
+    <published>2018-03-22T10:00:00.000Z</published>
+    <updated>2019-06-14T07:24:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>What a bubble!<br>
+<img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png" alt="bitcoin"></p>
+<a id="more"></a>
+<h2 id="总览">总览</h2>
+<h3 id="info">Info</h3>
+<p><img src="https://res.cloudinary.com/do7yb5qw4/image/upload/v1515308629/%E6%9D%82/Percentage_of_Total_Market_Capitalization_Dominance.png" alt="image"></p>
+<h4 id="source">source</h4>
+<ol start="0">
+<li><a href="https://coinmarketcap.com" target="_blank" rel="external">Cryptocurrency Market Capitalizations</a></li>
+<li><a href="http://www.8btc.com" target="_blank" rel="external">www.8btc.com</a></li>
+<li>很好的网站  <a href="http://bitcointalk.org/" target="_blank" rel="external">http://bitcointalk.org/</a></li>
+</ol>
+<h3 id="问题与挑战">问题与挑战</h3>
+<h4 id="1-税收">1. 税收</h4>
+<p>美国国税局（IRS, Internal Revenue Service）在努力调查bitcoin避税，这是bitcoin正式应用所面临的一个问题。</p>
+<blockquote>
+<p>像达世（Dash）、门罗（Monero）和ZCash等币都部署了隐私功能，其交易是很难被追踪到的。</p>
+</blockquote>
+<h4 id="个人目标">个人目标</h4>
+<ul>
+<li>量化策略投资<br>
+ICO是一锤子买卖，在2018年会有很多坑。ICO及其之后的项目准备阶段，币价的特点是不确定性大、严重依赖消息。<br>
+资金量大、消息面广的，可以广撒网。<br>
+以我的资金量和消息面，是玩不转的。</li>
+</ul>
+<ul>
+<li>自媒体？</li>
+</ul>
+<ol>
+<li><a href="https://www.zhihu.com/question/52116246" target="_blank" rel="external">英文翻译</a><br>
+猪八戒上千字100，千字140的价格算高的了。</li>
+<li>英文约稿与推荐<br>
+只要求中文独家，最好中文先发。</li>
+<li>中文转载</li>
+</ol>
+<h2 id="待读-进展">待读&amp;进展</h2>
+<h3 id="待读">待读</h3>
+<p>非常好：<a href="http://www.8btc.com/reinvent-the-currency" target="_blank" rel="external">http://www.8btc.com/reinvent-the-currency</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885395" target="_blank" rel="external">以太坊（1）–在CentOS 6.5上搭建以太坊私有链的步骤（图文详细）</a><br>
+<a href="http://blog.csdn.net/m0_37327416/article/details/72885521" target="_blank" rel="external">以太坊（3）：以太坊私有链环境下的智能合约的编写、编译、创建与执行</a><br>
+<a href="http://www.8btc.com/smart-contract-solidity" target="_blank" rel="external">教程</a><br>
+<a href="http://m.blog.csdn.net/vinsuan1993/article/details/75208203" target="_blank" rel="external">Geth搭建私有链</a><br>
+<a href="https://www.zhihu.com/question/48049768" target="_blank" rel="external">中国在区块链领域有哪些专家或公认的牛人？【帮助弄懂bitcoin技术】</a></p>
+<h3 id="进展">进展</h3>
+<p>按照https://ethereum.stackexchange.com/questions/13547/how-to-set-up-a-private-network-and-connect-peers-in-geth对json进行了设置，</p>
+<h2 id="digital-currency">digital currency</h2>
+<h3 id="ethereum-new-set">ethereum (new_set)</h3>
+<ul>
+<li>practice<br>
+My understanding:
+<ol>
+<li>init first block.</li>
+<li>then you can mine.</li>
+</ol>
+</li>
+</ul>
+<h3 id="cardano">cardano</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/32874568" target="_blank" rel="external">cardano简介</a><br>
+爱丁堡大学一个中心IOHK牵头。</p>
+<ul>
+<li>ADA <a href="https://daedaluswallet.io/faq/" target="_blank" rel="external">不支持win32和移动钱包</a></li>
+</ul>
+<h3 id="eos">EOS</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/33496593" target="_blank" rel="external">EOS：疯子的狂欢</a></p>
+<ul>
+<li>BM出品，李笑来站台</li>
+</ul>
+<h3 id="steem"><s>STEEM</s></h3>
+<ul>
+<li>BM出品，远没有btc强势</li>
+</ul>
+<h3 id="其他币">其他币</h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34723125?group_id=959209805945008128" target="_blank" rel="external">TUNE：音乐应用</a><br>
+三位创始人都是格莱美奖得主。</li>
+</ul>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34733907" target="_blank" rel="external">太空链</a>：严重破发</li>
+</ul>
+<p>薛蛮子认为：</p>
+<blockquote>
+<p>对于ICO的投资标准，薛蛮子表示，首先是人靠谱，此前投资的比原链是国内区块链最大的社区巴比特发起的，墨链是纸贵科技发起的，BEX是美豹金融发起的，这些项目的团队本身已经有了成功的创业案例，且在细分领域处于排头兵的地位。</p>
+</blockquote>
+<blockquote>
+<p>拿比原链来说，薛蛮子表示，“我认为，比原链的创始团队很年轻，富有朝气，大家都很努力，但是比原链的技术挑战挺大，需要天时地利人和，很多条件具备才能做成，不是轻描淡写，一挥而就的。团队最要紧的是不断试错，踏踏实实做事情，不要辜负投资人的信任。我不看好的是，有的小伙子一辈子没赚过大钱，也没花过100万以上的钱，突然通过ICO拿了几个亿，这些人hold不住。”</p>
+</blockquote>
+<h2 id="tech">tech</h2>
+<blockquote>
+<p>1、 共识算法:POW/POS/DPOS/PBFT/BFT-Raft/Paxos/Kafka<br>
+2、 P2P通讯:自举(bootstrapped)/连接/广播<br>
+3、 签名验签:ECDSA/secp256k1/ED25519/MultiSig<br>
+4、 Hash锁定:Merkle树/MPT树<br>
+5、 UTXO记账:流水账<br>
+6、 智能合约:P2PKH/P2SH/Oracle/状态机<br>
+7、 隐私保护:零知识证明、同态加密、CoinJoin加密技术<br>
+8、 私钥存储:HD协议(Hierarchical Deterministic Key Creation)、钱包Wallets、丢失找回<br>
+9、 算力分发：矿池分发</p>
+</blockquote>
+<ul>
+<li>
+<p>冷热钱包<br>
+热是指在线。如果热钱包断网，那么从存储的角度来讲，也是冷钱包了。但是离线的热钱包和冷钱包还是有很多不同之处。</p>
+<p><a href="https://www.zhihu.com/question/21478404" target="_blank" rel="external">常用的钱包</a></p>
+</li>
+</ul>
+<h3 id="btc">BTC</h3>
+<blockquote>
+<p>比特币系统的一个重要的可扩展特性是：它的区块存储在多层次的数据结构中。一个区块的哈希实际上只是区块头的哈希，区块头是包含时间戳、随机数、上个区块哈希和存储了所有的区块交易的默克尔树的根哈希的长度大约为200字节的一段数据。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+</blockquote>
+<h3 id="钱包相关">钱包相关</h3>
+<ul>
+<li><a href="https://www.jianshu.com/p/d0a4a44685d3" target="_blank" rel="external">简单科普私钥、地址、助记词、Keystore的区别</a></li>
+<li><a href="http://www.8btc.com/wiki/bitcoin-wallet-safe-use-perfect-backup" target="_blank" rel="external">比特币钱包的安全使用和完美备份</a>
+<ul>
+<li>介绍了如何<strong>离线生成脑钱包</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="ripple钱包-os-x-client">ripple钱包: OS X client</h4>
+<p>只要记住私钥，那么点击“通过私钥创建一个账户”，就可以得到一个已经创建过的账户的钱包！</p>
+<h3 id="共识">共识</h3>
+<p><a href="https://www.zhihu.com/question/267440381/answer/325981371" target="_blank" rel="external">区块链技术如何兼顾共识和匿名，解决储存和处理速度问题？</a><br>
+1.共识机制下如何兼顾匿名。举个例子，甲转账给乙两个比特币，但乙不承认。在共识机制下，我们都可以看到确实有2个比特币从地址A转到了地址B，此时有<br>
+问题一：甲可以想办法证明地址A就是他的，但这个证明仍旧是传统的，需要一个个说服别人的证明，而不是一下子说服全部人的证明。<br>
+问题二：即使甲说服了大部分人地址A就是他的，乙仍旧可以不承认地址B是他的，也没有共识机制可以指出地址B是谁的。甲仍旧不能证明转给乙两个比特币。<br>
+问题三：如果存在共识机制能指出地址AB是对应甲和乙的，隐私性就无从谈起，等于所有人的交易都是暴露的。<br>
+2.数据储存过大。举个例子在淘宝买东西，传统交易是中心化的，数据都记录在阿里的硬盘里，我们害怕阿里偷偷修改了以前的数据，要去中心化，所以用上了区块链技术取代阿里云，但所有的交易数据可不是几个T这么少，普通用户如何储存。如果只是少数人储存，那仍旧没有去中心化。<br>
+3.计算速度的问题。假设以后所有交易都在区块链上，区块链技术也得到改进，每秒能处理上亿比交易，如果每个人都要记录，是否意味着每个人都有强大的处理能力，如果但普通计算机无法胜任，只能交给少数超级计算机处理，是否意味普通人失去了记录的能力。</p>
+<p>共识（consensus）算法指的是大家对某一个提案达成一致意见的过程，也就是分布式系统中多个节点之间，对某个状态达成一致结果的过程。至于提案（proposal），几乎可以认为任何可以达成一致的信息就是一个提案。</p><p>在具体的区块记账中，问题1所对应的提案就是地址A向地址B转账这条交易信息是否存在。达成共识的过程就是大家确认该笔交易存在并且有效。因此，不涉及到问题1.1和1.2，即地址A是甲的地址，地址B是乙的地址这个身份关联过程，因此，可以视为该过程是匿名的。除非提案内容更改为&quot;地址A是甲的地址，地址B是乙的地址，地址A向地址B发起了一笔转账&quot;。<br>
+这样就触发了问题三，问题三的描述里，确实无法保证隐私性，这个不用多说。</p>
+<h3 id="闪电链">闪电链</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/34681487" target="_blank" rel="external">闪电链科普</a>：<br>
+所谓闪电链就是小额交易不上主链，而是放在侧链上，在达到一定交易量后再统一上到主链上。<br>
+闪电链相当于中心化的节点。</p>
+<blockquote>
+<p><strong>闪电网络的反作弊机制</strong><br>
+一个叫双向支付通道（Bi-Directional Payment Channel )<br>
+一个叫时间锁（TimeLock）<br>
+一个叫密码（Secret Value）</p>
+</blockquote>
+<p>双向通道：交易双方都确认，才能交易成功。</p>
+<h3 id="pow">POW</h3>
+<ul>
+<li>btc的block上，负责POW的nounce。</li>
+<li>btc采用POW是为了增加作假block的成本，进而禁止了双花。</li>
+</ul>
+<h3 id="utxo">UTXO</h3>
+<p><a href="http://8btc.com/thread-45640-1-1.html" target="_blank" rel="external">玛_雅和vatten解释的很好</a><br>
+<a href="http://8btc.com/article-4381-1.html" target="_blank" rel="external">其实并没有什么比特币，只有 UTXO</a></p>
+<h3 id="隐私保护机制">隐私保护机制<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h3>
+<ol>
+<li>
+<p>零知识证明<br>
+<img src="https://pic4.zhimg.com/80/v2-8e9aa2a8dd3457c05cbbc688f2679ff1_hd.jpg" alt="image"><br>
+零知识证明也就是证明者在不泄露秘密的情况下，让验证者相信证明者知道这个秘密。</p>
+<blockquote>
+<p>Zcash是首个使用零知识证明机制的区块链系统。不同于其他加密数字货币会公开所有的交易记录，Zcash可以用零知识证明将完全加密的交易记录确认为有效，但是他有一个很关键的缺点就是<strong>速度缓慢</strong>。<br>
+Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行隐藏。</p>
+</blockquote>
+</li>
+<li>
+<p>同态加密</p>
+<blockquote>
+<p>明文加密后得到密文，对密文进行特定的代数运算得到的还是加密的结果，对结果进行解密可以得到对明文进行同样运算一样的结果。也就是说可以在不知道原数据的情况下进行运算，最后同样能得到正确的结果。</p>
+</blockquote>
+</li>
+<li>
+<p>混币</p>
+<blockquote>
+<p>以门罗币（Monero）为例，他使用了RingCT（环形加密匿名）技术来实现隐私保护。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="problem">problem</h3>
+<ul>
+<li>what is private network?</li>
+</ul>
+<h2 id="资料-引用">资料&amp;引用</h2>
+<ul>
+<li>
+<p><a href="https://www.zhihu.com/question/37290469" target="_blank" rel="external">区块链是什么，如何简单易懂地介绍区块链？</a><br>
+<a href="https://zhuanlan.zhihu.com/p/34220442?group_id=953729236041809920" target="_blank" rel="external">2亿美元被锁死在区块链中？以太坊智能合约被爆存在巨大漏洞，新技术落地恐怕要“迟到”了</a></p>
+</li>
+<li>
+<p>BM是指网名byteMaster (Daniel Larimer)的程序员，BTS、STEEMIT、EOS创始人</p>
+</li>
+</ul>
+<p>reference:</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://ethfans.org/wikis/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%99%BD%E7%9A%AE%E4%B9%A6" target="_blank" rel="external"></a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://zhuanlan.zhihu.com/p/34709735" target="_blank" rel="external">知识点 || 区块链的隐私保护机制有哪些？真的安全吗？</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;What a bubble!&lt;br&gt;
+&lt;img src=&quot;https://res.cloudinary.com/do7yb5qw4/image/upload/v1512135626/%E6%9D%82/bitcoin.png&quot; alt=&quot;bitcoin&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="block chain" scheme="http://timchen314.com/categories/block-chain/"/>
+    
+    
+      <category term="block chain" scheme="http://timchen314.com/tags/block-chain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://timchen314.com/flask/"/>
+    <id>http://timchen314.com/flask/</id>
+    <published>2018-02-04T10:00:00.000Z</published>
+    <updated>2019-06-14T07:59:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="quick-start"><a href="http://flask.pocoo.org/docs/1.0/quickstart/#quickstart" target="_blank" rel="external">quick start</a></h2>
+<p>###Unique URLs / Redirection Behavior<br>
+The following two rules differ in their use of a trailing slash.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@app.route(&apos;/projects/&apos;)</div><div class="line">def projects():</div><div class="line">    return &apos;The project page&apos;</div><div class="line">@app.route(&apos;/about&apos;)</div><div class="line">def about():</div><div class="line">    return &apos;The about page&apos;</div></pre></td></tr></table></figure>
+<p>The canonical URL for the projects endpoint has a trailing slash. It’s similar to a folder in a file system. If you access the URL without a trailing slash, Flask redirects you to the canonical URL with the trailing slash.</p>
+<p>The canonical URL for the about endpoint does not have a trailing slash. It’s similar to the pathname of a file. Accessing the URL with a trailing slash produces a 404 “Not Found” error. This helps keep URLs unique for these resources, which helps search engines avoid indexing the same page twice.</p>
+<h1 id="reference">reference</h1>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;quick-start&quot;&gt;&lt;a href=&quot;http://flask.pocoo.org/docs/1.0/quickstart/#quickstart&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;quick
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>pandas note</title>
     <link href="http://timchen314.com/pandas/"/>
     <id>http://timchen314.com/pandas/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>数据分析神器Pandas。</p>
 <a id="more"></a>
@@ -1663,38 +1690,11 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://timchen314.com/flask/"/>
-    <id>http://timchen314.com/flask/</id>
-    <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a>
-<h2 id="quick-start"><a href="http://flask.pocoo.org/docs/1.0/quickstart/#quickstart" target="_blank" rel="external">quick start</a></h2>
-<p>###Unique URLs / Redirection Behavior<br>
-The following two rules differ in their use of a trailing slash.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@app.route(&apos;/projects/&apos;)</div><div class="line">def projects():</div><div class="line">    return &apos;The project page&apos;</div><div class="line">@app.route(&apos;/about&apos;)</div><div class="line">def about():</div><div class="line">    return &apos;The about page&apos;</div></pre></td></tr></table></figure>
-<p>The canonical URL for the projects endpoint has a trailing slash. It’s similar to a folder in a file system. If you access the URL without a trailing slash, Flask redirects you to the canonical URL with the trailing slash.</p>
-<p>The canonical URL for the about endpoint does not have a trailing slash. It’s similar to the pathname of a file. Accessing the URL with a trailing slash produces a 404 “Not Found” error. This helps keep URLs unique for these resources, which helps search engines avoid indexing the same page twice.</p>
-<h1 id="reference">reference</h1>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;quick-start&quot;&gt;&lt;a href=&quot;http://flask.pocoo.org/docs/1.0/quickstart/#quickstart&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;quick
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>sqlite note</title>
     <link href="http://timchen314.com/sqlite/"/>
     <id>http://timchen314.com/sqlite/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>
 <h1 id="基本概念">基本概念</h1>
@@ -2011,7 +2011,7 @@ e.g.:<br>
     <link href="http://timchen314.com/jupyter/"/>
     <id>http://timchen314.com/jupyter/</id>
     <published>2018-01-16T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="a-tutorial">A Tutorial</h1>
 <a id="more"></a>
@@ -2196,7 +2196,7 @@ NOTE: Don’t forget to point to a specific python.</p>
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
@@ -2791,7 +2791,7 @@ ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a>
     <link href="http://timchen314.com/linux_senior_service/"/>
     <id>http://timchen314.com/linux_senior_service/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -2892,7 +2892,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -2941,7 +2941,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -3001,7 +3001,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -3189,11 +3189,464 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
   </entry>
   
   <entry>
+    <title>python modules</title>
+    <link href="http://timchen314.com/python_modules/"/>
+    <id>http://timchen314.com/python_modules/</id>
+    <published>2017-10-02T10:00:00.000Z</published>
+    <updated>2019-06-14T07:59:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]<br>
+Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.</p>
+<a id="more"></a>
+<h2 id="module">module</h2>
+<p><a href="http://funhacks.net/2016/12/27/regular_expression/#match-%E6%96%B9%E6%B3%95" target="_blank" rel="external">Python 正则表达式 re 模块</a></p>
+<h3 id="asyncio">asyncio</h3>
+<p><a href="https://zhuanlan.zhihu.com/p/27258289" target="_blank" rel="external">ref1: Python Async/Await入门指南</a></p>
+<p>Note: asynchronous generators and asynchronous comprehensions is added until python3.6</p>
+<blockquote>
+<p>Python中常见的四种函数形式：</p>
+</blockquote>
+<ol>
+<li>普通函数</li>
+<li>生成器函数<br>
+在3.5过后，我们可以使用async修饰将普通函数和生成器函数包装成异步函数和异步生成器。</li>
+<li>异步函数（协程）</li>
+<li>异步生成器</li>
+</ol>
+<h4 id="coroutine">coroutine</h4>
+<ol>
+<li>
+<p>直接调用异步函数不会返回结果，而是返回一个coroutine对象：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(async_function())</div><div class="line"><span class="comment"># &lt;coroutine object async_function at 0x102ff67d8&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>协程需要通过其他方式来驱动，因此可以使用这个协程对象的send方法给协程发送一个值：<br>
+<code>print(async_function().send(None))</code><br>
+不幸的是，如果通过上面的调用会抛出一个异常：<br>
+<code>StopIteration: 1</code><br>
+因为<strong>生成器/协程在正常返回退出时会抛出一个StopIteration异常，而原来的返回值会存放在StopIteration对象的value属性中，通过以下捕获可以获取协程真正的返回值</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(coroutine)</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        coroutine.send(<span class="keyword">None</span>)</div><div class="line">    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:</div><div class="line">        <span class="keyword">return</span> e.value</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>await<br>
+await: suspends the execution of the coroutine until the awaitable it takes completes and returns the result.</p>
+</li>
+</ol>
+<p>await语法只能出现在通过async修饰的函数中，否则会报SyntaxError错误。</p>
+<blockquote>
+<p>原理：<br>
+await后面的对象需要是一个Awaitable，或者实现了相关的协议。<br>
+查看Awaitable抽象类的代码，表明了只要一个类实现了<code>__await__</code>方法，那么通过它构造出来的实例就是一个Awaitable：<br>
+Coroutine类继承了Awaitable，而且实现了send，throw和close方法。所以await一个调用异步函数返回的协程对象是合法的。<br>
+For more details see ref1.</p>
+</blockquote>
+<h4 id="event">event</h4>
+<ul>
+<li>
+<p>run_until_complete</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">loop = asyncio.get_event_loop()  </div><div class="line">...</div><div class="line">loop.run_until_complete() <span class="comment"># it's blocking (阻塞)</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>Event loop is closed</code><br>
+Jupyter的一个project就是一个进程，而一个进程中默认只有一个event。例如：</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="keyword">import</span> asyncio</div><div class="line">   &gt;&gt;&gt; asyncio.get_event_loop().close()</div><div class="line">   &gt;&gt;&gt; asyncio.get_event_loop().is_closed()</div><div class="line"><span class="keyword">True</span></div><div class="line">   &gt;&gt;&gt; asyncio.get_event_loop().run_until_complete(asyncio.sleep(<span class="number">1</span>))</div><div class="line">.....</div><div class="line">RuntimeError: Event loop <span class="keyword">is</span> closed</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>event loop在asyncio中有复杂的机制，引用Flask作者著名的文章<a href="http://lucumr.pocoo.org/2016/10/30/i-dont-understand-asyncio/" target="_blank" rel="external">I don’t understand Python’s Asyncio</a></p>
+<blockquote>
+<p>On the surface it looks like each thread has one event loop but that’s not really how it works.</p>
+</blockquote>
+<ul>
+<li>if you are the main thread an event loop is created when you call asyncio.get_event_loop()</li>
+<li>if you are any other thread, a runtime error is raised from asyncio.get_event_loop()</li>
+<li>You can at any point asyncio.set_event_loop() to bind an event loop with the current thread. Such an event loop can be created with the asyncio.new_event_loop() function.</li>
+<li>Event loops can be used without being bound to the current thread.</li>
+<li>asyncio.get_event_loop() returns the thread bound event loop, it does not return the currently running event loop.</li>
+</ul>
+<p>更详细的讨论请参见原文，总之这里有许多问题。</p>
+<p>如果想避免之前的示例问题，参考<a href="https://juejin.im/post/59c381aaf265da064c3860d8" target="_blank" rel="external">在一段Python程序中使用多次事件循环</a>一文，可以如下操作：</p>
+<blockquote>
+<p>我们可以使用asyncio.new_event_loop函数建立一个新的事件循环，并使用asyncio.set_event_loop设置全局的事件循环，这时候就可以多次运行异步的事件循环了，不过最好保存默认的asyncio.get_event_loop并在事件循环结束的时候还原回去。</p>
+</blockquote>
+   <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import asyncio</div><div class="line">async def doAsync():</div><div class="line">    await asyncio.sleep(0)</div><div class="line">    #...</div><div class="line">def runEventLoop()</div><div class="line">    loop = asyncio.new_event_loop()</div><div class="line">    asyncio.set_event_loop(loop)</div><div class="line">    loop.run_until_complete(doAsync())</div><div class="line">    loop.close()</div><div class="line">if __name__ == "__main__":</div><div class="line">    oldloop = asyncio.get_event_loop()</div><div class="line">    runEventLoop()</div><div class="line">    runEventLoop()</div><div class="line">    asyncio.set_event_loop(oldloop)</div></pre></td></tr></table></figure>
+<h4 id="gather">gather</h4>
+<p><a href="https://stackoverflow.com/questions/32456881/getting-values-from-functions-that-run-as-asyncio-tasks" target="_blank" rel="external">ref: Getting values from functions that run as asyncio tasks</a></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">loop = asyncio.get_event_loop()</div><div class="line">tasks = func_normal(), func_infinite()</div><div class="line">a, b = loop.run_until_complete(asyncio.gather(*tasks))</div><div class="line">print(<span class="string">"func_normal()=&#123;a&#125;, func_infinite()=&#123;b&#125;"</span>.format(**vars()))  <span class="comment"># 这段输出的代买没看懂</span></div><div class="line">loop.close()</div></pre></td></tr></table></figure>
+<p>另外，run_until_complete也会返回函数结果：</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">done, _ = loop.run_until_complete(asyncio.wait(tasks))</div><div class="line"><span class="keyword">for</span> fut <span class="keyword">in</span> done:</div><div class="line">    print(<span class="string">"return value is &#123;&#125;"</span>.format(fut.result()))</div><div class="line">loop.close()</div></pre></td></tr></table></figure>
+<h4 id="tips">Tips</h4>
+<ul>
+<li><code>asyncio.run()</code> is added in python3.7</li>
+<li><code>asyncio.sleep(1)</code><br>
+异步 I/O 里面的 sleep() 方法, 它也是一个协程, 异步 I/O 里面不能使用 time.sleep(), time.sleep() 会阻塞整个线程</li>
+</ul>
+<ul>
+<li><code>RuntimeError: This event loop is already running</code> problem<br>
+This problem happens because:
+<blockquote>
+<p>The kernel itself runs on an event loop, and as of Tornado 5.0, it’s using the asyncio event loop. So the asyncio event loop is always running in the kernel.</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://github.com/jupyter/notebook/issues/3397" target="_blank" rel="external">Can’t invoke asyncio event_loop after tornado 5.0 update</a><br>
+Solvation:<br>
+<code>pip3 install tornado==4.5.3</code> and restart notebook</p>
+<h3 id="aiohttp">aiohttp</h3>
+<p><a href="https://blog.csdn.net/u014595019/article/details/52295642" target="_blank" rel="external">ref: 异步爬虫: async/await 与 aiohttp的使用，以及例子</a></p>
+<ul>
+<li>
+<p>get</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="keyword">with</span> aiohttp.get(<span class="string">'https://github.com'</span>) <span class="keyword">as</span> r:</div><div class="line">        <span class="keyword">await</span> r.text()</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>timeout</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> aiohttp.Timeout(<span class="number">0.001</span>):</div><div class="line">    <span class="keyword">async</span> <span class="keyword">with</span> aiohttp.get(<span class="string">'https://github.com'</span>) <span class="keyword">as</span> r:</div><div class="line">        <span class="keyword">await</span> r.text()</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>session</p>
+<blockquote>
+<p>session可以进行多项操作，比如post, get, put, head等等</p>
+</blockquote>
+</li>
+</ul>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">getPage</span><span class="params">(url,res_list)</span>:</span></div><div class="line">    headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'</span>&#125;</div><div class="line">    <span class="comment">### example of proxy and cookie</span></div><div class="line">    <span class="comment"># conn = aiohttp.ProxyConnector(proxy="http://127.0.0.1:8087")</span></div><div class="line">    <span class="comment"># session.get(url,headers=headers, connector=conn)</span></div><div class="line">    <span class="comment"># async with ClientSession(&#123;'cookies_are': 'working'&#125;) as session:</span></div><div class="line">    <span class="keyword">async</span> <span class="keyword">with</span> aiohttp.ClientSession() <span class="keyword">as</span> session:</div><div class="line">        <span class="keyword">async</span> <span class="keyword">with</span> session.get(url,headers=headers) <span class="keyword">as</span> resp:</div><div class="line">            <span class="keyword">assert</span> resp.status==<span class="number">200</span></div><div class="line">            res_list.append(<span class="keyword">await</span> resp.text())</div></pre></td></tr></table></figure>
+<h3 id="atexit">atexit</h3>
+<p>ref:  <a href="https://www.jb51.net/article/107630.htm" target="_blank" rel="external">深入理解python中的atexit模块</a> 非常好的简介，如果需要进一步了解，可以参考。</p>
+<blockquote>
+<p>atexit 模块介绍<br>
+python atexit 模块定义了一个 register 函数，用于在 python 解释器中注册一个退出函数，这个函数在解释器正常终止时自动执行,一般用来做一些资源清理的操作。 atexit 按注册的相反顺序执行这些函数; 例如注册A、B、C，在解释器终止时按顺序C，B，A运行。<br>
+Note：如果程序是非正常crash，或者通过os._exit()退出，注册的退出函数将不会被调用。</p>
+</blockquote>
+<h3 id="heapq-heap-queue-algorithm">heapq (Heap queue algorithm)</h3>
+<ul>
+<li>nlargest/nsmallest <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">nums = [<span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">23</span>, <span class="number">7</span>, <span class="number">-4</span>, <span class="number">18</span>, <span class="number">23</span>, <span class="number">42</span>, <span class="number">37</span>, <span class="number">2</span>]</div><div class="line">heapq.nlargest(<span class="number">3</span>, nums)</div><div class="line"><span class="comment"># or more complicated:</span></div><div class="line">portfolio = [</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'IBM'</span>, <span class="string">'shares'</span>: <span class="number">100</span>, <span class="string">'price'</span>: <span class="number">91.1</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'AAPL'</span>, <span class="string">'shares'</span>: <span class="number">50</span>, <span class="string">'price'</span>: <span class="number">543.22</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'FB'</span>, <span class="string">'shares'</span>: <span class="number">200</span>, <span class="string">'price'</span>: <span class="number">21.09</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'HPQ'</span>, <span class="string">'shares'</span>: <span class="number">35</span>, <span class="string">'price'</span>: <span class="number">31.75</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'YHOO'</span>, <span class="string">'shares'</span>: <span class="number">45</span>, <span class="string">'price'</span>: <span class="number">16.35</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'ACME'</span>, <span class="string">'shares'</span>: <span class="number">75</span>, <span class="string">'price'</span>: <span class="number">115.65</span>&#125;</div><div class="line">]</div><div class="line">cheap = heapq.nsmallest(<span class="number">3</span>, portfolio, key=<span class="keyword">lambda</span> s: s[<span class="string">'price'</span>])</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="re-module">re module</h3>
+<h4 id="compile">compile</h4>
+<p>[Python Regex Flags] (<a href="http://xahlee.info/python/python_regex_flags.html" target="_blank" rel="external">http://xahlee.info/python/python_regex_flags.html</a>)</p>
+<ol>
+<li>
+<p>compile(r’[0-9]+’)<br>
+Usage:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">pattern = re.compile(<span class="string">r'[0-9]+'</span>)</div><div class="line">frist_number = pattern.match(your_str).group(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>another example</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">mys = <span class="string">'abe(ac)ad)'</span></div><div class="line">p1 = re.compile(<span class="string">r'[(](.*?)[)]'</span>, re.S)  </div><div class="line">match_list = re.findall(p1, mys) <span class="comment"># findall return a list of matched string</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="other-func">other func</h4>
+<ol>
+<li>
+<p>replace(str1, str2)</p>
+</li>
+<li>
+<p>split()</p>
+<blockquote>
+<p>string 对象的 split() 方法只适应于非常简单的字符串分割情形， 它并不允许有多个分隔符或者是分隔符周围不确定的空格。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; line = <span class="string">'asdf fjdk; afed, fjek,asdf, foo'</span></div><div class="line">   &gt;&gt;&gt; re.split(<span class="string">r'[;,\s]\s*'</span>, line)</div><div class="line">[<span class="string">'asdf'</span>, <span class="string">'fjdk'</span>, <span class="string">'afed'</span>, <span class="string">'fjek'</span>, <span class="string">'asdf'</span>, <span class="string">'foo'</span>]</div></pre></td></tr></table></figure>
+<blockquote>
+<p>当你使用 re.split() 函数时候，需要特别注意的是正则表达式中是否包含一个括号捕获分组。 如果使用了捕获分组，那么被匹配的文本也将出现在结果列表中。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; fields = re.split(<span class="string">r'(;|,|\s)\s*'</span>, line)</div><div class="line">   &gt;&gt;&gt; fields</div><div class="line">[<span class="string">'asdf'</span>, <span class="string">' '</span>, <span class="string">'fjdk'</span>, <span class="string">';'</span>, <span class="string">'afed'</span>, <span class="string">','</span>, <span class="string">'fjek'</span>, <span class="string">','</span>, <span class="string">'asdf'</span>, <span class="string">','</span>, <span class="string">'foo'</span>]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="sys-module">sys module</h3>
+<ul>
+<li>sys.version/version_info(version_info is a object)</li>
+</ul>
+<h3 id="os-module">os module</h3>
+<h4 id="1-about-path">1. about path</h4>
+<p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="external">os.path模块</a></p>
+<ul>
+<li>
+<p>about path</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">os.getcwd()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.listdir()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.path.exist   <span class="comment">#determine if a file or dir exists</span></div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>os.remove<br>
+remove a file; if file does not exists, an Error will be throwed out.</p>
+</li>
+<li>
+<p>os.rmdir<br>
+remove a dir</p>
+</li>
+<li>
+<p>os.path.splitext(path)<br>
+Split the pathname path into a pair (root, ext)</p>
+</li>
+<li>
+<p>os.path.basename(your_path)</p>
+</li>
+</ul>
+<h4 id="2-os-popen">2. <s>os.popen</s></h4>
+<ol>
+<li>
+<p><strong>shell cmd is executed in background and you can’t change it</strong></p>
+</li>
+<li>
+<p>inplemented by <em>subprocess.Popen</em>, so why not you use <em>subprocess</em>?</p>
+</li>
+</ol>
+<p><a href="https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen" target="_blank" rel="external">python doc</a></p>
+<h3 id="time-calendar">time &amp; calendar</h3>
+<p><a href="http://www.runoob.com/python/python-date-time.html" target="_blank" rel="external">Python 日期和时间 runoob</a></p>
+<ul>
+<li>
+<p>‘datetime’ object &amp; ‘timedelta’ object</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; datetime.strptime(<span class="string">"2018-11-28T19:57:01.522Z"</span>,FMT)</div><div class="line">datetime.datetime(<span class="number">2018</span>, <span class="number">11</span>, <span class="number">28</span>, <span class="number">19</span>, <span class="number">57</span>, <span class="number">1</span>, <span class="number">522000</span>)</div><div class="line">   &gt;&gt;&gt; datetime.strptime(<span class="string">"2018-11-28T19:56:55.557Z"</span>,FMT) - datetime.strptime(<span class="string">"2018-11-28T19:57:01.522Z"</span>,FMT)</div><div class="line">datetime.timedelta(<span class="number">-1</span>, <span class="number">86394</span>, <span class="number">35000</span>)</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>time.time()	<br>
+Return the current time in seconds since the Epoch.</p>
+</li>
+<li>
+<p>mktime(tupletime)</p>
+</li>
+<li>
+<p>localtime()		<br>
+Convert seconds since the Epoch to a time tuple expressing local time.<br>
+When ‘seconds’ is not passed in, convert the current time instead.</p>
+</li>
+<li>
+<p>strftime()	<br>
+<code>strftime(format[, tuple]) # -&gt; string</code></p>
+</li>
+<li>
+<p>strptime()	<br>
+<code>strptime(string, format) # -&gt; struct_time</code><br>
+Parse a string to a time tuple according to a format specification.</p>
+</li>
+<li>
+<p>time.sleep(secs)</p>
+</li>
+<li>
+<p>calendar.isleap(year)</p>
+</li>
+<li>
+<p>calendar.weekday(year,month,day)</p>
+</li>
+</ul>
+<h3 id="subprocess-module">subprocess module</h3>
+<p><a href="https://docs.python.org/3.5/library/subprocess.html?highlight=subprocess#frequently-used-arguments" target="_blank" rel="external">python doc</a></p>
+<h4 id="1-for-cmd-that-needn-t-stdout">1.  For cmd that needn’t stdout</h4>
+<p><code>subprocess.run(&quot;cp standard_py/*py .&quot;, shell=True, check=True)</code></p>
+<ul>
+<li><em>shell=True</em><br>
+you can use a string instead of a series of args!</li>
+<li><em>check=True</em><br>
+throw an Error if shell cmd exit wrong!</li>
+</ul>
+<h4 id="2-for-cmd-needing-stdout">2. For cmd needing stdout</h4>
+<p>An example:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ret = subprocess.run(<span class="string">"ls standard_py/*py"</span>, shell=<span class="keyword">True</span>, check=<span class="keyword">True</span>, universal_newlines=<span class="keyword">True</span>, stdout=PIPE)</div><div class="line">print(ret.stdout, end=<span class="string">""</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><em>universal_newlines=True</em><br>
+stdout<br>
+Captured stdout from the child process. A bytes sequence, or a string if run() was called with universal_newlines=True. None if stdout was not captured.</p>
+</li>
+<li>
+<p>stdout=PIPE<br>
+without this argument, stdout will be printed as stdout of python script, instead of captured, as from python doc:</p>
+<blockquote>
+<p>This(ct: means <em>run</em>) does not capture stdout or stderr by default. To do so, pass PIPE for the stdout and/or stderr arguments.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="glob-module">glob module</h3>
+<p>The glob module finds all the pathnames matching a specified pattern</p>
+<ul>
+<li>glob.glob(pathname, *, recursive=False)</li>
+<li>glob.iglob(pathname, recursive=False)<br>
+Return an iterator which yields the same values as glob()</li>
+</ul>
+<h3 id="collections-module">collections module</h3>
+<p><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431953239820157155d21c494e5786fce303f3018c86000" target="_blank" rel="external">廖雪峰</a></p>
+<ul>
+<li>
+<p>Counter</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; Counter([<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>])</div><div class="line">Counter(&#123;<span class="number">1</span>: <span class="number">5</span>, <span class="number">2</span>: <span class="number">3</span>, <span class="number">3</span>: <span class="number">2</span>&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p><a href="https://docs.python.org/3.5/library/collections.html" target="_blank" rel="external">deque (double-ended queue, pronounced as ‘Deck’)</a><br>
+doc: <code>deque([iterable[, maxlen]])</code><br>
+method: pop(popleft) / append / extend; clear / copy (It’s shadow copy  ) / insert / remove; count / index ; reverse / rotate</p>
+</li>
+<li>
+<p><a href="https://docs.python.org/3.7/library/collections.html#ordereddict-examples-and-recipes" target="_blank" rel="external">python doc: OrderedDict</a><br>
+This dict will record the <strong>insert</strong> order!  And this is the only difference between OrderedDict and dict<br>
+<strong>NOTE: OrderedDict may looks like a list of tuple, but it’s definitely not!</strong></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">dic = collections.OrderedDict()</div><div class="line">dic[<span class="string">'k1'</span>] = <span class="string">'v1'</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Standard Usage:</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># dictionary sorted by key</span></div><div class="line">OrderedDict(sorted(d.items(), key=<span class="keyword">lambda</span> t: t[<span class="number">0</span>]))</div><div class="line"><span class="comment"># dictionary sorted by value</span></div><div class="line">od = OrderedDict(sorted(mydict.items(), key=<span class="keyword">lambda</span> t: t[<span class="number">1</span>], reverse=<span class="keyword">True</span>))</div></pre></td></tr></table></figure>
+<h3 id="pil">PIL</h3>
+<ul>
+<li><code>img = Image.open(‘origin.png’) #支持多种格式</code><br>
+注意：类似于.htm和.html，.jpg和.jpeg没有区别，只是两种写法</li>
+<li>font<br>
+<code>font = ImageFont.truetype(&quot;FreeMono.ttf&quot;, 28, encoding=&quot;unic&quot;)</code></li>
+<li><code>img2.save('./test_image_data/cat_001_blur.jpeg','jpeg')</code> #save(‘path’,‘format’)</li>
+<li>resize()、rotate()、convert(mode=‘your_mode’)</li>
+<li>Coordinates (0, 0) in the upper left corner.</li>
+<li><code>draw = ImageDraw.Draw(img)</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#img is from:</div><div class="line">#img = Image.open(&apos;./test_image_data/cat_001.jpg&apos;)</div><div class="line">draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first parameter is the start point of the draw</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="random">random</h3>
+<p><a href="https://docs.python.org/3/library/random.html" target="_blank" rel="external">doc</a></p>
+<ul>
+<li>random.seed(a=None, version=2)</li>
+</ul>
+<h4 id="functions-for-integers">functions for integers</h4>
+<ul>
+<li>random.randrange(start, stop[, step])</li>
+<li>random.randint(a, b)
+<blockquote>
+<p>return a random integer N such that a &lt;= N &lt;= b. Alias for randrange(a, b+1).</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="real-valued-distributions">real-valued distributions</h4>
+<ul>
+<li>random.random()
+<blockquote>
+<p>Return the next random floating point number in the range [0.0, 1.0).</p>
+</blockquote>
+</li>
+<li>random.uniform(a, b)</li>
+<li>random.gauss(mu, sigma)</li>
+</ul>
+<h3 id="shutil">shutil</h3>
+<blockquote>
+<p>The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.</p>
+</blockquote>
+<p><code>shutil.copyfile(src, dst)</code></p>
+<h3 id="logging">logging<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>  <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h3>
+<ul>
+<li>A sample example:<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line">logging.warning(<span class="string">'Watch out!'</span>)  <span class="comment"># will print a message to the console</span></div><div class="line">logging.info(<span class="string">'I told you so'</span>)  <span class="comment"># will not print anything</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>result is : <code>WARNING:root:Watch out!</code></p>
+<ul>
+<li>Used in program:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import logging</div><div class="line"></div><div class="line">logger = logging.getLogger()</div><div class="line">handler = logging.StreamHandler()</div><div class="line">formatter = logging.Formatter(</div><div class="line">        &apos;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&apos;)</div><div class="line">handler.setFormatter(formatter)</div><div class="line">logger.addHandler(handler)</div><div class="line">logger.setLevel(logging.DEBUG)</div><div class="line"></div><div class="line">logger.debug(&apos;often makes a very good meal of %s&apos;, &apos;visiting tourists&apos;)</div></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>logging.warn() vs. logging.warning()<br>
+<code>logging.warning()</code> just logs something at the WARNING level, while <code>logging.warn</code> will raise an exception.<br>
+ref: <a href="https://stackoverflow.com/questions/9595009/python-warnings-warn-vs-logging-warning" target="_blank" rel="external">Python warnings.warn() vs. logging.warning()</a></p>
+</li>
+<li>
+<p>filter<br>
+一般都是用继承<code>logging.Filter</code>类的方法，再写<code>filter</code> method。<br>
+官方说3.2版本之后，用个函数就可以作为filter，但是没有示例程序。</p>
+</li>
+</ul>
+<h3 id="functools">functools</h3>
+<h4 id="wraps">wraps</h4>
+<p>ref: <a href="https://stackoverflow.com/questions/308999/what-does-functools-wraps-do" target="_blank" rel="external">What does functools.wraps do?</a><br>
+普通decorator，会导致被修改的函数的属性产生变化（比如func_1，加decorator后，名字会被修改）。</p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">logged</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @wraps(func) # 只比正常的闭包多了这一句</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">with_logging</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line">        <span class="keyword">print</span> func.__name__ + <span class="string">" was called"</span></div><div class="line">        <span class="keyword">return</span> func(*args, **kwargs)</div><div class="line">    <span class="keyword">return</span> with_logging</div></pre></td></tr></table></figure>
+<p>简而言之：decorator都需要functools.wraps</p>
+<h3 id="pickle">pickle</h3>
+<p>pickle.load是从file-like object中导入数据；对应的，pickle.dump也是针对file-like object。<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<ul>
+<li>TIPS<br>
+一个存有bs4.element.Tag类型的对象，并不一定能pickle。<br>
+因为pickle要求数据可以遍历，而bs4.element.Tag类型的对象可能有环？或者单纯是我的数据中，bs4.element.Tag类型的数量太多了？</li>
+</ul>
+<h3 id="beautifulsoup4">BeautifulSoup4</h3>
+<ul>
+<li><a href="https://www.jianshu.com/p/96433d9ee923" target="_blank" rel="external">beautifulsoup4</a>
+<ul>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html#id25" target="_blank" rel="external">文档</a></li>
+<li><code>find_all(text=&quot;your_text&quot;)</code>不好用！</li>
+<li>‘html5lib’ engine is slower but more robust than ‘lxml’！</li>
+<li><code>soup.prettify()</code> and <code>&lt;tag&gt;.prettify()</code><br>
+Formatting html</li>
+</ul>
+</li>
+</ul>
+<h4 id="四大对象种类">四大对象种类<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></h4>
+<ul>
+<li>Tag: 通俗点讲就是 HTML 中的一个个标签<br>
+如何抓取超链接？<br>
+因为超链接不是显示存储的。要想得到超链接的字符串，需要下面的操作： <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> isinstance(i, bs4.element.Tag) <span class="keyword">and</span> i.has_attr(<span class="string">'href'</span>):</div><div class="line">            con_str.append(i[<span class="string">'href'</span>] )</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>NavigableString: <code>print(type(soup.p.string))</code>, that’s it.</li>
+<li>BeautifulSoup: 一个文档的全部内容.大部分时候可以把它当作是一个特殊的 Tag</li>
+<li>Comment: 注释</li>
+</ul>
+<h3 id="selenium">Selenium</h3>
+<ul>
+<li>
+<p>initialize</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chromePath = <span class="string">r'/usr/local/bin/chromedriver'</span></div><div class="line">wd = webdriver.Chrome(executable_path= chromePath)</div></pre></td></tr></table></figure>
+</li>
+<li>
+<p>usage</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wd.find_element_by_id(<span class="string">'login_pwd'</span>)</div><div class="line">wd.find_element_by_class_name(<span class="string">'radiocheck'</span>).click()</div><div class="line">wd.find_element_by_xpath(<span class="string">'//*[@id="sendpck"]/img'</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>NOTE:<br>
+1. you can search an element and then <code>click()</code><br>
+2. you can get xpath in source code page.</p>
+<ul>
+<li>login website<br>
+Please refer to login fucntion in download_voice.ipynb</li>
+</ul>
+<h4 id="tips-v2">TIPS</h4>
+<ul>
+<li>断网<br>
+有时候断网后，selenium就一直无法重新连接，尽管你在浏览器中手动访问网站是可以的。<br>
+这时可以手动刷新一下selenium要访问的页面，问题可能就解决了。<br>
+我猜，这可能是因为selenium保留了上次访问的失败状态，这导致重新链接到网络后，selenium仍然无法正常工作。</li>
+</ul>
+<h2 id="reference">reference</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://docs.python-guide.org/en/latest/writing/logging/" target="_blank" rel="external">THe hitchhiker’s guide to python</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://docs.python.org/3/howto/logging.html" target="_blank" rel="external">Official Logging How to </a> <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://stackoverflow.com/questions/48498929/what-is-file-like-object-what-is-file-pickle-load-and-pickle-loads" target="_blank" rel="external">about pickle</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="http://wiki.jikexueyuan.com/project/python-crawler-guide/beautiful-soup.html" target="_blank" rel="external">Beautiful Soup 的用法</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;br&gt;
+Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://timchen314.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://timchen314.com/tags/python/"/>
+    
+      <category term="编程语言" scheme="http://timchen314.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python notes</title>
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
+    <updated>2019-06-14T07:59:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -3847,459 +4300,6 @@ ruby最大的优势在于Ruby on Rails</li>
     
       &lt;p&gt;[TOC]&lt;br&gt;
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="python" scheme="http://timchen314.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="http://timchen314.com/tags/python/"/>
-    
-      <category term="编程语言" scheme="http://timchen314.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python modules</title>
-    <link href="http://timchen314.com/python_modules/"/>
-    <id>http://timchen314.com/python_modules/</id>
-    <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2019-06-14T07:39:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]<br>
-Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.</p>
-<a id="more"></a>
-<h2 id="module">module</h2>
-<p><a href="http://funhacks.net/2016/12/27/regular_expression/#match-%E6%96%B9%E6%B3%95" target="_blank" rel="external">Python 正则表达式 re 模块</a></p>
-<h3 id="asyncio">asyncio</h3>
-<p><a href="https://zhuanlan.zhihu.com/p/27258289" target="_blank" rel="external">ref1: Python Async/Await入门指南</a></p>
-<p>Note: asynchronous generators and asynchronous comprehensions is added until python3.6</p>
-<blockquote>
-<p>Python中常见的四种函数形式：</p>
-</blockquote>
-<ol>
-<li>普通函数</li>
-<li>生成器函数<br>
-在3.5过后，我们可以使用async修饰将普通函数和生成器函数包装成异步函数和异步生成器。</li>
-<li>异步函数（协程）</li>
-<li>异步生成器</li>
-</ol>
-<h4 id="coroutine">coroutine</h4>
-<ol>
-<li>
-<p>直接调用异步函数不会返回结果，而是返回一个coroutine对象：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(async_function())</div><div class="line"><span class="comment"># &lt;coroutine object async_function at 0x102ff67d8&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>协程需要通过其他方式来驱动，因此可以使用这个协程对象的send方法给协程发送一个值：<br>
-<code>print(async_function().send(None))</code><br>
-不幸的是，如果通过上面的调用会抛出一个异常：<br>
-<code>StopIteration: 1</code><br>
-因为<strong>生成器/协程在正常返回退出时会抛出一个StopIteration异常，而原来的返回值会存放在StopIteration对象的value属性中，通过以下捕获可以获取协程真正的返回值</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(coroutine)</span>:</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        coroutine.send(<span class="keyword">None</span>)</div><div class="line">    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:</div><div class="line">        <span class="keyword">return</span> e.value</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>await<br>
-await: suspends the execution of the coroutine until the awaitable it takes completes and returns the result.</p>
-</li>
-</ol>
-<p>await语法只能出现在通过async修饰的函数中，否则会报SyntaxError错误。</p>
-<blockquote>
-<p>原理：<br>
-await后面的对象需要是一个Awaitable，或者实现了相关的协议。<br>
-查看Awaitable抽象类的代码，表明了只要一个类实现了<code>__await__</code>方法，那么通过它构造出来的实例就是一个Awaitable：<br>
-Coroutine类继承了Awaitable，而且实现了send，throw和close方法。所以await一个调用异步函数返回的协程对象是合法的。<br>
-For more details see ref1.</p>
-</blockquote>
-<h4 id="event">event</h4>
-<ul>
-<li>
-<p>run_until_complete</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">loop = asyncio.get_event_loop()  </div><div class="line">...</div><div class="line">loop.run_until_complete() <span class="comment"># it's blocking (阻塞)</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>Event loop is closed</code><br>
-Jupyter的一个project就是一个进程，而一个进程中默认只有一个event。例如：</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; <span class="keyword">import</span> asyncio</div><div class="line">   &gt;&gt;&gt; asyncio.get_event_loop().close()</div><div class="line">   &gt;&gt;&gt; asyncio.get_event_loop().is_closed()</div><div class="line"><span class="keyword">True</span></div><div class="line">   &gt;&gt;&gt; asyncio.get_event_loop().run_until_complete(asyncio.sleep(<span class="number">1</span>))</div><div class="line">.....</div><div class="line">RuntimeError: Event loop <span class="keyword">is</span> closed</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>event loop在asyncio中有复杂的机制，引用Flask作者著名的文章<a href="http://lucumr.pocoo.org/2016/10/30/i-dont-understand-asyncio/" target="_blank" rel="external">I don’t understand Python’s Asyncio</a></p>
-<blockquote>
-<p>On the surface it looks like each thread has one event loop but that’s not really how it works.</p>
-</blockquote>
-<ul>
-<li>if you are the main thread an event loop is created when you call asyncio.get_event_loop()</li>
-<li>if you are any other thread, a runtime error is raised from asyncio.get_event_loop()</li>
-<li>You can at any point asyncio.set_event_loop() to bind an event loop with the current thread. Such an event loop can be created with the asyncio.new_event_loop() function.</li>
-<li>Event loops can be used without being bound to the current thread.</li>
-<li>asyncio.get_event_loop() returns the thread bound event loop, it does not return the currently running event loop.</li>
-</ul>
-<p>更详细的讨论请参见原文，总之这里有许多问题。</p>
-<p>如果想避免之前的示例问题，参考<a href="https://juejin.im/post/59c381aaf265da064c3860d8" target="_blank" rel="external">在一段Python程序中使用多次事件循环</a>一文，可以如下操作：</p>
-<blockquote>
-<p>我们可以使用asyncio.new_event_loop函数建立一个新的事件循环，并使用asyncio.set_event_loop设置全局的事件循环，这时候就可以多次运行异步的事件循环了，不过最好保存默认的asyncio.get_event_loop并在事件循环结束的时候还原回去。</p>
-</blockquote>
-   <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import asyncio</div><div class="line">async def doAsync():</div><div class="line">    await asyncio.sleep(0)</div><div class="line">    #...</div><div class="line">def runEventLoop()</div><div class="line">    loop = asyncio.new_event_loop()</div><div class="line">    asyncio.set_event_loop(loop)</div><div class="line">    loop.run_until_complete(doAsync())</div><div class="line">    loop.close()</div><div class="line">if __name__ == "__main__":</div><div class="line">    oldloop = asyncio.get_event_loop()</div><div class="line">    runEventLoop()</div><div class="line">    runEventLoop()</div><div class="line">    asyncio.set_event_loop(oldloop)</div></pre></td></tr></table></figure>
-<h4 id="gather">gather</h4>
-<p><a href="https://stackoverflow.com/questions/32456881/getting-values-from-functions-that-run-as-asyncio-tasks" target="_blank" rel="external">ref: Getting values from functions that run as asyncio tasks</a></p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">loop = asyncio.get_event_loop()</div><div class="line">tasks = func_normal(), func_infinite()</div><div class="line">a, b = loop.run_until_complete(asyncio.gather(*tasks))</div><div class="line">print(<span class="string">"func_normal()=&#123;a&#125;, func_infinite()=&#123;b&#125;"</span>.format(**vars()))  <span class="comment"># 这段输出的代买没看懂</span></div><div class="line">loop.close()</div></pre></td></tr></table></figure>
-<p>另外，run_until_complete也会返回函数结果：</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">done, _ = loop.run_until_complete(asyncio.wait(tasks))</div><div class="line"><span class="keyword">for</span> fut <span class="keyword">in</span> done:</div><div class="line">    print(<span class="string">"return value is &#123;&#125;"</span>.format(fut.result()))</div><div class="line">loop.close()</div></pre></td></tr></table></figure>
-<h4 id="tips">Tips</h4>
-<ul>
-<li><code>asyncio.run()</code> is added in python3.7</li>
-<li><code>asyncio.sleep(1)</code><br>
-异步 I/O 里面的 sleep() 方法, 它也是一个协程, 异步 I/O 里面不能使用 time.sleep(), time.sleep() 会阻塞整个线程</li>
-</ul>
-<ul>
-<li><code>RuntimeError: This event loop is already running</code> problem<br>
-This problem happens because:
-<blockquote>
-<p>The kernel itself runs on an event loop, and as of Tornado 5.0, it’s using the asyncio event loop. So the asyncio event loop is always running in the kernel.</p>
-</blockquote>
-</li>
-</ul>
-<p><a href="https://github.com/jupyter/notebook/issues/3397" target="_blank" rel="external">Can’t invoke asyncio event_loop after tornado 5.0 update</a><br>
-Solvation:<br>
-<code>pip3 install tornado==4.5.3</code> and restart notebook</p>
-<h3 id="aiohttp">aiohttp</h3>
-<p><a href="https://blog.csdn.net/u014595019/article/details/52295642" target="_blank" rel="external">ref: 异步爬虫: async/await 与 aiohttp的使用，以及例子</a></p>
-<ul>
-<li>
-<p>get</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="keyword">with</span> aiohttp.get(<span class="string">'https://github.com'</span>) <span class="keyword">as</span> r:</div><div class="line">        <span class="keyword">await</span> r.text()</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>timeout</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> aiohttp.Timeout(<span class="number">0.001</span>):</div><div class="line">    <span class="keyword">async</span> <span class="keyword">with</span> aiohttp.get(<span class="string">'https://github.com'</span>) <span class="keyword">as</span> r:</div><div class="line">        <span class="keyword">await</span> r.text()</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>session</p>
-<blockquote>
-<p>session可以进行多项操作，比如post, get, put, head等等</p>
-</blockquote>
-</li>
-</ul>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">getPage</span><span class="params">(url,res_list)</span>:</span></div><div class="line">    headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'</span>&#125;</div><div class="line">    <span class="comment">### example of proxy and cookie</span></div><div class="line">    <span class="comment"># conn = aiohttp.ProxyConnector(proxy="http://127.0.0.1:8087")</span></div><div class="line">    <span class="comment"># session.get(url,headers=headers, connector=conn)</span></div><div class="line">    <span class="comment"># async with ClientSession(&#123;'cookies_are': 'working'&#125;) as session:</span></div><div class="line">    <span class="keyword">async</span> <span class="keyword">with</span> aiohttp.ClientSession() <span class="keyword">as</span> session:</div><div class="line">        <span class="keyword">async</span> <span class="keyword">with</span> session.get(url,headers=headers) <span class="keyword">as</span> resp:</div><div class="line">            <span class="keyword">assert</span> resp.status==<span class="number">200</span></div><div class="line">            res_list.append(<span class="keyword">await</span> resp.text())</div></pre></td></tr></table></figure>
-<h3 id="atexit">atexit</h3>
-<p>ref:  <a href="https://www.jb51.net/article/107630.htm" target="_blank" rel="external">深入理解python中的atexit模块</a> 非常好的简介，如果需要进一步了解，可以参考。</p>
-<blockquote>
-<p>atexit 模块介绍<br>
-python atexit 模块定义了一个 register 函数，用于在 python 解释器中注册一个退出函数，这个函数在解释器正常终止时自动执行,一般用来做一些资源清理的操作。 atexit 按注册的相反顺序执行这些函数; 例如注册A、B、C，在解释器终止时按顺序C，B，A运行。<br>
-Note：如果程序是非正常crash，或者通过os._exit()退出，注册的退出函数将不会被调用。</p>
-</blockquote>
-<h3 id="heapq-heap-queue-algorithm">heapq (Heap queue algorithm)</h3>
-<ul>
-<li>nlargest/nsmallest <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">nums = [<span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">23</span>, <span class="number">7</span>, <span class="number">-4</span>, <span class="number">18</span>, <span class="number">23</span>, <span class="number">42</span>, <span class="number">37</span>, <span class="number">2</span>]</div><div class="line">heapq.nlargest(<span class="number">3</span>, nums)</div><div class="line"><span class="comment"># or more complicated:</span></div><div class="line">portfolio = [</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'IBM'</span>, <span class="string">'shares'</span>: <span class="number">100</span>, <span class="string">'price'</span>: <span class="number">91.1</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'AAPL'</span>, <span class="string">'shares'</span>: <span class="number">50</span>, <span class="string">'price'</span>: <span class="number">543.22</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'FB'</span>, <span class="string">'shares'</span>: <span class="number">200</span>, <span class="string">'price'</span>: <span class="number">21.09</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'HPQ'</span>, <span class="string">'shares'</span>: <span class="number">35</span>, <span class="string">'price'</span>: <span class="number">31.75</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'YHOO'</span>, <span class="string">'shares'</span>: <span class="number">45</span>, <span class="string">'price'</span>: <span class="number">16.35</span>&#125;,</div><div class="line">    &#123;<span class="string">'name'</span>: <span class="string">'ACME'</span>, <span class="string">'shares'</span>: <span class="number">75</span>, <span class="string">'price'</span>: <span class="number">115.65</span>&#125;</div><div class="line">]</div><div class="line">cheap = heapq.nsmallest(<span class="number">3</span>, portfolio, key=<span class="keyword">lambda</span> s: s[<span class="string">'price'</span>])</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="re-module">re module</h3>
-<h4 id="compile">compile</h4>
-<p>[Python Regex Flags] (<a href="http://xahlee.info/python/python_regex_flags.html" target="_blank" rel="external">http://xahlee.info/python/python_regex_flags.html</a>)</p>
-<ol>
-<li>
-<p>compile(r’[0-9]+’)<br>
-Usage:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">pattern = re.compile(<span class="string">r'[0-9]+'</span>)</div><div class="line">frist_number = pattern.match(your_str).group(<span class="number">0</span>)</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>another example</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">mys = <span class="string">'abe(ac)ad)'</span></div><div class="line">p1 = re.compile(<span class="string">r'[(](.*?)[)]'</span>, re.S)  </div><div class="line">match_list = re.findall(p1, mys) <span class="comment"># findall return a list of matched string</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="other-func">other func</h4>
-<ol>
-<li>
-<p>replace(str1, str2)</p>
-</li>
-<li>
-<p>split()</p>
-<blockquote>
-<p>string 对象的 split() 方法只适应于非常简单的字符串分割情形， 它并不允许有多个分隔符或者是分隔符周围不确定的空格。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; line = <span class="string">'asdf fjdk; afed, fjek,asdf, foo'</span></div><div class="line">   &gt;&gt;&gt; re.split(<span class="string">r'[;,\s]\s*'</span>, line)</div><div class="line">[<span class="string">'asdf'</span>, <span class="string">'fjdk'</span>, <span class="string">'afed'</span>, <span class="string">'fjek'</span>, <span class="string">'asdf'</span>, <span class="string">'foo'</span>]</div></pre></td></tr></table></figure>
-<blockquote>
-<p>当你使用 re.split() 函数时候，需要特别注意的是正则表达式中是否包含一个括号捕获分组。 如果使用了捕获分组，那么被匹配的文本也将出现在结果列表中。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; fields = re.split(<span class="string">r'(;|,|\s)\s*'</span>, line)</div><div class="line">   &gt;&gt;&gt; fields</div><div class="line">[<span class="string">'asdf'</span>, <span class="string">' '</span>, <span class="string">'fjdk'</span>, <span class="string">';'</span>, <span class="string">'afed'</span>, <span class="string">','</span>, <span class="string">'fjek'</span>, <span class="string">','</span>, <span class="string">'asdf'</span>, <span class="string">','</span>, <span class="string">'foo'</span>]</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="sys-module">sys module</h3>
-<ul>
-<li>sys.version/version_info(version_info is a object)</li>
-</ul>
-<h3 id="os-module">os module</h3>
-<h4 id="1-about-path">1. about path</h4>
-<p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="external">os.path模块</a></p>
-<ul>
-<li>
-<p>about path</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">os.getcwd()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.listdir()</div><div class="line">os.chdir(<span class="string">'../'</span>)</div><div class="line">os.path.exist   <span class="comment">#determine if a file or dir exists</span></div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>os.remove<br>
-remove a file; if file does not exists, an Error will be throwed out.</p>
-</li>
-<li>
-<p>os.rmdir<br>
-remove a dir</p>
-</li>
-<li>
-<p>os.path.splitext(path)<br>
-Split the pathname path into a pair (root, ext)</p>
-</li>
-<li>
-<p>os.path.basename(your_path)</p>
-</li>
-</ul>
-<h4 id="2-os-popen">2. <s>os.popen</s></h4>
-<ol>
-<li>
-<p><strong>shell cmd is executed in background and you can’t change it</strong></p>
-</li>
-<li>
-<p>inplemented by <em>subprocess.Popen</em>, so why not you use <em>subprocess</em>?</p>
-</li>
-</ol>
-<p><a href="https://docs.python.org/3.5/library/os.html?highlight=os.popen#os.popen" target="_blank" rel="external">python doc</a></p>
-<h3 id="time-calendar">time &amp; calendar</h3>
-<p><a href="http://www.runoob.com/python/python-date-time.html" target="_blank" rel="external">Python 日期和时间 runoob</a></p>
-<ul>
-<li>
-<p>‘datetime’ object &amp; ‘timedelta’ object</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; datetime.strptime(<span class="string">"2018-11-28T19:57:01.522Z"</span>,FMT)</div><div class="line">datetime.datetime(<span class="number">2018</span>, <span class="number">11</span>, <span class="number">28</span>, <span class="number">19</span>, <span class="number">57</span>, <span class="number">1</span>, <span class="number">522000</span>)</div><div class="line">   &gt;&gt;&gt; datetime.strptime(<span class="string">"2018-11-28T19:56:55.557Z"</span>,FMT) - datetime.strptime(<span class="string">"2018-11-28T19:57:01.522Z"</span>,FMT)</div><div class="line">datetime.timedelta(<span class="number">-1</span>, <span class="number">86394</span>, <span class="number">35000</span>)</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>time.time()	<br>
-Return the current time in seconds since the Epoch.</p>
-</li>
-<li>
-<p>mktime(tupletime)</p>
-</li>
-<li>
-<p>localtime()		<br>
-Convert seconds since the Epoch to a time tuple expressing local time.<br>
-When ‘seconds’ is not passed in, convert the current time instead.</p>
-</li>
-<li>
-<p>strftime()	<br>
-<code>strftime(format[, tuple]) # -&gt; string</code></p>
-</li>
-<li>
-<p>strptime()	<br>
-<code>strptime(string, format) # -&gt; struct_time</code><br>
-Parse a string to a time tuple according to a format specification.</p>
-</li>
-<li>
-<p>time.sleep(secs)</p>
-</li>
-<li>
-<p>calendar.isleap(year)</p>
-</li>
-<li>
-<p>calendar.weekday(year,month,day)</p>
-</li>
-</ul>
-<h3 id="subprocess-module">subprocess module</h3>
-<p><a href="https://docs.python.org/3.5/library/subprocess.html?highlight=subprocess#frequently-used-arguments" target="_blank" rel="external">python doc</a></p>
-<h4 id="1-for-cmd-that-needn-t-stdout">1.  For cmd that needn’t stdout</h4>
-<p><code>subprocess.run(&quot;cp standard_py/*py .&quot;, shell=True, check=True)</code></p>
-<ul>
-<li><em>shell=True</em><br>
-you can use a string instead of a series of args!</li>
-<li><em>check=True</em><br>
-throw an Error if shell cmd exit wrong!</li>
-</ul>
-<h4 id="2-for-cmd-needing-stdout">2. For cmd needing stdout</h4>
-<p>An example:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ret = subprocess.run(<span class="string">"ls standard_py/*py"</span>, shell=<span class="keyword">True</span>, check=<span class="keyword">True</span>, universal_newlines=<span class="keyword">True</span>, stdout=PIPE)</div><div class="line">print(ret.stdout, end=<span class="string">""</span>)</div></pre></td></tr></table></figure>
-<ul>
-<li>
-<p><em>universal_newlines=True</em><br>
-stdout<br>
-Captured stdout from the child process. A bytes sequence, or a string if run() was called with universal_newlines=True. None if stdout was not captured.</p>
-</li>
-<li>
-<p>stdout=PIPE<br>
-without this argument, stdout will be printed as stdout of python script, instead of captured, as from python doc:</p>
-<blockquote>
-<p>This(ct: means <em>run</em>) does not capture stdout or stderr by default. To do so, pass PIPE for the stdout and/or stderr arguments.</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="glob-module">glob module</h3>
-<p>The glob module finds all the pathnames matching a specified pattern</p>
-<ul>
-<li>glob.glob(pathname, *, recursive=False)</li>
-<li>glob.iglob(pathname, recursive=False)<br>
-Return an iterator which yields the same values as glob()</li>
-</ul>
-<h3 id="collections-module">collections module</h3>
-<p><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431953239820157155d21c494e5786fce303f3018c86000" target="_blank" rel="external">廖雪峰</a></p>
-<ul>
-<li>
-<p>Counter</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &gt;&gt;&gt; Counter([<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>])</div><div class="line">Counter(&#123;<span class="number">1</span>: <span class="number">5</span>, <span class="number">2</span>: <span class="number">3</span>, <span class="number">3</span>: <span class="number">2</span>&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p><a href="https://docs.python.org/3.5/library/collections.html" target="_blank" rel="external">deque (double-ended queue, pronounced as ‘Deck’)</a><br>
-doc: <code>deque([iterable[, maxlen]])</code><br>
-method: pop(popleft) / append / extend; clear / copy (It’s shadow copy  ) / insert / remove; count / index ; reverse / rotate</p>
-</li>
-<li>
-<p><a href="https://docs.python.org/3.7/library/collections.html#ordereddict-examples-and-recipes" target="_blank" rel="external">python doc: OrderedDict</a><br>
-This dict will record the <strong>insert</strong> order!  And this is the only difference between OrderedDict and dict<br>
-<strong>NOTE: OrderedDict may looks like a list of tuple, but it’s definitely not!</strong></p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> collections</div><div class="line">dic = collections.OrderedDict()</div><div class="line">dic[<span class="string">'k1'</span>] = <span class="string">'v1'</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>Standard Usage:</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># dictionary sorted by key</span></div><div class="line">OrderedDict(sorted(d.items(), key=<span class="keyword">lambda</span> t: t[<span class="number">0</span>]))</div><div class="line"><span class="comment"># dictionary sorted by value</span></div><div class="line">od = OrderedDict(sorted(mydict.items(), key=<span class="keyword">lambda</span> t: t[<span class="number">1</span>], reverse=<span class="keyword">True</span>))</div></pre></td></tr></table></figure>
-<h3 id="pil">PIL</h3>
-<ul>
-<li><code>img = Image.open(‘origin.png’) #支持多种格式</code><br>
-注意：类似于.htm和.html，.jpg和.jpeg没有区别，只是两种写法</li>
-<li>font<br>
-<code>font = ImageFont.truetype(&quot;FreeMono.ttf&quot;, 28, encoding=&quot;unic&quot;)</code></li>
-<li><code>img2.save('./test_image_data/cat_001_blur.jpeg','jpeg')</code> #save(‘path’,‘format’)</li>
-<li>resize()、rotate()、convert(mode=‘your_mode’)</li>
-<li>Coordinates (0, 0) in the upper left corner.</li>
-<li><code>draw = ImageDraw.Draw(img)</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#img is from:</div><div class="line">#img = Image.open(&apos;./test_image_data/cat_001.jpg&apos;)</div><div class="line">draw.text((width - add_width, 0), number, font=font, fill=fillcolor) # first parameter is the start point of the draw</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="random">random</h3>
-<p><a href="https://docs.python.org/3/library/random.html" target="_blank" rel="external">doc</a></p>
-<ul>
-<li>random.seed(a=None, version=2)</li>
-</ul>
-<h4 id="functions-for-integers">functions for integers</h4>
-<ul>
-<li>random.randrange(start, stop[, step])</li>
-<li>random.randint(a, b)
-<blockquote>
-<p>return a random integer N such that a &lt;= N &lt;= b. Alias for randrange(a, b+1).</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="real-valued-distributions">real-valued distributions</h4>
-<ul>
-<li>random.random()
-<blockquote>
-<p>Return the next random floating point number in the range [0.0, 1.0).</p>
-</blockquote>
-</li>
-<li>random.uniform(a, b)</li>
-<li>random.gauss(mu, sigma)</li>
-</ul>
-<h3 id="shutil">shutil</h3>
-<blockquote>
-<p>The shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal.</p>
-</blockquote>
-<p><code>shutil.copyfile(src, dst)</code></p>
-<h3 id="logging">logging<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>  <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h3>
-<ul>
-<li>A sample example:<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2]</a></sup> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> logging</div><div class="line">logging.warning(<span class="string">'Watch out!'</span>)  <span class="comment"># will print a message to the console</span></div><div class="line">logging.info(<span class="string">'I told you so'</span>)  <span class="comment"># will not print anything</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>result is : <code>WARNING:root:Watch out!</code></p>
-<ul>
-<li>Used in program:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import logging</div><div class="line"></div><div class="line">logger = logging.getLogger()</div><div class="line">handler = logging.StreamHandler()</div><div class="line">formatter = logging.Formatter(</div><div class="line">        &apos;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&apos;)</div><div class="line">handler.setFormatter(formatter)</div><div class="line">logger.addHandler(handler)</div><div class="line">logger.setLevel(logging.DEBUG)</div><div class="line"></div><div class="line">logger.debug(&apos;often makes a very good meal of %s&apos;, &apos;visiting tourists&apos;)</div></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>logging.warn() vs. logging.warning()<br>
-<code>logging.warning()</code> just logs something at the WARNING level, while <code>logging.warn</code> will raise an exception.<br>
-ref: <a href="https://stackoverflow.com/questions/9595009/python-warnings-warn-vs-logging-warning" target="_blank" rel="external">Python warnings.warn() vs. logging.warning()</a></p>
-</li>
-<li>
-<p>filter<br>
-一般都是用继承<code>logging.Filter</code>类的方法，再写<code>filter</code> method。<br>
-官方说3.2版本之后，用个函数就可以作为filter，但是没有示例程序。</p>
-</li>
-</ul>
-<h3 id="functools">functools</h3>
-<h4 id="wraps">wraps</h4>
-<p>ref: <a href="https://stackoverflow.com/questions/308999/what-does-functools-wraps-do" target="_blank" rel="external">What does functools.wraps do?</a><br>
-普通decorator，会导致被修改的函数的属性产生变化（比如func_1，加decorator后，名字会被修改）。</p>
-   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">logged</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @wraps(func) # 只比正常的闭包多了这一句</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">with_logging</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line">        <span class="keyword">print</span> func.__name__ + <span class="string">" was called"</span></div><div class="line">        <span class="keyword">return</span> func(*args, **kwargs)</div><div class="line">    <span class="keyword">return</span> with_logging</div></pre></td></tr></table></figure>
-<p>简而言之：decorator都需要functools.wraps</p>
-<h3 id="pickle">pickle</h3>
-<p>pickle.load是从file-like object中导入数据；对应的，pickle.dump也是针对file-like object。<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
-<ul>
-<li>TIPS<br>
-一个存有bs4.element.Tag类型的对象，并不一定能pickle。<br>
-因为pickle要求数据可以遍历，而bs4.element.Tag类型的对象可能有环？或者单纯是我的数据中，bs4.element.Tag类型的数量太多了？</li>
-</ul>
-<h3 id="beautifulsoup4">BeautifulSoup4</h3>
-<ul>
-<li><a href="https://www.jianshu.com/p/96433d9ee923" target="_blank" rel="external">beautifulsoup4</a>
-<ul>
-<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html#id25" target="_blank" rel="external">文档</a></li>
-<li><code>find_all(text=&quot;your_text&quot;)</code>不好用！</li>
-<li>‘html5lib’ engine is slower but more robust than ‘lxml’！</li>
-<li><code>soup.prettify()</code> and <code>&lt;tag&gt;.prettify()</code><br>
-Formatting html</li>
-</ul>
-</li>
-</ul>
-<h4 id="四大对象种类">四大对象种类<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></h4>
-<ul>
-<li>Tag: 通俗点讲就是 HTML 中的一个个标签<br>
-如何抓取超链接？<br>
-因为超链接不是显示存储的。要想得到超链接的字符串，需要下面的操作： <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> isinstance(i, bs4.element.Tag) <span class="keyword">and</span> i.has_attr(<span class="string">'href'</span>):</div><div class="line">            con_str.append(i[<span class="string">'href'</span>] )</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>NavigableString: <code>print(type(soup.p.string))</code>, that’s it.</li>
-<li>BeautifulSoup: 一个文档的全部内容.大部分时候可以把它当作是一个特殊的 Tag</li>
-<li>Comment: 注释</li>
-</ul>
-<h3 id="selenium">Selenium</h3>
-<ul>
-<li>
-<p>initialize</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chromePath = <span class="string">r'/usr/local/bin/chromedriver'</span></div><div class="line">wd = webdriver.Chrome(executable_path= chromePath)</div></pre></td></tr></table></figure>
-</li>
-<li>
-<p>usage</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wd.find_element_by_id(<span class="string">'login_pwd'</span>)</div><div class="line">wd.find_element_by_class_name(<span class="string">'radiocheck'</span>).click()</div><div class="line">wd.find_element_by_xpath(<span class="string">'//*[@id="sendpck"]/img'</span>)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>NOTE:<br>
-1. you can search an element and then <code>click()</code><br>
-2. you can get xpath in source code page.</p>
-<ul>
-<li>login website<br>
-Please refer to login fucntion in download_voice.ipynb</li>
-</ul>
-<h4 id="tips-v2">TIPS</h4>
-<ul>
-<li>断网<br>
-有时候断网后，selenium就一直无法重新连接，尽管你在浏览器中手动访问网站是可以的。<br>
-这时可以手动刷新一下selenium要访问的页面，问题可能就解决了。<br>
-我猜，这可能是因为selenium保留了上次访问的失败状态，这导致重新链接到网络后，selenium仍然无法正常工作。</li>
-</ul>
-<h2 id="reference">reference</h2>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p><a href="http://docs.python-guide.org/en/latest/writing/logging/" target="_blank" rel="external">THe hitchhiker’s guide to python</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p><a href="https://docs.python.org/3/howto/logging.html" target="_blank" rel="external">Official Logging How to </a> <a href="#fnref2" class="footnote-backref">↩</a> <a href="#fnref2:1" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p><a href="https://stackoverflow.com/questions/48498929/what-is-file-like-object-what-is-file-pickle-load-and-pickle-loads" target="_blank" rel="external">about pickle</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
-</li>
-<li id="fn4" class="footnote-item"><p><a href="http://wiki.jikexueyuan.com/project/python-crawler-guide/beautiful-soup.html" target="_blank" rel="external">Beautiful Soup 的用法</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;br&gt;
-Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.&lt;/p&gt;
     
     </summary>
     
