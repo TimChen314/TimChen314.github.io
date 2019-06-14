@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://timchen314.com/"/>
-  <updated>2019-06-14T07:37:06.000Z</updated>
+  <updated>2019-06-14T07:39:10.000Z</updated>
   <id>http://timchen314.com/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://timchen314.com/baoshang_bank/"/>
     <id>http://timchen314.com/baoshang_bank/</id>
     <published>2019-06-14T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="我们刚刚与一波金融危机擦肩而过">我们刚刚与一波金融危机擦肩而过</h1>
-<p>来源：北北看剧</p>
+    <content type="html"><![CDATA[<p>来源：北北看剧</p>
 <p>这两天光大证券(10.570, -0.23, -2.13%)的PE投资在境外亏55亿的事情刷屏了金融圈。</p>
 <p>55亿的事情归纪委管，央行大概只会瞄一眼，他们有一件5500亿，哦不，700000亿的事要先处理一下。</p>
 <p>5月24日周五，有一则新闻说“包商银行被接管”，金融圈的一些朋友转了，大部分人都没注意。</p>
@@ -87,8 +86,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;我们刚刚与一波金融危机擦肩而过&quot;&gt;我们刚刚与一波金融危机擦肩而过&lt;/h1&gt;
-&lt;p&gt;来源：北北看剧&lt;/p&gt;
+      &lt;p&gt;来源：北北看剧&lt;/p&gt;
 &lt;p&gt;这两天光大证券(10.570, -0.23, -2.13%)的PE投资在境外亏55亿的事情刷屏了金融圈。&lt;/p&gt;
 &lt;p&gt;55亿的事情归纪委管，央行大概只会瞄一眼，他们有一件5500亿，哦不，700000亿的事要先处理一下。&lt;/p&gt;
 &lt;p&gt;5月24日周五，有一则新闻说“包商银行被接管”，金融圈的一些朋友转了，大部分人都没注意。&lt;/p&gt;
@@ -108,7 +106,7 @@
     <link href="http://timchen314.com/matplotlib/"/>
     <id>http://timchen314.com/matplotlib/</id>
     <published>2019-03-08T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://www.labri.fr/perso/nrougier/teaching/matplotlib/" target="_blank" rel="external">very good tutorial</a><br>
 <a href="https://www.cnblogs.com/yinxiangnan-charles/p/5928689.html" target="_blank" rel="external">matplotlib和PIL打开图片的方法</a></p>
@@ -235,7 +233,7 @@ ref: <a href="https://stackoverflow.com/questions/37970424/what-is-the-differenc
     <link href="http://timchen314.com/ethereum/"/>
     <id>http://timchen314.com/ethereum/</id>
     <published>2019-02-28T11:11:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>
 <h1 id="web3-py"><a href="http://Web3.py" target="_blank" rel="external">Web3.py</a></h1>
@@ -278,7 +276,7 @@ offset means how many items in a page!</li>
     <link href="http://timchen314.com/blockchain_magic/"/>
     <id>http://timchen314.com/blockchain_magic/</id>
     <published>2018-04-24T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>这是历史性的一个事件：<br>
 在遭遇了半夜一点被叫起来强制删帖之后，北大学生将沈X阳事件中自己的遭遇写入了以太坊&quot;input data&quot;中，这意味着这一文件永远无法被删除了!<br>
@@ -308,7 +306,7 @@ offset means how many items in a page!</li>
     <link href="http://timchen314.com/python_cookbook_note/"/>
     <id>http://timchen314.com/python_cookbook_note/</id>
     <published>2018-04-18T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>python cookbook 非常好！</p>
 <a id="more"></a>
@@ -361,7 +359,7 @@ return head + sum(tail) if tail else head</p>
     <link href="http://timchen314.com/btc_market/"/>
     <id>http://timchen314.com/btc_market/</id>
     <published>2018-04-17T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="市场">市场</h3>
 <ul>
@@ -856,7 +854,7 @@ KO(Knock-out) barrier price – 译为“敲出障碍价格”。即期权的止
     <link href="http://timchen314.com/VPS_Vultr/"/>
     <id>http://timchen314.com/VPS_Vultr/</id>
     <published>2018-03-31T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>Vultr是老牌的VPS服务商。这里记录一下购买和使用流程。</p>
 <a id="more"></a>
@@ -1117,7 +1115,7 @@ Zcash采用了尖端加密技术zk-SNARKs来对用户地址及账户余额进行
     <link href="http://timchen314.com/Web/"/>
     <id>http://timchen314.com/Web/</id>
     <published>2018-03-22T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="html5">html5</h1>
 <ul>
@@ -1472,7 +1470,7 @@ HTML elements are represented by tags&lt;/li&gt;
     <link href="http://timchen314.com/pandas/"/>
     <id>http://timchen314.com/pandas/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>数据分析神器Pandas。</p>
 <a id="more"></a>
@@ -1669,7 +1667,7 @@ div, divide is the same as truediv<sup class="footnote-ref"><a href="#fn4" id="f
     <link href="http://timchen314.com/flask/"/>
     <id>http://timchen314.com/flask/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="quick-start"><a href="http://flask.pocoo.org/docs/1.0/quickstart/#quickstart" target="_blank" rel="external">quick start</a></h2>
@@ -1696,7 +1694,7 @@ The following two rules differ in their use of a trailing slash.</p>
     <link href="http://timchen314.com/sqlite/"/>
     <id>http://timchen314.com/sqlite/</id>
     <published>2018-02-04T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>
 <h1 id="基本概念">基本概念</h1>
@@ -2013,7 +2011,7 @@ e.g.:<br>
     <link href="http://timchen314.com/jupyter/"/>
     <id>http://timchen314.com/jupyter/</id>
     <published>2018-01-16T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="a-tutorial">A Tutorial</h1>
 <a id="more"></a>
@@ -2198,7 +2196,7 @@ NOTE: Don’t forget to point to a specific python.</p>
     <link href="http://timchen314.com/docker/"/>
     <id>http://timchen314.com/docker/</id>
     <published>2018-01-01T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>Official introduction:</p>
@@ -2793,7 +2791,7 @@ ker 容器技术（17）</a> <a href="#fnref16" class="footnote-backref">↩</a>
     <link href="http://timchen314.com/linux_senior_service/"/>
     <id>http://timchen314.com/linux_senior_service/</id>
     <published>2017-12-17T19:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>service</code>，顾名思义，是用于对系统服务进行管理的命令。<br>
 <strong>Basically, it’s a shell script! <code>vi</code> it!</strong><br>
@@ -2894,7 +2892,7 @@ Besides, &lt;code&gt;chkconfig&lt;/code&gt; is a closely related command.&lt;/p&
     <link href="http://timchen314.com/tools_for_MD_analysis/"/>
     <id>http://timchen314.com/tools_for_MD_analysis/</id>
     <published>2017-12-08T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p><code>+</code> and <code>-</code> means pro and con of the tool!<br>
 The conclusion: MDTraj seems a powerful tools, but once in a while it still feel troublesome.</p>
@@ -2943,7 +2941,7 @@ The conclusion: MDTraj seems a powerful tools, but once in a while it still feel
     <link href="http://timchen314.com/linux_problem/"/>
     <id>http://timchen314.com/linux_problem/</id>
     <published>2017-11-05T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>解决各种linux问题。</p>
 <a id="more"></a>
@@ -3003,7 +3001,7 @@ opt + Enter键<br>
     <link href="http://timchen314.com/numpy/"/>
     <id>http://timchen314.com/numpy/</id>
     <published>2017-10-31T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 The fundamental package for scientific computing with Python.</p>
@@ -3195,7 +3193,7 @@ The fundamental package for scientific computing with Python.&lt;/p&gt;
     <link href="http://timchen314.com/python_notes/"/>
     <id>http://timchen314.com/python_notes/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
@@ -3866,7 +3864,7 @@ Python features a dynamic type system and automatic memory management and suppor
     <link href="http://timchen314.com/python_modules/"/>
     <id>http://timchen314.com/python_modules/</id>
     <published>2017-10-02T10:00:00.000Z</published>
-    <updated>2019-06-14T07:37:06.000Z</updated>
+    <updated>2019-06-14T07:39:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]<br>
 Python features a dynamic type system and automatic memory management and supports multiple programming paradigms.</p>
